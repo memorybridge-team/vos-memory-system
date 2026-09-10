@@ -1,4 +1,4 @@
-"""Merge sharded RunPod result roots into one locally summarized run."""
+"""Merge sharded benchmark result roots into one summarized run."""
 
 import json
 import shutil

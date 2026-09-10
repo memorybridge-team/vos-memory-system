@@ -18,13 +18,12 @@ venv/
 *.pth
 *.ckpt
 
-# Benchmark outputs and generated RunPod state
+# Benchmark outputs and generated local state
 **/results/
-**/runpod_results/
-**/remote_smoke_results/
+**/*_results/
 **/submissions/
-**/RUNPOD_PROGRESS.md
-**/benchmark.runpod.batch.json
+**/*_PROGRESS.md
+**/benchmark.*.batch.json
 *.log
 
 # Editors and operating systems

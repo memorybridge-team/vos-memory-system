@@ -234,7 +234,7 @@ class MaskAggregator:
 
 
 def aggregation_tmpdir():
-    """Prefer the large RAM-backed temporary filesystem on small RunPod pods."""
+    """Prefer a RAM-backed temporary filesystem when one is available."""
     requested = os.environ.get("SAM2_AGGREGATION_TMPDIR")
     candidates = [Path(requested)] if requested else []
     candidates.append(Path("/dev/shm"))

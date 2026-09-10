@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""Download the full datasets locally and create small RunPod transfer shards."""
+"""Download datasets locally and create optional transfer/storage shards."""
 
 import argparse
 import json
@@ -154,7 +154,7 @@ def main():
                         help="local cache containing downloaded and extracted datasets")
     commands = parser.add_subparsers(dest="command", required=True)
     commands.add_parser("download-all", help="download and validate all four requested splits")
-    stage = commands.add_parser("stage", help="create a RunPod-sized dataset shard")
+    stage = commands.add_parser("stage", help="create a size-limited dataset shard")
     stage.add_argument("--dataset", choices=("davis2017", "lvos", "mosev2"), required=True)
     stage.add_argument("--split", choices=("val", "train", "valid"), required=True)
     stage.add_argument("--output", type=Path, required=True)
