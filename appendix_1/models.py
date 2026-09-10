@@ -11,7 +11,7 @@ from protocol import MODEL_BASE_URL, MODELS, SAM2_COMMIT
 def source_hash(directory):
     digest = hashlib.sha256()
     paths = list(Path(directory).glob("*.py"))
-    paths.append(Path(directory) / "lvos_v1_unseen_videos.txt")
+    paths.append(Path(directory) / "metadata" / "lvos_v1_unseen_videos.txt")
     for path in sorted(path for path in paths if path.is_file()):
         if path.name.startswith("test_"):
             continue

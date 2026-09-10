@@ -1,7 +1,7 @@
 {
-  "cache": "cache",
-  "output": "results",
-  "sam2_repo": "vendor/sam2",
+  "cache": "../cache",
+  "output": "../results",
+  "sam2_repo": "../vendor/sam2",
   "models": ["tiny", "small", "plus", "large"],
   "conditions": ["cold", "full_memory"],
   "datasets": [
