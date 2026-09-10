@@ -11,9 +11,9 @@ from pathlib import Path
 import numpy as np
 from PIL import Image
 
-from datasets import Video
-from models import build_predictor
-from runner import run_video
+from src.datasets import Video
+from src.models import build_predictor
+from src.runner import run_video
 
 
 @unittest.skipUnless(os.environ.get("SAM2_INTEGRATION") == "1",
@@ -21,7 +21,9 @@ from runner import run_video
 class RealSAM2Integration(unittest.TestCase):
     def test_tiny_two_pass_synthetic_video(self):
         checkpoint = os.environ["SAM2_TINY_CHECKPOINT"]
-        repo = os.environ.get("SAM2_REPO", str(Path(__file__).parent / "vendor/sam2"))
+        repo = os.environ.get(
+            "SAM2_REPO", str(Path(__file__).parents[1] / "vendor" / "sam2")
+        )
         device = os.environ.get("SAM2_DEVICE", "cuda")
         predictor, metadata = build_predictor("tiny", checkpoint, repo, device)
         with tempfile.TemporaryDirectory() as tmp:

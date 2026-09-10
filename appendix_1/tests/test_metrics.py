@@ -5,8 +5,8 @@ from pathlib import Path
 import numpy as np
 from PIL import Image
 
-from datasets import Video
-from metrics import boundary_f, evaluate_indexed_masks, region_jaccard
+from src.datasets import Video
+from src.metrics import boundary_f, evaluate_indexed_masks, region_jaccard
 
 
 class MetricTests(unittest.TestCase):

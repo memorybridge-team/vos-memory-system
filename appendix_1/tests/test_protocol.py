@@ -1,7 +1,7 @@
 import unittest
 
-from protocol import (MemoryAuditDict, audit_summary, instrument_memory_state,
-                      memory_record_count, set_audit_active, MODELS)
+from src.protocol import (MemoryAuditDict, audit_summary, instrument_memory_state,
+                          memory_record_count, set_audit_active, MODELS)
 
 
 class MemoryTests(unittest.TestCase):

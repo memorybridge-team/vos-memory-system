@@ -8,8 +8,8 @@ from pathlib import Path
 import numpy as np
 from PIL import Image
 
-from datasets import (Video, acquisition_plan, discover, download, extract,
-                      join_parts)
+from src.datasets import (Video, acquisition_plan, discover, download, extract,
+                          join_parts)
 
 
 def image(path, value=0, rgb=False):

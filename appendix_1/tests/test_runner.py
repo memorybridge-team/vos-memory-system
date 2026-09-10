@@ -9,8 +9,8 @@ from pathlib import Path
 import numpy as np
 from PIL import Image
 
-from datasets import Video
-from runner import MaskAggregator, experiment_plan, find_prompts, run_video
+from src.datasets import Video
+from src.runner import MaskAggregator, experiment_plan, find_prompts, run_video
 
 
 class FakePredictor:
@@ -177,7 +177,7 @@ class RunnerTests(unittest.TestCase):
                     sys.modules["torch"] = prior
 
     def test_default_plan_contains_all_sixteen_combinations(self):
-        plan = experiment_plan(Path(__file__).parent / "configs" / "benchmark.json")
+        plan = experiment_plan(Path(__file__).parents[1] / "configs" / "benchmark.json")
         self.assertFalse(plan["downloads_started"])
         self.assertEqual(len(plan["matrix"]), 16)
         self.assertEqual({tuple(row["conditions"]) for row in plan["matrix"]},

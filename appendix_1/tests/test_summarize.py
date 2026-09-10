@@ -4,7 +4,8 @@ import tempfile
 import unittest
 from pathlib import Path
 
-from summarize import bootstrap_interval, import_server_results, summarize_run, paired_official_interval
+from src.summarize import (bootstrap_interval, import_server_results,
+                           paired_official_interval, summarize_run)
 
 
 def metric(value):
