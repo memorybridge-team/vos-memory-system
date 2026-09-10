@@ -7,7 +7,7 @@ from pathlib import Path
 
 import numpy as np
 
-from runner import atomic_json, resolve_config
+from .runner import atomic_json, resolve_config
 
 
 def resolve_run_root(config_path, run_id=None):

@@ -6,7 +6,7 @@ import json
 import shutil
 from pathlib import Path
 
-from datasets import acquire, discover
+from .datasets import acquire, discover
 
 
 DATASETS = (
@@ -145,7 +145,7 @@ def download_all(cache):
 
 
 def _default_cache():
-    return Path(__file__).resolve().parent / "local_data" / "cache"
+    return Path(__file__).resolve().parents[1] / "cache"
 
 
 def main():

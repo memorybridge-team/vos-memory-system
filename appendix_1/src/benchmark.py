@@ -1,15 +1,19 @@
 #!/usr/bin/env python3
 import argparse
 import json
+from pathlib import Path
 
-from runner import experiment_plan, run_benchmark
-from summarize import import_server_results, summarize_run
+from .runner import experiment_plan, run_benchmark
+from .summarize import import_server_results, summarize_run
+
+
+DEFAULT_CONFIG = Path(__file__).resolve().parents[1] / "configs" / "benchmark.json"
 
 
 def main():
     parser = argparse.ArgumentParser(
         description="SAM2 cold versus native prefilled-memory benchmark")
-    parser.add_argument("--config", default="benchmark.json")
+    parser.add_argument("--config", default=DEFAULT_CONFIG)
     parser.add_argument("--max-videos", type=int,
                         help="run only the first N videos per dataset (marked partial)")
     commands = parser.add_subparsers(dest="command", required=True)

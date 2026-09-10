@@ -15,13 +15,13 @@ from pathlib import Path
 import numpy as np
 from PIL import Image
 
-from datasets import acquire, acquisition_plan, discover, sha256
-from metrics import evaluate_indexed_masks
-from models import (acquire_checkpoint, build_predictor, checkpoint_plan,
-                    source_hash, verify_sam2_source)
-from protocol import (CONDITIONS, MODELS, PROTOCOL_NAME, audit_summary,
-                      instrument_memory_state, memory_record_count,
-                      set_audit_active)
+from .datasets import acquire, acquisition_plan, discover, sha256
+from .metrics import evaluate_indexed_masks
+from .models import (acquire_checkpoint, build_predictor, checkpoint_plan,
+                     source_hash, verify_sam2_source)
+from .protocol import (CONDITIONS, MODELS, PROTOCOL_NAME, audit_summary,
+                       instrument_memory_state, memory_record_count,
+                       set_audit_active)
 
 
 def atomic_json(path, value):
@@ -48,7 +48,10 @@ def resolve_config(path):
         if key in config:
             candidate = Path(config[key]).expanduser()
             config[key] = str(candidate if candidate.is_absolute() else (base / candidate).resolve())
-    config.setdefault("sam2_repo", str((Path(__file__).parent / "vendor" / "sam2").resolve()))
+    config.setdefault(
+        "sam2_repo",
+        str((Path(__file__).resolve().parents[1] / "vendor" / "sam2").resolve()),
+    )
     config.setdefault("cache", str((base / "cache").resolve()))
     config.setdefault("output", str((base / "results").resolve()))
     config.setdefault("models", list(MODELS))

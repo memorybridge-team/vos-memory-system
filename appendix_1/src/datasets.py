@@ -275,7 +275,8 @@ def discover(spec, root):
         frame_ids = [int(path.stem) for path in frames]
         evaluation_group = "all"
         if name == "lvos":
-            unseen_path = Path(__file__).resolve().parent / "metadata" / "lvos_v1_unseen_videos.txt"
+            unseen_path = (Path(__file__).resolve().parents[1] / "metadata" /
+                           "lvos_v1_unseen_videos.txt")
             unseen = set(unseen_path.read_text().splitlines())
             evaluation_group = "unseen" if video_name in unseen else "seen"
         videos.append(Video(video_name, frames, frame_ids, masks,

@@ -4,14 +4,14 @@ import subprocess
 import sys
 from pathlib import Path
 
-from datasets import download, sha256
-from protocol import MODEL_BASE_URL, MODELS, SAM2_COMMIT
+from .datasets import download, sha256
+from .protocol import MODEL_BASE_URL, MODELS, SAM2_COMMIT
 
 
 def source_hash(directory):
     digest = hashlib.sha256()
     paths = list(Path(directory).glob("*.py"))
-    paths.append(Path(directory) / "metadata" / "lvos_v1_unseen_videos.txt")
+    paths.append(Path(directory).parent / "metadata" / "lvos_v1_unseen_videos.txt")
     for path in sorted(path for path in paths if path.is_file()):
         if path.name.startswith("test_"):
             continue
@@ -24,7 +24,7 @@ def verify_sam2_source(repo):
     repo = Path(repo).resolve()
     if not (repo / "sam2" / "build_sam.py").is_file():
         raise FileNotFoundError(
-            f"SAM2 source not found at {repo}. Run ./setup.sh first or set sam2_repo."
+            f"SAM2 source not found at {repo}. Run scripts/setup.sh first or set sam2_repo."
         )
     result = subprocess.run(
         ["git", "-C", str(repo), "rev-parse", "HEAD"],

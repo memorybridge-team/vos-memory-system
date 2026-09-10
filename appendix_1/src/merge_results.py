@@ -6,8 +6,8 @@ import tempfile
 import zipfile
 from pathlib import Path
 
-from protocol import PROTOCOL_NAME
-from summarize import summarize_run
+from .protocol import PROTOCOL_NAME
+from .summarize import summarize_run
 
 
 def _matches(run_json, spec):
