@@ -1,6 +1,6 @@
 # vos-memory-system
 
-##Appendix_1
+## Appendix_1
 #### 실험 과정
 (1) Cold 상태에서 SAM2가 영상 전체를 추론한다
 (2) 추론이 끝난 시점에서 memory bank를 그대로 복사한다
