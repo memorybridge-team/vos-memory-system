@@ -1,0 +1,34 @@
+# Python
+__pycache__/
+*.py[cod]
+*.so
+.pytest_cache/
+.mypy_cache/
+.coverage
+htmlcov/
+.venv/
+venv/
+
+# Downloaded dependencies, models, and datasets
+/vendor/
+/cache/
+/local_data/
+/checkpoints/
+*.pt
+*.pth
+*.ckpt
+
+# Benchmark outputs and generated RunPod state
+/results/
+/runpod_results/
+/remote_smoke_results/
+/submissions/
+/RUNPOD_PROGRESS.md
+/benchmark.runpod.batch.json
+*.log
+
+# Editors and operating systems
+.DS_Store
+.idea/
+.vscode/
+*~

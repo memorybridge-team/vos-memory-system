@@ -1,0 +1,22 @@
+{
+  "cache": "/workspace/cache",
+  "output": "/workspace/results",
+  "sam2_repo": "/workspace/appendix_1/vendor/sam2",
+  "models": ["tiny"],
+  "conditions": ["cold", "full_memory"],
+  "datasets": [
+    {"name": "davis2017", "split": "val", "root": "/workspace/data/davis2017_val"},
+    {"name": "lvos", "version": "v1", "split": "val", "root": "/workspace/data/lvos_val"},
+    {"name": "mosev2", "split": "train", "root": "/workspace/data/mosev2_train"},
+    {"name": "mosev2", "split": "valid", "root": "/workspace/data/mosev2_valid"}
+  ],
+  "device": "cuda",
+  "precision": "bfloat16",
+  "seed": 42,
+  "save_masks": false,
+  "offload_video_to_cpu": true,
+  "offload_state_to_cpu": true,
+  "max_videos": null,
+  "bootstrap_samples": 10000,
+  "checkpoints": {}
+}

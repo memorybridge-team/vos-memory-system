@@ -1,0 +1,19 @@
+{
+  "cache": "/workspace/cache",
+  "output": "/workspace/results_smoke",
+  "sam2_repo": "/workspace/appendix_1/vendor/sam2",
+  "models": ["tiny"],
+  "conditions": ["cold", "full_memory"],
+  "datasets": [
+    {"name": "davis2017", "split": "val", "root": "/workspace/data/davis2017_val"}
+  ],
+  "device": "cuda",
+  "precision": "bfloat16",
+  "seed": 42,
+  "save_masks": true,
+  "offload_video_to_cpu": true,
+  "offload_state_to_cpu": true,
+  "max_videos": null,
+  "bootstrap_samples": 1000,
+  "checkpoints": {}
+}
