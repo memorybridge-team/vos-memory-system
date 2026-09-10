@@ -17,7 +17,7 @@ esac
 "${APPENDIX_DIR}/.venv/bin/python" -m pip install \
   torch==2.5.1 torchvision==0.20.1 --index-url "${TORCH_INDEX}"
 "${APPENDIX_DIR}/.venv/bin/python" -m pip install \
-  -r "${APPENDIX_DIR}/environment/requirements.txt"
+  -r "${APPENDIX_DIR}/requirements.txt"
 
 if [[ ! -d "${APPENDIX_DIR}/vendor/sam2/.git" ]]; then
   mkdir -p "${APPENDIX_DIR}/vendor"

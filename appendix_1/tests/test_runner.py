@@ -177,7 +177,7 @@ class RunnerTests(unittest.TestCase):
                     sys.modules["torch"] = prior
 
     def test_default_plan_contains_all_sixteen_combinations(self):
-        plan = experiment_plan(Path(__file__).parents[1] / "configs" / "benchmark.json")
+        plan = experiment_plan(Path(__file__).parents[1] / "benchmark.json")
         self.assertFalse(plan["downloads_started"])
         self.assertEqual(len(plan["matrix"]), 16)
         self.assertEqual({tuple(row["conditions"]) for row in plan["matrix"]},

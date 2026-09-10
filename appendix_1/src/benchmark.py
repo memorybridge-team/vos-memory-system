@@ -7,7 +7,7 @@ from .runner import experiment_plan, run_benchmark
 from .summarize import import_server_results, summarize_run
 
 
-DEFAULT_CONFIG = Path(__file__).resolve().parents[1] / "configs" / "benchmark.json"
+DEFAULT_CONFIG = Path(__file__).resolve().parents[1] / "benchmark.json"
 
 
 def main():
