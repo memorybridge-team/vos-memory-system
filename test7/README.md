@@ -1,8 +1,8 @@
 # VOST Base+ handoff diagnostic
 
-이 저장소의 현재 재현 실험은 **VOST validation 영상에서 SAM 2.1 Base+ → Base+ 상태 이전이 같은 추론을 재현하는지** 확인합니다. 학습된 Small→Base+ translator의 성능을 검증하는 실험은 아닙니다.
+이 저장소의 재현 실험은 **VOST validation 영상과 LVOS 일부 영상에서 SAM 2.1 Base+ → Base+ 상태 이전이 같은 추론을 재현하는지** 확인합니다. 학습된 Small→Base+ translator의 성능을 검증하는 실험은 아닙니다.
 
-The current reproducible experiment checks whether a SAM 2.1 Base+ → Base+ state handoff reproduces uninterrupted inference on a small VOST validation subset. It does **not** evaluate a trained Small→Base+ translator.
+The reproducible experiments check whether a SAM 2.1 Base+ → Base+ state handoff reproduces uninterrupted inference on a small VOST validation subset and selected LVOS clips. They do **not** evaluate a trained Small→Base+ translator.
 
 ## 실험 요약
 
@@ -14,6 +14,34 @@ The current reproducible experiment checks whether a SAM 2.1 Base+ → Base+ sta
 - 현재 기록 결과: 공식 VOST aggregate `J=0.54257`, `J_last=0.62395`; native와 transferred 간 차이는 둘 다 `0`. 두 영상의 사후 handoff 예측 mask와 logits도 일치했습니다.
 
 영상 두 개만 쓴 제한된 same-checkpoint 진단이므로, 데이터셋 전체 성능이나 cross-model/nonlinear translation의 효용으로 일반화하면 안 됩니다. 프로토콜과 결과 해석은 [`plan.md`](plan.md), 실행 기록은 [`reports/vost/identity-20260924-2clips.md`](reports/vost/identity-20260924-2clips.md)에 있습니다.
+
+## LVOS Base+ identity handoff
+
+2026-09-23에 LVOS v2 영상 4개로 실행한 초기 점검과, 이를 포함해 총 14개 영상으로 확장한 실행이 모두 통과했습니다. 아래는 확장 실행의 결과이며, **공식 LVOS validation 점수는 아닙니다**.
+
+- Protocol: `DirectCopyTranslator`; Source와 Target 모두 같은 SAM 2.1 Base+ checkpoint, seed `7`, CPU.
+- 각 영상에서 manifest가 지정한 객체별 최초 prompt만 사용했습니다. 40개 frame을 5-frame 간격으로 평가했고, handoff는 고정된 clip index `20` (원본 frame ID `101`)에서 수행했습니다. Target은 그 다음 frame부터 이어서 추론했습니다.
+- Prompt frame은 점수 집계에서 제외했습니다. 아래 J&F는 각 영상의 handoff 이후 **점수에 포함된 frame-object 행**들의 평균입니다. 점수 범위/마지막 frame 제외 규칙 등 공식 LVOS 전체 평가 프로토콜은 적용하지 않았습니다.
+- 14/14 영상 통과; post-handoff 361개 frame-object 행에서 native 대비 `ΔJ&F = 0` (평균·최솟값·최댓값), binary mask 전부 동일, 최대 logit 오차 `0`. State injection 중 backbone 재계산은 `0`회였습니다.
+
+| LVOS video | Post-handoff scored rows | Native J&F mean | Transferred J&F mean | Mean ΔJ&F |
+|---|---:|---:|---:|---:|
+| `0tCWPOrc` | 38 | 0.963010 | 0.963010 | 0.000000 |
+| `2VegYEbT` | 19 | 0.972971 | 0.972971 | 0.000000 |
+| `2urlAsm8` | 19 | 0.945621 | 0.945621 | 0.000000 |
+| `8lxxCA5h` | 19 | 0.954523 | 0.954523 | 0.000000 |
+| `9HEh93ef` | 95 | 0.920966 | 0.920966 | 0.000000 |
+| `K3OUeINk` | 19 | 0.806886 | 0.806886 | 0.000000 |
+| `MKnlVo6x` | 19 | 0.976499 | 0.976499 | 0.000000 |
+| `ScFTYisJ` | 19 | 0.946887 | 0.946887 | 0.000000 |
+| `aFytsETk` | 19 | 0.985051 | 0.985051 | 0.000000 |
+| `dtHbJvYy` | 19 | 0.955877 | 0.955877 | 0.000000 |
+| `nfcT3owb` | 19 | 0.967570 | 0.967570 | 0.000000 |
+| `q1MSEBkh` | 19 | 0.954201 | 0.954201 | 0.000000 |
+| `x3nD3QQ9` | 19 | 0.903679 | 0.903679 | 0.000000 |
+| `xpI7xRWN` | 19 | 0.540941 | 0.540941 | 0.000000 |
+
+This is a **same-checkpoint identity/implementation diagnostic**, not evidence that a learned translator improves accuracy or that LVOS-wide performance is validated. The result only shows that, on these sampled frames and this CPU execution path, direct state copying continued the same inference exactly. The CUDA offload path was not exercised. The detailed run files are local under `outputs/lvos_base_roundtrip/20260923T140747Z/` and are excluded from Git; LVOS media and model checkpoints are not included in this repository.
 
 ## 재현 방법
 
