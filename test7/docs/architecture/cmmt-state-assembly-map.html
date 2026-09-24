@@ -1,0 +1,836 @@
+<!doctype html>
+<html lang="ko">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="description" content="CMMT CanonicalState의 자동 handoff와 correction replay fallback을 포함한 Target SAM 2 상태 조립 지도">
+<title>CMMT State Assembly & Correction Map</title>
+<style>
+:root {
+  color-scheme: light dark;
+  --background: light-dark(rgb(255 255 255), rgb(24 24 24));
+  --foreground: light-dark(rgb(26 28 31), rgb(245 247 250));
+  --card: light-dark(rgb(248 249 251), rgb(35 36 39));
+  --card-foreground: var(--foreground);
+  --muted-foreground: light-dark(rgb(88 94 103), rgb(183 187 194));
+  --primary: light-dark(rgb(20 96 170), rgb(118 190 255));
+  --primary-foreground: light-dark(rgb(255 255 255), rgb(12 28 44));
+  --accent: light-dark(rgb(216 235 252), rgb(31 61 87));
+  --border: light-dark(rgb(211 215 221), rgb(67 69 74));
+  --ring: light-dark(rgb(20 96 170), rgb(118 190 255));
+  --destructive: light-dark(rgb(185 28 28), rgb(255 120 120));
+  --viz-series-1: light-dark(rgb(25 118 210), rgb(109 190 255));
+  --viz-series-2: light-dark(rgb(217 102 19), rgb(255 165 92));
+  --viz-series-3: light-dark(rgb(38 145 78), rgb(102 218 139));
+  --viz-series-4: light-dark(rgb(179 62 135), rgb(255 133 207));
+  --viz-series-5: light-dark(rgb(111 70 180), rgb(184 144 255));
+  --viz-series-6: light-dark(rgb(0 132 145), rgb(80 218 225));
+}
+* { box-sizing: border-box; }
+html, body { margin: 0; min-width: 320px; background: var(--background); color: var(--foreground); }
+body { padding: 20px; font: 14px/1.48 system-ui, -apple-system, "Segoe UI", sans-serif; }
+code { font: 0.92em ui-monospace, SFMono-Regular, Consolas, monospace; }
+.text-muted { color: var(--muted-foreground); }
+.text-small { font-size: 12px; }
+.viz-controls { display: flex; flex-wrap: wrap; align-items: center; gap: 6px; }
+.btn {
+  min-height: 34px; padding: 6px 10px; border: 1px solid transparent; border-radius: 8px;
+  background: transparent; color: var(--foreground); font: inherit; cursor: pointer;
+}
+.btn:hover, .btn:focus-visible { background: var(--accent); outline: none; }
+.btn-primary { background: var(--primary); color: var(--primary-foreground); }
+.btn-ghost { background: transparent; }
+.card {
+  padding: 12px 14px; border: 1px solid var(--border); border-radius: 10px;
+  background: var(--card); color: var(--card-foreground);
+}
+.viz-badge {
+  display: inline-flex; align-items: center; padding: 3px 8px; border-radius: 999px;
+  background: var(--accent); color: var(--foreground); font-size: 12px;
+}
+@media (max-width: 600px) { body { padding: 12px; } }
+</style>
+</head>
+<body>
+<div id="cmmt-state-map">
+  <h2>CMMT CanonicalState → Target SAM 2 조립 지도</h2>
+  <p class="text-muted">현재 <code>cmmt.canonical_state.v1</code> export를 소비하는 <strong>v1.1 Target 조립 계약</strong>과 고정 SAM 2.1 predictor 기준입니다. 핵심 translator와 correction 발생 시의 replay fallback을 분리해 표시합니다. 로컬 injector는 과거 <code>pred_masks</code>/<code>object_score_logits</code>를 제외한 최소 read-state를 조립하며, 실제 checkpoint에서 단일 객체·다객체·late prompt·부재/재등장, 전환 전후 correction과 반복 handoff continuation을 검증했습니다. 진단용 score가 없는 injected history도 같은 최소 계약으로 다시 export할 수 있습니다.</p>
+
+  <section class="handoff-paths" aria-labelledby="handoff-paths-title">
+    <h3 id="handoff-paths-title">실행 모드</h3>
+    <div class="path-grid">
+      <article class="path-card">
+        <strong>Correction 없음</strong>
+        <p><code>maskmem_features</code>와 <code>obj_ptr</code>만 전달합니다. Direct Copy·Moment-Matched Copy·Nonlinear Translator는 이 경로를 공유하고 값 처리만 다릅니다. Target이 <code>maskmem_pos_enc</code>를 생성하며, 과거 RGB replay 없이 <code>t+1</code>부터 진행합니다.</p>
+      </article>
+      <article class="path-card">
+        <strong>전환 이후 correction</strong>
+        <p>현재 RGB와 새 prompt를 Target에 넣습니다. Target이 새 <code>pred_masks</code>, presence score, memory를 만들며 과거 구간 replay는 필요 없습니다.</p>
+      </article>
+      <article class="path-card">
+        <strong>전환 이전 correction</strong>
+        <p>저장된 RGB와 prompt timeline으로 안전한 기준점부터 Target replay를 수행합니다. 수정 지점 이후의 기존 translated history는 Target-native history로 교체합니다.</p>
+      </article>
+      <article class="path-card">
+        <strong>연구 단계의 동일 영상 전제</strong>
+        <p>Source와 Target은 같은 영상·frame 순서·switch 시점을 사용한다고 실험 manifest에서 고정합니다. <code>num_frames</code>·<code>video_height</code>·<code>video_width</code>와 영상 hash는 memory handoff payload에 넣지 않습니다. Target runtime은 자신의 영상에서 세 값을 직접 산출하며, 서비스 단계의 영상 식별 검증은 별도 protocol로 둡니다.</p>
+      </article>
+    </div>
+  </section>
+
+  <div class="viz-controls" aria-label="연결 방식 필터">
+    <button class="btn btn-primary" type="button" data-filter="all" aria-pressed="true">전체</button>
+    <button class="btn btn-ghost" type="button" data-filter="adapter" aria-pressed="false"><span class="legend-line adapter"></span>Grid adapter</button>
+    <button class="btn btn-ghost" type="button" data-filter="learned" aria-pressed="false"><span class="legend-line learned"></span>학습 변환</button>
+    <button class="btn btn-ghost" type="button" data-filter="preserve" aria-pressed="false"><span class="legend-line preserve"></span>그대로 보존</button>
+    <button class="btn btn-ghost" type="button" data-filter="support" aria-pressed="false"><span class="legend-line support"></span>사용자 기록·UI</button>
+    <button class="btn btn-ghost" type="button" data-filter="regenerate" aria-pressed="false"><span class="legend-line regenerate"></span>Target 재생성</button>
+    <button class="btn btn-ghost" type="button" data-filter="control" aria-pressed="false"><span class="legend-line control"></span>재구성·검증</button>
+    <button class="btn btn-ghost" type="button" data-filter="runtime" aria-pressed="false"><span class="legend-line runtime"></span>Target 자체 준비</button>
+    <button class="btn btn-ghost" type="button" data-filter="none" aria-pressed="false"><span class="legend-line none"></span>비전송·기록 전용</button>
+  </div>
+
+  <div class="edge-detail card" aria-live="polite">
+    <div class="detail-heading">
+      <span class="viz-badge" data-detail-mode>상세 설명</span>
+      <strong data-detail-title>지도에서 state 또는 화살표를 클릭하세요</strong>
+    </div>
+    <p data-detail-text>state를 누르면 값의 의미가, 화살표를 누르면 이동·조립 방식이 표시됩니다.</p>
+  </div>
+
+  <div class="map-stage">
+    <svg class="edge-layer" role="img" aria-labelledby="cmmt-map-svg-title cmmt-map-svg-desc">
+      <title id="cmmt-map-svg-title">CanonicalState와 Target SAM 2 상태 사이의 필드 조립 관계</title>
+      <desc id="cmmt-map-svg-desc">학습 변환, 보존, 사용자 기록, 위치정보 재생성, 검증, Target 자체 초기화를 서로 다른 색과 선 모양으로 연결한 전체 필드 지도입니다.</desc>
+      <defs></defs>
+      <g data-edge-root></g>
+    </svg>
+
+    <section class="map-column source-column" aria-labelledby="source-title">
+      <div class="column-title" id="source-title">① CMMT CanonicalState</div>
+      <div data-source-groups></div>
+    </section>
+
+    <section class="map-column assembly-column" aria-labelledby="assembly-title">
+      <div class="column-title" id="assembly-title">② 조립 엔진</div>
+      <div data-assembly-groups></div>
+    </section>
+
+    <section class="map-column target-column" aria-labelledby="target-title">
+       <div class="column-title" id="target-title">③ Target SAM 2 inference_state + CMMT sidecar</div>
+      <div data-target-groups></div>
+    </section>
+  </div>
+
+  <div class="map-notes text-small">
+    <strong>읽는 법:</strong> 왼쪽 값이 가운데 조립 규칙을 거쳐 오른쪽 필드가 됩니다. 정보 처리 방식과 조립 작업은 배타적인 분류가 아닙니다. 예를 들어 <code>is_conditioning</code> 값은 그대로 보존하면서 cond/non-cond router가 그 값을 읽어 저장 위치를 정합니다. <code>switch_frame</code> 값도 handoff metadata에 그대로 보존하며, controller가 이를 읽어 <code>t+1</code> 시작점을 정합니다. Target inference_state의 영구 필드로 주입하지는 않습니다. Source PE·device·provenance는 검사에는 남지만 Target 실행값으로 주입되지 않습니다.<br>
+    <strong>기록 수와 읽기 수:</strong> CanonicalState는 전환 시점까지의 유효 record를 보존합니다. <code>K</code>는 저장 record 축이며 SAM 2의 한 추론 step에서 선택해 읽는 <code>num_maskmem</code>과 같은 뜻이 아닙니다.<br>
+    <strong>장치 정책:</strong> 번역·조립된 <code>maskmem_features</code>는 Target <code>storage_device</code>로, <code>obj_ptr</code>와 Target PE는 Target compute/device 정책으로 이동합니다. Source device 문자열을 복사하지 않습니다.<br>
+    <strong>예측 기록:</strong> Source <code>pred_masks</code>는 <em>Target inference_state 밖</em>의 화면 검토용 sidecar archive로만 보존하며 Target decoder의 refinement 입력으로 주입하지 않습니다. 과거 Source <code>object_score_logits</code>도 진단 전용입니다. 새 mask와 score는 Target이 새 frame 또는 replay에서 생성합니다.<br>
+    <strong>Correction 정책:</strong> 전환 이전 frame을 수정하면 원본 RGB와 prompt timeline을 사용해 안전한 기준점부터 Target replay합니다. <code>pred_masks</code> 번역만으로 수정 이후 history의 일관성을 복원할 수 없습니다.
+  </div>
+</div>
+
+<style>
+  #cmmt-state-map {
+    width: 100%;
+    color: var(--foreground);
+  }
+  #cmmt-state-map h2 { margin: 0 0 0.35rem; }
+  #cmmt-state-map > p { margin: 0 0 0.8rem; }
+  #cmmt-state-map .handoff-paths { margin: 0 0 0.9rem; }
+  #cmmt-state-map .handoff-paths h3 { margin: 0 0 0.45rem; font-size: 1rem; }
+  #cmmt-state-map .path-grid {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 0.6rem;
+  }
+  #cmmt-state-map .path-card {
+    padding: 0.7rem 0.75rem;
+    border: 1px solid var(--border);
+    border-radius: 0.55rem;
+    background: var(--card);
+  }
+  #cmmt-state-map .path-card p { margin: 0.35rem 0 0; color: var(--muted-foreground); }
+  #cmmt-state-map .viz-controls { margin-bottom: 0.85rem; }
+  #cmmt-state-map .btn { display: inline-flex; align-items: center; gap: 0.4rem; }
+  #cmmt-state-map .legend-line {
+    width: 1.8rem;
+    height: 0;
+    display: inline-block;
+    border-top-width: 3px;
+    border-top-style: solid;
+  }
+  #cmmt-state-map .legend-line.learned { border-color: var(--viz-series-1); }
+  #cmmt-state-map .legend-line.adapter { border-color: var(--viz-series-6); border-top-style: dashed; }
+  #cmmt-state-map .legend-line.preserve { border-color: var(--viz-series-2); }
+  #cmmt-state-map .legend-line.support { border-color: var(--viz-series-3); border-top-style: dashed; }
+  #cmmt-state-map .legend-line.regenerate { border-color: var(--viz-series-4); border-top-style: dotted; }
+  #cmmt-state-map .legend-line.control { border-color: var(--viz-series-5); border-top-style: dashed; }
+  #cmmt-state-map .legend-line.runtime { border-color: var(--muted-foreground); border-top-style: double; }
+  #cmmt-state-map .legend-line.none { border-color: var(--destructive); border-top-style: dotted; }
+
+  #cmmt-state-map .map-stage {
+    position: relative;
+    display: grid;
+    grid-template-columns: minmax(270px, 1fr) minmax(210px, 0.72fr) minmax(300px, 1.08fr);
+    gap: clamp(72px, 8vw, 132px);
+    align-items: start;
+  }
+  #cmmt-state-map .edge-detail { margin: 0 0 0.85rem; }
+  #cmmt-state-map .detail-heading { display: flex; flex-wrap: wrap; align-items: center; gap: 0.55rem; }
+  #cmmt-state-map .edge-detail p { margin: 0.45rem 0 0; }
+  #cmmt-state-map .edge-layer {
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    overflow: visible;
+    pointer-events: none;
+    z-index: 1;
+  }
+  #cmmt-state-map .map-column {
+    position: relative;
+    z-index: 2;
+    min-width: 0;
+  }
+  #cmmt-state-map .column-title {
+    position: sticky;
+    top: 0;
+    z-index: 3;
+    padding: 0.6rem 0.75rem;
+    margin-bottom: 0.55rem;
+    background: var(--primary);
+    color: var(--primary-foreground);
+    font-weight: 500;
+    border-radius: 0.45rem;
+  }
+  #cmmt-state-map .field-group {
+    margin-bottom: 0.68rem;
+    padding: 0.55rem 0.65rem;
+    background: color-mix(in srgb, var(--card) 94%, transparent);
+    border: 1px solid var(--border);
+    border-radius: 0.45rem;
+  }
+  #cmmt-state-map .group-title {
+    margin-bottom: 0.35rem;
+    color: var(--muted-foreground);
+    font-weight: 500;
+  }
+  #cmmt-state-map .field-row {
+    position: relative;
+    display: flex;
+    align-items: baseline;
+    gap: 0.38rem;
+    min-height: 1.55rem;
+    padding: 0.18rem 0.22rem;
+    border-bottom: 1px solid color-mix(in srgb, var(--border) 55%, transparent);
+    transition: opacity 140ms ease, background-color 140ms ease;
+    cursor: pointer;
+  }
+  #cmmt-state-map .field-row:focus-visible {
+    outline: 2px solid var(--ring);
+    outline-offset: 2px;
+  }
+  #cmmt-state-map .field-row:last-child { border-bottom: 0; }
+  #cmmt-state-map .field-row code {
+    overflow-wrap: anywhere;
+    white-space: pre-wrap;
+  }
+  #cmmt-state-map .field-row .meaning { color: var(--muted-foreground); }
+  #cmmt-state-map .field-row.is-dim { opacity: 0.22; }
+  #cmmt-state-map .field-row.is-focus {
+    background: color-mix(in srgb, var(--accent) 55%, transparent);
+  }
+  #cmmt-state-map .field-row::after,
+  #cmmt-state-map .field-row::before {
+    content: "";
+    position: absolute;
+    top: 50%;
+    width: 7px;
+    height: 7px;
+    border-radius: 50%;
+    background: var(--border);
+    transform: translateY(-50%);
+  }
+  #cmmt-state-map .source-column .field-row::after,
+  #cmmt-state-map .assembly-column .field-row::after { right: -4px; }
+  #cmmt-state-map .assembly-column .field-row::before,
+  #cmmt-state-map .target-column .field-row::before { left: -4px; }
+  #cmmt-state-map .source-column .field-row::before,
+  #cmmt-state-map .target-column .field-row::after { display: none; }
+
+  #cmmt-state-map .edge {
+    fill: none;
+    stroke-linecap: round;
+    stroke-linejoin: round;
+    opacity: 0.62;
+    transition: opacity 140ms ease, stroke-width 140ms ease;
+  }
+  #cmmt-state-map .edge.learned { stroke: var(--viz-series-1); stroke-width: 3.2; }
+  #cmmt-state-map .edge.adapter { stroke: var(--viz-series-6); stroke-width: 2.8; stroke-dasharray: 5 4; }
+  #cmmt-state-map .edge.preserve { stroke: var(--viz-series-2); stroke-width: 2.5; }
+  #cmmt-state-map .edge.support { stroke: var(--viz-series-3); stroke-width: 2.5; stroke-dasharray: 8 5; }
+  #cmmt-state-map .edge.regenerate { stroke: var(--viz-series-4); stroke-width: 3; stroke-dasharray: 2 7; }
+  #cmmt-state-map .edge.control { stroke: var(--viz-series-5); stroke-width: 2.6; stroke-dasharray: 10 4 2 4; }
+  #cmmt-state-map .edge.runtime { stroke: var(--muted-foreground); stroke-width: 4.5; }
+  #cmmt-state-map .edge.runtime-rail { stroke: var(--background); stroke-width: 1.5; }
+  #cmmt-state-map .edge.none { stroke: var(--destructive); stroke-width: 2; stroke-dasharray: 2 6; }
+  #cmmt-state-map .edge-hit {
+    fill: none;
+    stroke: transparent;
+    stroke-width: 18;
+    pointer-events: stroke;
+    cursor: pointer;
+  }
+  #cmmt-state-map .edge-hit:focus { stroke: color-mix(in srgb, var(--ring) 24%, transparent); }
+  #cmmt-state-map .edge-hit.is-inactive { pointer-events: none; }
+  #cmmt-state-map .edge.is-selected { opacity: 1; stroke-width: 5; }
+  #cmmt-state-map .edge.is-dim { opacity: 0.035; }
+  #cmmt-state-map .edge.is-focus { opacity: 0.96; }
+  #cmmt-state-map .map-notes {
+    margin-top: 0.75rem;
+    padding-top: 0.65rem;
+    border-top: 1px solid var(--border);
+    color: var(--muted-foreground);
+  }
+
+  @media (max-width: 760px) {
+    #cmmt-state-map .path-grid { grid-template-columns: 1fr; }
+    #cmmt-state-map .map-stage {
+      grid-template-columns: 1fr;
+      gap: 70px;
+    }
+    #cmmt-state-map .column-title { position: static; }
+    #cmmt-state-map .source-column .field-row::after,
+    #cmmt-state-map .assembly-column .field-row::after,
+    #cmmt-state-map .assembly-column .field-row::before,
+    #cmmt-state-map .target-column .field-row::before {
+      left: 50%;
+      right: auto;
+    }
+    #cmmt-state-map .source-column .field-row::after,
+    #cmmt-state-map .assembly-column .field-row::after { top: auto; bottom: -4px; }
+    #cmmt-state-map .assembly-column .field-row::before,
+    #cmmt-state-map .target-column .field-row::before { top: -4px; }
+  }
+</style>
+
+<script>
+(() => {
+  const root = document.getElementById('cmmt-state-map');
+  if (!root) return;
+
+  const sourceGroups = [
+    ['학습 변환 대상', [
+      ['s-spatial', 'spatial_memory', 'maskmem_features'],
+      ['s-pointer', 'object_pointer', 'obj_ptr']]],
+    ['기억의 위치·순서', [
+      ['s-frame-indices', 'frame_indices', '각 기억의 프레임'],
+      ['s-slot-order', 'slot_order', 'record 조립 순서'],
+      ['s-is-cond', 'is_conditioning', 'cond/non-cond 분기'],
+      ['s-validity', 'validity', 'padding 제외']]],
+    ['물체 등록 정보', [
+      ['s-object-ids', 'object_ids', '외부 object ID']]],
+    ['Handoff 시점', [
+      ['s-switch-frame', 'switch_frame', 'Source 종료 시점 t']]],
+    ['위치정보 정책', [
+      ['s-pos-policy', 'positional_information.policy', 'Target 재생성 정책'],
+      ['s-pos-records', 'positional_information.records', 'Source PE 관측본']]],
+    ['비전송 진단 archive', [
+      ['s-meta-source', 'metadata.source', '출처 기록'],
+      ['s-pred-masks', 'metadata.preserved_pred_masks', 'Source 화면 표시용'],
+      ['s-presence', 'presence_logits', 'Source 진단 기록'],
+      ['s-storage-device', 'metadata.storage_device', 'Source 저장 장치'],
+      ['s-compute-device', 'metadata.compute_device', 'Source 연산 장치'],
+      ['s-translation', 'metadata.translation', '번역 provenance · 선택']]],
+    ['Handoff 형식', [
+      ['s-schema', 'schema_version', 'cmmt.canonical_state.v1']]]
+  ];
+
+  const assemblyGroups = [
+    ['학습 모듈', [
+      ['a-grid', 'Spatial grid adapter', '필요할 때만 H×W 정렬'],
+      ['a-spatial', 'Spatial nonlinear head', '제안 translator'],
+      ['a-pointer', 'Pointer nonlinear head', '제안 translator']]],
+    ['History materializer', [
+      ['a-order', 'Record materializer', 'frame·slot 순서 복원'],
+      ['a-route', 'Cond/non-cond router', '기록 종류별 분기'],
+      ['a-valid', 'Validity filter', '유효 slot만 복원'],
+      ['a-archive', 'Source prediction archiver', 'UI 기록만 보존']]],
+    ['Registry 조립', [
+      ['a-id-copy', 'External object ID keeper', 'ID 값·순서 보존'],
+      ['a-registry', 'Object registry rebuild', 'Target index 새로 부여']]],
+    ['Target 정책', [
+      ['a-cutoff', 'Continuation boundary', '다음 시작점 t+1'],
+      ['a-pe', 'Target positional factory', 'Target PE 생성']]],
+    ['Correction controller', [
+      ['a-correction-route', 'Correction time router', '전환 전·후 분기'],
+      ['a-replay', 'Target replay fallback', '과거 RGB·prompt 재처리'],
+      ['a-target-write', 'Target-native record writer', '새 결과로 history 교체']]],
+    ['검증·비전송', [
+      ['a-schema', 'Schema validator', '지원 schema 확인'],
+      ['a-diagnostics', 'Report / diagnostics only', 'Target에 주입하지 않음']]],
+    ['Target 자체 초기화', [
+      ['a-runtime', 'Fresh Target runtime', '영상·장치·빈 cache 준비'],
+      ['a-temp', 'Fresh temporary history', '항상 빈 상태로 시작']]]
+  ];
+
+  const targetGroups = [
+    ['Target runtime 자체 준비', [
+      ['t-images', 'images', '미래 추론·correction replay용 원본 영상'],
+      ['t-num-frames', 'num_frames', 'Target 영상에서 산출'],
+      ['t-video-height', 'video_height', 'Target 영상에서 산출'],
+      ['t-video-width', 'video_width', 'Target 영상에서 산출'],
+      ['t-offload-video', 'offload_video_to_cpu', 'Target 설정'],
+      ['t-offload-state', 'offload_state_to_cpu', 'Target 설정'],
+      ['t-device', 'device', 'Target compute device'],
+      ['t-storage-device', 'storage_device', 'Target storage device'],
+      ['t-cached-features', 'cached_features', '새 Target cache'],
+      ['t-constants', 'constants.maskmem_pos_enc', 'Target PE cache']]],
+    ['물체 등록부', [
+      ['t-obj-ids', 'obj_ids', '외부 ID 목록'],
+      ['t-id-to-idx', 'obj_id_to_idx', '외부 ID → Target index'],
+      ['t-idx-to-id', 'obj_idx_to_id', 'Target index → 외부 ID']]],
+    ['빈 interaction 장부', [
+      ['t-points', 'point_inputs_per_obj', 'Target에서 빈 dict로 초기화'],
+      ['t-masks', 'mask_inputs_per_obj', 'Target에서 빈 dict로 초기화']]],
+    ['완료된 memory history', [
+      ['t-output-root', 'output_dict_per_obj', '물체별 완료 기록'],
+      ['t-object-slot', '└─ Target object index', '재구축된 내부 index'],
+      ['t-cond-root', '   ├─ cond_frame_outputs', 'conditioning history'],
+      ['t-cond-frame', '   │  └─ frame index', 'dictionary key'],
+      ['t-cond-memory', '   │     ├─ maskmem_features', 'translated'],
+      ['t-cond-pos', '   │     ├─ maskmem_pos_enc', 'target-generated'],
+      ['t-cond-pointer', '   │     └─ obj_ptr', 'translated'],
+      ['t-noncond-root', '   └─ non_cond_frame_outputs', 'non-conditioning history'],
+      ['t-noncond-frame', '      └─ frame index', 'dictionary key'],
+      ['t-noncond-memory', '         ├─ maskmem_features', 'translated'],
+      ['t-noncond-pos', '         ├─ maskmem_pos_enc', 'target-generated'],
+      ['t-noncond-pointer', '         └─ obj_ptr', 'translated']]],
+    ['Target가 새로 생성하는 record', [
+      ['t-new-pred', 'pred_masks', '새 frame·replay에서 Target 생성'],
+      ['t-new-score', 'object_score_logits', '새 frame·replay에서 Target 생성'],
+      ['t-new-memory', 'maskmem_features · obj_ptr · PE', 'Target-native memory write']]],
+    ['CMMT sidecar archive (inference_state 밖)', [
+      ['t-source-pred-archive', 'sidecar.source_prediction_archive', 'Source 결과 표시 전용·추론 비주입']]],
+    ['Correction 실행 정책', [
+      ['t-forward-correction', 'frame ≥ switch: Target correction', '현재 RGB·prompt로 새 record'],
+      ['t-past-correction', 'frame < switch: replay fallback', '안전한 기준점부터 history 재생성']]],
+    ['임시 interaction 결과', [
+      ['t-temp-root', 'temp_output_dict_per_obj', '주입 시 비어 있음'],
+      ['t-temp-cond', '├─ cond_frame_outputs', 'empty'],
+      ['t-temp-noncond', '└─ non_cond_frame_outputs', 'empty']]],
+    ['추적 진행과 continuation', [
+      ['t-tracked', 'frames_tracked_per_obj', 'Target에서 빈 dict로 초기화'],
+      ['t-next', '비필드: propagation starts at t+1', 'switch_frame로 결정']]]
+  ];
+
+  function renderGroups(target, groups) {
+    target.innerHTML = '';
+    for (const [title, rows] of groups) {
+      const group = document.createElement('div');
+      group.className = 'field-group';
+      const heading = document.createElement('div');
+      heading.className = 'group-title text-small';
+      heading.textContent = title;
+      group.appendChild(heading);
+      for (const [id, field, meaning] of rows) {
+        const row = document.createElement('div');
+        row.className = 'field-row text-small';
+        row.dataset.node = id;
+        row.tabIndex = 0;
+        row.setAttribute('role', 'button');
+        row.setAttribute('aria-label', `${field} state 설명 보기`);
+        row.title = '클릭하여 state 설명 보기';
+        row.innerHTML = `<code>${field}</code><span class="meaning">${meaning}</span>`;
+        row.addEventListener('click', () => showNodeDetail(id));
+        row.addEventListener('keydown', event => {
+          if (event.key === 'Enter' || event.key === ' ') {
+            event.preventDefault();
+            showNodeDetail(id);
+          }
+        });
+        group.appendChild(row);
+      }
+      target.appendChild(group);
+    }
+  }
+
+  renderGroups(root.querySelector('[data-source-groups]'), sourceGroups);
+  renderGroups(root.querySelector('[data-assembly-groups]'), assemblyGroups);
+  renderGroups(root.querySelector('[data-target-groups]'), targetGroups);
+
+  const edges = [];
+  const add = (from, to, mode) => edges.push({from, to, mode});
+
+  add('s-spatial', 'a-grid', 'adapter');
+  add('a-grid', 'a-spatial', 'adapter');
+  add('a-spatial', 't-cond-memory', 'learned');
+  add('a-spatial', 't-noncond-memory', 'learned');
+  add('s-pointer', 'a-pointer', 'learned');
+  add('a-pointer', 't-cond-pointer', 'learned');
+  add('a-pointer', 't-noncond-pointer', 'learned');
+
+  add('s-frame-indices', 'a-order', 'preserve');
+  add('s-slot-order', 'a-order', 'preserve');
+  add('a-order', 't-output-root', 'preserve');
+  add('a-order', 't-cond-frame', 'preserve');
+  add('a-order', 't-noncond-frame', 'preserve');
+  add('s-is-cond', 'a-route', 'preserve');
+  add('a-route', 't-cond-root', 'preserve');
+  add('a-route', 't-noncond-root', 'preserve');
+  add('s-validity', 'a-valid', 'control');
+  add('a-valid', 't-output-root', 'control');
+
+  add('s-object-ids', 'a-id-copy', 'preserve');
+  add('a-id-copy', 't-obj-ids', 'preserve');
+  add('a-id-copy', 'a-registry', 'control');
+  add('a-registry', 't-id-to-idx', 'control');
+  add('a-registry', 't-idx-to-id', 'control');
+  add('a-registry', 't-object-slot', 'control');
+
+  add('s-switch-frame', 'a-cutoff', 'preserve');
+  add('a-cutoff', 't-next', 'control');
+  add('a-cutoff', 'a-correction-route', 'control');
+  add('a-correction-route', 't-forward-correction', 'control');
+  add('a-correction-route', 'a-replay', 'control');
+  add('a-replay', 't-past-correction', 'regenerate');
+  add('a-replay', 'a-target-write', 'regenerate');
+  add('a-target-write', 't-new-pred', 'regenerate');
+  add('a-target-write', 't-new-score', 'regenerate');
+  add('a-target-write', 't-new-memory', 'regenerate');
+
+  add('s-pos-policy', 'a-pe', 'regenerate');
+  add('a-pe', 't-constants', 'regenerate');
+  add('a-pe', 't-cond-pos', 'regenerate');
+  add('a-pe', 't-noncond-pos', 'regenerate');
+  add('s-pos-records', 'a-diagnostics', 'none');
+
+  add('s-pred-masks', 'a-archive', 'support');
+  add('a-archive', 't-source-pred-archive', 'support');
+
+  add('s-schema', 'a-schema', 'control');
+
+  add('s-meta-source', 'a-diagnostics', 'none');
+  add('s-presence', 'a-diagnostics', 'none');
+  add('s-storage-device', 'a-diagnostics', 'none');
+  add('s-compute-device', 'a-diagnostics', 'none');
+  add('s-translation', 'a-diagnostics', 'none');
+
+  for (const id of ['t-images', 't-num-frames', 't-video-height', 't-video-width',
+    't-offload-video', 't-offload-state', 't-device', 't-storage-device',
+    't-cached-features', 't-constants']) add('a-runtime', id, 'runtime');
+  add('a-temp', 't-temp-root', 'runtime');
+  add('a-temp', 't-temp-cond', 'runtime');
+  add('a-temp', 't-temp-noncond', 'runtime');
+  add('a-temp', 't-points', 'runtime');
+  add('a-temp', 't-masks', 'runtime');
+  add('a-temp', 't-tracked', 'runtime');
+
+  const modeDetails = {
+    adapter: {
+      label: 'Grid adapter',
+      action: '필요할 때만 크기를 맞춰 전달합니다',
+      reason: '학습 가중치는 없으며 H×W가 이미 같으면 값을 바꾸지 않고 통과합니다.'
+    },
+    learned: {
+      label: '학습 변환',
+      action: '제안한 nonlinear head로 값을 바꿉니다',
+      reason: 'Source와 Target이 같은 모양의 tensor를 쓰더라도 내부 의미가 다를 수 있기 때문입니다.'
+    },
+    preserve: {
+      label: '그대로 보존',
+      action: '학습하지 않고 원래 값이나 순서를 유지합니다',
+      reason: '프레임 번호와 기록 종류는 의미를 추측해 바꾸면 안 되는 장부 정보입니다.'
+    },
+    support: {
+      label: '사용자 기록·UI',
+      action: '학습 변환 없이 사용자 입력 기록이나 외부 표시 archive로 보존합니다',
+      reason: 'prompt는 사용자 의도이므로 그대로 유지하고, Source pred_masks는 Target 추론과 분리해 과거 결과 표시에만 사용합니다.'
+    },
+    regenerate: {
+      label: 'Target 재생성',
+      action: 'Source 값을 복사하지 않고 Target 모듈이 새 값을 만듭니다',
+      reason: '위치 표현은 Target 모델의 좌표 정책과 memory grid에 맞아야 하기 때문입니다.'
+    },
+    control: {
+      label: '재구성·검증',
+      action: '값을 학습하지 않고 분기, 정렬, 등록 또는 일치 검사에 사용합니다',
+      reason: '잘못 연결된 물체나 프레임을 조용히 주입하지 않도록 하는 안전 규칙입니다.'
+    },
+    runtime: {
+      label: 'Target 자체 준비',
+      action: 'CanonicalState가 아니라 새 Target runtime이 준비합니다',
+      reason: '영상, 장치, cache는 Source 모델의 기억이 아니라 Target 실행 환경입니다.'
+    },
+    none: {
+      label: '비전송·기록 전용',
+      action: '검사와 재현 기록에만 남기고 Target 실행값에는 넣지 않습니다',
+      reason: 'Source 전용 값이나 provenance를 Target 동작에 섞지 않기 위해서입니다.'
+    }
+  };
+
+  const nodeDetails = {
+    's-frame-indices': 'Source output_dict의 dictionary key였던 frame 번호를 CanonicalState의 record별 값으로 보존합니다. Target 조립 시 다시 cond/non-cond output dictionary의 key로 사용합니다.',
+    's-slot-order': '고정 길이 K축에서 각 tensor slice가 어느 record에 해당하는지 나타내는 순서입니다. 값은 그대로 보존하고 Record materializer가 frame_indices와 결합해 원래 record 관계를 복원합니다.',
+    's-is-cond': '각 record가 사용자 prompt에 기반한 conditioning 기록인지 자동 추적에서 생긴 non-conditioning 기록인지 나타내는 Boolean입니다. 값은 그대로 보존되지만 Target에는 별도 Boolean 필드로 넣지 않고 두 output dictionary 중 하나를 선택하는 데 사용합니다.',
+    's-validity': '고정 크기 batch를 만들기 위해 추가된 padding slot과 실제 record를 구분하는 Boolean mask입니다. False slot은 Target history에 넣지 않습니다.',
+    's-object-ids': '사용자가 지정한 외부 객체 식별자입니다. 예: bike, person 또는 1, 2. 값과 순서는 보존하며 Target의 obj_ids를 만드는 기준으로 사용합니다.',
+    's-switch-frame': 'Source가 마지막으로 처리한 frame t입니다. 값은 handoff metadata에 그대로 보존하며, Target continuation과 correction 분기의 기준으로 사용합니다.',
+    'a-id-copy': '외부 object ID의 값과 순서를 바꾸지 않고 Target obj_ids로 전달합니다. 그 뒤 같은 목록을 사용해 Target 전용 양방향 index 표를 만듭니다.',
+    'a-order': 'CanonicalState가 batching을 위해 평탄화한 record를 frame_indices와 slot_order에 따라 Target의 중첩 output dictionary로 다시 조립합니다.',
+    'a-route': '보존된 is_conditioning 값을 읽어 record를 cond_frame_outputs 또는 non_cond_frame_outputs에 넣습니다. Boolean의 뜻은 바꾸지 않습니다.',
+    'a-valid': 'validity가 False인 padding record를 제거합니다. 이는 값 변환이 아니라 실제 기록과 빈 공간을 구분하는 검사입니다.',
+    'a-registry': '보존된 외부 object ID 목록을 기준으로 새 Target runtime의 obj_id_to_idx와 obj_idx_to_id를 생성합니다.',
+    't-images': '원본 비디오의 내용과 frame 순서는 유지하지만, 이 필드의 tensor는 Target runtime이 자신의 전처리 설정으로 준비합니다. 전환 이후 추론과 과거 correction replay가 같은 원본 RGB를 사용합니다.',
+    't-num-frames': 'Target이 연 비디오의 전체 frame 수입니다. Source state에서 전달하거나 덮어쓰지 않으며, 동일 영상 여부는 실험 manifest가 별도로 보장합니다.',
+    't-video-height': 'Target runtime이 원본 비디오에서 직접 산출합니다. Handoff payload와 전송 bytes에 포함하지 않습니다.',
+    't-video-width': 'Target runtime이 원본 비디오에서 직접 산출합니다. Handoff payload와 전송 bytes에 포함하지 않습니다.',
+    't-offload-video': '전처리된 video frame tensor를 GPU에 계속 둘지 CPU로 옮겨 VRAM을 절약할지 정하는 Target Boolean 설정입니다.',
+    't-offload-state': '완료된 mask와 memory state를 GPU에 계속 둘지 CPU로 옮길지 정하는 Target Boolean 설정입니다.',
+    't-device': 'Target 모델이 image encoder, memory attention, mask decoder 연산을 실행하는 장치입니다. 예: cuda:0.',
+    't-storage-device': '완료된 pred_masks와 memory record를 보관하는 장치입니다. offload_state_to_cpu가 켜지면 일반적으로 CPU가 됩니다.',
+    't-cached-features': 'Target image encoder가 특정 frame에서 계산한 image feature cache입니다. Small feature를 복사하지 않고 Base+가 원본 RGB로 새로 만듭니다.',
+    't-constants': 'Target memory grid에 맞춰 Target이 만든 mask memory positional encoding cache입니다. Source PE를 복사하지 않습니다.',
+    't-obj-ids': 'Source에서 보존한 외부 object ID 목록입니다. 사용자에게 보이는 객체 이름·번호는 handoff 전후 동일하게 유지됩니다.',
+    't-id-to-idx': '외부 object ID에서 새 Target 내부 index를 찾는 표입니다. 새 runtime에서 생성합니다.',
+    't-idx-to-id': '새 Target 내부 index에서 외부 object ID를 찾는 역방향 표입니다. 새 runtime에서 생성합니다.',
+    't-output-root': '객체별로 완료된 conditioning/non-conditioning record를 보관하는 Target의 중첩 dictionary입니다. CanonicalState의 tensor와 metadata를 다시 조립해 만듭니다.'
+  };
+
+  const edgeNotes = {
+    's-spatial>a-grid': 'Source 공간 기억의 H×W를 Target memory grid와 비교합니다. 다르면 bilinear interpolation으로 맞추고, 현재 Small→Base+처럼 같으면 그대로 통과합니다.',
+    'a-grid>a-spatial': '크기가 정렬된 공간 기억만 learned head에 넘깁니다. 따라서 MLP는 위치 크기 문제가 아니라 채널별 표현 의미를 학습합니다.',
+    's-pointer>a-pointer': 'object pointer는 제안 방식에서 별도 nonlinear head로 번역합니다. identity/direct copy는 학습 head의 설명이 아니라 별도 baseline입니다.',
+    's-presence>a-diagnostics': '과거 Source object_score_logits는 새 Target mask 예측의 memory read에 직접 사용하지 않습니다. 진단·재현 기록으로만 남기고 learned translator 입력에서는 제외합니다.',
+    's-is-cond>a-route': '각 record의 true/false 표지를 읽어 사용자 기준 기억과 자동 추적 기억을 서로 다른 보관함으로 나눕니다.',
+    'a-route>t-cond-root': 'true인 record를 conditioning history에 넣어 사용자가 직접 지정한 강한 기준 기억으로 유지합니다.',
+    'a-route>t-noncond-root': 'false인 record를 non-conditioning history에 넣어 모델이 스스로 만든 일반 추적 기억으로 유지합니다.',
+    's-validity>a-valid': 'padding으로 채운 빈 slot은 Target history에 들어가지 않도록 걸러냅니다.',
+    's-object-ids>a-id-copy': '사용자가 식별하는 외부 object ID의 값과 목록 순서를 바꾸지 않고 보존합니다.',
+    'a-id-copy>t-obj-ids': '보존한 외부 ID 목록을 Target obj_ids로 그대로 설정합니다.',
+    'a-id-copy>a-registry': '동일한 외부 ID 목록을 입력으로 사용하되 내부 index 표는 새 Target runtime용으로 다시 만듭니다.',
+    'a-registry>t-id-to-idx': '외부 object ID에서 Target 내부 index를 찾는 정방향 표를 새로 만듭니다.',
+    'a-registry>t-idx-to-id': 'Target 내부 index에서 외부 object ID를 찾는 역방향 표를 새로 만듭니다.',
+    's-switch-frame>a-cutoff': 'Source가 마지막으로 처리한 frame t 값을 변경하지 않고 그대로 전달합니다. Continuation boundary가 이 값을 읽어 과거 기록의 끝과 다음 시작점을 결정합니다.',
+    'a-cutoff>t-next': 'Target의 첫 새 추론 프레임을 t+1로 정합니다. switch_frame 자체는 Target inference_state의 영구 필드가 아닙니다.',
+    'a-cutoff>a-correction-route': 'correction frame과 switch_frame을 비교해 전환 이후의 일반 Target correction인지, 전환 이전 history를 다시 만드는 replay fallback인지 결정합니다.',
+    'a-correction-route>t-forward-correction': '전환 이후 frame은 현재 RGB와 prompt를 Target에 넣어 새 record를 만들며 과거 구간 replay가 필요하지 않습니다.',
+    'a-correction-route>a-replay': '전환 이전 frame을 수정하면 translated history만 부분 수정하지 않고 원본 RGB와 prompt timeline을 사용하는 Target replay로 보냅니다.',
+    'a-replay>t-past-correction': '안전한 이전 checkpoint가 있으면 그 다음부터, 없으면 최초 필요한 conditioning frame부터 현재 시점까지 Target으로 다시 처리합니다.',
+    'a-target-write>t-new-pred': '새 frame과 correction replay의 pred_masks는 Source mask를 번역하지 않고 Target decoder가 생성합니다.',
+    'a-target-write>t-new-score': '새 object_score_logits는 Target이 해당 frame에서 새로 계산합니다. 과거 Source score의 수치 기준을 이어받지 않습니다.',
+    'a-target-write>t-new-memory': '새 mask 결과는 Target memory encoder를 거쳐 Target-native maskmem_features, obj_ptr, positional encoding으로 기록됩니다.',
+    's-pos-policy>a-pe': 'Source positional tensor를 번역하지 말고 Target position module을 호출하라는 정책을 전달합니다.',
+    'a-pe>t-constants': 'Target이 만든 positional encoding을 constants cache에 저장해 같은 grid에서 재사용합니다.',
+    's-pos-records>a-diagnostics': 'Source에서 관측한 positional encoding은 비교와 문제 진단에는 쓸 수 있지만 Target PE로 주입하지 않습니다.',
+    's-pred-masks>a-archive': '과거 Source 예측 mask는 숫자를 바꾸지 않고 별도 표시 archive에 보존합니다. Target output_dict의 refinement logit으로 주입하지 않습니다.',
+    'a-archive>t-source-pred-archive': '사용자는 전환 이전 결과를 그대로 검토할 수 있지만, Target은 이 archive를 새 mask나 memory를 만드는 입력으로 읽지 않습니다.',
+    's-schema>a-schema': '저장 상태의 schema 버전이 현재 코드가 이해할 수 있는 형식인지 먼저 검사합니다.',
+    's-storage-device>a-diagnostics': 'Source가 어느 장치에 저장했는지는 로그로만 남깁니다. Target은 자신의 storage_device를 사용합니다.',
+    's-compute-device>a-diagnostics': 'Source GPU/CPU 정보는 로그로만 남깁니다. Target 연산 장치는 새 runtime 설정을 따릅니다.'
+  };
+
+  const svg = root.querySelector('.edge-layer');
+  const edgeRoot = svg.querySelector('[data-edge-root]');
+  const defs = svg.querySelector('defs');
+  const modes = ['adapter', 'learned', 'preserve', 'support', 'regenerate', 'control', 'runtime', 'none'];
+  let selectedEdgeIndex = null;
+
+  defs.innerHTML = modes.map(mode => {
+    const color = mode === 'adapter' ? 'var(--viz-series-6)' :
+      mode === 'learned' ? 'var(--viz-series-1)' :
+      mode === 'preserve' ? 'var(--viz-series-2)' :
+      mode === 'support' ? 'var(--viz-series-3)' :
+      mode === 'regenerate' ? 'var(--viz-series-4)' :
+      mode === 'control' ? 'var(--viz-series-5)' :
+      mode === 'none' ? 'var(--destructive)' : 'var(--muted-foreground)';
+    return `<marker id="arrow-${mode}" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse"><path d="M 0 0 L 10 5 L 0 10 z" fill="${color}"></path></marker>`;
+  }).join('');
+
+  function pathFor(fromEl, toEl) {
+    const stage = root.querySelector('.map-stage').getBoundingClientRect();
+    const a = fromEl.getBoundingClientRect();
+    const b = toEl.getBoundingClientRect();
+    const horizontal = b.left > a.right + 24;
+    if (horizontal) {
+      const x1 = a.right - stage.left;
+      const y1 = a.top + a.height / 2 - stage.top;
+      const x2 = b.left - stage.left;
+      const y2 = b.top + b.height / 2 - stage.top;
+      const bend = Math.max(34, (x2 - x1) * 0.44);
+      return `M ${x1} ${y1} C ${x1 + bend} ${y1}, ${x2 - bend} ${y2}, ${x2} ${y2}`;
+    }
+    const x1 = a.left + a.width / 2 - stage.left;
+    const y1 = a.bottom - stage.top;
+    const x2 = b.left + b.width / 2 - stage.left;
+    const y2 = b.top - stage.top;
+    const bend = Math.max(34, (y2 - y1) * 0.44);
+    return `M ${x1} ${y1} C ${x1} ${y1 + bend}, ${x2} ${y2 - bend}, ${x2} ${y2}`;
+  }
+
+  function nodeText(id) {
+    const row = root.querySelector(`[data-node="${id}"]`);
+    if (!row) return id;
+    const field = row.querySelector('code')?.textContent?.trim() || id;
+    const meaning = row.querySelector('.meaning')?.textContent?.trim();
+    return meaning ? `${field} (${meaning})` : field;
+  }
+
+  function showNodeDetail(id) {
+    selectedEdgeIndex = null;
+    root.querySelector('[data-detail-mode]').textContent = 'State 설명';
+    root.querySelector('[data-detail-title]').textContent = nodeText(id);
+    root.querySelector('[data-detail-text]').textContent =
+      nodeDetails[id] || '이 항목은 지도에 표시된 화살표를 선택하면 입력값, 처리 방식과 도착 위치를 확인할 수 있습니다.';
+    updateSelectedEdge();
+  }
+
+  function showModeDetail(mode) {
+    selectedEdgeIndex = null;
+    if (mode === 'all') {
+      root.querySelector('[data-detail-mode]').textContent = '전체 연결 방식';
+      root.querySelector('[data-detail-title]').textContent = '모든 state 처리 방식';
+      root.querySelector('[data-detail-text]').textContent =
+        '학습 변환은 표현 tensor를 바꾸고, 그대로 보존은 값의 의미를 유지합니다. 재구성·검증은 보존된 값을 어느 Target 위치에 둘지 정하며, Target 재생성은 Target 자신의 정책으로 새 값을 만드는 방식입니다.';
+    } else {
+      const detail = modeDetails[mode];
+      root.querySelector('[data-detail-mode]').textContent = detail.label;
+      root.querySelector('[data-detail-title]').textContent = detail.label;
+      root.querySelector('[data-detail-text]').textContent = `${detail.action} ${detail.reason}`;
+    }
+    updateSelectedEdge();
+  }
+
+  function showEdgeDetail(edge, index) {
+    selectedEdgeIndex = index;
+    const detail = modeDetails[edge.mode];
+    const from = nodeText(edge.from);
+    const to = nodeText(edge.to);
+    root.querySelector('[data-detail-mode]').textContent = detail.label;
+    root.querySelector('[data-detail-title]').textContent = `${from} → ${to}`;
+    root.querySelector('[data-detail-text]').textContent =
+      edgeNotes[`${edge.from}>${edge.to}`] ||
+      `“${from}”의 정보를 “${to}”로 ${detail.action}. ${detail.reason}`;
+    updateSelectedEdge();
+  }
+
+  function updateSelectedEdge() {
+    root.querySelectorAll('.edge[data-edge-index]').forEach(path => {
+      path.classList.toggle(
+        'is-selected',
+        Number(path.dataset.edgeIndex) === selectedEdgeIndex &&
+          !path.classList.contains('runtime-rail')
+      );
+    });
+  }
+
+  function draw() {
+    const stageEl = root.querySelector('.map-stage');
+    const width = stageEl.clientWidth;
+    const height = stageEl.scrollHeight;
+    svg.setAttribute('viewBox', `0 0 ${width} ${height}`);
+    svg.setAttribute('width', width);
+    svg.setAttribute('height', height);
+    edgeRoot.innerHTML = '';
+    edges.forEach((edge, index) => {
+      const fromEl = root.querySelector(`[data-node="${edge.from}"]`);
+      const toEl = root.querySelector(`[data-node="${edge.to}"]`);
+      if (!fromEl || !toEl) return;
+      const d = pathFor(fromEl, toEl);
+      if (edge.mode === 'runtime') {
+        const outer = document.createElementNS('http://www.w3.org/2000/svg', 'path');
+        outer.setAttribute('d', d);
+        outer.setAttribute('class', 'edge runtime');
+        outer.dataset.mode = edge.mode;
+        outer.dataset.edgeIndex = String(index);
+        edgeRoot.appendChild(outer);
+        const rail = document.createElementNS('http://www.w3.org/2000/svg', 'path');
+        rail.setAttribute('d', d);
+        rail.setAttribute('class', 'edge runtime-rail');
+        rail.dataset.mode = edge.mode;
+        rail.dataset.edgeIndex = String(index);
+        rail.setAttribute('marker-end', `url(#arrow-${edge.mode})`);
+        edgeRoot.appendChild(rail);
+      } else {
+        const path = document.createElementNS('http://www.w3.org/2000/svg', 'path');
+        path.setAttribute('d', d);
+        path.setAttribute('class', `edge ${edge.mode}`);
+        path.dataset.mode = edge.mode;
+        path.dataset.edgeIndex = String(index);
+        path.setAttribute('marker-end', `url(#arrow-${edge.mode})`);
+        edgeRoot.appendChild(path);
+      }
+      const hit = document.createElementNS('http://www.w3.org/2000/svg', 'path');
+      hit.setAttribute('d', d);
+      hit.setAttribute('class', 'edge-hit');
+      hit.setAttribute('tabindex', '0');
+      hit.setAttribute('role', 'button');
+      hit.setAttribute('aria-label', `${nodeText(edge.from)}에서 ${nodeText(edge.to)}로 가는 ${modeDetails[edge.mode].label} 설명`);
+      hit.dataset.mode = edge.mode;
+      hit.dataset.edgeIndex = String(index);
+      hit.addEventListener('click', () => showEdgeDetail(edge, index));
+      hit.addEventListener('keydown', event => {
+        if (event.key === 'Enter' || event.key === ' ') {
+          event.preventDefault();
+          showEdgeDetail(edge, index);
+        }
+      });
+      edgeRoot.appendChild(hit);
+    });
+    applyFilter(root.querySelector('[data-filter][aria-pressed="true"]')?.dataset.filter || 'all');
+    updateSelectedEdge();
+  }
+
+  function applyFilter(filter) {
+    const activeNodes = new Set();
+    for (const edge of edges) {
+      if (filter === 'all' || edge.mode === filter) {
+        activeNodes.add(edge.from);
+        activeNodes.add(edge.to);
+      }
+    }
+    root.querySelectorAll('.edge').forEach(path => {
+      const active = filter === 'all' || path.dataset.mode === filter;
+      path.classList.toggle('is-dim', !active);
+      path.classList.toggle('is-focus', active && filter !== 'all');
+    });
+    root.querySelectorAll('.edge-hit').forEach(path => {
+      const active = filter === 'all' || path.dataset.mode === filter;
+      path.classList.toggle('is-inactive', !active);
+    });
+    root.querySelectorAll('.field-row').forEach(row => {
+      const active = filter === 'all' || activeNodes.has(row.dataset.node);
+      row.classList.toggle('is-dim', !active);
+      row.classList.toggle('is-focus', active && filter !== 'all');
+    });
+  }
+
+  root.querySelectorAll('[data-filter]').forEach(button => {
+    button.addEventListener('click', () => {
+      root.querySelectorAll('[data-filter]').forEach(peer => {
+        const active = peer === button;
+        peer.setAttribute('aria-pressed', String(active));
+        peer.classList.toggle('btn-primary', active);
+        peer.classList.toggle('btn-ghost', !active);
+      });
+      applyFilter(button.dataset.filter);
+      showModeDetail(button.dataset.filter);
+    });
+  });
+
+  let frame = 0;
+  const schedule = () => {
+    cancelAnimationFrame(frame);
+    frame = requestAnimationFrame(draw);
+  };
+  new ResizeObserver(schedule).observe(root.querySelector('.map-stage'));
+  window.addEventListener('resize', schedule, {passive: true});
+  schedule();
+})();
+</script>
+
+
+</body>
+</html>

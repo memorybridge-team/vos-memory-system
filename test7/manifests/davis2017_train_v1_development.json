@@ -1,0 +1,32 @@
+{
+  "schema_version": "cmmt.video_split_manifest.v1",
+  "dataset": "DAVIS 2017 trainval 480p",
+  "release": null,
+  "source_split": "train",
+  "split": "development",
+  "seed": 7,
+  "fit_fraction": 0.8,
+  "video_key": "sequence",
+  "videos": [
+    "bear",
+    "dogs-scale",
+    "drift-turn",
+    "drone",
+    "elephant",
+    "flamingo",
+    "horsejump-low",
+    "koala",
+    "lucia",
+    "mallard-water",
+    "rallye",
+    "scooter-board",
+    "scooter-gray",
+    "stroller",
+    "tennis",
+    "tractor-sand"
+  ],
+  "video_count": 16,
+  "case_count": 133,
+  "source_manifest_content_sha256": "5da127cead8783d1b55ea07b758d6829f8cc7941618a5f218e717f0f080e8db3",
+  "content_sha256": "3eac254a26c4448804add7e4f4d75202128cdd459b944e75bbf7ab5d3cd431cd"
+}

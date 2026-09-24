@@ -1,0 +1,53 @@
+[build-system]
+requires = ["setuptools>=68", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "vos-memory-translator-nonlinear"
+version = "0.1.0"
+description = "SAM 2 state translation research with a reproducible VOST Base+ handoff diagnostic"
+requires-python = ">=3.10"
+dependencies = [
+  "numpy>=1.24",
+  "Pillow>=9.4",
+  "torch>=2.3",
+]
+
+[project.optional-dependencies]
+dev = ["pytest>=8"]
+lvos-eval = ["opencv-python-headless>=4.8", "scikit-image>=0.21"]
+vost-eval = [
+  "opencv-python-headless>=4.8",
+  "scikit-image>=0.21",
+  "scipy>=1.10",
+  "tqdm>=4.65",
+]
+
+[project.scripts]
+sam2-memory-probe = "vos_memory_inspector.cli:probe_main"
+sam2-memory-compare = "vos_memory_inspector.cli:compare_main"
+sam2-davis-check = "vos_memory_inspector.cli:davis_main"
+sam2-davis-download = "vos_memory_inspector.cli:davis_download_main"
+cmmt-davis-build-manifest = "vos_memory_inspector.cli:davis_manifest_main"
+cmmt-mose-build-manifest = "vos_memory_inspector.cli:mose_manifest_main"
+cmmt-lvos-build-manifest = "vos_memory_inspector.cli:lvos_manifest_main"
+cmmt-davis-future-eval = "vos_memory_inspector.cli:davis_future_evaluation_main"
+cmmt-state-inspect = "vos_memory_inspector.cli:state_inspect_main"
+cmmt-synthetic-experiment = "vos_memory_inspector.cli:synthetic_experiment_main"
+cmmt-paired-experiment = "vos_memory_inspector.cli:paired_experiment_main"
+sam2-roundtrip-smoke = "vos_memory_inspector.cli:roundtrip_main"
+sam2-prompt-timeline-roundtrip = "vos_memory_inspector.cli:prompt_timeline_roundtrip_main"
+sam2-correction-roundtrip = "vos_memory_inspector.cli:correction_roundtrip_main"
+sam2-repeated-switch-roundtrip = "vos_memory_inspector.cli:repeated_switch_roundtrip_main"
+cmmt-sam2-prepare-case = "vos_memory_inspector.cli:prepare_handoff_case_main"
+cmmt-sam2-cached-handoff = "vos_memory_inspector.cli:cached_handoff_main"
+cmmt-sam2-cached-baseline = "vos_memory_inspector.cli:cached_baseline_main"
+sam2-direct-handoff-smoke = "vos_memory_inspector.cli:direct_handoff_main"
+sam2-ridge-handoff-smoke = "vos_memory_inspector.cli:ridge_handoff_main"
+cmmt-task = "vos_memory_inspector.research_task:main"
+
+[tool.setuptools.packages.find]
+where = ["src"]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]

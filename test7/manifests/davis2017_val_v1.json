@@ -1,0 +1,4763 @@
+{
+  "schema_version": "cmmt.davis_evaluation_manifest.v1",
+  "dataset": "DAVIS 2017 trainval 480p",
+  "dataset_root_policy": "runtime_argument_not_stored",
+  "ground_truth_policy": "GT selects and tags cases only; GT pixels are never model inputs.",
+  "split": "val",
+  "resolution": "480p",
+  "seed": 7,
+  "selection_policy": {
+    "regular_quantiles": [
+      0.25,
+      0.5,
+      0.75
+    ],
+    "min_prefix_frames": 5,
+    "min_future_frames": 20,
+    "area_drop_ratio": 0.35,
+    "area_growth_ratio": 3.0,
+    "last_video_frame_excluded": true
+  },
+  "sequence_count": 30,
+  "case_count": 249,
+  "cases": [
+    {
+      "case_id": "val:bike-packing:obj1:switch14",
+      "split": "val",
+      "sequence": "bike-packing",
+      "object_id": 1,
+      "switch_frame": 14,
+      "future_end_frame": 67,
+      "frame_count": 69,
+      "tags": [
+        "max_centroid_motion"
+      ],
+      "transition": {
+        "area": 28121,
+        "next_area": 18022,
+        "next_over_current_area": 0.6408733686568756,
+        "current_over_next_area": 1.5603706580845633,
+        "centroid_displacement_over_diagonal": 0.03785911522232416
+      }
+    },
+    {
+      "case_id": "val:bike-packing:obj1:switch15",
+      "split": "val",
+      "sequence": "bike-packing",
+      "object_id": 1,
+      "switch_frame": 15,
+      "future_end_frame": 67,
+      "frame_count": 69,
+      "tags": [
+        "regular_q25"
+      ],
+      "transition": {
+        "area": 18022,
+        "next_area": 17694,
+        "next_over_current_area": 0.9818000221950949,
+        "current_over_next_area": 1.0185373572962586,
+        "centroid_displacement_over_diagonal": 0.030700100050583424
+      }
+    },
+    {
+      "case_id": "val:bike-packing:obj1:switch26",
+      "split": "val",
+      "sequence": "bike-packing",
+      "object_id": 1,
+      "switch_frame": 26,
+      "future_end_frame": 67,
+      "frame_count": 69,
+      "tags": [
+        "regular_q50"
+      ],
+      "transition": {
+        "area": 58745,
+        "next_area": 58653,
+        "next_over_current_area": 0.998433909268874,
+        "current_over_next_area": 1.0015685472183862,
+        "centroid_displacement_over_diagonal": 0.00040955369396960444
+      }
+    },
+    {
+      "case_id": "val:bike-packing:obj1:switch36",
+      "split": "val",
+      "sequence": "bike-packing",
+      "object_id": 1,
+      "switch_frame": 36,
+      "future_end_frame": 67,
+      "frame_count": 69,
+      "tags": [
+        "regular_q75"
+      ],
+      "transition": {
+        "area": 58163,
+        "next_area": 58384,
+        "next_over_current_area": 1.003799666454619,
+        "current_over_next_area": 0.9962147163606467,
+        "centroid_displacement_over_diagonal": 0.0008065463074688017
+      }
+    },
+    {
+      "case_id": "val:bike-packing:obj2:switch15",
+      "split": "val",
+      "sequence": "bike-packing",
+      "object_id": 2,
+      "switch_frame": 15,
+      "future_end_frame": 67,
+      "frame_count": 69,
+      "tags": [
+        "regular_q25"
+      ],
+      "transition": {
+        "area": 53365,
+        "next_area": 50031,
+        "next_over_current_area": 0.9375245947718542,
+        "current_over_next_area": 1.06663868401591,
+        "centroid_displacement_over_diagonal": 0.004991251421879603
+      }
+    },
+    {
+      "case_id": "val:bike-packing:obj2:switch26",
+      "split": "val",
+      "sequence": "bike-packing",
+      "object_id": 2,
+      "switch_frame": 26,
+      "future_end_frame": 67,
+      "frame_count": 69,
+      "tags": [
+        "regular_q50"
+      ],
+      "transition": {
+        "area": 33849,
+        "next_area": 33746,
+        "next_over_current_area": 0.9969570740642264,
+        "current_over_next_area": 1.0030522135956854,
+        "centroid_displacement_over_diagonal": 0.0028173559283843123
+      }
+    },
+    {
+      "case_id": "val:bike-packing:obj2:switch36",
+      "split": "val",
+      "sequence": "bike-packing",
+      "object_id": 2,
+      "switch_frame": 36,
+      "future_end_frame": 67,
+      "frame_count": 69,
+      "tags": [
+        "regular_q75"
+      ],
+      "transition": {
+        "area": 34678,
+        "next_area": 34569,
+        "next_over_current_area": 0.9968567968164254,
+        "current_over_next_area": 1.0031531140617316,
+        "centroid_displacement_over_diagonal": 0.0008780106035208247
+      }
+    },
+    {
+      "case_id": "val:bike-packing:obj2:switch47",
+      "split": "val",
+      "sequence": "bike-packing",
+      "object_id": 2,
+      "switch_frame": 47,
+      "future_end_frame": 67,
+      "frame_count": 69,
+      "tags": [
+        "max_centroid_motion"
+      ],
+      "transition": {
+        "area": 36506,
+        "next_area": 38273,
+        "next_over_current_area": 1.048403002246206,
+        "current_over_next_area": 0.953831682909623,
+        "centroid_displacement_over_diagonal": 0.02371177157454723
+      }
+    },
+    {
+      "case_id": "val:blackswan:obj1:switch10",
+      "split": "val",
+      "sequence": "blackswan",
+      "object_id": 1,
+      "switch_frame": 10,
+      "future_end_frame": 48,
+      "frame_count": 50,
+      "tags": [
+        "regular_q25"
+      ],
+      "transition": {
+        "area": 41023,
+        "next_area": 41024,
+        "next_over_current_area": 1.0000243765692416,
+        "current_over_next_area": 0.999975624024961,
+        "centroid_displacement_over_diagonal": 0.002379127936882567
+      }
+    },
+    {
+      "case_id": "val:blackswan:obj1:switch15",
+      "split": "val",
+      "sequence": "blackswan",
+      "object_id": 1,
+      "switch_frame": 15,
+      "future_end_frame": 48,
+      "frame_count": 50,
+      "tags": [
+        "max_centroid_motion"
+      ],
+      "transition": {
+        "area": 41031,
+        "next_area": 41030,
+        "next_over_current_area": 0.9999756281835686,
+        "current_over_next_area": 1.0000243724104314,
+        "centroid_displacement_over_diagonal": 0.006480178970093812
+      }
+    },
+    {
+      "case_id": "val:blackswan:obj1:switch16",
+      "split": "val",
+      "sequence": "blackswan",
+      "object_id": 1,
+      "switch_frame": 16,
+      "future_end_frame": 48,
+      "frame_count": 50,
+      "tags": [
+        "regular_q50"
+      ],
+      "transition": {
+        "area": 41030,
+        "next_area": 40976,
+        "next_over_current_area": 0.9986838898367049,
+        "current_over_next_area": 1.0013178445919562,
+        "centroid_displacement_over_diagonal": 0.005144109755796226
+      }
+    },
+    {
+      "case_id": "val:blackswan:obj1:switch22",
+      "split": "val",
+      "sequence": "blackswan",
+      "object_id": 1,
+      "switch_frame": 22,
+      "future_end_frame": 48,
+      "frame_count": 50,
+      "tags": [
+        "regular_q75"
+      ],
+      "transition": {
+        "area": 40649,
+        "next_area": 40569,
+        "next_over_current_area": 0.998031931904844,
+        "current_over_next_area": 1.0019719490251178,
+        "centroid_displacement_over_diagonal": 0.0027865441573981147
+      }
+    },
+    {
+      "case_id": "val:bmx-trees:obj1:switch15",
+      "split": "val",
+      "sequence": "bmx-trees",
+      "object_id": 1,
+      "switch_frame": 15,
+      "future_end_frame": 78,
+      "frame_count": 80,
+      "tags": [
+        "max_centroid_motion"
+      ],
+      "transition": {
+        "area": 4346,
+        "next_area": 5404,
+        "next_over_current_area": 1.2434422457432122,
+        "current_over_next_area": 0.804219096965211,
+        "centroid_displacement_over_diagonal": 0.022218124744443478
+      }
+    },
+    {
+      "case_id": "val:bmx-trees:obj1:switch18",
+      "split": "val",
+      "sequence": "bmx-trees",
+      "object_id": 1,
+      "switch_frame": 18,
+      "future_end_frame": 78,
+      "frame_count": 80,
+      "tags": [
+        "regular_q25"
+      ],
+      "transition": {
+        "area": 4095,
+        "next_area": 4024,
+        "next_over_current_area": 0.9826617826617826,
+        "current_over_next_area": 1.0176441351888668,
+        "centroid_displacement_over_diagonal": 0.006971413526915518
+      }
+    },
+    {
+      "case_id": "val:bmx-trees:obj1:switch31",
+      "split": "val",
+      "sequence": "bmx-trees",
+      "object_id": 1,
+      "switch_frame": 31,
+      "future_end_frame": 78,
+      "frame_count": 80,
+      "tags": [
+        "regular_q50"
+      ],
+      "transition": {
+        "area": 4539,
+        "next_area": 4879,
+        "next_over_current_area": 1.0749063670411985,
+        "current_over_next_area": 0.9303135888501742,
+        "centroid_displacement_over_diagonal": 0.012129182150401898
+      }
+    },
+    {
+      "case_id": "val:bmx-trees:obj1:switch44",
+      "split": "val",
+      "sequence": "bmx-trees",
+      "object_id": 1,
+      "switch_frame": 44,
+      "future_end_frame": 78,
+      "frame_count": 80,
+      "tags": [
+        "regular_q75"
+      ],
+      "transition": {
+        "area": 3016,
+        "next_area": 2802,
+        "next_over_current_area": 0.9290450928381963,
+        "current_over_next_area": 1.0763740185581727,
+        "centroid_displacement_over_diagonal": 0.005745815346611708
+      }
+    },
+    {
+      "case_id": "val:bmx-trees:obj2:switch16",
+      "split": "val",
+      "sequence": "bmx-trees",
+      "object_id": 2,
+      "switch_frame": 16,
+      "future_end_frame": 78,
+      "frame_count": 80,
+      "tags": [
+        "max_centroid_motion"
+      ],
+      "transition": {
+        "area": 2586,
+        "next_area": 2345,
+        "next_over_current_area": 0.9068058778035576,
+        "current_over_next_area": 1.1027718550106609,
+        "centroid_displacement_over_diagonal": 0.051330769362707314
+      }
+    },
+    {
+      "case_id": "val:bmx-trees:obj2:switch18",
+      "split": "val",
+      "sequence": "bmx-trees",
+      "object_id": 2,
+      "switch_frame": 18,
+      "future_end_frame": 78,
+      "frame_count": 80,
+      "tags": [
+        "regular_q25"
+      ],
+      "transition": {
+        "area": 4510,
+        "next_area": 6135,
+        "next_over_current_area": 1.360310421286031,
+        "current_over_next_area": 0.7351263243683781,
+        "centroid_displacement_over_diagonal": 0.023940450487058826
+      }
+    },
+    {
+      "case_id": "val:bmx-trees:obj2:switch31",
+      "split": "val",
+      "sequence": "bmx-trees",
+      "object_id": 2,
+      "switch_frame": 31,
+      "future_end_frame": 78,
+      "frame_count": 80,
+      "tags": [
+        "regular_q50"
+      ],
+      "transition": {
+        "area": 5877,
+        "next_area": 5741,
+        "next_over_current_area": 0.9768589416368896,
+        "current_over_next_area": 1.0236892527434245,
+        "centroid_displacement_over_diagonal": 0.0068802039190925405
+      }
+    },
+    {
+      "case_id": "val:bmx-trees:obj2:switch44",
+      "split": "val",
+      "sequence": "bmx-trees",
+      "object_id": 2,
+      "switch_frame": 44,
+      "future_end_frame": 78,
+      "frame_count": 80,
+      "tags": [
+        "regular_q75"
+      ],
+      "transition": {
+        "area": 4860,
+        "next_area": 4803,
+        "next_over_current_area": 0.9882716049382716,
+        "current_over_next_area": 1.0118675827607746,
+        "centroid_displacement_over_diagonal": 0.00828871051115906
+      }
+    },
+    {
+      "case_id": "val:breakdance:obj1:switch7",
+      "split": "val",
+      "sequence": "breakdance",
+      "object_id": 1,
+      "switch_frame": 7,
+      "future_end_frame": 82,
+      "frame_count": 84,
+      "tags": [
+        "max_centroid_motion"
+      ],
+      "transition": {
+        "area": 39240,
+        "next_area": 32954,
+        "next_over_current_area": 0.8398063200815494,
+        "current_over_next_area": 1.1907507434605815,
+        "centroid_displacement_over_diagonal": 0.036512227868520424
+      }
+    },
+    {
+      "case_id": "val:breakdance:obj1:switch18",
+      "split": "val",
+      "sequence": "breakdance",
+      "object_id": 1,
+      "switch_frame": 18,
+      "future_end_frame": 82,
+      "frame_count": 84,
+      "tags": [
+        "regular_q25"
+      ],
+      "transition": {
+        "area": 42789,
+        "next_area": 43371,
+        "next_over_current_area": 1.0136016265862722,
+        "current_over_next_area": 0.9865808950681331,
+        "centroid_displacement_over_diagonal": 0.018011862620554726
+      }
+    },
+    {
+      "case_id": "val:breakdance:obj1:switch33",
+      "split": "val",
+      "sequence": "breakdance",
+      "object_id": 1,
+      "switch_frame": 33,
+      "future_end_frame": 82,
+      "frame_count": 84,
+      "tags": [
+        "regular_q50"
+      ],
+      "transition": {
+        "area": 41954,
+        "next_area": 41290,
+        "next_over_current_area": 0.9841731420126806,
+        "current_over_next_area": 1.0160813756357472,
+        "centroid_displacement_over_diagonal": 0.004102295409370468
+      }
+    },
+    {
+      "case_id": "val:breakdance:obj1:switch48",
+      "split": "val",
+      "sequence": "breakdance",
+      "object_id": 1,
+      "switch_frame": 48,
+      "future_end_frame": 82,
+      "frame_count": 84,
+      "tags": [
+        "regular_q75"
+      ],
+      "transition": {
+        "area": 39456,
+        "next_area": 40249,
+        "next_over_current_area": 1.0200983373884833,
+        "current_over_next_area": 0.9802976471465129,
+        "centroid_displacement_over_diagonal": 0.01056968920233813
+      }
+    },
+    {
+      "case_id": "val:camel:obj1:switch20",
+      "split": "val",
+      "sequence": "camel",
+      "object_id": 1,
+      "switch_frame": 20,
+      "future_end_frame": 88,
+      "frame_count": 90,
+      "tags": [
+        "max_centroid_motion",
+        "regular_q25"
+      ],
+      "transition": {
+        "area": 63015,
+        "next_area": 62148,
+        "next_over_current_area": 0.9862413711021185,
+        "current_over_next_area": 1.0139505696080324,
+        "centroid_displacement_over_diagonal": 0.004565154172915083
+      }
+    },
+    {
+      "case_id": "val:camel:obj1:switch36",
+      "split": "val",
+      "sequence": "camel",
+      "object_id": 1,
+      "switch_frame": 36,
+      "future_end_frame": 88,
+      "frame_count": 90,
+      "tags": [
+        "regular_q50"
+      ],
+      "transition": {
+        "area": 55004,
+        "next_area": 54480,
+        "next_over_current_area": 0.9904734201149007,
+        "current_over_next_area": 1.009618208516887,
+        "centroid_displacement_over_diagonal": 0.0025358828761635854
+      }
+    },
+    {
+      "case_id": "val:camel:obj1:switch52",
+      "split": "val",
+      "sequence": "camel",
+      "object_id": 1,
+      "switch_frame": 52,
+      "future_end_frame": 88,
+      "frame_count": 90,
+      "tags": [
+        "regular_q75"
+      ],
+      "transition": {
+        "area": 44141,
+        "next_area": 43462,
+        "next_over_current_area": 0.9846174758161347,
+        "current_over_next_area": 1.0156228429432608,
+        "centroid_displacement_over_diagonal": 0.00026630608369004394
+      }
+    },
+    {
+      "case_id": "val:car-roundabout:obj1:switch4",
+      "split": "val",
+      "sequence": "car-roundabout",
+      "object_id": 1,
+      "switch_frame": 4,
+      "future_end_frame": 73,
+      "frame_count": 75,
+      "tags": [
+        "max_centroid_motion"
+      ],
+      "transition": {
+        "area": 60120,
+        "next_area": 60606,
+        "next_over_current_area": 1.0080838323353294,
+        "current_over_next_area": 0.991980991980992,
+        "centroid_displacement_over_diagonal": 0.003673750970052236
+      }
+    },
+    {
+      "case_id": "val:car-roundabout:obj1:switch16",
+      "split": "val",
+      "sequence": "car-roundabout",
+      "object_id": 1,
+      "switch_frame": 16,
+      "future_end_frame": 73,
+      "frame_count": 75,
+      "tags": [
+        "regular_q25"
+      ],
+      "transition": {
+        "area": 65311,
+        "next_area": 65627,
+        "next_over_current_area": 1.004838388632849,
+        "current_over_next_area": 0.995184908650403,
+        "centroid_displacement_over_diagonal": 0.0007857207381154825
+      }
+    },
+    {
+      "case_id": "val:car-roundabout:obj1:switch28",
+      "split": "val",
+      "sequence": "car-roundabout",
+      "object_id": 1,
+      "switch_frame": 28,
+      "future_end_frame": 73,
+      "frame_count": 75,
+      "tags": [
+        "regular_q50"
+      ],
+      "transition": {
+        "area": 65550,
+        "next_area": 65278,
+        "next_over_current_area": 0.9958504958047292,
+        "current_over_next_area": 1.0041667943258066,
+        "centroid_displacement_over_diagonal": 0.0017451858880048593
+      }
+    },
+    {
+      "case_id": "val:car-roundabout:obj1:switch41",
+      "split": "val",
+      "sequence": "car-roundabout",
+      "object_id": 1,
+      "switch_frame": 41,
+      "future_end_frame": 73,
+      "frame_count": 75,
+      "tags": [
+        "regular_q75"
+      ],
+      "transition": {
+        "area": 60522,
+        "next_area": 59925,
+        "next_over_current_area": 0.9901358183800932,
+        "current_over_next_area": 1.009962453066333,
+        "centroid_displacement_over_diagonal": 0.000648870098770592
+      }
+    },
+    {
+      "case_id": "val:car-shadow:obj1:switch4",
+      "split": "val",
+      "sequence": "car-shadow",
+      "object_id": 1,
+      "switch_frame": 4,
+      "future_end_frame": 38,
+      "frame_count": 40,
+      "tags": [
+        "max_centroid_motion"
+      ],
+      "transition": {
+        "area": 37746,
+        "next_area": 36793,
+        "next_over_current_area": 0.9747522916335506,
+        "current_over_next_area": 1.0259016660777864,
+        "centroid_displacement_over_diagonal": 0.008481653025156662
+      }
+    },
+    {
+      "case_id": "val:car-shadow:obj1:switch8",
+      "split": "val",
+      "sequence": "car-shadow",
+      "object_id": 1,
+      "switch_frame": 8,
+      "future_end_frame": 38,
+      "frame_count": 40,
+      "tags": [
+        "regular_q25"
+      ],
+      "transition": {
+        "area": 33845,
+        "next_area": 32916,
+        "next_over_current_area": 0.9725513369773969,
+        "current_over_next_area": 1.0282233564224086,
+        "centroid_displacement_over_diagonal": 0.0057289909667822695
+      }
+    },
+    {
+      "case_id": "val:car-shadow:obj1:switch11",
+      "split": "val",
+      "sequence": "car-shadow",
+      "object_id": 1,
+      "switch_frame": 11,
+      "future_end_frame": 38,
+      "frame_count": 40,
+      "tags": [
+        "regular_q50"
+      ],
+      "transition": {
+        "area": 30995,
+        "next_area": 30056,
+        "next_over_current_area": 0.9697047910953379,
+        "current_over_next_area": 1.0312416821932393,
+        "centroid_displacement_over_diagonal": 0.0033167043416699776
+      }
+    },
+    {
+      "case_id": "val:car-shadow:obj1:switch14",
+      "split": "val",
+      "sequence": "car-shadow",
+      "object_id": 1,
+      "switch_frame": 14,
+      "future_end_frame": 38,
+      "frame_count": 40,
+      "tags": [
+        "regular_q75"
+      ],
+      "transition": {
+        "area": 28272,
+        "next_area": 27407,
+        "next_over_current_area": 0.9694043576683644,
+        "current_over_next_area": 1.0315612799649725,
+        "centroid_displacement_over_diagonal": 0.0023689685248685947
+      }
+    },
+    {
+      "case_id": "val:cows:obj1:switch22",
+      "split": "val",
+      "sequence": "cows",
+      "object_id": 1,
+      "switch_frame": 22,
+      "future_end_frame": 102,
+      "frame_count": 104,
+      "tags": [
+        "max_centroid_motion"
+      ],
+      "transition": {
+        "area": 55073,
+        "next_area": 55577,
+        "next_over_current_area": 1.0091514898407568,
+        "current_over_next_area": 0.9909315004408299,
+        "centroid_displacement_over_diagonal": 0.005014400783339792
+      }
+    },
+    {
+      "case_id": "val:cows:obj1:switch24",
+      "split": "val",
+      "sequence": "cows",
+      "object_id": 1,
+      "switch_frame": 24,
+      "future_end_frame": 102,
+      "frame_count": 104,
+      "tags": [
+        "regular_q25"
+      ],
+      "transition": {
+        "area": 55555,
+        "next_area": 55111,
+        "next_over_current_area": 0.9920079200792008,
+        "current_over_next_area": 1.008056467855782,
+        "centroid_displacement_over_diagonal": 0.003078696589477638
+      }
+    },
+    {
+      "case_id": "val:cows:obj1:switch43",
+      "split": "val",
+      "sequence": "cows",
+      "object_id": 1,
+      "switch_frame": 43,
+      "future_end_frame": 102,
+      "frame_count": 104,
+      "tags": [
+        "regular_q50"
+      ],
+      "transition": {
+        "area": 47755,
+        "next_area": 47872,
+        "next_over_current_area": 1.002450005235054,
+        "current_over_next_area": 0.9975559826203209,
+        "centroid_displacement_over_diagonal": 0.0013116199587477192
+      }
+    },
+    {
+      "case_id": "val:cows:obj1:switch62",
+      "split": "val",
+      "sequence": "cows",
+      "object_id": 1,
+      "switch_frame": 62,
+      "future_end_frame": 102,
+      "frame_count": 104,
+      "tags": [
+        "regular_q75"
+      ],
+      "transition": {
+        "area": 44371,
+        "next_area": 44535,
+        "next_over_current_area": 1.0036961078181694,
+        "current_over_next_area": 0.9963175030874593,
+        "centroid_displacement_over_diagonal": 0.0018665115554941795
+      }
+    },
+    {
+      "case_id": "val:dance-twirl:obj1:switch13",
+      "split": "val",
+      "sequence": "dance-twirl",
+      "object_id": 1,
+      "switch_frame": 13,
+      "future_end_frame": 88,
+      "frame_count": 90,
+      "tags": [
+        "max_centroid_motion"
+      ],
+      "transition": {
+        "area": 31841,
+        "next_area": 31310,
+        "next_over_current_area": 0.9833233880845451,
+        "current_over_next_area": 1.016959437879272,
+        "centroid_displacement_over_diagonal": 0.013639911032101451
+      }
+    },
+    {
+      "case_id": "val:dance-twirl:obj1:switch20",
+      "split": "val",
+      "sequence": "dance-twirl",
+      "object_id": 1,
+      "switch_frame": 20,
+      "future_end_frame": 88,
+      "frame_count": 90,
+      "tags": [
+        "regular_q25"
+      ],
+      "transition": {
+        "area": 21840,
+        "next_area": 21883,
+        "next_over_current_area": 1.0019688644688645,
+        "current_over_next_area": 0.9980350043412695,
+        "centroid_displacement_over_diagonal": 0.00933098509156646
+      }
+    },
+    {
+      "case_id": "val:dance-twirl:obj1:switch36",
+      "split": "val",
+      "sequence": "dance-twirl",
+      "object_id": 1,
+      "switch_frame": 36,
+      "future_end_frame": 88,
+      "frame_count": 90,
+      "tags": [
+        "regular_q50"
+      ],
+      "transition": {
+        "area": 25494,
+        "next_area": 24513,
+        "next_over_current_area": 0.9615203577312309,
+        "current_over_next_area": 1.0400195814465794,
+        "centroid_displacement_over_diagonal": 0.0023783075877074297
+      }
+    },
+    {
+      "case_id": "val:dance-twirl:obj1:switch52",
+      "split": "val",
+      "sequence": "dance-twirl",
+      "object_id": 1,
+      "switch_frame": 52,
+      "future_end_frame": 88,
+      "frame_count": 90,
+      "tags": [
+        "regular_q75"
+      ],
+      "transition": {
+        "area": 37527,
+        "next_area": 37248,
+        "next_over_current_area": 0.992565352945879,
+        "current_over_next_area": 1.0074903350515463,
+        "centroid_displacement_over_diagonal": 0.0031966836475739954
+      }
+    },
+    {
+      "case_id": "val:dog:obj1:switch12",
+      "split": "val",
+      "sequence": "dog",
+      "object_id": 1,
+      "switch_frame": 12,
+      "future_end_frame": 58,
+      "frame_count": 60,
+      "tags": [
+        "regular_q25"
+      ],
+      "transition": {
+        "area": 28813,
+        "next_area": 28640,
+        "next_over_current_area": 0.9939957658001597,
+        "current_over_next_area": 1.0060405027932962,
+        "centroid_displacement_over_diagonal": 0.011191185804619554
+      }
+    },
+    {
+      "case_id": "val:dog:obj1:switch21",
+      "split": "val",
+      "sequence": "dog",
+      "object_id": 1,
+      "switch_frame": 21,
+      "future_end_frame": 58,
+      "frame_count": 60,
+      "tags": [
+        "regular_q50"
+      ],
+      "transition": {
+        "area": 27700,
+        "next_area": 28783,
+        "next_over_current_area": 1.0390974729241877,
+        "current_over_next_area": 0.9623736233193204,
+        "centroid_displacement_over_diagonal": 0.013337960658240257
+      }
+    },
+    {
+      "case_id": "val:dog:obj1:switch23",
+      "split": "val",
+      "sequence": "dog",
+      "object_id": 1,
+      "switch_frame": 23,
+      "future_end_frame": 58,
+      "frame_count": 60,
+      "tags": [
+        "max_centroid_motion"
+      ],
+      "transition": {
+        "area": 30462,
+        "next_area": 31754,
+        "next_over_current_area": 1.042413498785372,
+        "current_over_next_area": 0.9593122126346287,
+        "centroid_displacement_over_diagonal": 0.0226382300259541
+      }
+    },
+    {
+      "case_id": "val:dog:obj1:switch30",
+      "split": "val",
+      "sequence": "dog",
+      "object_id": 1,
+      "switch_frame": 30,
+      "future_end_frame": 58,
+      "frame_count": 60,
+      "tags": [
+        "regular_q75"
+      ],
+      "transition": {
+        "area": 33391,
+        "next_area": 33716,
+        "next_over_current_area": 1.0097331616303795,
+        "current_over_next_area": 0.9903606596274765,
+        "centroid_displacement_over_diagonal": 0.01114887938155031
+      }
+    },
+    {
+      "case_id": "val:dogs-jump:obj1:switch14",
+      "split": "val",
+      "sequence": "dogs-jump",
+      "object_id": 1,
+      "switch_frame": 14,
+      "future_end_frame": 64,
+      "frame_count": 66,
+      "tags": [
+        "regular_q25"
+      ],
+      "transition": {
+        "area": 4697,
+        "next_area": 5275,
+        "next_over_current_area": 1.1230572705982542,
+        "current_over_next_area": 0.8904265402843602,
+        "centroid_displacement_over_diagonal": 0.006166564585462208
+      }
+    },
+    {
+      "case_id": "val:dogs-jump:obj1:switch24",
+      "split": "val",
+      "sequence": "dogs-jump",
+      "object_id": 1,
+      "switch_frame": 24,
+      "future_end_frame": 64,
+      "frame_count": 66,
+      "tags": [
+        "regular_q50"
+      ],
+      "transition": {
+        "area": 5427,
+        "next_area": 4741,
+        "next_over_current_area": 0.8735949880228487,
+        "current_over_next_area": 1.1446952119805949,
+        "centroid_displacement_over_diagonal": 0.0020511415689129717
+      }
+    },
+    {
+      "case_id": "val:dogs-jump:obj1:switch34",
+      "split": "val",
+      "sequence": "dogs-jump",
+      "object_id": 1,
+      "switch_frame": 34,
+      "future_end_frame": 64,
+      "frame_count": 66,
+      "tags": [
+        "regular_q75"
+      ],
+      "transition": {
+        "area": 12685,
+        "next_area": 15292,
+        "next_over_current_area": 1.205518328734726,
+        "current_over_next_area": 0.8295187025895894,
+        "centroid_displacement_over_diagonal": 0.022570992373425816
+      }
+    },
+    {
+      "case_id": "val:dogs-jump:obj1:switch37",
+      "split": "val",
+      "sequence": "dogs-jump",
+      "object_id": 1,
+      "switch_frame": 37,
+      "future_end_frame": 64,
+      "frame_count": 66,
+      "tags": [
+        "max_centroid_motion"
+      ],
+      "transition": {
+        "area": 19374,
+        "next_area": 22031,
+        "next_over_current_area": 1.1371425621967586,
+        "current_over_next_area": 0.8793972130180201,
+        "centroid_displacement_over_diagonal": 0.04534808859823751
+      }
+    },
+    {
+      "case_id": "val:dogs-jump:obj2:switch10",
+      "split": "val",
+      "sequence": "dogs-jump",
+      "object_id": 2,
+      "switch_frame": 10,
+      "future_end_frame": 64,
+      "frame_count": 66,
+      "tags": [
+        "max_centroid_motion"
+      ],
+      "transition": {
+        "area": 17644,
+        "next_area": 20736,
+        "next_over_current_area": 1.1752437089095442,
+        "current_over_next_area": 0.8508873456790124,
+        "centroid_displacement_over_diagonal": 0.03635770329252099
+      }
+    },
+    {
+      "case_id": "val:dogs-jump:obj2:switch14",
+      "split": "val",
+      "sequence": "dogs-jump",
+      "object_id": 2,
+      "switch_frame": 14,
+      "future_end_frame": 64,
+      "frame_count": 66,
+      "tags": [
+        "regular_q25"
+      ],
+      "transition": {
+        "area": 29324,
+        "next_area": 33796,
+        "next_over_current_area": 1.1525030691583686,
+        "current_over_next_area": 0.8676766481240383,
+        "centroid_displacement_over_diagonal": 0.03552493721225393
+      }
+    },
+    {
+      "case_id": "val:dogs-jump:obj2:switch24",
+      "split": "val",
+      "sequence": "dogs-jump",
+      "object_id": 2,
+      "switch_frame": 24,
+      "future_end_frame": 64,
+      "frame_count": 66,
+      "tags": [
+        "regular_q50"
+      ],
+      "transition": {
+        "area": 18129,
+        "next_area": 14954,
+        "next_over_current_area": 0.8248662364167908,
+        "current_over_next_area": 1.2123177745084928,
+        "centroid_displacement_over_diagonal": 0.010644951557909645
+      }
+    },
+    {
+      "case_id": "val:dogs-jump:obj2:switch34",
+      "split": "val",
+      "sequence": "dogs-jump",
+      "object_id": 2,
+      "switch_frame": 34,
+      "future_end_frame": 64,
+      "frame_count": 66,
+      "tags": [
+        "regular_q75"
+      ],
+      "transition": {
+        "area": 15630,
+        "next_area": 16653,
+        "next_over_current_area": 1.0654510556621881,
+        "current_over_next_area": 0.9385696270942172,
+        "centroid_displacement_over_diagonal": 0.009935459365313227
+      }
+    },
+    {
+      "case_id": "val:dogs-jump:obj3:switch9",
+      "split": "val",
+      "sequence": "dogs-jump",
+      "object_id": 3,
+      "switch_frame": 9,
+      "future_end_frame": 64,
+      "frame_count": 66,
+      "tags": [
+        "max_centroid_motion"
+      ],
+      "transition": {
+        "area": 2828,
+        "next_area": 4181,
+        "next_over_current_area": 1.4784299858557284,
+        "current_over_next_area": 0.6763932073666586,
+        "centroid_displacement_over_diagonal": 0.037240366147248224
+      }
+    },
+    {
+      "case_id": "val:dogs-jump:obj3:switch14",
+      "split": "val",
+      "sequence": "dogs-jump",
+      "object_id": 3,
+      "switch_frame": 14,
+      "future_end_frame": 64,
+      "frame_count": 66,
+      "tags": [
+        "regular_q25"
+      ],
+      "transition": {
+        "area": 7895,
+        "next_area": 8753,
+        "next_over_current_area": 1.1086763774540849,
+        "current_over_next_area": 0.9019764652119273,
+        "centroid_displacement_over_diagonal": 0.004673779446439605
+      }
+    },
+    {
+      "case_id": "val:dogs-jump:obj3:switch24",
+      "split": "val",
+      "sequence": "dogs-jump",
+      "object_id": 3,
+      "switch_frame": 24,
+      "future_end_frame": 64,
+      "frame_count": 66,
+      "tags": [
+        "regular_q50"
+      ],
+      "transition": {
+        "area": 9331,
+        "next_area": 9489,
+        "next_over_current_area": 1.0169328046297288,
+        "current_over_next_area": 0.9833491411107598,
+        "centroid_displacement_over_diagonal": 0.0010123584349280472
+      }
+    },
+    {
+      "case_id": "val:dogs-jump:obj3:switch34",
+      "split": "val",
+      "sequence": "dogs-jump",
+      "object_id": 3,
+      "switch_frame": 34,
+      "future_end_frame": 64,
+      "frame_count": 66,
+      "tags": [
+        "regular_q75"
+      ],
+      "transition": {
+        "area": 8974,
+        "next_area": 8860,
+        "next_over_current_area": 0.9872966347225317,
+        "current_over_next_area": 1.0128668171557562,
+        "centroid_displacement_over_diagonal": 0.0003020367421556286
+      }
+    },
+    {
+      "case_id": "val:drift-chicane:obj1:switch4",
+      "split": "val",
+      "sequence": "drift-chicane",
+      "object_id": 1,
+      "switch_frame": 4,
+      "future_end_frame": 50,
+      "frame_count": 52,
+      "tags": [
+        "max_centroid_motion"
+      ],
+      "transition": {
+        "area": 2655,
+        "next_area": 2683,
+        "next_over_current_area": 1.0105461393596986,
+        "current_over_next_area": 0.9895639209839732,
+        "centroid_displacement_over_diagonal": 0.017884494368626
+      }
+    },
+    {
+      "case_id": "val:drift-chicane:obj1:switch10",
+      "split": "val",
+      "sequence": "drift-chicane",
+      "object_id": 1,
+      "switch_frame": 10,
+      "future_end_frame": 50,
+      "frame_count": 52,
+      "tags": [
+        "regular_q25"
+      ],
+      "transition": {
+        "area": 3170,
+        "next_area": 3320,
+        "next_over_current_area": 1.0473186119873816,
+        "current_over_next_area": 0.9548192771084337,
+        "centroid_displacement_over_diagonal": 0.013487593809279962
+      }
+    },
+    {
+      "case_id": "val:drift-chicane:obj1:switch17",
+      "split": "val",
+      "sequence": "drift-chicane",
+      "object_id": 1,
+      "switch_frame": 17,
+      "future_end_frame": 50,
+      "frame_count": 52,
+      "tags": [
+        "regular_q50"
+      ],
+      "transition": {
+        "area": 4551,
+        "next_area": 4772,
+        "next_over_current_area": 1.0485607558778292,
+        "current_over_next_area": 0.9536881810561609,
+        "centroid_displacement_over_diagonal": 0.008528452472977888
+      }
+    },
+    {
+      "case_id": "val:drift-chicane:obj1:switch24",
+      "split": "val",
+      "sequence": "drift-chicane",
+      "object_id": 1,
+      "switch_frame": 24,
+      "future_end_frame": 50,
+      "frame_count": 52,
+      "tags": [
+        "regular_q75"
+      ],
+      "transition": {
+        "area": 6221,
+        "next_area": 6566,
+        "next_over_current_area": 1.0554573219739591,
+        "current_over_next_area": 0.9474565945781298,
+        "centroid_displacement_over_diagonal": 0.0007385809546752665
+      }
+    },
+    {
+      "case_id": "val:drift-straight:obj1:switch10",
+      "split": "val",
+      "sequence": "drift-straight",
+      "object_id": 1,
+      "switch_frame": 10,
+      "future_end_frame": 48,
+      "frame_count": 50,
+      "tags": [
+        "regular_q25"
+      ],
+      "transition": {
+        "area": 9090,
+        "next_area": 9701,
+        "next_over_current_area": 1.0672167216721673,
+        "current_over_next_area": 0.937016802391506,
+        "centroid_displacement_over_diagonal": 0.004353012394395692
+      }
+    },
+    {
+      "case_id": "val:drift-straight:obj1:switch16",
+      "split": "val",
+      "sequence": "drift-straight",
+      "object_id": 1,
+      "switch_frame": 16,
+      "future_end_frame": 48,
+      "frame_count": 50,
+      "tags": [
+        "regular_q50"
+      ],
+      "transition": {
+        "area": 14923,
+        "next_area": 16110,
+        "next_over_current_area": 1.0795416471218924,
+        "current_over_next_area": 0.9263190564866542,
+        "centroid_displacement_over_diagonal": 0.00969255156058762
+      }
+    },
+    {
+      "case_id": "val:drift-straight:obj1:switch19",
+      "split": "val",
+      "sequence": "drift-straight",
+      "object_id": 1,
+      "switch_frame": 19,
+      "future_end_frame": 48,
+      "frame_count": 50,
+      "tags": [
+        "max_centroid_motion"
+      ],
+      "transition": {
+        "area": 19016,
+        "next_area": 23361,
+        "next_over_current_area": 1.2284917963819941,
+        "current_over_next_area": 0.81400624973246,
+        "centroid_displacement_over_diagonal": 0.04683066087898351
+      }
+    },
+    {
+      "case_id": "val:drift-straight:obj1:switch22",
+      "split": "val",
+      "sequence": "drift-straight",
+      "object_id": 1,
+      "switch_frame": 22,
+      "future_end_frame": 48,
+      "frame_count": 50,
+      "tags": [
+        "regular_q75"
+      ],
+      "transition": {
+        "area": 31042,
+        "next_area": 36321,
+        "next_over_current_area": 1.1700599188196636,
+        "current_over_next_area": 0.8546570854326698,
+        "centroid_displacement_over_diagonal": 0.016933685960732796
+      }
+    },
+    {
+      "case_id": "val:goat:obj1:switch20",
+      "split": "val",
+      "sequence": "goat",
+      "object_id": 1,
+      "switch_frame": 20,
+      "future_end_frame": 88,
+      "frame_count": 90,
+      "tags": [
+        "regular_q25"
+      ],
+      "transition": {
+        "area": 28326,
+        "next_area": 28528,
+        "next_over_current_area": 1.0071312575019418,
+        "current_over_next_area": 0.9929192372406057,
+        "centroid_displacement_over_diagonal": 0.01000356977764359
+      }
+    },
+    {
+      "case_id": "val:goat:obj1:switch36",
+      "split": "val",
+      "sequence": "goat",
+      "object_id": 1,
+      "switch_frame": 36,
+      "future_end_frame": 88,
+      "frame_count": 90,
+      "tags": [
+        "regular_q50"
+      ],
+      "transition": {
+        "area": 29148,
+        "next_area": 29509,
+        "next_over_current_area": 1.0123850693014957,
+        "current_over_next_area": 0.9877664441356874,
+        "centroid_displacement_over_diagonal": 0.004171427147302917
+      }
+    },
+    {
+      "case_id": "val:goat:obj1:switch52",
+      "split": "val",
+      "sequence": "goat",
+      "object_id": 1,
+      "switch_frame": 52,
+      "future_end_frame": 88,
+      "frame_count": 90,
+      "tags": [
+        "regular_q75"
+      ],
+      "transition": {
+        "area": 26946,
+        "next_area": 27314,
+        "next_over_current_area": 1.013656943516663,
+        "current_over_next_area": 0.9865270557223402,
+        "centroid_displacement_over_diagonal": 0.014027987529428774
+      }
+    },
+    {
+      "case_id": "val:goat:obj1:switch64",
+      "split": "val",
+      "sequence": "goat",
+      "object_id": 1,
+      "switch_frame": 64,
+      "future_end_frame": 88,
+      "frame_count": 90,
+      "tags": [
+        "max_centroid_motion"
+      ],
+      "transition": {
+        "area": 23932,
+        "next_area": 23714,
+        "next_over_current_area": 0.9908908574293832,
+        "current_over_next_area": 1.00919288184195,
+        "centroid_displacement_over_diagonal": 0.01928564647429634
+      }
+    },
+    {
+      "case_id": "val:gold-fish:obj1:switch17",
+      "split": "val",
+      "sequence": "gold-fish",
+      "object_id": 1,
+      "switch_frame": 17,
+      "future_end_frame": 76,
+      "frame_count": 78,
+      "tags": [
+        "regular_q25"
+      ],
+      "transition": {
+        "area": 30540,
+        "next_area": 30690,
+        "next_over_current_area": 1.0049115913555993,
+        "current_over_next_area": 0.9951124144672532,
+        "centroid_displacement_over_diagonal": 0.003254667652263599
+      }
+    },
+    {
+      "case_id": "val:gold-fish:obj1:switch30",
+      "split": "val",
+      "sequence": "gold-fish",
+      "object_id": 1,
+      "switch_frame": 30,
+      "future_end_frame": 76,
+      "frame_count": 78,
+      "tags": [
+        "regular_q50"
+      ],
+      "transition": {
+        "area": 30028,
+        "next_area": 30621,
+        "next_over_current_area": 1.0197482349806848,
+        "current_over_next_area": 0.9806342052839555,
+        "centroid_displacement_over_diagonal": 0.0038097880439105255
+      }
+    },
+    {
+      "case_id": "val:gold-fish:obj1:switch36",
+      "split": "val",
+      "sequence": "gold-fish",
+      "object_id": 1,
+      "switch_frame": 36,
+      "future_end_frame": 76,
+      "frame_count": 78,
+      "tags": [
+        "max_centroid_motion"
+      ],
+      "transition": {
+        "area": 34392,
+        "next_area": 35778,
+        "next_over_current_area": 1.0403000697836706,
+        "current_over_next_area": 0.9612611101794398,
+        "centroid_displacement_over_diagonal": 0.01182632258451611
+      }
+    },
+    {
+      "case_id": "val:gold-fish:obj1:switch43",
+      "split": "val",
+      "sequence": "gold-fish",
+      "object_id": 1,
+      "switch_frame": 43,
+      "future_end_frame": 76,
+      "frame_count": 78,
+      "tags": [
+        "regular_q75"
+      ],
+      "transition": {
+        "area": 26617,
+        "next_area": 25562,
+        "next_over_current_area": 0.9603636773490626,
+        "current_over_next_area": 1.0412722009232454,
+        "centroid_displacement_over_diagonal": 0.00462148188210351
+      }
+    },
+    {
+      "case_id": "val:gold-fish:obj2:switch17",
+      "split": "val",
+      "sequence": "gold-fish",
+      "object_id": 2,
+      "switch_frame": 17,
+      "future_end_frame": 76,
+      "frame_count": 78,
+      "tags": [
+        "regular_q25"
+      ],
+      "transition": {
+        "area": 7654,
+        "next_area": 7912,
+        "next_over_current_area": 1.0337078651685394,
+        "current_over_next_area": 0.967391304347826,
+        "centroid_displacement_over_diagonal": 0.00157123204103932
+      }
+    },
+    {
+      "case_id": "val:gold-fish:obj2:switch30",
+      "split": "val",
+      "sequence": "gold-fish",
+      "object_id": 2,
+      "switch_frame": 30,
+      "future_end_frame": 76,
+      "frame_count": 78,
+      "tags": [
+        "regular_q50"
+      ],
+      "transition": {
+        "area": 7549,
+        "next_area": 7243,
+        "next_over_current_area": 0.9594648297787787,
+        "current_over_next_area": 1.0422476874223388,
+        "centroid_displacement_over_diagonal": 0.0026621258288945264
+      }
+    },
+    {
+      "case_id": "val:gold-fish:obj2:switch41",
+      "split": "val",
+      "sequence": "gold-fish",
+      "object_id": 2,
+      "switch_frame": 41,
+      "future_end_frame": 76,
+      "frame_count": 78,
+      "tags": [
+        "max_centroid_motion"
+      ],
+      "transition": {
+        "area": 9705,
+        "next_area": 10353,
+        "next_over_current_area": 1.0667697063369397,
+        "current_over_next_area": 0.9374094465372356,
+        "centroid_displacement_over_diagonal": 0.006855592427157035
+      }
+    },
+    {
+      "case_id": "val:gold-fish:obj2:switch43",
+      "split": "val",
+      "sequence": "gold-fish",
+      "object_id": 2,
+      "switch_frame": 43,
+      "future_end_frame": 76,
+      "frame_count": 78,
+      "tags": [
+        "regular_q75"
+      ],
+      "transition": {
+        "area": 10568,
+        "next_area": 11051,
+        "next_over_current_area": 1.0457040121120362,
+        "current_over_next_area": 0.956293548095195,
+        "centroid_displacement_over_diagonal": 0.006153846477242202
+      }
+    },
+    {
+      "case_id": "val:gold-fish:obj3:switch17",
+      "split": "val",
+      "sequence": "gold-fish",
+      "object_id": 3,
+      "switch_frame": 17,
+      "future_end_frame": 76,
+      "frame_count": 78,
+      "tags": [
+        "regular_q25"
+      ],
+      "transition": {
+        "area": 17280,
+        "next_area": 16874,
+        "next_over_current_area": 0.9765046296296296,
+        "current_over_next_area": 1.0240606850776341,
+        "centroid_displacement_over_diagonal": 0.0001740496069797236
+      }
+    },
+    {
+      "case_id": "val:gold-fish:obj3:switch30",
+      "split": "val",
+      "sequence": "gold-fish",
+      "object_id": 3,
+      "switch_frame": 30,
+      "future_end_frame": 76,
+      "frame_count": 78,
+      "tags": [
+        "regular_q50"
+      ],
+      "transition": {
+        "area": 17001,
+        "next_area": 16891,
+        "next_over_current_area": 0.993529792365155,
+        "current_over_next_area": 1.0065123438517554,
+        "centroid_displacement_over_diagonal": 0.0035136067858822784
+      }
+    },
+    {
+      "case_id": "val:gold-fish:obj3:switch43",
+      "split": "val",
+      "sequence": "gold-fish",
+      "object_id": 3,
+      "switch_frame": 43,
+      "future_end_frame": 76,
+      "frame_count": 78,
+      "tags": [
+        "regular_q75"
+      ],
+      "transition": {
+        "area": 16153,
+        "next_area": 15846,
+        "next_over_current_area": 0.9809942425555624,
+        "current_over_next_area": 1.0193739745046069,
+        "centroid_displacement_over_diagonal": 0.0023790758127637235
+      }
+    },
+    {
+      "case_id": "val:gold-fish:obj3:switch52",
+      "split": "val",
+      "sequence": "gold-fish",
+      "object_id": 3,
+      "switch_frame": 52,
+      "future_end_frame": 76,
+      "frame_count": 78,
+      "tags": [
+        "max_centroid_motion"
+      ],
+      "transition": {
+        "area": 15823,
+        "next_area": 15211,
+        "next_over_current_area": 0.9613221260190862,
+        "current_over_next_area": 1.0402340411544277,
+        "centroid_displacement_over_diagonal": 0.007731689874032889
+      }
+    },
+    {
+      "case_id": "val:gold-fish:obj4:switch17",
+      "split": "val",
+      "sequence": "gold-fish",
+      "object_id": 4,
+      "switch_frame": 17,
+      "future_end_frame": 76,
+      "frame_count": 78,
+      "tags": [
+        "regular_q25"
+      ],
+      "transition": {
+        "area": 17100,
+        "next_area": 17202,
+        "next_over_current_area": 1.0059649122807017,
+        "current_over_next_area": 0.9940704569236135,
+        "centroid_displacement_over_diagonal": 0.0025881568504815657
+      }
+    },
+    {
+      "case_id": "val:gold-fish:obj4:switch30",
+      "split": "val",
+      "sequence": "gold-fish",
+      "object_id": 4,
+      "switch_frame": 30,
+      "future_end_frame": 76,
+      "frame_count": 78,
+      "tags": [
+        "max_centroid_motion",
+        "regular_q50"
+      ],
+      "transition": {
+        "area": 17487,
+        "next_area": 16629,
+        "next_over_current_area": 0.9509349802710585,
+        "current_over_next_area": 1.0515966083348367,
+        "centroid_displacement_over_diagonal": 0.006417374049811593
+      }
+    },
+    {
+      "case_id": "val:gold-fish:obj4:switch43",
+      "split": "val",
+      "sequence": "gold-fish",
+      "object_id": 4,
+      "switch_frame": 43,
+      "future_end_frame": 76,
+      "frame_count": 78,
+      "tags": [
+        "regular_q75"
+      ],
+      "transition": {
+        "area": 16094,
+        "next_area": 16146,
+        "next_over_current_area": 1.0032310177705976,
+        "current_over_next_area": 0.9967793880837359,
+        "centroid_displacement_over_diagonal": 0.003759551932234236
+      }
+    },
+    {
+      "case_id": "val:gold-fish:obj5:switch13",
+      "split": "val",
+      "sequence": "gold-fish",
+      "object_id": 5,
+      "switch_frame": 13,
+      "future_end_frame": 76,
+      "frame_count": 78,
+      "tags": [
+        "max_centroid_motion"
+      ],
+      "transition": {
+        "area": 17579,
+        "next_area": 17368,
+        "next_over_current_area": 0.9879970419250241,
+        "current_over_next_area": 1.0121487793643482,
+        "centroid_displacement_over_diagonal": 0.00610739635746036
+      }
+    },
+    {
+      "case_id": "val:gold-fish:obj5:switch17",
+      "split": "val",
+      "sequence": "gold-fish",
+      "object_id": 5,
+      "switch_frame": 17,
+      "future_end_frame": 76,
+      "frame_count": 78,
+      "tags": [
+        "regular_q25"
+      ],
+      "transition": {
+        "area": 17052,
+        "next_area": 16672,
+        "next_over_current_area": 0.9777152240206427,
+        "current_over_next_area": 1.0227927063339732,
+        "centroid_displacement_over_diagonal": 0.0031550673061237454
+      }
+    },
+    {
+      "case_id": "val:gold-fish:obj5:switch30",
+      "split": "val",
+      "sequence": "gold-fish",
+      "object_id": 5,
+      "switch_frame": 30,
+      "future_end_frame": 76,
+      "frame_count": 78,
+      "tags": [
+        "regular_q50"
+      ],
+      "transition": {
+        "area": 15578,
+        "next_area": 16030,
+        "next_over_current_area": 1.029015277956092,
+        "current_over_next_area": 0.9718028696194635,
+        "centroid_displacement_over_diagonal": 0.0026665400644389236
+      }
+    },
+    {
+      "case_id": "val:gold-fish:obj5:switch43",
+      "split": "val",
+      "sequence": "gold-fish",
+      "object_id": 5,
+      "switch_frame": 43,
+      "future_end_frame": 76,
+      "frame_count": 78,
+      "tags": [
+        "regular_q75"
+      ],
+      "transition": {
+        "area": 16495,
+        "next_area": 16537,
+        "next_over_current_area": 1.00254622612913,
+        "current_over_next_area": 0.9974602406724316,
+        "centroid_displacement_over_diagonal": 0.0010437652486660594
+      }
+    },
+    {
+      "case_id": "val:horsejump-high:obj1:switch10",
+      "split": "val",
+      "sequence": "horsejump-high",
+      "object_id": 1,
+      "switch_frame": 10,
+      "future_end_frame": 48,
+      "frame_count": 50,
+      "tags": [
+        "regular_q25"
+      ],
+      "transition": {
+        "area": 20209,
+        "next_area": 19821,
+        "next_over_current_area": 0.9808006333811669,
+        "current_over_next_area": 1.0195751980222996,
+        "centroid_displacement_over_diagonal": 0.0031454683972081147
+      }
+    },
+    {
+      "case_id": "val:horsejump-high:obj1:switch16",
+      "split": "val",
+      "sequence": "horsejump-high",
+      "object_id": 1,
+      "switch_frame": 16,
+      "future_end_frame": 48,
+      "frame_count": 50,
+      "tags": [
+        "regular_q50"
+      ],
+      "transition": {
+        "area": 17899,
+        "next_area": 17393,
+        "next_over_current_area": 0.9717302642605732,
+        "current_over_next_area": 1.0290921635140573,
+        "centroid_displacement_over_diagonal": 0.005605874695572751
+      }
+    },
+    {
+      "case_id": "val:horsejump-high:obj1:switch21",
+      "split": "val",
+      "sequence": "horsejump-high",
+      "object_id": 1,
+      "switch_frame": 21,
+      "future_end_frame": 48,
+      "frame_count": 50,
+      "tags": [
+        "max_centroid_motion"
+      ],
+      "transition": {
+        "area": 15886,
+        "next_area": 16142,
+        "next_over_current_area": 1.0161148180788115,
+        "current_over_next_area": 0.9841407508363276,
+        "centroid_displacement_over_diagonal": 0.012221891004407123
+      }
+    },
+    {
+      "case_id": "val:horsejump-high:obj1:switch22",
+      "split": "val",
+      "sequence": "horsejump-high",
+      "object_id": 1,
+      "switch_frame": 22,
+      "future_end_frame": 48,
+      "frame_count": 50,
+      "tags": [
+        "regular_q75"
+      ],
+      "transition": {
+        "area": 16142,
+        "next_area": 15509,
+        "next_over_current_area": 0.9607855284351382,
+        "current_over_next_area": 1.0408150106389837,
+        "centroid_displacement_over_diagonal": 0.006506661237875219
+      }
+    },
+    {
+      "case_id": "val:horsejump-high:obj2:switch5",
+      "split": "val",
+      "sequence": "horsejump-high",
+      "object_id": 2,
+      "switch_frame": 5,
+      "future_end_frame": 48,
+      "frame_count": 50,
+      "tags": [
+        "max_centroid_motion"
+      ],
+      "transition": {
+        "area": 3930,
+        "next_area": 3882,
+        "next_over_current_area": 0.9877862595419847,
+        "current_over_next_area": 1.0123647604327666,
+        "centroid_displacement_over_diagonal": 0.014991512198970403
+      }
+    },
+    {
+      "case_id": "val:horsejump-high:obj2:switch10",
+      "split": "val",
+      "sequence": "horsejump-high",
+      "object_id": 2,
+      "switch_frame": 10,
+      "future_end_frame": 48,
+      "frame_count": 50,
+      "tags": [
+        "regular_q25"
+      ],
+      "transition": {
+        "area": 3987,
+        "next_area": 3978,
+        "next_over_current_area": 0.9977426636568849,
+        "current_over_next_area": 1.002262443438914,
+        "centroid_displacement_over_diagonal": 0.0020130748036923394
+      }
+    },
+    {
+      "case_id": "val:horsejump-high:obj2:switch16",
+      "split": "val",
+      "sequence": "horsejump-high",
+      "object_id": 2,
+      "switch_frame": 16,
+      "future_end_frame": 48,
+      "frame_count": 50,
+      "tags": [
+        "regular_q50"
+      ],
+      "transition": {
+        "area": 4020,
+        "next_area": 4101,
+        "next_over_current_area": 1.0201492537313432,
+        "current_over_next_area": 0.9802487198244331,
+        "centroid_displacement_over_diagonal": 0.007506385029904636
+      }
+    },
+    {
+      "case_id": "val:horsejump-high:obj2:switch22",
+      "split": "val",
+      "sequence": "horsejump-high",
+      "object_id": 2,
+      "switch_frame": 22,
+      "future_end_frame": 48,
+      "frame_count": 50,
+      "tags": [
+        "regular_q75"
+      ],
+      "transition": {
+        "area": 3468,
+        "next_area": 3628,
+        "next_over_current_area": 1.0461361014994233,
+        "current_over_next_area": 0.9558985667034179,
+        "centroid_displacement_over_diagonal": 0.013112327042591139
+      }
+    },
+    {
+      "case_id": "val:india:obj1:switch18",
+      "split": "val",
+      "sequence": "india",
+      "object_id": 1,
+      "switch_frame": 18,
+      "future_end_frame": 79,
+      "frame_count": 81,
+      "tags": [
+        "regular_q25"
+      ],
+      "transition": {
+        "area": 34104,
+        "next_area": 35816,
+        "next_over_current_area": 1.050199390100868,
+        "current_over_next_area": 0.9522001340183158,
+        "centroid_displacement_over_diagonal": 0.007859509660433197
+      }
+    },
+    {
+      "case_id": "val:india:obj1:switch32",
+      "split": "val",
+      "sequence": "india",
+      "object_id": 1,
+      "switch_frame": 32,
+      "future_end_frame": 79,
+      "frame_count": 81,
+      "tags": [
+        "regular_q50"
+      ],
+      "transition": {
+        "area": 46534,
+        "next_area": 42258,
+        "next_over_current_area": 0.9081101989942838,
+        "current_over_next_area": 1.1011879407449476,
+        "centroid_displacement_over_diagonal": 0.012244383582305321
+      }
+    },
+    {
+      "case_id": "val:india:obj1:switch38",
+      "split": "val",
+      "sequence": "india",
+      "object_id": 1,
+      "switch_frame": 38,
+      "future_end_frame": 79,
+      "frame_count": 81,
+      "tags": [
+        "strong_area_drop"
+      ],
+      "transition": {
+        "area": 18176,
+        "next_area": 3480,
+        "next_over_current_area": 0.1914612676056338,
+        "current_over_next_area": 5.222988505747127,
+        "centroid_displacement_over_diagonal": 0.014466784184232435
+      }
+    },
+    {
+      "case_id": "val:india:obj1:switch39",
+      "split": "val",
+      "sequence": "india",
+      "object_id": 1,
+      "switch_frame": 39,
+      "future_end_frame": 79,
+      "frame_count": 81,
+      "tags": [
+        "max_centroid_motion"
+      ],
+      "transition": {
+        "area": 3480,
+        "next_area": 3702,
+        "next_over_current_area": 1.063793103448276,
+        "current_over_next_area": 0.940032414910859,
+        "centroid_displacement_over_diagonal": 0.1211224358207474
+      }
+    },
+    {
+      "case_id": "val:india:obj1:switch40",
+      "split": "val",
+      "sequence": "india",
+      "object_id": 1,
+      "switch_frame": 40,
+      "future_end_frame": 79,
+      "frame_count": 81,
+      "tags": [
+        "strong_area_growth"
+      ],
+      "transition": {
+        "area": 3702,
+        "next_area": 18885,
+        "next_over_current_area": 5.10129659643436,
+        "current_over_next_area": 0.1960285941223193,
+        "centroid_displacement_over_diagonal": 0.10993300391875876
+      }
+    },
+    {
+      "case_id": "val:india:obj1:switch45",
+      "split": "val",
+      "sequence": "india",
+      "object_id": 1,
+      "switch_frame": 45,
+      "future_end_frame": 79,
+      "frame_count": 81,
+      "tags": [
+        "regular_q75"
+      ],
+      "transition": {
+        "area": 40405,
+        "next_area": 41456,
+        "next_over_current_area": 1.0260116322237347,
+        "current_over_next_area": 0.9746478193747588,
+        "centroid_displacement_over_diagonal": 0.007120563985557756
+      }
+    },
+    {
+      "case_id": "val:india:obj2:switch18",
+      "split": "val",
+      "sequence": "india",
+      "object_id": 2,
+      "switch_frame": 18,
+      "future_end_frame": 79,
+      "frame_count": 81,
+      "tags": [
+        "regular_q25"
+      ],
+      "transition": {
+        "area": 29919,
+        "next_area": 31605,
+        "next_over_current_area": 1.0563521508071794,
+        "current_over_next_area": 0.9466540104413859,
+        "centroid_displacement_over_diagonal": 0.005965829377716193
+      }
+    },
+    {
+      "case_id": "val:india:obj2:switch32",
+      "split": "val",
+      "sequence": "india",
+      "object_id": 2,
+      "switch_frame": 32,
+      "future_end_frame": 79,
+      "frame_count": 81,
+      "tags": [
+        "regular_q50"
+      ],
+      "transition": {
+        "area": 25127,
+        "next_area": 23072,
+        "next_over_current_area": 0.9182154654355872,
+        "current_over_next_area": 1.0890690013869626,
+        "centroid_displacement_over_diagonal": 0.01790713911611875
+      }
+    },
+    {
+      "case_id": "val:india:obj2:switch37",
+      "split": "val",
+      "sequence": "india",
+      "object_id": 2,
+      "switch_frame": 37,
+      "future_end_frame": 79,
+      "frame_count": 81,
+      "tags": [
+        "max_centroid_motion"
+      ],
+      "transition": {
+        "area": 1699,
+        "next_area": 2983,
+        "next_over_current_area": 1.7557386698057682,
+        "current_over_next_area": 0.5695608447871271,
+        "centroid_displacement_over_diagonal": 0.20200109256398233
+      }
+    },
+    {
+      "case_id": "val:india:obj2:switch38",
+      "split": "val",
+      "sequence": "india",
+      "object_id": 2,
+      "switch_frame": 38,
+      "future_end_frame": 79,
+      "frame_count": 81,
+      "tags": [
+        "strong_area_growth"
+      ],
+      "transition": {
+        "area": 2983,
+        "next_area": 14999,
+        "next_over_current_area": 5.028159570901777,
+        "current_over_next_area": 0.19887992532835522,
+        "centroid_displacement_over_diagonal": 0.14046099134952045
+      }
+    },
+    {
+      "case_id": "val:india:obj2:switch45",
+      "split": "val",
+      "sequence": "india",
+      "object_id": 2,
+      "switch_frame": 45,
+      "future_end_frame": 79,
+      "frame_count": 81,
+      "tags": [
+        "regular_q75"
+      ],
+      "transition": {
+        "area": 24696,
+        "next_area": 20107,
+        "next_over_current_area": 0.8141804340783932,
+        "current_over_next_area": 1.2282289749838364,
+        "centroid_displacement_over_diagonal": 0.014544076724533186
+      }
+    },
+    {
+      "case_id": "val:india:obj2:switch51",
+      "split": "val",
+      "sequence": "india",
+      "object_id": 2,
+      "switch_frame": 51,
+      "future_end_frame": 79,
+      "frame_count": 81,
+      "tags": [
+        "full_occlusion_entry"
+      ],
+      "transition": {
+        "area": 1233,
+        "next_area": 0,
+        "next_over_current_area": 0.0,
+        "current_over_next_area": null,
+        "centroid_displacement_over_diagonal": null
+      }
+    },
+    {
+      "case_id": "val:india:obj3:switch18",
+      "split": "val",
+      "sequence": "india",
+      "object_id": 3,
+      "switch_frame": 18,
+      "future_end_frame": 79,
+      "frame_count": 81,
+      "tags": [
+        "regular_q25"
+      ],
+      "transition": {
+        "area": 28582,
+        "next_area": 29248,
+        "next_over_current_area": 1.0233013784899587,
+        "current_over_next_area": 0.9772292122538293,
+        "centroid_displacement_over_diagonal": 0.004424142581816964
+      }
+    },
+    {
+      "case_id": "val:india:obj3:switch32",
+      "split": "val",
+      "sequence": "india",
+      "object_id": 3,
+      "switch_frame": 32,
+      "future_end_frame": 79,
+      "frame_count": 81,
+      "tags": [
+        "regular_q50"
+      ],
+      "transition": {
+        "area": 28946,
+        "next_area": 20114,
+        "next_over_current_area": 0.6948801216057486,
+        "current_over_next_area": 1.4390971462662823,
+        "centroid_displacement_over_diagonal": 0.012173922159994695
+      }
+    },
+    {
+      "case_id": "val:india:obj3:switch34",
+      "split": "val",
+      "sequence": "india",
+      "object_id": 3,
+      "switch_frame": 34,
+      "future_end_frame": 79,
+      "frame_count": 81,
+      "tags": [
+        "full_occlusion_entry"
+      ],
+      "transition": {
+        "area": 5241,
+        "next_area": 0,
+        "next_over_current_area": 0.0,
+        "current_over_next_area": null,
+        "centroid_displacement_over_diagonal": null
+      }
+    },
+    {
+      "case_id": "val:india:obj3:switch35",
+      "split": "val",
+      "sequence": "india",
+      "object_id": 3,
+      "switch_frame": 35,
+      "future_end_frame": 79,
+      "frame_count": 81,
+      "tags": [
+        "reappearance"
+      ],
+      "transition": {
+        "area": 0,
+        "next_area": 11393,
+        "next_over_current_area": null,
+        "current_over_next_area": 0.0,
+        "centroid_displacement_over_diagonal": null
+      }
+    },
+    {
+      "case_id": "val:india:obj3:switch45",
+      "split": "val",
+      "sequence": "india",
+      "object_id": 3,
+      "switch_frame": 45,
+      "future_end_frame": 79,
+      "frame_count": 81,
+      "tags": [
+        "regular_q75"
+      ],
+      "transition": {
+        "area": 372,
+        "next_area": 0,
+        "next_over_current_area": 0.0,
+        "current_over_next_area": null,
+        "centroid_displacement_over_diagonal": null
+      }
+    },
+    {
+      "case_id": "val:india:obj3:switch59",
+      "split": "val",
+      "sequence": "india",
+      "object_id": 3,
+      "switch_frame": 59,
+      "future_end_frame": 79,
+      "frame_count": 81,
+      "tags": [
+        "max_centroid_motion"
+      ],
+      "transition": {
+        "area": 2386,
+        "next_area": 4497,
+        "next_over_current_area": 1.8847443419949708,
+        "current_over_next_area": 0.5305759395152324,
+        "centroid_displacement_over_diagonal": 0.04969752072144957
+      }
+    },
+    {
+      "case_id": "val:judo:obj1:switch6",
+      "split": "val",
+      "sequence": "judo",
+      "object_id": 1,
+      "switch_frame": 6,
+      "future_end_frame": 32,
+      "frame_count": 34,
+      "tags": [
+        "regular_q25"
+      ],
+      "transition": {
+        "area": 26919,
+        "next_area": 26960,
+        "next_over_current_area": 1.0015230877818642,
+        "current_over_next_area": 0.9984792284866468,
+        "centroid_displacement_over_diagonal": 0.0028480669360386626
+      }
+    },
+    {
+      "case_id": "val:judo:obj1:switch8",
+      "split": "val",
+      "sequence": "judo",
+      "object_id": 1,
+      "switch_frame": 8,
+      "future_end_frame": 32,
+      "frame_count": 34,
+      "tags": [
+        "regular_q50"
+      ],
+      "transition": {
+        "area": 26662,
+        "next_area": 26164,
+        "next_over_current_area": 0.9813217313029781,
+        "current_over_next_area": 1.0190337868827397,
+        "centroid_displacement_over_diagonal": 0.0040761723688093375
+      }
+    },
+    {
+      "case_id": "val:judo:obj1:switch10",
+      "split": "val",
+      "sequence": "judo",
+      "object_id": 1,
+      "switch_frame": 10,
+      "future_end_frame": 32,
+      "frame_count": 34,
+      "tags": [
+        "regular_q75"
+      ],
+      "transition": {
+        "area": 26076,
+        "next_area": 25416,
+        "next_over_current_area": 0.9746893695352048,
+        "current_over_next_area": 1.025967894239849,
+        "centroid_displacement_over_diagonal": 0.004762108794314106
+      }
+    },
+    {
+      "case_id": "val:judo:obj1:switch11",
+      "split": "val",
+      "sequence": "judo",
+      "object_id": 1,
+      "switch_frame": 11,
+      "future_end_frame": 32,
+      "frame_count": 34,
+      "tags": [
+        "max_centroid_motion"
+      ],
+      "transition": {
+        "area": 25416,
+        "next_area": 24628,
+        "next_over_current_area": 0.9689959080893925,
+        "current_over_next_area": 1.0319961019977262,
+        "centroid_displacement_over_diagonal": 0.006224973014157218
+      }
+    },
+    {
+      "case_id": "val:judo:obj2:switch6",
+      "split": "val",
+      "sequence": "judo",
+      "object_id": 2,
+      "switch_frame": 6,
+      "future_end_frame": 32,
+      "frame_count": 34,
+      "tags": [
+        "regular_q25"
+      ],
+      "transition": {
+        "area": 21630,
+        "next_area": 20444,
+        "next_over_current_area": 0.9451687471104947,
+        "current_over_next_area": 1.0580121306984935,
+        "centroid_displacement_over_diagonal": 0.002872140351051614
+      }
+    },
+    {
+      "case_id": "val:judo:obj2:switch8",
+      "split": "val",
+      "sequence": "judo",
+      "object_id": 2,
+      "switch_frame": 8,
+      "future_end_frame": 32,
+      "frame_count": 34,
+      "tags": [
+        "max_centroid_motion",
+        "regular_q50"
+      ],
+      "transition": {
+        "area": 19229,
+        "next_area": 18590,
+        "next_over_current_area": 0.9667689427427323,
+        "current_over_next_area": 1.0343733189887037,
+        "centroid_displacement_over_diagonal": 0.006146931373424678
+      }
+    },
+    {
+      "case_id": "val:judo:obj2:switch10",
+      "split": "val",
+      "sequence": "judo",
+      "object_id": 2,
+      "switch_frame": 10,
+      "future_end_frame": 32,
+      "frame_count": 34,
+      "tags": [
+        "regular_q75"
+      ],
+      "transition": {
+        "area": 18300,
+        "next_area": 18041,
+        "next_over_current_area": 0.9858469945355192,
+        "current_over_next_area": 1.014356188681337,
+        "centroid_displacement_over_diagonal": 0.004613271845639475
+      }
+    },
+    {
+      "case_id": "val:kite-surf:obj1:switch10",
+      "split": "val",
+      "sequence": "kite-surf",
+      "object_id": 1,
+      "switch_frame": 10,
+      "future_end_frame": 48,
+      "frame_count": 50,
+      "tags": [
+        "regular_q25"
+      ],
+      "transition": {
+        "area": 3842,
+        "next_area": 3766,
+        "next_over_current_area": 0.9802186361270172,
+        "current_over_next_area": 1.0201805629314924,
+        "centroid_displacement_over_diagonal": 0.002730403944117132
+      }
+    },
+    {
+      "case_id": "val:kite-surf:obj1:switch16",
+      "split": "val",
+      "sequence": "kite-surf",
+      "object_id": 1,
+      "switch_frame": 16,
+      "future_end_frame": 48,
+      "frame_count": 50,
+      "tags": [
+        "regular_q50"
+      ],
+      "transition": {
+        "area": 3548,
+        "next_area": 3537,
+        "next_over_current_area": 0.9968996617812852,
+        "current_over_next_area": 1.003109980209217,
+        "centroid_displacement_over_diagonal": 0.00404137450146286
+      }
+    },
+    {
+      "case_id": "val:kite-surf:obj1:switch22",
+      "split": "val",
+      "sequence": "kite-surf",
+      "object_id": 1,
+      "switch_frame": 22,
+      "future_end_frame": 48,
+      "frame_count": 50,
+      "tags": [
+        "regular_q75"
+      ],
+      "transition": {
+        "area": 3412,
+        "next_area": 3325,
+        "next_over_current_area": 0.9745017584994138,
+        "current_over_next_area": 1.0261654135338345,
+        "centroid_displacement_over_diagonal": 0.004017701037097437
+      }
+    },
+    {
+      "case_id": "val:kite-surf:obj1:switch28",
+      "split": "val",
+      "sequence": "kite-surf",
+      "object_id": 1,
+      "switch_frame": 28,
+      "future_end_frame": 48,
+      "frame_count": 50,
+      "tags": [
+        "max_centroid_motion"
+      ],
+      "transition": {
+        "area": 3250,
+        "next_area": 3272,
+        "next_over_current_area": 1.0067692307692309,
+        "current_over_next_area": 0.9932762836185819,
+        "centroid_displacement_over_diagonal": 0.020052024680991716
+      }
+    },
+    {
+      "case_id": "val:kite-surf:obj2:switch10",
+      "split": "val",
+      "sequence": "kite-surf",
+      "object_id": 2,
+      "switch_frame": 10,
+      "future_end_frame": 48,
+      "frame_count": 50,
+      "tags": [
+        "regular_q25"
+      ],
+      "transition": {
+        "area": 492,
+        "next_area": 511,
+        "next_over_current_area": 1.0386178861788617,
+        "current_over_next_area": 0.9628180039138943,
+        "centroid_displacement_over_diagonal": 0.016481303573277213
+      }
+    },
+    {
+      "case_id": "val:kite-surf:obj2:switch13",
+      "split": "val",
+      "sequence": "kite-surf",
+      "object_id": 2,
+      "switch_frame": 13,
+      "future_end_frame": 48,
+      "frame_count": 50,
+      "tags": [
+        "max_centroid_motion"
+      ],
+      "transition": {
+        "area": 139,
+        "next_area": 24,
+        "next_over_current_area": 0.17266187050359713,
+        "current_over_next_area": 5.791666666666667,
+        "centroid_displacement_over_diagonal": 0.02237665031294482
+      }
+    },
+    {
+      "case_id": "val:kite-surf:obj2:switch15",
+      "split": "val",
+      "sequence": "kite-surf",
+      "object_id": 2,
+      "switch_frame": 15,
+      "future_end_frame": 48,
+      "frame_count": 50,
+      "tags": [
+        "full_occlusion_entry"
+      ],
+      "transition": {
+        "area": 55,
+        "next_area": 0,
+        "next_over_current_area": 0.0,
+        "current_over_next_area": null,
+        "centroid_displacement_over_diagonal": null
+      }
+    },
+    {
+      "case_id": "val:kite-surf:obj2:switch16",
+      "split": "val",
+      "sequence": "kite-surf",
+      "object_id": 2,
+      "switch_frame": 16,
+      "future_end_frame": 48,
+      "frame_count": 50,
+      "tags": [
+        "regular_q50"
+      ],
+      "transition": {
+        "area": 0,
+        "next_area": 0,
+        "next_over_current_area": null,
+        "current_over_next_area": null,
+        "centroid_displacement_over_diagonal": null
+      }
+    },
+    {
+      "case_id": "val:kite-surf:obj2:switch20",
+      "split": "val",
+      "sequence": "kite-surf",
+      "object_id": 2,
+      "switch_frame": 20,
+      "future_end_frame": 48,
+      "frame_count": 50,
+      "tags": [
+        "reappearance"
+      ],
+      "transition": {
+        "area": 0,
+        "next_area": 155,
+        "next_over_current_area": null,
+        "current_over_next_area": 0.0,
+        "centroid_displacement_over_diagonal": null
+      }
+    },
+    {
+      "case_id": "val:kite-surf:obj2:switch22",
+      "split": "val",
+      "sequence": "kite-surf",
+      "object_id": 2,
+      "switch_frame": 22,
+      "future_end_frame": 48,
+      "frame_count": 50,
+      "tags": [
+        "regular_q75"
+      ],
+      "transition": {
+        "area": 170,
+        "next_area": 296,
+        "next_over_current_area": 1.7411764705882353,
+        "current_over_next_area": 0.5743243243243243,
+        "centroid_displacement_over_diagonal": 0.008196860144873658
+      }
+    },
+    {
+      "case_id": "val:kite-surf:obj3:switch10",
+      "split": "val",
+      "sequence": "kite-surf",
+      "object_id": 3,
+      "switch_frame": 10,
+      "future_end_frame": 48,
+      "frame_count": 50,
+      "tags": [
+        "regular_q25"
+      ],
+      "transition": {
+        "area": 6790,
+        "next_area": 6431,
+        "next_over_current_area": 0.9471281296023564,
+        "current_over_next_area": 1.0558233556212098,
+        "centroid_displacement_over_diagonal": 0.0062785011599213346
+      }
+    },
+    {
+      "case_id": "val:kite-surf:obj3:switch16",
+      "split": "val",
+      "sequence": "kite-surf",
+      "object_id": 3,
+      "switch_frame": 16,
+      "future_end_frame": 48,
+      "frame_count": 50,
+      "tags": [
+        "regular_q50"
+      ],
+      "transition": {
+        "area": 5511,
+        "next_area": 5377,
+        "next_over_current_area": 0.9756849936490655,
+        "current_over_next_area": 1.0249209596429236,
+        "centroid_displacement_over_diagonal": 0.003987984371151253
+      }
+    },
+    {
+      "case_id": "val:kite-surf:obj3:switch22",
+      "split": "val",
+      "sequence": "kite-surf",
+      "object_id": 3,
+      "switch_frame": 22,
+      "future_end_frame": 48,
+      "frame_count": 50,
+      "tags": [
+        "regular_q75"
+      ],
+      "transition": {
+        "area": 5295,
+        "next_area": 5398,
+        "next_over_current_area": 1.019452313503305,
+        "current_over_next_area": 0.9809188588366061,
+        "centroid_displacement_over_diagonal": 0.0026135821228667174
+      }
+    },
+    {
+      "case_id": "val:kite-surf:obj3:switch28",
+      "split": "val",
+      "sequence": "kite-surf",
+      "object_id": 3,
+      "switch_frame": 28,
+      "future_end_frame": 48,
+      "frame_count": 50,
+      "tags": [
+        "max_centroid_motion"
+      ],
+      "transition": {
+        "area": 5377,
+        "next_area": 5147,
+        "next_over_current_area": 0.9572252185233402,
+        "current_over_next_area": 1.0446862249854285,
+        "centroid_displacement_over_diagonal": 0.015775050078444396
+      }
+    },
+    {
+      "case_id": "val:lab-coat:obj1:switch9",
+      "split": "val",
+      "sequence": "lab-coat",
+      "object_id": 1,
+      "switch_frame": 9,
+      "future_end_frame": 45,
+      "frame_count": 47,
+      "tags": [
+        "regular_q25"
+      ],
+      "transition": {
+        "area": 29,
+        "next_area": 26,
+        "next_over_current_area": 0.896551724137931,
+        "current_over_next_area": 1.1153846153846154,
+        "centroid_displacement_over_diagonal": 0.0018866808766532254
+      }
+    },
+    {
+      "case_id": "val:lab-coat:obj1:switch11",
+      "split": "val",
+      "sequence": "lab-coat",
+      "object_id": 1,
+      "switch_frame": 11,
+      "future_end_frame": 45,
+      "frame_count": 47,
+      "tags": [
+        "max_centroid_motion",
+        "strong_area_drop"
+      ],
+      "transition": {
+        "area": 22,
+        "next_area": 6,
+        "next_over_current_area": 0.2727272727272727,
+        "current_over_next_area": 3.6666666666666665,
+        "centroid_displacement_over_diagonal": 0.016348889293477737
+      }
+    },
+    {
+      "case_id": "val:lab-coat:obj1:switch13",
+      "split": "val",
+      "sequence": "lab-coat",
+      "object_id": 1,
+      "switch_frame": 13,
+      "future_end_frame": 45,
+      "frame_count": 47,
+      "tags": [
+        "strong_area_growth"
+      ],
+      "transition": {
+        "area": 13,
+        "next_area": 78,
+        "next_over_current_area": 6.0,
+        "current_over_next_area": 0.16666666666666666,
+        "centroid_displacement_over_diagonal": 0.008082611431610506
+      }
+    },
+    {
+      "case_id": "val:lab-coat:obj1:switch14",
+      "split": "val",
+      "sequence": "lab-coat",
+      "object_id": 1,
+      "switch_frame": 14,
+      "future_end_frame": 45,
+      "frame_count": 47,
+      "tags": [
+        "regular_q50"
+      ],
+      "transition": {
+        "area": 78,
+        "next_area": 161,
+        "next_over_current_area": 2.0641025641025643,
+        "current_over_next_area": 0.484472049689441,
+        "centroid_displacement_over_diagonal": 0.01371853929618055
+      }
+    },
+    {
+      "case_id": "val:lab-coat:obj1:switch20",
+      "split": "val",
+      "sequence": "lab-coat",
+      "object_id": 1,
+      "switch_frame": 20,
+      "future_end_frame": 45,
+      "frame_count": 47,
+      "tags": [
+        "regular_q75"
+      ],
+      "transition": {
+        "area": 240,
+        "next_area": 254,
+        "next_over_current_area": 1.0583333333333333,
+        "current_over_next_area": 0.9448818897637795,
+        "centroid_displacement_over_diagonal": 0.011976877428196269
+      }
+    },
+    {
+      "case_id": "val:lab-coat:obj2:switch9",
+      "split": "val",
+      "sequence": "lab-coat",
+      "object_id": 2,
+      "switch_frame": 9,
+      "future_end_frame": 45,
+      "frame_count": 47,
+      "tags": [
+        "regular_q25"
+      ],
+      "transition": {
+        "area": 58,
+        "next_area": 88,
+        "next_over_current_area": 1.5172413793103448,
+        "current_over_next_area": 0.6590909090909091,
+        "centroid_displacement_over_diagonal": 0.0027056483259077823
+      }
+    },
+    {
+      "case_id": "val:lab-coat:obj2:switch14",
+      "split": "val",
+      "sequence": "lab-coat",
+      "object_id": 2,
+      "switch_frame": 14,
+      "future_end_frame": 45,
+      "frame_count": 47,
+      "tags": [
+        "regular_q50"
+      ],
+      "transition": {
+        "area": 130,
+        "next_area": 101,
+        "next_over_current_area": 0.7769230769230769,
+        "current_over_next_area": 1.2871287128712872,
+        "centroid_displacement_over_diagonal": 0.009396330376499687
+      }
+    },
+    {
+      "case_id": "val:lab-coat:obj2:switch20",
+      "split": "val",
+      "sequence": "lab-coat",
+      "object_id": 2,
+      "switch_frame": 20,
+      "future_end_frame": 45,
+      "frame_count": 47,
+      "tags": [
+        "regular_q75"
+      ],
+      "transition": {
+        "area": 138,
+        "next_area": 146,
+        "next_over_current_area": 1.0579710144927537,
+        "current_over_next_area": 0.9452054794520548,
+        "centroid_displacement_over_diagonal": 0.008760743104489132
+      }
+    },
+    {
+      "case_id": "val:lab-coat:obj2:switch23",
+      "split": "val",
+      "sequence": "lab-coat",
+      "object_id": 2,
+      "switch_frame": 23,
+      "future_end_frame": 45,
+      "frame_count": 47,
+      "tags": [
+        "max_centroid_motion"
+      ],
+      "transition": {
+        "area": 91,
+        "next_area": 85,
+        "next_over_current_area": 0.9340659340659341,
+        "current_over_next_area": 1.0705882352941176,
+        "centroid_displacement_over_diagonal": 0.013893328524650302
+      }
+    },
+    {
+      "case_id": "val:lab-coat:obj3:switch9",
+      "split": "val",
+      "sequence": "lab-coat",
+      "object_id": 3,
+      "switch_frame": 9,
+      "future_end_frame": 45,
+      "frame_count": 47,
+      "tags": [
+        "regular_q25"
+      ],
+      "transition": {
+        "area": 12255,
+        "next_area": 13126,
+        "next_over_current_area": 1.0710730314157486,
+        "current_over_next_area": 0.9336431509980192,
+        "centroid_displacement_over_diagonal": 0.004741542845575936
+      }
+    },
+    {
+      "case_id": "val:lab-coat:obj3:switch14",
+      "split": "val",
+      "sequence": "lab-coat",
+      "object_id": 3,
+      "switch_frame": 14,
+      "future_end_frame": 45,
+      "frame_count": 47,
+      "tags": [
+        "regular_q50"
+      ],
+      "transition": {
+        "area": 17435,
+        "next_area": 18959,
+        "next_over_current_area": 1.0874103814166907,
+        "current_over_next_area": 0.9196160135028218,
+        "centroid_displacement_over_diagonal": 0.004558215848548453
+      }
+    },
+    {
+      "case_id": "val:lab-coat:obj3:switch20",
+      "split": "val",
+      "sequence": "lab-coat",
+      "object_id": 3,
+      "switch_frame": 20,
+      "future_end_frame": 45,
+      "frame_count": 47,
+      "tags": [
+        "regular_q75"
+      ],
+      "transition": {
+        "area": 30776,
+        "next_area": 32581,
+        "next_over_current_area": 1.0586495970886405,
+        "current_over_next_area": 0.9445996132715386,
+        "centroid_displacement_over_diagonal": 0.0025417005538687894
+      }
+    },
+    {
+      "case_id": "val:lab-coat:obj3:switch23",
+      "split": "val",
+      "sequence": "lab-coat",
+      "object_id": 3,
+      "switch_frame": 23,
+      "future_end_frame": 45,
+      "frame_count": 47,
+      "tags": [
+        "max_centroid_motion"
+      ],
+      "transition": {
+        "area": 38676,
+        "next_area": 42568,
+        "next_over_current_area": 1.1006308822008481,
+        "current_over_next_area": 0.9085698177034393,
+        "centroid_displacement_over_diagonal": 0.010443674379717091
+      }
+    },
+    {
+      "case_id": "val:lab-coat:obj4:switch9",
+      "split": "val",
+      "sequence": "lab-coat",
+      "object_id": 4,
+      "switch_frame": 9,
+      "future_end_frame": 45,
+      "frame_count": 47,
+      "tags": [
+        "regular_q25"
+      ],
+      "transition": {
+        "area": 12882,
+        "next_area": 13714,
+        "next_over_current_area": 1.064586244371992,
+        "current_over_next_area": 0.9393320694181129,
+        "centroid_displacement_over_diagonal": 0.0034327165256838473
+      }
+    },
+    {
+      "case_id": "val:lab-coat:obj4:switch14",
+      "split": "val",
+      "sequence": "lab-coat",
+      "object_id": 4,
+      "switch_frame": 14,
+      "future_end_frame": 45,
+      "frame_count": 47,
+      "tags": [
+        "regular_q50"
+      ],
+      "transition": {
+        "area": 18073,
+        "next_area": 19624,
+        "next_over_current_area": 1.0858186244674377,
+        "current_over_next_area": 0.9209641255605381,
+        "centroid_displacement_over_diagonal": 0.0060898834298121225
+      }
+    },
+    {
+      "case_id": "val:lab-coat:obj4:switch17",
+      "split": "val",
+      "sequence": "lab-coat",
+      "object_id": 4,
+      "switch_frame": 17,
+      "future_end_frame": 45,
+      "frame_count": 47,
+      "tags": [
+        "max_centroid_motion"
+      ],
+      "transition": {
+        "area": 23350,
+        "next_area": 25721,
+        "next_over_current_area": 1.1015417558886509,
+        "current_over_next_area": 0.9078185140546635,
+        "centroid_displacement_over_diagonal": 0.006932508362816637
+      }
+    },
+    {
+      "case_id": "val:lab-coat:obj4:switch20",
+      "split": "val",
+      "sequence": "lab-coat",
+      "object_id": 4,
+      "switch_frame": 20,
+      "future_end_frame": 45,
+      "frame_count": 47,
+      "tags": [
+        "regular_q75"
+      ],
+      "transition": {
+        "area": 31150,
+        "next_area": 32753,
+        "next_over_current_area": 1.0514606741573034,
+        "current_over_next_area": 0.9510579183586236,
+        "centroid_displacement_over_diagonal": 0.0018491946832554142
+      }
+    },
+    {
+      "case_id": "val:lab-coat:obj5:switch9",
+      "split": "val",
+      "sequence": "lab-coat",
+      "object_id": 5,
+      "switch_frame": 9,
+      "future_end_frame": 45,
+      "frame_count": 47,
+      "tags": [
+        "regular_q25"
+      ],
+      "transition": {
+        "area": 11531,
+        "next_area": 11981,
+        "next_over_current_area": 1.0390252363194865,
+        "current_over_next_area": 0.9624405308404974,
+        "centroid_displacement_over_diagonal": 0.0035422762567526972
+      }
+    },
+    {
+      "case_id": "val:lab-coat:obj5:switch14",
+      "split": "val",
+      "sequence": "lab-coat",
+      "object_id": 5,
+      "switch_frame": 14,
+      "future_end_frame": 45,
+      "frame_count": 47,
+      "tags": [
+        "regular_q50"
+      ],
+      "transition": {
+        "area": 14438,
+        "next_area": 15265,
+        "next_over_current_area": 1.057279401579166,
+        "current_over_next_area": 0.9458237798886341,
+        "centroid_displacement_over_diagonal": 0.005965623664024111
+      }
+    },
+    {
+      "case_id": "val:lab-coat:obj5:switch20",
+      "split": "val",
+      "sequence": "lab-coat",
+      "object_id": 5,
+      "switch_frame": 20,
+      "future_end_frame": 45,
+      "frame_count": 47,
+      "tags": [
+        "max_centroid_motion",
+        "regular_q75"
+      ],
+      "transition": {
+        "area": 22556,
+        "next_area": 24781,
+        "next_over_current_area": 1.0986433764851924,
+        "current_over_next_area": 0.9102134699971752,
+        "centroid_displacement_over_diagonal": 0.009633138843474321
+      }
+    },
+    {
+      "case_id": "val:libby:obj1:switch10",
+      "split": "val",
+      "sequence": "libby",
+      "object_id": 1,
+      "switch_frame": 10,
+      "future_end_frame": 47,
+      "frame_count": 49,
+      "tags": [
+        "regular_q25"
+      ],
+      "transition": {
+        "area": 18629,
+        "next_area": 17838,
+        "next_over_current_area": 0.9575393204144076,
+        "current_over_next_area": 1.0443435362708824,
+        "centroid_displacement_over_diagonal": 0.0042450611701574026
+      }
+    },
+    {
+      "case_id": "val:libby:obj1:switch16",
+      "split": "val",
+      "sequence": "libby",
+      "object_id": 1,
+      "switch_frame": 16,
+      "future_end_frame": 47,
+      "frame_count": 49,
+      "tags": [
+        "regular_q50"
+      ],
+      "transition": {
+        "area": 18326,
+        "next_area": 17273,
+        "next_over_current_area": 0.9425406526246862,
+        "current_over_next_area": 1.0609621953337578,
+        "centroid_displacement_over_diagonal": 0.00236453087381981
+      }
+    },
+    {
+      "case_id": "val:libby:obj1:switch21",
+      "split": "val",
+      "sequence": "libby",
+      "object_id": 1,
+      "switch_frame": 21,
+      "future_end_frame": 47,
+      "frame_count": 49,
+      "tags": [
+        "regular_q75"
+      ],
+      "transition": {
+        "area": 16364,
+        "next_area": 16174,
+        "next_over_current_area": 0.9883891469078465,
+        "current_over_next_area": 1.011747248670706,
+        "centroid_displacement_over_diagonal": 0.005023961232350837
+      }
+    },
+    {
+      "case_id": "val:libby:obj1:switch24",
+      "split": "val",
+      "sequence": "libby",
+      "object_id": 1,
+      "switch_frame": 24,
+      "future_end_frame": 47,
+      "frame_count": 49,
+      "tags": [
+        "max_centroid_motion"
+      ],
+      "transition": {
+        "area": 13598,
+        "next_area": 13661,
+        "next_over_current_area": 1.0046330342697456,
+        "current_over_next_area": 0.9953883317473099,
+        "centroid_displacement_over_diagonal": 0.009178240634383442
+      }
+    },
+    {
+      "case_id": "val:loading:obj1:switch4",
+      "split": "val",
+      "sequence": "loading",
+      "object_id": 1,
+      "switch_frame": 4,
+      "future_end_frame": 48,
+      "frame_count": 50,
+      "tags": [
+        "max_centroid_motion"
+      ],
+      "transition": {
+        "area": 50980,
+        "next_area": 52304,
+        "next_over_current_area": 1.0259709690074539,
+        "current_over_next_area": 0.974686448455185,
+        "centroid_displacement_over_diagonal": 0.01317911139501973
+      }
+    },
+    {
+      "case_id": "val:loading:obj1:switch10",
+      "split": "val",
+      "sequence": "loading",
+      "object_id": 1,
+      "switch_frame": 10,
+      "future_end_frame": 48,
+      "frame_count": 50,
+      "tags": [
+        "regular_q25"
+      ],
+      "transition": {
+        "area": 57984,
+        "next_area": 59955,
+        "next_over_current_area": 1.0339921357615893,
+        "current_over_next_area": 0.967125344008006,
+        "centroid_displacement_over_diagonal": 0.007542604484859382
+      }
+    },
+    {
+      "case_id": "val:loading:obj1:switch16",
+      "split": "val",
+      "sequence": "loading",
+      "object_id": 1,
+      "switch_frame": 16,
+      "future_end_frame": 48,
+      "frame_count": 50,
+      "tags": [
+        "regular_q50"
+      ],
+      "transition": {
+        "area": 70690,
+        "next_area": 73436,
+        "next_over_current_area": 1.038845664167492,
+        "current_over_next_area": 0.9626068958004249,
+        "centroid_displacement_over_diagonal": 0.00511830846838483
+      }
+    },
+    {
+      "case_id": "val:loading:obj1:switch22",
+      "split": "val",
+      "sequence": "loading",
+      "object_id": 1,
+      "switch_frame": 22,
+      "future_end_frame": 48,
+      "frame_count": 50,
+      "tags": [
+        "regular_q75"
+      ],
+      "transition": {
+        "area": 77157,
+        "next_area": 77066,
+        "next_over_current_area": 0.998820586596161,
+        "current_over_next_area": 1.0011808060623362,
+        "centroid_displacement_over_diagonal": 0.0015277806383334203
+      }
+    },
+    {
+      "case_id": "val:loading:obj2:switch5",
+      "split": "val",
+      "sequence": "loading",
+      "object_id": 2,
+      "switch_frame": 5,
+      "future_end_frame": 48,
+      "frame_count": 50,
+      "tags": [
+        "max_centroid_motion"
+      ],
+      "transition": {
+        "area": 10664,
+        "next_area": 10820,
+        "next_over_current_area": 1.014628657164291,
+        "current_over_next_area": 0.9855822550831793,
+        "centroid_displacement_over_diagonal": 0.015425049715727918
+      }
+    },
+    {
+      "case_id": "val:loading:obj2:switch10",
+      "split": "val",
+      "sequence": "loading",
+      "object_id": 2,
+      "switch_frame": 10,
+      "future_end_frame": 48,
+      "frame_count": 50,
+      "tags": [
+        "regular_q25"
+      ],
+      "transition": {
+        "area": 9897,
+        "next_area": 10007,
+        "next_over_current_area": 1.0111144791350914,
+        "current_over_next_area": 0.9890076946137704,
+        "centroid_displacement_over_diagonal": 0.0065513851091746666
+      }
+    },
+    {
+      "case_id": "val:loading:obj2:switch16",
+      "split": "val",
+      "sequence": "loading",
+      "object_id": 2,
+      "switch_frame": 16,
+      "future_end_frame": 48,
+      "frame_count": 50,
+      "tags": [
+        "regular_q50"
+      ],
+      "transition": {
+        "area": 8209,
+        "next_area": 7287,
+        "next_over_current_area": 0.8876842489950055,
+        "current_over_next_area": 1.12652669136819,
+        "centroid_displacement_over_diagonal": 0.0030989306324371545
+      }
+    },
+    {
+      "case_id": "val:loading:obj2:switch22",
+      "split": "val",
+      "sequence": "loading",
+      "object_id": 2,
+      "switch_frame": 22,
+      "future_end_frame": 48,
+      "frame_count": 50,
+      "tags": [
+        "regular_q75"
+      ],
+      "transition": {
+        "area": 26939,
+        "next_area": 30098,
+        "next_over_current_area": 1.1172649318831434,
+        "current_over_next_area": 0.8950428599906971,
+        "centroid_displacement_over_diagonal": 0.004508250249476613
+      }
+    },
+    {
+      "case_id": "val:loading:obj3:switch4",
+      "split": "val",
+      "sequence": "loading",
+      "object_id": 3,
+      "switch_frame": 4,
+      "future_end_frame": 48,
+      "frame_count": 50,
+      "tags": [
+        "max_centroid_motion"
+      ],
+      "transition": {
+        "area": 38055,
+        "next_area": 38443,
+        "next_over_current_area": 1.0101957692813033,
+        "current_over_next_area": 0.9899071352391853,
+        "centroid_displacement_over_diagonal": 0.012470905097501641
+      }
+    },
+    {
+      "case_id": "val:loading:obj3:switch10",
+      "split": "val",
+      "sequence": "loading",
+      "object_id": 3,
+      "switch_frame": 10,
+      "future_end_frame": 48,
+      "frame_count": 50,
+      "tags": [
+        "regular_q25"
+      ],
+      "transition": {
+        "area": 39679,
+        "next_area": 39412,
+        "next_over_current_area": 0.9932709997731798,
+        "current_over_next_area": 1.0067745864203796,
+        "centroid_displacement_over_diagonal": 0.0074623180019474464
+      }
+    },
+    {
+      "case_id": "val:loading:obj3:switch16",
+      "split": "val",
+      "sequence": "loading",
+      "object_id": 3,
+      "switch_frame": 16,
+      "future_end_frame": 48,
+      "frame_count": 50,
+      "tags": [
+        "regular_q50"
+      ],
+      "transition": {
+        "area": 36579,
+        "next_area": 35958,
+        "next_over_current_area": 0.9830230460100058,
+        "current_over_next_area": 1.017270148506591,
+        "centroid_displacement_over_diagonal": 0.008280997260706533
+      }
+    },
+    {
+      "case_id": "val:loading:obj3:switch22",
+      "split": "val",
+      "sequence": "loading",
+      "object_id": 3,
+      "switch_frame": 22,
+      "future_end_frame": 48,
+      "frame_count": 50,
+      "tags": [
+        "regular_q75"
+      ],
+      "transition": {
+        "area": 28462,
+        "next_area": 26671,
+        "next_over_current_area": 0.9370739933947017,
+        "current_over_next_area": 1.0671515878669715,
+        "centroid_displacement_over_diagonal": 0.00756090682453112
+      }
+    },
+    {
+      "case_id": "val:mbike-trick:obj1:switch17",
+      "split": "val",
+      "sequence": "mbike-trick",
+      "object_id": 1,
+      "switch_frame": 17,
+      "future_end_frame": 77,
+      "frame_count": 79,
+      "tags": [
+        "regular_q25"
+      ],
+      "transition": {
+        "area": 4274,
+        "next_area": 4427,
+        "next_over_current_area": 1.0357978474496958,
+        "current_over_next_area": 0.9654393494465778,
+        "centroid_displacement_over_diagonal": 0.0030660380712350522
+      }
+    },
+    {
+      "case_id": "val:mbike-trick:obj1:switch30",
+      "split": "val",
+      "sequence": "mbike-trick",
+      "object_id": 1,
+      "switch_frame": 30,
+      "future_end_frame": 77,
+      "frame_count": 79,
+      "tags": [
+        "regular_q50"
+      ],
+      "transition": {
+        "area": 4254,
+        "next_area": 4290,
+        "next_over_current_area": 1.008462623413258,
+        "current_over_next_area": 0.9916083916083916,
+        "centroid_displacement_over_diagonal": 0.0007822266066128136
+      }
+    },
+    {
+      "case_id": "val:mbike-trick:obj1:switch44",
+      "split": "val",
+      "sequence": "mbike-trick",
+      "object_id": 1,
+      "switch_frame": 44,
+      "future_end_frame": 77,
+      "frame_count": 79,
+      "tags": [
+        "regular_q75"
+      ],
+      "transition": {
+        "area": 6686,
+        "next_area": 6790,
+        "next_over_current_area": 1.0155548908166319,
+        "current_over_next_area": 0.9846833578792342,
+        "centroid_displacement_over_diagonal": 0.0076829243447402015
+      }
+    },
+    {
+      "case_id": "val:mbike-trick:obj1:switch57",
+      "split": "val",
+      "sequence": "mbike-trick",
+      "object_id": 1,
+      "switch_frame": 57,
+      "future_end_frame": 77,
+      "frame_count": 79,
+      "tags": [
+        "max_centroid_motion"
+      ],
+      "transition": {
+        "area": 11396,
+        "next_area": 12005,
+        "next_over_current_area": 1.0534398034398034,
+        "current_over_next_area": 0.9492711370262391,
+        "centroid_displacement_over_diagonal": 0.009649807020738645
+      }
+    },
+    {
+      "case_id": "val:mbike-trick:obj2:switch17",
+      "split": "val",
+      "sequence": "mbike-trick",
+      "object_id": 2,
+      "switch_frame": 17,
+      "future_end_frame": 77,
+      "frame_count": 79,
+      "tags": [
+        "regular_q25"
+      ],
+      "transition": {
+        "area": 4330,
+        "next_area": 4448,
+        "next_over_current_area": 1.0272517321016166,
+        "current_over_next_area": 0.9734712230215827,
+        "centroid_displacement_over_diagonal": 0.0022903737441283055
+      }
+    },
+    {
+      "case_id": "val:mbike-trick:obj2:switch30",
+      "split": "val",
+      "sequence": "mbike-trick",
+      "object_id": 2,
+      "switch_frame": 30,
+      "future_end_frame": 77,
+      "frame_count": 79,
+      "tags": [
+        "regular_q50"
+      ],
+      "transition": {
+        "area": 7136,
+        "next_area": 7315,
+        "next_over_current_area": 1.0250840807174888,
+        "current_over_next_area": 0.9755297334244702,
+        "centroid_displacement_over_diagonal": 0.0011480334771857882
+      }
+    },
+    {
+      "case_id": "val:mbike-trick:obj2:switch44",
+      "split": "val",
+      "sequence": "mbike-trick",
+      "object_id": 2,
+      "switch_frame": 44,
+      "future_end_frame": 77,
+      "frame_count": 79,
+      "tags": [
+        "regular_q75"
+      ],
+      "transition": {
+        "area": 12366,
+        "next_area": 12928,
+        "next_over_current_area": 1.0454471939188097,
+        "current_over_next_area": 0.9565284653465347,
+        "centroid_displacement_over_diagonal": 0.007384301013791775
+      }
+    },
+    {
+      "case_id": "val:mbike-trick:obj2:switch56",
+      "split": "val",
+      "sequence": "mbike-trick",
+      "object_id": 2,
+      "switch_frame": 56,
+      "future_end_frame": 77,
+      "frame_count": 79,
+      "tags": [
+        "max_centroid_motion"
+      ],
+      "transition": {
+        "area": 21774,
+        "next_area": 23428,
+        "next_over_current_area": 1.075962156700652,
+        "current_over_next_area": 0.9294007170906607,
+        "centroid_displacement_over_diagonal": 0.009218541287512745
+      }
+    },
+    {
+      "case_id": "val:motocross-jump:obj1:switch8",
+      "split": "val",
+      "sequence": "motocross-jump",
+      "object_id": 1,
+      "switch_frame": 8,
+      "future_end_frame": 38,
+      "frame_count": 40,
+      "tags": [
+        "regular_q25"
+      ],
+      "transition": {
+        "area": 16085,
+        "next_area": 18737,
+        "next_over_current_area": 1.1648741063102268,
+        "current_over_next_area": 0.8584618668943801,
+        "centroid_displacement_over_diagonal": 0.0044724031411836505
+      }
+    },
+    {
+      "case_id": "val:motocross-jump:obj1:switch11",
+      "split": "val",
+      "sequence": "motocross-jump",
+      "object_id": 1,
+      "switch_frame": 11,
+      "future_end_frame": 38,
+      "frame_count": 40,
+      "tags": [
+        "regular_q50"
+      ],
+      "transition": {
+        "area": 26114,
+        "next_area": 29309,
+        "next_over_current_area": 1.1223481657348549,
+        "current_over_next_area": 0.8909891159712033,
+        "centroid_displacement_over_diagonal": 0.009971991093454622
+      }
+    },
+    {
+      "case_id": "val:motocross-jump:obj1:switch14",
+      "split": "val",
+      "sequence": "motocross-jump",
+      "object_id": 1,
+      "switch_frame": 14,
+      "future_end_frame": 38,
+      "frame_count": 40,
+      "tags": [
+        "regular_q75"
+      ],
+      "transition": {
+        "area": 26073,
+        "next_area": 22417,
+        "next_over_current_area": 0.8597783147317148,
+        "current_over_next_area": 1.1630905116652541,
+        "centroid_displacement_over_diagonal": 0.01841397421776377
+      }
+    },
+    {
+      "case_id": "val:motocross-jump:obj1:switch18",
+      "split": "val",
+      "sequence": "motocross-jump",
+      "object_id": 1,
+      "switch_frame": 18,
+      "future_end_frame": 38,
+      "frame_count": 40,
+      "tags": [
+        "max_centroid_motion"
+      ],
+      "transition": {
+        "area": 16842,
+        "next_area": 19209,
+        "next_over_current_area": 1.1405415033843962,
+        "current_over_next_area": 0.8767765110104638,
+        "centroid_displacement_over_diagonal": 0.05227227267273283
+      }
+    },
+    {
+      "case_id": "val:motocross-jump:obj2:switch8",
+      "split": "val",
+      "sequence": "motocross-jump",
+      "object_id": 2,
+      "switch_frame": 8,
+      "future_end_frame": 38,
+      "frame_count": 40,
+      "tags": [
+        "regular_q25"
+      ],
+      "transition": {
+        "area": 33947,
+        "next_area": 42350,
+        "next_over_current_area": 1.2475329189619113,
+        "current_over_next_area": 0.801582054309327,
+        "centroid_displacement_over_diagonal": 0.016986926449515705
+      }
+    },
+    {
+      "case_id": "val:motocross-jump:obj2:switch11",
+      "split": "val",
+      "sequence": "motocross-jump",
+      "object_id": 2,
+      "switch_frame": 11,
+      "future_end_frame": 38,
+      "frame_count": 40,
+      "tags": [
+        "regular_q50"
+      ],
+      "transition": {
+        "area": 65382,
+        "next_area": 81640,
+        "next_over_current_area": 1.2486617111743292,
+        "current_over_next_area": 0.8008574228319452,
+        "centroid_displacement_over_diagonal": 0.026672104250760352
+      }
+    },
+    {
+      "case_id": "val:motocross-jump:obj2:switch13",
+      "split": "val",
+      "sequence": "motocross-jump",
+      "object_id": 2,
+      "switch_frame": 13,
+      "future_end_frame": 38,
+      "frame_count": 40,
+      "tags": [
+        "max_centroid_motion"
+      ],
+      "transition": {
+        "area": 103862,
+        "next_area": 136191,
+        "next_over_current_area": 1.3112687989832663,
+        "current_over_next_area": 0.7626201437686778,
+        "centroid_displacement_over_diagonal": 0.034394409533817984
+      }
+    },
+    {
+      "case_id": "val:motocross-jump:obj2:switch14",
+      "split": "val",
+      "sequence": "motocross-jump",
+      "object_id": 2,
+      "switch_frame": 14,
+      "future_end_frame": 38,
+      "frame_count": 40,
+      "tags": [
+        "regular_q75"
+      ],
+      "transition": {
+        "area": 136191,
+        "next_area": 164679,
+        "next_over_current_area": 1.2091768178514,
+        "current_over_next_area": 0.8270089082396662,
+        "centroid_displacement_over_diagonal": 0.0341813156925885
+      }
+    },
+    {
+      "case_id": "val:paragliding-launch:obj1:switch18",
+      "split": "val",
+      "sequence": "paragliding-launch",
+      "object_id": 1,
+      "switch_frame": 18,
+      "future_end_frame": 78,
+      "frame_count": 80,
+      "tags": [
+        "regular_q25"
+      ],
+      "transition": {
+        "area": 13371,
+        "next_area": 13279,
+        "next_over_current_area": 0.9931194375888116,
+        "current_over_next_area": 1.0069282325476316,
+        "centroid_displacement_over_diagonal": 0.0060800663531373825
+      }
+    },
+    {
+      "case_id": "val:paragliding-launch:obj1:switch31",
+      "split": "val",
+      "sequence": "paragliding-launch",
+      "object_id": 1,
+      "switch_frame": 31,
+      "future_end_frame": 78,
+      "frame_count": 80,
+      "tags": [
+        "regular_q50"
+      ],
+      "transition": {
+        "area": 10729,
+        "next_area": 10534,
+        "next_over_current_area": 0.9818249603877341,
+        "current_over_next_area": 1.0185114866147713,
+        "centroid_displacement_over_diagonal": 0.006793354088247457
+      }
+    },
+    {
+      "case_id": "val:paragliding-launch:obj1:switch39",
+      "split": "val",
+      "sequence": "paragliding-launch",
+      "object_id": 1,
+      "switch_frame": 39,
+      "future_end_frame": 78,
+      "frame_count": 80,
+      "tags": [
+        "max_centroid_motion"
+      ],
+      "transition": {
+        "area": 9542,
+        "next_area": 9222,
+        "next_over_current_area": 0.9664640536575142,
+        "current_over_next_area": 1.0346996313164172,
+        "centroid_displacement_over_diagonal": 0.010365565203370153
+      }
+    },
+    {
+      "case_id": "val:paragliding-launch:obj1:switch44",
+      "split": "val",
+      "sequence": "paragliding-launch",
+      "object_id": 1,
+      "switch_frame": 44,
+      "future_end_frame": 78,
+      "frame_count": 80,
+      "tags": [
+        "regular_q75"
+      ],
+      "transition": {
+        "area": 7418,
+        "next_area": 6777,
+        "next_over_current_area": 0.9135885683472634,
+        "current_over_next_area": 1.0945846244651025,
+        "centroid_displacement_over_diagonal": 0.003836043874045031
+      }
+    },
+    {
+      "case_id": "val:paragliding-launch:obj2:switch18",
+      "split": "val",
+      "sequence": "paragliding-launch",
+      "object_id": 2,
+      "switch_frame": 18,
+      "future_end_frame": 78,
+      "frame_count": 80,
+      "tags": [
+        "regular_q25"
+      ],
+      "transition": {
+        "area": 6490,
+        "next_area": 6246,
+        "next_over_current_area": 0.9624036979969184,
+        "current_over_next_area": 1.0390650016010246,
+        "centroid_displacement_over_diagonal": 0.004002235208251392
+      }
+    },
+    {
+      "case_id": "val:paragliding-launch:obj2:switch24",
+      "split": "val",
+      "sequence": "paragliding-launch",
+      "object_id": 2,
+      "switch_frame": 24,
+      "future_end_frame": 78,
+      "frame_count": 80,
+      "tags": [
+        "max_centroid_motion"
+      ],
+      "transition": {
+        "area": 6115,
+        "next_area": 5640,
+        "next_over_current_area": 0.9223221586263287,
+        "current_over_next_area": 1.0842198581560283,
+        "centroid_displacement_over_diagonal": 0.009558194619470807
+      }
+    },
+    {
+      "case_id": "val:paragliding-launch:obj2:switch31",
+      "split": "val",
+      "sequence": "paragliding-launch",
+      "object_id": 2,
+      "switch_frame": 31,
+      "future_end_frame": 78,
+      "frame_count": 80,
+      "tags": [
+        "regular_q50"
+      ],
+      "transition": {
+        "area": 4537,
+        "next_area": 4384,
+        "next_over_current_area": 0.9662772757328632,
+        "current_over_next_area": 1.0348996350364963,
+        "centroid_displacement_over_diagonal": 0.003655993572443438
+      }
+    },
+    {
+      "case_id": "val:paragliding-launch:obj2:switch44",
+      "split": "val",
+      "sequence": "paragliding-launch",
+      "object_id": 2,
+      "switch_frame": 44,
+      "future_end_frame": 78,
+      "frame_count": 80,
+      "tags": [
+        "regular_q75"
+      ],
+      "transition": {
+        "area": 4480,
+        "next_area": 4344,
+        "next_over_current_area": 0.9696428571428571,
+        "current_over_next_area": 1.0313075506445673,
+        "centroid_displacement_over_diagonal": 0.0015575012232946488
+      }
+    },
+    {
+      "case_id": "val:paragliding-launch:obj3:switch18",
+      "split": "val",
+      "sequence": "paragliding-launch",
+      "object_id": 3,
+      "switch_frame": 18,
+      "future_end_frame": 78,
+      "frame_count": 80,
+      "tags": [
+        "regular_q25"
+      ],
+      "transition": {
+        "area": 2224,
+        "next_area": 2448,
+        "next_over_current_area": 1.1007194244604317,
+        "current_over_next_area": 0.9084967320261438,
+        "centroid_displacement_over_diagonal": 9.310700815182421e-05
+      }
+    },
+    {
+      "case_id": "val:paragliding-launch:obj3:switch31",
+      "split": "val",
+      "sequence": "paragliding-launch",
+      "object_id": 3,
+      "switch_frame": 31,
+      "future_end_frame": 78,
+      "frame_count": 80,
+      "tags": [
+        "regular_q50"
+      ],
+      "transition": {
+        "area": 4490,
+        "next_area": 4745,
+        "next_over_current_area": 1.056792873051225,
+        "current_over_next_area": 0.946259220231823,
+        "centroid_displacement_over_diagonal": 0.005161092950345216
+      }
+    },
+    {
+      "case_id": "val:paragliding-launch:obj3:switch38",
+      "split": "val",
+      "sequence": "paragliding-launch",
+      "object_id": 3,
+      "switch_frame": 38,
+      "future_end_frame": 78,
+      "frame_count": 80,
+      "tags": [
+        "max_centroid_motion"
+      ],
+      "transition": {
+        "area": 5103,
+        "next_area": 6738,
+        "next_over_current_area": 1.3203997648442092,
+        "current_over_next_area": 0.757346393588602,
+        "centroid_displacement_over_diagonal": 0.025719488958120897
+      }
+    },
+    {
+      "case_id": "val:paragliding-launch:obj3:switch44",
+      "split": "val",
+      "sequence": "paragliding-launch",
+      "object_id": 3,
+      "switch_frame": 44,
+      "future_end_frame": 78,
+      "frame_count": 80,
+      "tags": [
+        "regular_q75"
+      ],
+      "transition": {
+        "area": 6704,
+        "next_area": 6792,
+        "next_over_current_area": 1.0131264916467781,
+        "current_over_next_area": 0.9870435806831567,
+        "centroid_displacement_over_diagonal": 0.001306157790802216
+      }
+    },
+    {
+      "case_id": "val:parkour:obj1:switch22",
+      "split": "val",
+      "sequence": "parkour",
+      "object_id": 1,
+      "switch_frame": 22,
+      "future_end_frame": 98,
+      "frame_count": 100,
+      "tags": [
+        "regular_q25"
+      ],
+      "transition": {
+        "area": 15869,
+        "next_area": 15976,
+        "next_over_current_area": 1.006742705904594,
+        "current_over_next_area": 0.9933024536805208,
+        "centroid_displacement_over_diagonal": 0.008376247764787027
+      }
+    },
+    {
+      "case_id": "val:parkour:obj1:switch40",
+      "split": "val",
+      "sequence": "parkour",
+      "object_id": 1,
+      "switch_frame": 40,
+      "future_end_frame": 98,
+      "frame_count": 100,
+      "tags": [
+        "max_centroid_motion"
+      ],
+      "transition": {
+        "area": 22452,
+        "next_area": 21542,
+        "next_over_current_area": 0.9594690896133975,
+        "current_over_next_area": 1.042243060068703,
+        "centroid_displacement_over_diagonal": 0.02548972646824953
+      }
+    },
+    {
+      "case_id": "val:parkour:obj1:switch41",
+      "split": "val",
+      "sequence": "parkour",
+      "object_id": 1,
+      "switch_frame": 41,
+      "future_end_frame": 98,
+      "frame_count": 100,
+      "tags": [
+        "regular_q50"
+      ],
+      "transition": {
+        "area": 21542,
+        "next_area": 20309,
+        "next_over_current_area": 0.9427629746541639,
+        "current_over_next_area": 1.0607119996060859,
+        "centroid_displacement_over_diagonal": 0.018008987790456527
+      }
+    },
+    {
+      "case_id": "val:parkour:obj1:switch60",
+      "split": "val",
+      "sequence": "parkour",
+      "object_id": 1,
+      "switch_frame": 60,
+      "future_end_frame": 98,
+      "frame_count": 100,
+      "tags": [
+        "regular_q75"
+      ],
+      "transition": {
+        "area": 28585,
+        "next_area": 28571,
+        "next_over_current_area": 0.9995102326394962,
+        "current_over_next_area": 1.0004900073501102,
+        "centroid_displacement_over_diagonal": 0.019876276816253424
+      }
+    },
+    {
+      "case_id": "val:pigs:obj1:switch17",
+      "split": "val",
+      "sequence": "pigs",
+      "object_id": 1,
+      "switch_frame": 17,
+      "future_end_frame": 77,
+      "frame_count": 79,
+      "tags": [
+        "regular_q25"
+      ],
+      "transition": {
+        "area": 21532,
+        "next_area": 21712,
+        "next_over_current_area": 1.0083596507523687,
+        "current_over_next_area": 0.9917096536477524,
+        "centroid_displacement_over_diagonal": 0.0018437142575810032
+      }
+    },
+    {
+      "case_id": "val:pigs:obj1:switch30",
+      "split": "val",
+      "sequence": "pigs",
+      "object_id": 1,
+      "switch_frame": 30,
+      "future_end_frame": 77,
+      "frame_count": 79,
+      "tags": [
+        "regular_q50"
+      ],
+      "transition": {
+        "area": 29513,
+        "next_area": 30986,
+        "next_over_current_area": 1.049910209060414,
+        "current_over_next_area": 0.9524624023752662,
+        "centroid_displacement_over_diagonal": 0.009430332163884798
+      }
+    },
+    {
+      "case_id": "val:pigs:obj1:switch35",
+      "split": "val",
+      "sequence": "pigs",
+      "object_id": 1,
+      "switch_frame": 35,
+      "future_end_frame": 77,
+      "frame_count": 79,
+      "tags": [
+        "max_centroid_motion"
+      ],
+      "transition": {
+        "area": 40954,
+        "next_area": 42001,
+        "next_over_current_area": 1.025565268349856,
+        "current_over_next_area": 0.975072022094712,
+        "centroid_displacement_over_diagonal": 0.012201278872802913
+      }
+    },
+    {
+      "case_id": "val:pigs:obj1:switch44",
+      "split": "val",
+      "sequence": "pigs",
+      "object_id": 1,
+      "switch_frame": 44,
+      "future_end_frame": 77,
+      "frame_count": 79,
+      "tags": [
+        "regular_q75"
+      ],
+      "transition": {
+        "area": 48648,
+        "next_area": 49735,
+        "next_over_current_area": 1.0223441868113796,
+        "current_over_next_area": 0.9781441640695687,
+        "centroid_displacement_over_diagonal": 0.004043949760663568
+      }
+    },
+    {
+      "case_id": "val:pigs:obj2:switch17",
+      "split": "val",
+      "sequence": "pigs",
+      "object_id": 2,
+      "switch_frame": 17,
+      "future_end_frame": 77,
+      "frame_count": 79,
+      "tags": [
+        "regular_q25"
+      ],
+      "transition": {
+        "area": 27230,
+        "next_area": 27269,
+        "next_over_current_area": 1.0014322438486962,
+        "current_over_next_area": 0.9985698045399538,
+        "centroid_displacement_over_diagonal": 0.0016639254114994425
+      }
+    },
+    {
+      "case_id": "val:pigs:obj2:switch30",
+      "split": "val",
+      "sequence": "pigs",
+      "object_id": 2,
+      "switch_frame": 30,
+      "future_end_frame": 77,
+      "frame_count": 79,
+      "tags": [
+        "regular_q50"
+      ],
+      "transition": {
+        "area": 22714,
+        "next_area": 22494,
+        "next_over_current_area": 0.9903143435766487,
+        "current_over_next_area": 1.0097803858806793,
+        "centroid_displacement_over_diagonal": 0.005639862648787752
+      }
+    },
+    {
+      "case_id": "val:pigs:obj2:switch44",
+      "split": "val",
+      "sequence": "pigs",
+      "object_id": 2,
+      "switch_frame": 44,
+      "future_end_frame": 77,
+      "frame_count": 79,
+      "tags": [
+        "regular_q75"
+      ],
+      "transition": {
+        "area": 8310,
+        "next_area": 7794,
+        "next_over_current_area": 0.9379061371841155,
+        "current_over_next_area": 1.0662047729022326,
+        "centroid_displacement_over_diagonal": 0.011603166925755607
+      }
+    },
+    {
+      "case_id": "val:pigs:obj2:switch47",
+      "split": "val",
+      "sequence": "pigs",
+      "object_id": 2,
+      "switch_frame": 47,
+      "future_end_frame": 77,
+      "frame_count": 79,
+      "tags": [
+        "max_centroid_motion"
+      ],
+      "transition": {
+        "area": 6346,
+        "next_area": 5977,
+        "next_over_current_area": 0.941853135833596,
+        "current_over_next_area": 1.0617366571858793,
+        "centroid_displacement_over_diagonal": 0.03774025802094307
+      }
+    },
+    {
+      "case_id": "val:pigs:obj3:switch17",
+      "split": "val",
+      "sequence": "pigs",
+      "object_id": 3,
+      "switch_frame": 17,
+      "future_end_frame": 77,
+      "frame_count": 79,
+      "tags": [
+        "regular_q25"
+      ],
+      "transition": {
+        "area": 86430,
+        "next_area": 85593,
+        "next_over_current_area": 0.9903158625477265,
+        "current_over_next_area": 1.009778837054432,
+        "centroid_displacement_over_diagonal": 0.0011990354324079393
+      }
+    },
+    {
+      "case_id": "val:pigs:obj3:switch30",
+      "split": "val",
+      "sequence": "pigs",
+      "object_id": 3,
+      "switch_frame": 30,
+      "future_end_frame": 77,
+      "frame_count": 79,
+      "tags": [
+        "regular_q50"
+      ],
+      "transition": {
+        "area": 84259,
+        "next_area": 83302,
+        "next_over_current_area": 0.9886421628550066,
+        "current_over_next_area": 1.0114883196081728,
+        "centroid_displacement_over_diagonal": 0.006538101230616026
+      }
+    },
+    {
+      "case_id": "val:pigs:obj3:switch44",
+      "split": "val",
+      "sequence": "pigs",
+      "object_id": 3,
+      "switch_frame": 44,
+      "future_end_frame": 77,
+      "frame_count": 79,
+      "tags": [
+        "regular_q75"
+      ],
+      "transition": {
+        "area": 75933,
+        "next_area": 72705,
+        "next_over_current_area": 0.9574888388447711,
+        "current_over_next_area": 1.0443985970703529,
+        "centroid_displacement_over_diagonal": 0.008911707304235319
+      }
+    },
+    {
+      "case_id": "val:pigs:obj3:switch45",
+      "split": "val",
+      "sequence": "pigs",
+      "object_id": 3,
+      "switch_frame": 45,
+      "future_end_frame": 77,
+      "frame_count": 79,
+      "tags": [
+        "max_centroid_motion"
+      ],
+      "transition": {
+        "area": 72705,
+        "next_area": 71228,
+        "next_over_current_area": 0.9796850285399904,
+        "current_over_next_area": 1.0207362273263323,
+        "centroid_displacement_over_diagonal": 0.011028329336805713
+      }
+    },
+    {
+      "case_id": "val:scooter-black:obj1:switch6",
+      "split": "val",
+      "sequence": "scooter-black",
+      "object_id": 1,
+      "switch_frame": 6,
+      "future_end_frame": 41,
+      "frame_count": 43,
+      "tags": [
+        "max_centroid_motion"
+      ],
+      "transition": {
+        "area": 2041,
+        "next_area": 2229,
+        "next_over_current_area": 1.0921117099461048,
+        "current_over_next_area": 0.9156572454015254,
+        "centroid_displacement_over_diagonal": 0.008726872376710387
+      }
+    },
+    {
+      "case_id": "val:scooter-black:obj1:switch8",
+      "split": "val",
+      "sequence": "scooter-black",
+      "object_id": 1,
+      "switch_frame": 8,
+      "future_end_frame": 41,
+      "frame_count": 43,
+      "tags": [
+        "regular_q25"
+      ],
+      "transition": {
+        "area": 2406,
+        "next_area": 2616,
+        "next_over_current_area": 1.087281795511222,
+        "current_over_next_area": 0.9197247706422018,
+        "centroid_displacement_over_diagonal": 0.005681457510893791
+      }
+    },
+    {
+      "case_id": "val:scooter-black:obj1:switch12",
+      "split": "val",
+      "sequence": "scooter-black",
+      "object_id": 1,
+      "switch_frame": 12,
+      "future_end_frame": 41,
+      "frame_count": 43,
+      "tags": [
+        "regular_q50"
+      ],
+      "transition": {
+        "area": 3299,
+        "next_area": 3588,
+        "next_over_current_area": 1.0876023037284026,
+        "current_over_next_area": 0.919453734671126,
+        "centroid_displacement_over_diagonal": 0.0051811951739097065
+      }
+    },
+    {
+      "case_id": "val:scooter-black:obj1:switch17",
+      "split": "val",
+      "sequence": "scooter-black",
+      "object_id": 1,
+      "switch_frame": 17,
+      "future_end_frame": 41,
+      "frame_count": 43,
+      "tags": [
+        "regular_q75"
+      ],
+      "transition": {
+        "area": 4899,
+        "next_area": 5252,
+        "next_over_current_area": 1.0720555215350072,
+        "current_over_next_area": 0.9327875095201827,
+        "centroid_displacement_over_diagonal": 0.0038415951589401247
+      }
+    },
+    {
+      "case_id": "val:scooter-black:obj2:switch5",
+      "split": "val",
+      "sequence": "scooter-black",
+      "object_id": 2,
+      "switch_frame": 5,
+      "future_end_frame": 41,
+      "frame_count": 43,
+      "tags": [
+        "max_centroid_motion"
+      ],
+      "transition": {
+        "area": 8089,
+        "next_area": 8555,
+        "next_over_current_area": 1.0576090987761158,
+        "current_over_next_area": 0.9455289304500292,
+        "centroid_displacement_over_diagonal": 0.009481794580267388
+      }
+    },
+    {
+      "case_id": "val:scooter-black:obj2:switch8",
+      "split": "val",
+      "sequence": "scooter-black",
+      "object_id": 2,
+      "switch_frame": 8,
+      "future_end_frame": 41,
+      "frame_count": 43,
+      "tags": [
+        "regular_q25"
+      ],
+      "transition": {
+        "area": 9625,
+        "next_area": 10262,
+        "next_over_current_area": 1.0661818181818181,
+        "current_over_next_area": 0.9379263301500682,
+        "centroid_displacement_over_diagonal": 0.006861720200344447
+      }
+    },
+    {
+      "case_id": "val:scooter-black:obj2:switch12",
+      "split": "val",
+      "sequence": "scooter-black",
+      "object_id": 2,
+      "switch_frame": 12,
+      "future_end_frame": 41,
+      "frame_count": 43,
+      "tags": [
+        "regular_q50"
+      ],
+      "transition": {
+        "area": 12467,
+        "next_area": 13329,
+        "next_over_current_area": 1.069142536295821,
+        "current_over_next_area": 0.9353289819191237,
+        "centroid_displacement_over_diagonal": 0.006337825988516099
+      }
+    },
+    {
+      "case_id": "val:scooter-black:obj2:switch17",
+      "split": "val",
+      "sequence": "scooter-black",
+      "object_id": 2,
+      "switch_frame": 17,
+      "future_end_frame": 41,
+      "frame_count": 43,
+      "tags": [
+        "regular_q75"
+      ],
+      "transition": {
+        "area": 17995,
+        "next_area": 19409,
+        "next_over_current_area": 1.0785773826062794,
+        "current_over_next_area": 0.927147199752692,
+        "centroid_displacement_over_diagonal": 0.005869718712960292
+      }
+    },
+    {
+      "case_id": "val:shooting:obj1:switch8",
+      "split": "val",
+      "sequence": "shooting",
+      "object_id": 1,
+      "switch_frame": 8,
+      "future_end_frame": 38,
+      "frame_count": 40,
+      "tags": [
+        "regular_q25"
+      ],
+      "transition": {
+        "area": 30945,
+        "next_area": 31035,
+        "next_over_current_area": 1.0029083858458556,
+        "current_over_next_area": 0.9971000483325277,
+        "centroid_displacement_over_diagonal": 0.005967616652554353
+      }
+    },
+    {
+      "case_id": "val:shooting:obj1:switch11",
+      "split": "val",
+      "sequence": "shooting",
+      "object_id": 1,
+      "switch_frame": 11,
+      "future_end_frame": 38,
+      "frame_count": 40,
+      "tags": [
+        "regular_q50"
+      ],
+      "transition": {
+        "area": 27640,
+        "next_area": 24986,
+        "next_over_current_area": 0.9039797395079595,
+        "current_over_next_area": 1.10621948291043,
+        "centroid_displacement_over_diagonal": 0.04023584000836281
+      }
+    },
+    {
+      "case_id": "val:shooting:obj1:switch13",
+      "split": "val",
+      "sequence": "shooting",
+      "object_id": 1,
+      "switch_frame": 13,
+      "future_end_frame": 38,
+      "frame_count": 40,
+      "tags": [
+        "max_centroid_motion"
+      ],
+      "transition": {
+        "area": 24645,
+        "next_area": 26432,
+        "next_over_current_area": 1.072509636843173,
+        "current_over_next_area": 0.9323925544794189,
+        "centroid_displacement_over_diagonal": 0.04814071474119974
+      }
+    },
+    {
+      "case_id": "val:shooting:obj1:switch14",
+      "split": "val",
+      "sequence": "shooting",
+      "object_id": 1,
+      "switch_frame": 14,
+      "future_end_frame": 38,
+      "frame_count": 40,
+      "tags": [
+        "regular_q75"
+      ],
+      "transition": {
+        "area": 26432,
+        "next_area": 28862,
+        "next_over_current_area": 1.09193401937046,
+        "current_over_next_area": 0.9158062504330954,
+        "centroid_displacement_over_diagonal": 0.0378161878153367
+      }
+    },
+    {
+      "case_id": "val:shooting:obj2:switch8",
+      "split": "val",
+      "sequence": "shooting",
+      "object_id": 2,
+      "switch_frame": 8,
+      "future_end_frame": 38,
+      "frame_count": 40,
+      "tags": [
+        "regular_q25"
+      ],
+      "transition": {
+        "area": 91357,
+        "next_area": 92853,
+        "next_over_current_area": 1.0163753188042515,
+        "current_over_next_area": 0.9838885119489946,
+        "centroid_displacement_over_diagonal": 0.009467218313942254
+      }
+    },
+    {
+      "case_id": "val:shooting:obj2:switch10",
+      "split": "val",
+      "sequence": "shooting",
+      "object_id": 2,
+      "switch_frame": 10,
+      "future_end_frame": 38,
+      "frame_count": 40,
+      "tags": [
+        "max_centroid_motion"
+      ],
+      "transition": {
+        "area": 94429,
+        "next_area": 96552,
+        "next_over_current_area": 1.0224825000794246,
+        "current_over_next_area": 0.9780118485375756,
+        "centroid_displacement_over_diagonal": 0.01479199405741798
+      }
+    },
+    {
+      "case_id": "val:shooting:obj2:switch11",
+      "split": "val",
+      "sequence": "shooting",
+      "object_id": 2,
+      "switch_frame": 11,
+      "future_end_frame": 38,
+      "frame_count": 40,
+      "tags": [
+        "regular_q50"
+      ],
+      "transition": {
+        "area": 96552,
+        "next_area": 102550,
+        "next_over_current_area": 1.0621219653658132,
+        "current_over_next_area": 0.941511457825451,
+        "centroid_displacement_over_diagonal": 0.011482992891257565
+      }
+    },
+    {
+      "case_id": "val:shooting:obj2:switch14",
+      "split": "val",
+      "sequence": "shooting",
+      "object_id": 2,
+      "switch_frame": 14,
+      "future_end_frame": 38,
+      "frame_count": 40,
+      "tags": [
+        "regular_q75"
+      ],
+      "transition": {
+        "area": 108781,
+        "next_area": 113477,
+        "next_over_current_area": 1.0431693034629208,
+        "current_over_next_area": 0.9586171647117918,
+        "centroid_displacement_over_diagonal": 0.010504381537251334
+      }
+    },
+    {
+      "case_id": "val:shooting:obj3:switch8",
+      "split": "val",
+      "sequence": "shooting",
+      "object_id": 3,
+      "switch_frame": 8,
+      "future_end_frame": 38,
+      "frame_count": 40,
+      "tags": [
+        "regular_q25"
+      ],
+      "transition": {
+        "area": 11536,
+        "next_area": 11715,
+        "next_over_current_area": 1.0155166435506242,
+        "current_over_next_area": 0.9847204438753735,
+        "centroid_displacement_over_diagonal": 0.00613014499697723
+      }
+    },
+    {
+      "case_id": "val:shooting:obj3:switch11",
+      "split": "val",
+      "sequence": "shooting",
+      "object_id": 3,
+      "switch_frame": 11,
+      "future_end_frame": 38,
+      "frame_count": 40,
+      "tags": [
+        "regular_q50"
+      ],
+      "transition": {
+        "area": 12209,
+        "next_area": 13054,
+        "next_over_current_area": 1.069211237611598,
+        "current_over_next_area": 0.9352688831009652,
+        "centroid_displacement_over_diagonal": 0.004836136776123793
+      }
+    },
+    {
+      "case_id": "val:shooting:obj3:switch13",
+      "split": "val",
+      "sequence": "shooting",
+      "object_id": 3,
+      "switch_frame": 13,
+      "future_end_frame": 38,
+      "frame_count": 40,
+      "tags": [
+        "max_centroid_motion"
+      ],
+      "transition": {
+        "area": 14713,
+        "next_area": 15103,
+        "next_over_current_area": 1.0265071705294637,
+        "current_over_next_area": 0.9741773157650798,
+        "centroid_displacement_over_diagonal": 0.01728707484916033
+      }
+    },
+    {
+      "case_id": "val:shooting:obj3:switch14",
+      "split": "val",
+      "sequence": "shooting",
+      "object_id": 3,
+      "switch_frame": 14,
+      "future_end_frame": 38,
+      "frame_count": 40,
+      "tags": [
+        "regular_q75"
+      ],
+      "transition": {
+        "area": 15103,
+        "next_area": 14130,
+        "next_over_current_area": 0.935575713434417,
+        "current_over_next_area": 1.0688605803255484,
+        "centroid_displacement_over_diagonal": 0.014644960710314724
+      }
+    },
+    {
+      "case_id": "val:soapbox:obj1:switch22",
+      "split": "val",
+      "sequence": "soapbox",
+      "object_id": 1,
+      "switch_frame": 22,
+      "future_end_frame": 97,
+      "frame_count": 99,
+      "tags": [
+        "regular_q25"
+      ],
+      "transition": {
+        "area": 9836,
+        "next_area": 10455,
+        "next_over_current_area": 1.062932086213908,
+        "current_over_next_area": 0.9407938785270206,
+        "centroid_displacement_over_diagonal": 0.004623954057610212
+      }
+    },
+    {
+      "case_id": "val:soapbox:obj1:switch40",
+      "split": "val",
+      "sequence": "soapbox",
+      "object_id": 1,
+      "switch_frame": 40,
+      "future_end_frame": 97,
+      "frame_count": 99,
+      "tags": [
+        "regular_q50"
+      ],
+      "transition": {
+        "area": 25742,
+        "next_area": 26946,
+        "next_over_current_area": 1.0467718126019734,
+        "current_over_next_area": 0.9553180434943962,
+        "centroid_displacement_over_diagonal": 0.003881409953339047
+      }
+    },
+    {
+      "case_id": "val:soapbox:obj1:switch59",
+      "split": "val",
+      "sequence": "soapbox",
+      "object_id": 1,
+      "switch_frame": 59,
+      "future_end_frame": 97,
+      "frame_count": 99,
+      "tags": [
+        "regular_q75"
+      ],
+      "transition": {
+        "area": 56764,
+        "next_area": 57393,
+        "next_over_current_area": 1.01108096680995,
+        "current_over_next_area": 0.9890404753192898,
+        "centroid_displacement_over_diagonal": 0.007611857394425819
+      }
+    },
+    {
+      "case_id": "val:soapbox:obj1:switch64",
+      "split": "val",
+      "sequence": "soapbox",
+      "object_id": 1,
+      "switch_frame": 64,
+      "future_end_frame": 97,
+      "frame_count": 99,
+      "tags": [
+        "max_centroid_motion"
+      ],
+      "transition": {
+        "area": 60165,
+        "next_area": 60485,
+        "next_over_current_area": 1.0053187068893876,
+        "current_over_next_area": 0.9947094320906009,
+        "centroid_displacement_over_diagonal": 0.016754225034997457
+      }
+    },
+    {
+      "case_id": "val:soapbox:obj2:switch22",
+      "split": "val",
+      "sequence": "soapbox",
+      "object_id": 2,
+      "switch_frame": 22,
+      "future_end_frame": 97,
+      "frame_count": 99,
+      "tags": [
+        "regular_q25"
+      ],
+      "transition": {
+        "area": 2445,
+        "next_area": 2584,
+        "next_over_current_area": 1.0568507157464213,
+        "current_over_next_area": 0.9462074303405573,
+        "centroid_displacement_over_diagonal": 0.0020434874927547776
+      }
+    },
+    {
+      "case_id": "val:soapbox:obj2:switch40",
+      "split": "val",
+      "sequence": "soapbox",
+      "object_id": 2,
+      "switch_frame": 40,
+      "future_end_frame": 97,
+      "frame_count": 99,
+      "tags": [
+        "regular_q50"
+      ],
+      "transition": {
+        "area": 7698,
+        "next_area": 8171,
+        "next_over_current_area": 1.0614445310470253,
+        "current_over_next_area": 0.9421123485497491,
+        "centroid_displacement_over_diagonal": 0.001963163098622918
+      }
+    },
+    {
+      "case_id": "val:soapbox:obj2:switch59",
+      "split": "val",
+      "sequence": "soapbox",
+      "object_id": 2,
+      "switch_frame": 59,
+      "future_end_frame": 97,
+      "frame_count": 99,
+      "tags": [
+        "regular_q75"
+      ],
+      "transition": {
+        "area": 16617,
+        "next_area": 16725,
+        "next_over_current_area": 1.0064993681169887,
+        "current_over_next_area": 0.993542600896861,
+        "centroid_displacement_over_diagonal": 0.01059851836523702
+      }
+    },
+    {
+      "case_id": "val:soapbox:obj2:switch64",
+      "split": "val",
+      "sequence": "soapbox",
+      "object_id": 2,
+      "switch_frame": 64,
+      "future_end_frame": 97,
+      "frame_count": 99,
+      "tags": [
+        "max_centroid_motion"
+      ],
+      "transition": {
+        "area": 17874,
+        "next_area": 18284,
+        "next_over_current_area": 1.022938346201186,
+        "current_over_next_area": 0.9775760227521331,
+        "centroid_displacement_over_diagonal": 0.013130652129533795
+      }
+    },
+    {
+      "case_id": "val:soapbox:obj3:switch22",
+      "split": "val",
+      "sequence": "soapbox",
+      "object_id": 3,
+      "switch_frame": 22,
+      "future_end_frame": 97,
+      "frame_count": 99,
+      "tags": [
+        "regular_q25"
+      ],
+      "transition": {
+        "area": 2857,
+        "next_area": 2758,
+        "next_over_current_area": 0.9653482674133707,
+        "current_over_next_area": 1.0358955765047135,
+        "centroid_displacement_over_diagonal": 0.0008549763811610038
+      }
+    },
+    {
+      "case_id": "val:soapbox:obj3:switch40",
+      "split": "val",
+      "sequence": "soapbox",
+      "object_id": 3,
+      "switch_frame": 40,
+      "future_end_frame": 97,
+      "frame_count": 99,
+      "tags": [
+        "regular_q50"
+      ],
+      "transition": {
+        "area": 6368,
+        "next_area": 6782,
+        "next_over_current_area": 1.0650125628140703,
+        "current_over_next_area": 0.938956060159245,
+        "centroid_displacement_over_diagonal": 0.0034657442552974457
+      }
+    },
+    {
+      "case_id": "val:soapbox:obj3:switch59",
+      "split": "val",
+      "sequence": "soapbox",
+      "object_id": 3,
+      "switch_frame": 59,
+      "future_end_frame": 97,
+      "frame_count": 99,
+      "tags": [
+        "regular_q75"
+      ],
+      "transition": {
+        "area": 13599,
+        "next_area": 14408,
+        "next_over_current_area": 1.0594896683579675,
+        "current_over_next_area": 0.9438506385341477,
+        "centroid_displacement_over_diagonal": 0.0061567749858053794
+      }
+    },
+    {
+      "case_id": "val:soapbox:obj3:switch65",
+      "split": "val",
+      "sequence": "soapbox",
+      "object_id": 3,
+      "switch_frame": 65,
+      "future_end_frame": 97,
+      "frame_count": 99,
+      "tags": [
+        "max_centroid_motion"
+      ],
+      "transition": {
+        "area": 17862,
+        "next_area": 19020,
+        "next_over_current_area": 1.0648303661404097,
+        "current_over_next_area": 0.9391167192429022,
+        "centroid_displacement_over_diagonal": 0.016953097711319497
+      }
+    }
+  ],
+  "excluded": [],
+  "content_sha256": "7b8fdab3abf312eaf8972a2fd579f54b35b388b23e741c0af07480e6e375b6d1"
+}

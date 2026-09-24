@@ -1,0 +1,53 @@
+__pycache__/
+.pytest_cache/
+.mypy_cache/
+.ruff_cache/
+.venv/
+venv/
+.external/
+*.egg-info/
+.coverage
+htmlcov/
+
+# Editors, operating systems, secrets, and local overrides.
+.idea/
+.vscode/
+.DS_Store
+Thumbs.db
+.env
+.env.*
+!.env.example
+.runpod_ssh/
+.runpod_ssh_known_hosts
+*.local.yaml
+*.local.yml
+tmp/
+*.tmp
+.ipynb_checkpoints/
+
+# Model/data artifacts must remain outside Git.
+*.pt
+*.pth
+*.ckpt
+*.safetensors
+data/*
+!data/README.md
+datasets/
+checkpoints/
+dumps/
+artifacts/
+probe-output/
+outputs/*
+!outputs/README.md
+runs/
+wandb/
+mlruns/
+
+# Third-party papers stay in a local reference cache; Git keeps links/notes only.
+references/papers/
+references/extracted_text/
+
+# Package build artifacts.
+build/
+dist/
+

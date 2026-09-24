@@ -1,0 +1,40 @@
+name: Research task
+description: Track one reproducible CMMT code, experiment, or paper task.
+title: "[Area] "
+body:
+  - type: textarea
+    id: objective
+    attributes:
+      label: 목적
+      description: 이 작업이 답할 연구 질문 또는 구현 목표를 적습니다.
+    validations:
+      required: true
+  - type: textarea
+    id: inputs
+    attributes:
+      label: 입력과 고정 조건
+      description: Dataset, split, model/checkpoint, prompt/switch manifest를 적습니다.
+    validations:
+      required: true
+  - type: textarea
+    id: acceptance
+    attributes:
+      label: 완료 기준
+      description: 검증 가능한 체크리스트로 작성합니다.
+      value: |
+        - [ ]
+        - [ ]
+    validations:
+      required: true
+  - type: textarea
+    id: evidence
+    attributes:
+      label: 재현 명령과 산출물
+      description: 실행 명령, 로그, 결과 JSON/Markdown, gallery 경로를 적습니다.
+    validations:
+      required: true
+  - type: textarea
+    id: risks
+    attributes:
+      label: Blocker와 알려진 위험
+      description: 데이터 이용 조건, GPU, 구현 의존성, 실패 조건을 적습니다.
