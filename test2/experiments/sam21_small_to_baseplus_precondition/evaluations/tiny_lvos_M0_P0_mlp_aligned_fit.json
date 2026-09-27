@@ -1,0 +1,451 @@
+{
+  "schema_version": "cmmt.precondition_state_evaluation.v1",
+  "artifact": "experiments/sam21_small_to_baseplus_precondition/checkpoints/translators/tiny_lvos_M0_P0_mlp_seed7/translator_aligned.pt",
+  "artifact_sha256": "42c7c9fe71095850f8b868ab6d2f65b67d8cd140b18996e807595ee8b3ecfcc6",
+  "pair_type": "aligned",
+  "split": "fit",
+  "record_count": 16,
+  "aggregate_mse": 0.04018068878986014,
+  "spatial_mse": 0.07191486284136772,
+  "spatial_cosine": 0.9428997226059437,
+  "pointer_mse": 0.008446514738352562,
+  "pointer_cosine": 0.9704363159835339,
+  "aggregation": "record mean within video; video mean within dataset; equal dataset mean",
+  "dataset_means": {
+    "LVOS_V2": {
+      "aggregate_mse": 0.04018068878986014,
+      "spatial_mse": 0.07191486284136772,
+      "spatial_cosine": 0.9428997226059437,
+      "pointer_mse": 0.008446514738352562,
+      "pointer_cosine": 0.9704363159835339
+    }
+  },
+  "video_means": {
+    "LVOS_V2/0ClBYzYm": {
+      "aggregate_mse": 0.04018068878986014,
+      "spatial_mse": 0.07191486284136772,
+      "spatial_cosine": 0.9428997226059437,
+      "pointer_mse": 0.008446514738352562,
+      "pointer_cosine": 0.9704363159835339
+    }
+  },
+  "rows": [
+    {
+      "components": {
+        "spatial_memory": {
+          "mse": 0.07098438590765,
+          "cosine": 0.9419784545898438,
+          "relative_error": 0.3356866240501404
+        },
+        "object_pointer": {
+          "mse": 0.0007451874553225935,
+          "cosine": 0.9997013807296753,
+          "relative_error": 0.0531931109726429
+        }
+      },
+      "diagnostics": {
+        "presence_logits": {
+          "mse": 0.0,
+          "cosine": 1.0,
+          "relative_error": 0.0
+        }
+      },
+      "aggregate_mse": 0.035864786681486294,
+      "valid_records": 1,
+      "translated_bytes": 1049629,
+      "dataset": "LVOS_V2",
+      "video_id": "0ClBYzYm"
+    },
+    {
+      "components": {
+        "spatial_memory": {
+          "mse": 0.06871712952852249,
+          "cosine": 0.9444453716278076,
+          "relative_error": 0.3286757171154022
+        },
+        "object_pointer": {
+          "mse": 0.0011010420275852084,
+          "cosine": 0.9994150400161743,
+          "relative_error": 0.06413563340902328
+        }
+      },
+      "diagnostics": {
+        "presence_logits": {
+          "mse": 0.0,
+          "cosine": 1.0,
+          "relative_error": 0.0
+        }
+      },
+      "aggregate_mse": 0.03490908577805385,
+      "valid_records": 1,
+      "translated_bytes": 1049629,
+      "dataset": "LVOS_V2",
+      "video_id": "0ClBYzYm"
+    },
+    {
+      "components": {
+        "spatial_memory": {
+          "mse": 0.06589989364147186,
+          "cosine": 0.9476001858711243,
+          "relative_error": 0.31948283314704895
+        },
+        "object_pointer": {
+          "mse": 0.00026832925505004823,
+          "cosine": 0.9998694658279419,
+          "relative_error": 0.03233812749385834
+        }
+      },
+      "diagnostics": {
+        "presence_logits": {
+          "mse": 0.0,
+          "cosine": 1.0,
+          "relative_error": 0.0
+        }
+      },
+      "aggregate_mse": 0.033084111448260956,
+      "valid_records": 1,
+      "translated_bytes": 1049629,
+      "dataset": "LVOS_V2",
+      "video_id": "0ClBYzYm"
+    },
+    {
+      "components": {
+        "spatial_memory": {
+          "mse": 0.0791444256901741,
+          "cosine": 0.9357118010520935,
+          "relative_error": 0.35274529457092285
+        },
+        "object_pointer": {
+          "mse": 0.00014312300481833518,
+          "cosine": 0.9997425079345703,
+          "relative_error": 0.02282186970114708
+        }
+      },
+      "diagnostics": {
+        "presence_logits": {
+          "mse": 0.0,
+          "cosine": 1.0,
+          "relative_error": 0.0
+        }
+      },
+      "aggregate_mse": 0.03964377434749622,
+      "valid_records": 1,
+      "translated_bytes": 1049629,
+      "dataset": "LVOS_V2",
+      "video_id": "0ClBYzYm"
+    },
+    {
+      "components": {
+        "spatial_memory": {
+          "mse": 0.06727711111307144,
+          "cosine": 0.9451081156730652,
+          "relative_error": 0.32673633098602295
+        },
+        "object_pointer": {
+          "mse": 0.002025042660534382,
+          "cosine": 0.9994921684265137,
+          "relative_error": 0.08710917085409164
+        }
+      },
+      "diagnostics": {
+        "presence_logits": {
+          "mse": 0.0,
+          "cosine": 1.0,
+          "relative_error": 0.0
+        }
+      },
+      "aggregate_mse": 0.03465107688680291,
+      "valid_records": 1,
+      "translated_bytes": 1049629,
+      "dataset": "LVOS_V2",
+      "video_id": "0ClBYzYm"
+    },
+    {
+      "components": {
+        "spatial_memory": {
+          "mse": 0.08152984082698822,
+          "cosine": 0.9368320107460022,
+          "relative_error": 0.3497842848300934
+        },
+        "object_pointer": {
+          "mse": 0.00494418665766716,
+          "cosine": 0.9406352639198303,
+          "relative_error": 0.4106922149658203
+        }
+      },
+      "diagnostics": {
+        "presence_logits": {
+          "mse": 0.0,
+          "cosine": 1.0,
+          "relative_error": 0.0
+        }
+      },
+      "aggregate_mse": 0.04323701374232769,
+      "valid_records": 1,
+      "translated_bytes": 1049629,
+      "dataset": "LVOS_V2",
+      "video_id": "0ClBYzYm"
+    },
+    {
+      "components": {
+        "spatial_memory": {
+          "mse": 0.06867148727178574,
+          "cosine": 0.946345329284668,
+          "relative_error": 0.3231828808784485
+        },
+        "object_pointer": {
+          "mse": 0.014521218836307526,
+          "cosine": 0.9951077699661255,
+          "relative_error": 0.2348482310771942
+        }
+      },
+      "diagnostics": {
+        "presence_logits": {
+          "mse": 0.0,
+          "cosine": 1.0,
+          "relative_error": 0.0
+        }
+      },
+      "aggregate_mse": 0.04159635305404663,
+      "valid_records": 1,
+      "translated_bytes": 1049629,
+      "dataset": "LVOS_V2",
+      "video_id": "0ClBYzYm"
+    },
+    {
+      "components": {
+        "spatial_memory": {
+          "mse": 0.06900732219219208,
+          "cosine": 0.9447951316833496,
+          "relative_error": 0.32763949036598206
+        },
+        "object_pointer": {
+          "mse": 0.0019389812368899584,
+          "cosine": 0.9995108842849731,
+          "relative_error": 0.08533312380313873
+        }
+      },
+      "diagnostics": {
+        "presence_logits": {
+          "mse": 0.0,
+          "cosine": 1.0,
+          "relative_error": 0.0
+        }
+      },
+      "aggregate_mse": 0.03547315171454102,
+      "valid_records": 1,
+      "translated_bytes": 1049629,
+      "dataset": "LVOS_V2",
+      "video_id": "0ClBYzYm"
+    },
+    {
+      "components": {
+        "spatial_memory": {
+          "mse": 0.07062949240207672,
+          "cosine": 0.943455696105957,
+          "relative_error": 0.33150649070739746
+        },
+        "object_pointer": {
+          "mse": 0.009222863242030144,
+          "cosine": 0.9988175630569458,
+          "relative_error": 0.18817934393882751
+        }
+      },
+      "diagnostics": {
+        "presence_logits": {
+          "mse": 0.0,
+          "cosine": 1.0,
+          "relative_error": 0.0
+        }
+      },
+      "aggregate_mse": 0.03992617782205343,
+      "valid_records": 1,
+      "translated_bytes": 1049629,
+      "dataset": "LVOS_V2",
+      "video_id": "0ClBYzYm"
+    },
+    {
+      "components": {
+        "spatial_memory": {
+          "mse": 0.06597168743610382,
+          "cosine": 0.9472724795341492,
+          "relative_error": 0.32040566205978394
+        },
+        "object_pointer": {
+          "mse": 0.00013270806812215596,
+          "cosine": 0.9998551607131958,
+          "relative_error": 0.02259836345911026
+        }
+      },
+      "diagnostics": {
+        "presence_logits": {
+          "mse": 0.0,
+          "cosine": 1.0,
+          "relative_error": 0.0
+        }
+      },
+      "aggregate_mse": 0.03305219775211299,
+      "valid_records": 1,
+      "translated_bytes": 1049629,
+      "dataset": "LVOS_V2",
+      "video_id": "0ClBYzYm"
+    },
+    {
+      "components": {
+        "spatial_memory": {
+          "mse": 0.07957305759191513,
+          "cosine": 0.938373327255249,
+          "relative_error": 0.3457118570804596
+        },
+        "object_pointer": {
+          "mse": 0.0073928325437009335,
+          "cosine": 0.9169363975524902,
+          "relative_error": 0.5021975040435791
+        }
+      },
+      "diagnostics": {
+        "presence_logits": {
+          "mse": 0.0,
+          "cosine": 1.0,
+          "relative_error": 0.0
+        }
+      },
+      "aggregate_mse": 0.04348294506780803,
+      "valid_records": 1,
+      "translated_bytes": 1049629,
+      "dataset": "LVOS_V2",
+      "video_id": "0ClBYzYm"
+    },
+    {
+      "components": {
+        "spatial_memory": {
+          "mse": 0.07133956253528595,
+          "cosine": 0.9434649348258972,
+          "relative_error": 0.33145222067832947
+        },
+        "object_pointer": {
+          "mse": 0.004798415116965771,
+          "cosine": 0.9988594651222229,
+          "relative_error": 0.13341255486011505
+        }
+      },
+      "diagnostics": {
+        "presence_logits": {
+          "mse": 0.0,
+          "cosine": 1.0,
+          "relative_error": 0.0
+        }
+      },
+      "aggregate_mse": 0.03806898882612586,
+      "valid_records": 1,
+      "translated_bytes": 1049629,
+      "dataset": "LVOS_V2",
+      "video_id": "0ClBYzYm"
+    },
+    {
+      "components": {
+        "spatial_memory": {
+          "mse": 0.07144946604967117,
+          "cosine": 0.9440878629684448,
+          "relative_error": 0.32967105507850647
+        },
+        "object_pointer": {
+          "mse": 0.037470825016498566,
+          "cosine": 0.7647951245307922,
+          "relative_error": 1.1306174993515015
+        }
+      },
+      "diagnostics": {
+        "presence_logits": {
+          "mse": 0.0,
+          "cosine": 1.0,
+          "relative_error": 0.0
+        }
+      },
+      "aggregate_mse": 0.05446014553308487,
+      "valid_records": 1,
+      "translated_bytes": 1049629,
+      "dataset": "LVOS_V2",
+      "video_id": "0ClBYzYm"
+    },
+    {
+      "components": {
+        "spatial_memory": {
+          "mse": 0.08054091036319733,
+          "cosine": 0.9369928240776062,
+          "relative_error": 0.34934648871421814
+        },
+        "object_pointer": {
+          "mse": 0.005450175143778324,
+          "cosine": 0.9359805583953857,
+          "relative_error": 0.43119558691978455
+        }
+      },
+      "diagnostics": {
+        "presence_logits": {
+          "mse": 0.0,
+          "cosine": 1.0,
+          "relative_error": 0.0
+        }
+      },
+      "aggregate_mse": 0.042995542753487825,
+      "valid_records": 1,
+      "translated_bytes": 1049629,
+      "dataset": "LVOS_V2",
+      "video_id": "0ClBYzYm"
+    },
+    {
+      "components": {
+        "spatial_memory": {
+          "mse": 0.07175973802804947,
+          "cosine": 0.9436898231506348,
+          "relative_error": 0.33081158995628357
+        },
+        "object_pointer": {
+          "mse": 0.04265555366873741,
+          "cosine": 0.9790340662002563,
+          "relative_error": 0.4019901156425476
+        }
+      },
+      "diagnostics": {
+        "presence_logits": {
+          "mse": 0.0,
+          "cosine": 1.0,
+          "relative_error": 0.0
+        }
+      },
+      "aggregate_mse": 0.05720764584839344,
+      "valid_records": 1,
+      "translated_bytes": 1049629,
+      "dataset": "LVOS_V2",
+      "video_id": "0ClBYzYm"
+    },
+    {
+      "components": {
+        "spatial_memory": {
+          "mse": 0.06814229488372803,
+          "cosine": 0.9462422132492065,
+          "relative_error": 0.3234351873397827
+        },
+        "object_pointer": {
+          "mse": 0.002333751879632473,
+          "cosine": 0.9992282390594482,
+          "relative_error": 0.09435488283634186
+        }
+      },
+      "diagnostics": {
+        "presence_logits": {
+          "mse": 0.0,
+          "cosine": 1.0,
+          "relative_error": 0.0
+        }
+      },
+      "aggregate_mse": 0.03523802338168025,
+      "valid_records": 1,
+      "translated_bytes": 1049629,
+      "dataset": "LVOS_V2",
+      "video_id": "0ClBYzYm"
+    }
+  ],
+  "scope": "state reconstruction only; not a no-replay VOS score"
+}

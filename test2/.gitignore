@@ -1,0 +1,42 @@
+# Python / tooling
+__pycache__/
+*.py[cod]
+*.egg-info/
+build/
+dist/
+.pytest_cache/
+.ruff_cache/
+.mypy_cache/
+.coverage
+htmlcov/
+.venv/
+venv/
+
+# Editors, OS, secrets
+.idea/
+.vscode/
+.DS_Store
+Thumbs.db
+.env
+.env.*
+
+# Interrupted atomic writes
+*.partial
+
+# Model weights, datasets and large state caches stay outside Git.
+# The small experiment artifacts under experiments/ are committed explicitly.
+*.pt
+*.pth
+*.ckpt
+*.safetensors
+!experiments/sam21_small_to_baseplus_precondition/checkpoint_matrices.pt
+!experiments/sam21_small_to_baseplus_precondition/roundtrip/transform_suite.pt
+!experiments/sam21_small_to_baseplus_precondition/checkpoints/translators/*/*.pt
+experiments/*/state_pairs/
+experiments/*/extraction_report.json
+experiments/*/evaluations/*/
+data/
+datasets/
+downloads/
+/checkpoints/
+*.zip

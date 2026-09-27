@@ -1,0 +1,242 @@
+{
+  "schema_version": "cmmt.two_stage_training.v1",
+  "spatial_method": "M0_raw",
+  "pointer_method": "P0_raw",
+  "architecture": "mlp",
+  "seed": 7,
+  "training_dtype": "float32",
+  "backbone_frozen": true,
+  "sampling": {
+    "batch_records": 16,
+    "spatial_positions_per_record": 512,
+    "dataset_balance": "equal round-robin across dataset labels"
+  },
+  "aligned": {
+    "steps": 2000,
+    "learning_rate": 0.001,
+    "history": [
+      {
+        "step": 1.0,
+        "spatial_raw_mse": 1.7432790994644165,
+        "pointer_raw_mse": 0.758811354637146
+      },
+      {
+        "step": 100.0,
+        "spatial_raw_mse": 0.19191186130046844,
+        "pointer_raw_mse": 0.01497337780892849
+      },
+      {
+        "step": 200.0,
+        "spatial_raw_mse": 0.11608873307704926,
+        "pointer_raw_mse": 0.03516979515552521
+      },
+      {
+        "step": 300.0,
+        "spatial_raw_mse": 0.09869259595870972,
+        "pointer_raw_mse": 0.048010699450969696
+      },
+      {
+        "step": 400.0,
+        "spatial_raw_mse": 0.09796130657196045,
+        "pointer_raw_mse": 0.01605287566781044
+      },
+      {
+        "step": 500.0,
+        "spatial_raw_mse": 0.08685135841369629,
+        "pointer_raw_mse": 0.01474357582628727
+      },
+      {
+        "step": 600.0,
+        "spatial_raw_mse": 0.08537791669368744,
+        "pointer_raw_mse": 0.017767030745744705
+      },
+      {
+        "step": 700.0,
+        "spatial_raw_mse": 0.08308754861354828,
+        "pointer_raw_mse": 0.01658846251666546
+      },
+      {
+        "step": 800.0,
+        "spatial_raw_mse": 0.08084419369697571,
+        "pointer_raw_mse": 0.013882357627153397
+      },
+      {
+        "step": 900.0,
+        "spatial_raw_mse": 0.07919108867645264,
+        "pointer_raw_mse": 0.01653316803276539
+      },
+      {
+        "step": 1000.0,
+        "spatial_raw_mse": 0.07860168069601059,
+        "pointer_raw_mse": 0.007969027385115623
+      },
+      {
+        "step": 1100.0,
+        "spatial_raw_mse": 0.0785691887140274,
+        "pointer_raw_mse": 0.0062321326695382595
+      },
+      {
+        "step": 1200.0,
+        "spatial_raw_mse": 0.07709890604019165,
+        "pointer_raw_mse": 0.011020359583199024
+      },
+      {
+        "step": 1300.0,
+        "spatial_raw_mse": 0.07412126660346985,
+        "pointer_raw_mse": 0.016073077917099
+      },
+      {
+        "step": 1400.0,
+        "spatial_raw_mse": 0.07734265178442001,
+        "pointer_raw_mse": 0.006956151686608791
+      },
+      {
+        "step": 1500.0,
+        "spatial_raw_mse": 0.0755833089351654,
+        "pointer_raw_mse": 0.019739627838134766
+      },
+      {
+        "step": 1600.0,
+        "spatial_raw_mse": 0.07356110215187073,
+        "pointer_raw_mse": 0.019086606800556183
+      },
+      {
+        "step": 1700.0,
+        "spatial_raw_mse": 0.0735042542219162,
+        "pointer_raw_mse": 0.015081990510225296
+      },
+      {
+        "step": 1800.0,
+        "spatial_raw_mse": 0.07236529141664505,
+        "pointer_raw_mse": 0.006055053323507309
+      },
+      {
+        "step": 1900.0,
+        "spatial_raw_mse": 0.07232031226158142,
+        "pointer_raw_mse": 0.011221189051866531
+      },
+      {
+        "step": 2000.0,
+        "spatial_raw_mse": 0.07121162116527557,
+        "pointer_raw_mse": 0.009986147284507751
+      }
+    ],
+    "artifact": "experiments/sam21_small_to_baseplus_precondition/checkpoints/translators/tiny_lvos_M0_P0_mlp_seed7/translator_aligned.pt",
+    "artifact_sha256": "42c7c9fe71095850f8b868ab6d2f65b67d8cd140b18996e807595ee8b3ecfcc6"
+  },
+  "native_finetune": {
+    "steps": 2000,
+    "learning_rate": 0.0001,
+    "optimizer_reinitialized": true,
+    "fixed_transforms_reused": true,
+    "history": [
+      {
+        "step": 1.0,
+        "spatial_raw_mse": 0.0745195746421814,
+        "pointer_raw_mse": 3.6309735774993896
+      },
+      {
+        "step": 100.0,
+        "spatial_raw_mse": 0.07211428880691528,
+        "pointer_raw_mse": 0.11653303354978561
+      },
+      {
+        "step": 200.0,
+        "spatial_raw_mse": 0.07136227190494537,
+        "pointer_raw_mse": 0.05804586410522461
+      },
+      {
+        "step": 300.0,
+        "spatial_raw_mse": 0.0704135000705719,
+        "pointer_raw_mse": 0.0436413511633873
+      },
+      {
+        "step": 400.0,
+        "spatial_raw_mse": 0.07493367046117783,
+        "pointer_raw_mse": 0.022686155512928963
+      },
+      {
+        "step": 500.0,
+        "spatial_raw_mse": 0.06985202431678772,
+        "pointer_raw_mse": 0.022433387115597725
+      },
+      {
+        "step": 600.0,
+        "spatial_raw_mse": 0.07470159232616425,
+        "pointer_raw_mse": 0.014623107388615608
+      },
+      {
+        "step": 700.0,
+        "spatial_raw_mse": 0.07119354605674744,
+        "pointer_raw_mse": 0.010321228764951229
+      },
+      {
+        "step": 800.0,
+        "spatial_raw_mse": 0.07117761671543121,
+        "pointer_raw_mse": 0.010333937592804432
+      },
+      {
+        "step": 900.0,
+        "spatial_raw_mse": 0.07012271881103516,
+        "pointer_raw_mse": 0.010178383439779282
+      },
+      {
+        "step": 1000.0,
+        "spatial_raw_mse": 0.0719369649887085,
+        "pointer_raw_mse": 0.005571996793150902
+      },
+      {
+        "step": 1100.0,
+        "spatial_raw_mse": 0.07142320275306702,
+        "pointer_raw_mse": 0.0059218271635472775
+      },
+      {
+        "step": 1200.0,
+        "spatial_raw_mse": 0.06985694169998169,
+        "pointer_raw_mse": 0.006086520850658417
+      },
+      {
+        "step": 1300.0,
+        "spatial_raw_mse": 0.06789885461330414,
+        "pointer_raw_mse": 0.004780183546245098
+      },
+      {
+        "step": 1400.0,
+        "spatial_raw_mse": 0.0719633400440216,
+        "pointer_raw_mse": 0.002245311625301838
+      },
+      {
+        "step": 1500.0,
+        "spatial_raw_mse": 0.06978785246610641,
+        "pointer_raw_mse": 0.002523218747228384
+      },
+      {
+        "step": 1600.0,
+        "spatial_raw_mse": 0.0717797577381134,
+        "pointer_raw_mse": 0.0018626789096742868
+      },
+      {
+        "step": 1700.0,
+        "spatial_raw_mse": 0.07186296582221985,
+        "pointer_raw_mse": 0.0018929315265268087
+      },
+      {
+        "step": 1800.0,
+        "spatial_raw_mse": 0.07011229544878006,
+        "pointer_raw_mse": 0.0015177344903349876
+      },
+      {
+        "step": 1900.0,
+        "spatial_raw_mse": 0.07151467353105545,
+        "pointer_raw_mse": 0.0013994054170325398
+      },
+      {
+        "step": 2000.0,
+        "spatial_raw_mse": 0.06967534869909286,
+        "pointer_raw_mse": 0.0014662053436040878
+      }
+    ],
+    "artifact": "experiments/sam21_small_to_baseplus_precondition/checkpoints/translators/tiny_lvos_M0_P0_mlp_seed7/translator_native_finetuned.pt",
+    "artifact_sha256": "25ecca96567fae5a33099fcb75fbf1133cfa09a55b4a652959cb00fad4e246b0"
+  }
+}

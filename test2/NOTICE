@@ -1,0 +1,24 @@
+This repository contains material derived from third-party works.
+
+SAM 2 (facebookresearch/sam2)
+  Copyright (c) Meta Platforms, Inc. and affiliates.
+  Licensed under the Apache License, Version 2.0:
+  https://www.apache.org/licenses/LICENSE-2.0
+
+  experiments/sam21_small_to_baseplus_precondition/checkpoint_matrices.pt and
+  experiments/sam21_small_to_baseplus_precondition/roundtrip/transform_suite.pt
+  contain tensors copied or computed from the SAM 2.1 Hiera Small and Base+
+  checkpoints (memory-encoder output projection, object-pointer projection,
+  no-object embeddings, and memory-attention K/V projections). They are
+  redistributed under the Apache License 2.0. The checkpoints themselves are
+  not included.
+
+LVOS v2 (https://lingyihongfd.github.io/lvos.github.io/)
+  Non-commercial research use; annotations CC BY 4.0.
+  experiments/sam21_small_to_baseplus_precondition/manifests/ lists LVOS v2
+  video and frame identifiers only. The translator checkpoints under
+  experiments/sam21_small_to_baseplus_precondition/checkpoints/ were trained on
+  states extracted from one LVOS v2 train video. No images or masks are included.
+
+VOST (https://www.vostdataset.org/)
+  CC BY-NC-SA 4.0. Only download metadata (URL, SHA-256) is referenced.

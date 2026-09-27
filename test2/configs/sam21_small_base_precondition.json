@@ -1,0 +1,49 @@
+{
+  "schema_version": "cmmt.sam21_precondition_config.v1",
+  "upstream_commit": "2b90b9f5ceec907a1c18123530e92e794ad901a4",
+  "path_policy": "Reference values only; no command reads this file. Checkpoint and dataset paths are relative placeholders and must be passed to cmmt-sam21-precondition explicitly.",
+  "models": {
+    "source_config": "configs/sam2.1/sam2.1_hiera_s.yaml",
+    "source_checkpoint": "checkpoints/sam2.1_hiera_small.pt",
+    "target_config": "configs/sam2.1/sam2.1_hiera_b+.yaml",
+    "target_checkpoint": "checkpoints/sam2.1_hiera_base_plus.pt",
+    "freeze_backbones": true
+  },
+  "datasets": {
+    "roots": {
+      "LVOS_V2": "data/LVOS_V2",
+      "VOST": "data/VOST"
+    },
+    "internal_split": [0.8, 0.1, 0.1],
+    "seed": 7,
+    "screening_videos": {"fit": 16, "dev": 2, "test": 2},
+    "train_sampling_probability": {"LVOS_V2": 0.5, "VOST": 0.5}
+  },
+  "pair_bank": {
+    "pair_types": ["aligned", "native"],
+    "max_records_per_object": 16,
+    "max_records_per_video": 128,
+    "switch_quantiles": [0.25, 0.5, 0.75]
+  },
+  "training": {
+    "spatial_hidden_dim": 128,
+    "pointer_hidden_dim": 512,
+    "batch_records": 16,
+    "spatial_positions_per_record": 512,
+    "aligned": {"steps": 2000, "learning_rate": 0.001},
+    "native_finetune": {"steps": 2000, "learning_rate": 0.0001},
+    "weight_decay": 0.0,
+    "pilot_seed": 7,
+    "final_seeds": [7, 17, 27],
+    "dtype": "float32"
+  },
+  "transforms": {
+    "spatial_priority": ["M0_raw", "M1_standardized", "M4_consumer", "M2_zca", "M3_out_proj_svd"],
+    "pointer_priority": ["P0_raw", "P1_standardized", "P2_anchor", "P2_P4_anchor_consumer", "P3_final_linear"],
+    "standardization_epsilon": 0.00001,
+    "zca_shrinkage": 0.001,
+    "zca_eigenvalue_floor": 0.0001,
+    "consumer_regularization": 0.00001,
+    "svd_relative_floor": 0.0001
+  }
+}
