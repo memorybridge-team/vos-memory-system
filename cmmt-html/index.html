@@ -1,0 +1,104 @@
+<!doctype html>
+<html lang="ko">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Small → Base+ Nonlinear Memory Handoff</title>
+  <style>
+    :root{color-scheme:dark;--bg:#101923;--card:#192837;--border:#365065;--text:#f3f6fa;--muted:#b7c7d3;--link:#7ed3ff;--done:#70d59a;--progress:#ffd477}
+    *{box-sizing:border-box}
+    body{margin:0;background:var(--bg);color:var(--text);font:16px/1.65 system-ui,-apple-system,"Segoe UI",sans-serif}
+    main{max-width:960px;margin:52px auto;padding:0 24px 64px}
+    h1{font-size:clamp(2rem,5vw,3rem);line-height:1.15;margin:.3rem 0 1rem}
+    h2{margin:.2rem 0 .35rem;font-size:1.35rem}h3{margin:1.1rem 0 .4rem;font-size:1rem}
+    p{margin:.45rem 0}a{color:var(--link)}code{background:#253a4b;padding:2px 5px;border-radius:4px}
+    .muted{color:var(--muted)}.lead{max-width:760px;font-size:1.08rem}
+    .scope{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:10px;margin:24px 0}
+    .scope span{background:#142230;border:1px solid var(--border);border-radius:10px;padding:12px}
+    .tasks{display:grid;gap:18px;margin-top:30px}
+    .task{background:var(--card);border:1px solid var(--border);border-radius:14px;padding:20px}
+    .task-head{display:flex;gap:12px;align-items:flex-start;justify-content:space-between}
+    .task-number{font:700 1.1rem ui-monospace,monospace;color:var(--link)}
+    .status{white-space:nowrap;border-radius:999px;padding:3px 9px;font-size:.82rem;font-weight:700}
+    .done{color:var(--done);border:1px solid color-mix(in srgb,var(--done) 55%,transparent)}
+    .progress{color:var(--progress);border:1px solid color-mix(in srgb,var(--progress) 55%,transparent)}
+    .links{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:10px;margin-top:14px}
+    .links a{display:block;background:#142230;border:1px solid #2d465a;border-radius:9px;padding:10px 12px;text-decoration:none}
+    .links a:hover,.links a:focus{border-color:var(--link);outline:none}
+    .evidence{margin-top:12px;padding-top:12px;border-top:1px solid #2d465a;color:var(--muted)}
+    footer{margin-top:28px;color:var(--muted);font-size:.92rem}
+    @media(max-width:700px){main{margin-top:28px}.scope,.links{grid-template-columns:1fr}.task-head{display:block}.status{display:inline-block;margin-top:8px}}
+  </style>
+</head>
+<body><main>
+  <p class="muted">CMMT · SAM 2.1 cross-model state handoff</p>
+  <h1>Small의 비디오 기억을 Base+로 전달하기</h1>
+  <p class="lead">비디오 중간에 SAM 2.1 Small에서 Base+로 전환할 때, 과거 프레임 전체를 다시 처리하지 않고도 등록 객체의 추적을 이어가는 nonlinear state translator 연구입니다.</p>
+
+  <section class="scope" aria-label="연구 범위">
+    <span><strong>Model</strong><br>Small → Base+</span>
+    <span><strong>Dataset</strong><br>DAVIS 2017 · MOSEv2 · LVOS v2</span>
+    <span><strong>Method</strong><br>Nonlinear memory translator</span>
+  </section>
+
+  <section class="tasks" aria-label="Project task별 산출물">
+    <article class="task" id="task-01">
+      <div class="task-head">
+        <div><div class="task-number">TASK 01</div><h2>연구 범위·Baseline·성공/중단 기준</h2></div>
+        <span class="status done">Done</span>
+      </div>
+      <p>어떤 비교가 공정한지, 어떤 결과를 성공으로 볼지, 언제 Small→Base+ 또는 learned translator 주장을 중단할지를 실험 전에 고정했습니다.</p>
+      <div class="links">
+        <a href="https://github.com/memorybridge-team/vos-memory-translator-nonlinear/blob/main/docs/design/01_scope_baselines_success_stop.md"><strong>범위 동결 문서</strong><br><span class="muted">Baseline 입력·공정성·Go/No-Go</span></a>
+        <a href="https://github.com/memorybridge-team/vos-memory-translator-nonlinear/blob/main/docs/experimental_plan.md"><strong>4주 실험 계획</strong><br><span class="muted">데이터·학습·평가·논문 일정</span></a>
+      </div>
+    </article>
+
+    <article class="task" id="task-02">
+      <div class="task-head">
+        <div><div class="task-number">TASK 02</div><h2>Small/Base+ State I/O 계약</h2></div>
+        <span class="status done">Done</span>
+      </div>
+      <p><code>maskmem_features</code>와 <code>obj_ptr</code>만 번역하고, discrete history는 복사·재구성하며, PE·새 mask·새 score는 Target이 생성하도록 고정했습니다. Source presence/예측 mask는 진단·표시 archive로만 남깁니다. 연구에서는 동일 영상을 전제로 하므로 영상 크기와 fingerprint는 handoff payload에서 제외합니다.</p>
+      <div class="links">
+        <a href="architecture/cmmt-state-assembly-map.html"><strong>State Assembly Map</strong><br><span class="muted">CanonicalState → Target inference_state + sidecar</span></a>
+        <a href="https://github.com/memorybridge-team/vos-memory-translator-nonlinear/blob/main/docs/design/small_base_state_io_contract.md"><strong>I/O 계약 v1.1</strong><br><span class="muted">shape·dtype·정렬·device·correction 정책</span></a>
+        <a href="https://github.com/memorybridge-team/vos-memory-translator-nonlinear/tree/main/reports/runtime/2026-09-20_small_base_runtime_inventory"><strong>Runtime inventory</strong><br><span class="muted">Small/Base+ paired tensor와 checksum</span></a>
+      </div>
+      <p class="evidence">확인된 경계: spatial <code>[1,1,11,64,64,64]</code> bfloat16 · pointer <code>[1,1,11,256]</code> float32 · presence <code>[1,1,11,1]</code> float32</p>
+    </article>
+
+    <article class="task" id="task-03">
+      <div class="task-head">
+        <div><div class="task-number">TASK 03</div><h2>Dataset·난이도·Baseline·Metric 동결</h2></div>
+        <span class="status done">Done</span>
+      </div>
+      <p>DAVIS 2017·MOSEv2·LVOS v2의 train/validation manifest와 video-level split을 만들고, 실제 RGB·prompt mask·object·switch를 전수 검증했습니다. 객체·사건별 난이도, 비교군 입력, J&amp;F·재등장·부재 오류·비용 지표와 공식 metric 명칭·누수 방지 규칙도 하나의 protocol로 동결했습니다.</p>
+      <div class="links">
+        <a href="https://github.com/memorybridge-team/vos-memory-translator-nonlinear/blob/main/docs/design/03_benchmark_protocol.md"><strong>Benchmark protocol v1.0</strong><br><span class="muted">dataset · taxonomy · baseline · metric · leakage 규칙</span></a>
+        <a href="https://github.com/memorybridge-team/vos-memory-translator-nonlinear/blob/main/docs/design/01_scope_baselines_success_stop.md"><strong>Task 01 판정 기준</strong><br><span class="muted">성공·중단 기준과 비교군 입력 원칙</span></a>
+      </div>
+      <p class="evidence">주 비교군: Source-only · Base+-native/Full Replay · Direct · Moment-Matched · Original · Last-Visible · Original+Last-Visible · Original+Replay-4/8/16 · Nonlinear.</p>
+    </article>
+
+    <article class="task" id="task-06">
+      <div class="task-head">
+        <div><div class="task-number">TASK 06</div><h2>State 추출·Self-injection·Target injection</h2></div>
+        <span class="status done">Done</span>
+      </div>
+      <p>Base+ state를 새 Base+ predictor에 replay 없이 주입하는 단일 객체·다객체·late prompt·부재/재등장 gate와 전환 전후 correction·반복 handoff gate를 모두 통과했습니다. Small→Base+ Direct Copy도 기계적으로 주입됐지만 Target-native mask와 전 프레임 IoU 0으로 실패해 번역 필요성을 확인했습니다.</p>
+      <div class="links">
+        <a href="https://github.com/memorybridge-team/vos-memory-translator-nonlinear/tree/main/reports/runtime/2026-09-20_base_plus_self_injection"><strong>Base+ self-injection 보고서</strong><br><span class="muted">61 frames · IoU 1.0 · replay 0</span></a>
+        <a href="https://github.com/memorybridge-team/vos-memory-translator-nonlinear/tree/main/reports/runtime/2026-09-21_task06_edge_case_and_direct_injection"><strong>Task 06 edge-case 보고서</strong><br><span class="muted">다객체·재등장 exact · Direct Copy IoU 0</span></a>
+        <a href="https://github.com/memorybridge-team/vos-memory-translator-nonlinear/tree/main/reports/runtime/2026-09-23_task06_correction_and_repeated_switch"><strong>Task 06 runtime 마감 보고서</strong><br><span class="muted">전환 전후 correction · 반복 handoff exact</span></a>
+        <a href="https://github.com/memorybridge-team/vos-memory-translator-nonlinear/blob/main/docs/runpod_l4_operations.md"><strong>RunPod 재현 방법</strong><br><span class="muted">환경·checkpoint·실행 절차</span></a>
+        <a href="https://github.com/memorybridge-team/vos-memory-translator-nonlinear/pull/3"><strong>현재 구현 PR #3</strong><br><span class="muted">코드·검증 기록·diff</span></a>
+      </div>
+      <p class="evidence">완료 증거: same-checkpoint 단일 객체 61 frames, 다객체·late prompt 48 frames, 부재·재등장 45 frames, 전환 후 correction 52 frames, 전환 전 correction replay 뒤 51 frames, 두 번째 handoff 뒤 51 frames가 모두 exact입니다. Cross-model Direct Copy는 실행됐지만 후속 61 frames IoU 0.0이었습니다.</p>
+    </article>
+  </section>
+
+  <footer>
+    <p>Task 순서와 전체 일정은 <a href="https://github.com/orgs/memorybridge-team/projects/2/views/1">GitHub Project #2</a>에서 관리합니다. 확정 결과는 commit·config·실행 로그로 재현될 때만 게시합니다.</p>
+  </footer>
+</main></body></html>
