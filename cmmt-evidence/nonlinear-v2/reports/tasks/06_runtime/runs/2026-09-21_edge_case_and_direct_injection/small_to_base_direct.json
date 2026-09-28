@@ -1,0 +1,481 @@
+{
+  "source_model_id": "sam2.1-small",
+  "target_model_id": "sam2.1-base+",
+  "translator": "direct_copy",
+  "translator_parameter_count": 0,
+  "upstream_commit": "2b90b9f5ceec907a1c18123530e92e794ad901a4",
+  "video_id": "walking",
+  "switch_frame": 10,
+  "future_frames": [
+    11,
+    12,
+    13,
+    14,
+    15,
+    16,
+    17,
+    18,
+    19,
+    20,
+    21,
+    22,
+    23,
+    24,
+    25,
+    26,
+    27,
+    28,
+    29,
+    30,
+    31,
+    32,
+    33,
+    34,
+    35,
+    36,
+    37,
+    38,
+    39,
+    40,
+    41,
+    42,
+    43,
+    44,
+    45,
+    46,
+    47,
+    48,
+    49,
+    50,
+    51,
+    52,
+    53,
+    54,
+    55,
+    56,
+    57,
+    58,
+    59,
+    60,
+    61,
+    62,
+    63,
+    64,
+    65,
+    66,
+    67,
+    68,
+    69,
+    70,
+    71
+  ],
+  "state_alignment_to_target_native": {
+    "components": {
+      "spatial_memory": {
+        "mse": 1.542609453201294,
+        "cosine": 0.021061422303318977,
+        "relative_error": 1.557328701019287
+      },
+      "object_pointer": {
+        "mse": 1.1277315616607666,
+        "cosine": -0.02198394574224949,
+        "relative_error": 1.6692317724227905
+      },
+      "presence_logits": {
+        "mse": 1.192015528678894,
+        "cosine": 1.0,
+        "relative_error": 0.07644710689783096
+      }
+    },
+    "aggregate_mse": 1.2874521811803181,
+    "valid_records": 11,
+    "translated_bytes": 5778476
+  },
+  "injection": {
+    "objects": 1,
+    "records": 11,
+    "switch_frame": 10
+  },
+  "backbone_calls_before_injection": 0,
+  "backbone_calls_during_injection": 0,
+  "backbone_calls_during_future_continuation": 61,
+  "mask_comparison_to_target_native": {
+    "frames": [
+      {
+        "frame": 11,
+        "mse": 200.27688598632812,
+        "max_abs_error": 24.540748596191406,
+        "binary_iou": 0.0
+      },
+      {
+        "frame": 12,
+        "mse": 1039858.4375,
+        "max_abs_error": 1042.5028076171875,
+        "binary_iou": 0.0
+      },
+      {
+        "frame": 13,
+        "mse": 1039988.9375,
+        "max_abs_error": 1042.685302734375,
+        "binary_iou": 0.0
+      },
+      {
+        "frame": 14,
+        "mse": 1039933.3125,
+        "max_abs_error": 1043.118896484375,
+        "binary_iou": 0.0
+      },
+      {
+        "frame": 15,
+        "mse": 1039121.5625,
+        "max_abs_error": 1045.318603515625,
+        "binary_iou": 0.0
+      },
+      {
+        "frame": 16,
+        "mse": 1039730.1875,
+        "max_abs_error": 1043.900390625,
+        "binary_iou": 0.0
+      },
+      {
+        "frame": 17,
+        "mse": 1040162.25,
+        "max_abs_error": 1044.1212158203125,
+        "binary_iou": 0.0
+      },
+      {
+        "frame": 18,
+        "mse": 1040437.0,
+        "max_abs_error": 1042.956298828125,
+        "binary_iou": 0.0
+      },
+      {
+        "frame": 19,
+        "mse": 1041441.625,
+        "max_abs_error": 1041.837890625,
+        "binary_iou": 0.0
+      },
+      {
+        "frame": 20,
+        "mse": 1041947.4375,
+        "max_abs_error": 1043.0531005859375,
+        "binary_iou": 0.0
+      },
+      {
+        "frame": 21,
+        "mse": 1042405.5625,
+        "max_abs_error": 1044.3736572265625,
+        "binary_iou": 0.0
+      },
+      {
+        "frame": 22,
+        "mse": 1042283.875,
+        "max_abs_error": 1045.2208251953125,
+        "binary_iou": 0.0
+      },
+      {
+        "frame": 23,
+        "mse": 1041866.8125,
+        "max_abs_error": 1044.28076171875,
+        "binary_iou": 0.0
+      },
+      {
+        "frame": 24,
+        "mse": 1043304.5,
+        "max_abs_error": 1044.01220703125,
+        "binary_iou": 0.0
+      },
+      {
+        "frame": 25,
+        "mse": 1043136.625,
+        "max_abs_error": 1044.3677978515625,
+        "binary_iou": 0.0
+      },
+      {
+        "frame": 26,
+        "mse": 1042377.8125,
+        "max_abs_error": 1044.2821044921875,
+        "binary_iou": 0.0
+      },
+      {
+        "frame": 27,
+        "mse": 1041024.4375,
+        "max_abs_error": 1043.16015625,
+        "binary_iou": 0.0
+      },
+      {
+        "frame": 28,
+        "mse": 1042795.9375,
+        "max_abs_error": 1043.9849853515625,
+        "binary_iou": 0.0
+      },
+      {
+        "frame": 29,
+        "mse": 1042364.75,
+        "max_abs_error": 1043.96728515625,
+        "binary_iou": 0.0
+      },
+      {
+        "frame": 30,
+        "mse": 1042151.25,
+        "max_abs_error": 1043.6029052734375,
+        "binary_iou": 0.0
+      },
+      {
+        "frame": 31,
+        "mse": 1040583.5,
+        "max_abs_error": 1042.9324951171875,
+        "binary_iou": 0.0
+      },
+      {
+        "frame": 32,
+        "mse": 1037997.6875,
+        "max_abs_error": 1042.3121337890625,
+        "binary_iou": 0.0
+      },
+      {
+        "frame": 33,
+        "mse": 1038409.125,
+        "max_abs_error": 1042.6494140625,
+        "binary_iou": 0.0
+      },
+      {
+        "frame": 34,
+        "mse": 1037205.4375,
+        "max_abs_error": 1043.9447021484375,
+        "binary_iou": 0.0
+      },
+      {
+        "frame": 35,
+        "mse": 1038677.75,
+        "max_abs_error": 1043.9744873046875,
+        "binary_iou": 0.0
+      },
+      {
+        "frame": 36,
+        "mse": 1039858.0625,
+        "max_abs_error": 1043.6806640625,
+        "binary_iou": 0.0
+      },
+      {
+        "frame": 37,
+        "mse": 1039923.625,
+        "max_abs_error": 1042.195068359375,
+        "binary_iou": 0.0
+      },
+      {
+        "frame": 38,
+        "mse": 1045206.875,
+        "max_abs_error": 1040.892578125,
+        "binary_iou": 0.0
+      },
+      {
+        "frame": 39,
+        "mse": 1043628.8125,
+        "max_abs_error": 1042.963623046875,
+        "binary_iou": 0.0
+      },
+      {
+        "frame": 40,
+        "mse": 1042417.6875,
+        "max_abs_error": 1043.95068359375,
+        "binary_iou": 0.0
+      },
+      {
+        "frame": 41,
+        "mse": 1041574.0,
+        "max_abs_error": 1044.5010986328125,
+        "binary_iou": 0.0
+      },
+      {
+        "frame": 42,
+        "mse": 1042383.6875,
+        "max_abs_error": 1044.26220703125,
+        "binary_iou": 0.0
+      },
+      {
+        "frame": 43,
+        "mse": 1042236.6875,
+        "max_abs_error": 1043.98681640625,
+        "binary_iou": 0.0
+      },
+      {
+        "frame": 44,
+        "mse": 1042760.0625,
+        "max_abs_error": 1043.875732421875,
+        "binary_iou": 0.0
+      },
+      {
+        "frame": 45,
+        "mse": 1042337.25,
+        "max_abs_error": 1044.2744140625,
+        "binary_iou": 0.0
+      },
+      {
+        "frame": 46,
+        "mse": 1041813.5,
+        "max_abs_error": 1044.4871826171875,
+        "binary_iou": 0.0
+      },
+      {
+        "frame": 47,
+        "mse": 1041223.5,
+        "max_abs_error": 1045.5057373046875,
+        "binary_iou": 0.0
+      },
+      {
+        "frame": 48,
+        "mse": 1041049.75,
+        "max_abs_error": 1045.1807861328125,
+        "binary_iou": 0.0
+      },
+      {
+        "frame": 49,
+        "mse": 1039731.5,
+        "max_abs_error": 1044.616943359375,
+        "binary_iou": 0.0
+      },
+      {
+        "frame": 50,
+        "mse": 1042271.25,
+        "max_abs_error": 1038.3101806640625,
+        "binary_iou": 0.0
+      },
+      {
+        "frame": 51,
+        "mse": 1040025.875,
+        "max_abs_error": 1044.3861083984375,
+        "binary_iou": 0.0
+      },
+      {
+        "frame": 52,
+        "mse": 1039457.125,
+        "max_abs_error": 1042.9915771484375,
+        "binary_iou": 0.0
+      },
+      {
+        "frame": 53,
+        "mse": 1038687.8125,
+        "max_abs_error": 1045.0931396484375,
+        "binary_iou": 0.0
+      },
+      {
+        "frame": 54,
+        "mse": 1037940.6875,
+        "max_abs_error": 1045.0421142578125,
+        "binary_iou": 0.0
+      },
+      {
+        "frame": 55,
+        "mse": 1038696.8125,
+        "max_abs_error": 1044.7294921875,
+        "binary_iou": 0.0
+      },
+      {
+        "frame": 56,
+        "mse": 1040289.75,
+        "max_abs_error": 1040.9246826171875,
+        "binary_iou": 0.0
+      },
+      {
+        "frame": 57,
+        "mse": 1036597.4375,
+        "max_abs_error": 1046.882568359375,
+        "binary_iou": 0.0
+      },
+      {
+        "frame": 58,
+        "mse": 1036969.0625,
+        "max_abs_error": 1045.00048828125,
+        "binary_iou": 0.0
+      },
+      {
+        "frame": 59,
+        "mse": 1036808.125,
+        "max_abs_error": 1045.668701171875,
+        "binary_iou": 0.0
+      },
+      {
+        "frame": 60,
+        "mse": 1037463.5,
+        "max_abs_error": 1044.8184814453125,
+        "binary_iou": 0.0
+      },
+      {
+        "frame": 61,
+        "mse": 1039464.5,
+        "max_abs_error": 1044.806884765625,
+        "binary_iou": 0.0
+      },
+      {
+        "frame": 62,
+        "mse": 1041689.375,
+        "max_abs_error": 1043.4801025390625,
+        "binary_iou": 0.0
+      },
+      {
+        "frame": 63,
+        "mse": 1042507.25,
+        "max_abs_error": 1041.201904296875,
+        "binary_iou": 0.0
+      },
+      {
+        "frame": 64,
+        "mse": 1035712.125,
+        "max_abs_error": 1043.2979736328125,
+        "binary_iou": 0.0
+      },
+      {
+        "frame": 65,
+        "mse": 1037027.0,
+        "max_abs_error": 1042.3043212890625,
+        "binary_iou": 0.0
+      },
+      {
+        "frame": 66,
+        "mse": 1037430.375,
+        "max_abs_error": 1042.8675537109375,
+        "binary_iou": 0.0
+      },
+      {
+        "frame": 67,
+        "mse": 1038423.875,
+        "max_abs_error": 1042.75537109375,
+        "binary_iou": 0.0
+      },
+      {
+        "frame": 68,
+        "mse": 1039037.9375,
+        "max_abs_error": 1043.222412109375,
+        "binary_iou": 0.0
+      },
+      {
+        "frame": 69,
+        "mse": 1039897.4375,
+        "max_abs_error": 1042.34521484375,
+        "binary_iou": 0.0
+      },
+      {
+        "frame": 70,
+        "mse": 1040435.1875,
+        "max_abs_error": 1042.72021484375,
+        "binary_iou": 0.0
+      },
+      {
+        "frame": 71,
+        "mse": 1040827.5625,
+        "max_abs_error": 1042.1395263671875,
+        "binary_iou": 0.0
+      }
+    ],
+    "mean_mse": 1023331.3303587866,
+    "max_abs_error": 1046.882568359375,
+    "mean_binary_iou": 0.0
+  },
+  "seed": 7,
+  "device": "cuda",
+  "resources": {
+    "wall_time_seconds": 56.80618500709534,
+    "peak_cuda_memory_bytes": 982584320
+  }
+}

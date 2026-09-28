@@ -1,0 +1,25 @@
+첨부한 `mentor_review_claude_ppt_brief.md`를 기준 문서로 사용하고, 함께 첨부한 State Assembly Map과 Task 03·Task 06 보고서는 사실 검증에만 사용해 주세요.
+
+멘토 검토용 한국어 PowerPoint 프레젠테이션을 실제 `.pptx` 파일로 생성해 주세요. 개요나 Markdown 답변만 주지 말고 다운로드 가능한 PowerPoint 파일을 결과로 제공해 주세요.
+
+요구사항:
+- 16:9 화면비, 표지 포함 총 10장
+- 청중은 이 연구를 처음 접하는 인공지능 연구 멘토
+- 문제, 제안 아이디어, 전달 state, 현재 연구 범위, 완료한 Task, Runtime 검증, Direct Copy 결과, 다음 실험, 멘토 검토 질문 순서를 유지
+- 각 슬라이드는 하나의 메시지만 전달
+- 긴 문단과 작은 글씨를 피하고, 본문은 발표 화면에서 읽을 수 있는 크기로 작성
+- Small은 파란색, Base+는 주황색, Translator는 보라색으로 일관되게 표현
+- 완료 단계는 짙은 색, Task 07은 강조색, 이후 단계는 회색으로 표현
+- 장식용 AI 사진이나 일반적인 데이터센터 이미지를 넣지 않음
+- 흐름도, 타임라인, 비교도, 표는 PowerPoint에서 수정 가능한 기본 도형과 표로 제작
+- 초기 Tiny→Large, Ridge, Residual MLP 파일럿을 현재 버전 결과로 포함하지 않음
+- 현재 버전에서는 Nonlinear Translator를 아직 학습하지 않았다고 명시
+- Base+ self-injection과 Small→Base+ Direct Copy를 명확히 구분
+- `exact`는 native Base+ 결과와의 일치를 뜻하며 ground-truth 정답을 뜻하지 않는다고 표시
+- Direct Copy 결과는 DAVIS 한 사례의 pilot이라고 표시
+- 근거가 없는 수치, 그래프, 성능 향상을 만들지 않음
+- 출처는 관련 슬라이드의 발표자 노트 또는 작은 각주에 기록
+
+파일을 만들기 전에 brief의 사실관계와 첨부 보고서를 대조해 주세요. 파일 생성 후에는 모든 슬라이드를 렌더링해 텍스트 잘림, 겹침, 지나치게 작은 글씨, 잘못된 슬라이드 수를 검사하고 수정한 최종본만 제공해 주세요.
+
+최종 파일명은 `CMMT_mentor_review_2026-09-23.pptx`로 지정해 주세요.

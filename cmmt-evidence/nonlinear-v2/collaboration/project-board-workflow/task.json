@@ -1,0 +1,32 @@
+{
+  "task_id": "project-board-workflow",
+  "title": "Project #2 audit and evidence-gated workflow",
+  "issue_url": "https://github.com/memorybridge-team/vos-memory-translator-nonlinear/issues/1",
+  "owner": "KIMKYUDO",
+  "acceptance_criteria": [
+    "Existing Project cards have explicit acceptance criteria and Small-to-Base+ scope",
+    "RunPod infrastructure card exists with owner and dates",
+    "Canonical repository and evidence-gated task workflow are validated"
+  ],
+  "status": "done",
+  "checked_criteria": [
+    "Existing Project cards have explicit acceptance criteria and Small-to-Base+ scope",
+    "RunPod infrastructure card exists with owner and dates",
+    "Canonical repository and evidence-gated task workflow are validated"
+  ],
+  "evidence": [
+    {
+      "artifact": "docs/project_board_audit_2026-09-19.md",
+      "command": "PYTHONPATH=src python -m pytest -q tests/test_research_task.py",
+      "note": "Five tests also passed by direct invocation because pytest is unavailable in the bundled local runtime."
+    },
+    {
+      "artifact": "src/vos_memory_inspector/research_task.py",
+      "command": null,
+      "note": null
+    }
+  ],
+  "result_summary": "Project #2 now has 21 sufficiently specified cards, and local workflow completion is evidence-gated.",
+  "created_at": "2026-09-19T07:54:18+00:00",
+  "updated_at": "2026-09-19T07:54:20+00:00"
+}

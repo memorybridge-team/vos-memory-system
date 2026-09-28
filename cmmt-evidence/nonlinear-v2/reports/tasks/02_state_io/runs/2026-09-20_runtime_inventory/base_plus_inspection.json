@@ -1,0 +1,727 @@
+{
+  "schema_version": "cmmt.state_inspection.v1",
+  "root_type": "CanonicalState",
+  "tensor_count": 30,
+  "total_bytes": 24390898,
+  "tensors": [
+    {
+      "path": "state.spatial_memory",
+      "shape": [
+        1,
+        1,
+        11,
+        64,
+        64,
+        64
+      ],
+      "axes": [
+        "batch",
+        "object",
+        "record",
+        "channel",
+        "height",
+        "width"
+      ],
+      "dtype": "torch.bfloat16",
+      "device": "cpu",
+      "numel": 2883584,
+      "bytes": 5767168,
+      "requires_grad": false
+    },
+    {
+      "path": "state.object_pointer",
+      "shape": [
+        1,
+        1,
+        11,
+        256
+      ],
+      "axes": [
+        "batch",
+        "object",
+        "record",
+        "feature"
+      ],
+      "dtype": "torch.float32",
+      "device": "cpu",
+      "numel": 2816,
+      "bytes": 11264,
+      "requires_grad": false
+    },
+    {
+      "path": "state.presence_logits",
+      "shape": [
+        1,
+        1,
+        11,
+        1
+      ],
+      "axes": [
+        "batch",
+        "object",
+        "record",
+        "scalar"
+      ],
+      "dtype": "torch.float32",
+      "device": "cpu",
+      "numel": 11,
+      "bytes": 44,
+      "requires_grad": false
+    },
+    {
+      "path": "state.frame_indices",
+      "shape": [
+        1,
+        1,
+        11
+      ],
+      "axes": [
+        "batch",
+        "object",
+        "record"
+      ],
+      "dtype": "torch.int64",
+      "device": "cpu",
+      "numel": 11,
+      "bytes": 88,
+      "requires_grad": false
+    },
+    {
+      "path": "state.slot_order",
+      "shape": [
+        1,
+        1,
+        11
+      ],
+      "axes": [
+        "batch",
+        "object",
+        "record"
+      ],
+      "dtype": "torch.int64",
+      "device": "cpu",
+      "numel": 11,
+      "bytes": 88,
+      "requires_grad": false
+    },
+    {
+      "path": "state.is_conditioning",
+      "shape": [
+        1,
+        1,
+        11
+      ],
+      "axes": [
+        "batch",
+        "object",
+        "record"
+      ],
+      "dtype": "torch.bool",
+      "device": "cpu",
+      "numel": 11,
+      "bytes": 11,
+      "requires_grad": false
+    },
+    {
+      "path": "state.validity",
+      "shape": [
+        1,
+        1,
+        11
+      ],
+      "axes": [
+        "batch",
+        "object",
+        "record"
+      ],
+      "dtype": "torch.bool",
+      "device": "cpu",
+      "numel": 11,
+      "bytes": 11,
+      "requires_grad": false
+    },
+    {
+      "path": "state.positional_information.records.object=0/record=0[0]",
+      "shape": [
+        1,
+        64,
+        64,
+        64
+      ],
+      "axes": [],
+      "dtype": "torch.float32",
+      "device": "cpu",
+      "numel": 262144,
+      "bytes": 1048576,
+      "requires_grad": false
+    },
+    {
+      "path": "state.positional_information.records.object=0/record=1[0]",
+      "shape": [
+        1,
+        64,
+        64,
+        64
+      ],
+      "axes": [],
+      "dtype": "torch.float32",
+      "device": "cpu",
+      "numel": 262144,
+      "bytes": 1048576,
+      "requires_grad": false
+    },
+    {
+      "path": "state.positional_information.records.object=0/record=2[0]",
+      "shape": [
+        1,
+        64,
+        64,
+        64
+      ],
+      "axes": [],
+      "dtype": "torch.float32",
+      "device": "cpu",
+      "numel": 262144,
+      "bytes": 1048576,
+      "requires_grad": false
+    },
+    {
+      "path": "state.positional_information.records.object=0/record=3[0]",
+      "shape": [
+        1,
+        64,
+        64,
+        64
+      ],
+      "axes": [],
+      "dtype": "torch.float32",
+      "device": "cpu",
+      "numel": 262144,
+      "bytes": 1048576,
+      "requires_grad": false
+    },
+    {
+      "path": "state.positional_information.records.object=0/record=4[0]",
+      "shape": [
+        1,
+        64,
+        64,
+        64
+      ],
+      "axes": [],
+      "dtype": "torch.float32",
+      "device": "cpu",
+      "numel": 262144,
+      "bytes": 1048576,
+      "requires_grad": false
+    },
+    {
+      "path": "state.positional_information.records.object=0/record=5[0]",
+      "shape": [
+        1,
+        64,
+        64,
+        64
+      ],
+      "axes": [],
+      "dtype": "torch.float32",
+      "device": "cpu",
+      "numel": 262144,
+      "bytes": 1048576,
+      "requires_grad": false
+    },
+    {
+      "path": "state.positional_information.records.object=0/record=6[0]",
+      "shape": [
+        1,
+        64,
+        64,
+        64
+      ],
+      "axes": [],
+      "dtype": "torch.float32",
+      "device": "cpu",
+      "numel": 262144,
+      "bytes": 1048576,
+      "requires_grad": false
+    },
+    {
+      "path": "state.positional_information.records.object=0/record=7[0]",
+      "shape": [
+        1,
+        64,
+        64,
+        64
+      ],
+      "axes": [],
+      "dtype": "torch.float32",
+      "device": "cpu",
+      "numel": 262144,
+      "bytes": 1048576,
+      "requires_grad": false
+    },
+    {
+      "path": "state.positional_information.records.object=0/record=8[0]",
+      "shape": [
+        1,
+        64,
+        64,
+        64
+      ],
+      "axes": [],
+      "dtype": "torch.float32",
+      "device": "cpu",
+      "numel": 262144,
+      "bytes": 1048576,
+      "requires_grad": false
+    },
+    {
+      "path": "state.positional_information.records.object=0/record=9[0]",
+      "shape": [
+        1,
+        64,
+        64,
+        64
+      ],
+      "axes": [],
+      "dtype": "torch.float32",
+      "device": "cpu",
+      "numel": 262144,
+      "bytes": 1048576,
+      "requires_grad": false
+    },
+    {
+      "path": "state.positional_information.records.object=0/record=10[0]",
+      "shape": [
+        1,
+        64,
+        64,
+        64
+      ],
+      "axes": [],
+      "dtype": "torch.float32",
+      "device": "cpu",
+      "numel": 262144,
+      "bytes": 1048576,
+      "requires_grad": false
+    },
+    {
+      "path": "state.metadata.preserved_inputs.mask_inputs_per_obj.0.0",
+      "shape": [
+        1,
+        1,
+        1024,
+        1024
+      ],
+      "axes": [],
+      "dtype": "torch.float32",
+      "device": "cpu",
+      "numel": 1048576,
+      "bytes": 4194304,
+      "requires_grad": false
+    },
+    {
+      "path": "state.metadata.preserved_pred_masks.object=0/record=0",
+      "shape": [
+        1,
+        1,
+        256,
+        256
+      ],
+      "axes": [
+        "object_or_batch",
+        "mask_channel",
+        "height",
+        "width"
+      ],
+      "dtype": "torch.float32",
+      "device": "cpu",
+      "numel": 65536,
+      "bytes": 262144,
+      "requires_grad": false
+    },
+    {
+      "path": "state.metadata.preserved_pred_masks.object=0/record=1",
+      "shape": [
+        1,
+        1,
+        256,
+        256
+      ],
+      "axes": [
+        "object_or_batch",
+        "mask_channel",
+        "height",
+        "width"
+      ],
+      "dtype": "torch.float32",
+      "device": "cpu",
+      "numel": 65536,
+      "bytes": 262144,
+      "requires_grad": false
+    },
+    {
+      "path": "state.metadata.preserved_pred_masks.object=0/record=2",
+      "shape": [
+        1,
+        1,
+        256,
+        256
+      ],
+      "axes": [
+        "object_or_batch",
+        "mask_channel",
+        "height",
+        "width"
+      ],
+      "dtype": "torch.float32",
+      "device": "cpu",
+      "numel": 65536,
+      "bytes": 262144,
+      "requires_grad": false
+    },
+    {
+      "path": "state.metadata.preserved_pred_masks.object=0/record=3",
+      "shape": [
+        1,
+        1,
+        256,
+        256
+      ],
+      "axes": [
+        "object_or_batch",
+        "mask_channel",
+        "height",
+        "width"
+      ],
+      "dtype": "torch.float32",
+      "device": "cpu",
+      "numel": 65536,
+      "bytes": 262144,
+      "requires_grad": false
+    },
+    {
+      "path": "state.metadata.preserved_pred_masks.object=0/record=4",
+      "shape": [
+        1,
+        1,
+        256,
+        256
+      ],
+      "axes": [
+        "object_or_batch",
+        "mask_channel",
+        "height",
+        "width"
+      ],
+      "dtype": "torch.float32",
+      "device": "cpu",
+      "numel": 65536,
+      "bytes": 262144,
+      "requires_grad": false
+    },
+    {
+      "path": "state.metadata.preserved_pred_masks.object=0/record=5",
+      "shape": [
+        1,
+        1,
+        256,
+        256
+      ],
+      "axes": [
+        "object_or_batch",
+        "mask_channel",
+        "height",
+        "width"
+      ],
+      "dtype": "torch.float32",
+      "device": "cpu",
+      "numel": 65536,
+      "bytes": 262144,
+      "requires_grad": false
+    },
+    {
+      "path": "state.metadata.preserved_pred_masks.object=0/record=6",
+      "shape": [
+        1,
+        1,
+        256,
+        256
+      ],
+      "axes": [
+        "object_or_batch",
+        "mask_channel",
+        "height",
+        "width"
+      ],
+      "dtype": "torch.float32",
+      "device": "cpu",
+      "numel": 65536,
+      "bytes": 262144,
+      "requires_grad": false
+    },
+    {
+      "path": "state.metadata.preserved_pred_masks.object=0/record=7",
+      "shape": [
+        1,
+        1,
+        256,
+        256
+      ],
+      "axes": [
+        "object_or_batch",
+        "mask_channel",
+        "height",
+        "width"
+      ],
+      "dtype": "torch.float32",
+      "device": "cpu",
+      "numel": 65536,
+      "bytes": 262144,
+      "requires_grad": false
+    },
+    {
+      "path": "state.metadata.preserved_pred_masks.object=0/record=8",
+      "shape": [
+        1,
+        1,
+        256,
+        256
+      ],
+      "axes": [
+        "object_or_batch",
+        "mask_channel",
+        "height",
+        "width"
+      ],
+      "dtype": "torch.float32",
+      "device": "cpu",
+      "numel": 65536,
+      "bytes": 262144,
+      "requires_grad": false
+    },
+    {
+      "path": "state.metadata.preserved_pred_masks.object=0/record=9",
+      "shape": [
+        1,
+        1,
+        256,
+        256
+      ],
+      "axes": [
+        "object_or_batch",
+        "mask_channel",
+        "height",
+        "width"
+      ],
+      "dtype": "torch.float32",
+      "device": "cpu",
+      "numel": 65536,
+      "bytes": 262144,
+      "requires_grad": false
+    },
+    {
+      "path": "state.metadata.preserved_pred_masks.object=0/record=10",
+      "shape": [
+        1,
+        1,
+        256,
+        256
+      ],
+      "axes": [
+        "object_or_batch",
+        "mask_channel",
+        "height",
+        "width"
+      ],
+      "dtype": "torch.float32",
+      "device": "cpu",
+      "numel": 65536,
+      "bytes": 262144,
+      "requires_grad": false
+    }
+  ],
+  "containers": [
+    {
+      "path": "state",
+      "kind": "CanonicalState",
+      "length": 12
+    },
+    {
+      "path": "state.object_ids",
+      "kind": "tuple",
+      "length": 1
+    },
+    {
+      "path": "state.positional_information",
+      "kind": "dict",
+      "length": 2
+    },
+    {
+      "path": "state.positional_information.records",
+      "kind": "dict",
+      "length": 11
+    },
+    {
+      "path": "state.positional_information.records.object=0/record=0",
+      "kind": "list",
+      "length": 1
+    },
+    {
+      "path": "state.positional_information.records.object=0/record=1",
+      "kind": "list",
+      "length": 1
+    },
+    {
+      "path": "state.positional_information.records.object=0/record=2",
+      "kind": "list",
+      "length": 1
+    },
+    {
+      "path": "state.positional_information.records.object=0/record=3",
+      "kind": "list",
+      "length": 1
+    },
+    {
+      "path": "state.positional_information.records.object=0/record=4",
+      "kind": "list",
+      "length": 1
+    },
+    {
+      "path": "state.positional_information.records.object=0/record=5",
+      "kind": "list",
+      "length": 1
+    },
+    {
+      "path": "state.positional_information.records.object=0/record=6",
+      "kind": "list",
+      "length": 1
+    },
+    {
+      "path": "state.positional_information.records.object=0/record=7",
+      "kind": "list",
+      "length": 1
+    },
+    {
+      "path": "state.positional_information.records.object=0/record=8",
+      "kind": "list",
+      "length": 1
+    },
+    {
+      "path": "state.positional_information.records.object=0/record=9",
+      "kind": "list",
+      "length": 1
+    },
+    {
+      "path": "state.positional_information.records.object=0/record=10",
+      "kind": "list",
+      "length": 1
+    },
+    {
+      "path": "state.metadata",
+      "kind": "dict",
+      "length": 10
+    },
+    {
+      "path": "state.metadata.object_indices",
+      "kind": "list",
+      "length": 1
+    },
+    {
+      "path": "state.metadata.frames_tracked_per_obj",
+      "kind": "dict",
+      "length": 1
+    },
+    {
+      "path": "state.metadata.frames_tracked_per_obj.0",
+      "kind": "dict",
+      "length": 11
+    },
+    {
+      "path": "state.metadata.frames_tracked_per_obj.0.0",
+      "kind": "dict",
+      "length": 1
+    },
+    {
+      "path": "state.metadata.frames_tracked_per_obj.0.1",
+      "kind": "dict",
+      "length": 1
+    },
+    {
+      "path": "state.metadata.frames_tracked_per_obj.0.2",
+      "kind": "dict",
+      "length": 1
+    },
+    {
+      "path": "state.metadata.frames_tracked_per_obj.0.3",
+      "kind": "dict",
+      "length": 1
+    },
+    {
+      "path": "state.metadata.frames_tracked_per_obj.0.4",
+      "kind": "dict",
+      "length": 1
+    },
+    {
+      "path": "state.metadata.frames_tracked_per_obj.0.5",
+      "kind": "dict",
+      "length": 1
+    },
+    {
+      "path": "state.metadata.frames_tracked_per_obj.0.6",
+      "kind": "dict",
+      "length": 1
+    },
+    {
+      "path": "state.metadata.frames_tracked_per_obj.0.7",
+      "kind": "dict",
+      "length": 1
+    },
+    {
+      "path": "state.metadata.frames_tracked_per_obj.0.8",
+      "kind": "dict",
+      "length": 1
+    },
+    {
+      "path": "state.metadata.frames_tracked_per_obj.0.9",
+      "kind": "dict",
+      "length": 1
+    },
+    {
+      "path": "state.metadata.frames_tracked_per_obj.0.10",
+      "kind": "dict",
+      "length": 1
+    },
+    {
+      "path": "state.metadata.preserved_inputs",
+      "kind": "dict",
+      "length": 2
+    },
+    {
+      "path": "state.metadata.preserved_inputs.point_inputs_per_obj",
+      "kind": "dict",
+      "length": 1
+    },
+    {
+      "path": "state.metadata.preserved_inputs.point_inputs_per_obj.0",
+      "kind": "dict",
+      "length": 0
+    },
+    {
+      "path": "state.metadata.preserved_inputs.mask_inputs_per_obj",
+      "kind": "dict",
+      "length": 1
+    },
+    {
+      "path": "state.metadata.preserved_inputs.mask_inputs_per_obj.0",
+      "kind": "dict",
+      "length": 1
+    },
+    {
+      "path": "state.metadata.preserved_pred_masks",
+      "kind": "dict",
+      "length": 11
+    }
+  ],
+  "truncated_paths": []
+}

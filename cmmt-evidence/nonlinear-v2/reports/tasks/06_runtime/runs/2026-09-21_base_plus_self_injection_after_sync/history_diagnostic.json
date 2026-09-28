@@ -1,0 +1,755 @@
+{
+  "schema_version": "cmmt.same_checkpoint_history_diagnostic.v1",
+  "video_id": "walking",
+  "switch_frame": 10,
+  "injection": {
+    "objects": 1,
+    "records": 11,
+    "switch_frame": 10
+  },
+  "summary": {
+    "maskmem_features": {
+      "records": 11,
+      "all_exact": true,
+      "max_abs_error": 0.0
+    },
+    "maskmem_pos_enc": {
+      "records": 11,
+      "all_exact": true,
+      "max_abs_error": 0.0
+    },
+    "obj_ptr": {
+      "records": 11,
+      "all_exact": true,
+      "max_abs_error": 0.0
+    }
+  },
+  "records": [
+    {
+      "object_index": 0,
+      "storage_key": "cond_frame_outputs",
+      "frame_index": 0,
+      "maskmem_features": {
+        "reference_shape": [
+          1,
+          64,
+          64,
+          64
+        ],
+        "candidate_shape": [
+          1,
+          64,
+          64,
+          64
+        ],
+        "reference_dtype": "torch.bfloat16",
+        "candidate_dtype": "torch.bfloat16",
+        "shape_equal": true,
+        "exact_equal": true,
+        "mse": 0.0,
+        "max_abs_error": 0.0
+      },
+      "maskmem_pos_enc": {
+        "reference_shape": [
+          1,
+          64,
+          64,
+          64
+        ],
+        "candidate_shape": [
+          1,
+          64,
+          64,
+          64
+        ],
+        "reference_dtype": "torch.float32",
+        "candidate_dtype": "torch.float32",
+        "shape_equal": true,
+        "exact_equal": true,
+        "mse": 0.0,
+        "max_abs_error": 0.0
+      },
+      "obj_ptr": {
+        "reference_shape": [
+          1,
+          256
+        ],
+        "candidate_shape": [
+          1,
+          256
+        ],
+        "reference_dtype": "torch.float32",
+        "candidate_dtype": "torch.float32",
+        "shape_equal": true,
+        "exact_equal": true,
+        "mse": 0.0,
+        "max_abs_error": 0.0
+      },
+      "injected_keys": [
+        "maskmem_features",
+        "maskmem_pos_enc",
+        "obj_ptr"
+      ]
+    },
+    {
+      "object_index": 0,
+      "storage_key": "non_cond_frame_outputs",
+      "frame_index": 1,
+      "maskmem_features": {
+        "reference_shape": [
+          1,
+          64,
+          64,
+          64
+        ],
+        "candidate_shape": [
+          1,
+          64,
+          64,
+          64
+        ],
+        "reference_dtype": "torch.bfloat16",
+        "candidate_dtype": "torch.bfloat16",
+        "shape_equal": true,
+        "exact_equal": true,
+        "mse": 0.0,
+        "max_abs_error": 0.0
+      },
+      "maskmem_pos_enc": {
+        "reference_shape": [
+          1,
+          64,
+          64,
+          64
+        ],
+        "candidate_shape": [
+          1,
+          64,
+          64,
+          64
+        ],
+        "reference_dtype": "torch.float32",
+        "candidate_dtype": "torch.float32",
+        "shape_equal": true,
+        "exact_equal": true,
+        "mse": 0.0,
+        "max_abs_error": 0.0
+      },
+      "obj_ptr": {
+        "reference_shape": [
+          1,
+          256
+        ],
+        "candidate_shape": [
+          1,
+          256
+        ],
+        "reference_dtype": "torch.float32",
+        "candidate_dtype": "torch.float32",
+        "shape_equal": true,
+        "exact_equal": true,
+        "mse": 0.0,
+        "max_abs_error": 0.0
+      },
+      "injected_keys": [
+        "maskmem_features",
+        "maskmem_pos_enc",
+        "obj_ptr"
+      ]
+    },
+    {
+      "object_index": 0,
+      "storage_key": "non_cond_frame_outputs",
+      "frame_index": 2,
+      "maskmem_features": {
+        "reference_shape": [
+          1,
+          64,
+          64,
+          64
+        ],
+        "candidate_shape": [
+          1,
+          64,
+          64,
+          64
+        ],
+        "reference_dtype": "torch.bfloat16",
+        "candidate_dtype": "torch.bfloat16",
+        "shape_equal": true,
+        "exact_equal": true,
+        "mse": 0.0,
+        "max_abs_error": 0.0
+      },
+      "maskmem_pos_enc": {
+        "reference_shape": [
+          1,
+          64,
+          64,
+          64
+        ],
+        "candidate_shape": [
+          1,
+          64,
+          64,
+          64
+        ],
+        "reference_dtype": "torch.float32",
+        "candidate_dtype": "torch.float32",
+        "shape_equal": true,
+        "exact_equal": true,
+        "mse": 0.0,
+        "max_abs_error": 0.0
+      },
+      "obj_ptr": {
+        "reference_shape": [
+          1,
+          256
+        ],
+        "candidate_shape": [
+          1,
+          256
+        ],
+        "reference_dtype": "torch.float32",
+        "candidate_dtype": "torch.float32",
+        "shape_equal": true,
+        "exact_equal": true,
+        "mse": 0.0,
+        "max_abs_error": 0.0
+      },
+      "injected_keys": [
+        "maskmem_features",
+        "maskmem_pos_enc",
+        "obj_ptr"
+      ]
+    },
+    {
+      "object_index": 0,
+      "storage_key": "non_cond_frame_outputs",
+      "frame_index": 3,
+      "maskmem_features": {
+        "reference_shape": [
+          1,
+          64,
+          64,
+          64
+        ],
+        "candidate_shape": [
+          1,
+          64,
+          64,
+          64
+        ],
+        "reference_dtype": "torch.bfloat16",
+        "candidate_dtype": "torch.bfloat16",
+        "shape_equal": true,
+        "exact_equal": true,
+        "mse": 0.0,
+        "max_abs_error": 0.0
+      },
+      "maskmem_pos_enc": {
+        "reference_shape": [
+          1,
+          64,
+          64,
+          64
+        ],
+        "candidate_shape": [
+          1,
+          64,
+          64,
+          64
+        ],
+        "reference_dtype": "torch.float32",
+        "candidate_dtype": "torch.float32",
+        "shape_equal": true,
+        "exact_equal": true,
+        "mse": 0.0,
+        "max_abs_error": 0.0
+      },
+      "obj_ptr": {
+        "reference_shape": [
+          1,
+          256
+        ],
+        "candidate_shape": [
+          1,
+          256
+        ],
+        "reference_dtype": "torch.float32",
+        "candidate_dtype": "torch.float32",
+        "shape_equal": true,
+        "exact_equal": true,
+        "mse": 0.0,
+        "max_abs_error": 0.0
+      },
+      "injected_keys": [
+        "maskmem_features",
+        "maskmem_pos_enc",
+        "obj_ptr"
+      ]
+    },
+    {
+      "object_index": 0,
+      "storage_key": "non_cond_frame_outputs",
+      "frame_index": 4,
+      "maskmem_features": {
+        "reference_shape": [
+          1,
+          64,
+          64,
+          64
+        ],
+        "candidate_shape": [
+          1,
+          64,
+          64,
+          64
+        ],
+        "reference_dtype": "torch.bfloat16",
+        "candidate_dtype": "torch.bfloat16",
+        "shape_equal": true,
+        "exact_equal": true,
+        "mse": 0.0,
+        "max_abs_error": 0.0
+      },
+      "maskmem_pos_enc": {
+        "reference_shape": [
+          1,
+          64,
+          64,
+          64
+        ],
+        "candidate_shape": [
+          1,
+          64,
+          64,
+          64
+        ],
+        "reference_dtype": "torch.float32",
+        "candidate_dtype": "torch.float32",
+        "shape_equal": true,
+        "exact_equal": true,
+        "mse": 0.0,
+        "max_abs_error": 0.0
+      },
+      "obj_ptr": {
+        "reference_shape": [
+          1,
+          256
+        ],
+        "candidate_shape": [
+          1,
+          256
+        ],
+        "reference_dtype": "torch.float32",
+        "candidate_dtype": "torch.float32",
+        "shape_equal": true,
+        "exact_equal": true,
+        "mse": 0.0,
+        "max_abs_error": 0.0
+      },
+      "injected_keys": [
+        "maskmem_features",
+        "maskmem_pos_enc",
+        "obj_ptr"
+      ]
+    },
+    {
+      "object_index": 0,
+      "storage_key": "non_cond_frame_outputs",
+      "frame_index": 5,
+      "maskmem_features": {
+        "reference_shape": [
+          1,
+          64,
+          64,
+          64
+        ],
+        "candidate_shape": [
+          1,
+          64,
+          64,
+          64
+        ],
+        "reference_dtype": "torch.bfloat16",
+        "candidate_dtype": "torch.bfloat16",
+        "shape_equal": true,
+        "exact_equal": true,
+        "mse": 0.0,
+        "max_abs_error": 0.0
+      },
+      "maskmem_pos_enc": {
+        "reference_shape": [
+          1,
+          64,
+          64,
+          64
+        ],
+        "candidate_shape": [
+          1,
+          64,
+          64,
+          64
+        ],
+        "reference_dtype": "torch.float32",
+        "candidate_dtype": "torch.float32",
+        "shape_equal": true,
+        "exact_equal": true,
+        "mse": 0.0,
+        "max_abs_error": 0.0
+      },
+      "obj_ptr": {
+        "reference_shape": [
+          1,
+          256
+        ],
+        "candidate_shape": [
+          1,
+          256
+        ],
+        "reference_dtype": "torch.float32",
+        "candidate_dtype": "torch.float32",
+        "shape_equal": true,
+        "exact_equal": true,
+        "mse": 0.0,
+        "max_abs_error": 0.0
+      },
+      "injected_keys": [
+        "maskmem_features",
+        "maskmem_pos_enc",
+        "obj_ptr"
+      ]
+    },
+    {
+      "object_index": 0,
+      "storage_key": "non_cond_frame_outputs",
+      "frame_index": 6,
+      "maskmem_features": {
+        "reference_shape": [
+          1,
+          64,
+          64,
+          64
+        ],
+        "candidate_shape": [
+          1,
+          64,
+          64,
+          64
+        ],
+        "reference_dtype": "torch.bfloat16",
+        "candidate_dtype": "torch.bfloat16",
+        "shape_equal": true,
+        "exact_equal": true,
+        "mse": 0.0,
+        "max_abs_error": 0.0
+      },
+      "maskmem_pos_enc": {
+        "reference_shape": [
+          1,
+          64,
+          64,
+          64
+        ],
+        "candidate_shape": [
+          1,
+          64,
+          64,
+          64
+        ],
+        "reference_dtype": "torch.float32",
+        "candidate_dtype": "torch.float32",
+        "shape_equal": true,
+        "exact_equal": true,
+        "mse": 0.0,
+        "max_abs_error": 0.0
+      },
+      "obj_ptr": {
+        "reference_shape": [
+          1,
+          256
+        ],
+        "candidate_shape": [
+          1,
+          256
+        ],
+        "reference_dtype": "torch.float32",
+        "candidate_dtype": "torch.float32",
+        "shape_equal": true,
+        "exact_equal": true,
+        "mse": 0.0,
+        "max_abs_error": 0.0
+      },
+      "injected_keys": [
+        "maskmem_features",
+        "maskmem_pos_enc",
+        "obj_ptr"
+      ]
+    },
+    {
+      "object_index": 0,
+      "storage_key": "non_cond_frame_outputs",
+      "frame_index": 7,
+      "maskmem_features": {
+        "reference_shape": [
+          1,
+          64,
+          64,
+          64
+        ],
+        "candidate_shape": [
+          1,
+          64,
+          64,
+          64
+        ],
+        "reference_dtype": "torch.bfloat16",
+        "candidate_dtype": "torch.bfloat16",
+        "shape_equal": true,
+        "exact_equal": true,
+        "mse": 0.0,
+        "max_abs_error": 0.0
+      },
+      "maskmem_pos_enc": {
+        "reference_shape": [
+          1,
+          64,
+          64,
+          64
+        ],
+        "candidate_shape": [
+          1,
+          64,
+          64,
+          64
+        ],
+        "reference_dtype": "torch.float32",
+        "candidate_dtype": "torch.float32",
+        "shape_equal": true,
+        "exact_equal": true,
+        "mse": 0.0,
+        "max_abs_error": 0.0
+      },
+      "obj_ptr": {
+        "reference_shape": [
+          1,
+          256
+        ],
+        "candidate_shape": [
+          1,
+          256
+        ],
+        "reference_dtype": "torch.float32",
+        "candidate_dtype": "torch.float32",
+        "shape_equal": true,
+        "exact_equal": true,
+        "mse": 0.0,
+        "max_abs_error": 0.0
+      },
+      "injected_keys": [
+        "maskmem_features",
+        "maskmem_pos_enc",
+        "obj_ptr"
+      ]
+    },
+    {
+      "object_index": 0,
+      "storage_key": "non_cond_frame_outputs",
+      "frame_index": 8,
+      "maskmem_features": {
+        "reference_shape": [
+          1,
+          64,
+          64,
+          64
+        ],
+        "candidate_shape": [
+          1,
+          64,
+          64,
+          64
+        ],
+        "reference_dtype": "torch.bfloat16",
+        "candidate_dtype": "torch.bfloat16",
+        "shape_equal": true,
+        "exact_equal": true,
+        "mse": 0.0,
+        "max_abs_error": 0.0
+      },
+      "maskmem_pos_enc": {
+        "reference_shape": [
+          1,
+          64,
+          64,
+          64
+        ],
+        "candidate_shape": [
+          1,
+          64,
+          64,
+          64
+        ],
+        "reference_dtype": "torch.float32",
+        "candidate_dtype": "torch.float32",
+        "shape_equal": true,
+        "exact_equal": true,
+        "mse": 0.0,
+        "max_abs_error": 0.0
+      },
+      "obj_ptr": {
+        "reference_shape": [
+          1,
+          256
+        ],
+        "candidate_shape": [
+          1,
+          256
+        ],
+        "reference_dtype": "torch.float32",
+        "candidate_dtype": "torch.float32",
+        "shape_equal": true,
+        "exact_equal": true,
+        "mse": 0.0,
+        "max_abs_error": 0.0
+      },
+      "injected_keys": [
+        "maskmem_features",
+        "maskmem_pos_enc",
+        "obj_ptr"
+      ]
+    },
+    {
+      "object_index": 0,
+      "storage_key": "non_cond_frame_outputs",
+      "frame_index": 9,
+      "maskmem_features": {
+        "reference_shape": [
+          1,
+          64,
+          64,
+          64
+        ],
+        "candidate_shape": [
+          1,
+          64,
+          64,
+          64
+        ],
+        "reference_dtype": "torch.bfloat16",
+        "candidate_dtype": "torch.bfloat16",
+        "shape_equal": true,
+        "exact_equal": true,
+        "mse": 0.0,
+        "max_abs_error": 0.0
+      },
+      "maskmem_pos_enc": {
+        "reference_shape": [
+          1,
+          64,
+          64,
+          64
+        ],
+        "candidate_shape": [
+          1,
+          64,
+          64,
+          64
+        ],
+        "reference_dtype": "torch.float32",
+        "candidate_dtype": "torch.float32",
+        "shape_equal": true,
+        "exact_equal": true,
+        "mse": 0.0,
+        "max_abs_error": 0.0
+      },
+      "obj_ptr": {
+        "reference_shape": [
+          1,
+          256
+        ],
+        "candidate_shape": [
+          1,
+          256
+        ],
+        "reference_dtype": "torch.float32",
+        "candidate_dtype": "torch.float32",
+        "shape_equal": true,
+        "exact_equal": true,
+        "mse": 0.0,
+        "max_abs_error": 0.0
+      },
+      "injected_keys": [
+        "maskmem_features",
+        "maskmem_pos_enc",
+        "obj_ptr"
+      ]
+    },
+    {
+      "object_index": 0,
+      "storage_key": "non_cond_frame_outputs",
+      "frame_index": 10,
+      "maskmem_features": {
+        "reference_shape": [
+          1,
+          64,
+          64,
+          64
+        ],
+        "candidate_shape": [
+          1,
+          64,
+          64,
+          64
+        ],
+        "reference_dtype": "torch.bfloat16",
+        "candidate_dtype": "torch.bfloat16",
+        "shape_equal": true,
+        "exact_equal": true,
+        "mse": 0.0,
+        "max_abs_error": 0.0
+      },
+      "maskmem_pos_enc": {
+        "reference_shape": [
+          1,
+          64,
+          64,
+          64
+        ],
+        "candidate_shape": [
+          1,
+          64,
+          64,
+          64
+        ],
+        "reference_dtype": "torch.float32",
+        "candidate_dtype": "torch.float32",
+        "shape_equal": true,
+        "exact_equal": true,
+        "mse": 0.0,
+        "max_abs_error": 0.0
+      },
+      "obj_ptr": {
+        "reference_shape": [
+          1,
+          256
+        ],
+        "candidate_shape": [
+          1,
+          256
+        ],
+        "reference_dtype": "torch.float32",
+        "candidate_dtype": "torch.float32",
+        "shape_equal": true,
+        "exact_equal": true,
+        "mse": 0.0,
+        "max_abs_error": 0.0
+      },
+      "injected_keys": [
+        "maskmem_features",
+        "maskmem_pos_enc",
+        "obj_ptr"
+      ]
+    }
+  ]
+}
