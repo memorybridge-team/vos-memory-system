@@ -1,0 +1,32 @@
+{
+  "case_id": "VOST:4030_cut_broccoli:obj2:switch00678",
+  "dataset": "VOST",
+  "video_id": "4030_cut_broccoli",
+  "object_id": 2,
+  "cohort": "heldout_core",
+  "checkpoint_video": false,
+  "method": "self_injection",
+  "key": "eb574e71fdfa0f4d6f8d8a76ae7ee6692dea2d837e9445f434323372878b2935",
+  "status": "complete",
+  "origin": "executed",
+  "gate_passed": true,
+  "binary_iou": 1.0,
+  "max_logit_error": 0.0,
+  "runtime": {
+    "scope": "test10_method_v1",
+    "model_load_s": 1.085443881998799,
+    "export_s": 0.03517605999513762,
+    "transfer_s": 0.0,
+    "translate_s": 0.0,
+    "inject_s": 0.001341944996966049,
+    "replay_s": 0.0,
+    "video_init_s": 2.680000034160912e-05,
+    "handoff_bytes": 59887631,
+    "handoff_s": 0.0013683049983228557,
+    "past_backbone_frames": [],
+    "first_output_s": 0.2836795869952766,
+    "continuation_s": 4.958438073997968,
+    "peak_vram_bytes": 1134582784,
+    "switch_ready_with_export_s": 0.036571164993802086
+  }
+}

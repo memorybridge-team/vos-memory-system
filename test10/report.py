@@ -50,37 +50,47 @@ def paired(rows, a, b, seed=7):
 
 
 def build_report(selection, store, seed=7, scheduled=None):
+    methods = tuple(selection.get("methods", METHODS))
+    datasets_in_run = (tuple(dict.fromkeys(c["dataset"] for c in selection["cases"]))
+                       if selection.get("design") == "heldout.v1" else DATASETS)
     rows, missing, gates, costs = [], [], [], []
     for case in selection["cases"]:
-        found = {m: store.load(case, m) for m in (*METHODS, GATE)}
+        found = {m: store.load(case, m) for m in (*methods, GATE)}
         absent = [m for m, row in found.items() if row is None]
         gate = found[GATE]
         if absent or not gate or not gate.get("gate_passed"):
             missing.append(dict(case_id=case["case_id"], cohort=case["cohort"], missing=absent,
                                 scheduled=scheduled is not None and case["case_id"] in scheduled))
         else:
-            gates.append(gate); rows.extend(found[m] for m in METHODS)
+            gates.append(gate); rows.extend(found[m] for m in methods)
         cost = store.load(case, "costs")
         if cost: costs.append(cost)
-    report = dict(protocol="test10.v1", candidate_cases=len(selection["cases"]), complete_cases=len(gates),
+    report = dict(protocol="test10.v1", design=selection.get("design", "original"),
+                  methods=methods, candidate_cases=len(selection["cases"]), complete_cases=len(gates),
                   incomplete=missing, gate_cases=len(gates), groups={}, timing={},
-                  sampling_note="offsets use processed frames; LVOS raw stride=5; independent single-object runs",
-                  davis_note="prior selection use unknown: exploratory validation",
+                  sampling_note="offsets use processed frames; LVOS raw stride=5; VOST raw stride=6; independent single-object runs",
+                  davis_note="heldout DAVIS uses train split and is exploratory" if selection.get("design") == "heldout.v1" else
+                             "prior selection use unknown: exploratory validation",
                   reused_rows=sum(r.get("origin") == "reused" for r in rows))
     groups = {"all": rows,
               "legacy_dev": [r for r in rows if r["cohort"] == "legacy_dev"],
               "additional": [r for r in rows if r["cohort"] == "additional"],
               "exclude_checkpoint_videos": [r for r in rows if not r["checkpoint_video"]]}
+    if selection.get("design") == "heldout.v1":
+        groups = {"all": rows,
+                  "heldout_core": [r for r in rows if r["cohort"] == "heldout_core"],
+                  "heldout_extension": [r for r in rows if r["cohort"] == "heldout_extension"]}
     comparisons = [("affine", "direct"), ("residual_mlp", "affine"), ("transformer", "affine"),
                    ("affine_spatial", "affine"), ("affine_pointer", "affine")]
     comparisons += [(a,b) for a in ("affine", "residual_mlp", "transformer")
                     for b in ("last_mask", "anchor_replay_4", "anchor_replay_8", "anchor_replay_16")]
+    comparisons = [(a, b) for a, b in comparisons if a in methods and b in methods]
     for group, group_rows in groups.items():
         datasets = {}
-        for dataset in DATASETS:
+        for dataset in datasets_in_run:
             sub = [r for r in group_rows if r["dataset"] == dataset]
             table = {}
-            for method in METHODS:
+            for method in methods:
                 method_rows = [r for r in sub if r["method"] == method]
                 table[method] = {name: bootstrap(list(per_video(method_rows, path).values()), seed)
                                  for name, path in METRICS.items()}
@@ -91,11 +101,11 @@ def build_report(selection, store, seed=7, scheduled=None):
                     table[method][event + "_videos"] = len({r["video_id"] for r in method_rows if (value(r, field) or 0) > 0})
             datasets[dataset] = dict(methods=table, paired={f"{a}-minus-{b}": paired(sub,a,b,seed) for a,b in comparisons})
         macro = {}
-        for method in METHODS:
-            vals = [datasets[d]["methods"][method]["J&F"] for d in DATASETS]
+        for method in methods:
+            vals = [datasets[d]["methods"][method]["J&F"] for d in datasets_in_run]
             macro[method] = mean(v["mean"] for v in vals) if all(vals) else None
         report["groups"][group] = dict(datasets=datasets, equal_dataset_mean_JF=macro)
-    for method in METHODS:
+    for method in methods:
         measured = [r["timings"][method] for r in costs if method in r["timings"]]
         report["timing"][method] = dict(cases=len(measured), fields={})
         for field in ("prefix_s", "export_s", "transfer_s", "translate_s", "inject_s", "replay_s", "handoff_s", "first_output_s", "peak_vram_bytes"):
@@ -104,10 +114,10 @@ def build_report(selection, store, seed=7, scheduled=None):
     write(store.root / "summary.json", report)
     lines = ["# test10 결과", "", f"완료 {len(gates)} / 후보 {len(selection['cases'])} cases. 재사용 row {report['reused_rows']}.",
              "", "모든 방법 및 self-injection gate를 완료한 공통 case만 집계합니다. 부분 실행은 summary.json의 incomplete에 보존합니다.",
-             "DAVIS는 과거 모델 선택 사용 여부가 확인되지 않아 탐색적 평가로 표시합니다.", "",
+             report["davis_note"], "",
              "| Dataset | Method | Cases | Videos | J&F ×100 (95% CI) |", "|---|---|---:|---:|---|"]
-    for d in DATASETS:
-        for m in METHODS:
+    for d in datasets_in_run:
+        for m in methods:
             row = report["groups"]["all"]["datasets"][d]["methods"][m]; metric = row["J&F"]
             cell = "—" if metric is None else f"{100*metric['mean']:.2f} [{100*metric['ci95'][0]:.2f}, {100*metric['ci95'][1]:.2f}]"
             lines.append(f"| {d} | {m} | {row['cases']} | {metric['videos'] if metric else 0} | {cell} |")

@@ -1,0 +1,32 @@
+{
+  "case_id": "DAVIS2017:motorbike:obj3:switch00021",
+  "dataset": "DAVIS2017",
+  "video_id": "motorbike",
+  "object_id": 3,
+  "cohort": "heldout_core",
+  "checkpoint_video": false,
+  "method": "self_injection",
+  "key": "d3980b14e9016dcc7bd9d57da1919c2d5083d8e1bf16c0b6007c57ea85b76f53",
+  "status": "complete",
+  "origin": "executed",
+  "gate_passed": true,
+  "binary_iou": 1.0,
+  "max_logit_error": 0.0,
+  "runtime": {
+    "scope": "test10_method_v1",
+    "model_load_s": 1.085443881998799,
+    "export_s": 0.008879332002834417,
+    "transfer_s": 0.0,
+    "translate_s": 0.0,
+    "inject_s": 0.000651253001706209,
+    "replay_s": 0.0,
+    "video_init_s": 2.820199733832851e-05,
+    "handoff_bytes": 11557271,
+    "handoff_s": 0.0006776909940526821,
+    "past_backbone_frames": [],
+    "first_output_s": 0.03281903499737382,
+    "continuation_s": 0.7888214929989772,
+    "peak_vram_bytes": 1124047872,
+    "switch_ready_with_export_s": 0.009585224994225428
+  }
+}

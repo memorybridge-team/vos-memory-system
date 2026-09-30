@@ -1,0 +1,32 @@
+{
+  "case_id": "DAVIS2017:car-turn:obj1:switch00039",
+  "dataset": "DAVIS2017",
+  "video_id": "car-turn",
+  "object_id": 1,
+  "cohort": "heldout_core",
+  "checkpoint_video": false,
+  "method": "self_injection",
+  "key": "41ee79ca82810a14de25f506efd60f64b64ffb76b6718b8a1348edc94a2c9d1f",
+  "status": "complete",
+  "origin": "executed",
+  "gate_passed": true,
+  "binary_iou": 1.0,
+  "max_logit_error": 0.0,
+  "runtime": {
+    "scope": "test10_method_v1",
+    "model_load_s": 1.085443881998799,
+    "export_s": 0.008441429999948014,
+    "transfer_s": 0.0,
+    "translate_s": 0.0,
+    "inject_s": 0.0008050410033320077,
+    "replay_s": 0.0,
+    "video_init_s": 2.508600300643593e-05,
+    "handoff_bytes": 21013211,
+    "handoff_s": 0.0008324979935423471,
+    "past_backbone_frames": [],
+    "first_output_s": 0.033612375998927746,
+    "continuation_s": 1.5135564709999016,
+    "peak_vram_bytes": 1124659712,
+    "switch_ready_with_export_s": 0.009299013996496797
+  }
+}

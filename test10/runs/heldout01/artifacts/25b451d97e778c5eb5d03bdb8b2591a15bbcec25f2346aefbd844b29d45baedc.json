@@ -1,0 +1,32 @@
+{
+  "case_id": "DAVIS2017:swing:obj2:switch00029",
+  "dataset": "DAVIS2017",
+  "video_id": "swing",
+  "object_id": 2,
+  "cohort": "heldout_extension",
+  "checkpoint_video": false,
+  "method": "self_injection",
+  "key": "25b451d97e778c5eb5d03bdb8b2591a15bbcec25f2346aefbd844b29d45baedc",
+  "status": "complete",
+  "origin": "executed",
+  "gate_passed": true,
+  "binary_iou": 1.0,
+  "max_logit_error": 0.0,
+  "runtime": {
+    "scope": "test10_method_v1",
+    "model_load_s": 1.064451628997631,
+    "export_s": 0.011337388998072129,
+    "transfer_s": 0.0,
+    "translate_s": 0.0,
+    "inject_s": 0.0006695269985357299,
+    "replay_s": 0.0,
+    "video_init_s": 2.339699858566746e-05,
+    "handoff_bytes": 15759911,
+    "handoff_s": 0.000693092995788902,
+    "past_backbone_frames": [],
+    "first_output_s": 0.033164724001835566,
+    "continuation_s": 1.122985116999189,
+    "peak_vram_bytes": 1125515264,
+    "switch_ready_with_export_s": 0.012053878992446698
+  }
+}

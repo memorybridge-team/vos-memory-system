@@ -1,0 +1,32 @@
+{
+  "case_id": "VOST:9383_spread_cement:obj1:switch00444",
+  "dataset": "VOST",
+  "video_id": "9383_spread_cement",
+  "object_id": 1,
+  "cohort": "heldout_core",
+  "checkpoint_video": false,
+  "method": "self_injection",
+  "key": "939c4a67559cab7bc173fd5e4b365ddd20ac30c722e284e1af4a56631c2a9715",
+  "status": "complete",
+  "origin": "executed",
+  "gate_passed": true,
+  "binary_iou": 1.0,
+  "max_logit_error": 0.0,
+  "runtime": {
+    "scope": "test10_method_v1",
+    "model_load_s": 1.085443881998799,
+    "export_s": 0.017461788003856782,
+    "transfer_s": 0.0,
+    "translate_s": 0.0,
+    "inject_s": 0.001188465001177974,
+    "replay_s": 0.0,
+    "video_init_s": 3.993000427726656e-05,
+    "handoff_bytes": 39399761,
+    "handoff_s": 0.0012174910007161088,
+    "past_backbone_frames": [],
+    "first_output_s": 0.24675532399851363,
+    "continuation_s": 3.489086852998298,
+    "peak_vram_bytes": 1134464512,
+    "switch_ready_with_export_s": 0.018719209008850157
+  }
+}

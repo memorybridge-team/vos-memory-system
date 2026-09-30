@@ -1,0 +1,15 @@
+{
+  "decision": "run_all_predeclared_extension_cases",
+  "basis": "runtime_only_no_accuracy_inspection",
+  "core_complete_cases": 120,
+  "core_elapsed_seconds": 6560.820849699001,
+  "remaining_budget_seconds": 4239.179150300999,
+  "extension_estimated_seconds": 884.1,
+  "extension_estimated_with_20_percent_margin_seconds": 1060.9,
+  "extension_case_counts": {
+    "MOSEv2": 5,
+    "LVOSv2": 5,
+    "DAVIS2017": 5,
+    "VOST": 5
+  }
+}

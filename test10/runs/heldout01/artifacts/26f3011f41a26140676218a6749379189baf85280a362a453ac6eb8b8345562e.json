@@ -1,0 +1,166 @@
+{
+  "case_id": "DAVIS2017:classic-car:obj1:switch00031",
+  "dataset": "DAVIS2017",
+  "video_id": "classic-car",
+  "object_id": 1,
+  "cohort": "heldout_core",
+  "checkpoint_video": false,
+  "method": "base_native",
+  "key": "26f3011f41a26140676218a6749379189baf85280a362a453ac6eb8b8345562e",
+  "status": "complete",
+  "origin": "executed_or_cached_prefix",
+  "scores": {
+    "post_switch": {
+      "frames": 31,
+      "J": 0.8836330361421162,
+      "F": 0.9321434333218127,
+      "J_and_F": 0.9078882347319644
+    },
+    "gt_visible": {
+      "frames": 31,
+      "J": 0.8836330361421162,
+      "F": 0.9321434333218127,
+      "J_and_F": 0.9078882347319644
+    },
+    "gt_absent": {
+      "frames": 0,
+      "J": null,
+      "F": null,
+      "J_and_F": null
+    },
+    "checkpoints": {
+      "+1": {
+        "frame": 32,
+        "evaluated": true,
+        "annotated": true,
+        "gt_present": true,
+        "J": 0.9632598915676549,
+        "F": 1.0,
+        "J_and_F": 0.9816299457838275
+      },
+      "+5": {
+        "frame": 36,
+        "evaluated": true,
+        "annotated": true,
+        "gt_present": true,
+        "J": 0.9569308902609042,
+        "F": 0.9970089730807578,
+        "J_and_F": 0.9769699316708309
+      },
+      "+20": {
+        "frame": 51,
+        "evaluated": true,
+        "annotated": true,
+        "gt_present": true,
+        "J": 0.9106564615837504,
+        "F": 0.9226574847181429,
+        "J_and_F": 0.9166569731509466
+      }
+    },
+    "remaining": {
+      "definition": "annotated frames with offset > +20",
+      "frames": 11,
+      "J": 0.7545733679072067,
+      "F": 0.842322358096572,
+      "J_and_F": 0.7984478630018894
+    },
+    "frame_counts": {
+      "evaluated": 31,
+      "annotated": 31,
+      "not_annotated": 0,
+      "gt_visible": 31,
+      "gt_absent": 0
+    },
+    "false_positives": {
+      "definition": "over annotated GT-absent frames: rate of frames with a non-empty prediction, and mean predicted area (void excluded) per GT-absent frame",
+      "gt_absent_frames": 0,
+      "false_positive_frames": 0,
+      "rate": null,
+      "mean_area_pixels": null,
+      "mean_area_fraction": null
+    },
+    "reappearance": {
+      "count": 0,
+      "recovered": 0,
+      "no_recovery_rate": null,
+      "mean_recovery_length": null,
+      "gt_present_at_switch": true
+    },
+    "j_parity_with_official": {
+      "frames": 31,
+      "max_abs_difference": 0.0
+    },
+    "F_unavailable_reason": null
+  },
+  "runtime": {
+    "scope": "prefix_reference",
+    "prefix_s": 1.0143239429962705,
+    "export_s": 0.01827545400010422,
+    "continuation_s": 1.2098670390041661,
+    "backbone_frames": [
+      0,
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7,
+      8,
+      9,
+      10,
+      11,
+      12,
+      13,
+      14,
+      15,
+      16,
+      17,
+      18,
+      19,
+      20,
+      21,
+      22,
+      23,
+      24,
+      25,
+      26,
+      27,
+      28,
+      29,
+      30,
+      31,
+      32,
+      33,
+      34,
+      35,
+      36,
+      37,
+      38,
+      39,
+      40,
+      41,
+      42,
+      43,
+      44,
+      45,
+      46,
+      47,
+      48,
+      49,
+      50,
+      51,
+      52,
+      53,
+      54,
+      55,
+      56,
+      57,
+      58,
+      59,
+      60,
+      61,
+      62
+    ]
+  }
+}

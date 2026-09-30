@@ -1,0 +1,32 @@
+{
+  "case_id": "VOST:10625_knead_dough:obj1:switch00354",
+  "dataset": "VOST",
+  "video_id": "10625_knead_dough",
+  "object_id": 1,
+  "cohort": "heldout_core",
+  "checkpoint_video": false,
+  "method": "self_injection",
+  "key": "2627f3feb7063af29495ecd5aaaf42e4067a81a424017cb5f4e5bdd1777797c2",
+  "status": "complete",
+  "origin": "executed",
+  "gate_passed": true,
+  "binary_iou": 1.0,
+  "max_logit_error": 0.0,
+  "runtime": {
+    "scope": "test10_method_v1",
+    "model_load_s": 1.1970411050024268,
+    "export_s": 0.02495309799996903,
+    "transfer_s": 0.0,
+    "translate_s": 0.0,
+    "inject_s": 0.0011055600007239264,
+    "replay_s": 0.0,
+    "video_init_s": 2.7752001187764108e-05,
+    "handoff_bytes": 31519811,
+    "handoff_s": 0.0011305410007480532,
+    "past_backbone_frames": [],
+    "first_output_s": 0.25611777800077107,
+    "continuation_s": 2.8708776400017086,
+    "peak_vram_bytes": 1132264448,
+    "switch_ready_with_export_s": 0.02611139100190485
+  }
+}

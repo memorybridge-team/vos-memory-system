@@ -1,0 +1,32 @@
+{
+  "case_id": "DAVIS2017:drone:obj1:switch00045",
+  "dataset": "DAVIS2017",
+  "video_id": "drone",
+  "object_id": 1,
+  "cohort": "heldout_core",
+  "checkpoint_video": false,
+  "method": "self_injection",
+  "key": "9a5314c9a5ea998fbc76b8adbbdf9c852bceb21b42bd5ef70c48538d77f99e7c",
+  "status": "complete",
+  "origin": "executed",
+  "gate_passed": true,
+  "binary_iou": 1.0,
+  "max_logit_error": 0.0,
+  "runtime": {
+    "scope": "test10_method_v1",
+    "model_load_s": 1.085443881998799,
+    "export_s": 0.024337739996553864,
+    "transfer_s": 0.0,
+    "translate_s": 0.0,
+    "inject_s": 0.0007851530026528053,
+    "replay_s": 0.0,
+    "video_init_s": 2.4921995645854622e-05,
+    "handoff_bytes": 24165191,
+    "handoff_s": 0.0008105739980237558,
+    "past_backbone_frames": [],
+    "first_output_s": 0.03335987599712098,
+    "continuation_s": 1.7283282580028754,
+    "peak_vram_bytes": 1124672000,
+    "switch_ready_with_export_s": 0.025173235990223475
+  }
+}

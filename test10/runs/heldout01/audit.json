@@ -1,0 +1,2524 @@
+{
+  "fit": {
+    "shards": 600,
+    "records": 11677,
+    "videos": {
+      "MOSEv2": [
+        "006e6b64",
+        "01ojfpgh",
+        "02221fb0",
+        "03e0f9b8",
+        "04ae7a6b",
+        "055fca57",
+        "07b5d86c",
+        "08ff419c",
+        "08m3jj30",
+        "0b02886a",
+        "0b27d5f7",
+        "0cbfxuq5",
+        "0d4feda2",
+        "0d8d30ae",
+        "0e05fabe",
+        "0e4aeed9",
+        "0f96e2d7",
+        "0j354ezu",
+        "0nrb9vzx",
+        "0okbv7t6",
+        "0uy7cbug",
+        "0v77ps19",
+        "0yj2omc9",
+        "0zvohcp2",
+        "10552818",
+        "106d33db",
+        "11e16068",
+        "12e509c2",
+        "12fdc864",
+        "14655f54",
+        "16130bd3",
+        "16cggr07",
+        "181ec185",
+        "18a76zpx",
+        "19310598",
+        "1a2872dc",
+        "1b7eada8",
+        "1bz7v7bd",
+        "1ca2531a",
+        "1d29944c",
+        "1d7a23e0",
+        "1e0fb02a",
+        "1fc0e6a8",
+        "1g6f6nfz",
+        "1tfc6bfb",
+        "20m9ybh4",
+        "22p90xzq",
+        "22rirven",
+        "23b9a3ea",
+        "255f86ef",
+        "25ef7d43",
+        "27iq8aay",
+        "28191f94",
+        "2831ecf5",
+        "29ff29f6",
+        "2a2745e5",
+        "2af0e766",
+        "2bdb692f",
+        "2c0b9d99",
+        "2da12766",
+        "2efd5e50",
+        "2f477d05",
+        "2fkfe27d",
+        "2gc0gnjr",
+        "2t8e78ov",
+        "2ttabgjh",
+        "2wq92crf",
+        "3067f9fa",
+        "31b09833",
+        "31caacec",
+        "32ei14yl",
+        "337dfa1e",
+        "33f9ab47",
+        "34535f5f",
+        "38030c69",
+        "3a407bd9",
+        "3a739934",
+        "3aab2d13",
+        "3b1a4616",
+        "3ba93641",
+        "3d08dadd",
+        "3d9a7023",
+        "3f003746",
+        "3iu5qznd",
+        "3wwwxabv",
+        "3xc8zqha",
+        "405c6000",
+        "41c8d0d2",
+        "429zpaoy",
+        "4385b2c4",
+        "460945aa",
+        "4795259b",
+        "495be321",
+        "497rwaui",
+        "4a7162bd",
+        "4c42c747",
+        "4d65f873",
+        "4q19opce",
+        "4rx06t9m",
+        "4vi126r8",
+        "51befc31",
+        "5348d547",
+        "53f67585",
+        "53sca9ee",
+        "54b9dea2",
+        "57014c7d",
+        "57895315",
+        "5845c157",
+        "5879983c",
+        "59750be4",
+        "59g4o5mx",
+        "5a064706",
+        "5ba84e3f",
+        "5d2316f6",
+        "5ebef6bd",
+        "5f14e5d2",
+        "5grcjfl3",
+        "5hcafebs",
+        "5i5fi97n",
+        "5iovn48o",
+        "5w2wm25n",
+        "5z2z78q3",
+        "607d8ff5",
+        "60827ada",
+        "62l44iak",
+        "6478qwt7",
+        "652929ce",
+        "65m73dp2",
+        "662487fe",
+        "67191f24",
+        "6834d249",
+        "68d2b259",
+        "6adad2f7",
+        "6e4ee861",
+        "6eqt4kcv",
+        "6ff85ca5",
+        "6g7h9z6t",
+        "6l1wegih",
+        "6t0fk8k0",
+        "6xnub90y",
+        "723fd024",
+        "758gaily",
+        "76303516",
+        "77110e80",
+        "77e246da",
+        "780e7a99",
+        "788da8e8",
+        "7981f344",
+        "7a056996",
+        "7bfe9b57",
+        "7dctqmif",
+        "7edd8b4f",
+        "7j68q803",
+        "7rx02xv1",
+        "7wutyllc",
+        "7ynq921l",
+        "7ywnbfed",
+        "80701b6c",
+        "80a7cf7b",
+        "80b73f1a",
+        "81fdc526",
+        "8248698e",
+        "835qgtax",
+        "840l0cnz",
+        "843d3bf7",
+        "8466eeb2",
+        "85aa3b0e",
+        "86hr67ng",
+        "890ef032",
+        "89b671bb",
+        "89fe6899",
+        "8c8b7913",
+        "8d4ikenm",
+        "8e3g7u4g",
+        "8f969ea5",
+        "8fa50320",
+        "8tplxd8g",
+        "8xl2rojx",
+        "8ypfmpw8",
+        "9061dac9",
+        "90956534",
+        "911ec4ad",
+        "932ad0a6",
+        "95ndszvf",
+        "9606508b",
+        "9698f06e",
+        "97hbcoc1",
+        "98weslia",
+        "994ed763",
+        "9a4ce701",
+        "9c88ae45",
+        "9ce1d54a",
+        "9euwh3sn",
+        "9f2323ac",
+        "9ffb2818",
+        "9kesv88b",
+        "9w977prr",
+        "VID_20250810_100938",
+        "a1f4c54d",
+        "a20baeec",
+        "a4587f62",
+        "a6fcde01",
+        "a84c60e6",
+        "a86f84ee",
+        "a95f0aea",
+        "a99df45f",
+        "aa22f9d0",
+        "abcb7665",
+        "ac7deb19",
+        "ad57acd1",
+        "ae70fb7c",
+        "aemwtn1g",
+        "ah5t8wcp",
+        "aha7fefz",
+        "appng8ek",
+        "b0ffaf3b",
+        "b2kp34jj",
+        "b3aff7f8",
+        "b454fdbc",
+        "b60ea255",
+        "b6e2c041",
+        "b6w8eb8d",
+        "b84ce852",
+        "b898c99e",
+        "b926e1ad",
+        "ba538072",
+        "bbdd8bb7",
+        "bd18bc5a",
+        "beq1fyev",
+        "bfe1469e",
+        "bhgb8g74",
+        "bina7akt",
+        "blx3xi1r",
+        "btjs8cuu",
+        "bxkfw36g",
+        "c097af8e",
+        "c1ed21d0",
+        "c290cfd3",
+        "c2e88575",
+        "c2p9kbtr",
+        "c409ca4d",
+        "c4f9f19e",
+        "c575434d",
+        "c65d0736",
+        "c83aa6a1",
+        "c8c1d5a9",
+        "c9fdf703",
+        "cb170015",
+        "cc32235b",
+        "cd182615",
+        "cd86znu8",
+        "ceaa6c65",
+        "cfd946b2",
+        "chm6qjka",
+        "clbhnmq3",
+        "cpllzhnh",
+        "d156b96f",
+        "d1du3tay",
+        "d25ff89d",
+        "d262b7e4",
+        "d36d5a0d",
+        "d37a5857",
+        "d6orfuoz",
+        "db5319c7",
+        "dd3f4a07",
+        "dd5a4739",
+        "ddfa88c7",
+        "de2f2a6a",
+        "dhhrie47",
+        "dhs0jgxo",
+        "dxqizy0d",
+        "e0b41q7j",
+        "e14d1f96",
+        "e1b7f212",
+        "e1c48bdd",
+        "e23c6392",
+        "e35a8262",
+        "e386ijkn",
+        "e3dcd186",
+        "e495537a",
+        "e607450d",
+        "e638e950",
+        "e7e2a0b9",
+        "e944mlk3",
+        "e9qcsu7f",
+        "eac1a9e6",
+        "ec27366a",
+        "ed878d94",
+        "ee113fc4",
+        "ee91f783",
+        "eec4c008",
+        "efa25913",
+        "eghlepz9",
+        "emd2bu78",
+        "esny8g6w",
+        "exfzqi3p",
+        "ezgrj3gu",
+        "f0617f71",
+        "f06632aa",
+        "f33d3c15",
+        "f3431885",
+        "f3c0f0cf",
+        "f4y4902x",
+        "f56942e9",
+        "f5d2d8d3",
+        "f6786ab5",
+        "f68507d0",
+        "f6bfc699",
+        "f6f441eb",
+        "f6f8b4a6",
+        "f7203226",
+        "f7360199",
+        "f8687b9a",
+        "f9c20062",
+        "faby6kx9",
+        "fcl5hk5p",
+        "fdb2e432",
+        "ffcab778",
+        "flnj4yuc",
+        "fsi3n9sa",
+        "fuy6fkra",
+        "fyks4lii",
+        "g0vyj6g0",
+        "g9ikdw9x",
+        "gfoe6pvj",
+        "h1ftiuhk",
+        "h8rt5775",
+        "hmaovyzj",
+        "hymuhio1",
+        "hzehe2ut",
+        "i0t5h5yk",
+        "ig7ngb49",
+        "igtifzkv",
+        "ihpcbm33",
+        "ixtlirmw",
+        "jgrk0o29",
+        "jlcxbpzv",
+        "jvu8a48s",
+        "jvwfdb4c",
+        "jylpam6d",
+        "k6mwrhcn",
+        "k8q56xjl",
+        "k9bxt0u7",
+        "kd9cbxlm",
+        "ksl55n8i",
+        "kux6nbd8",
+        "kwac9t6i",
+        "l58f4qda",
+        "l5locryc",
+        "ldkjqdxo",
+        "lfc2jl2f",
+        "lskh81dd",
+        "m10d91f4",
+        "m1z3q7rl",
+        "m3rk5bxi",
+        "m9w4bd6b",
+        "mb2wf06i",
+        "meqs0ebh",
+        "mfzisj96",
+        "mm0y9dqp",
+        "momlyu55",
+        "mre99ig5",
+        "myzrhqzr",
+        "ngkben3u",
+        "nl2b6svx",
+        "ntx3bu3p",
+        "nvhxi9jy",
+        "o3g4vx0q",
+        "o6kep10w",
+        "o94ds8qc",
+        "o9mwzopr",
+        "oa881897",
+        "oaubzt2x",
+        "ocw3fc39",
+        "ou2f7p0i",
+        "owjja9na",
+        "p2apww0v",
+        "p8n66t7d",
+        "pgu84vt1",
+        "pqm9n2v4",
+        "q2p4zq1y",
+        "qc8x8fzb",
+        "qg7rqb42",
+        "qhwawif5",
+        "qo95ddar",
+        "qqn1s9p6",
+        "qt6trwqj",
+        "qx4i482e",
+        "qzerhngx",
+        "r13s2zog",
+        "r2n6kgfd",
+        "r5frlifm",
+        "r6o01cnu",
+        "rgsz0gml",
+        "rl7ir488",
+        "rxwpdfl4",
+        "rzo1levj",
+        "sah4nsxu",
+        "sfbg4630",
+        "si7re70s",
+        "sjgicdrs",
+        "sjl7jcdm",
+        "skjvwkeu",
+        "sxmx6adc",
+        "sy7poaj5",
+        "t4yda0gi",
+        "t9n0p86n",
+        "ti8ff58w",
+        "tleo5bmb",
+        "tn51p50p",
+        "toff20or",
+        "u3qo7p7m",
+        "uazuw156",
+        "uin6ev0q",
+        "utyj563j",
+        "uump302o",
+        "uw60ldq6",
+        "uwietoz7",
+        "vgasx27o",
+        "vix9009f",
+        "vlj9v9n8",
+        "vs4399qb",
+        "vtkm161v",
+        "vw1ncc20",
+        "w2bt6b8j",
+        "w4097o83",
+        "whsa69fv",
+        "wj6nceqs",
+        "xhp7c3uq",
+        "xovhs2ho",
+        "xpn143yt",
+        "xrmsmmku",
+        "xxb58z5q",
+        "xy1h5gex",
+        "yhq28hci",
+        "yp6926lu",
+        "yztkr89n",
+        "z2nrevao",
+        "z7t26zyy",
+        "zbo1yj75",
+        "zg8q6mv7",
+        "zib0ib5u",
+        "zjlrlm8j",
+        "zmnolf50"
+      ],
+      "LVOSv2": [
+        "0ClBYzYm",
+        "0sfNjoxO",
+        "1Cs9eroK",
+        "20QPYAmw",
+        "38445wgB",
+        "3Y3D5llb",
+        "3hcT0wMc",
+        "5X2Ta3Hw",
+        "5dB7A7vf",
+        "5r1u2RjH",
+        "5vhETIqa",
+        "6cuIqaAn",
+        "6yy7OjYl",
+        "7XxiI1TQ",
+        "8pXAMuLg",
+        "9ErzfLGq",
+        "9QFfdMgu",
+        "ByD0qqcp",
+        "COkrID6C",
+        "CqjdPvHa",
+        "DRzluC0c",
+        "FA0Gbe69",
+        "FIG7Tyb9",
+        "GCeRsTAF",
+        "HObKuIZZ",
+        "I16aTcaC",
+        "J42kkH2a",
+        "KYWHgGZU",
+        "MNLxhh62",
+        "Nq6khfl1",
+        "PWbTG2c7",
+        "Qap2pPBC",
+        "RErTm52G",
+        "SdA8PMzR",
+        "TPCtnDjS",
+        "TkEbZ87A",
+        "TnZj2p1F",
+        "Tukvi5er",
+        "UogMQTpY",
+        "VWK766ID",
+        "VY6JUkg5",
+        "WA51f5VF",
+        "XZBWwsfc",
+        "Y3W4egwJ",
+        "YTTiPhK6",
+        "Z6yUOAk8",
+        "ZPrJZkCA",
+        "ZRKtsHlD",
+        "aYT30NdM",
+        "bB9Rir5V",
+        "bGscYB9F",
+        "bMmAAPFS",
+        "brbtzZeK",
+        "cOyNmvXj",
+        "cXcwbjM3",
+        "d6D5mjyW",
+        "dw1psMjy",
+        "efhoW6KT",
+        "et9PpeEO",
+        "fQVilF4a",
+        "fwwuQyl0",
+        "gij5oj7c",
+        "goBLKpz1",
+        "hI9Qlq9F",
+        "iFk0iwmQ",
+        "ijM1IUug",
+        "k1t2kMGE",
+        "l52VlX3T",
+        "loNWARbA",
+        "lpwftF3U",
+        "mSYwZwke",
+        "milYsVVM",
+        "nwcdYmSS",
+        "okdEUp4G",
+        "pyjnNgiV",
+        "q4kXyMl8",
+        "qFfJt7WD",
+        "r2dmXYRk",
+        "rLXm1lSX",
+        "tHqpGbsR",
+        "tSACj2jJ",
+        "tYpj82af",
+        "v58hzPja",
+        "wAHVI3BV",
+        "wH51tKEl",
+        "wnwkQ4jM",
+        "xC5oRtxL",
+        "xYvS99Su",
+        "y5N9PDTG",
+        "yzDaKIdv",
+        "zKAUrRnJ",
+        "zPkZoeOu",
+        "zdkpgpzV"
+      ]
+    },
+    "fingerprint": {
+      "shards": 600,
+      "sha256": "fb7f54132d6e7eab517cb98ceaf218fe74259def3e8dc513de8947daa989be50",
+      "records": 11677
+    }
+  },
+  "candidate_counts": {
+    "MOSEv2": 35,
+    "LVOSv2": 35,
+    "DAVIS2017": 35,
+    "VOST": 35
+  },
+  "missing": [
+    {
+      "case_id": "MOSEv2:e33cddc9:obj1:switch00016",
+      "methods": [
+        "small_only",
+        "base_native",
+        "direct",
+        "affine",
+        "residual_mlp",
+        "transformer",
+        "last_mask",
+        "anchor_replay_16",
+        "self_injection"
+      ]
+    },
+    {
+      "case_id": "LVOSv2:fqbAXAoT:obj1:switch00000521",
+      "methods": [
+        "small_only",
+        "base_native",
+        "direct",
+        "affine",
+        "residual_mlp",
+        "transformer",
+        "last_mask",
+        "anchor_replay_16",
+        "self_injection"
+      ]
+    },
+    {
+      "case_id": "DAVIS2017:tuk-tuk:obj2:switch00029",
+      "methods": [
+        "small_only",
+        "base_native",
+        "direct",
+        "affine",
+        "residual_mlp",
+        "transformer",
+        "last_mask",
+        "anchor_replay_16",
+        "self_injection"
+      ]
+    },
+    {
+      "case_id": "VOST:6922_split_paper:obj1:switch00228",
+      "methods": [
+        "small_only",
+        "base_native",
+        "direct",
+        "affine",
+        "residual_mlp",
+        "transformer",
+        "last_mask",
+        "anchor_replay_16",
+        "self_injection"
+      ]
+    },
+    {
+      "case_id": "MOSEv2:31rry8ca:obj1:switch00045",
+      "methods": [
+        "small_only",
+        "base_native",
+        "direct",
+        "affine",
+        "residual_mlp",
+        "transformer",
+        "last_mask",
+        "anchor_replay_16",
+        "self_injection"
+      ]
+    },
+    {
+      "case_id": "LVOSv2:UZzAPST3:obj2:switch00000661",
+      "methods": [
+        "small_only",
+        "base_native",
+        "direct",
+        "affine",
+        "residual_mlp",
+        "transformer",
+        "last_mask",
+        "anchor_replay_16",
+        "self_injection"
+      ]
+    },
+    {
+      "case_id": "DAVIS2017:scooter-gray:obj2:switch00037",
+      "methods": [
+        "small_only",
+        "base_native",
+        "direct",
+        "affine",
+        "residual_mlp",
+        "transformer",
+        "last_mask",
+        "anchor_replay_16",
+        "self_injection"
+      ]
+    },
+    {
+      "case_id": "VOST:10625_knead_dough:obj1:switch00354",
+      "methods": [
+        "small_only",
+        "base_native",
+        "direct",
+        "affine",
+        "residual_mlp",
+        "transformer",
+        "last_mask",
+        "anchor_replay_16",
+        "self_injection"
+      ]
+    },
+    {
+      "case_id": "MOSEv2:k0vcz0st:obj1:switch00114",
+      "methods": [
+        "small_only",
+        "base_native",
+        "direct",
+        "affine",
+        "residual_mlp",
+        "transformer",
+        "last_mask",
+        "anchor_replay_16",
+        "self_injection"
+      ]
+    },
+    {
+      "case_id": "LVOSv2:vjG0jbkQ:obj2:switch00002531",
+      "methods": [
+        "small_only",
+        "base_native",
+        "direct",
+        "affine",
+        "residual_mlp",
+        "transformer",
+        "last_mask",
+        "anchor_replay_16",
+        "self_injection"
+      ]
+    },
+    {
+      "case_id": "DAVIS2017:stroller:obj1:switch00045",
+      "methods": [
+        "small_only",
+        "base_native",
+        "direct",
+        "affine",
+        "residual_mlp",
+        "transformer",
+        "last_mask",
+        "anchor_replay_16",
+        "self_injection"
+      ]
+    },
+    {
+      "case_id": "VOST:5118_squeeze_bag:obj1:switch00444",
+      "methods": [
+        "small_only",
+        "base_native",
+        "direct",
+        "affine",
+        "residual_mlp",
+        "transformer",
+        "last_mask",
+        "anchor_replay_16",
+        "self_injection"
+      ]
+    },
+    {
+      "case_id": "MOSEv2:aa185af5:obj2:switch00024",
+      "methods": [
+        "small_only",
+        "base_native",
+        "direct",
+        "affine",
+        "residual_mlp",
+        "transformer",
+        "last_mask",
+        "anchor_replay_16",
+        "self_injection"
+      ]
+    },
+    {
+      "case_id": "LVOSv2:rSFfONgp:obj1:switch00000586",
+      "methods": [
+        "small_only",
+        "base_native",
+        "direct",
+        "affine",
+        "residual_mlp",
+        "transformer",
+        "last_mask",
+        "anchor_replay_16",
+        "self_injection"
+      ]
+    },
+    {
+      "case_id": "DAVIS2017:motocross-bumps:obj2:switch00029",
+      "methods": [
+        "small_only",
+        "base_native",
+        "direct",
+        "affine",
+        "residual_mlp",
+        "transformer",
+        "last_mask",
+        "anchor_replay_16",
+        "self_injection"
+      ]
+    },
+    {
+      "case_id": "VOST:559_cut_cucumber:obj4:switch00480",
+      "methods": [
+        "small_only",
+        "base_native",
+        "direct",
+        "affine",
+        "residual_mlp",
+        "transformer",
+        "last_mask",
+        "anchor_replay_16",
+        "self_injection"
+      ]
+    },
+    {
+      "case_id": "MOSEv2:51vddywa:obj1:switch00037",
+      "methods": [
+        "small_only",
+        "base_native",
+        "direct",
+        "affine",
+        "residual_mlp",
+        "transformer",
+        "last_mask",
+        "anchor_replay_16",
+        "self_injection"
+      ]
+    },
+    {
+      "case_id": "LVOSv2:3nsHQkEK:obj1:switch00000816",
+      "methods": [
+        "small_only",
+        "base_native",
+        "direct",
+        "affine",
+        "residual_mlp",
+        "transformer",
+        "last_mask",
+        "anchor_replay_16",
+        "self_injection"
+      ]
+    },
+    {
+      "case_id": "DAVIS2017:kid-football:obj2:switch00033",
+      "methods": [
+        "small_only",
+        "base_native",
+        "direct",
+        "affine",
+        "residual_mlp",
+        "transformer",
+        "last_mask",
+        "anchor_replay_16",
+        "self_injection"
+      ]
+    },
+    {
+      "case_id": "VOST:5304_unpack_broccoli:obj1:switch00264",
+      "methods": [
+        "small_only",
+        "base_native",
+        "direct",
+        "affine",
+        "residual_mlp",
+        "transformer",
+        "last_mask",
+        "anchor_replay_16",
+        "self_injection"
+      ]
+    },
+    {
+      "case_id": "MOSEv2:aatd0ihe:obj1:switch00053",
+      "methods": [
+        "small_only",
+        "base_native",
+        "direct",
+        "affine",
+        "residual_mlp",
+        "transformer",
+        "last_mask",
+        "anchor_replay_16",
+        "self_injection"
+      ]
+    },
+    {
+      "case_id": "LVOSv2:afoR2rH6:obj1:switch00001561",
+      "methods": [
+        "small_only",
+        "base_native",
+        "direct",
+        "affine",
+        "residual_mlp",
+        "transformer",
+        "last_mask",
+        "anchor_replay_16",
+        "self_injection"
+      ]
+    },
+    {
+      "case_id": "DAVIS2017:drone:obj1:switch00045",
+      "methods": [
+        "small_only",
+        "base_native",
+        "direct",
+        "affine",
+        "residual_mlp",
+        "transformer",
+        "last_mask",
+        "anchor_replay_16",
+        "self_injection"
+      ]
+    },
+    {
+      "case_id": "VOST:9383_spread_cement:obj1:switch00444",
+      "methods": [
+        "small_only",
+        "base_native",
+        "direct",
+        "affine",
+        "residual_mlp",
+        "transformer",
+        "last_mask",
+        "anchor_replay_16",
+        "self_injection"
+      ]
+    },
+    {
+      "case_id": "MOSEv2:5d107jy0:obj1:switch00021",
+      "methods": [
+        "small_only",
+        "base_native",
+        "direct",
+        "affine",
+        "residual_mlp",
+        "transformer",
+        "last_mask",
+        "anchor_replay_16",
+        "self_injection"
+      ]
+    },
+    {
+      "case_id": "LVOSv2:bxjTooAn:obj4:switch00000961",
+      "methods": [
+        "small_only",
+        "base_native",
+        "direct",
+        "affine",
+        "residual_mlp",
+        "transformer",
+        "last_mask",
+        "anchor_replay_16",
+        "self_injection"
+      ]
+    },
+    {
+      "case_id": "DAVIS2017:crossing:obj2:switch00025",
+      "methods": [
+        "small_only",
+        "base_native",
+        "direct",
+        "affine",
+        "residual_mlp",
+        "transformer",
+        "last_mask",
+        "anchor_replay_16",
+        "self_injection"
+      ]
+    },
+    {
+      "case_id": "VOST:8267_pour_flour:obj1:switch00192",
+      "methods": [
+        "small_only",
+        "base_native",
+        "direct",
+        "affine",
+        "residual_mlp",
+        "transformer",
+        "last_mask",
+        "anchor_replay_16",
+        "self_injection"
+      ]
+    },
+    {
+      "case_id": "MOSEv2:pz9rf3kp:obj1:switch00040",
+      "methods": [
+        "small_only",
+        "base_native",
+        "direct",
+        "affine",
+        "residual_mlp",
+        "transformer",
+        "last_mask",
+        "anchor_replay_16",
+        "self_injection"
+      ]
+    },
+    {
+      "case_id": "LVOSv2:LEo03dYV:obj1:switch00000906",
+      "methods": [
+        "small_only",
+        "base_native",
+        "direct",
+        "affine",
+        "residual_mlp",
+        "transformer",
+        "last_mask",
+        "anchor_replay_16",
+        "self_injection"
+      ]
+    },
+    {
+      "case_id": "DAVIS2017:stunt:obj1:switch00035",
+      "methods": [
+        "small_only",
+        "base_native",
+        "direct",
+        "affine",
+        "residual_mlp",
+        "transformer",
+        "last_mask",
+        "anchor_replay_16",
+        "self_injection"
+      ]
+    },
+    {
+      "case_id": "VOST:4340_roll_dough:obj1:switch00366",
+      "methods": [
+        "small_only",
+        "base_native",
+        "direct",
+        "affine",
+        "residual_mlp",
+        "transformer",
+        "last_mask",
+        "anchor_replay_16",
+        "self_injection"
+      ]
+    },
+    {
+      "case_id": "MOSEv2:or8eklj5:obj1:switch00059",
+      "methods": [
+        "small_only",
+        "base_native",
+        "direct",
+        "affine",
+        "residual_mlp",
+        "transformer",
+        "last_mask",
+        "anchor_replay_16",
+        "self_injection"
+      ]
+    },
+    {
+      "case_id": "LVOSv2:HYSm91eM:obj6:switch00001246",
+      "methods": [
+        "small_only",
+        "base_native",
+        "direct",
+        "affine",
+        "residual_mlp",
+        "transformer",
+        "last_mask",
+        "anchor_replay_16",
+        "self_injection"
+      ]
+    },
+    {
+      "case_id": "DAVIS2017:bmx-bumps:obj1:switch00044",
+      "methods": [
+        "small_only",
+        "base_native",
+        "direct",
+        "affine",
+        "residual_mlp",
+        "transformer",
+        "last_mask",
+        "anchor_replay_16",
+        "self_injection"
+      ]
+    },
+    {
+      "case_id": "VOST:4031_cut_broccoli:obj1:switch00528",
+      "methods": [
+        "small_only",
+        "base_native",
+        "direct",
+        "affine",
+        "residual_mlp",
+        "transformer",
+        "last_mask",
+        "anchor_replay_16",
+        "self_injection"
+      ]
+    },
+    {
+      "case_id": "MOSEv2:tug3h8uh:obj1:switch00026",
+      "methods": [
+        "small_only",
+        "base_native",
+        "direct",
+        "affine",
+        "residual_mlp",
+        "transformer",
+        "last_mask",
+        "anchor_replay_16",
+        "self_injection"
+      ]
+    },
+    {
+      "case_id": "LVOSv2:cmprgw5z:obj1:switch00000586",
+      "methods": [
+        "small_only",
+        "base_native",
+        "direct",
+        "affine",
+        "residual_mlp",
+        "transformer",
+        "last_mask",
+        "anchor_replay_16",
+        "self_injection"
+      ]
+    },
+    {
+      "case_id": "DAVIS2017:dog-agility:obj1:switch00016",
+      "methods": [
+        "small_only",
+        "base_native",
+        "direct",
+        "affine",
+        "residual_mlp",
+        "transformer",
+        "last_mask",
+        "anchor_replay_16",
+        "self_injection"
+      ]
+    },
+    {
+      "case_id": "VOST:4357_trim_dough:obj1:switch00138",
+      "methods": [
+        "small_only",
+        "base_native",
+        "direct",
+        "affine",
+        "residual_mlp",
+        "transformer",
+        "last_mask",
+        "anchor_replay_16",
+        "self_injection"
+      ]
+    },
+    {
+      "case_id": "MOSEv2:r2iallw7:obj1:switch00028",
+      "methods": [
+        "small_only",
+        "base_native",
+        "direct",
+        "affine",
+        "residual_mlp",
+        "transformer",
+        "last_mask",
+        "anchor_replay_16",
+        "self_injection"
+      ]
+    },
+    {
+      "case_id": "LVOSv2:3bvEjhOT:obj2:switch00001151",
+      "methods": [
+        "small_only",
+        "base_native",
+        "direct",
+        "affine",
+        "residual_mlp",
+        "transformer",
+        "last_mask",
+        "anchor_replay_16",
+        "self_injection"
+      ]
+    },
+    {
+      "case_id": "DAVIS2017:tennis:obj2:switch00034",
+      "methods": [
+        "small_only",
+        "base_native",
+        "direct",
+        "affine",
+        "residual_mlp",
+        "transformer",
+        "last_mask",
+        "anchor_replay_16",
+        "self_injection"
+      ]
+    },
+    {
+      "case_id": "VOST:1206_cut_mango:obj1:switch00480",
+      "methods": [
+        "small_only",
+        "base_native",
+        "direct",
+        "affine",
+        "residual_mlp",
+        "transformer",
+        "last_mask",
+        "anchor_replay_16",
+        "self_injection"
+      ]
+    },
+    {
+      "case_id": "MOSEv2:bd9untye:obj1:switch00059",
+      "methods": [
+        "small_only",
+        "base_native",
+        "direct",
+        "affine",
+        "residual_mlp",
+        "transformer",
+        "last_mask",
+        "anchor_replay_16",
+        "self_injection"
+      ]
+    },
+    {
+      "case_id": "LVOSv2:UgZ759gD:obj1:switch00001416",
+      "methods": [
+        "small_only",
+        "base_native",
+        "direct",
+        "affine",
+        "residual_mlp",
+        "transformer",
+        "last_mask",
+        "anchor_replay_16",
+        "self_injection"
+      ]
+    },
+    {
+      "case_id": "DAVIS2017:mallard-water:obj1:switch00039",
+      "methods": [
+        "small_only",
+        "base_native",
+        "direct",
+        "affine",
+        "residual_mlp",
+        "transformer",
+        "last_mask",
+        "anchor_replay_16",
+        "self_injection"
+      ]
+    },
+    {
+      "case_id": "VOST:5110_paint_nail:obj1:switch00654",
+      "methods": [
+        "small_only",
+        "base_native",
+        "direct",
+        "affine",
+        "residual_mlp",
+        "transformer",
+        "last_mask",
+        "anchor_replay_16",
+        "self_injection"
+      ]
+    },
+    {
+      "case_id": "MOSEv2:ca619b7f:obj2:switch00016",
+      "methods": [
+        "small_only",
+        "base_native",
+        "direct",
+        "affine",
+        "residual_mlp",
+        "transformer",
+        "last_mask",
+        "anchor_replay_16",
+        "self_injection"
+      ]
+    },
+    {
+      "case_id": "LVOSv2:yExgitit:obj1:switch00000656",
+      "methods": [
+        "small_only",
+        "base_native",
+        "direct",
+        "affine",
+        "residual_mlp",
+        "transformer",
+        "last_mask",
+        "anchor_replay_16",
+        "self_injection"
+      ]
+    },
+    {
+      "case_id": "DAVIS2017:surf:obj3:switch00027",
+      "methods": [
+        "small_only",
+        "base_native",
+        "direct",
+        "affine",
+        "residual_mlp",
+        "transformer",
+        "last_mask",
+        "anchor_replay_16",
+        "self_injection"
+      ]
+    },
+    {
+      "case_id": "VOST:1205_cut_mango:obj3:switch00300",
+      "methods": [
+        "small_only",
+        "base_native",
+        "direct",
+        "affine",
+        "residual_mlp",
+        "transformer",
+        "last_mask",
+        "anchor_replay_16",
+        "self_injection"
+      ]
+    },
+    {
+      "case_id": "MOSEv2:iijj01lq:obj1:switch00041",
+      "methods": [
+        "small_only",
+        "base_native",
+        "direct",
+        "affine",
+        "residual_mlp",
+        "transformer",
+        "last_mask",
+        "anchor_replay_16",
+        "self_injection"
+      ]
+    },
+    {
+      "case_id": "LVOSv2:Erx5Q6Vf:obj1:switch00001011",
+      "methods": [
+        "small_only",
+        "base_native",
+        "direct",
+        "affine",
+        "residual_mlp",
+        "transformer",
+        "last_mask",
+        "anchor_replay_16",
+        "self_injection"
+      ]
+    },
+    {
+      "case_id": "DAVIS2017:breakdance-flare:obj1:switch00035",
+      "methods": [
+        "small_only",
+        "base_native",
+        "direct",
+        "affine",
+        "residual_mlp",
+        "transformer",
+        "last_mask",
+        "anchor_replay_16",
+        "self_injection"
+      ]
+    },
+    {
+      "case_id": "VOST:4222_peel_wire:obj1:switch00348",
+      "methods": [
+        "small_only",
+        "base_native",
+        "direct",
+        "affine",
+        "residual_mlp",
+        "transformer",
+        "last_mask",
+        "anchor_replay_16",
+        "self_injection"
+      ]
+    },
+    {
+      "case_id": "MOSEv2:zj3p2iaa:obj1:switch00050",
+      "methods": [
+        "small_only",
+        "base_native",
+        "direct",
+        "affine",
+        "residual_mlp",
+        "transformer",
+        "last_mask",
+        "anchor_replay_16",
+        "self_injection"
+      ]
+    },
+    {
+      "case_id": "LVOSv2:x3nD3QQ9:obj1:switch00001491",
+      "methods": [
+        "small_only",
+        "base_native",
+        "direct",
+        "affine",
+        "residual_mlp",
+        "transformer",
+        "last_mask",
+        "anchor_replay_16",
+        "self_injection"
+      ]
+    },
+    {
+      "case_id": "DAVIS2017:dog-gooses:obj4:switch00042",
+      "methods": [
+        "small_only",
+        "base_native",
+        "direct",
+        "affine",
+        "residual_mlp",
+        "transformer",
+        "last_mask",
+        "anchor_replay_16",
+        "self_injection"
+      ]
+    },
+    {
+      "case_id": "VOST:7202_clean_car:obj1:switch00390",
+      "methods": [
+        "small_only",
+        "base_native",
+        "direct",
+        "affine",
+        "residual_mlp",
+        "transformer",
+        "last_mask",
+        "anchor_replay_16",
+        "self_injection"
+      ]
+    },
+    {
+      "case_id": "MOSEv2:nu73npba:obj1:switch00023",
+      "methods": [
+        "small_only",
+        "base_native",
+        "direct",
+        "affine",
+        "residual_mlp",
+        "transformer",
+        "last_mask",
+        "anchor_replay_16",
+        "self_injection"
+      ]
+    },
+    {
+      "case_id": "LVOSv2:pyq6I5Hh:obj3:switch00000486",
+      "methods": [
+        "small_only",
+        "base_native",
+        "direct",
+        "affine",
+        "residual_mlp",
+        "transformer",
+        "last_mask",
+        "anchor_replay_16",
+        "self_injection"
+      ]
+    },
+    {
+      "case_id": "DAVIS2017:horsejump-low:obj2:switch00029",
+      "methods": [
+        "small_only",
+        "base_native",
+        "direct",
+        "affine",
+        "residual_mlp",
+        "transformer",
+        "last_mask",
+        "anchor_replay_16",
+        "self_injection"
+      ]
+    },
+    {
+      "case_id": "VOST:1210_cut_garlic:obj1:switch00310",
+      "methods": [
+        "small_only",
+        "base_native",
+        "direct",
+        "affine",
+        "residual_mlp",
+        "transformer",
+        "last_mask",
+        "anchor_replay_16",
+        "self_injection"
+      ]
+    },
+    {
+      "case_id": "MOSEv2:730bc486:obj1:switch00043",
+      "methods": [
+        "small_only",
+        "base_native",
+        "direct",
+        "affine",
+        "residual_mlp",
+        "transformer",
+        "last_mask",
+        "anchor_replay_16",
+        "self_injection"
+      ]
+    },
+    {
+      "case_id": "LVOSv2:aT6JIUVU:obj1:switch00000891",
+      "methods": [
+        "small_only",
+        "base_native",
+        "direct",
+        "affine",
+        "residual_mlp",
+        "transformer",
+        "last_mask",
+        "anchor_replay_16",
+        "self_injection"
+      ]
+    },
+    {
+      "case_id": "DAVIS2017:car-turn:obj1:switch00039",
+      "methods": [
+        "small_only",
+        "base_native",
+        "direct",
+        "affine",
+        "residual_mlp",
+        "transformer",
+        "last_mask",
+        "anchor_replay_16",
+        "self_injection"
+      ]
+    },
+    {
+      "case_id": "VOST:9691_divide_dough:obj1:switch00318",
+      "methods": [
+        "small_only",
+        "base_native",
+        "direct",
+        "affine",
+        "residual_mlp",
+        "transformer",
+        "last_mask",
+        "anchor_replay_16",
+        "self_injection"
+      ]
+    },
+    {
+      "case_id": "MOSEv2:vd2kzgc9:obj1:switch00052",
+      "methods": [
+        "small_only",
+        "base_native",
+        "direct",
+        "affine",
+        "residual_mlp",
+        "transformer",
+        "last_mask",
+        "anchor_replay_16",
+        "self_injection"
+      ]
+    },
+    {
+      "case_id": "LVOSv2:SRRojucs:obj1:switch00001326",
+      "methods": [
+        "small_only",
+        "base_native",
+        "direct",
+        "affine",
+        "residual_mlp",
+        "transformer",
+        "last_mask",
+        "anchor_replay_16",
+        "self_injection"
+      ]
+    },
+    {
+      "case_id": "DAVIS2017:color-run:obj1:switch00041",
+      "methods": [
+        "small_only",
+        "base_native",
+        "direct",
+        "affine",
+        "residual_mlp",
+        "transformer",
+        "last_mask",
+        "anchor_replay_16",
+        "self_injection"
+      ]
+    },
+    {
+      "case_id": "VOST:4030_cut_broccoli:obj2:switch00678",
+      "methods": [
+        "small_only",
+        "base_native",
+        "direct",
+        "affine",
+        "residual_mlp",
+        "transformer",
+        "last_mask",
+        "anchor_replay_16",
+        "self_injection"
+      ]
+    },
+    {
+      "case_id": "MOSEv2:rj6on8oa:obj1:switch00024",
+      "methods": [
+        "small_only",
+        "base_native",
+        "direct",
+        "affine",
+        "residual_mlp",
+        "transformer",
+        "last_mask",
+        "anchor_replay_16",
+        "self_injection"
+      ]
+    },
+    {
+      "case_id": "LVOSv2:xWs99Q4N:obj1:switch00000596",
+      "methods": [
+        "small_only",
+        "base_native",
+        "direct",
+        "affine",
+        "residual_mlp",
+        "transformer",
+        "last_mask",
+        "anchor_replay_16",
+        "self_injection"
+      ]
+    },
+    {
+      "case_id": "DAVIS2017:dance-jump:obj1:switch00029",
+      "methods": [
+        "small_only",
+        "base_native",
+        "direct",
+        "affine",
+        "residual_mlp",
+        "transformer",
+        "last_mask",
+        "anchor_replay_16",
+        "self_injection"
+      ]
+    },
+    {
+      "case_id": "VOST:9692_divide_dough:obj1:switch00174",
+      "methods": [
+        "small_only",
+        "base_native",
+        "direct",
+        "affine",
+        "residual_mlp",
+        "transformer",
+        "last_mask",
+        "anchor_replay_16",
+        "self_injection"
+      ]
+    },
+    {
+      "case_id": "MOSEv2:0644075b:obj1:switch00043",
+      "methods": [
+        "small_only",
+        "base_native",
+        "direct",
+        "affine",
+        "residual_mlp",
+        "transformer",
+        "last_mask",
+        "anchor_replay_16",
+        "self_injection"
+      ]
+    },
+    {
+      "case_id": "LVOSv2:8lxxCA5h:obj1:switch00000836",
+      "methods": [
+        "small_only",
+        "base_native",
+        "direct",
+        "affine",
+        "residual_mlp",
+        "transformer",
+        "last_mask",
+        "anchor_replay_16",
+        "self_injection"
+      ]
+    },
+    {
+      "case_id": "DAVIS2017:tractor-sand:obj2:switch00037",
+      "methods": [
+        "small_only",
+        "base_native",
+        "direct",
+        "affine",
+        "residual_mlp",
+        "transformer",
+        "last_mask",
+        "anchor_replay_16",
+        "self_injection"
+      ]
+    },
+    {
+      "case_id": "VOST:8032_divide_dough:obj1:switch00270",
+      "methods": [
+        "small_only",
+        "base_native",
+        "direct",
+        "affine",
+        "residual_mlp",
+        "transformer",
+        "last_mask",
+        "anchor_replay_16",
+        "self_injection"
+      ]
+    },
+    {
+      "case_id": "MOSEv2:1e95ef5e:obj1:switch00052",
+      "methods": [
+        "small_only",
+        "base_native",
+        "direct",
+        "affine",
+        "residual_mlp",
+        "transformer",
+        "last_mask",
+        "anchor_replay_16",
+        "self_injection"
+      ]
+    },
+    {
+      "case_id": "LVOSv2:KhDr3o6f:obj1:switch00002036",
+      "methods": [
+        "small_only",
+        "base_native",
+        "direct",
+        "affine",
+        "residual_mlp",
+        "transformer",
+        "last_mask",
+        "anchor_replay_16",
+        "self_injection"
+      ]
+    },
+    {
+      "case_id": "DAVIS2017:scooter-board:obj1:switch00045",
+      "methods": [
+        "small_only",
+        "base_native",
+        "direct",
+        "affine",
+        "residual_mlp",
+        "transformer",
+        "last_mask",
+        "anchor_replay_16",
+        "self_injection"
+      ]
+    },
+    {
+      "case_id": "VOST:7049_paint_nail:obj2:switch00558",
+      "methods": [
+        "small_only",
+        "base_native",
+        "direct",
+        "affine",
+        "residual_mlp",
+        "transformer",
+        "last_mask",
+        "anchor_replay_16",
+        "self_injection"
+      ]
+    },
+    {
+      "case_id": "MOSEv2:edab084s:obj1:switch00024",
+      "methods": [
+        "small_only",
+        "base_native",
+        "direct",
+        "affine",
+        "residual_mlp",
+        "transformer",
+        "last_mask",
+        "anchor_replay_16",
+        "self_injection"
+      ]
+    },
+    {
+      "case_id": "LVOSv2:xpI7xRWN:obj1:switch00000621",
+      "methods": [
+        "small_only",
+        "base_native",
+        "direct",
+        "affine",
+        "residual_mlp",
+        "transformer",
+        "last_mask",
+        "anchor_replay_16",
+        "self_injection"
+      ]
+    },
+    {
+      "case_id": "DAVIS2017:rallye:obj1:switch00024",
+      "methods": [
+        "small_only",
+        "base_native",
+        "direct",
+        "affine",
+        "residual_mlp",
+        "transformer",
+        "last_mask",
+        "anchor_replay_16",
+        "self_injection"
+      ]
+    },
+    {
+      "case_id": "VOST:9673_cut_tomato:obj1:switch00150",
+      "methods": [
+        "small_only",
+        "base_native",
+        "direct",
+        "affine",
+        "residual_mlp",
+        "transformer",
+        "last_mask",
+        "anchor_replay_16",
+        "self_injection"
+      ]
+    },
+    {
+      "case_id": "MOSEv2:0518cuig:obj1:switch00041",
+      "methods": [
+        "small_only",
+        "base_native",
+        "direct",
+        "affine",
+        "residual_mlp",
+        "transformer",
+        "last_mask",
+        "anchor_replay_16",
+        "self_injection"
+      ]
+    },
+    {
+      "case_id": "LVOSv2:YfoFnMgm:obj1:switch00000696",
+      "methods": [
+        "small_only",
+        "base_native",
+        "direct",
+        "affine",
+        "residual_mlp",
+        "transformer",
+        "last_mask",
+        "anchor_replay_16",
+        "self_injection"
+      ]
+    },
+    {
+      "case_id": "DAVIS2017:walking:obj1:switch00035",
+      "methods": [
+        "small_only",
+        "base_native",
+        "direct",
+        "affine",
+        "residual_mlp",
+        "transformer",
+        "last_mask",
+        "anchor_replay_16",
+        "self_injection"
+      ]
+    },
+    {
+      "case_id": "VOST:3993_cut_tomato:obj1:switch00324",
+      "methods": [
+        "small_only",
+        "base_native",
+        "direct",
+        "affine",
+        "residual_mlp",
+        "transformer",
+        "last_mask",
+        "anchor_replay_16",
+        "self_injection"
+      ]
+    },
+    {
+      "case_id": "MOSEv2:cv63itgy:obj1:switch00061",
+      "methods": [
+        "small_only",
+        "base_native",
+        "direct",
+        "affine",
+        "residual_mlp",
+        "transformer",
+        "last_mask",
+        "anchor_replay_16",
+        "self_injection"
+      ]
+    },
+    {
+      "case_id": "LVOSv2:4H7FEAHv:obj1:switch00002726",
+      "methods": [
+        "small_only",
+        "base_native",
+        "direct",
+        "affine",
+        "residual_mlp",
+        "transformer",
+        "last_mask",
+        "anchor_replay_16",
+        "self_injection"
+      ]
+    },
+    {
+      "case_id": "DAVIS2017:train:obj3:switch00039",
+      "methods": [
+        "small_only",
+        "base_native",
+        "direct",
+        "affine",
+        "residual_mlp",
+        "transformer",
+        "last_mask",
+        "anchor_replay_16",
+        "self_injection"
+      ]
+    },
+    {
+      "case_id": "VOST:7869_squeeze_bag:obj1:switch00426",
+      "methods": [
+        "small_only",
+        "base_native",
+        "direct",
+        "affine",
+        "residual_mlp",
+        "transformer",
+        "last_mask",
+        "anchor_replay_16",
+        "self_injection"
+      ]
+    },
+    {
+      "case_id": "MOSEv2:54eda06d:obj1:switch00023",
+      "methods": [
+        "small_only",
+        "base_native",
+        "direct",
+        "affine",
+        "residual_mlp",
+        "transformer",
+        "last_mask",
+        "anchor_replay_16",
+        "self_injection"
+      ]
+    },
+    {
+      "case_id": "LVOSv2:iWjeKM6a:obj2:switch00000586",
+      "methods": [
+        "small_only",
+        "base_native",
+        "direct",
+        "affine",
+        "residual_mlp",
+        "transformer",
+        "last_mask",
+        "anchor_replay_16",
+        "self_injection"
+      ]
+    },
+    {
+      "case_id": "DAVIS2017:classic-car:obj1:switch00031",
+      "methods": [
+        "small_only",
+        "base_native",
+        "direct",
+        "affine",
+        "residual_mlp",
+        "transformer",
+        "last_mask",
+        "anchor_replay_16",
+        "self_injection"
+      ]
+    },
+    {
+      "case_id": "VOST:3562_break_egg:obj1:switch00444",
+      "methods": [
+        "small_only",
+        "base_native",
+        "direct",
+        "affine",
+        "residual_mlp",
+        "transformer",
+        "last_mask",
+        "anchor_replay_16",
+        "self_injection"
+      ]
+    },
+    {
+      "case_id": "MOSEv2:qcyzntli:obj1:switch00047",
+      "methods": [
+        "small_only",
+        "base_native",
+        "direct",
+        "affine",
+        "residual_mlp",
+        "transformer",
+        "last_mask",
+        "anchor_replay_16",
+        "self_injection"
+      ]
+    },
+    {
+      "case_id": "LVOSv2:vJ8W2TO5:obj1:switch00001146",
+      "methods": [
+        "small_only",
+        "base_native",
+        "direct",
+        "affine",
+        "residual_mlp",
+        "transformer",
+        "last_mask",
+        "anchor_replay_16",
+        "self_injection"
+      ]
+    },
+    {
+      "case_id": "DAVIS2017:sheep:obj3:switch00033",
+      "methods": [
+        "small_only",
+        "base_native",
+        "direct",
+        "affine",
+        "residual_mlp",
+        "transformer",
+        "last_mask",
+        "anchor_replay_16",
+        "self_injection"
+      ]
+    },
+    {
+      "case_id": "VOST:1179_cut_onion:obj1:switch00600",
+      "methods": [
+        "small_only",
+        "base_native",
+        "direct",
+        "affine",
+        "residual_mlp",
+        "transformer",
+        "last_mask",
+        "anchor_replay_16",
+        "self_injection"
+      ]
+    },
+    {
+      "case_id": "MOSEv2:my6cd5xb:obj1:switch00346",
+      "methods": [
+        "small_only",
+        "base_native",
+        "direct",
+        "affine",
+        "residual_mlp",
+        "transformer",
+        "last_mask",
+        "anchor_replay_16",
+        "self_injection"
+      ]
+    },
+    {
+      "case_id": "LVOSv2:NFbsxmYE:obj1:switch00002016",
+      "methods": [
+        "small_only",
+        "base_native",
+        "direct",
+        "affine",
+        "residual_mlp",
+        "transformer",
+        "last_mask",
+        "anchor_replay_16",
+        "self_injection"
+      ]
+    },
+    {
+      "case_id": "DAVIS2017:skate-park:obj1:switch00039",
+      "methods": [
+        "small_only",
+        "base_native",
+        "direct",
+        "affine",
+        "residual_mlp",
+        "transformer",
+        "last_mask",
+        "anchor_replay_16",
+        "self_injection"
+      ]
+    },
+    {
+      "case_id": "VOST:4626_cut_paper:obj1:switch00456",
+      "methods": [
+        "small_only",
+        "base_native",
+        "direct",
+        "affine",
+        "residual_mlp",
+        "transformer",
+        "last_mask",
+        "anchor_replay_16",
+        "self_injection"
+      ]
+    },
+    {
+      "case_id": "MOSEv2:2080824a:obj1:switch00018",
+      "methods": [
+        "small_only",
+        "base_native",
+        "direct",
+        "affine",
+        "residual_mlp",
+        "transformer",
+        "last_mask",
+        "anchor_replay_16",
+        "self_injection"
+      ]
+    },
+    {
+      "case_id": "LVOSv2:gYaLtvfc:obj1:switch00000586",
+      "methods": [
+        "small_only",
+        "base_native",
+        "direct",
+        "affine",
+        "residual_mlp",
+        "transformer",
+        "last_mask",
+        "anchor_replay_16",
+        "self_injection"
+      ]
+    },
+    {
+      "case_id": "DAVIS2017:motorbike:obj3:switch00021",
+      "methods": [
+        "small_only",
+        "base_native",
+        "direct",
+        "affine",
+        "residual_mlp",
+        "transformer",
+        "last_mask",
+        "anchor_replay_16",
+        "self_injection"
+      ]
+    },
+    {
+      "case_id": "VOST:3161_peel_banana:obj1:switch00504",
+      "methods": [
+        "small_only",
+        "base_native",
+        "direct",
+        "affine",
+        "residual_mlp",
+        "transformer",
+        "last_mask",
+        "anchor_replay_16",
+        "self_injection"
+      ]
+    },
+    {
+      "case_id": "MOSEv2:ouyf2et0:obj1:switch00029",
+      "methods": [
+        "small_only",
+        "base_native",
+        "direct",
+        "affine",
+        "residual_mlp",
+        "transformer",
+        "last_mask",
+        "anchor_replay_16",
+        "self_injection"
+      ]
+    },
+    {
+      "case_id": "LVOSv2:Q7jVRHO5:obj1:switch00000751",
+      "methods": [
+        "small_only",
+        "base_native",
+        "direct",
+        "affine",
+        "residual_mlp",
+        "transformer",
+        "last_mask",
+        "anchor_replay_16",
+        "self_injection"
+      ]
+    },
+    {
+      "case_id": "DAVIS2017:varanus-cage:obj1:switch00033",
+      "methods": [
+        "small_only",
+        "base_native",
+        "direct",
+        "affine",
+        "residual_mlp",
+        "transformer",
+        "last_mask",
+        "anchor_replay_16",
+        "self_injection"
+      ]
+    },
+    {
+      "case_id": "VOST:7866_squeeze_bag:obj1:switch00336",
+      "methods": [
+        "small_only",
+        "base_native",
+        "direct",
+        "affine",
+        "residual_mlp",
+        "transformer",
+        "last_mask",
+        "anchor_replay_16",
+        "self_injection"
+      ]
+    },
+    {
+      "case_id": "MOSEv2:hxaid41o:obj1:switch00054",
+      "methods": [
+        "small_only",
+        "base_native",
+        "direct",
+        "affine",
+        "residual_mlp",
+        "transformer",
+        "last_mask",
+        "anchor_replay_16",
+        "self_injection"
+      ]
+    },
+    {
+      "case_id": "LVOSv2:N6CONZUW:obj1:switch00002716",
+      "methods": [
+        "small_only",
+        "base_native",
+        "direct",
+        "affine",
+        "residual_mlp",
+        "transformer",
+        "last_mask",
+        "anchor_replay_16",
+        "self_injection"
+      ]
+    },
+    {
+      "case_id": "DAVIS2017:dogs-scale:obj4:switch00041",
+      "methods": [
+        "small_only",
+        "base_native",
+        "direct",
+        "affine",
+        "residual_mlp",
+        "transformer",
+        "last_mask",
+        "anchor_replay_16",
+        "self_injection"
+      ]
+    },
+    {
+      "case_id": "VOST:6503_apply_paint:obj1:switch00534",
+      "methods": [
+        "small_only",
+        "base_native",
+        "direct",
+        "affine",
+        "residual_mlp",
+        "transformer",
+        "last_mask",
+        "anchor_replay_16",
+        "self_injection"
+      ]
+    },
+    {
+      "case_id": "MOSEv2:5949ee84:obj1:switch00019",
+      "methods": [
+        "small_only",
+        "base_native",
+        "direct",
+        "affine",
+        "residual_mlp",
+        "transformer",
+        "last_mask",
+        "anchor_replay_16",
+        "self_injection"
+      ]
+    },
+    {
+      "case_id": "LVOSv2:oWARMtpa:obj1:switch00000526",
+      "methods": [
+        "small_only",
+        "base_native",
+        "direct",
+        "affine",
+        "residual_mlp",
+        "transformer",
+        "last_mask",
+        "anchor_replay_16",
+        "self_injection"
+      ]
+    },
+    {
+      "case_id": "DAVIS2017:swing:obj2:switch00029",
+      "methods": [
+        "small_only",
+        "base_native",
+        "direct",
+        "affine",
+        "residual_mlp",
+        "transformer",
+        "last_mask",
+        "anchor_replay_16",
+        "self_injection"
+      ]
+    },
+    {
+      "case_id": "VOST:8028_divide_dough:obj1:switch00234",
+      "methods": [
+        "small_only",
+        "base_native",
+        "direct",
+        "affine",
+        "residual_mlp",
+        "transformer",
+        "last_mask",
+        "anchor_replay_16",
+        "self_injection"
+      ]
+    },
+    {
+      "case_id": "MOSEv2:hy97dn1d:obj1:switch00029",
+      "methods": [
+        "small_only",
+        "base_native",
+        "direct",
+        "affine",
+        "residual_mlp",
+        "transformer",
+        "last_mask",
+        "anchor_replay_16",
+        "self_injection"
+      ]
+    },
+    {
+      "case_id": "LVOSv2:gAHn8WFw:obj1:switch00001216",
+      "methods": [
+        "small_only",
+        "base_native",
+        "direct",
+        "affine",
+        "residual_mlp",
+        "transformer",
+        "last_mask",
+        "anchor_replay_16",
+        "self_injection"
+      ]
+    },
+    {
+      "case_id": "DAVIS2017:boat:obj1:switch00037",
+      "methods": [
+        "small_only",
+        "base_native",
+        "direct",
+        "affine",
+        "residual_mlp",
+        "transformer",
+        "last_mask",
+        "anchor_replay_16",
+        "self_injection"
+      ]
+    },
+    {
+      "case_id": "VOST:1184_cut_chilli:obj2:switch00480",
+      "methods": [
+        "small_only",
+        "base_native",
+        "direct",
+        "affine",
+        "residual_mlp",
+        "transformer",
+        "last_mask",
+        "anchor_replay_16",
+        "self_injection"
+      ]
+    },
+    {
+      "case_id": "MOSEv2:zxh1jkdr:obj1:switch00066",
+      "methods": [
+        "small_only",
+        "base_native",
+        "direct",
+        "affine",
+        "residual_mlp",
+        "transformer",
+        "last_mask",
+        "anchor_replay_16",
+        "self_injection"
+      ]
+    },
+    {
+      "case_id": "LVOSv2:Q3kk9fuH:obj1:switch00002786",
+      "methods": [
+        "small_only",
+        "base_native",
+        "direct",
+        "affine",
+        "residual_mlp",
+        "transformer",
+        "last_mask",
+        "anchor_replay_16",
+        "self_injection"
+      ]
+    },
+    {
+      "case_id": "DAVIS2017:koala:obj1:switch00049",
+      "methods": [
+        "small_only",
+        "base_native",
+        "direct",
+        "affine",
+        "residual_mlp",
+        "transformer",
+        "last_mask",
+        "anchor_replay_16",
+        "self_injection"
+      ]
+    },
+    {
+      "case_id": "VOST:4021_cut_broccoli:obj1:switch00414",
+      "methods": [
+        "small_only",
+        "base_native",
+        "direct",
+        "affine",
+        "residual_mlp",
+        "transformer",
+        "last_mask",
+        "anchor_replay_16",
+        "self_injection"
+      ]
+    },
+    {
+      "case_id": "MOSEv2:c9080ed1:obj1:switch00017",
+      "methods": [
+        "small_only",
+        "base_native",
+        "direct",
+        "affine",
+        "residual_mlp",
+        "transformer",
+        "last_mask",
+        "anchor_replay_16",
+        "self_injection"
+      ]
+    },
+    {
+      "case_id": "LVOSv2:usxBn0LJ:obj3:switch00000586",
+      "methods": [
+        "small_only",
+        "base_native",
+        "direct",
+        "affine",
+        "residual_mlp",
+        "transformer",
+        "last_mask",
+        "anchor_replay_16",
+        "self_injection"
+      ]
+    },
+    {
+      "case_id": "DAVIS2017:longboard:obj5:switch00025",
+      "methods": [
+        "small_only",
+        "base_native",
+        "direct",
+        "affine",
+        "residual_mlp",
+        "transformer",
+        "last_mask",
+        "anchor_replay_16",
+        "self_injection"
+      ]
+    },
+    {
+      "case_id": "VOST:8024_divide_dough:obj1:switch00222",
+      "methods": [
+        "small_only",
+        "base_native",
+        "direct",
+        "affine",
+        "residual_mlp",
+        "transformer",
+        "last_mask",
+        "anchor_replay_16",
+        "self_injection"
+      ]
+    },
+    {
+      "case_id": "MOSEv2:l0ek62ei:obj1:switch00027",
+      "methods": [
+        "small_only",
+        "base_native",
+        "direct",
+        "affine",
+        "residual_mlp",
+        "transformer",
+        "last_mask",
+        "anchor_replay_16",
+        "self_injection"
+      ]
+    },
+    {
+      "case_id": "LVOSv2:ae7pGvGx:obj1:switch00001026",
+      "methods": [
+        "small_only",
+        "base_native",
+        "direct",
+        "affine",
+        "residual_mlp",
+        "transformer",
+        "last_mask",
+        "anchor_replay_16",
+        "self_injection"
+      ]
+    },
+    {
+      "case_id": "DAVIS2017:lindy-hop:obj3:switch00036",
+      "methods": [
+        "small_only",
+        "base_native",
+        "direct",
+        "affine",
+        "residual_mlp",
+        "transformer",
+        "last_mask",
+        "anchor_replay_16",
+        "self_injection"
+      ]
+    },
+    {
+      "case_id": "VOST:1211_cut_garlic:obj1:switch00510",
+      "methods": [
+        "small_only",
+        "base_native",
+        "direct",
+        "affine",
+        "residual_mlp",
+        "transformer",
+        "last_mask",
+        "anchor_replay_16",
+        "self_injection"
+      ]
+    }
+  ],
+  "legacy_unverified": 0,
+  "note": "Legacy rows retained for historical comparison; missing past input hashes prevent verified score reuse. No training or inference performed."
+}

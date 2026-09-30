@@ -1,0 +1,32 @@
+{
+  "case_id": "LVOSv2:vJ8W2TO5:obj1:switch00001146",
+  "dataset": "LVOSv2",
+  "video_id": "vJ8W2TO5",
+  "object_id": 1,
+  "cohort": "heldout_core",
+  "checkpoint_video": false,
+  "method": "self_injection",
+  "key": "490283e1c29d2370716dd054178f856cb1e4e350a87bb031377fc3335a4459ff",
+  "status": "complete",
+  "origin": "executed",
+  "gate_passed": true,
+  "binary_iou": 1.0,
+  "max_logit_error": 0.0,
+  "runtime": {
+    "scope": "test10_method_v1",
+    "model_load_s": 1.085443881998799,
+    "export_s": 0.045350300999416504,
+    "transfer_s": 0.0,
+    "translate_s": 0.0,
+    "inject_s": 0.002290980002726428,
+    "replay_s": 0.0,
+    "video_init_s": 2.8337999538052827e-05,
+    "handoff_bytes": 120825911,
+    "handoff_s": 0.002318424994882662,
+    "past_backbone_frames": [],
+    "first_output_s": 0.251372712002194,
+    "continuation_s": 9.354723097996612,
+    "peak_vram_bytes": 1127700992,
+    "switch_ready_with_export_s": 0.04769706399383722
+  }
+}

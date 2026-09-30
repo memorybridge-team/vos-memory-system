@@ -1,0 +1,982 @@
+[
+  {
+    "case_id": "MOSEv2:e33cddc9:obj1:switch00016",
+    "dataset": "MOSEv2",
+    "length_bin": 0,
+    "seconds": 16.90434851700047,
+    "decode_s": 1.6901345089609094
+  },
+  {
+    "case_id": "LVOSv2:fqbAXAoT:obj1:switch00000521",
+    "dataset": "LVOSv2",
+    "length_bin": 0,
+    "seconds": 56.76293733500279,
+    "decode_s": 5.729416715024854
+  },
+  {
+    "case_id": "DAVIS2017:tuk-tuk:obj2:switch00029",
+    "dataset": "DAVIS2017",
+    "length_bin": 0,
+    "seconds": 14.72224907400232,
+    "decode_s": 1.4695026029839937
+  },
+  {
+    "case_id": "VOST:6922_split_paper:obj1:switch00228",
+    "dataset": "VOST",
+    "length_bin": 0,
+    "seconds": 27.964537677999033,
+    "decode_s": 3.0069470389935304
+  },
+  {
+    "case_id": "MOSEv2:31rry8ca:obj1:switch00045",
+    "dataset": "MOSEv2",
+    "length_bin": 1,
+    "seconds": 41.39821641900198,
+    "decode_s": 3.652221456010011
+  },
+  {
+    "case_id": "LVOSv2:UZzAPST3:obj2:switch00000661",
+    "dataset": "LVOSv2",
+    "length_bin": 1,
+    "seconds": 139.90012488699722,
+    "decode_s": 12.002861242002837
+  },
+  {
+    "case_id": "DAVIS2017:scooter-gray:obj2:switch00037",
+    "dataset": "DAVIS2017",
+    "length_bin": 1,
+    "seconds": 18.54352639300123,
+    "decode_s": 1.778754609025782
+  },
+  {
+    "case_id": "VOST:10625_knead_dough:obj1:switch00354",
+    "dataset": "VOST",
+    "length_bin": 1,
+    "seconds": 51.93052190399976,
+    "decode_s": 4.834354704998987
+  },
+  {
+    "case_id": "MOSEv2:k0vcz0st:obj1:switch00114",
+    "dataset": "MOSEv2",
+    "length_bin": 2,
+    "seconds": 96.91081582499828,
+    "decode_s": 8.62316628796907
+  },
+  {
+    "case_id": "LVOSv2:vjG0jbkQ:obj2:switch00002531",
+    "dataset": "LVOSv2",
+    "length_bin": 2,
+    "seconds": 267.2159420179996,
+    "decode_s": 25.194323050953244
+  },
+  {
+    "case_id": "DAVIS2017:stroller:obj1:switch00045",
+    "dataset": "DAVIS2017",
+    "length_bin": 2,
+    "seconds": 21.946176145997015,
+    "decode_s": 1.8559665210050298
+  },
+  {
+    "case_id": "VOST:5118_squeeze_bag:obj1:switch00444",
+    "dataset": "VOST",
+    "length_bin": 2,
+    "seconds": 51.87561772099798,
+    "decode_s": 5.2637467669883335
+  },
+  {
+    "case_id": "MOSEv2:aa185af5:obj2:switch00024",
+    "dataset": "MOSEv2",
+    "length_bin": 0,
+    "seconds": 12.711449616999744,
+    "decode_s": 0.6411545489827404
+  },
+  {
+    "case_id": "LVOSv2:rSFfONgp:obj1:switch00000586",
+    "dataset": "LVOSv2",
+    "length_bin": 0,
+    "seconds": 55.00653281199993,
+    "decode_s": 2.8150726209714776
+  },
+  {
+    "case_id": "DAVIS2017:motocross-bumps:obj2:switch00029",
+    "dataset": "DAVIS2017",
+    "length_bin": 0,
+    "seconds": 12.438697362998937,
+    "decode_s": 0.5831747009906394
+  },
+  {
+    "case_id": "VOST:559_cut_cucumber:obj4:switch00480",
+    "dataset": "VOST",
+    "length_bin": 0,
+    "seconds": 31.465791073998844,
+    "decode_s": 1.526863073995628
+  },
+  {
+    "case_id": "MOSEv2:51vddywa:obj1:switch00037",
+    "dataset": "MOSEv2",
+    "length_bin": 1,
+    "seconds": 30.185189099000127,
+    "decode_s": 1.2347603729867842
+  },
+  {
+    "case_id": "LVOSv2:3nsHQkEK:obj1:switch00000816",
+    "dataset": "LVOSv2",
+    "length_bin": 1,
+    "seconds": 77.03839261099711,
+    "decode_s": 4.059232896030153
+  },
+  {
+    "case_id": "DAVIS2017:kid-football:obj2:switch00033",
+    "dataset": "DAVIS2017",
+    "length_bin": 1,
+    "seconds": 13.99422336799762,
+    "decode_s": 0.674755751984776
+  },
+  {
+    "case_id": "VOST:5304_unpack_broccoli:obj1:switch00264",
+    "dataset": "VOST",
+    "length_bin": 1,
+    "seconds": 45.059845885996765,
+    "decode_s": 2.019465609002509
+  },
+  {
+    "case_id": "MOSEv2:aatd0ihe:obj1:switch00053",
+    "dataset": "MOSEv2",
+    "length_bin": 2,
+    "seconds": 24.768378091997874,
+    "decode_s": 1.3245753609880921
+  },
+  {
+    "case_id": "LVOSv2:afoR2rH6:obj1:switch00001561",
+    "dataset": "LVOSv2",
+    "length_bin": 2,
+    "seconds": 303.93377892800345,
+    "decode_s": 14.219224696003948
+  },
+  {
+    "case_id": "DAVIS2017:drone:obj1:switch00045",
+    "dataset": "DAVIS2017",
+    "length_bin": 2,
+    "seconds": 18.50284891199408,
+    "decode_s": 0.8776445900002727
+  },
+  {
+    "case_id": "VOST:9383_spread_cement:obj1:switch00444",
+    "dataset": "VOST",
+    "length_bin": 2,
+    "seconds": 72.84844429299847,
+    "decode_s": 3.380471610063978
+  },
+  {
+    "case_id": "MOSEv2:5d107jy0:obj1:switch00021",
+    "dataset": "MOSEv2",
+    "length_bin": 0,
+    "seconds": 17.081178230997466,
+    "decode_s": 0.7610510459999205
+  },
+  {
+    "case_id": "LVOSv2:bxjTooAn:obj4:switch00000961",
+    "dataset": "LVOSv2",
+    "length_bin": 0,
+    "seconds": 70.70276137800101,
+    "decode_s": 3.3299119260555017
+  },
+  {
+    "case_id": "DAVIS2017:crossing:obj2:switch00025",
+    "dataset": "DAVIS2017",
+    "length_bin": 0,
+    "seconds": 10.97175290499581,
+    "decode_s": 0.5246756150154397
+  },
+  {
+    "case_id": "VOST:8267_pour_flour:obj1:switch00192",
+    "dataset": "VOST",
+    "length_bin": 0,
+    "seconds": 24.235600611995324,
+    "decode_s": 1.1290457650320604
+  },
+  {
+    "case_id": "MOSEv2:pz9rf3kp:obj1:switch00040",
+    "dataset": "MOSEv2",
+    "length_bin": 1,
+    "seconds": 33.177089772005274,
+    "decode_s": 1.6944621699585696
+  },
+  {
+    "case_id": "LVOSv2:LEo03dYV:obj1:switch00000906",
+    "dataset": "LVOSv2",
+    "length_bin": 1,
+    "seconds": 83.91971001799538,
+    "decode_s": 4.488387613906525
+  },
+  {
+    "case_id": "DAVIS2017:stunt:obj1:switch00035",
+    "dataset": "DAVIS2017",
+    "length_bin": 1,
+    "seconds": 14.534555443002318,
+    "decode_s": 0.7147331880260026
+  },
+  {
+    "case_id": "VOST:4340_roll_dough:obj1:switch00366",
+    "dataset": "VOST",
+    "length_bin": 1,
+    "seconds": 47.15810840300401,
+    "decode_s": 2.141410948919656
+  },
+  {
+    "case_id": "MOSEv2:or8eklj5:obj1:switch00059",
+    "dataset": "MOSEv2",
+    "length_bin": 2,
+    "seconds": 49.37222956599726,
+    "decode_s": 2.514386128023034
+  },
+  {
+    "case_id": "LVOSv2:HYSm91eM:obj6:switch00001246",
+    "dataset": "LVOSv2",
+    "length_bin": 2,
+    "seconds": 163.58988346299884,
+    "decode_s": 7.41304515406955
+  },
+  {
+    "case_id": "DAVIS2017:bmx-bumps:obj1:switch00044",
+    "dataset": "DAVIS2017",
+    "length_bin": 2,
+    "seconds": 18.476868331999867,
+    "decode_s": 0.8900291370082414
+  },
+  {
+    "case_id": "VOST:4031_cut_broccoli:obj1:switch00528",
+    "dataset": "VOST",
+    "length_bin": 2,
+    "seconds": 85.2392736030015,
+    "decode_s": 3.9668720979971113
+  },
+  {
+    "case_id": "MOSEv2:tug3h8uh:obj1:switch00026",
+    "dataset": "MOSEv2",
+    "length_bin": 0,
+    "seconds": 20.71875421099685,
+    "decode_s": 0.9808374279964482
+  },
+  {
+    "case_id": "LVOSv2:cmprgw5z:obj1:switch00000586",
+    "dataset": "LVOSv2",
+    "length_bin": 0,
+    "seconds": 53.514516221999656,
+    "decode_s": 2.655784317983489
+  },
+  {
+    "case_id": "DAVIS2017:dog-agility:obj1:switch00016",
+    "dataset": "DAVIS2017",
+    "length_bin": 0,
+    "seconds": 4.287221593003778,
+    "decode_s": 0.24370750099478755
+  },
+  {
+    "case_id": "VOST:4357_trim_dough:obj1:switch00138",
+    "dataset": "VOST",
+    "length_bin": 0,
+    "seconds": 17.866041714005405,
+    "decode_s": 0.8210227969757398
+  },
+  {
+    "case_id": "MOSEv2:r2iallw7:obj1:switch00028",
+    "dataset": "MOSEv2",
+    "length_bin": 1,
+    "seconds": 21.808880384996883,
+    "decode_s": 1.0060717779851984
+  },
+  {
+    "case_id": "LVOSv2:3bvEjhOT:obj2:switch00001151",
+    "dataset": "LVOSv2",
+    "length_bin": 1,
+    "seconds": 223.3231898890008,
+    "decode_s": 10.81515173396474
+  },
+  {
+    "case_id": "DAVIS2017:tennis:obj2:switch00034",
+    "dataset": "DAVIS2017",
+    "length_bin": 1,
+    "seconds": 14.538132417997986,
+    "decode_s": 0.7300564569959533
+  },
+  {
+    "case_id": "VOST:1206_cut_mango:obj1:switch00480",
+    "dataset": "VOST",
+    "length_bin": 1,
+    "seconds": 37.08501694200095,
+    "decode_s": 1.7872133270211634
+  },
+  {
+    "case_id": "MOSEv2:bd9untye:obj1:switch00059",
+    "dataset": "MOSEv2",
+    "length_bin": 2,
+    "seconds": 45.240071832995454,
+    "decode_s": 2.0015231810539262
+  },
+  {
+    "case_id": "LVOSv2:UgZ759gD:obj1:switch00001416",
+    "dataset": "LVOSv2",
+    "length_bin": 2,
+    "seconds": 131.1338162539978,
+    "decode_s": 7.390403915014758
+  },
+  {
+    "case_id": "DAVIS2017:mallard-water:obj1:switch00039",
+    "dataset": "DAVIS2017",
+    "length_bin": 2,
+    "seconds": 16.4908446729969,
+    "decode_s": 0.8160518920631148
+  },
+  {
+    "case_id": "VOST:5110_paint_nail:obj1:switch00654",
+    "dataset": "VOST",
+    "length_bin": 2,
+    "seconds": 82.47613022499718,
+    "decode_s": 3.80731591697986
+  },
+  {
+    "case_id": "MOSEv2:ca619b7f:obj2:switch00016",
+    "dataset": "MOSEv2",
+    "length_bin": 0,
+    "seconds": 10.655603582999902,
+    "decode_s": 0.5382874419810832
+  },
+  {
+    "case_id": "LVOSv2:yExgitit:obj1:switch00000656",
+    "dataset": "LVOSv2",
+    "length_bin": 0,
+    "seconds": 60.58300566399703,
+    "decode_s": 3.4699625270222896
+  },
+  {
+    "case_id": "DAVIS2017:surf:obj3:switch00027",
+    "dataset": "DAVIS2017",
+    "length_bin": 0,
+    "seconds": 11.426833540994267,
+    "decode_s": 0.5632268950139405
+  },
+  {
+    "case_id": "VOST:1205_cut_mango:obj3:switch00300",
+    "dataset": "VOST",
+    "length_bin": 0,
+    "seconds": 23.451267219003057,
+    "decode_s": 1.135202538993326
+  },
+  {
+    "case_id": "MOSEv2:iijj01lq:obj1:switch00041",
+    "dataset": "MOSEv2",
+    "length_bin": 1,
+    "seconds": 31.82060638499388,
+    "decode_s": 1.4936226859936141
+  },
+  {
+    "case_id": "LVOSv2:Erx5Q6Vf:obj1:switch00001011",
+    "dataset": "LVOSv2",
+    "length_bin": 1,
+    "seconds": 94.31399670599785,
+    "decode_s": 4.976999143946159
+  },
+  {
+    "case_id": "DAVIS2017:breakdance-flare:obj1:switch00035",
+    "dataset": "DAVIS2017",
+    "length_bin": 1,
+    "seconds": 14.58944686200266,
+    "decode_s": 0.7082289129612036
+  },
+  {
+    "case_id": "VOST:4222_peel_wire:obj1:switch00348",
+    "dataset": "VOST",
+    "length_bin": 1,
+    "seconds": 34.94254964500578,
+    "decode_s": 1.7801191350008594
+  },
+  {
+    "case_id": "MOSEv2:zj3p2iaa:obj1:switch00050",
+    "dataset": "MOSEv2",
+    "length_bin": 2,
+    "seconds": 20.55971670099825,
+    "decode_s": 0.9707314279512502
+  },
+  {
+    "case_id": "LVOSv2:x3nD3QQ9:obj1:switch00001491",
+    "dataset": "LVOSv2",
+    "length_bin": 2,
+    "seconds": 137.19006184899627,
+    "decode_s": 7.482116462939302
+  },
+  {
+    "case_id": "DAVIS2017:dog-gooses:obj4:switch00042",
+    "dataset": "DAVIS2017",
+    "length_bin": 2,
+    "seconds": 17.964569024996308,
+    "decode_s": 1.0127453789900756
+  },
+  {
+    "case_id": "VOST:7202_clean_car:obj1:switch00390",
+    "dataset": "VOST",
+    "length_bin": 2,
+    "seconds": 38.652655362995574,
+    "decode_s": 1.9997137620157446
+  },
+  {
+    "case_id": "MOSEv2:nu73npba:obj1:switch00023",
+    "dataset": "MOSEv2",
+    "length_bin": 0,
+    "seconds": 12.157979718998831,
+    "decode_s": 0.7377698019627132
+  },
+  {
+    "case_id": "LVOSv2:pyq6I5Hh:obj3:switch00000486",
+    "dataset": "LVOSv2",
+    "length_bin": 0,
+    "seconds": 45.373087476000364,
+    "decode_s": 2.542260025991709
+  },
+  {
+    "case_id": "DAVIS2017:horsejump-low:obj2:switch00029",
+    "dataset": "DAVIS2017",
+    "length_bin": 0,
+    "seconds": 12.768551720000687,
+    "decode_s": 0.6065067029703641
+  },
+  {
+    "case_id": "VOST:1210_cut_garlic:obj1:switch00310",
+    "dataset": "VOST",
+    "length_bin": 0,
+    "seconds": 24.400485611004115,
+    "decode_s": 1.1794749979526387
+  },
+  {
+    "case_id": "MOSEv2:730bc486:obj1:switch00043",
+    "dataset": "MOSEv2",
+    "length_bin": 1,
+    "seconds": 30.97265839800093,
+    "decode_s": 1.3988359080176451
+  },
+  {
+    "case_id": "LVOSv2:aT6JIUVU:obj1:switch00000891",
+    "dataset": "LVOSv2",
+    "length_bin": 1,
+    "seconds": 82.94691714200599,
+    "decode_s": 4.513414305904007
+  },
+  {
+    "case_id": "DAVIS2017:car-turn:obj1:switch00039",
+    "dataset": "DAVIS2017",
+    "length_bin": 1,
+    "seconds": 16.435037119998015,
+    "decode_s": 0.8422692520034616
+  },
+  {
+    "case_id": "VOST:9691_divide_dough:obj1:switch00318",
+    "dataset": "VOST",
+    "length_bin": 1,
+    "seconds": 31.75440551900101,
+    "decode_s": 1.5706917779971263
+  },
+  {
+    "case_id": "MOSEv2:vd2kzgc9:obj1:switch00052",
+    "dataset": "MOSEv2",
+    "length_bin": 2,
+    "seconds": 39.493834769993555,
+    "decode_s": 1.717256928961433
+  },
+  {
+    "case_id": "LVOSv2:SRRojucs:obj1:switch00001326",
+    "dataset": "LVOSv2",
+    "length_bin": 2,
+    "seconds": 255.46418322099635,
+    "decode_s": 11.168871212132217
+  },
+  {
+    "case_id": "DAVIS2017:color-run:obj1:switch00041",
+    "dataset": "DAVIS2017",
+    "length_bin": 2,
+    "seconds": 17.131630477997533,
+    "decode_s": 0.8014401030377485
+  },
+  {
+    "case_id": "VOST:4030_cut_broccoli:obj2:switch00678",
+    "dataset": "VOST",
+    "length_bin": 2,
+    "seconds": 109.90270490499825,
+    "decode_s": 5.248506416057353
+  },
+  {
+    "case_id": "MOSEv2:rj6on8oa:obj1:switch00024",
+    "dataset": "MOSEv2",
+    "length_bin": 0,
+    "seconds": 19.763618126999063,
+    "decode_s": 0.8282265949746943
+  },
+  {
+    "case_id": "LVOSv2:xWs99Q4N:obj1:switch00000596",
+    "dataset": "LVOSv2",
+    "length_bin": 0,
+    "seconds": 55.0192569619976,
+    "decode_s": 2.854900513928442
+  },
+  {
+    "case_id": "DAVIS2017:dance-jump:obj1:switch00029",
+    "dataset": "DAVIS2017",
+    "length_bin": 0,
+    "seconds": 12.441734233994794,
+    "decode_s": 0.5772196869947948
+  },
+  {
+    "case_id": "VOST:9692_divide_dough:obj1:switch00174",
+    "dataset": "VOST",
+    "length_bin": 0,
+    "seconds": 18.060543569998117,
+    "decode_s": 0.8790775670349831
+  },
+  {
+    "case_id": "MOSEv2:0644075b:obj1:switch00043",
+    "dataset": "MOSEv2",
+    "length_bin": 1,
+    "seconds": 20.243247038000845,
+    "decode_s": 1.0597206840393483
+  },
+  {
+    "case_id": "LVOSv2:8lxxCA5h:obj1:switch00000836",
+    "dataset": "LVOSv2",
+    "length_bin": 1,
+    "seconds": 76.66003353000269,
+    "decode_s": 4.341507548990194
+  },
+  {
+    "case_id": "DAVIS2017:tractor-sand:obj2:switch00037",
+    "dataset": "DAVIS2017",
+    "length_bin": 1,
+    "seconds": 15.596105084005103,
+    "decode_s": 0.7790506019955501
+  },
+  {
+    "case_id": "VOST:8032_divide_dough:obj1:switch00270",
+    "dataset": "VOST",
+    "length_bin": 1,
+    "seconds": 26.861104682000587,
+    "decode_s": 1.341563016976579
+  },
+  {
+    "case_id": "MOSEv2:1e95ef5e:obj1:switch00052",
+    "dataset": "MOSEv2",
+    "length_bin": 2,
+    "seconds": 22.242752190999454,
+    "decode_s": 1.1774371089995839
+  },
+  {
+    "case_id": "LVOSv2:KhDr3o6f:obj1:switch00002036",
+    "dataset": "LVOSv2",
+    "length_bin": 2,
+    "seconds": 187.02530974399997,
+    "decode_s": 9.901949829873047
+  },
+  {
+    "case_id": "DAVIS2017:scooter-board:obj1:switch00045",
+    "dataset": "DAVIS2017",
+    "length_bin": 2,
+    "seconds": 18.73017524599709,
+    "decode_s": 0.8916340769865201
+  },
+  {
+    "case_id": "VOST:7049_paint_nail:obj2:switch00558",
+    "dataset": "VOST",
+    "length_bin": 2,
+    "seconds": 70.26803960000689,
+    "decode_s": 3.2799338389886543
+  },
+  {
+    "case_id": "MOSEv2:edab084s:obj1:switch00024",
+    "dataset": "MOSEv2",
+    "length_bin": 0,
+    "seconds": 19.365263948995562,
+    "decode_s": 0.8222085419984069
+  },
+  {
+    "case_id": "LVOSv2:xpI7xRWN:obj1:switch00000621",
+    "dataset": "LVOSv2",
+    "length_bin": 0,
+    "seconds": 57.28427273900161,
+    "decode_s": 2.9730516859563068
+  },
+  {
+    "case_id": "DAVIS2017:rallye:obj1:switch00024",
+    "dataset": "DAVIS2017",
+    "length_bin": 0,
+    "seconds": 10.641979179003101,
+    "decode_s": 0.5042096000324818
+  },
+  {
+    "case_id": "VOST:9673_cut_tomato:obj1:switch00150",
+    "dataset": "VOST",
+    "length_bin": 0,
+    "seconds": 15.263772482001514,
+    "decode_s": 0.7859157789716846
+  },
+  {
+    "case_id": "MOSEv2:0518cuig:obj1:switch00041",
+    "dataset": "MOSEv2",
+    "length_bin": 1,
+    "seconds": 34.08309487799852,
+    "decode_s": 1.71845635498903
+  },
+  {
+    "case_id": "LVOSv2:YfoFnMgm:obj1:switch00000696",
+    "dataset": "LVOSv2",
+    "length_bin": 1,
+    "seconds": 64.52183862600214,
+    "decode_s": 3.410244412974862
+  },
+  {
+    "case_id": "DAVIS2017:walking:obj1:switch00035",
+    "dataset": "DAVIS2017",
+    "length_bin": 1,
+    "seconds": 14.843838402004621,
+    "decode_s": 0.7283988399722148
+  },
+  {
+    "case_id": "VOST:3993_cut_tomato:obj1:switch00324",
+    "dataset": "VOST",
+    "length_bin": 1,
+    "seconds": 33.04895410100289,
+    "decode_s": 1.7147671619532048
+  },
+  {
+    "case_id": "MOSEv2:cv63itgy:obj1:switch00061",
+    "dataset": "MOSEv2",
+    "length_bin": 2,
+    "seconds": 46.30674398800329,
+    "decode_s": 2.0731484569987515
+  },
+  {
+    "case_id": "LVOSv2:4H7FEAHv:obj1:switch00002726",
+    "dataset": "LVOSv2",
+    "length_bin": 2,
+    "seconds": 250.62868833300308,
+    "decode_s": 14.025612449950131
+  },
+  {
+    "case_id": "DAVIS2017:train:obj3:switch00039",
+    "dataset": "DAVIS2017",
+    "length_bin": 2,
+    "seconds": 17.12501797400182,
+    "decode_s": 0.823337014997378
+  },
+  {
+    "case_id": "VOST:7869_squeeze_bag:obj1:switch00426",
+    "dataset": "VOST",
+    "length_bin": 2,
+    "seconds": 42.86683870200068,
+    "decode_s": 2.3261962170217885
+  },
+  {
+    "case_id": "MOSEv2:54eda06d:obj1:switch00023",
+    "dataset": "MOSEv2",
+    "length_bin": 0,
+    "seconds": 9.376859043994045,
+    "decode_s": 0.4244113299573655
+  },
+  {
+    "case_id": "LVOSv2:iWjeKM6a:obj2:switch00000586",
+    "dataset": "LVOSv2",
+    "length_bin": 0,
+    "seconds": 54.16481219200068,
+    "decode_s": 2.9411799849840463
+  },
+  {
+    "case_id": "DAVIS2017:classic-car:obj1:switch00031",
+    "dataset": "DAVIS2017",
+    "length_bin": 0,
+    "seconds": 12.93083118800132,
+    "decode_s": 0.617014069990546
+  },
+  {
+    "case_id": "VOST:3562_break_egg:obj1:switch00444",
+    "dataset": "VOST",
+    "length_bin": 0,
+    "seconds": 28.671470111003146,
+    "decode_s": 1.388487856987922
+  },
+  {
+    "case_id": "MOSEv2:qcyzntli:obj1:switch00047",
+    "dataset": "MOSEv2",
+    "length_bin": 1,
+    "seconds": 36.59362014100043,
+    "decode_s": 1.5645852249945165
+  },
+  {
+    "case_id": "LVOSv2:vJ8W2TO5:obj1:switch00001146",
+    "dataset": "LVOSv2",
+    "length_bin": 1,
+    "seconds": 106.6052834689981,
+    "decode_s": 5.855801410019922
+  },
+  {
+    "case_id": "DAVIS2017:sheep:obj3:switch00033",
+    "dataset": "DAVIS2017",
+    "length_bin": 1,
+    "seconds": 14.312965468001494,
+    "decode_s": 0.7164336509813438
+  },
+  {
+    "case_id": "VOST:1179_cut_onion:obj1:switch00600",
+    "dataset": "VOST",
+    "length_bin": 1,
+    "seconds": 45.76982591300475,
+    "decode_s": 2.117973092965258
+  },
+  {
+    "case_id": "MOSEv2:my6cd5xb:obj1:switch00346",
+    "dataset": "MOSEv2",
+    "length_bin": 2,
+    "seconds": 260.8851245889964,
+    "decode_s": 11.958329431967286
+  },
+  {
+    "case_id": "LVOSv2:NFbsxmYE:obj1:switch00002016",
+    "dataset": "LVOSv2",
+    "length_bin": 2,
+    "seconds": 185.6607018279974,
+    "decode_s": 10.22431333894201
+  },
+  {
+    "case_id": "DAVIS2017:skate-park:obj1:switch00039",
+    "dataset": "DAVIS2017",
+    "length_bin": 2,
+    "seconds": 16.725401117997535,
+    "decode_s": 0.8044454129849328
+  },
+  {
+    "case_id": "VOST:4626_cut_paper:obj1:switch00456",
+    "dataset": "VOST",
+    "length_bin": 2,
+    "seconds": 46.241441388003295,
+    "decode_s": 2.297614654955396
+  },
+  {
+    "case_id": "MOSEv2:2080824a:obj1:switch00018",
+    "dataset": "MOSEv2",
+    "length_bin": 0,
+    "seconds": 8.310548927001946,
+    "decode_s": 0.36254859500331804
+  },
+  {
+    "case_id": "LVOSv2:gYaLtvfc:obj1:switch00000586",
+    "dataset": "LVOSv2",
+    "length_bin": 0,
+    "seconds": 54.407650701999955,
+    "decode_s": 2.8058509010224952
+  },
+  {
+    "case_id": "DAVIS2017:motorbike:obj3:switch00021",
+    "dataset": "DAVIS2017",
+    "length_bin": 0,
+    "seconds": 8.843724727004883,
+    "decode_s": 0.41880592000234174
+  },
+  {
+    "case_id": "VOST:3161_peel_banana:obj1:switch00504",
+    "dataset": "VOST",
+    "length_bin": 0,
+    "seconds": 32.558336671005236,
+    "decode_s": 1.4833752829799778
+  },
+  {
+    "case_id": "MOSEv2:ouyf2et0:obj1:switch00029",
+    "dataset": "MOSEv2",
+    "length_bin": 1,
+    "seconds": 23.320787557000585,
+    "decode_s": 1.029972286989505
+  },
+  {
+    "case_id": "LVOSv2:Q7jVRHO5:obj1:switch00000751",
+    "dataset": "LVOSv2",
+    "length_bin": 1,
+    "seconds": 69.5711983700021,
+    "decode_s": 3.7816058130483725
+  },
+  {
+    "case_id": "DAVIS2017:varanus-cage:obj1:switch00033",
+    "dataset": "DAVIS2017",
+    "length_bin": 1,
+    "seconds": 13.810930847997952,
+    "decode_s": 0.6771110970148584
+  },
+  {
+    "case_id": "VOST:7866_squeeze_bag:obj1:switch00336",
+    "dataset": "VOST",
+    "length_bin": 1,
+    "seconds": 34.840391172001546,
+    "decode_s": 1.839398596996034
+  },
+  {
+    "case_id": "MOSEv2:hxaid41o:obj1:switch00054",
+    "dataset": "MOSEv2",
+    "length_bin": 2,
+    "seconds": 41.41585772600229,
+    "decode_s": 1.8885848870340851
+  },
+  {
+    "case_id": "LVOSv2:N6CONZUW:obj1:switch00002716",
+    "dataset": "LVOSv2",
+    "length_bin": 2,
+    "seconds": 249.17790806099947,
+    "decode_s": 13.416121529051452
+  },
+  {
+    "case_id": "DAVIS2017:dogs-scale:obj4:switch00041",
+    "dataset": "DAVIS2017",
+    "length_bin": 2,
+    "seconds": 17.13732814899413,
+    "decode_s": 0.8302215730363969
+  },
+  {
+    "case_id": "VOST:6503_apply_paint:obj1:switch00534",
+    "dataset": "VOST",
+    "length_bin": 2,
+    "seconds": 53.98539384000469,
+    "decode_s": 2.832841142946563
+  },
+  {
+    "case_id": "MOSEv2:5949ee84:obj1:switch00019",
+    "dataset": "MOSEv2",
+    "length_bin": 0,
+    "seconds": 8.690569550999498,
+    "decode_s": 0.3809891050332226
+  },
+  {
+    "case_id": "LVOSv2:oWARMtpa:obj1:switch00000526",
+    "dataset": "LVOSv2",
+    "length_bin": 0,
+    "seconds": 49.33379807500023,
+    "decode_s": 2.571927176999452
+  },
+  {
+    "case_id": "DAVIS2017:swing:obj2:switch00029",
+    "dataset": "DAVIS2017",
+    "length_bin": 0,
+    "seconds": 12.364698839002813,
+    "decode_s": 0.5945183989460929
+  },
+  {
+    "case_id": "VOST:8028_divide_dough:obj1:switch00234",
+    "dataset": "VOST",
+    "length_bin": 0,
+    "seconds": 24.138486217998434,
+    "decode_s": 1.2668567660075496
+  },
+  {
+    "case_id": "MOSEv2:hy97dn1d:obj1:switch00029",
+    "dataset": "MOSEv2",
+    "length_bin": 1,
+    "seconds": 23.74822819700057,
+    "decode_s": 1.0771111210124218
+  },
+  {
+    "case_id": "LVOSv2:gAHn8WFw:obj1:switch00001216",
+    "dataset": "LVOSv2",
+    "length_bin": 1,
+    "seconds": 114.84188655599428,
+    "decode_s": 6.39003809101996
+  },
+  {
+    "case_id": "DAVIS2017:boat:obj1:switch00037",
+    "dataset": "DAVIS2017",
+    "length_bin": 1,
+    "seconds": 15.735993308000616,
+    "decode_s": 0.7704665420023957
+  },
+  {
+    "case_id": "VOST:1184_cut_chilli:obj2:switch00480",
+    "dataset": "VOST",
+    "length_bin": 1,
+    "seconds": 38.89262237300136,
+    "decode_s": 1.8448279089861899
+  },
+  {
+    "case_id": "MOSEv2:zxh1jkdr:obj1:switch00066",
+    "dataset": "MOSEv2",
+    "length_bin": 2,
+    "seconds": 52.03568199500296,
+    "decode_s": 2.2957547179685207
+  },
+  {
+    "case_id": "LVOSv2:Q3kk9fuH:obj1:switch00002786",
+    "dataset": "LVOSv2",
+    "length_bin": 2,
+    "seconds": 260.043544330998,
+    "decode_s": 13.62417033296515
+  },
+  {
+    "case_id": "DAVIS2017:koala:obj1:switch00049",
+    "dataset": "DAVIS2017",
+    "length_bin": 2,
+    "seconds": 20.791546893000486,
+    "decode_s": 0.9942022260001977
+  },
+  {
+    "case_id": "VOST:4021_cut_broccoli:obj1:switch00414",
+    "dataset": "VOST",
+    "length_bin": 2,
+    "seconds": 71.11151966799662,
+    "decode_s": 3.724245193974639
+  },
+  {
+    "case_id": "MOSEv2:c9080ed1:obj1:switch00017",
+    "dataset": "MOSEv2",
+    "length_bin": 0,
+    "seconds": 12.527625582006294,
+    "decode_s": 0.5661773540196009
+  },
+  {
+    "case_id": "LVOSv2:usxBn0LJ:obj3:switch00000586",
+    "dataset": "LVOSv2",
+    "length_bin": 0,
+    "seconds": 54.07473225000285,
+    "decode_s": 2.952636996982619
+  },
+  {
+    "case_id": "DAVIS2017:longboard:obj5:switch00025",
+    "dataset": "DAVIS2017",
+    "length_bin": 0,
+    "seconds": 10.775819001006312,
+    "decode_s": 0.5019185060227755
+  },
+  {
+    "case_id": "VOST:8024_divide_dough:obj1:switch00222",
+    "dataset": "VOST",
+    "length_bin": 0,
+    "seconds": 22.316265356996155,
+    "decode_s": 1.2373841399748926
+  },
+  {
+    "case_id": "MOSEv2:l0ek62ei:obj1:switch00027",
+    "dataset": "MOSEv2",
+    "length_bin": 1,
+    "seconds": 21.370479050005088,
+    "decode_s": 1.0263447530305712
+  },
+  {
+    "case_id": "LVOSv2:ae7pGvGx:obj1:switch00001026",
+    "dataset": "LVOSv2",
+    "length_bin": 1,
+    "seconds": 97.50286640899867,
+    "decode_s": 5.532357526019041
+  },
+  {
+    "case_id": "DAVIS2017:lindy-hop:obj3:switch00036",
+    "dataset": "DAVIS2017",
+    "length_bin": 1,
+    "seconds": 14.949378710000019,
+    "decode_s": 0.7146729840096668
+  },
+  {
+    "case_id": "VOST:1211_cut_garlic:obj1:switch00510",
+    "dataset": "VOST",
+    "length_bin": 1,
+    "seconds": 40.42430084400257,
+    "decode_s": 1.9288080219339463
+  }
+]

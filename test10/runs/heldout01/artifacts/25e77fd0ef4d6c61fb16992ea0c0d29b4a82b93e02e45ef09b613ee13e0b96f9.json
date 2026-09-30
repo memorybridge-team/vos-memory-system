@@ -1,0 +1,32 @@
+{
+  "case_id": "DAVIS2017:stroller:obj1:switch00045",
+  "dataset": "DAVIS2017",
+  "video_id": "stroller",
+  "object_id": 1,
+  "cohort": "heldout_core",
+  "checkpoint_video": false,
+  "method": "self_injection",
+  "key": "25e77fd0ef4d6c61fb16992ea0c0d29b4a82b93e02e45ef09b613ee13e0b96f9",
+  "status": "complete",
+  "origin": "executed",
+  "gate_passed": true,
+  "binary_iou": 1.0,
+  "max_logit_error": 0.0,
+  "runtime": {
+    "scope": "test10_method_v1",
+    "model_load_s": 1.1970411050024268,
+    "export_s": 0.08600414100146736,
+    "transfer_s": 0.0,
+    "translate_s": 0.0,
+    "inject_s": 0.0008242570002039429,
+    "replay_s": 0.0,
+    "video_init_s": 2.581000080681406e-05,
+    "handoff_bytes": 24165191,
+    "handoff_s": 0.0008483550009259488,
+    "past_backbone_frames": [],
+    "first_output_s": 0.033268269999098266,
+    "continuation_s": 1.731139413001074,
+    "peak_vram_bytes": 1124672000,
+    "switch_ready_with_export_s": 0.08687830600320012
+  }
+}

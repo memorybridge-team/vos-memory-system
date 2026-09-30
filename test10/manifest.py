@@ -18,17 +18,20 @@ def imports():
     return mvp_common
 
 
-def data_paths(dataset, video):
+def data_paths(dataset, video, split="train"):
     data = WORKSPACE / "vos-data"
-    roots = {"MOSEv2": data / "MOSEv2/train", "LVOSv2": data / "LVOS_V2/train",
+    roots = {"MOSEv2": data / "MOSEv2/train", "LVOSv2": data / "LVOS_V2" / split,
              "DAVIS2017": data / "DAVIS"}
     resolution = Path("480p") if dataset == "DAVIS2017" else Path()
     return roots[dataset] / "JPEGImages" / resolution / video, roots[dataset] / "Annotations" / resolution / video
 
 
 @lru_cache(maxsize=None)
-def inventory(dataset, video):
-    image_dir, ann_dir = data_paths(dataset, video)
+def inventory(dataset, video, split="train", image_override=None, annotation_override=None):
+    if image_override and annotation_override:
+        image_dir, ann_dir = Path(image_override), Path(annotation_override)
+    else:
+        image_dir, ann_dir = data_paths(dataset, video, split)
     images = sorted((p for p in image_dir.iterdir() if p.suffix.lower() in (".jpg", ".jpeg")), key=lambda p: int(p.stem))
     if not images:
         raise ValueError("no images")
@@ -51,7 +54,8 @@ def normalize(raw, dataset):
 
 def make_case(raw, checkpoint_videos, *, additional=False):
     d, v = raw["dataset"], raw["video_id"]
-    inv = inventory(d, v); stems = inv["frame_stems"]
+    inv = inventory(d, v, raw.get("data_split", "train"), raw.get("video_dir_override"),
+                    raw.get("annotation_dir_override")); stems = inv["frame_stems"]
     first = [int(s) for s in stems].index(raw["first_prompt_stem"])
     end = [int(s) for s in stems].index(raw["end_stem"])
     proposed = stems[max(first + 16, (first + end) // 2)] if additional and first + 16 < end else raw["switch_stem"]
@@ -68,7 +72,7 @@ def make_case(raw, checkpoint_videos, *, additional=False):
                 # Prior DAVIS pilot use cannot be ruled out from the available metadata.
                 prior_selection_status="unknown_exploratory" if d == "DAVIS2017" else "known",
                 first=first, switch=switch, end=end, switch_stem=int(stems[switch]),
-                frame_stems=stems, sampling={"raw_stride": 5 if d == "LVOSv2" else 1},
+                frame_stems=stems, sampling={"raw_stride": 5 if d == "LVOSv2" else 6 if d == "VOST" else 1},
                 input_sha256=digest(list(zip(stems[first:end + 1], inv["image_hashes"][first:end + 1]))),
                 annotation_sha256=digest({s: inv["annotations"].get(s) for s in [stems[first], *stems[switch:end + 1]]}),
                 video_dir=inv["video_dir"], annotation_dir=inv["annotation_dir"])

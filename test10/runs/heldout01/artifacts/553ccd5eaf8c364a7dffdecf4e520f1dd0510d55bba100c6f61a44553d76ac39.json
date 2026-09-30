@@ -1,0 +1,32 @@
+{
+  "case_id": "DAVIS2017:lindy-hop:obj3:switch00036",
+  "dataset": "DAVIS2017",
+  "video_id": "lindy-hop",
+  "object_id": 3,
+  "cohort": "heldout_extension",
+  "checkpoint_video": false,
+  "method": "self_injection",
+  "key": "553ccd5eaf8c364a7dffdecf4e520f1dd0510d55bba100c6f61a44553d76ac39",
+  "status": "complete",
+  "origin": "executed",
+  "gate_passed": true,
+  "binary_iou": 1.0,
+  "max_logit_error": 0.0,
+  "runtime": {
+    "scope": "test10_method_v1",
+    "model_load_s": 1.064451628997631,
+    "export_s": 0.01038873300421983,
+    "transfer_s": 0.0,
+    "translate_s": 0.0,
+    "inject_s": 0.0007363810000242665,
+    "replay_s": 0.0,
+    "video_init_s": 2.376900374656543e-05,
+    "handoff_bytes": 19437221,
+    "handoff_s": 0.0007622909979545511,
+    "past_backbone_frames": [],
+    "first_output_s": 0.032757694003521465,
+    "continuation_s": 1.4196972290010308,
+    "peak_vram_bytes": 1125529600,
+    "switch_ready_with_export_s": 0.011174793005920947
+  }
+}

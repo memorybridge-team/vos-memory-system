@@ -1,0 +1,149 @@
+{
+  "case_id": "DAVIS2017:motorbike:obj3:switch00021",
+  "dataset": "DAVIS2017",
+  "video_id": "motorbike",
+  "object_id": 3,
+  "cohort": "heldout_core",
+  "checkpoint_video": false,
+  "method": "anchor_replay_16",
+  "key": "827c2aad69a5e532286c6c22e731c172bc61c54517314937b7831ae3cadf89d8",
+  "status": "complete",
+  "origin": "executed",
+  "scores": {
+    "post_switch": {
+      "frames": 21,
+      "J": 0.8952503462383652,
+      "F": 0.9908705495506267,
+      "J_and_F": 0.943060447894496
+    },
+    "gt_visible": {
+      "frames": 21,
+      "J": 0.8952503462383652,
+      "F": 0.9908705495506267,
+      "J_and_F": 0.943060447894496
+    },
+    "gt_absent": {
+      "frames": 0,
+      "J": null,
+      "F": null,
+      "J_and_F": null
+    },
+    "checkpoints": {
+      "+1": {
+        "frame": 22,
+        "evaluated": true,
+        "annotated": true,
+        "gt_present": true,
+        "J": 0.8854645814167433,
+        "F": 0.9594594594594594,
+        "J_and_F": 0.9224620204381013
+      },
+      "+5": {
+        "frame": 26,
+        "evaluated": true,
+        "annotated": true,
+        "gt_present": true,
+        "J": 0.9148717948717948,
+        "F": 0.9853181076672104,
+        "J_and_F": 0.9500949512695026
+      },
+      "+20": {
+        "frame": 41,
+        "evaluated": true,
+        "annotated": true,
+        "gt_present": true,
+        "J": 0.8965056010700552,
+        "F": 0.9896907216494846,
+        "J_and_F": 0.9430981613597699
+      }
+    },
+    "remaining": {
+      "definition": "annotated frames with offset > +20",
+      "frames": 1,
+      "J": 0.8972579553148273,
+      "F": 1.0,
+      "J_and_F": 0.9486289776574137
+    },
+    "frame_counts": {
+      "evaluated": 21,
+      "annotated": 21,
+      "not_annotated": 0,
+      "gt_visible": 21,
+      "gt_absent": 0
+    },
+    "false_positives": {
+      "definition": "over annotated GT-absent frames: rate of frames with a non-empty prediction, and mean predicted area (void excluded) per GT-absent frame",
+      "gt_absent_frames": 0,
+      "false_positive_frames": 0,
+      "rate": null,
+      "mean_area_pixels": null,
+      "mean_area_fraction": null
+    },
+    "reappearance": {
+      "count": 0,
+      "recovered": 0,
+      "no_recovery_rate": null,
+      "mean_recovery_length": null,
+      "gt_present_at_switch": true
+    },
+    "j_parity_with_official": {
+      "frames": 21,
+      "max_abs_difference": 0.0
+    },
+    "F_unavailable_reason": null
+  },
+  "runtime": {
+    "scope": "test10_method_v1",
+    "model_load_s": 1.085443881998799,
+    "export_s": 0.0,
+    "transfer_s": 0.0,
+    "translate_s": 0.0,
+    "inject_s": 0.0,
+    "replay_s": 0.5171117210047669,
+    "video_init_s": 2.424299600534141e-05,
+    "handoff_bytes": 0,
+    "past_rgb_frames": [
+      0,
+      6,
+      7,
+      8,
+      9,
+      10,
+      11,
+      12,
+      13,
+      14,
+      15,
+      16,
+      17,
+      18,
+      19,
+      20,
+      21
+    ],
+    "handoff_s": 0.5171270609935164,
+    "past_backbone_frames": [
+      0,
+      6,
+      7,
+      8,
+      9,
+      10,
+      11,
+      12,
+      13,
+      14,
+      15,
+      16,
+      17,
+      18,
+      19,
+      20,
+      21
+    ],
+    "first_output_s": 0.5482651969941799,
+    "continuation_s": 0.6636492749967147,
+    "peak_vram_bytes": 1129190400,
+    "switch_ready_with_export_s": 0.5171513039895217
+  }
+}

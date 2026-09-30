@@ -1,0 +1,32 @@
+{
+  "case_id": "DAVIS2017:walking:obj1:switch00035",
+  "dataset": "DAVIS2017",
+  "video_id": "walking",
+  "object_id": 1,
+  "cohort": "heldout_core",
+  "checkpoint_video": false,
+  "method": "self_injection",
+  "key": "aa0f3fa6be6c04f0c55ab996912f53ddd3d5da358ea527596d43d97a321c21be",
+  "status": "complete",
+  "origin": "executed",
+  "gate_passed": true,
+  "binary_iou": 1.0,
+  "max_logit_error": 0.0,
+  "runtime": {
+    "scope": "test10_method_v1",
+    "model_load_s": 1.085443881998799,
+    "export_s": 0.011328877997584641,
+    "transfer_s": 0.0,
+    "translate_s": 0.0,
+    "inject_s": 0.0007207020025816746,
+    "replay_s": 0.0,
+    "video_init_s": 2.4410997866652906e-05,
+    "handoff_bytes": 18911891,
+    "handoff_s": 0.0007454270016751252,
+    "past_backbone_frames": [],
+    "first_output_s": 0.032489814002474304,
+    "continuation_s": 1.35467320799944,
+    "peak_vram_bytes": 1124122624,
+    "switch_ready_with_export_s": 0.012098715997126419
+  }
+}

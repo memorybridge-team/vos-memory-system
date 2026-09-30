@@ -1,0 +1,32 @@
+{
+  "case_id": "VOST:1211_cut_garlic:obj1:switch00510",
+  "dataset": "VOST",
+  "video_id": "1211_cut_garlic",
+  "object_id": 1,
+  "cohort": "heldout_extension",
+  "checkpoint_video": false,
+  "method": "self_injection",
+  "key": "996c09d18c58a758599f9165b8ae27d2a9d82fda40e174a18a3ba13bfabd4acc",
+  "status": "complete",
+  "origin": "executed",
+  "gate_passed": true,
+  "binary_iou": 1.0,
+  "max_logit_error": 0.0,
+  "runtime": {
+    "scope": "test10_method_v1",
+    "model_load_s": 1.064451628997631,
+    "export_s": 0.01490427699900465,
+    "transfer_s": 0.0,
+    "translate_s": 0.0,
+    "inject_s": 0.0011014439951395616,
+    "replay_s": 0.0,
+    "video_init_s": 2.5987996195908636e-05,
+    "handoff_bytes": 27317171,
+    "handoff_s": 0.0011290699985693209,
+    "past_backbone_frames": [],
+    "first_output_s": 0.2096890229950077,
+    "continuation_s": 2.2258420520010986,
+    "peak_vram_bytes": 1131649536,
+    "switch_ready_with_export_s": 0.01605933499376988
+  }
+}

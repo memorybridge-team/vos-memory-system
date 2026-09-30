@@ -2,6 +2,12 @@
 
 Small이 frame `t`까지 처리한 상태를 Base+에 전달해 `t+1`부터 이어 처리하는 방법을 비교한다. 결과 패키지에는 평가 harness, 선택 manifest, case별 점수 JSON, 요약 통계, 실행·비용·provenance 기록이 포함되어 있다.
 
+## 추가 영상 평가
+
+기존 결과와 겹치지 않는 영상 140개를 MOSEv2 development, LVOS v2 validation, DAVIS 2017 train, VOST validation에서 각각 35개씩 평가했다. 모두 완료됐고 self-injection gate 140/140 통과, 실패 0건, 단일 GPU 누적 시간 125.53분이었다. Direct Copy 대비 Affine의 큰 이득은 네 데이터셋에서 유지됐다. 새 MOSE 집합에서는 Affine이 Small-only보다 평균 8.68 J&F point 낮아, 원래 개발 집합의 결론을 그대로 일반화할 수 없다.
+
+선정 규칙, 방법별 결과, paired CI 및 평가 범위는 [HELDOUT_RESULTS.md](HELDOUT_RESULTS.md)와 [heldout01 요약](runs/heldout01/summary.md)을 참조한다. DAVIS는 공식 train split을 사용한 translator 기준 보조 평가이며, VOST 결과는 객체별 독립 실행의 test10 지표다. 추가 평가에서 사용한 8개 방법과 self-injection gate는 기존 통합 비교의 12개 방법 중 핵심 비교군이다.
+
 ## 결과 요약
 
 - 4시간 누적 예산 중 **157.5분** 사용. Smoke 32 cases와 full schedule 116 cases, 총 **148 cases** 완료.
@@ -28,6 +34,8 @@ Component ablation에서는 spatial-only affine이 full affine에 가까운 점�
 ## 포함 파일과 큰 산출물
 
 `runs/run01/artifacts/*.json`에는 case별 점수와 self-injection 결과가 있고 `.sha.json` sidecar는 content-addressed artifact의 hash를 보존한다. 크기가 큰 `.pt` 예측/state blob 1,924개(약 40.44 GiB)는 GitHub 저장소에 올리지 않았다. 따라서 점수·통계는 검토할 수 있지만, 이 공개 패키지만으로 binary mask/state를 복원하거나 해당 cache에서 `--resume`할 수는 없다.
+
+`runs/heldout01`에도 선정 명단, case별 점수 JSON, gate, 시간, 요약 및 provenance를 포함했다. 약 38 GiB의 state·prediction `.pt` cache와 VOST 숫자형 symlink view는 포함하지 않았다. 공개용 manifest·provenance의 절대 경로는 `${WORKSPACE_ROOT}`로 치환했으므로, 이 사본에서 바로 `--resume`할 수 없다.
 
 선택 manifest와 provenance의 로컬 절대 경로는 공개를 위해 `${WORKSPACE_ROOT}`로 치환했다. 입력 파일 SHA-256, checkpoint SHA-256, 모델·소프트웨어 정보는 유지했다. 원본 데이터, SAM 2 checkpoint, test9 translator 코드/checkpoint 및 600 fit shard는 별도 자산이며 이 폴더에 포함되지 않았다.
 

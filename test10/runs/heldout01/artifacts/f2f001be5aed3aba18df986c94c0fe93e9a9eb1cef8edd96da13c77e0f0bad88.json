@@ -1,0 +1,32 @@
+{
+  "case_id": "DAVIS2017:mallard-water:obj1:switch00039",
+  "dataset": "DAVIS2017",
+  "video_id": "mallard-water",
+  "object_id": 1,
+  "cohort": "heldout_core",
+  "checkpoint_video": false,
+  "method": "self_injection",
+  "key": "f2f001be5aed3aba18df986c94c0fe93e9a9eb1cef8edd96da13c77e0f0bad88",
+  "status": "complete",
+  "origin": "executed",
+  "gate_passed": true,
+  "binary_iou": 1.0,
+  "max_logit_error": 0.0,
+  "runtime": {
+    "scope": "test10_method_v1",
+    "model_load_s": 1.085443881998799,
+    "export_s": 0.010699097998440266,
+    "transfer_s": 0.0,
+    "translate_s": 0.0,
+    "inject_s": 0.0007477330000256188,
+    "replay_s": 0.0,
+    "video_init_s": 2.6660003641154617e-05,
+    "handoff_bytes": 21013211,
+    "handoff_s": 0.0007723710004938766,
+    "past_backbone_frames": [],
+    "first_output_s": 0.03272945500066271,
+    "continuation_s": 1.5241956309982925,
+    "peak_vram_bytes": 1124659712,
+    "switch_ready_with_export_s": 0.011498129002575297
+  }
+}

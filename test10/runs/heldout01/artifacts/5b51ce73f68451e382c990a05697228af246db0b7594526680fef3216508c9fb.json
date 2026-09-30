@@ -1,0 +1,32 @@
+{
+  "case_id": "VOST:1206_cut_mango:obj1:switch00480",
+  "dataset": "VOST",
+  "video_id": "1206_cut_mango",
+  "object_id": 1,
+  "cohort": "heldout_core",
+  "checkpoint_video": false,
+  "method": "self_injection",
+  "key": "5b51ce73f68451e382c990a05697228af246db0b7594526680fef3216508c9fb",
+  "status": "complete",
+  "origin": "executed",
+  "gate_passed": true,
+  "binary_iou": 1.0,
+  "max_logit_error": 0.0,
+  "runtime": {
+    "scope": "test10_method_v1",
+    "model_load_s": 1.085443881998799,
+    "export_s": 0.01133190299879061,
+    "transfer_s": 0.0,
+    "translate_s": 0.0,
+    "inject_s": 0.0008873269980540499,
+    "replay_s": 0.0,
+    "video_init_s": 2.647799556143582e-05,
+    "handoff_bytes": 25741181,
+    "handoff_s": 0.0009143999996013008,
+    "past_backbone_frames": [],
+    "first_output_s": 0.2250115150018246,
+    "continuation_s": 2.2956785450005555,
+    "peak_vram_bytes": 1132241920,
+    "switch_ready_with_export_s": 0.012272780993953347
+  }
+}

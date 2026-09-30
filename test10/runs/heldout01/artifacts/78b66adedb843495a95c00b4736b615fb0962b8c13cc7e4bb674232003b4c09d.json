@@ -1,0 +1,32 @@
+{
+  "case_id": "VOST:4222_peel_wire:obj1:switch00348",
+  "dataset": "VOST",
+  "video_id": "4222_peel_wire",
+  "object_id": 1,
+  "cohort": "heldout_core",
+  "checkpoint_video": false,
+  "method": "self_injection",
+  "key": "78b66adedb843495a95c00b4736b615fb0962b8c13cc7e4bb674232003b4c09d",
+  "status": "complete",
+  "origin": "executed",
+  "gate_passed": true,
+  "binary_iou": 1.0,
+  "max_logit_error": 0.0,
+  "runtime": {
+    "scope": "test10_method_v1",
+    "model_load_s": 1.085443881998799,
+    "export_s": 0.019422557001234964,
+    "transfer_s": 0.0,
+    "translate_s": 0.0,
+    "inject_s": 0.0009552219999022782,
+    "replay_s": 0.0,
+    "video_init_s": 2.5276996893808246e-05,
+    "handoff_bytes": 30994481,
+    "handoff_s": 0.0009812049975153059,
+    "past_backbone_frames": [],
+    "first_output_s": 0.18286597700353013,
+    "continuation_s": 2.9300574850058183,
+    "peak_vram_bytes": 1129367552,
+    "switch_ready_with_export_s": 0.020429038995644078
+  }
+}

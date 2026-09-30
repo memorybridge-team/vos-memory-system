@@ -1,0 +1,32 @@
+{
+  "case_id": "LVOSv2:Erx5Q6Vf:obj1:switch00001011",
+  "dataset": "LVOSv2",
+  "video_id": "Erx5Q6Vf",
+  "object_id": 1,
+  "cohort": "heldout_core",
+  "checkpoint_video": false,
+  "method": "self_injection",
+  "key": "573793777e8a3c9da46a8a4031ab776c80fc9a2d0fb86ca387990b8e55077401",
+  "status": "complete",
+  "origin": "executed",
+  "gate_passed": true,
+  "binary_iou": 1.0,
+  "max_logit_error": 0.0,
+  "runtime": {
+    "scope": "test10_method_v1",
+    "model_load_s": 1.085443881998799,
+    "export_s": 0.03942362400266575,
+    "transfer_s": 0.0,
+    "translate_s": 0.0,
+    "inject_s": 0.002667526998266112,
+    "replay_s": 0.0,
+    "video_init_s": 3.470499359536916e-05,
+    "handoff_bytes": 106642001,
+    "handoff_s": 0.0027030390047002584,
+    "past_backbone_frames": [],
+    "first_output_s": 0.21620449300098699,
+    "continuation_s": 7.98794527699647,
+    "peak_vram_bytes": 1127621632,
+    "switch_ready_with_export_s": 0.042161368000961374
+  }
+}

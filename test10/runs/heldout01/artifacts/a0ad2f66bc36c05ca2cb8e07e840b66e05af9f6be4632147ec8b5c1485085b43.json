@@ -1,0 +1,163 @@
+{
+  "case_id": "DAVIS2017:swing:obj2:switch00029",
+  "dataset": "DAVIS2017",
+  "video_id": "swing",
+  "object_id": 2,
+  "cohort": "heldout_extension",
+  "checkpoint_video": false,
+  "method": "base_native",
+  "key": "a0ad2f66bc36c05ca2cb8e07e840b66e05af9f6be4632147ec8b5c1485085b43",
+  "status": "complete",
+  "origin": "executed_or_cached_prefix",
+  "scores": {
+    "post_switch": {
+      "frames": 30,
+      "J": 0.5809227794200906,
+      "F": 0.9161672262272378,
+      "J_and_F": 0.7485450028236642
+    },
+    "gt_visible": {
+      "frames": 30,
+      "J": 0.5809227794200906,
+      "F": 0.9161672262272378,
+      "J_and_F": 0.7485450028236642
+    },
+    "gt_absent": {
+      "frames": 0,
+      "J": null,
+      "F": null,
+      "J_and_F": null
+    },
+    "checkpoints": {
+      "+1": {
+        "frame": 30,
+        "evaluated": true,
+        "annotated": true,
+        "gt_present": true,
+        "J": 0.6329607947489799,
+        "F": 0.8655761612400807,
+        "J_and_F": 0.7492684779945303
+      },
+      "+5": {
+        "frame": 34,
+        "evaluated": true,
+        "annotated": true,
+        "gt_present": true,
+        "J": 0.6640666548484311,
+        "F": 0.9257682218608214,
+        "J_and_F": 0.7949174383546262
+      },
+      "+20": {
+        "frame": 49,
+        "evaluated": true,
+        "annotated": true,
+        "gt_present": true,
+        "J": 0.499756216479766,
+        "F": 0.8838547285149226,
+        "J_and_F": 0.6918054724973444
+      }
+    },
+    "remaining": {
+      "definition": "annotated frames with offset > +20",
+      "frames": 10,
+      "J": 0.5415412213591937,
+      "F": 0.9220127000331979,
+      "J_and_F": 0.7317769606961958
+    },
+    "frame_counts": {
+      "evaluated": 30,
+      "annotated": 30,
+      "not_annotated": 0,
+      "gt_visible": 30,
+      "gt_absent": 0
+    },
+    "false_positives": {
+      "definition": "over annotated GT-absent frames: rate of frames with a non-empty prediction, and mean predicted area (void excluded) per GT-absent frame",
+      "gt_absent_frames": 0,
+      "false_positive_frames": 0,
+      "rate": null,
+      "mean_area_pixels": null,
+      "mean_area_fraction": null
+    },
+    "reappearance": {
+      "count": 0,
+      "recovered": 0,
+      "no_recovery_rate": null,
+      "mean_recovery_length": null,
+      "gt_present_at_switch": true
+    },
+    "j_parity_with_official": {
+      "frames": 30,
+      "max_abs_difference": 0.0
+    },
+    "F_unavailable_reason": null
+  },
+  "runtime": {
+    "scope": "prefix_reference",
+    "prefix_s": 0.9364728420041502,
+    "export_s": 0.011337388998072129,
+    "continuation_s": 1.122136939993652,
+    "backbone_frames": [
+      0,
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7,
+      8,
+      9,
+      10,
+      11,
+      12,
+      13,
+      14,
+      15,
+      16,
+      17,
+      18,
+      19,
+      20,
+      21,
+      22,
+      23,
+      24,
+      25,
+      26,
+      27,
+      28,
+      29,
+      30,
+      31,
+      32,
+      33,
+      34,
+      35,
+      36,
+      37,
+      38,
+      39,
+      40,
+      41,
+      42,
+      43,
+      44,
+      45,
+      46,
+      47,
+      48,
+      49,
+      50,
+      51,
+      52,
+      53,
+      54,
+      55,
+      56,
+      57,
+      58,
+      59
+    ]
+  }
+}

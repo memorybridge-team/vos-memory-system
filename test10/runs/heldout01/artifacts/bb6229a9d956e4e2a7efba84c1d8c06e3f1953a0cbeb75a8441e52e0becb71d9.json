@@ -1,0 +1,32 @@
+{
+  "case_id": "LVOSv2:UgZ759gD:obj1:switch00001416",
+  "dataset": "LVOSv2",
+  "video_id": "UgZ759gD",
+  "object_id": 1,
+  "cohort": "heldout_core",
+  "checkpoint_video": false,
+  "method": "self_injection",
+  "key": "bb6229a9d956e4e2a7efba84c1d8c06e3f1953a0cbeb75a8441e52e0becb71d9",
+  "status": "complete",
+  "origin": "executed",
+  "gate_passed": true,
+  "binary_iou": 1.0,
+  "max_logit_error": 0.0,
+  "runtime": {
+    "scope": "test10_method_v1",
+    "model_load_s": 1.085443881998799,
+    "export_s": 0.05359625400160439,
+    "transfer_s": 0.0,
+    "translate_s": 0.0,
+    "inject_s": 0.0026925519996439107,
+    "replay_s": 0.0,
+    "video_init_s": 2.8246999136172235e-05,
+    "handoff_bytes": 149193731,
+    "handoff_s": 0.0027191950066480786,
+    "past_backbone_frames": [],
+    "first_output_s": 0.28995194799790625,
+    "continuation_s": 11.602394189001643,
+    "peak_vram_bytes": 1127895552,
+    "switch_ready_with_export_s": 0.056343696007388644
+  }
+}

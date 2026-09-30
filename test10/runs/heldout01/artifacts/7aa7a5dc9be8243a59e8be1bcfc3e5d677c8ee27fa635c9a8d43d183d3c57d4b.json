@@ -1,0 +1,32 @@
+{
+  "case_id": "VOST:3161_peel_banana:obj1:switch00504",
+  "dataset": "VOST",
+  "video_id": "3161_peel_banana",
+  "object_id": 1,
+  "cohort": "heldout_core",
+  "checkpoint_video": false,
+  "method": "self_injection",
+  "key": "7aa7a5dc9be8243a59e8be1bcfc3e5d677c8ee27fa635c9a8d43d183d3c57d4b",
+  "status": "complete",
+  "origin": "executed",
+  "gate_passed": true,
+  "binary_iou": 1.0,
+  "max_logit_error": 0.0,
+  "runtime": {
+    "scope": "test10_method_v1",
+    "model_load_s": 1.085443881998799,
+    "export_s": 0.012096765996830072,
+    "transfer_s": 0.0,
+    "translate_s": 0.0,
+    "inject_s": 0.0008230099992942996,
+    "replay_s": 0.0,
+    "video_init_s": 2.5583001843187958e-05,
+    "handoff_bytes": 22589201,
+    "handoff_s": 0.000849407006171532,
+    "past_backbone_frames": [],
+    "first_output_s": 0.23641824100195663,
+    "continuation_s": 1.9234020610019797,
+    "peak_vram_bytes": 1132229632,
+    "switch_ready_with_export_s": 0.012971756004844792
+  }
+}

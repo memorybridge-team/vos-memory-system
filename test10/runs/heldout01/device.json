@@ -1,0 +1,9 @@
+{
+  "name": "NVIDIA GeForce RTX 4080 SUPER",
+  "capability": [
+    8,
+    9
+  ],
+  "torch": "2.13.0+cu130",
+  "cuda": "13.0"
+}

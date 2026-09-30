@@ -1,0 +1,32 @@
+{
+  "case_id": "LVOSv2:HYSm91eM:obj6:switch00001246",
+  "dataset": "LVOSv2",
+  "video_id": "HYSm91eM",
+  "object_id": 6,
+  "cohort": "heldout_core",
+  "checkpoint_video": false,
+  "method": "self_injection",
+  "key": "ead26a6c32a0d133d51131b321db5c7fe3ec930f69aa7de728b53ad3348cb8b9",
+  "status": "complete",
+  "origin": "executed",
+  "gate_passed": true,
+  "binary_iou": 1.0,
+  "max_logit_error": 0.0,
+  "runtime": {
+    "scope": "test10_method_v1",
+    "model_load_s": 1.085443881998799,
+    "export_s": 0.02957489000255009,
+    "transfer_s": 0.0,
+    "translate_s": 0.0,
+    "inject_s": 0.002514863997930661,
+    "replay_s": 0.0,
+    "video_init_s": 2.5655004719737917e-05,
+    "handoff_bytes": 131332511,
+    "handoff_s": 0.002541857000323944,
+    "past_backbone_frames": [],
+    "first_output_s": 0.3561668330003158,
+    "continuation_s": 10.421231497995905,
+    "peak_vram_bytes": 1130405376,
+    "switch_ready_with_export_s": 0.03214240200759377
+  }
+}

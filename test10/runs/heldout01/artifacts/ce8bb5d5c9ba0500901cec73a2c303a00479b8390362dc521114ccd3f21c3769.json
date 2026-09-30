@@ -1,0 +1,32 @@
+{
+  "case_id": "DAVIS2017:tractor-sand:obj2:switch00037",
+  "dataset": "DAVIS2017",
+  "video_id": "tractor-sand",
+  "object_id": 2,
+  "cohort": "heldout_core",
+  "checkpoint_video": false,
+  "method": "self_injection",
+  "key": "ce8bb5d5c9ba0500901cec73a2c303a00479b8390362dc521114ccd3f21c3769",
+  "status": "complete",
+  "origin": "executed",
+  "gate_passed": true,
+  "binary_iou": 1.0,
+  "max_logit_error": 0.0,
+  "runtime": {
+    "scope": "test10_method_v1",
+    "model_load_s": 1.085443881998799,
+    "export_s": 0.016130142998008523,
+    "transfer_s": 0.0,
+    "translate_s": 0.0,
+    "inject_s": 0.0007172789992182516,
+    "replay_s": 0.0,
+    "video_init_s": 2.5629000447224826e-05,
+    "handoff_bytes": 19962551,
+    "handoff_s": 0.0007400899994536303,
+    "past_backbone_frames": [],
+    "first_output_s": 0.03245073799917009,
+    "continuation_s": 1.4230662679983652,
+    "peak_vram_bytes": 1124126720,
+    "switch_ready_with_export_s": 0.016895861997909378
+  }
+}

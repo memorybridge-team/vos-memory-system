@@ -1,0 +1,32 @@
+{
+  "case_id": "LVOSv2:oWARMtpa:obj1:switch00000526",
+  "dataset": "LVOSv2",
+  "video_id": "oWARMtpa",
+  "object_id": 1,
+  "cohort": "heldout_extension",
+  "checkpoint_video": false,
+  "method": "self_injection",
+  "key": "bca03a7f844cd1df24b8618f3ca31c8ed47ef6cafa20f6ac28e105277d821c46",
+  "status": "complete",
+  "origin": "executed",
+  "gate_passed": true,
+  "binary_iou": 1.0,
+  "max_logit_error": 0.0,
+  "runtime": {
+    "scope": "test10_method_v1",
+    "model_load_s": 1.064451628997631,
+    "export_s": 0.025837029003014322,
+    "transfer_s": 0.0,
+    "translate_s": 0.0,
+    "inject_s": 0.001334343003691174,
+    "replay_s": 0.0,
+    "video_init_s": 2.5829998776316643e-05,
+    "handoff_bytes": 55684991,
+    "handoff_s": 0.0013636820003739558,
+    "past_backbone_frames": [],
+    "first_output_s": 0.12329065999801969,
+    "continuation_s": 4.182671461006976,
+    "peak_vram_bytes": 1127120384,
+    "switch_ready_with_export_s": 0.027226541002164595
+  }
+}

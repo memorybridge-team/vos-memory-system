@@ -1,0 +1,112 @@
+{
+  "case_id": "DAVIS2017:motocross-bumps:obj2:switch00029",
+  "dataset": "DAVIS2017",
+  "video_id": "motocross-bumps",
+  "object_id": 2,
+  "cohort": "heldout_core",
+  "checkpoint_video": false,
+  "method": "transformer",
+  "key": "8e2930ebc6ad4052ce61ceda775e8c72934e3f41907ad114ecee927006cece16",
+  "status": "complete",
+  "origin": "executed",
+  "scores": {
+    "post_switch": {
+      "frames": 30,
+      "J": 0.8853305008748159,
+      "F": 0.8900554714063164,
+      "J_and_F": 0.8876929861405661
+    },
+    "gt_visible": {
+      "frames": 30,
+      "J": 0.8853305008748159,
+      "F": 0.8900554714063164,
+      "J_and_F": 0.8876929861405661
+    },
+    "gt_absent": {
+      "frames": 0,
+      "J": null,
+      "F": null,
+      "J_and_F": null
+    },
+    "checkpoints": {
+      "+1": {
+        "frame": 30,
+        "evaluated": true,
+        "annotated": true,
+        "gt_present": true,
+        "J": 0.8417255702105954,
+        "F": 0.8578723537976474,
+        "J_and_F": 0.8497989620041213
+      },
+      "+5": {
+        "frame": 34,
+        "evaluated": true,
+        "annotated": true,
+        "gt_present": true,
+        "J": 0.8564167098477559,
+        "F": 0.8343052983610183,
+        "J_and_F": 0.8453610041043871
+      },
+      "+20": {
+        "frame": 49,
+        "evaluated": true,
+        "annotated": true,
+        "gt_present": true,
+        "J": 0.8949404073739305,
+        "F": 0.8845208107659432,
+        "J_and_F": 0.8897306090699368
+      }
+    },
+    "remaining": {
+      "definition": "annotated frames with offset > +20",
+      "frames": 10,
+      "J": 0.9174096748653136,
+      "F": 0.9240158269375255,
+      "J_and_F": 0.9207127509014195
+    },
+    "frame_counts": {
+      "evaluated": 30,
+      "annotated": 30,
+      "not_annotated": 0,
+      "gt_visible": 30,
+      "gt_absent": 0
+    },
+    "false_positives": {
+      "definition": "over annotated GT-absent frames: rate of frames with a non-empty prediction, and mean predicted area (void excluded) per GT-absent frame",
+      "gt_absent_frames": 0,
+      "false_positive_frames": 0,
+      "rate": null,
+      "mean_area_pixels": null,
+      "mean_area_fraction": null
+    },
+    "reappearance": {
+      "count": 0,
+      "recovered": 0,
+      "no_recovery_rate": null,
+      "mean_recovery_length": null,
+      "gt_present_at_switch": true
+    },
+    "j_parity_with_official": {
+      "frames": 30,
+      "max_abs_difference": 0.0
+    },
+    "F_unavailable_reason": null
+  },
+  "runtime": {
+    "scope": "test10_method_v1",
+    "model_load_s": 1.085443881998799,
+    "export_s": 0.0394928340028855,
+    "transfer_s": 0.001460751002014149,
+    "translate_s": 0.005322203000105219,
+    "inject_s": 0.002704554997762898,
+    "replay_s": 0.0,
+    "video_init_s": 4.496600013226271e-05,
+    "handoff_bytes": 15759911,
+    "handoff_s": 0.009527496000373503,
+    "past_backbone_frames": [],
+    "first_output_s": 0.041187918999639805,
+    "continuation_s": 0.9515259959989635,
+    "peak_vram_bytes": 1140897280,
+    "switch_ready_with_export_s": 0.04906529600339127
+  }
+}

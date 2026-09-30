@@ -1,0 +1,32 @@
+{
+  "case_id": "MOSEv2:nu73npba:obj1:switch00023",
+  "dataset": "MOSEv2",
+  "video_id": "nu73npba",
+  "object_id": 1,
+  "cohort": "heldout_core",
+  "checkpoint_video": false,
+  "method": "self_injection",
+  "key": "832879b1c6fc2dd5c21162d5f11086c046574f50fa7c9ead3eff4898c3ca2a6e",
+  "status": "complete",
+  "origin": "executed",
+  "gate_passed": true,
+  "binary_iou": 1.0,
+  "max_logit_error": 0.0,
+  "runtime": {
+    "scope": "test10_method_v1",
+    "model_load_s": 1.085443881998799,
+    "export_s": 0.01690360800421331,
+    "transfer_s": 0.0,
+    "translate_s": 0.0,
+    "inject_s": 0.0011476040017441846,
+    "replay_s": 0.0,
+    "video_init_s": 2.7856003725901246e-05,
+    "handoff_bytes": 12607931,
+    "handoff_s": 0.0011853460018755868,
+    "past_backbone_frames": [],
+    "first_output_s": 0.032954237998637836,
+    "continuation_s": 0.9795192879973911,
+    "peak_vram_bytes": 1128008704,
+    "switch_ready_with_export_s": 0.0181168100098148
+  }
+}

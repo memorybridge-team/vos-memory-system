@@ -8,11 +8,36 @@ import json
 from pathlib import Path
 import time
 import traceback
+from statistics import median
 
 from core import (ROOT, WORKSPACE, METHODS, GATE, Artifacts, read, write, digest,
                   select_smoke, freeze_schedule, verify_snapshot)
 from manifest import build, provenance, audit_legacy, imports
 from report import build_report
+
+
+def heldout_smoke(cases):
+    return [c for c in cases if c.get("cohort") == "heldout_core" and c.get("slot") in (0, 1, 2)]
+
+
+def heldout_schedule(cases, timings, remaining_seconds):
+    """Freeze equal-dataset core cases first; use time estimates only for extension."""
+    def estimate(case):
+        same = [r["seconds"] for r in timings if r["dataset"] == case["dataset"]
+                and r["length_bin"] == case["length_bin"]]
+        if not same:
+            same = [r["seconds"] for r in timings if r["dataset"] == case["dataset"]]
+        if not same: raise ValueError(f"missing smoke timing: {case['dataset']}")
+        return median(same)
+    ordered = sorted(cases, key=lambda c: (c["slot"], ("MOSEv2", "LVOSv2", "DAVIS2017", "VOST").index(c["dataset"])))
+    core = [dict(case_id=c["case_id"], estimated_seconds=estimate(c)) for c in ordered
+            if c["cohort"] == "heldout_core"]
+    extension = [dict(case_id=c["case_id"], estimated_seconds=estimate(c)) for c in ordered
+                 if c["cohort"] == "heldout_extension"]
+    # Optional work starts only when all 20 predeclared cases fit with 20% margin.
+    if sum(x["estimated_seconds"] for x in (*core, *extension)) * 1.2 <= remaining_seconds - 900:
+        return core + extension
+    return core
 
 
 def parser():
@@ -66,6 +91,12 @@ def locked_run(args):
         write(manifest_path, selection)
         write(meta_path, prov)
     if args.seed != selection["seed"]: raise ValueError("seed differs from frozen manifest")
+    verify_snapshot(selection.get("source_hashes", {}))
+    methods = tuple(selection.get("methods", METHODS))
+    if not methods or any(m not in METHODS for m in methods):
+        raise ValueError("invalid selected methods")
+    if selection.get("design") == "heldout.v1" and not {"small_only", "base_native"}.issubset(methods):
+        raise ValueError("heldout requires both native references")
     store = Artifacts(args.run_dir, prov, args.reuse_run)
     if args.report_only:
         return build_report(selection, store, args.seed)
@@ -81,11 +112,11 @@ def locked_run(args):
                 raise ValueError(f"fit/evaluation video overlap: {dataset}")
         legacy = audit_legacy(selection, prov)
         write(args.run_dir / "legacy_audit.json", legacy)
-        smoke = select_smoke(selection["cases"], args.seed)
+        smoke = heldout_smoke(selection["cases"]) if selection.get("design") == "heldout.v1" else select_smoke(selection["cases"], args.seed)
         write(args.run_dir / "smoke_selection.json", {"case_ids": [c["case_id"] for c in smoke]})
         write(args.run_dir / "audit.json", dict(fit=fit,
-            candidate_counts={d: sum(c["dataset"]==d for c in selection["cases"]) for d in ("MOSEv2","LVOSv2","DAVIS2017")},
-            missing=[{"case_id": c["case_id"], "methods": [m for m in (*METHODS,GATE) if store.load(c,m) is None]}
+            candidate_counts={d: sum(c["dataset"]==d for c in selection["cases"]) for d in dict.fromkeys(c["dataset"] for c in selection["cases"])},
+            missing=[{"case_id": c["case_id"], "methods": [m for m in (*methods,GATE) if store.load(c,m) is None]}
                      for c in selection["cases"]],
             legacy_unverified=sum(r["status"]=="unverified" for r in legacy),
             note="Legacy rows retained for historical comparison; missing past input hashes prevent verified score reuse. No training or inference performed."))
@@ -93,7 +124,7 @@ def locked_run(args):
         return
     if not (args.run_dir / "audit.json").exists(): raise ValueError("completed audit required")
     if args.stage == "full" and not (args.run_dir / "smoke_gate.json").exists():
-        raise ValueError("32-case smoke gate must pass before full")
+        raise ValueError("smoke gate must pass before full")
     clock_path = args.run_dir / "budget.json"
     budget = read(clock_path) if clock_path.exists() else {"elapsed_seconds": 0., "hours": args.budget_hours, "attempts": []}
     if budget["hours"] != args.budget_hours: raise ValueError("budget is frozen; use a new run to change it")
@@ -131,15 +162,17 @@ def locked_run(args):
                 schedule = read(schedule_path)
             else:
                 candidates = [c for c in selection["cases"] if c["case_id"] not in smoke_ids
-                              and not all(store.load(c,m) for m in (*METHODS,GATE))]
+                              and not all(store.load(c,m) for m in (*methods,GATE))]
                 # Reserve half an hour for completion/retry; never select using scores.
                 remaining = total_limit - before - (time.monotonic() - session_start) - 1800
-                schedule = freeze_schedule(candidates, timings, remaining, args.seed)
+                schedule = (heldout_schedule(candidates, timings, total_limit - before - (time.monotonic() - session_start))
+                            if selection.get("design") == "heldout.v1" else
+                            freeze_schedule(candidates, timings, remaining, args.seed))
                 write(schedule_path, schedule)
             queue = schedule
         for item in queue:
             case = by_id[item["case_id"]]
-            complete = all(store.load(case,m) for m in (*METHODS,GATE))
+            complete = all(store.load(case,m) for m in (*methods,GATE))
             if complete and (args.stage != "smoke" or store.load(case,"costs")): continue
             elapsed = before + time.monotonic() - session_start
             if elapsed >= total_limit: break
@@ -148,7 +181,7 @@ def locked_run(args):
             t = time.monotonic()
             try:
                 verify_snapshot(prov["files"])
-                result = evaluator.case(case, store, measure=args.stage=="smoke")
+                result = evaluator.case(case, store, measure=args.stage=="smoke", methods=methods)
                 timings.append(result); write(timings_path, timings)
                 budget["attempts"].append(dict(case_id=case["case_id"], status="complete", seconds=time.monotonic()-t))
                 print(json.dumps(result), flush=True)
@@ -161,7 +194,7 @@ def locked_run(args):
                 budget["elapsed_seconds"] = before + time.monotonic() - session_start
                 budget["active_since"] = time.time(); write(clock_path, budget)
         if args.stage == "smoke":
-            passed = all(all(store.load(by_id[cid],m) for m in (*METHODS,GATE,"costs")) for cid in smoke_ids)
+            passed = all(all(store.load(by_id[cid],m) for m in (*methods,GATE,"costs")) for cid in smoke_ids)
             if passed:
                 write(args.run_dir / "smoke_gate.json", {"passed": True, "cases": smoke_ids})
     finally:

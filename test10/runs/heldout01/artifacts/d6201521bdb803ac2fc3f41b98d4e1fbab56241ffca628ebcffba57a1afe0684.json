@@ -1,0 +1,32 @@
+{
+  "case_id": "LVOSv2:pyq6I5Hh:obj3:switch00000486",
+  "dataset": "LVOSv2",
+  "video_id": "pyq6I5Hh",
+  "object_id": 3,
+  "cohort": "heldout_core",
+  "checkpoint_video": false,
+  "method": "self_injection",
+  "key": "d6201521bdb803ac2fc3f41b98d4e1fbab56241ffca628ebcffba57a1afe0684",
+  "status": "complete",
+  "origin": "executed",
+  "gate_passed": true,
+  "binary_iou": 1.0,
+  "max_logit_error": 0.0,
+  "runtime": {
+    "scope": "test10_method_v1",
+    "model_load_s": 1.085443881998799,
+    "export_s": 0.015215225997962989,
+    "transfer_s": 0.0,
+    "translate_s": 0.0,
+    "inject_s": 0.0012806459999410436,
+    "replay_s": 0.0,
+    "video_init_s": 2.823399699991569e-05,
+    "handoff_bytes": 51482351,
+    "handoff_s": 0.0013041389975114726,
+    "past_backbone_frames": [],
+    "first_output_s": 0.11416088599798968,
+    "continuation_s": 3.9381767499944544,
+    "peak_vram_bytes": 1127332864,
+    "switch_ready_with_export_s": 0.016547598992474377
+  }
+}
