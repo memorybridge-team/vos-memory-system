@@ -1,0 +1,32 @@
+{
+  "case_id": "DAVIS2017:kid-football:obj2:switch00033",
+  "dataset": "DAVIS2017",
+  "video_id": "kid-football",
+  "object_id": 2,
+  "cohort": "heldout_core",
+  "checkpoint_video": false,
+  "method": "self_injection",
+  "key": "909dac0073da6a1cb2107eb3e2e6e2a4bbfacc4958fb88513caedcd2528f074f",
+  "status": "complete",
+  "origin": "executed",
+  "gate_passed": true,
+  "binary_iou": 1.0,
+  "max_logit_error": 0.0,
+  "runtime": {
+    "scope": "test10_method_v1",
+    "model_load_s": 1.085443881998799,
+    "export_s": 0.013739032001467422,
+    "transfer_s": 0.0,
+    "translate_s": 0.0,
+    "inject_s": 0.0007644710058229975,
+    "replay_s": 0.0,
+    "video_init_s": 2.4485001631546766e-05,
+    "handoff_bytes": 17861231,
+    "handoff_s": 0.0007898360054241493,
+    "past_backbone_frames": [],
+    "first_output_s": 0.03258794300199952,
+    "continuation_s": 1.2551999090064783,
+    "peak_vram_bytes": 1124098560,
+    "switch_ready_with_export_s": 0.014553353008523118
+  }
+}

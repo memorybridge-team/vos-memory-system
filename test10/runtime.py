@@ -145,7 +145,7 @@ class Evaluator:
         save_blob(store, case, name, payload)
         return payload
 
-    def case(self, case, store, *, measure=False):
+    def case(self, case, store, *, measure=False, methods=METHODS):
         started = time.perf_counter()
         verify_case(case)
         if shutil.disk_usage(store.root).free < 20 * 1024**3:
@@ -161,7 +161,7 @@ class Evaluator:
                                runtime={"scope": "prefix_reference", "prefix_s": payload["prefix_s"],
                                         "export_s": payload["export_s"], "continuation_s": payload["continuation_s"],
                                         "backbone_frames": payload["backbone_frames"]})
-            for method in (GATE, *METHODS[2:]):
+            for method in (GATE, *(m for m in methods if m not in ("small_only", "base_native"))):
                 existing = store.load(case, method)
                 if existing is not None:
                     if method == GATE and not existing.get("gate_passed"): raise RuntimeError("failed cached self-injection")
@@ -181,7 +181,7 @@ class Evaluator:
                                runtime=predictions["runtime"])
             # Cost records are fresh even if accuracy was already cached.
             if measure:
-                self.measure_case(case, frames, source, native, store)
+                self.measure_case(case, frames, source, native, store, methods=methods)
         finally:
             frames.release()
             torch.cuda.empty_cache()
@@ -249,12 +249,12 @@ class Evaluator:
             runtime["switch_ready_with_export_s"] = runtime["export_s"] + runtime["video_init_s"] + runtime["handoff_s"]
         return dict(masks=masks, hashes=hashes, runtime=runtime)
 
-    def measure_case(self, case, frames, source, native, store):
+    def measure_case(self, case, frames, source, native, store, *, methods=METHODS):
         """One common eager/warm-model protocol; preparation stays separately visible."""
         if store.load(case, "costs") is not None: return
         timings = {}
         # Encode timings include lazy RGB decode consistently; caches must start empty each method.
-        for method in METHODS:
+        for method in methods:
             frames.release()
             if method in ("small_only", "base_native"):
                 model = self.small if method == "small_only" else self.base

@@ -1,0 +1,32 @@
+{
+  "case_id": "LVOSv2:xpI7xRWN:obj1:switch00000621",
+  "dataset": "LVOSv2",
+  "video_id": "xpI7xRWN",
+  "object_id": 1,
+  "cohort": "heldout_core",
+  "checkpoint_video": false,
+  "method": "self_injection",
+  "key": "5083c3563dafacf2b7190c9149f2f7947e78da0ebd9e415d6373227e8d054339",
+  "status": "complete",
+  "origin": "executed",
+  "gate_passed": true,
+  "binary_iou": 1.0,
+  "max_logit_error": 0.0,
+  "runtime": {
+    "scope": "test10_method_v1",
+    "model_load_s": 1.085443881998799,
+    "export_s": 0.033335207001073286,
+    "transfer_s": 0.0,
+    "translate_s": 0.0,
+    "inject_s": 0.0015484629984712228,
+    "replay_s": 0.0,
+    "video_init_s": 2.5692999770399183e-05,
+    "handoff_bytes": 65666261,
+    "handoff_s": 0.0015751949977129698,
+    "past_backbone_frames": [],
+    "first_output_s": 0.17014575200300897,
+    "continuation_s": 4.9797914640003,
+    "peak_vram_bytes": 1127388160,
+    "switch_ready_with_export_s": 0.034936094998556655
+  }
+}

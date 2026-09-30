@@ -1,0 +1,32 @@
+{
+  "case_id": "DAVIS2017:motocross-bumps:obj2:switch00029",
+  "dataset": "DAVIS2017",
+  "video_id": "motocross-bumps",
+  "object_id": 2,
+  "cohort": "heldout_core",
+  "checkpoint_video": false,
+  "method": "self_injection",
+  "key": "0cbe253fbe93e4c354e1180bd4619a964961eaf44f23b44dfd2cf6049974068d",
+  "status": "complete",
+  "origin": "executed",
+  "gate_passed": true,
+  "binary_iou": 1.0,
+  "max_logit_error": 0.0,
+  "runtime": {
+    "scope": "test10_method_v1",
+    "model_load_s": 1.085443881998799,
+    "export_s": 0.021977491000143345,
+    "transfer_s": 0.0,
+    "translate_s": 0.0,
+    "inject_s": 0.0006501989992102608,
+    "replay_s": 0.0,
+    "video_init_s": 2.3910997697385028e-05,
+    "handoff_bytes": 15759911,
+    "handoff_s": 0.0006764869976905175,
+    "past_backbone_frames": [],
+    "first_output_s": 0.032291499999701045,
+    "continuation_s": 1.2033703609995428,
+    "peak_vram_bytes": 1124090368,
+    "switch_ready_with_export_s": 0.022677888995531248
+  }
+}

@@ -1,0 +1,32 @@
+{
+  "case_id": "DAVIS2017:varanus-cage:obj1:switch00033",
+  "dataset": "DAVIS2017",
+  "video_id": "varanus-cage",
+  "object_id": 1,
+  "cohort": "heldout_core",
+  "checkpoint_video": false,
+  "method": "self_injection",
+  "key": "819efd2cf760653b4b5062d8e7c58a659fbe4304cc6a0a42f945b9e87798890e",
+  "status": "complete",
+  "origin": "executed",
+  "gate_passed": true,
+  "binary_iou": 1.0,
+  "max_logit_error": 0.0,
+  "runtime": {
+    "scope": "test10_method_v1",
+    "model_load_s": 1.085443881998799,
+    "export_s": 0.011467525997431949,
+    "transfer_s": 0.0,
+    "translate_s": 0.0,
+    "inject_s": 0.0007862749989726581,
+    "replay_s": 0.0,
+    "video_init_s": 2.6502995751798153e-05,
+    "handoff_bytes": 17861231,
+    "handoff_s": 0.0008122419967548922,
+    "past_backbone_frames": [],
+    "first_output_s": 0.03291400199668715,
+    "continuation_s": 1.2676993529967149,
+    "peak_vram_bytes": 1124098560,
+    "switch_ready_with_export_s": 0.012306270989938639
+  }
+}

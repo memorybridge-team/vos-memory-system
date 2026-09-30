@@ -3,5 +3,9 @@ __pycache__/
 runs/*
 !runs/run01/
 !runs/run01/**
+!runs/heldout01/
+!runs/heldout01/**
+runs/heldout01/views/
+runs/heldout01/*.log
 *.pt
 .pytest_cache/

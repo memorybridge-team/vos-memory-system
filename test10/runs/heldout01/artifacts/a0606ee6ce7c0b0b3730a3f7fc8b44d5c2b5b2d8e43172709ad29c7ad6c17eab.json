@@ -1,0 +1,32 @@
+{
+  "case_id": "VOST:5304_unpack_broccoli:obj1:switch00264",
+  "dataset": "VOST",
+  "video_id": "5304_unpack_broccoli",
+  "object_id": 1,
+  "cohort": "heldout_core",
+  "checkpoint_video": false,
+  "method": "self_injection",
+  "key": "a0606ee6ce7c0b0b3730a3f7fc8b44d5c2b5b2d8e43172709ad29c7ad6c17eab",
+  "status": "complete",
+  "origin": "executed",
+  "gate_passed": true,
+  "binary_iou": 1.0,
+  "max_logit_error": 0.0,
+  "runtime": {
+    "scope": "test10_method_v1",
+    "model_load_s": 1.085443881998799,
+    "export_s": 0.014820192001934629,
+    "transfer_s": 0.0,
+    "translate_s": 0.0,
+    "inject_s": 0.001203724998049438,
+    "replay_s": 0.0,
+    "video_init_s": 2.765500539680943e-05,
+    "handoff_bytes": 23639861,
+    "handoff_s": 0.001232402995810844,
+    "past_backbone_frames": [],
+    "first_output_s": 0.3238592029956635,
+    "continuation_s": 2.1314293109971914,
+    "peak_vram_bytes": 1133890048,
+    "switch_ready_with_export_s": 0.016080250003142282
+  }
+}

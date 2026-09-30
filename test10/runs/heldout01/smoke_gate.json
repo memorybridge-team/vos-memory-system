@@ -1,0 +1,17 @@
+{
+  "passed": true,
+  "cases": [
+    "MOSEv2:e33cddc9:obj1:switch00016",
+    "LVOSv2:fqbAXAoT:obj1:switch00000521",
+    "DAVIS2017:tuk-tuk:obj2:switch00029",
+    "VOST:6922_split_paper:obj1:switch00228",
+    "MOSEv2:31rry8ca:obj1:switch00045",
+    "LVOSv2:UZzAPST3:obj2:switch00000661",
+    "DAVIS2017:scooter-gray:obj2:switch00037",
+    "VOST:10625_knead_dough:obj1:switch00354",
+    "MOSEv2:k0vcz0st:obj1:switch00114",
+    "LVOSv2:vjG0jbkQ:obj2:switch00002531",
+    "DAVIS2017:stroller:obj1:switch00045",
+    "VOST:5118_squeeze_bag:obj1:switch00444"
+  ]
+}

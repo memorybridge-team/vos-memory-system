@@ -1,0 +1,32 @@
+{
+  "case_id": "LVOSv2:NFbsxmYE:obj1:switch00002016",
+  "dataset": "LVOSv2",
+  "video_id": "NFbsxmYE",
+  "object_id": 1,
+  "cohort": "heldout_core",
+  "checkpoint_video": false,
+  "method": "self_injection",
+  "key": "45acbfe18bb0b88ab59630f05d686416199020765f221a98dc76e418edd8e96d",
+  "status": "complete",
+  "origin": "executed",
+  "gate_passed": true,
+  "binary_iou": 1.0,
+  "max_logit_error": 0.0,
+  "runtime": {
+    "scope": "test10_method_v1",
+    "model_load_s": 1.085443881998799,
+    "export_s": 0.049713350999809336,
+    "transfer_s": 0.0,
+    "translate_s": 0.0,
+    "inject_s": 0.0037276299990480766,
+    "replay_s": 0.0,
+    "video_init_s": 2.478399983374402e-05,
+    "handoff_bytes": 212233331,
+    "handoff_s": 0.003760941996006295,
+    "past_backbone_frames": [],
+    "first_output_s": 0.26926241500041215,
+    "continuation_s": 15.673792859000969,
+    "peak_vram_bytes": 1128322048,
+    "switch_ready_with_export_s": 0.053499076995649375
+  }
+}

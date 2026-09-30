@@ -1,0 +1,32 @@
+{
+  "case_id": "VOST:6922_split_paper:obj1:switch00228",
+  "dataset": "VOST",
+  "video_id": "6922_split_paper",
+  "object_id": 1,
+  "cohort": "heldout_core",
+  "checkpoint_video": false,
+  "method": "self_injection",
+  "key": "f4ee10ebf24498aea7bfc449f62f6be5ea3c11a4d5ff7726e18e562b278da42d",
+  "status": "complete",
+  "origin": "executed",
+  "gate_passed": true,
+  "binary_iou": 1.0,
+  "max_logit_error": 0.0,
+  "runtime": {
+    "scope": "test10_method_v1",
+    "model_load_s": 1.1970411050024268,
+    "export_s": 0.015287858997908188,
+    "transfer_s": 0.0,
+    "translate_s": 0.0,
+    "inject_s": 0.000739219001843594,
+    "replay_s": 0.0,
+    "video_init_s": 2.7848000172525644e-05,
+    "handoff_bytes": 20487881,
+    "handoff_s": 0.0007623210003657732,
+    "past_backbone_frames": [],
+    "first_output_s": 0.13085304899868788,
+    "continuation_s": 1.7452000340017548,
+    "peak_vram_bytes": 1129160704,
+    "switch_ready_with_export_s": 0.016078027998446487
+  }
+}

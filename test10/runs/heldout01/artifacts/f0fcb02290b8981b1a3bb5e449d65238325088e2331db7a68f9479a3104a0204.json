@@ -1,0 +1,32 @@
+{
+  "case_id": "VOST:3993_cut_tomato:obj1:switch00324",
+  "dataset": "VOST",
+  "video_id": "3993_cut_tomato",
+  "object_id": 1,
+  "cohort": "heldout_core",
+  "checkpoint_video": false,
+  "method": "self_injection",
+  "key": "f0fcb02290b8981b1a3bb5e449d65238325088e2331db7a68f9479a3104a0204",
+  "status": "complete",
+  "origin": "executed",
+  "gate_passed": true,
+  "binary_iou": 1.0,
+  "max_logit_error": 0.0,
+  "runtime": {
+    "scope": "test10_method_v1",
+    "model_load_s": 1.085443881998799,
+    "export_s": 0.018326657002035063,
+    "transfer_s": 0.0,
+    "translate_s": 0.0,
+    "inject_s": 0.0009713019971968606,
+    "replay_s": 0.0,
+    "video_init_s": 2.747499820543453e-05,
+    "handoff_bytes": 28893161,
+    "handoff_s": 0.0010003209972637706,
+    "past_backbone_frames": [],
+    "first_output_s": 0.15579057200375246,
+    "continuation_s": 2.4072844330003136,
+    "peak_vram_bytes": 1129359360,
+    "switch_ready_with_export_s": 0.019354452997504268
+  }
+}

@@ -1,0 +1,32 @@
+{
+  "case_id": "VOST:6503_apply_paint:obj1:switch00534",
+  "dataset": "VOST",
+  "video_id": "6503_apply_paint",
+  "object_id": 1,
+  "cohort": "heldout_core",
+  "checkpoint_video": false,
+  "method": "self_injection",
+  "key": "8e7ea680cf8a7dc3557b4cb7694435e7539a3b80f7541cdf5daa4c5ce43e2797",
+  "status": "complete",
+  "origin": "executed",
+  "gate_passed": true,
+  "binary_iou": 1.0,
+  "max_logit_error": 0.0,
+  "runtime": {
+    "scope": "test10_method_v1",
+    "model_load_s": 1.085443881998799,
+    "export_s": 0.016718184000637848,
+    "transfer_s": 0.0,
+    "translate_s": 0.0,
+    "inject_s": 0.001162656997621525,
+    "replay_s": 0.0,
+    "video_init_s": 2.573899837443605e-05,
+    "handoff_bytes": 47279711,
+    "handoff_s": 0.0011894510025740601,
+    "past_backbone_frames": [],
+    "first_output_s": 0.28880467200360727,
+    "continuation_s": 3.8036833310034126,
+    "peak_vram_bytes": 1130387456,
+    "switch_ready_with_export_s": 0.017933374001586344
+  }
+}

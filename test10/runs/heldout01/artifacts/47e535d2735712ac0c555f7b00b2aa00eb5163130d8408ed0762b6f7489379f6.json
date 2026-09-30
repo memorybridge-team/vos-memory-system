@@ -1,0 +1,32 @@
+{
+  "case_id": "VOST:4340_roll_dough:obj1:switch00366",
+  "dataset": "VOST",
+  "video_id": "4340_roll_dough",
+  "object_id": 1,
+  "cohort": "heldout_core",
+  "checkpoint_video": false,
+  "method": "self_injection",
+  "key": "47e535d2735712ac0c555f7b00b2aa00eb5163130d8408ed0762b6f7489379f6",
+  "status": "complete",
+  "origin": "executed",
+  "gate_passed": true,
+  "binary_iou": 1.0,
+  "max_logit_error": 0.0,
+  "runtime": {
+    "scope": "test10_method_v1",
+    "model_load_s": 1.085443881998799,
+    "export_s": 0.014980149993789382,
+    "transfer_s": 0.0,
+    "translate_s": 0.0,
+    "inject_s": 0.0009929840016411617,
+    "replay_s": 0.0,
+    "video_init_s": 2.6030000299215317e-05,
+    "handoff_bytes": 32570471,
+    "handoff_s": 0.001021888994728215,
+    "past_backbone_frames": [],
+    "first_output_s": 0.30196744799468433,
+    "continuation_s": 2.9604457710011047,
+    "peak_vram_bytes": 1132268544,
+    "switch_ready_with_export_s": 0.016028068988816813
+  }
+}

@@ -1,0 +1,32 @@
+{
+  "case_id": "LVOSv2:N6CONZUW:obj1:switch00002716",
+  "dataset": "LVOSv2",
+  "video_id": "N6CONZUW",
+  "object_id": 1,
+  "cohort": "heldout_core",
+  "checkpoint_video": false,
+  "method": "self_injection",
+  "key": "2e2c0c12558e4b3e6d7ed1e944b60c20833dbd12e214ec3f4830336903bf5bb7",
+  "status": "complete",
+  "origin": "executed",
+  "gate_passed": true,
+  "binary_iou": 1.0,
+  "max_logit_error": 0.0,
+  "runtime": {
+    "scope": "test10_method_v1",
+    "model_load_s": 1.085443881998799,
+    "export_s": 0.07291270700079622,
+    "transfer_s": 0.0,
+    "translate_s": 0.0,
+    "inject_s": 0.0051992470034747384,
+    "replay_s": 0.0,
+    "video_init_s": 2.592999953776598e-05,
+    "handoff_bytes": 285779531,
+    "handoff_s": 0.005227219000516925,
+    "past_backbone_frames": [],
+    "first_output_s": 0.2892995630027144,
+    "continuation_s": 21.399511030998838,
+    "peak_vram_bytes": 1128830976,
+    "switch_ready_with_export_s": 0.07816585600085091
+  }
+}

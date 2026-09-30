@@ -1,0 +1,32 @@
+{
+  "case_id": "LVOSv2:yExgitit:obj1:switch00000656",
+  "dataset": "LVOSv2",
+  "video_id": "yExgitit",
+  "object_id": 1,
+  "cohort": "heldout_core",
+  "checkpoint_video": false,
+  "method": "self_injection",
+  "key": "6439d0dd198e31081561d11075040d85e93ac05dc75d8e424adbb33bef0b9a9b",
+  "status": "complete",
+  "origin": "executed",
+  "gate_passed": true,
+  "binary_iou": 1.0,
+  "max_logit_error": 0.0,
+  "runtime": {
+    "scope": "test10_method_v1",
+    "model_load_s": 1.085443881998799,
+    "export_s": 0.01962853599980008,
+    "transfer_s": 0.0,
+    "translate_s": 0.0,
+    "inject_s": 0.0016238860043813474,
+    "replay_s": 0.0,
+    "video_init_s": 2.6093999622389674e-05,
+    "handoff_bytes": 69343571,
+    "handoff_s": 0.0016513240043423139,
+    "past_backbone_frames": [],
+    "first_output_s": 0.1580962529988028,
+    "continuation_s": 5.247032604995184,
+    "peak_vram_bytes": 1127476224,
+    "switch_ready_with_export_s": 0.021305954003764782
+  }
+}

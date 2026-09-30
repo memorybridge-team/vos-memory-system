@@ -1,0 +1,32 @@
+{
+  "case_id": "DAVIS2017:boat:obj1:switch00037",
+  "dataset": "DAVIS2017",
+  "video_id": "boat",
+  "object_id": 1,
+  "cohort": "heldout_extension",
+  "checkpoint_video": false,
+  "method": "self_injection",
+  "key": "aa458463d9b29c4f7dac7716353a5f283b532ff0649c249f008ad972a91bce06",
+  "status": "complete",
+  "origin": "executed",
+  "gate_passed": true,
+  "binary_iou": 1.0,
+  "max_logit_error": 0.0,
+  "runtime": {
+    "scope": "test10_method_v1",
+    "model_load_s": 1.064451628997631,
+    "export_s": 0.017642949002038222,
+    "transfer_s": 0.0,
+    "translate_s": 0.0,
+    "inject_s": 0.0007717090047663078,
+    "replay_s": 0.0,
+    "video_init_s": 2.4077999114524573e-05,
+    "handoff_bytes": 19962551,
+    "handoff_s": 0.0007992420069058426,
+    "past_backbone_frames": [],
+    "first_output_s": 0.0328993349976372,
+    "continuation_s": 1.6141776539952843,
+    "peak_vram_bytes": 1125531648,
+    "switch_ready_with_export_s": 0.01846626900805859
+  }
+}

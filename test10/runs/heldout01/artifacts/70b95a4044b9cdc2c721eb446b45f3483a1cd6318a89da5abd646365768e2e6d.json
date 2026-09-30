@@ -1,0 +1,32 @@
+{
+  "case_id": "VOST:4357_trim_dough:obj1:switch00138",
+  "dataset": "VOST",
+  "video_id": "4357_trim_dough",
+  "object_id": 1,
+  "cohort": "heldout_core",
+  "checkpoint_video": false,
+  "method": "self_injection",
+  "key": "70b95a4044b9cdc2c721eb446b45f3483a1cd6318a89da5abd646365768e2e6d",
+  "status": "complete",
+  "origin": "executed",
+  "gate_passed": true,
+  "binary_iou": 1.0,
+  "max_logit_error": 0.0,
+  "runtime": {
+    "scope": "test10_method_v1",
+    "model_load_s": 1.085443881998799,
+    "export_s": 0.00843589299620362,
+    "transfer_s": 0.0,
+    "translate_s": 0.0,
+    "inject_s": 0.0006942170002730563,
+    "replay_s": 0.0,
+    "video_init_s": 4.741599695989862e-05,
+    "handoff_bytes": 12607931,
+    "handoff_s": 0.0007185949943959713,
+    "past_backbone_frames": [],
+    "first_output_s": 0.12596642399876146,
+    "continuation_s": 1.1219499229991925,
+    "peak_vram_bytes": 1132190720,
+    "switch_ready_with_export_s": 0.00920190398755949
+  }
+}

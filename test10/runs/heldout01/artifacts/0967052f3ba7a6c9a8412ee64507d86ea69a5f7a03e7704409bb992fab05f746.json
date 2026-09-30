@@ -1,0 +1,32 @@
+{
+  "case_id": "LVOSv2:gYaLtvfc:obj1:switch00000586",
+  "dataset": "LVOSv2",
+  "video_id": "gYaLtvfc",
+  "object_id": 1,
+  "cohort": "heldout_core",
+  "checkpoint_video": false,
+  "method": "self_injection",
+  "key": "0967052f3ba7a6c9a8412ee64507d86ea69a5f7a03e7704409bb992fab05f746",
+  "status": "complete",
+  "origin": "executed",
+  "gate_passed": true,
+  "binary_iou": 1.0,
+  "max_logit_error": 0.0,
+  "runtime": {
+    "scope": "test10_method_v1",
+    "model_load_s": 1.085443881998799,
+    "export_s": 0.03079107699886663,
+    "transfer_s": 0.0,
+    "translate_s": 0.0,
+    "inject_s": 0.0014202579986886121,
+    "replay_s": 0.0,
+    "video_init_s": 2.9559996619354934e-05,
+    "handoff_bytes": 61988951,
+    "handoff_s": 0.0014470099995378405,
+    "past_backbone_frames": [],
+    "first_output_s": 0.14868513699912,
+    "continuation_s": 4.789564414997585,
+    "peak_vram_bytes": 1127373824,
+    "switch_ready_with_export_s": 0.032267646995023824
+  }
+}

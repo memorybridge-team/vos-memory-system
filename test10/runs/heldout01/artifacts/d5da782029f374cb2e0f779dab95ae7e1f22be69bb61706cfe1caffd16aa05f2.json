@@ -1,0 +1,32 @@
+{
+  "case_id": "MOSEv2:bd9untye:obj1:switch00059",
+  "dataset": "MOSEv2",
+  "video_id": "bd9untye",
+  "object_id": 1,
+  "cohort": "heldout_core",
+  "checkpoint_video": false,
+  "method": "self_injection",
+  "key": "d5da782029f374cb2e0f779dab95ae7e1f22be69bb61706cfe1caffd16aa05f2",
+  "status": "complete",
+  "origin": "executed",
+  "gate_passed": true,
+  "binary_iou": 1.0,
+  "max_logit_error": 0.0,
+  "runtime": {
+    "scope": "test10_method_v1",
+    "model_load_s": 1.085443881998799,
+    "export_s": 0.014990827003202867,
+    "transfer_s": 0.0,
+    "translate_s": 0.0,
+    "inject_s": 0.0009066369966603816,
+    "replay_s": 0.0,
+    "video_init_s": 2.466700243530795e-05,
+    "handoff_bytes": 31519811,
+    "handoff_s": 0.0009316510040662251,
+    "past_backbone_frames": [],
+    "first_output_s": 0.2639521529999911,
+    "continuation_s": 2.7140216109983157,
+    "peak_vram_bytes": 1132264448,
+    "switch_ready_with_export_s": 0.0159471450097044
+  }
+}

@@ -1,0 +1,32 @@
+{
+  "case_id": "DAVIS2017:dog-gooses:obj4:switch00042",
+  "dataset": "DAVIS2017",
+  "video_id": "dog-gooses",
+  "object_id": 4,
+  "cohort": "heldout_core",
+  "checkpoint_video": false,
+  "method": "self_injection",
+  "key": "2ec309ba8976ce551a897b44912210bd4dd5eaaeb125431a7436c0400dc0213b",
+  "status": "complete",
+  "origin": "executed",
+  "gate_passed": true,
+  "binary_iou": 1.0,
+  "max_logit_error": 0.0,
+  "runtime": {
+    "scope": "test10_method_v1",
+    "model_load_s": 1.085443881998799,
+    "export_s": 0.016315975997713394,
+    "transfer_s": 0.0,
+    "translate_s": 0.0,
+    "inject_s": 0.000863713001308497,
+    "replay_s": 0.0,
+    "video_init_s": 2.7369002054911107e-05,
+    "handoff_bytes": 22589201,
+    "handoff_s": 0.0008890059980330989,
+    "past_backbone_frames": [],
+    "first_output_s": 0.032729819999076426,
+    "continuation_s": 1.5947084729996277,
+    "peak_vram_bytes": 1124665856,
+    "switch_ready_with_export_s": 0.017232350997801404
+  }
+}

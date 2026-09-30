@@ -1,0 +1,32 @@
+{
+  "case_id": "DAVIS2017:dogs-scale:obj4:switch00041",
+  "dataset": "DAVIS2017",
+  "video_id": "dogs-scale",
+  "object_id": 4,
+  "cohort": "heldout_core",
+  "checkpoint_video": false,
+  "method": "self_injection",
+  "key": "a698a50d2f914019df30ca581ad3cdd568d4b3fb73f39fc19a1efa66a29ccecd",
+  "status": "complete",
+  "origin": "executed",
+  "gate_passed": true,
+  "binary_iou": 1.0,
+  "max_logit_error": 0.0,
+  "runtime": {
+    "scope": "test10_method_v1",
+    "model_load_s": 1.085443881998799,
+    "export_s": 0.05267068799730623,
+    "transfer_s": 0.0,
+    "translate_s": 0.0,
+    "inject_s": 0.0008635530030005611,
+    "replay_s": 0.0,
+    "video_init_s": 2.8696995286736637e-05,
+    "handoff_bytes": 22063871,
+    "handoff_s": 0.0008931729971664026,
+    "past_backbone_frames": [],
+    "first_output_s": 0.03310128600423923,
+    "continuation_s": 1.5869692909982405,
+    "peak_vram_bytes": 1124663808,
+    "switch_ready_with_export_s": 0.05359255798975937
+  }
+}

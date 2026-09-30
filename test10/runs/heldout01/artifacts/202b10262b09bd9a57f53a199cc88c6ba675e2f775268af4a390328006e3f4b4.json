@@ -1,0 +1,32 @@
+{
+  "case_id": "DAVIS2017:train:obj3:switch00039",
+  "dataset": "DAVIS2017",
+  "video_id": "train",
+  "object_id": 3,
+  "cohort": "heldout_core",
+  "checkpoint_video": false,
+  "method": "self_injection",
+  "key": "202b10262b09bd9a57f53a199cc88c6ba675e2f775268af4a390328006e3f4b4",
+  "status": "complete",
+  "origin": "executed",
+  "gate_passed": true,
+  "binary_iou": 1.0,
+  "max_logit_error": 0.0,
+  "runtime": {
+    "scope": "test10_method_v1",
+    "model_load_s": 1.085443881998799,
+    "export_s": 0.07877498600282706,
+    "transfer_s": 0.0,
+    "translate_s": 0.0,
+    "inject_s": 0.0008823630050756037,
+    "replay_s": 0.0,
+    "video_init_s": 2.7429996407590806e-05,
+    "handoff_bytes": 21013211,
+    "handoff_s": 0.0009151970007224008,
+    "past_backbone_frames": [],
+    "first_output_s": 0.03356060499936575,
+    "continuation_s": 1.5861200810031733,
+    "peak_vram_bytes": 1124659712,
+    "switch_ready_with_export_s": 0.07971761299995705
+  }
+}

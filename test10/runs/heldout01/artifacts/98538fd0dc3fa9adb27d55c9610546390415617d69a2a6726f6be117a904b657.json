@@ -1,0 +1,32 @@
+{
+  "case_id": "VOST:1179_cut_onion:obj1:switch00600",
+  "dataset": "VOST",
+  "video_id": "1179_cut_onion",
+  "object_id": 1,
+  "cohort": "heldout_core",
+  "checkpoint_video": false,
+  "method": "self_injection",
+  "key": "98538fd0dc3fa9adb27d55c9610546390415617d69a2a6726f6be117a904b657",
+  "status": "complete",
+  "origin": "executed",
+  "gate_passed": true,
+  "binary_iou": 1.0,
+  "max_logit_error": 0.0,
+  "runtime": {
+    "scope": "test10_method_v1",
+    "model_load_s": 1.085443881998799,
+    "export_s": 0.019625815999461338,
+    "transfer_s": 0.0,
+    "translate_s": 0.0,
+    "inject_s": 0.0009661820004112087,
+    "replay_s": 0.0,
+    "video_init_s": 2.728300023591146e-05,
+    "handoff_bytes": 32045141,
+    "handoff_s": 0.000992556000710465,
+    "past_backbone_frames": [],
+    "first_output_s": 0.287109862001671,
+    "continuation_s": 2.6764868310056045,
+    "peak_vram_bytes": 1132266496,
+    "switch_ready_with_export_s": 0.020645655000407714
+  }
+}

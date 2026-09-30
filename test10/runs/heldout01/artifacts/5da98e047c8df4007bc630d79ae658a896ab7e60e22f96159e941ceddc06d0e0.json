@@ -1,0 +1,32 @@
+{
+  "case_id": "VOST:9692_divide_dough:obj1:switch00174",
+  "dataset": "VOST",
+  "video_id": "9692_divide_dough",
+  "object_id": 1,
+  "cohort": "heldout_core",
+  "checkpoint_video": false,
+  "method": "self_injection",
+  "key": "5da98e047c8df4007bc630d79ae658a896ab7e60e22f96159e941ceddc06d0e0",
+  "status": "complete",
+  "origin": "executed",
+  "gate_passed": true,
+  "binary_iou": 1.0,
+  "max_logit_error": 0.0,
+  "runtime": {
+    "scope": "test10_method_v1",
+    "model_load_s": 1.085443881998799,
+    "export_s": 0.020151847995293792,
+    "transfer_s": 0.0,
+    "translate_s": 0.0,
+    "inject_s": 0.0006703999970341101,
+    "replay_s": 0.0,
+    "video_init_s": 2.6281006284989417e-05,
+    "handoff_bytes": 15759911,
+    "handoff_s": 0.0006938419974176213,
+    "past_backbone_frames": [],
+    "first_output_s": 0.03239464500074973,
+    "continuation_s": 1.1954118930007098,
+    "peak_vram_bytes": 1129142272,
+    "switch_ready_with_export_s": 0.020871970998996403
+  }
+}

@@ -1,0 +1,112 @@
+{
+  "case_id": "LVOSv2:x3nD3QQ9:obj1:switch00001491",
+  "dataset": "LVOSv2",
+  "video_id": "x3nD3QQ9",
+  "object_id": 1,
+  "cohort": "heldout_core",
+  "checkpoint_video": false,
+  "method": "affine",
+  "key": "fa377338a7db326c56ecb6d2baddc5ce757d0e388686a9057e8107f3042ba784",
+  "status": "complete",
+  "origin": "executed",
+  "scores": {
+    "post_switch": {
+      "frames": 298,
+      "J": 0.8002999293555604,
+      "F": 0.9530071144639952,
+      "J_and_F": 0.8766535219097777
+    },
+    "gt_visible": {
+      "frames": 298,
+      "J": 0.8002999293555604,
+      "F": 0.9530071144639952,
+      "J_and_F": 0.8766535219097777
+    },
+    "gt_absent": {
+      "frames": 0,
+      "J": null,
+      "F": null,
+      "J_and_F": null
+    },
+    "checkpoints": {
+      "+1": {
+        "frame": 299,
+        "evaluated": true,
+        "annotated": true,
+        "gt_present": true,
+        "J": 0.9008620689655172,
+        "F": 1.0,
+        "J_and_F": 0.9504310344827587
+      },
+      "+5": {
+        "frame": 303,
+        "evaluated": true,
+        "annotated": true,
+        "gt_present": true,
+        "J": 0.87409200968523,
+        "F": 1.0,
+        "J_and_F": 0.937046004842615
+      },
+      "+20": {
+        "frame": 318,
+        "evaluated": true,
+        "annotated": true,
+        "gt_present": true,
+        "J": 0.7651139742319127,
+        "F": 1.0,
+        "J_and_F": 0.8825569871159564
+      }
+    },
+    "remaining": {
+      "definition": "annotated frames with offset > +20",
+      "frames": 278,
+      "J": 0.7961930882104418,
+      "F": 0.9496263313319084,
+      "J_and_F": 0.8729097097711751
+    },
+    "frame_counts": {
+      "evaluated": 298,
+      "annotated": 298,
+      "not_annotated": 0,
+      "gt_visible": 298,
+      "gt_absent": 0
+    },
+    "false_positives": {
+      "definition": "over annotated GT-absent frames: rate of frames with a non-empty prediction, and mean predicted area (void excluded) per GT-absent frame",
+      "gt_absent_frames": 0,
+      "false_positive_frames": 0,
+      "rate": null,
+      "mean_area_pixels": null,
+      "mean_area_fraction": null
+    },
+    "reappearance": {
+      "count": 0,
+      "recovered": 0,
+      "no_recovery_rate": null,
+      "mean_recovery_length": null,
+      "gt_present_at_switch": true
+    },
+    "j_parity_with_official": {
+      "frames": 298,
+      "max_abs_difference": 0.0
+    },
+    "F_unavailable_reason": null
+  },
+  "runtime": {
+    "scope": "test10_method_v1",
+    "model_load_s": 1.085443881998799,
+    "export_s": 0.0408769739951822,
+    "transfer_s": 0.011404104996472597,
+    "translate_s": 0.04077448300085962,
+    "inject_s": 0.024584354003309272,
+    "replay_s": 0.0,
+    "video_init_s": 2.803000097628683e-05,
+    "handoff_bytes": 157073681,
+    "handoff_s": 0.07681303600111278,
+    "past_backbone_frames": [],
+    "first_output_s": 0.2866289849989698,
+    "continuation_s": 9.694573254993884,
+    "peak_vram_bytes": 1918821376,
+    "switch_ready_with_export_s": 0.11771803999727126
+  }
+}

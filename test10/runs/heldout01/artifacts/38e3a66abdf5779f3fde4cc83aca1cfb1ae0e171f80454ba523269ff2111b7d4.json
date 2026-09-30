@@ -1,0 +1,32 @@
+{
+  "case_id": "DAVIS2017:dog-agility:obj1:switch00016",
+  "dataset": "DAVIS2017",
+  "video_id": "dog-agility",
+  "object_id": 1,
+  "cohort": "heldout_core",
+  "checkpoint_video": false,
+  "method": "self_injection",
+  "key": "38e3a66abdf5779f3fde4cc83aca1cfb1ae0e171f80454ba523269ff2111b7d4",
+  "status": "complete",
+  "origin": "executed",
+  "gate_passed": true,
+  "binary_iou": 1.0,
+  "max_logit_error": 0.0,
+  "runtime": {
+    "scope": "test10_method_v1",
+    "model_load_s": 1.085443881998799,
+    "export_s": 0.014442580999457277,
+    "transfer_s": 0.0,
+    "translate_s": 0.0,
+    "inject_s": 0.0005973109946353361,
+    "replay_s": 0.0,
+    "video_init_s": 2.6672001695260406e-05,
+    "handoff_bytes": 8930621,
+    "handoff_s": 0.0006226340046850964,
+    "past_backbone_frames": [],
+    "first_output_s": 0.03316835100122262,
+    "continuation_s": 0.3035011750034755,
+    "peak_vram_bytes": 1124037632,
+    "switch_ready_with_export_s": 0.015091887005837634
+  }
+}

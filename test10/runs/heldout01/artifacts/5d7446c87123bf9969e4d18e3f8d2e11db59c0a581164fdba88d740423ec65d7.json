@@ -1,0 +1,32 @@
+{
+  "case_id": "LVOSv2:SRRojucs:obj1:switch00001326",
+  "dataset": "LVOSv2",
+  "video_id": "SRRojucs",
+  "object_id": 1,
+  "cohort": "heldout_core",
+  "checkpoint_video": false,
+  "method": "self_injection",
+  "key": "5d7446c87123bf9969e4d18e3f8d2e11db59c0a581164fdba88d740423ec65d7",
+  "status": "complete",
+  "origin": "executed",
+  "gate_passed": true,
+  "binary_iou": 1.0,
+  "max_logit_error": 0.0,
+  "runtime": {
+    "scope": "test10_method_v1",
+    "model_load_s": 1.085443881998799,
+    "export_s": 0.029940309999801684,
+    "transfer_s": 0.0,
+    "translate_s": 0.0,
+    "inject_s": 0.0027166130021214485,
+    "replay_s": 0.0,
+    "video_init_s": 3.0113005777820945e-05,
+    "handoff_bytes": 139737791,
+    "handoff_s": 0.002746411002590321,
+    "past_backbone_frames": [],
+    "first_output_s": 0.24465357599547133,
+    "continuation_s": 11.413326128000335,
+    "peak_vram_bytes": 1135154176,
+    "switch_ready_with_export_s": 0.032716834008169826
+  }
+}

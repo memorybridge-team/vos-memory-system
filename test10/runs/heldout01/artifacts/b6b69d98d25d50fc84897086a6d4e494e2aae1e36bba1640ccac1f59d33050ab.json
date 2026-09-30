@@ -1,0 +1,32 @@
+{
+  "case_id": "VOST:1184_cut_chilli:obj2:switch00480",
+  "dataset": "VOST",
+  "video_id": "1184_cut_chilli",
+  "object_id": 2,
+  "cohort": "heldout_extension",
+  "checkpoint_video": false,
+  "method": "self_injection",
+  "key": "b6b69d98d25d50fc84897086a6d4e494e2aae1e36bba1640ccac1f59d33050ab",
+  "status": "complete",
+  "origin": "executed",
+  "gate_passed": true,
+  "binary_iou": 1.0,
+  "max_logit_error": 0.0,
+  "runtime": {
+    "scope": "test10_method_v1",
+    "model_load_s": 1.064451628997631,
+    "export_s": 0.014529831998515874,
+    "transfer_s": 0.0,
+    "translate_s": 0.0,
+    "inject_s": 0.0008871949976310134,
+    "replay_s": 0.0,
+    "video_init_s": 2.5971996365115047e-05,
+    "handoff_bytes": 25741181,
+    "handoff_s": 0.0009160589979728684,
+    "past_backbone_frames": [],
+    "first_output_s": 0.226108707000094,
+    "continuation_s": 2.34798169300484,
+    "peak_vram_bytes": 1131643392,
+    "switch_ready_with_export_s": 0.015471862992853858
+  }
+}

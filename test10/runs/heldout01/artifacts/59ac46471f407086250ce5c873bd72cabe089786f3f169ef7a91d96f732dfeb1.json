@@ -1,0 +1,32 @@
+{
+  "case_id": "DAVIS2017:bmx-bumps:obj1:switch00044",
+  "dataset": "DAVIS2017",
+  "video_id": "bmx-bumps",
+  "object_id": 1,
+  "cohort": "heldout_core",
+  "checkpoint_video": false,
+  "method": "self_injection",
+  "key": "59ac46471f407086250ce5c873bd72cabe089786f3f169ef7a91d96f732dfeb1",
+  "status": "complete",
+  "origin": "executed",
+  "gate_passed": true,
+  "binary_iou": 1.0,
+  "max_logit_error": 0.0,
+  "runtime": {
+    "scope": "test10_method_v1",
+    "model_load_s": 1.085443881998799,
+    "export_s": 0.017779075998987537,
+    "transfer_s": 0.0,
+    "translate_s": 0.0,
+    "inject_s": 0.0008075320001807995,
+    "replay_s": 0.0,
+    "video_init_s": 2.4988003133330494e-05,
+    "handoff_bytes": 23639861,
+    "handoff_s": 0.0008322729991050437,
+    "past_backbone_frames": [],
+    "first_output_s": 0.0327450080003473,
+    "continuation_s": 1.7147145619965158,
+    "peak_vram_bytes": 1124669952,
+    "switch_ready_with_export_s": 0.01863633700122591
+  }
+}

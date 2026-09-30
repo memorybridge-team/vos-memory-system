@@ -1,0 +1,32 @@
+{
+  "case_id": "DAVIS2017:scooter-board:obj1:switch00045",
+  "dataset": "DAVIS2017",
+  "video_id": "scooter-board",
+  "object_id": 1,
+  "cohort": "heldout_core",
+  "checkpoint_video": false,
+  "method": "self_injection",
+  "key": "d8300dce0aec6d7fb5d726ae998c14eb55ef878c0f97fb6510494f6809113dd7",
+  "status": "complete",
+  "origin": "executed",
+  "gate_passed": true,
+  "binary_iou": 1.0,
+  "max_logit_error": 0.0,
+  "runtime": {
+    "scope": "test10_method_v1",
+    "model_load_s": 1.085443881998799,
+    "export_s": 0.08800892099679913,
+    "transfer_s": 0.0,
+    "translate_s": 0.0,
+    "inject_s": 0.0008948169997893274,
+    "replay_s": 0.0,
+    "video_init_s": 2.7042995498050004e-05,
+    "handoff_bytes": 24165191,
+    "handoff_s": 0.0009228089984389953,
+    "past_backbone_frames": [],
+    "first_output_s": 0.033179275000293273,
+    "continuation_s": 1.901010782996309,
+    "peak_vram_bytes": 1124672000,
+    "switch_ready_with_export_s": 0.08895877299073618
+  }
+}

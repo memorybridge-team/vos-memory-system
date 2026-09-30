@@ -1,0 +1,32 @@
+{
+  "case_id": "DAVIS2017:tuk-tuk:obj2:switch00029",
+  "dataset": "DAVIS2017",
+  "video_id": "tuk-tuk",
+  "object_id": 2,
+  "cohort": "heldout_core",
+  "checkpoint_video": false,
+  "method": "self_injection",
+  "key": "4aff8228a067b3ddc991f46fa76d79964964383b064b5c12532b118d813f37de",
+  "status": "complete",
+  "origin": "executed",
+  "gate_passed": true,
+  "binary_iou": 1.0,
+  "max_logit_error": 0.0,
+  "runtime": {
+    "scope": "test10_method_v1",
+    "model_load_s": 1.1970411050024268,
+    "export_s": 0.013279476999741746,
+    "transfer_s": 0.0,
+    "translate_s": 0.0,
+    "inject_s": 0.000705560996721033,
+    "replay_s": 0.0,
+    "video_init_s": 2.5885998184094205e-05,
+    "handoff_bytes": 15759911,
+    "handoff_s": 0.0007308210006158333,
+    "past_backbone_frames": [],
+    "first_output_s": 0.03255797299789265,
+    "continuation_s": 1.117502423003316,
+    "peak_vram_bytes": 1124090368,
+    "switch_ready_with_export_s": 0.014036183998541674
+  }
+}

@@ -1,0 +1,32 @@
+{
+  "case_id": "DAVIS2017:color-run:obj1:switch00041",
+  "dataset": "DAVIS2017",
+  "video_id": "color-run",
+  "object_id": 1,
+  "cohort": "heldout_core",
+  "checkpoint_video": false,
+  "method": "self_injection",
+  "key": "f76172162395f4e59bcab6fe20a1b9f33d35168993f4f453e292891f00dec073",
+  "status": "complete",
+  "origin": "executed",
+  "gate_passed": true,
+  "binary_iou": 1.0,
+  "max_logit_error": 0.0,
+  "runtime": {
+    "scope": "test10_method_v1",
+    "model_load_s": 1.085443881998799,
+    "export_s": 0.012842413001635578,
+    "transfer_s": 0.0,
+    "translate_s": 0.0,
+    "inject_s": 0.0008148029955918901,
+    "replay_s": 0.0,
+    "video_init_s": 2.571200457168743e-05,
+    "handoff_bytes": 22063871,
+    "handoff_s": 0.0008423969993600622,
+    "past_backbone_frames": [],
+    "first_output_s": 0.033267892998992465,
+    "continuation_s": 1.5575382569950307,
+    "peak_vram_bytes": 1124663808,
+    "switch_ready_with_export_s": 0.013710522005567327
+  }
+}

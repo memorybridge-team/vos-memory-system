@@ -1,0 +1,32 @@
+{
+  "case_id": "DAVIS2017:dance-jump:obj1:switch00029",
+  "dataset": "DAVIS2017",
+  "video_id": "dance-jump",
+  "object_id": 1,
+  "cohort": "heldout_core",
+  "checkpoint_video": false,
+  "method": "self_injection",
+  "key": "1784d040ed8dcb417c36d071a76fdf648128282d2776def104d511c407ea5326",
+  "status": "complete",
+  "origin": "executed",
+  "gate_passed": true,
+  "binary_iou": 1.0,
+  "max_logit_error": 0.0,
+  "runtime": {
+    "scope": "test10_method_v1",
+    "model_load_s": 1.085443881998799,
+    "export_s": 0.012798926996765658,
+    "transfer_s": 0.0,
+    "translate_s": 0.0,
+    "inject_s": 0.0007234479999169707,
+    "replay_s": 0.0,
+    "video_init_s": 2.4517998099327087e-05,
+    "handoff_bytes": 15759911,
+    "handoff_s": 0.0007501419968320988,
+    "past_backbone_frames": [],
+    "first_output_s": 0.03232905799814034,
+    "continuation_s": 1.1962811490011518,
+    "peak_vram_bytes": 1124090368,
+    "switch_ready_with_export_s": 0.013573586991697084
+  }
+}
