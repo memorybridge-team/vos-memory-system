@@ -10,6 +10,8 @@ Small이 frame `t`까지 처리한 상태를 Base+에 전달해 `t+1`부터 이�
 
 ## 결과 요약
 
+# 결과를 계산하는게 잘못되어 잇는거 같다
+
 - 4시간 누적 예산 중 **157.5분** 사용. Smoke 32 cases와 full schedule 116 cases, 총 **148 cases** 완료.
 - MOSEv2 77 cases / 77 videos, LVOSv2 41 / 40, DAVIS 2017 30 / 30. 전체 147개 고유 영상이다. 객체별 독립 실행이며 다객체 동시 추적 결과로 해석하지 않는다.
 - 13개 품질 방법 모두와 self-injection gate가 148 cases에서 완료됐고, 실패 attempt는 없다. Self-injection은 148/148 통과(logit max error 0, binary IoU 1.0).
