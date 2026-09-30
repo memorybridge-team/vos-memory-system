@@ -1,0 +1,32 @@
+{
+  "case_id": "DAVIS2017:kite-surf:obj2:switch00024",
+  "dataset": "DAVIS2017",
+  "video_id": "kite-surf",
+  "object_id": 2,
+  "cohort": "additional",
+  "checkpoint_video": false,
+  "method": "self_injection",
+  "key": "34516cd865dc5b96384a356788c01af7c1a87bb2eb67220b6b005f66e6595cc8",
+  "status": "complete",
+  "origin": "executed",
+  "gate_passed": true,
+  "binary_iou": 1.0,
+  "max_logit_error": 0.0,
+  "runtime": {
+    "scope": "test10_method_v1",
+    "model_load_s": 1.1130398880004577,
+    "export_s": 0.011038902000109374,
+    "transfer_s": 0.0,
+    "translate_s": 0.0,
+    "inject_s": 0.0006510740004159743,
+    "replay_s": 0.0,
+    "video_init_s": 2.5764999918465037e-05,
+    "handoff_bytes": 13133261,
+    "handoff_s": 0.0006751430000804248,
+    "past_backbone_frames": [],
+    "first_output_s": 0.03373537499919621,
+    "continuation_s": 0.9016944630002399,
+    "peak_vram_bytes": 1124080128,
+    "switch_ready_with_export_s": 0.011739810000108264
+  }
+}

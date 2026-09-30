@@ -1,0 +1,32 @@
+{
+  "case_id": "DAVIS2017:dogs-jump:obj2:switch00032",
+  "dataset": "DAVIS2017",
+  "video_id": "dogs-jump",
+  "object_id": 2,
+  "cohort": "additional",
+  "checkpoint_video": false,
+  "method": "self_injection",
+  "key": "97c2c7f456d95edc34dc5cf6dfd5b7e414ea933d4b573d2e7e043ac6449faff1",
+  "status": "complete",
+  "origin": "executed",
+  "gate_passed": true,
+  "binary_iou": 1.0,
+  "max_logit_error": 0.0,
+  "runtime": {
+    "scope": "test10_method_v1",
+    "model_load_s": 1.1130398880004577,
+    "export_s": 0.01485166099973867,
+    "transfer_s": 0.0,
+    "translate_s": 0.0,
+    "inject_s": 0.0006922620004843338,
+    "replay_s": 0.0,
+    "video_init_s": 2.7396999939810485e-05,
+    "handoff_bytes": 17335901,
+    "handoff_s": 0.0007147979995352216,
+    "past_backbone_frames": [],
+    "first_output_s": 0.035027928999625146,
+    "continuation_s": 1.3290578739997727,
+    "peak_vram_bytes": 1124096512,
+    "switch_ready_with_export_s": 0.015593855999213702
+  }
+}

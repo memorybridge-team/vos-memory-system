@@ -1,0 +1,32 @@
+{
+  "case_id": "LVOSv2:p9ODDmku:obj1:switch00000811",
+  "dataset": "LVOSv2",
+  "video_id": "p9ODDmku",
+  "object_id": 1,
+  "cohort": "legacy_dev",
+  "checkpoint_video": false,
+  "method": "self_injection",
+  "key": "7acce6c1754cad1756c31ad7220dfcb49e5b1cf7ad1296629d1f3fb6c3047960",
+  "status": "complete",
+  "origin": "executed",
+  "gate_passed": true,
+  "binary_iou": 1.0,
+  "max_logit_error": 0.0,
+  "runtime": {
+    "scope": "test10_method_v1",
+    "model_load_s": 1.1130398880004577,
+    "export_s": 0.031135422999795992,
+    "transfer_s": 0.0,
+    "translate_s": 0.0,
+    "inject_s": 0.0018114039994543418,
+    "replay_s": 0.0,
+    "video_init_s": 2.6390000130049884e-05,
+    "handoff_bytes": 85628801,
+    "handoff_s": 0.0018404709999231272,
+    "past_backbone_frames": [],
+    "first_output_s": 0.03383984900028736,
+    "continuation_s": 2.8674862819998452,
+    "peak_vram_bytes": 1127467008,
+    "switch_ready_with_export_s": 0.03300228399984917
+  }
+}

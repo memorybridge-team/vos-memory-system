@@ -1,0 +1,32 @@
+{
+  "case_id": "DAVIS2017:mbike-trick:obj2:switch00038",
+  "dataset": "DAVIS2017",
+  "video_id": "mbike-trick",
+  "object_id": 2,
+  "cohort": "additional",
+  "checkpoint_video": false,
+  "method": "self_injection",
+  "key": "7eff60fa9ff897c9335bb0d01b90205eb90da708cc619b9e1d86a30e54c86a92",
+  "status": "complete",
+  "origin": "executed",
+  "gate_passed": true,
+  "binary_iou": 1.0,
+  "max_logit_error": 0.0,
+  "runtime": {
+    "scope": "test10_method_v1",
+    "model_load_s": 1.1130398880004577,
+    "export_s": 0.006886975000270468,
+    "transfer_s": 0.0,
+    "translate_s": 0.0,
+    "inject_s": 0.0007523300000684685,
+    "replay_s": 0.0,
+    "video_init_s": 2.7302000489726197e-05,
+    "handoff_bytes": 20487881,
+    "handoff_s": 0.000778268000431126,
+    "past_backbone_frames": [],
+    "first_output_s": 0.03232102499987377,
+    "continuation_s": 1.467521738000869,
+    "peak_vram_bytes": 1124657664,
+    "switch_ready_with_export_s": 0.00769254500119132
+  }
+}

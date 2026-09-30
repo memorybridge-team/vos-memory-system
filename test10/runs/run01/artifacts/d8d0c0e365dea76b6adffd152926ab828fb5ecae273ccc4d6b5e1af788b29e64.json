@@ -1,0 +1,32 @@
+{
+  "case_id": "DAVIS2017:drift-straight:obj1:switch00024",
+  "dataset": "DAVIS2017",
+  "video_id": "drift-straight",
+  "object_id": 1,
+  "cohort": "additional",
+  "checkpoint_video": false,
+  "method": "self_injection",
+  "key": "d8d0c0e365dea76b6adffd152926ab828fb5ecae273ccc4d6b5e1af788b29e64",
+  "status": "complete",
+  "origin": "executed",
+  "gate_passed": true,
+  "binary_iou": 1.0,
+  "max_logit_error": 0.0,
+  "runtime": {
+    "scope": "test10_method_v1",
+    "model_load_s": 1.1130398880004577,
+    "export_s": 0.010091428999658092,
+    "transfer_s": 0.0,
+    "translate_s": 0.0,
+    "inject_s": 0.0007067599999572849,
+    "replay_s": 0.0,
+    "video_init_s": 2.9486000130418688e-05,
+    "handoff_bytes": 13133261,
+    "handoff_s": 0.0007334179999816115,
+    "past_backbone_frames": [],
+    "first_output_s": 0.032719142000132706,
+    "continuation_s": 0.9156836180000028,
+    "peak_vram_bytes": 1124080128,
+    "switch_ready_with_export_s": 0.010854332999770122
+  }
+}

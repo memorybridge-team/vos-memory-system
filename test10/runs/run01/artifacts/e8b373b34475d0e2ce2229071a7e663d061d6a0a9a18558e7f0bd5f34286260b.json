@@ -1,0 +1,32 @@
+{
+  "case_id": "DAVIS2017:motocross-jump:obj2:switch00019",
+  "dataset": "DAVIS2017",
+  "video_id": "motocross-jump",
+  "object_id": 2,
+  "cohort": "additional",
+  "checkpoint_video": false,
+  "method": "self_injection",
+  "key": "e8b373b34475d0e2ce2229071a7e663d061d6a0a9a18558e7f0bd5f34286260b",
+  "status": "complete",
+  "origin": "executed",
+  "gate_passed": true,
+  "binary_iou": 1.0,
+  "max_logit_error": 0.0,
+  "runtime": {
+    "scope": "test10_method_v1",
+    "model_load_s": 1.6623729530001583,
+    "export_s": 0.013295065999955114,
+    "transfer_s": 0.0,
+    "translate_s": 0.0,
+    "inject_s": 0.0006260899999688263,
+    "replay_s": 0.0,
+    "video_init_s": 2.5927000024239533e-05,
+    "handoff_bytes": 10506611,
+    "handoff_s": 0.0006536500004585832,
+    "past_backbone_frames": [],
+    "first_output_s": 0.03221843000028457,
+    "continuation_s": 0.7208280069999091,
+    "peak_vram_bytes": 1124043776,
+    "switch_ready_with_export_s": 0.013974643000437936
+  }
+}

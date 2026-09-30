@@ -1,0 +1,32 @@
+{
+  "case_id": "LVOSv2:wNpKciYV:obj1:switch00000996",
+  "dataset": "LVOSv2",
+  "video_id": "wNpKciYV",
+  "object_id": 1,
+  "cohort": "additional",
+  "checkpoint_video": false,
+  "method": "self_injection",
+  "key": "ab6ad3f04349b1ffa66017e8ebf30ffff1e35ee2d36ece3f4fcdf8f58f77ac6c",
+  "status": "complete",
+  "origin": "executed",
+  "gate_passed": true,
+  "binary_iou": 1.0,
+  "max_logit_error": 0.0,
+  "runtime": {
+    "scope": "test10_method_v1",
+    "model_load_s": 1.6623729530001583,
+    "export_s": 0.029759258999547455,
+    "transfer_s": 0.0,
+    "translate_s": 0.0,
+    "inject_s": 0.0020892800002911827,
+    "replay_s": 0.0,
+    "video_init_s": 2.7176000003237277e-05,
+    "handoff_bytes": 105066011,
+    "handoff_s": 0.0021158380004635546,
+    "past_backbone_frames": [],
+    "first_output_s": 0.2644374069996047,
+    "continuation_s": 7.983134715000233,
+    "peak_vram_bytes": 1127615488,
+    "switch_ready_with_export_s": 0.03190227300001425
+  }
+}

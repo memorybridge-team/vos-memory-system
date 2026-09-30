@@ -1,0 +1,32 @@
+{
+  "case_id": "DAVIS2017:goat:obj1:switch00044",
+  "dataset": "DAVIS2017",
+  "video_id": "goat",
+  "object_id": 1,
+  "cohort": "additional",
+  "checkpoint_video": false,
+  "method": "self_injection",
+  "key": "37ac6714c9ae5f41532f1f7dcd86bd6a4c3b3f57d2dbd6e5b62ad966c2346350",
+  "status": "complete",
+  "origin": "executed",
+  "gate_passed": true,
+  "binary_iou": 1.0,
+  "max_logit_error": 0.0,
+  "runtime": {
+    "scope": "test10_method_v1",
+    "model_load_s": 1.1130398880004577,
+    "export_s": 0.013739103999796498,
+    "transfer_s": 0.0,
+    "translate_s": 0.0,
+    "inject_s": 0.0009798209994187346,
+    "replay_s": 0.0,
+    "video_init_s": 2.6407999939692672e-05,
+    "handoff_bytes": 23639861,
+    "handoff_s": 0.0010049989996332442,
+    "past_backbone_frames": [],
+    "first_output_s": 0.03278791499997169,
+    "continuation_s": 1.6596501150006588,
+    "peak_vram_bytes": 1124669952,
+    "switch_ready_with_export_s": 0.014770510999369435
+  }
+}

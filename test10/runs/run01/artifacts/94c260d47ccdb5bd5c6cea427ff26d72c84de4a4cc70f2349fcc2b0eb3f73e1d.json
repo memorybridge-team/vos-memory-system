@@ -1,0 +1,32 @@
+{
+  "case_id": "DAVIS2017:shooting:obj3:switch00019",
+  "dataset": "DAVIS2017",
+  "video_id": "shooting",
+  "object_id": 3,
+  "cohort": "additional",
+  "checkpoint_video": false,
+  "method": "self_injection",
+  "key": "94c260d47ccdb5bd5c6cea427ff26d72c84de4a4cc70f2349fcc2b0eb3f73e1d",
+  "status": "complete",
+  "origin": "executed",
+  "gate_passed": true,
+  "binary_iou": 1.0,
+  "max_logit_error": 0.0,
+  "runtime": {
+    "scope": "test10_method_v1",
+    "model_load_s": 1.1130398880004577,
+    "export_s": 0.014569568000297295,
+    "transfer_s": 0.0,
+    "translate_s": 0.0,
+    "inject_s": 0.0005921789997955784,
+    "replay_s": 0.0,
+    "video_init_s": 2.6153000362683088e-05,
+    "handoff_bytes": 10506611,
+    "handoff_s": 0.0006158019996291841,
+    "past_backbone_frames": [],
+    "first_output_s": 0.03268056199976854,
+    "continuation_s": 0.7117871829996147,
+    "peak_vram_bytes": 1125085184,
+    "switch_ready_with_export_s": 0.015211523000289162
+  }
+}

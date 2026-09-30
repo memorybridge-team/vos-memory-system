@@ -1,0 +1,32 @@
+{
+  "case_id": "MOSEv2:py4gjhc7:obj1:switch00064",
+  "dataset": "MOSEv2",
+  "video_id": "py4gjhc7",
+  "object_id": 1,
+  "cohort": "additional",
+  "checkpoint_video": false,
+  "method": "self_injection",
+  "key": "4f5d8e60f34c8a407b26b6f8597763ddc4a3e8992ed4acf5cab28365a37a3c81",
+  "status": "complete",
+  "origin": "executed",
+  "gate_passed": true,
+  "binary_iou": 1.0,
+  "max_logit_error": 0.0,
+  "runtime": {
+    "scope": "test10_method_v1",
+    "model_load_s": 1.1130398880004577,
+    "export_s": 0.016428947001259075,
+    "transfer_s": 0.0,
+    "translate_s": 0.0,
+    "inject_s": 0.0013178280005377019,
+    "replay_s": 0.0,
+    "video_init_s": 3.104499955952633e-05,
+    "handoff_bytes": 34146461,
+    "handoff_s": 0.00134594900009688,
+    "past_backbone_frames": [],
+    "first_output_s": 0.22279913300008047,
+    "continuation_s": 2.80487415800053,
+    "peak_vram_bytes": 1132390400,
+    "switch_ready_with_export_s": 0.01780594100091548
+  }
+}

@@ -1,0 +1,32 @@
+{
+  "case_id": "DAVIS2017:dog:obj1:switch00029",
+  "dataset": "DAVIS2017",
+  "video_id": "dog",
+  "object_id": 1,
+  "cohort": "additional",
+  "checkpoint_video": false,
+  "method": "self_injection",
+  "key": "87adb5d1933f78fdc0832833fa033a1a33fdfa10669f20397fce2c34311ed588",
+  "status": "complete",
+  "origin": "executed",
+  "gate_passed": true,
+  "binary_iou": 1.0,
+  "max_logit_error": 0.0,
+  "runtime": {
+    "scope": "test10_method_v1",
+    "model_load_s": 1.1130398880004577,
+    "export_s": 0.013635472999339981,
+    "transfer_s": 0.0,
+    "translate_s": 0.0,
+    "inject_s": 0.0007052000000840053,
+    "replay_s": 0.0,
+    "video_init_s": 2.7537999812921043e-05,
+    "handoff_bytes": 15759911,
+    "handoff_s": 0.0007316350001929095,
+    "past_backbone_frames": [],
+    "first_output_s": 0.032807676000629726,
+    "continuation_s": 1.2299063949994888,
+    "peak_vram_bytes": 1124090368,
+    "switch_ready_with_export_s": 0.014394645999345812
+  }
+}

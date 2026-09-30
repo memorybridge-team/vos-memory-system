@@ -1,0 +1,32 @@
+{
+  "case_id": "DAVIS2017:bmx-trees:obj1:switch00039",
+  "dataset": "DAVIS2017",
+  "video_id": "bmx-trees",
+  "object_id": 1,
+  "cohort": "additional",
+  "checkpoint_video": false,
+  "method": "self_injection",
+  "key": "85f9ac7409728c2fd5e9658c43e3cd49309a0c5b97848afa1afe4fdfc4956ca6",
+  "status": "complete",
+  "origin": "executed",
+  "gate_passed": true,
+  "binary_iou": 1.0,
+  "max_logit_error": 0.0,
+  "runtime": {
+    "scope": "test10_method_v1",
+    "model_load_s": 1.1130398880004577,
+    "export_s": 0.02905745900079637,
+    "transfer_s": 0.0,
+    "translate_s": 0.0,
+    "inject_s": 0.0007620770002176869,
+    "replay_s": 0.0,
+    "video_init_s": 2.8188000214868225e-05,
+    "handoff_bytes": 21013211,
+    "handoff_s": 0.000787208000474493,
+    "past_backbone_frames": [],
+    "first_output_s": 0.03270641900053306,
+    "continuation_s": 1.4854953499998373,
+    "peak_vram_bytes": 1124659712,
+    "switch_ready_with_export_s": 0.029872855001485732
+  }
+}

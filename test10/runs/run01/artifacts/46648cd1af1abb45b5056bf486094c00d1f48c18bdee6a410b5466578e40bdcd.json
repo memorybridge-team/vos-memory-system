@@ -1,0 +1,133 @@
+{
+  "case_id": "DAVIS2017:paragliding-launch:obj2:switch00039",
+  "dataset": "DAVIS2017",
+  "video_id": "paragliding-launch",
+  "object_id": 2,
+  "cohort": "additional",
+  "checkpoint_video": false,
+  "method": "anchor_replay_8",
+  "key": "46648cd1af1abb45b5056bf486094c00d1f48c18bdee6a410b5466578e40bdcd",
+  "status": "complete",
+  "origin": "executed",
+  "scores": {
+    "post_switch": {
+      "frames": 39,
+      "J": 0.6630287206957701,
+      "F": 0.9218853794022901,
+      "J_and_F": 0.7924570500490301
+    },
+    "gt_visible": {
+      "frames": 39,
+      "J": 0.6630287206957701,
+      "F": 0.9218853794022901,
+      "J_and_F": 0.7924570500490301
+    },
+    "gt_absent": {
+      "frames": 0,
+      "J": null,
+      "F": null,
+      "J_and_F": null
+    },
+    "checkpoints": {
+      "+1": {
+        "frame": 40,
+        "evaluated": true,
+        "annotated": true,
+        "gt_present": true,
+        "J": 0.8068019943019943,
+        "F": 0.9666759985497336,
+        "J_and_F": 0.886738996425864
+      },
+      "+5": {
+        "frame": 44,
+        "evaluated": true,
+        "annotated": true,
+        "gt_present": true,
+        "J": 0.7431067961165049,
+        "F": 0.941605988026878,
+        "J_and_F": 0.8423563920716914
+      },
+      "+20": {
+        "frame": 59,
+        "evaluated": true,
+        "annotated": true,
+        "gt_present": true,
+        "J": 0.7971014492753623,
+        "F": 0.9968454258675079,
+        "J_and_F": 0.8969734375714351
+      }
+    },
+    "remaining": {
+      "definition": "annotated frames with offset > +20",
+      "frames": 19,
+      "J": 0.5677443174932665,
+      "F": 0.9066891302487956,
+      "J_and_F": 0.737216723871031
+    },
+    "frame_counts": {
+      "evaluated": 39,
+      "annotated": 39,
+      "not_annotated": 0,
+      "gt_visible": 39,
+      "gt_absent": 0
+    },
+    "false_positives": {
+      "definition": "over annotated GT-absent frames: rate of frames with a non-empty prediction, and mean predicted area (void excluded) per GT-absent frame",
+      "gt_absent_frames": 0,
+      "false_positive_frames": 0,
+      "rate": null,
+      "mean_area_pixels": null,
+      "mean_area_fraction": null
+    },
+    "reappearance": {
+      "count": 0,
+      "recovered": 0,
+      "no_recovery_rate": null,
+      "mean_recovery_length": null,
+      "gt_present_at_switch": true
+    },
+    "j_parity_with_official": {
+      "frames": 39,
+      "max_abs_difference": 0.0
+    },
+    "F_unavailable_reason": null
+  },
+  "runtime": {
+    "scope": "test10_method_v1",
+    "model_load_s": 1.1130398880004577,
+    "export_s": 0.0,
+    "transfer_s": 0.0,
+    "translate_s": 0.0,
+    "inject_s": 0.0,
+    "replay_s": 0.2652506069998708,
+    "video_init_s": 3.052000010939082e-05,
+    "handoff_bytes": 0,
+    "past_rgb_frames": [
+      0,
+      32,
+      33,
+      34,
+      35,
+      36,
+      37,
+      38,
+      39
+    ],
+    "handoff_s": 0.26526853299947106,
+    "past_backbone_frames": [
+      0,
+      32,
+      33,
+      34,
+      35,
+      36,
+      37,
+      38,
+      39
+    ],
+    "first_output_s": 0.29747122200024023,
+    "continuation_s": 1.236057238000285,
+    "peak_vram_bytes": 1129227264,
+    "switch_ready_with_export_s": 0.26529905299958045
+  }
+}
