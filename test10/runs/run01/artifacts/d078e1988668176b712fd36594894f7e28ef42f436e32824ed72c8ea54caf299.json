@@ -1,0 +1,32 @@
+{
+  "case_id": "DAVIS2017:gold-fish:obj1:switch00038",
+  "dataset": "DAVIS2017",
+  "video_id": "gold-fish",
+  "object_id": 1,
+  "cohort": "additional",
+  "checkpoint_video": false,
+  "method": "self_injection",
+  "key": "d078e1988668176b712fd36594894f7e28ef42f436e32824ed72c8ea54caf299",
+  "status": "complete",
+  "origin": "executed",
+  "gate_passed": true,
+  "binary_iou": 1.0,
+  "max_logit_error": 0.0,
+  "runtime": {
+    "scope": "test10_method_v1",
+    "model_load_s": 1.1130398880004577,
+    "export_s": 0.01579945600042265,
+    "transfer_s": 0.0,
+    "translate_s": 0.0,
+    "inject_s": 0.000737137000214716,
+    "replay_s": 0.0,
+    "video_init_s": 2.83050003417884e-05,
+    "handoff_bytes": 20487881,
+    "handoff_s": 0.0007625810003446531,
+    "past_backbone_frames": [],
+    "first_output_s": 0.03333580999969854,
+    "continuation_s": 1.4171740339997996,
+    "peak_vram_bytes": 1124128768,
+    "switch_ready_with_export_s": 0.016590342001109093
+  }
+}

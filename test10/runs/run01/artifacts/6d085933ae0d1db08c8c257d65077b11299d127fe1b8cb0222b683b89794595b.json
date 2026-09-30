@@ -1,0 +1,32 @@
+{
+  "case_id": "MOSEv2:dzfqjewm:obj1:switch00046",
+  "dataset": "MOSEv2",
+  "video_id": "dzfqjewm",
+  "object_id": 1,
+  "cohort": "additional",
+  "checkpoint_video": false,
+  "method": "self_injection",
+  "key": "6d085933ae0d1db08c8c257d65077b11299d127fe1b8cb0222b683b89794595b",
+  "status": "complete",
+  "origin": "executed",
+  "gate_passed": true,
+  "binary_iou": 1.0,
+  "max_logit_error": 0.0,
+  "runtime": {
+    "scope": "test10_method_v1",
+    "model_load_s": 1.1130398880004577,
+    "export_s": 0.13685583999995288,
+    "transfer_s": 0.0,
+    "translate_s": 0.0,
+    "inject_s": 0.0008954450004239334,
+    "replay_s": 0.0,
+    "video_init_s": 4.406300013215514e-05,
+    "handoff_bytes": 24690521,
+    "handoff_s": 0.0009205070000462001,
+    "past_backbone_frames": [],
+    "first_output_s": 0.19180441299977247,
+    "continuation_s": 2.1499201509996055,
+    "peak_vram_bytes": 1132237824,
+    "switch_ready_with_export_s": 0.13782041000013123
+  }
+}

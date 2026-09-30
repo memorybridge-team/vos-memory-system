@@ -1,0 +1,32 @@
+{
+  "case_id": "LVOSv2:ZAoBymqC:obj2:switch00000571",
+  "dataset": "LVOSv2",
+  "video_id": "ZAoBymqC",
+  "object_id": 2,
+  "cohort": "legacy_dev",
+  "checkpoint_video": true,
+  "method": "self_injection",
+  "key": "37ae51ee13ab9e2e443a0db33dd254307bdd4620941e6ab1ee8a98da6f5bf007",
+  "status": "complete",
+  "origin": "executed",
+  "gate_passed": true,
+  "binary_iou": 1.0,
+  "max_logit_error": 0.0,
+  "runtime": {
+    "scope": "test10_method_v1",
+    "model_load_s": 1.1130398880004577,
+    "export_s": 0.021593520999886096,
+    "transfer_s": 0.0,
+    "translate_s": 0.0,
+    "inject_s": 0.0013933499994891463,
+    "replay_s": 0.0,
+    "video_init_s": 3.333699896757025e-05,
+    "handoff_bytes": 60412961,
+    "handoff_s": 0.0014236030001484323,
+    "past_backbone_frames": [],
+    "first_output_s": 0.26353571499930695,
+    "continuation_s": 13.684831593000126,
+    "peak_vram_bytes": 1127644160,
+    "switch_ready_with_export_s": 0.023050460999002098
+  }
+}

@@ -1,0 +1,32 @@
+{
+  "case_id": "MOSEv2:mdgbt5ti:obj1:switch00024",
+  "dataset": "MOSEv2",
+  "video_id": "mdgbt5ti",
+  "object_id": 1,
+  "cohort": "additional",
+  "checkpoint_video": false,
+  "method": "self_injection",
+  "key": "0bd04154eec35d615d3b83e927c112668b64fc4256016b65ebd41d857361f47e",
+  "status": "complete",
+  "origin": "executed",
+  "gate_passed": true,
+  "binary_iou": 1.0,
+  "max_logit_error": 0.0,
+  "runtime": {
+    "scope": "test10_method_v1",
+    "model_load_s": 1.1130398880004577,
+    "export_s": 0.012509735999628901,
+    "transfer_s": 0.0,
+    "translate_s": 0.0,
+    "inject_s": 0.0007972060002430226,
+    "replay_s": 0.0,
+    "video_init_s": 3.232600010960596e-05,
+    "handoff_bytes": 13133261,
+    "handoff_s": 0.0008309090007969644,
+    "past_backbone_frames": [],
+    "first_output_s": 0.13039966900032596,
+    "continuation_s": 1.1516278859999147,
+    "peak_vram_bytes": 1131290624,
+    "switch_ready_with_export_s": 0.013372971000535472
+  }
+}

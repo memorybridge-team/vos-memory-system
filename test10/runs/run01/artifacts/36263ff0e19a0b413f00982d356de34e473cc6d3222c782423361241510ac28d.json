@@ -1,0 +1,32 @@
+{
+  "case_id": "MOSEv2:hlore8i0:obj1:switch00037",
+  "dataset": "MOSEv2",
+  "video_id": "hlore8i0",
+  "object_id": 1,
+  "cohort": "additional",
+  "checkpoint_video": false,
+  "method": "self_injection",
+  "key": "36263ff0e19a0b413f00982d356de34e473cc6d3222c782423361241510ac28d",
+  "status": "complete",
+  "origin": "executed",
+  "gate_passed": true,
+  "binary_iou": 1.0,
+  "max_logit_error": 0.0,
+  "runtime": {
+    "scope": "test10_method_v1",
+    "model_load_s": 1.1130398880004577,
+    "export_s": 0.012376914000014949,
+    "transfer_s": 0.0,
+    "translate_s": 0.0,
+    "inject_s": 0.0008590059997004573,
+    "replay_s": 0.0,
+    "video_init_s": 2.8108999686082825e-05,
+    "handoff_bytes": 19962551,
+    "handoff_s": 0.0008854710004015942,
+    "past_backbone_frames": [],
+    "first_output_s": 0.20825223599968012,
+    "continuation_s": 1.7879238440000336,
+    "peak_vram_bytes": 1132219392,
+    "switch_ready_with_export_s": 0.013290494000102626
+  }
+}

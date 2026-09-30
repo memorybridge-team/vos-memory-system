@@ -1,0 +1,32 @@
+{
+  "case_id": "LVOSv2:BgauSgBo:obj1:switch00000636",
+  "dataset": "LVOSv2",
+  "video_id": "BgauSgBo",
+  "object_id": 1,
+  "cohort": "legacy_dev",
+  "checkpoint_video": false,
+  "method": "self_injection",
+  "key": "1172df1d4fa990acd2c5f85841a038de4f6fb239d571474e2ad7bf6ecf34134a",
+  "status": "complete",
+  "origin": "executed",
+  "gate_passed": true,
+  "binary_iou": 1.0,
+  "max_logit_error": 0.0,
+  "runtime": {
+    "scope": "test10_method_v1",
+    "model_load_s": 1.1130398880004577,
+    "export_s": 0.020240423000359442,
+    "transfer_s": 0.0,
+    "translate_s": 0.0,
+    "inject_s": 0.0016394220001529902,
+    "replay_s": 0.0,
+    "video_init_s": 3.539400040608598e-05,
+    "handoff_bytes": 67242251,
+    "handoff_s": 0.0016696949996912736,
+    "past_backbone_frames": [],
+    "first_output_s": 0.26416343199980474,
+    "continuation_s": 16.808575111999744,
+    "peak_vram_bytes": 1135038464,
+    "switch_ready_with_export_s": 0.0219455120004568
+  }
+}

@@ -1,0 +1,1038 @@
+[
+  {
+    "case_id": "MOSEv2:a97wplik:obj3:switch00044",
+    "dataset": "MOSEv2",
+    "length_bin": 2,
+    "seconds": 62.240987217999646,
+    "decode_s": 5.087988287001735
+  },
+  {
+    "case_id": "MOSEv2:f521e3c5:obj1:switch00102",
+    "dataset": "MOSEv2",
+    "length_bin": 2,
+    "seconds": 103.3433377399997,
+    "decode_s": 7.028283678006119
+  },
+  {
+    "case_id": "MOSEv2:qjrm0hmj:obj2:switch00037",
+    "dataset": "MOSEv2",
+    "length_bin": 1,
+    "seconds": 44.97993698099981,
+    "decode_s": 3.6938341990030494
+  },
+  {
+    "case_id": "MOSEv2:cb43141c:obj1:switch00037",
+    "dataset": "MOSEv2",
+    "length_bin": 1,
+    "seconds": 58.70399681800018,
+    "decode_s": 3.798489994999727
+  },
+  {
+    "case_id": "MOSEv2:hvezqwwt:obj2:switch00016",
+    "dataset": "MOSEv2",
+    "length_bin": 1,
+    "seconds": 41.33193545799986,
+    "decode_s": 2.4457888379970427
+  },
+  {
+    "case_id": "MOSEv2:c4f4b2e2:obj1:switch00094",
+    "dataset": "MOSEv2",
+    "length_bin": 2,
+    "seconds": 107.83945143499977,
+    "decode_s": 6.962313644000005
+  },
+  {
+    "case_id": "MOSEv2:06z6pse9:obj1:switch00016",
+    "dataset": "MOSEv2",
+    "length_bin": 0,
+    "seconds": 39.5444561700001,
+    "decode_s": 2.3643221540019113
+  },
+  {
+    "case_id": "MOSEv2:lcahr62n:obj1:switch00036",
+    "dataset": "MOSEv2",
+    "length_bin": 1,
+    "seconds": 49.09732129200029,
+    "decode_s": 4.108209335000993
+  },
+  {
+    "case_id": "MOSEv2:835yqn5l:obj1:switch00020",
+    "dataset": "MOSEv2",
+    "length_bin": 0,
+    "seconds": 25.664596633999736,
+    "decode_s": 2.189201795002191
+  },
+  {
+    "case_id": "MOSEv2:yacy9bmp:obj1:switch00037",
+    "dataset": "MOSEv2",
+    "length_bin": 1,
+    "seconds": 28.82353038300016,
+    "decode_s": 2.466018077998797
+  },
+  {
+    "case_id": "MOSEv2:olqepuhs:obj1:switch00080",
+    "dataset": "MOSEv2",
+    "length_bin": 2,
+    "seconds": 95.65547339600016,
+    "decode_s": 6.206785554000817
+  },
+  {
+    "case_id": "MOSEv2:b1affe79:obj3:switch00017",
+    "dataset": "MOSEv2",
+    "length_bin": 0,
+    "seconds": 22.12269335400015,
+    "decode_s": 2.0521404240002994
+  },
+  {
+    "case_id": "LVOSv2:ZuyXFCZJ:obj1:switch00000466",
+    "dataset": "LVOSv2",
+    "length_bin": 0,
+    "seconds": 119.97501452999995,
+    "decode_s": 8.61081396300142
+  },
+  {
+    "case_id": "LVOSv2:e8ZastUS:obj2:switch00000681",
+    "dataset": "LVOSv2",
+    "length_bin": 1,
+    "seconds": 162.0774664810001,
+    "decode_s": 9.851780739000787
+  },
+  {
+    "case_id": "LVOSv2:vTNjzGIv:obj1:switch00001246",
+    "dataset": "LVOSv2",
+    "length_bin": 2,
+    "seconds": 177.85526341000013,
+    "decode_s": 14.11933393799427
+  },
+  {
+    "case_id": "LVOSv2:MsFLU2QO:obj1:switch00000451",
+    "dataset": "LVOSv2",
+    "length_bin": 0,
+    "seconds": 106.5677566899999,
+    "decode_s": 7.118323589995725
+  },
+  {
+    "case_id": "LVOSv2:gNEnC0uf:obj2:switch00000586",
+    "dataset": "LVOSv2",
+    "length_bin": 1,
+    "seconds": 83.5166572940002,
+    "decode_s": 6.424127746003705
+  },
+  {
+    "case_id": "LVOSv2:2OH7R3w2:obj1:switch00002896",
+    "dataset": "LVOSv2",
+    "length_bin": 2,
+    "seconds": 413.5094498440003,
+    "decode_s": 30.459176155005025
+  },
+  {
+    "case_id": "LVOSv2:LsNZS2oc:obj1:switch00000496",
+    "dataset": "LVOSv2",
+    "length_bin": 0,
+    "seconds": 70.98891267699992,
+    "decode_s": 5.391611787992133
+  },
+  {
+    "case_id": "LVOSv2:65DBEapy:obj1:switch00000826",
+    "dataset": "LVOSv2",
+    "length_bin": 1,
+    "seconds": 117.43723142300041,
+    "decode_s": 8.378512619001413
+  },
+  {
+    "case_id": "LVOSv2:wNpKciYV:obj1:switch00000996",
+    "dataset": "LVOSv2",
+    "length_bin": 2,
+    "seconds": 141.83692587199948,
+    "decode_s": 10.416771125015657
+  },
+  {
+    "case_id": "LVOSv2:dACzAsy1:obj1:switch00000511",
+    "dataset": "LVOSv2",
+    "length_bin": 0,
+    "seconds": 72.7491692829999,
+    "decode_s": 5.447656046998418
+  },
+  {
+    "case_id": "LVOSv2:R9vNG4Ho:obj2:switch00000971",
+    "dataset": "LVOSv2",
+    "length_bin": 1,
+    "seconds": 73.81742656499955,
+    "decode_s": 8.331945995009846
+  },
+  {
+    "case_id": "LVOSv2:9LwiOrnw:obj1:switch00001566",
+    "dataset": "LVOSv2",
+    "length_bin": 2,
+    "seconds": 220.0131867930004,
+    "decode_s": 16.351407113003916
+  },
+  {
+    "case_id": "DAVIS2017:libby:obj1:switch00023",
+    "dataset": "DAVIS2017",
+    "length_bin": 0,
+    "seconds": 16.71713171400006,
+    "decode_s": 1.2156550289964798
+  },
+  {
+    "case_id": "DAVIS2017:drift-chicane:obj1:switch00025",
+    "dataset": "DAVIS2017",
+    "length_bin": 1,
+    "seconds": 17.398193041000013,
+    "decode_s": 1.2660440109993942
+  },
+  {
+    "case_id": "DAVIS2017:camel:obj1:switch00044",
+    "dataset": "DAVIS2017",
+    "length_bin": 2,
+    "seconds": 28.900286996999967,
+    "decode_s": 2.0124161370058573
+  },
+  {
+    "case_id": "DAVIS2017:motocross-jump:obj2:switch00019",
+    "dataset": "DAVIS2017",
+    "length_bin": 0,
+    "seconds": 13.853988358000606,
+    "decode_s": 1.0425354010030787
+  },
+  {
+    "case_id": "DAVIS2017:loading:obj3:switch00024",
+    "dataset": "DAVIS2017",
+    "length_bin": 1,
+    "seconds": 16.792014917000415,
+    "decode_s": 1.249088402999405
+  },
+  {
+    "case_id": "DAVIS2017:soapbox:obj3:switch00048",
+    "dataset": "DAVIS2017",
+    "length_bin": 2,
+    "seconds": 31.469979851999597,
+    "decode_s": 2.0724851090099037
+  },
+  {
+    "case_id": "DAVIS2017:blackswan:obj1:switch00024",
+    "dataset": "DAVIS2017",
+    "length_bin": 0,
+    "seconds": 16.783601694000026,
+    "decode_s": 1.243047326004671
+  },
+  {
+    "case_id": "DAVIS2017:pigs:obj3:switch00038",
+    "dataset": "DAVIS2017",
+    "length_bin": 1,
+    "seconds": 25.516273846999866,
+    "decode_s": 1.7597726580079325
+  },
+  {
+    "case_id": "MOSEv2:mdgbt5ti:obj1:switch00024",
+    "dataset": "MOSEv2",
+    "length_bin": 0,
+    "seconds": 28.192606261000037,
+    "decode_s": 0.9262646500010305
+  },
+  {
+    "case_id": "LVOSv2:AkYUZzQY:obj1:switch00000586",
+    "dataset": "LVOSv2",
+    "length_bin": 0,
+    "seconds": 76.04332054499992,
+    "decode_s": 2.849914995002109
+  },
+  {
+    "case_id": "DAVIS2017:judo:obj1:switch00016",
+    "dataset": "DAVIS2017",
+    "length_bin": 0,
+    "seconds": 9.74943355599953,
+    "decode_s": 0.35483150700019905
+  },
+  {
+    "case_id": "MOSEv2:hlore8i0:obj1:switch00037",
+    "dataset": "MOSEv2",
+    "length_bin": 1,
+    "seconds": 42.66661254900009,
+    "decode_s": 1.2933086759994694
+  },
+  {
+    "case_id": "DAVIS2017:bike-packing:obj2:switch00033",
+    "dataset": "DAVIS2017",
+    "length_bin": 1,
+    "seconds": 19.924729889000446,
+    "decode_s": 0.69346462699923
+  },
+  {
+    "case_id": "DAVIS2017:goat:obj1:switch00044",
+    "dataset": "DAVIS2017",
+    "length_bin": 2,
+    "seconds": 24.70509380399926,
+    "decode_s": 0.8989288050015602
+  },
+  {
+    "case_id": "MOSEv2:lxgx30qb:obj1:switch00049",
+    "dataset": "MOSEv2",
+    "length_bin": 2,
+    "seconds": 56.797488479000094,
+    "decode_s": 1.7520285429955038
+  },
+  {
+    "case_id": "LVOSv2:rVUvkzxF:obj1:switch00001081",
+    "dataset": "LVOSv2",
+    "length_bin": 2,
+    "seconds": 141.90975798099953,
+    "decode_s": 5.563533931992424
+  },
+  {
+    "case_id": "DAVIS2017:drift-straight:obj1:switch00024",
+    "dataset": "DAVIS2017",
+    "length_bin": 0,
+    "seconds": 14.182579122999414,
+    "decode_s": 0.49578806499812345
+  },
+  {
+    "case_id": "DAVIS2017:gold-fish:obj1:switch00038",
+    "dataset": "DAVIS2017",
+    "length_bin": 1,
+    "seconds": 21.514843187000224,
+    "decode_s": 0.8052478020008493
+  },
+  {
+    "case_id": "MOSEv2:0d6e7177:obj1:switch00021",
+    "dataset": "MOSEv2",
+    "length_bin": 0,
+    "seconds": 12.031362628000352,
+    "decode_s": 0.31846754400066857
+  },
+  {
+    "case_id": "MOSEv2:m98296ym:obj1:switch00026",
+    "dataset": "MOSEv2",
+    "length_bin": 1,
+    "seconds": 28.904454962000273,
+    "decode_s": 0.8673391939964858
+  },
+  {
+    "case_id": "DAVIS2017:dance-twirl:obj1:switch00044",
+    "dataset": "DAVIS2017",
+    "length_bin": 2,
+    "seconds": 24.71081139099988,
+    "decode_s": 0.9124097989988513
+  },
+  {
+    "case_id": "MOSEv2:obgqwd81:obj1:switch00054",
+    "dataset": "MOSEv2",
+    "length_bin": 2,
+    "seconds": 61.87143060700055,
+    "decode_s": 2.0556923129979623
+  },
+  {
+    "case_id": "DAVIS2017:horsejump-high:obj1:switch00024",
+    "dataset": "DAVIS2017",
+    "length_bin": 0,
+    "seconds": 14.159875819999797,
+    "decode_s": 0.5132093400006852
+  },
+  {
+    "case_id": "LVOSv2:WvSWrMd5:obj2:switch00000531",
+    "dataset": "LVOSv2",
+    "length_bin": 0,
+    "seconds": 77.98076289200071,
+    "decode_s": 3.1221017909911097
+  },
+  {
+    "case_id": "DAVIS2017:dog:obj1:switch00029",
+    "dataset": "DAVIS2017",
+    "length_bin": 1,
+    "seconds": 16.873055944000043,
+    "decode_s": 0.5808428750005987
+  },
+  {
+    "case_id": "DAVIS2017:cows:obj1:switch00051",
+    "dataset": "DAVIS2017",
+    "length_bin": 2,
+    "seconds": 28.408584124999834,
+    "decode_s": 1.0674799739990704
+  },
+  {
+    "case_id": "MOSEv2:52a04667:obj1:switch00016",
+    "dataset": "MOSEv2",
+    "length_bin": 0,
+    "seconds": 6.866674642000362,
+    "decode_s": 0.2858508219987925
+  },
+  {
+    "case_id": "MOSEv2:b2f4d608:obj1:switch00033",
+    "dataset": "MOSEv2",
+    "length_bin": 1,
+    "seconds": 23.483820013000695,
+    "decode_s": 0.8853223650012296
+  },
+  {
+    "case_id": "LVOSv2:mQVrNiUG:obj1:switch00000811",
+    "dataset": "LVOSv2",
+    "length_bin": 1,
+    "seconds": 85.68144621699957,
+    "decode_s": 3.9518917810109997
+  },
+  {
+    "case_id": "DAVIS2017:car-shadow:obj1:switch00019",
+    "dataset": "DAVIS2017",
+    "length_bin": 0,
+    "seconds": 11.469734342000265,
+    "decode_s": 0.3784691299988481
+  },
+  {
+    "case_id": "MOSEv2:dzfqjewm:obj1:switch00046",
+    "dataset": "MOSEv2",
+    "length_bin": 2,
+    "seconds": 51.62645895800051,
+    "decode_s": 1.5848158419976244
+  },
+  {
+    "case_id": "DAVIS2017:kite-surf:obj2:switch00024",
+    "dataset": "DAVIS2017",
+    "length_bin": 1,
+    "seconds": 14.004491788999985,
+    "decode_s": 0.47812977799731016
+  },
+  {
+    "case_id": "DAVIS2017:breakdance:obj1:switch00041",
+    "dataset": "DAVIS2017",
+    "length_bin": 2,
+    "seconds": 23.033304612999927,
+    "decode_s": 0.8452539340014482
+  },
+  {
+    "case_id": "LVOSv2:nnMpIxAy:obj1:switch00001801",
+    "dataset": "LVOSv2",
+    "length_bin": 2,
+    "seconds": 103.55866272799994,
+    "decode_s": 6.842914530012422
+  },
+  {
+    "case_id": "MOSEv2:owh1u5as:obj1:switch00024",
+    "dataset": "MOSEv2",
+    "length_bin": 0,
+    "seconds": 29.293899077000788,
+    "decode_s": 1.055720658003338
+  },
+  {
+    "case_id": "DAVIS2017:scooter-black:obj2:switch00020",
+    "dataset": "DAVIS2017",
+    "length_bin": 0,
+    "seconds": 12.32838103800077,
+    "decode_s": 0.4398495249970438
+  },
+  {
+    "case_id": "MOSEv2:29cffe2f:obj1:switch00038",
+    "dataset": "MOSEv2",
+    "length_bin": 1,
+    "seconds": 39.359621868999966,
+    "decode_s": 1.1619010810045438
+  },
+  {
+    "case_id": "DAVIS2017:car-roundabout:obj1:switch00036",
+    "dataset": "DAVIS2017",
+    "length_bin": 1,
+    "seconds": 21.083292909999727,
+    "decode_s": 0.7822248869961186
+  },
+  {
+    "case_id": "MOSEv2:ee059f99:obj1:switch00120",
+    "dataset": "MOSEv2",
+    "length_bin": 2,
+    "seconds": 127.0828533140002,
+    "decode_s": 4.224623588998838
+  },
+  {
+    "case_id": "DAVIS2017:bmx-trees:obj1:switch00039",
+    "dataset": "DAVIS2017",
+    "length_bin": 2,
+    "seconds": 22.23440008899979,
+    "decode_s": 0.7138141099994755
+  },
+  {
+    "case_id": "DAVIS2017:lab-coat:obj3:switch00022",
+    "dataset": "DAVIS2017",
+    "length_bin": 0,
+    "seconds": 13.334695403000296,
+    "decode_s": 0.3975521469983505
+  },
+  {
+    "case_id": "DAVIS2017:dogs-jump:obj2:switch00032",
+    "dataset": "DAVIS2017",
+    "length_bin": 1,
+    "seconds": 18.268810623000718,
+    "decode_s": 0.5679473990039696
+  },
+  {
+    "case_id": "LVOSv2:R2u4FZQg:obj1:switch00000546",
+    "dataset": "LVOSv2",
+    "length_bin": 0,
+    "seconds": 78.65812105299938,
+    "decode_s": 2.9846767679982804
+  },
+  {
+    "case_id": "MOSEv2:debe4249:obj1:switch00019",
+    "dataset": "MOSEv2",
+    "length_bin": 0,
+    "seconds": 10.915057791000436,
+    "decode_s": 0.2863027420034996
+  },
+  {
+    "case_id": "MOSEv2:7k0ragb5:obj1:switch00041",
+    "dataset": "MOSEv2",
+    "length_bin": 1,
+    "seconds": 45.41555982099999,
+    "decode_s": 1.3504752550061312
+  },
+  {
+    "case_id": "DAVIS2017:india:obj2:switch00039",
+    "dataset": "DAVIS2017",
+    "length_bin": 2,
+    "seconds": 22.345885030999852,
+    "decode_s": 0.6940691120080373
+  },
+  {
+    "case_id": "MOSEv2:5yq4u9wv:obj1:switch00045",
+    "dataset": "MOSEv2",
+    "length_bin": 2,
+    "seconds": 51.74201776500013,
+    "decode_s": 1.5377677869983017
+  },
+  {
+    "case_id": "LVOSv2:p9ODDmku:obj1:switch00000811",
+    "dataset": "LVOSv2",
+    "length_bin": 1,
+    "seconds": 52.52040450599998,
+    "decode_s": 2.9862718229842358
+  },
+  {
+    "case_id": "DAVIS2017:shooting:obj3:switch00019",
+    "dataset": "DAVIS2017",
+    "length_bin": 0,
+    "seconds": 11.698455951000142,
+    "decode_s": 0.34876630600138014
+  },
+  {
+    "case_id": "DAVIS2017:mbike-trick:obj2:switch00038",
+    "dataset": "DAVIS2017",
+    "length_bin": 1,
+    "seconds": 21.863306809999813,
+    "decode_s": 0.6713281679958527
+  },
+  {
+    "case_id": "DAVIS2017:paragliding-launch:obj2:switch00039",
+    "dataset": "DAVIS2017",
+    "length_bin": 2,
+    "seconds": 21.839043199000116,
+    "decode_s": 0.6846998209985031
+  },
+  {
+    "case_id": "MOSEv2:ec6dd0e9:obj1:switch00020",
+    "dataset": "MOSEv2",
+    "length_bin": 0,
+    "seconds": 21.997663153999383,
+    "decode_s": 0.6718735469949024
+  },
+  {
+    "case_id": "LVOSv2:BgauSgBo:obj1:switch00000636",
+    "dataset": "LVOSv2",
+    "length_bin": 2,
+    "seconds": 527.4311222599999,
+    "decode_s": 11.235063391994117
+  },
+  {
+    "case_id": "MOSEv2:y9yggm9a:obj1:switch00039",
+    "dataset": "MOSEv2",
+    "length_bin": 1,
+    "seconds": 47.4481580340007,
+    "decode_s": 1.6440893850012799
+  },
+  {
+    "case_id": "DAVIS2017:parkour:obj1:switch00049",
+    "dataset": "DAVIS2017",
+    "length_bin": 2,
+    "seconds": 27.160874961000445,
+    "decode_s": 0.8551537969997298
+  },
+  {
+    "case_id": "MOSEv2:vd8urin3:obj1:switch00054",
+    "dataset": "MOSEv2",
+    "length_bin": 2,
+    "seconds": 59.722860592999496,
+    "decode_s": 1.8698421849967417
+  },
+  {
+    "case_id": "MOSEv2:5mevyc0l:obj1:switch00023",
+    "dataset": "MOSEv2",
+    "length_bin": 0,
+    "seconds": 26.368550711999887,
+    "decode_s": 0.799310899999
+  },
+  {
+    "case_id": "MOSEv2:gt94v9yu:obj1:switch00039",
+    "dataset": "MOSEv2",
+    "length_bin": 1,
+    "seconds": 45.947331833000135,
+    "decode_s": 1.6037003339997682
+  },
+  {
+    "case_id": "LVOSv2:WcQ4Wd9v:obj1:switch00000456",
+    "dataset": "LVOSv2",
+    "length_bin": 0,
+    "seconds": 67.68099353700018,
+    "decode_s": 2.4886325729958116
+  },
+  {
+    "case_id": "MOSEv2:1w5fyj35:obj1:switch00257",
+    "dataset": "MOSEv2",
+    "length_bin": 2,
+    "seconds": 279.0353119520005,
+    "decode_s": 8.715308220011138
+  },
+  {
+    "case_id": "LVOSv2:lL7u6APJ:obj2:switch00000816",
+    "dataset": "LVOSv2",
+    "length_bin": 1,
+    "seconds": 114.33922083800007,
+    "decode_s": 4.223535200007063
+  },
+  {
+    "case_id": "MOSEv2:a5cf4c8d:obj2:switch00023",
+    "dataset": "MOSEv2",
+    "length_bin": 0,
+    "seconds": 29.07939866400011,
+    "decode_s": 0.9178156830012085
+  },
+  {
+    "case_id": "MOSEv2:z6kk712z:obj1:switch00033",
+    "dataset": "MOSEv2",
+    "length_bin": 1,
+    "seconds": 35.38649735099989,
+    "decode_s": 1.1552797609974732
+  },
+  {
+    "case_id": "LVOSv2:n1APyt91:obj1:switch00000701",
+    "dataset": "LVOSv2",
+    "length_bin": 2,
+    "seconds": 252.63077062699995,
+    "decode_s": 6.876664969990998
+  },
+  {
+    "case_id": "MOSEv2:kxygog41:obj1:switch00064",
+    "dataset": "MOSEv2",
+    "length_bin": 2,
+    "seconds": 41.25706961600008,
+    "decode_s": 1.5347885409983064
+  },
+  {
+    "case_id": "MOSEv2:37549a79:obj2:switch00016",
+    "dataset": "MOSEv2",
+    "length_bin": 0,
+    "seconds": 9.72819938900011,
+    "decode_s": 0.3281055549978191
+  },
+  {
+    "case_id": "MOSEv2:3a670b81:obj3:switch00026",
+    "dataset": "MOSEv2",
+    "length_bin": 1,
+    "seconds": 17.130546888000026,
+    "decode_s": 0.5438636789986049
+  },
+  {
+    "case_id": "MOSEv2:2qjsn6c1:obj1:switch00054",
+    "dataset": "MOSEv2",
+    "length_bin": 2,
+    "seconds": 59.09951563100003,
+    "decode_s": 1.7882559700001366
+  },
+  {
+    "case_id": "LVOSv2:OI6HpXcP:obj1:switch00000631",
+    "dataset": "LVOSv2",
+    "length_bin": 0,
+    "seconds": 43.0079562840001,
+    "decode_s": 2.367893319009454
+  },
+  {
+    "case_id": "MOSEv2:06ad78e0:obj1:switch00017",
+    "dataset": "MOSEv2",
+    "length_bin": 0,
+    "seconds": 9.694198303999656,
+    "decode_s": 0.257644581999557
+  },
+  {
+    "case_id": "LVOSv2:qSL6X2A2:obj1:switch00001261",
+    "dataset": "LVOSv2",
+    "length_bin": 1,
+    "seconds": 75.29255548000037,
+    "decode_s": 4.546603558996139
+  },
+  {
+    "case_id": "MOSEv2:vtvx858a:obj2:switch00037",
+    "dataset": "MOSEv2",
+    "length_bin": 1,
+    "seconds": 45.61856840299879,
+    "decode_s": 1.5464750080063823
+  },
+  {
+    "case_id": "MOSEv2:sajk18ua:obj1:switch00066",
+    "dataset": "MOSEv2",
+    "length_bin": 2,
+    "seconds": 70.65799416200025,
+    "decode_s": 2.220789150986093
+  },
+  {
+    "case_id": "LVOSv2:ZAoBymqC:obj2:switch00000571",
+    "dataset": "LVOSv2",
+    "length_bin": 2,
+    "seconds": 206.30181696399995,
+    "decode_s": 5.588131200955104
+  },
+  {
+    "case_id": "MOSEv2:db78e7a1:obj1:switch00018",
+    "dataset": "MOSEv2",
+    "length_bin": 0,
+    "seconds": 19.96473178300039,
+    "decode_s": 0.6051019269998505
+  },
+  {
+    "case_id": "MOSEv2:hvu2deq7:obj2:switch00028",
+    "dataset": "MOSEv2",
+    "length_bin": 1,
+    "seconds": 31.42971022600068,
+    "decode_s": 0.9755357750145777
+  },
+  {
+    "case_id": "MOSEv2:mdkrg4tg:obj1:switch00049",
+    "dataset": "MOSEv2",
+    "length_bin": 2,
+    "seconds": 26.15910070800055,
+    "decode_s": 0.7293869160021131
+  },
+  {
+    "case_id": "LVOSv2:BUFXm7zN:obj1:switch00000261",
+    "dataset": "LVOSv2",
+    "length_bin": 0,
+    "seconds": 98.13040555599946,
+    "decode_s": 2.6702362870018987
+  },
+  {
+    "case_id": "MOSEv2:mbghgher:obj1:switch00018",
+    "dataset": "MOSEv2",
+    "length_bin": 0,
+    "seconds": 19.53780885500055,
+    "decode_s": 0.5693966620001447
+  },
+  {
+    "case_id": "MOSEv2:627jnkn9:obj3:switch00029",
+    "dataset": "MOSEv2",
+    "length_bin": 1,
+    "seconds": 32.11420849500064,
+    "decode_s": 1.0280991859854112
+  },
+  {
+    "case_id": "LVOSv2:WuWp4Oq3:obj1:switch00001176",
+    "dataset": "LVOSv2",
+    "length_bin": 1,
+    "seconds": 70.38123282900051,
+    "decode_s": 4.237427105017559
+  },
+  {
+    "case_id": "MOSEv2:d7o12qjx:obj1:switch00054",
+    "dataset": "MOSEv2",
+    "length_bin": 2,
+    "seconds": 58.811745644999974,
+    "decode_s": 1.784445435005182
+  },
+  {
+    "case_id": "LVOSv2:E67b6e4h:obj1:switch00002756",
+    "dataset": "LVOSv2",
+    "length_bin": 2,
+    "seconds": 151.24095066900009,
+    "decode_s": 9.62058488004186
+  },
+  {
+    "case_id": "MOSEv2:m0vk576h:obj1:switch00019",
+    "dataset": "MOSEv2",
+    "length_bin": 0,
+    "seconds": 21.03236350899897,
+    "decode_s": 0.7183734260088386
+  },
+  {
+    "case_id": "MOSEv2:y2pfmpls:obj1:switch00030",
+    "dataset": "MOSEv2",
+    "length_bin": 1,
+    "seconds": 32.988489755000046,
+    "decode_s": 1.0318030170001293
+  },
+  {
+    "case_id": "MOSEv2:42dn1p4x:obj1:switch00052",
+    "dataset": "MOSEv2",
+    "length_bin": 2,
+    "seconds": 56.39703459299926,
+    "decode_s": 1.666588986003262
+  },
+  {
+    "case_id": "MOSEv2:sxvjdsd7:obj1:switch00024",
+    "dataset": "MOSEv2",
+    "length_bin": 0,
+    "seconds": 28.539798268000595,
+    "decode_s": 1.0615719719971821
+  },
+  {
+    "case_id": "LVOSv2:bhNU9gxv:obj1:switch00000811",
+    "dataset": "LVOSv2",
+    "length_bin": 0,
+    "seconds": 52.08120022500043,
+    "decode_s": 2.8943448929985607
+  },
+  {
+    "case_id": "MOSEv2:s41qtfd2:obj1:switch00041",
+    "dataset": "MOSEv2",
+    "length_bin": 1,
+    "seconds": 44.844548039000074,
+    "decode_s": 1.4263450719954562
+  },
+  {
+    "case_id": "MOSEv2:py4gjhc7:obj1:switch00064",
+    "dataset": "MOSEv2",
+    "length_bin": 2,
+    "seconds": 77.0754031739998,
+    "decode_s": 2.259574537001754
+  },
+  {
+    "case_id": "LVOSv2:mQVrNiUG:obj2:switch00000281",
+    "dataset": "LVOSv2",
+    "length_bin": 1,
+    "seconds": 178.75033025800076,
+    "decode_s": 3.679446262005513
+  },
+  {
+    "case_id": "MOSEv2:d9638e69:obj2:switch00024",
+    "dataset": "MOSEv2",
+    "length_bin": 0,
+    "seconds": 24.11599565600045,
+    "decode_s": 0.776550356995358
+  },
+  {
+    "case_id": "MOSEv2:yyxu0snt:obj1:switch00038",
+    "dataset": "MOSEv2",
+    "length_bin": 1,
+    "seconds": 40.12409797699911,
+    "decode_s": 1.3356659319997561
+  },
+  {
+    "case_id": "LVOSv2:SypH67oD:obj1:switch00000541",
+    "dataset": "LVOSv2",
+    "length_bin": 2,
+    "seconds": 197.18802276699898,
+    "decode_s": 5.6755795950175525
+  },
+  {
+    "case_id": "MOSEv2:qu2wfivz:obj1:switch00057",
+    "dataset": "MOSEv2",
+    "length_bin": 2,
+    "seconds": 37.77188137499979,
+    "decode_s": 1.6194244530088326
+  },
+  {
+    "case_id": "MOSEv2:792c6ff7:obj1:switch00019",
+    "dataset": "MOSEv2",
+    "length_bin": 0,
+    "seconds": 21.797810292999202,
+    "decode_s": 0.650861005002298
+  },
+  {
+    "case_id": "MOSEv2:cv93mtux:obj1:switch00032",
+    "dataset": "MOSEv2",
+    "length_bin": 1,
+    "seconds": 37.19887321100032,
+    "decode_s": 1.3669563619969267
+  },
+  {
+    "case_id": "MOSEv2:ss0b0lxp:obj1:switch00070",
+    "dataset": "MOSEv2",
+    "length_bin": 2,
+    "seconds": 80.88726183899962,
+    "decode_s": 2.933260142006475
+  },
+  {
+    "case_id": "LVOSv2:AxJ9Ewwf:obj1:switch00000516",
+    "dataset": "LVOSv2",
+    "length_bin": 0,
+    "seconds": 75.20628351699997,
+    "decode_s": 2.780456740014415
+  },
+  {
+    "case_id": "LVOSv2:v70kAeiz:obj3:switch00000811",
+    "dataset": "LVOSv2",
+    "length_bin": 1,
+    "seconds": 51.8314268080012,
+    "decode_s": 2.8412896009995166
+  },
+  {
+    "case_id": "MOSEv2:oua9yz53:obj1:switch00016",
+    "dataset": "MOSEv2",
+    "length_bin": 0,
+    "seconds": 10.907325924999896,
+    "decode_s": 0.45120667700575723
+  },
+  {
+    "case_id": "MOSEv2:ff1142df:obj1:switch00026",
+    "dataset": "MOSEv2",
+    "length_bin": 1,
+    "seconds": 29.483761595000033,
+    "decode_s": 0.9411475359956967
+  },
+  {
+    "case_id": "MOSEv2:alfdbu4o:obj1:switch00067",
+    "dataset": "MOSEv2",
+    "length_bin": 2,
+    "seconds": 72.58995582099851,
+    "decode_s": 2.2509316509786004
+  },
+  {
+    "case_id": "LVOSv2:hP6JJw8p:obj1:switch00002281",
+    "dataset": "LVOSv2",
+    "length_bin": 2,
+    "seconds": 296.71629086699977,
+    "decode_s": 11.863867745983953
+  },
+  {
+    "case_id": "MOSEv2:7kj92j8k:obj1:switch00025",
+    "dataset": "MOSEv2",
+    "length_bin": 0,
+    "seconds": 27.60697053200056,
+    "decode_s": 0.8898441920082405
+  },
+  {
+    "case_id": "MOSEv2:evecyhjz:obj1:switch00041",
+    "dataset": "MOSEv2",
+    "length_bin": 1,
+    "seconds": 44.141419580999354,
+    "decode_s": 1.477046843008793
+  },
+  {
+    "case_id": "MOSEv2:1p0azzup:obj1:switch00049",
+    "dataset": "MOSEv2",
+    "length_bin": 2,
+    "seconds": 26.22909114199865,
+    "decode_s": 0.7399652430067363
+  },
+  {
+    "case_id": "LVOSv2:M1bQsT1C:obj1:switch00000481",
+    "dataset": "LVOSv2",
+    "length_bin": 0,
+    "seconds": 68.03179837599964,
+    "decode_s": 2.2484690970049996
+  },
+  {
+    "case_id": "MOSEv2:87727003:obj1:switch00016",
+    "dataset": "MOSEv2",
+    "length_bin": 0,
+    "seconds": 10.181319680001252,
+    "decode_s": 0.2901252810006554
+  },
+  {
+    "case_id": "MOSEv2:5kh0cl6e:obj1:switch00027",
+    "dataset": "MOSEv2",
+    "length_bin": 1,
+    "seconds": 29.274333523000678,
+    "decode_s": 0.9067445790115016
+  },
+  {
+    "case_id": "LVOSv2:sfSEiJgA:obj2:switch00000676",
+    "dataset": "LVOSv2",
+    "length_bin": 1,
+    "seconds": 94.48051497400047,
+    "decode_s": 3.5258868980163243
+  },
+  {
+    "case_id": "MOSEv2:rv0q2e1z:obj1:switch00049",
+    "dataset": "MOSEv2",
+    "length_bin": 2,
+    "seconds": 54.30671771999914,
+    "decode_s": 1.6849437140026566
+  },
+  {
+    "case_id": "LVOSv2:YKXYeRJZ:obj1:switch00000521",
+    "dataset": "LVOSv2",
+    "length_bin": 2,
+    "seconds": 189.73794620300032,
+    "decode_s": 5.295995337008208
+  },
+  {
+    "case_id": "MOSEv2:dc8679e0:obj1:switch00016",
+    "dataset": "MOSEv2",
+    "length_bin": 0,
+    "seconds": 11.25648690199887,
+    "decode_s": 0.45977115900677745
+  },
+  {
+    "case_id": "MOSEv2:3a7mnofq:obj1:switch00037",
+    "dataset": "MOSEv2",
+    "length_bin": 1,
+    "seconds": 39.35651407599835,
+    "decode_s": 1.2026021980091173
+  },
+  {
+    "case_id": "MOSEv2:fcrfkavv:obj1:switch00079",
+    "dataset": "MOSEv2",
+    "length_bin": 2,
+    "seconds": 91.37321402399903,
+    "decode_s": 3.2057759539984545
+  },
+  {
+    "case_id": "LVOSv2:DtHifCfu:obj1:switch00000631",
+    "dataset": "LVOSv2",
+    "length_bin": 0,
+    "seconds": 42.84491754800001,
+    "decode_s": 2.282585941000434
+  },
+  {
+    "case_id": "MOSEv2:a678cdab:obj1:switch00016",
+    "dataset": "MOSEv2",
+    "length_bin": 0,
+    "seconds": 12.057482627000354,
+    "decode_s": 0.4676666439991095
+  },
+  {
+    "case_id": "MOSEv2:616ad8ec:obj1:switch00029",
+    "dataset": "MOSEv2",
+    "length_bin": 1,
+    "seconds": 19.898981743999684,
+    "decode_s": 0.7110516629963968
+  },
+  {
+    "case_id": "MOSEv2:n70agn2x:obj1:switch00056",
+    "dataset": "MOSEv2",
+    "length_bin": 2,
+    "seconds": 60.97170610400099,
+    "decode_s": 1.8442181410027843
+  },
+  {
+    "case_id": "LVOSv2:XYMyIlvq:obj1:switch00001056",
+    "dataset": "LVOSv2",
+    "length_bin": 1,
+    "seconds": 65.24504357200021,
+    "decode_s": 4.066462233007769
+  },
+  {
+    "case_id": "MOSEv2:4414cd3a:obj1:switch00016",
+    "dataset": "MOSEv2",
+    "length_bin": 0,
+    "seconds": 17.84203527000136,
+    "decode_s": 0.5029723939951509
+  },
+  {
+    "case_id": "LVOSv2:1umdNtrE:obj1:switch00000491",
+    "dataset": "LVOSv2",
+    "length_bin": 2,
+    "seconds": 179.71762380400105,
+    "decode_s": 5.176395916003457
+  },
+  {
+    "case_id": "MOSEv2:10hp9f0p:obj2:switch00032",
+    "dataset": "MOSEv2",
+    "length_bin": 1,
+    "seconds": 26.61460314999931,
+    "decode_s": 1.0150104879958235
+  }
+]

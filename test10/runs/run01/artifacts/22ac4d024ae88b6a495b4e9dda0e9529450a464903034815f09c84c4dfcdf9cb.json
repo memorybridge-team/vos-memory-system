@@ -1,0 +1,32 @@
+{
+  "case_id": "DAVIS2017:judo:obj1:switch00016",
+  "dataset": "DAVIS2017",
+  "video_id": "judo",
+  "object_id": 1,
+  "cohort": "additional",
+  "checkpoint_video": false,
+  "method": "self_injection",
+  "key": "22ac4d024ae88b6a495b4e9dda0e9529450a464903034815f09c84c4dfcdf9cb",
+  "status": "complete",
+  "origin": "executed",
+  "gate_passed": true,
+  "binary_iou": 1.0,
+  "max_logit_error": 0.0,
+  "runtime": {
+    "scope": "test10_method_v1",
+    "model_load_s": 1.1130398880004577,
+    "export_s": 0.00930287099981797,
+    "transfer_s": 0.0,
+    "translate_s": 0.0,
+    "inject_s": 0.0006141430003481219,
+    "replay_s": 0.0,
+    "video_init_s": 2.8858999939984642e-05,
+    "handoff_bytes": 8930621,
+    "handoff_s": 0.0006401399996320833,
+    "past_backbone_frames": [],
+    "first_output_s": 0.0326067249998232,
+    "continuation_s": 0.641981959000077,
+    "peak_vram_bytes": 1124037632,
+    "switch_ready_with_export_s": 0.009971869999390037
+  }
+}

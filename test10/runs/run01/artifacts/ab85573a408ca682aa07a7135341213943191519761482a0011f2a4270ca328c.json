@@ -1,0 +1,32 @@
+{
+  "case_id": "LVOSv2:MsFLU2QO:obj1:switch00000451",
+  "dataset": "LVOSv2",
+  "video_id": "MsFLU2QO",
+  "object_id": 1,
+  "cohort": "additional",
+  "checkpoint_video": false,
+  "method": "self_injection",
+  "key": "ab85573a408ca682aa07a7135341213943191519761482a0011f2a4270ca328c",
+  "status": "complete",
+  "origin": "executed",
+  "gate_passed": true,
+  "binary_iou": 1.0,
+  "max_logit_error": 0.0,
+  "runtime": {
+    "scope": "test10_method_v1",
+    "model_load_s": 1.6623729530001583,
+    "export_s": 0.02046992500027045,
+    "transfer_s": 0.0,
+    "translate_s": 0.0,
+    "inject_s": 0.001263872999970772,
+    "replay_s": 0.0,
+    "video_init_s": 2.940600006695604e-05,
+    "handoff_bytes": 47805041,
+    "handoff_s": 0.0012923809999847435,
+    "past_backbone_frames": [],
+    "first_output_s": 0.2601108649996604,
+    "continuation_s": 3.9258598040000834,
+    "peak_vram_bytes": 1132327936,
+    "switch_ready_with_export_s": 0.02179171200032215
+  }
+}

@@ -1,0 +1,32 @@
+{
+  "case_id": "DAVIS2017:soapbox:obj3:switch00048",
+  "dataset": "DAVIS2017",
+  "video_id": "soapbox",
+  "object_id": 3,
+  "cohort": "additional",
+  "checkpoint_video": false,
+  "method": "self_injection",
+  "key": "ea001de6afd9307545522c11b82819b976465eb30a8dc7300af6178fe41285ff",
+  "status": "complete",
+  "origin": "executed",
+  "gate_passed": true,
+  "binary_iou": 1.0,
+  "max_logit_error": 0.0,
+  "runtime": {
+    "scope": "test10_method_v1",
+    "model_load_s": 1.6623729530001583,
+    "export_s": 0.013634756000101333,
+    "transfer_s": 0.0,
+    "translate_s": 0.0,
+    "inject_s": 0.0009535050003250944,
+    "replay_s": 0.0,
+    "video_init_s": 2.7768000109062996e-05,
+    "handoff_bytes": 25741181,
+    "handoff_s": 0.0009814420000111568,
+    "past_backbone_frames": [],
+    "first_output_s": 0.03323932100011007,
+    "continuation_s": 1.88246827400053,
+    "peak_vram_bytes": 1124678144,
+    "switch_ready_with_export_s": 0.014643966000221553
+  }
+}

@@ -1,0 +1,32 @@
+{
+  "case_id": "LVOSv2:65DBEapy:obj1:switch00000826",
+  "dataset": "LVOSv2",
+  "video_id": "65DBEapy",
+  "object_id": 1,
+  "cohort": "additional",
+  "checkpoint_video": false,
+  "method": "self_injection",
+  "key": "63bd21a8eecc4fbb1dafeda4aa09c12cf5bb6dfaf98e4f2f51c488f134deff82",
+  "status": "complete",
+  "origin": "executed",
+  "gate_passed": true,
+  "binary_iou": 1.0,
+  "max_logit_error": 0.0,
+  "runtime": {
+    "scope": "test10_method_v1",
+    "model_load_s": 1.6623729530001583,
+    "export_s": 0.029525874999308144,
+    "transfer_s": 0.0,
+    "translate_s": 0.0,
+    "inject_s": 0.0017713440001898562,
+    "replay_s": 0.0,
+    "video_init_s": 2.536000010877615e-05,
+    "handoff_bytes": 87204791,
+    "handoff_s": 0.0017981529999815393,
+    "past_backbone_frames": [],
+    "first_output_s": 0.20235454799967556,
+    "continuation_s": 7.094589045999783,
+    "peak_vram_bytes": 1127545856,
+    "switch_ready_with_export_s": 0.03134938799939846
+  }
+}

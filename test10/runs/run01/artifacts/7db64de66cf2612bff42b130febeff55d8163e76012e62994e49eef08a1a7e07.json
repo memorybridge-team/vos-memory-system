@@ -1,0 +1,32 @@
+{
+  "case_id": "DAVIS2017:drift-chicane:obj1:switch00025",
+  "dataset": "DAVIS2017",
+  "video_id": "drift-chicane",
+  "object_id": 1,
+  "cohort": "additional",
+  "checkpoint_video": false,
+  "method": "self_injection",
+  "key": "7db64de66cf2612bff42b130febeff55d8163e76012e62994e49eef08a1a7e07",
+  "status": "complete",
+  "origin": "executed",
+  "gate_passed": true,
+  "binary_iou": 1.0,
+  "max_logit_error": 0.0,
+  "runtime": {
+    "scope": "test10_method_v1",
+    "model_load_s": 1.6623729530001583,
+    "export_s": 0.006853253000372206,
+    "transfer_s": 0.0,
+    "translate_s": 0.0,
+    "inject_s": 0.0006510069997602841,
+    "replay_s": 0.0,
+    "video_init_s": 2.392999977018917e-05,
+    "handoff_bytes": 13658591,
+    "handoff_s": 0.0006757680002920097,
+    "past_backbone_frames": [],
+    "first_output_s": 0.03264305599986983,
+    "continuation_s": 0.9384677770003691,
+    "peak_vram_bytes": 1124082176,
+    "switch_ready_with_export_s": 0.007552951000434405
+  }
+}

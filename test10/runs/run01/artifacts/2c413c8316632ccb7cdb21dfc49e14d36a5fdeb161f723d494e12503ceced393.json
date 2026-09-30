@@ -1,0 +1,32 @@
+{
+  "case_id": "LVOSv2:DtHifCfu:obj1:switch00000631",
+  "dataset": "LVOSv2",
+  "video_id": "DtHifCfu",
+  "object_id": 1,
+  "cohort": "legacy_dev",
+  "checkpoint_video": false,
+  "method": "self_injection",
+  "key": "2c413c8316632ccb7cdb21dfc49e14d36a5fdeb161f723d494e12503ceced393",
+  "status": "complete",
+  "origin": "executed",
+  "gate_passed": true,
+  "binary_iou": 1.0,
+  "max_logit_error": 0.0,
+  "runtime": {
+    "scope": "test10_method_v1",
+    "model_load_s": 1.1130398880004577,
+    "export_s": 0.03253974700055551,
+    "transfer_s": 0.0,
+    "translate_s": 0.0,
+    "inject_s": 0.0015884280001046136,
+    "replay_s": 0.0,
+    "video_init_s": 3.157499850203749e-05,
+    "handoff_bytes": 66716921,
+    "handoff_s": 0.0016138399987539742,
+    "past_backbone_frames": [],
+    "first_output_s": 0.03404610300094646,
+    "continuation_s": 2.2841046989997267,
+    "peak_vram_bytes": 1127339008,
+    "switch_ready_with_export_s": 0.03418516199781152
+  }
+}

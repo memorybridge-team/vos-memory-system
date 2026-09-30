@@ -1,0 +1,32 @@
+{
+  "case_id": "DAVIS2017:breakdance:obj1:switch00041",
+  "dataset": "DAVIS2017",
+  "video_id": "breakdance",
+  "object_id": 1,
+  "cohort": "additional",
+  "checkpoint_video": false,
+  "method": "self_injection",
+  "key": "a03e8e6e6340647bc6c7e11aec0e00790878c11a4d31a9e93e0986029e509440",
+  "status": "complete",
+  "origin": "executed",
+  "gate_passed": true,
+  "binary_iou": 1.0,
+  "max_logit_error": 0.0,
+  "runtime": {
+    "scope": "test10_method_v1",
+    "model_load_s": 1.1130398880004577,
+    "export_s": 0.014909569999872474,
+    "transfer_s": 0.0,
+    "translate_s": 0.0,
+    "inject_s": 0.0007862610000302084,
+    "replay_s": 0.0,
+    "video_init_s": 2.816399955918314e-05,
+    "handoff_bytes": 22063871,
+    "handoff_s": 0.0008122899998852517,
+    "past_backbone_frames": [],
+    "first_output_s": 0.03276983100022335,
+    "continuation_s": 1.5270994030006477,
+    "peak_vram_bytes": 1124663808,
+    "switch_ready_with_export_s": 0.01575002399931691
+  }
+}

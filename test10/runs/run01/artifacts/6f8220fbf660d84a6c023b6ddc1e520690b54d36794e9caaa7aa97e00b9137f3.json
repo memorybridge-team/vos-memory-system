@@ -1,0 +1,112 @@
+{
+  "case_id": "DAVIS2017:horsejump-high:obj1:switch00024",
+  "dataset": "DAVIS2017",
+  "video_id": "horsejump-high",
+  "object_id": 1,
+  "cohort": "additional",
+  "checkpoint_video": false,
+  "method": "transformer",
+  "key": "6f8220fbf660d84a6c023b6ddc1e520690b54d36794e9caaa7aa97e00b9137f3",
+  "status": "complete",
+  "origin": "executed",
+  "scores": {
+    "post_switch": {
+      "frames": 24,
+      "J": 0.8754140206789032,
+      "F": 0.9767691163611318,
+      "J_and_F": 0.9260915685200175
+    },
+    "gt_visible": {
+      "frames": 24,
+      "J": 0.8754140206789032,
+      "F": 0.9767691163611318,
+      "J_and_F": 0.9260915685200175
+    },
+    "gt_absent": {
+      "frames": 0,
+      "J": null,
+      "F": null,
+      "J_and_F": null
+    },
+    "checkpoints": {
+      "+1": {
+        "frame": 25,
+        "evaluated": true,
+        "annotated": true,
+        "gt_present": true,
+        "J": 0.8687037037037038,
+        "F": 0.9475049336874496,
+        "J_and_F": 0.9081043186955766
+      },
+      "+5": {
+        "frame": 29,
+        "evaluated": true,
+        "annotated": true,
+        "gt_present": true,
+        "J": 0.8915259069203906,
+        "F": 0.9859301719645649,
+        "J_and_F": 0.9387280394424777
+      },
+      "+20": {
+        "frame": 44,
+        "evaluated": true,
+        "annotated": true,
+        "gt_present": true,
+        "J": 0.8474370639975736,
+        "F": 0.9716371805672565,
+        "J_and_F": 0.909537122282415
+      }
+    },
+    "remaining": {
+      "definition": "annotated frames with offset > +20",
+      "frames": 4,
+      "J": 0.8534174490527686,
+      "F": 0.978719229803392,
+      "J_and_F": 0.9160683394280803
+    },
+    "frame_counts": {
+      "evaluated": 24,
+      "annotated": 24,
+      "not_annotated": 0,
+      "gt_visible": 24,
+      "gt_absent": 0
+    },
+    "false_positives": {
+      "definition": "over annotated GT-absent frames: rate of frames with a non-empty prediction, and mean predicted area (void excluded) per GT-absent frame",
+      "gt_absent_frames": 0,
+      "false_positive_frames": 0,
+      "rate": null,
+      "mean_area_pixels": null,
+      "mean_area_fraction": null
+    },
+    "reappearance": {
+      "count": 0,
+      "recovered": 0,
+      "no_recovery_rate": null,
+      "mean_recovery_length": null,
+      "gt_present_at_switch": true
+    },
+    "j_parity_with_official": {
+      "frames": 24,
+      "max_abs_difference": 0.0
+    },
+    "F_unavailable_reason": null
+  },
+  "runtime": {
+    "scope": "test10_method_v1",
+    "model_load_s": 1.1130398880004577,
+    "export_s": 0.010799292000228888,
+    "transfer_s": 0.0016816990000734222,
+    "translate_s": 0.002207903999988048,
+    "inject_s": 0.002365291000387515,
+    "replay_s": 0.0,
+    "video_init_s": 2.5716999516589567e-05,
+    "handoff_bytes": 13133261,
+    "handoff_s": 0.006294614000580623,
+    "past_backbone_frames": [],
+    "first_output_s": 0.03803785099989909,
+    "continuation_s": 0.7655675149999297,
+    "peak_vram_bytes": 1138132480,
+    "switch_ready_with_export_s": 0.0171196230003261
+  }
+}

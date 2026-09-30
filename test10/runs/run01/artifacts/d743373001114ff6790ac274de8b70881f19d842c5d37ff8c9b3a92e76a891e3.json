@@ -1,0 +1,32 @@
+{
+  "case_id": "DAVIS2017:horsejump-high:obj1:switch00024",
+  "dataset": "DAVIS2017",
+  "video_id": "horsejump-high",
+  "object_id": 1,
+  "cohort": "additional",
+  "checkpoint_video": false,
+  "method": "self_injection",
+  "key": "d743373001114ff6790ac274de8b70881f19d842c5d37ff8c9b3a92e76a891e3",
+  "status": "complete",
+  "origin": "executed",
+  "gate_passed": true,
+  "binary_iou": 1.0,
+  "max_logit_error": 0.0,
+  "runtime": {
+    "scope": "test10_method_v1",
+    "model_load_s": 1.1130398880004577,
+    "export_s": 0.011188179999408021,
+    "transfer_s": 0.0,
+    "translate_s": 0.0,
+    "inject_s": 0.000667977999910363,
+    "replay_s": 0.0,
+    "video_init_s": 2.6829000489669852e-05,
+    "handoff_bytes": 13133261,
+    "handoff_s": 0.0006932140004209941,
+    "past_backbone_frames": [],
+    "first_output_s": 0.03333023399954982,
+    "continuation_s": 0.9067394909998256,
+    "peak_vram_bytes": 1124080128,
+    "switch_ready_with_export_s": 0.011908223000318685
+  }
+}

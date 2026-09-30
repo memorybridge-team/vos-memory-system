@@ -1,0 +1,32 @@
+{
+  "case_id": "LVOSv2:9LwiOrnw:obj1:switch00001566",
+  "dataset": "LVOSv2",
+  "video_id": "9LwiOrnw",
+  "object_id": 1,
+  "cohort": "additional",
+  "checkpoint_video": false,
+  "method": "self_injection",
+  "key": "d35becda1b2eff1208537a47b323bdd30e9af64f2edd035d1f7a14936f7e3eb7",
+  "status": "complete",
+  "origin": "executed",
+  "gate_passed": true,
+  "binary_iou": 1.0,
+  "max_logit_error": 0.0,
+  "runtime": {
+    "scope": "test10_method_v1",
+    "model_load_s": 1.6623729530001583,
+    "export_s": 0.05117540099945472,
+    "transfer_s": 0.0,
+    "translate_s": 0.0,
+    "inject_s": 0.0029520680000132415,
+    "replay_s": 0.0,
+    "video_init_s": 2.385199968557572e-05,
+    "handoff_bytes": 164953631,
+    "handoff_s": 0.0029827480002495577,
+    "past_backbone_frames": [],
+    "first_output_s": 0.19305648099998507,
+    "continuation_s": 12.244322029999239,
+    "peak_vram_bytes": 1127998464,
+    "switch_ready_with_export_s": 0.05418200099938986
+  }
+}

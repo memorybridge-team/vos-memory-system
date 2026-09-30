@@ -1,0 +1,32 @@
+{
+  "case_id": "LVOSv2:BUFXm7zN:obj1:switch00000261",
+  "dataset": "LVOSv2",
+  "video_id": "BUFXm7zN",
+  "object_id": 1,
+  "cohort": "legacy_dev",
+  "checkpoint_video": false,
+  "method": "self_injection",
+  "key": "1987f12cb6480ec68cb0902386e3bfa19272642d0069e2e08f1ec2d53a64b71a",
+  "status": "complete",
+  "origin": "executed",
+  "gate_passed": true,
+  "binary_iou": 1.0,
+  "max_logit_error": 0.0,
+  "runtime": {
+    "scope": "test10_method_v1",
+    "model_load_s": 1.1130398880004577,
+    "export_s": 0.1558715650007798,
+    "transfer_s": 0.0,
+    "translate_s": 0.0,
+    "inject_s": 0.0009047090006788494,
+    "replay_s": 0.0,
+    "video_init_s": 4.7326000640168786e-05,
+    "handoff_bytes": 27842501,
+    "handoff_s": 0.0009300040001107845,
+    "past_backbone_frames": [],
+    "first_output_s": 0.23044596100044146,
+    "continuation_s": 6.63311892999991,
+    "peak_vram_bytes": 1127313408,
+    "switch_ready_with_export_s": 0.15684889500153076
+  }
+}

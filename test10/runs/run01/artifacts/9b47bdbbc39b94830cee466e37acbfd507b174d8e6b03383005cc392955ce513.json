@@ -1,0 +1,32 @@
+{
+  "case_id": "DAVIS2017:parkour:obj1:switch00049",
+  "dataset": "DAVIS2017",
+  "video_id": "parkour",
+  "object_id": 1,
+  "cohort": "additional",
+  "checkpoint_video": false,
+  "method": "self_injection",
+  "key": "9b47bdbbc39b94830cee466e37acbfd507b174d8e6b03383005cc392955ce513",
+  "status": "complete",
+  "origin": "executed",
+  "gate_passed": true,
+  "binary_iou": 1.0,
+  "max_logit_error": 0.0,
+  "runtime": {
+    "scope": "test10_method_v1",
+    "model_load_s": 1.1130398880004577,
+    "export_s": 0.011384106000150496,
+    "transfer_s": 0.0,
+    "translate_s": 0.0,
+    "inject_s": 0.0009034459999384126,
+    "replay_s": 0.0,
+    "video_init_s": 2.620899977046065e-05,
+    "handoff_bytes": 26266511,
+    "handoff_s": 0.0009283990002586506,
+    "past_backbone_frames": [],
+    "first_output_s": 0.032798922999973,
+    "continuation_s": 1.8064261809995514,
+    "peak_vram_bytes": 1124680192,
+    "switch_ready_with_export_s": 0.012338714000179607
+  }
+}

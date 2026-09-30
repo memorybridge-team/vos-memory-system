@@ -1,0 +1,32 @@
+{
+  "case_id": "DAVIS2017:india:obj2:switch00039",
+  "dataset": "DAVIS2017",
+  "video_id": "india",
+  "object_id": 2,
+  "cohort": "additional",
+  "checkpoint_video": false,
+  "method": "self_injection",
+  "key": "2bd234af63eea2fe5c0669a8baab64c5364a139dfcc508450e0cadcf3c73c000",
+  "status": "complete",
+  "origin": "executed",
+  "gate_passed": true,
+  "binary_iou": 1.0,
+  "max_logit_error": 0.0,
+  "runtime": {
+    "scope": "test10_method_v1",
+    "model_load_s": 1.1130398880004577,
+    "export_s": 0.01647286399929726,
+    "transfer_s": 0.0,
+    "translate_s": 0.0,
+    "inject_s": 0.0007408139999824925,
+    "replay_s": 0.0,
+    "video_init_s": 2.5872999685816467e-05,
+    "handoff_bytes": 21013211,
+    "handoff_s": 0.0007649640001545777,
+    "past_backbone_frames": [],
+    "first_output_s": 0.032414997999694606,
+    "continuation_s": 1.4787930169995889,
+    "peak_vram_bytes": 1124659712,
+    "switch_ready_with_export_s": 0.017263700999137654
+  }
+}
