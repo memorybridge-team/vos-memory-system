@@ -1,0 +1,341 @@
+{
+  "source_model_id": "sam2.1-small",
+  "target_model_id": "sam2.1-base-plus",
+  "upstream_commit": "2b90b9f5ceec907a1c18123530e92e794ad901a4",
+  "video_id": "1umdNtrE",
+  "object_id": 1,
+  "switch_frame": 98,
+  "num_frames": 401,
+  "seed": 7,
+  "device": "cuda",
+  "path_policy": "runtime_paths_not_stored",
+  "cache_mode": "state_only",
+  "active_memory_only": true,
+  "num_maskmem": 7,
+  "max_obj_ptrs_in_encoder": 16,
+  "preparation_resources": {
+    "wall_time_seconds": 33.05096628796309,
+    "peak_cuda_memory_bytes": 977094144
+  },
+  "phase_seconds": {
+    "prompt_load": 0.028664832934737206,
+    "source_model_build": 1.394829735858366,
+    "source_video_init": 0.2316938159056008,
+    "source_inference": 12.91131371515803,
+    "target_model_build": 1.179055861197412,
+    "target_video_init": 0.07506021298468113,
+    "target_inference": 16.977524424903095,
+    "active_memory_selection": 0.003733691992238164,
+    "cache_write_and_checksum": 0.3054372249171138
+  },
+  "phase_seconds_total": 33.107313515851274,
+  "source_contract": {
+    "schema_version": "cmmt.canonical_state.v1",
+    "switch_frame": 98,
+    "object_ids": [
+      "1"
+    ],
+    "valid_record_count": 16,
+    "continuous_bytes": 8405056,
+    "handoff_bytes": 8405291,
+    "tensors": {
+      "spatial_memory": {
+        "shape": [
+          1,
+          1,
+          16,
+          64,
+          64,
+          64
+        ],
+        "axes": [
+          "batch",
+          "object",
+          "record",
+          "channel",
+          "height",
+          "width"
+        ],
+        "dtype": "torch.bfloat16",
+        "device": "cpu",
+        "bytes": 8388608,
+        "policy": "translate"
+      },
+      "object_pointer": {
+        "shape": [
+          1,
+          1,
+          16,
+          256
+        ],
+        "axes": [
+          "batch",
+          "object",
+          "record",
+          "feature"
+        ],
+        "dtype": "torch.float32",
+        "device": "cuda:0",
+        "bytes": 16384,
+        "policy": "translate"
+      },
+      "presence_logits": {
+        "shape": [
+          1,
+          1,
+          16,
+          1
+        ],
+        "axes": [
+          "batch",
+          "object",
+          "record",
+          "scalar"
+        ],
+        "dtype": "torch.float32",
+        "device": "cuda:0",
+        "bytes": 64,
+        "policy": "calibrate"
+      },
+      "frame_indices": {
+        "shape": [
+          1,
+          1,
+          16
+        ],
+        "axes": [
+          "batch",
+          "object",
+          "record"
+        ],
+        "dtype": "torch.int64",
+        "device": "cpu",
+        "bytes": 128,
+        "policy": "preserve"
+      },
+      "slot_order": {
+        "shape": [
+          1,
+          1,
+          16
+        ],
+        "axes": [
+          "batch",
+          "object",
+          "record"
+        ],
+        "dtype": "torch.int64",
+        "device": "cpu",
+        "bytes": 128,
+        "policy": "preserve"
+      },
+      "is_conditioning": {
+        "shape": [
+          1,
+          1,
+          16
+        ],
+        "axes": [
+          "batch",
+          "object",
+          "record"
+        ],
+        "dtype": "torch.bool",
+        "device": "cpu",
+        "bytes": 16,
+        "policy": "preserve"
+      },
+      "validity": {
+        "shape": [
+          1,
+          1,
+          16
+        ],
+        "axes": [
+          "batch",
+          "object",
+          "record"
+        ],
+        "dtype": "torch.bool",
+        "device": "cpu",
+        "bytes": 16,
+        "policy": "preserve"
+      }
+    },
+    "positional_information": {
+      "policy": "source_observed_do_not_translate",
+      "keys": [
+        "policy"
+      ]
+    },
+    "metadata_keys": [
+      "compute_device",
+      "missing_presence_records",
+      "preserved_pred_masks",
+      "sam2_active_memory_selection",
+      "source",
+      "storage_device"
+    ]
+  },
+  "target_contract": {
+    "schema_version": "cmmt.canonical_state.v1",
+    "switch_frame": 98,
+    "object_ids": [
+      "1"
+    ],
+    "valid_record_count": 16,
+    "continuous_bytes": 8405056,
+    "handoff_bytes": 8405291,
+    "tensors": {
+      "spatial_memory": {
+        "shape": [
+          1,
+          1,
+          16,
+          64,
+          64,
+          64
+        ],
+        "axes": [
+          "batch",
+          "object",
+          "record",
+          "channel",
+          "height",
+          "width"
+        ],
+        "dtype": "torch.bfloat16",
+        "device": "cpu",
+        "bytes": 8388608,
+        "policy": "translate"
+      },
+      "object_pointer": {
+        "shape": [
+          1,
+          1,
+          16,
+          256
+        ],
+        "axes": [
+          "batch",
+          "object",
+          "record",
+          "feature"
+        ],
+        "dtype": "torch.float32",
+        "device": "cuda:0",
+        "bytes": 16384,
+        "policy": "translate"
+      },
+      "presence_logits": {
+        "shape": [
+          1,
+          1,
+          16,
+          1
+        ],
+        "axes": [
+          "batch",
+          "object",
+          "record",
+          "scalar"
+        ],
+        "dtype": "torch.float32",
+        "device": "cuda:0",
+        "bytes": 64,
+        "policy": "calibrate"
+      },
+      "frame_indices": {
+        "shape": [
+          1,
+          1,
+          16
+        ],
+        "axes": [
+          "batch",
+          "object",
+          "record"
+        ],
+        "dtype": "torch.int64",
+        "device": "cpu",
+        "bytes": 128,
+        "policy": "preserve"
+      },
+      "slot_order": {
+        "shape": [
+          1,
+          1,
+          16
+        ],
+        "axes": [
+          "batch",
+          "object",
+          "record"
+        ],
+        "dtype": "torch.int64",
+        "device": "cpu",
+        "bytes": 128,
+        "policy": "preserve"
+      },
+      "is_conditioning": {
+        "shape": [
+          1,
+          1,
+          16
+        ],
+        "axes": [
+          "batch",
+          "object",
+          "record"
+        ],
+        "dtype": "torch.bool",
+        "device": "cpu",
+        "bytes": 16,
+        "policy": "preserve"
+      },
+      "validity": {
+        "shape": [
+          1,
+          1,
+          16
+        ],
+        "axes": [
+          "batch",
+          "object",
+          "record"
+        ],
+        "dtype": "torch.bool",
+        "device": "cpu",
+        "bytes": 16,
+        "policy": "preserve"
+      }
+    },
+    "positional_information": {
+      "policy": "source_observed_do_not_translate",
+      "keys": [
+        "policy"
+      ]
+    },
+    "metadata_keys": [
+      "compute_device",
+      "missing_presence_records",
+      "preserved_pred_masks",
+      "sam2_active_memory_selection",
+      "source",
+      "storage_device"
+    ]
+  },
+  "resources": {
+    "wall_time_seconds": 33.05096628796309,
+    "peak_cuda_memory_bytes": 977094144
+  },
+  "cache": {
+    "schema_version": "cmmt.prepared_handoff_case.v2",
+    "path": "/workspace/CMMT-task07-artifacts/production/lvos/cache/development/lvos_1umdNtrE_obj1_switch491.pt",
+    "sha256": "7331a5b495bf60f669a8cda35367a021e8e6cedf4793c9719bdc51839da36b0d",
+    "bytes": 16817561,
+    "cache_mode": "state_only",
+    "source_prefix_frames": 0,
+    "target_oracle_future_frames": 0
+  }
+}
