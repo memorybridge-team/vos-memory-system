@@ -110,6 +110,31 @@ class PairContract(unittest.TestCase):
 
 
 class FreshTraining(unittest.TestCase):
+    def test_collection_preserves_selection_checksums_in_eager_and_budget_modes(self):
+        with tempfile.TemporaryDirectory() as tmp:
+            root = Path(tmp)
+            rows = []
+            for video, split in (("train", "train"), ("validation", "validation")):
+                path = root / f"{video}.pt"
+                synthetic_pair(path, video)
+                checksum = path.with_suffix(".pt.sha256").read_text().split()[0]
+                rows.append(dict(dataset="synthetic", video_id=video, split=split,
+                                 path=path.name, sha256=checksum))
+            selection = root / "pairs.json"
+            write(selection, dict(schema="test10.pair_selection.v1", pairs=rows))
+            for lazy in (False, True):
+                with self.subTest(lazy=lazy):
+                    result = training.collection(selection, lazy=lazy)
+                    self.assertEqual([r["sha256"] for r in result["pairs"]],
+                                     [r["sha256"] for r in rows])
+                    reader = training.PairReader()
+                    reader.load(result["pairs"][0])
+                    changed = [dict(rows[0], sha256="0" * 64), rows[1]]
+                    write(selection, dict(schema="test10.pair_selection.v1", pairs=changed))
+                    with self.assertRaisesRegex(ValueError, "checksum"):
+                        training.collection(selection, lazy=lazy)
+                    write(selection, dict(schema="test10.pair_selection.v1", pairs=rows))
+
     def test_downloaded_pair_catalog_uses_fit_and_development_without_copying(self):
         with tempfile.TemporaryDirectory() as tmp:
             root = Path(tmp)

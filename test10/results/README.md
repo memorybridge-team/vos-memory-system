@@ -42,6 +42,8 @@
 
 `publication_20261002/raw_runs/*.tar.gz`의 `test10/...` 멤버는 저장소 루트에서 압축을 풀면 원래 상대 경로로 복원된다. `translator_source.tar.gz`와 `sam2_source.tar.gz`는 각각 `translator/`, `sam2/` 경로를 사용한다. 압축 파일 자체와 각 멤버의 SHA-256은 `published_files.csv`, `archive_members.csv`에 있다. 패키징 과정에서 모든 멤버를 다시 읽어 원본 바이트와 일치함을 검증했다.
 
+`published_files.csv`는 공개 당시 commit `15cb37c`의 파일 snapshot이다. 이후 main 병합으로 바뀐 README·harness·test 파일의 현재 hash와 동일해야 한다는 의미는 아니다. 당시 코드가 필요한 경우 해당 commit을 참조하며 결과 CSV·JSON·가중치·archive 자체는 병합 시 변경하지 않았다.
+
 GitHub에 올리지 않은 약 20GB·1,280개 예측 마스크 캐시는 사용자 승인에 따라 로컬에 보존했다. 경로·크기·기존 평가 시 기록된 hash는 `unpublished_prediction_caches.csv`에 있다. 원본 RGB/GT 데이터셋, 다운로드 학습 pair bank, 기반 SAM checkpoint, 가상환경도 결과 패키지와 분리된 입력이다.
 
 프레임 CSV·manifest만으로 구간별 표와 paired CI는 다시 계산할 수 있다. 픽셀 수준 metric 재계산에는 원시 예측 캐시와 GT가 추가로 필요하다. 픽셀 재평가를 할 때 pickle payload는 신뢰할 수 있는 원본 및 hash를 확인한 경우에만 읽는다.
