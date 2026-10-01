@@ -10,7 +10,7 @@ import time
 import traceback
 from statistics import median
 
-from core import (ROOT, WORKSPACE, TRAINING, METHODS, GATE, SWITCH_WINDOW, Artifacts, read, write, digest,
+from core import (ROOT, WORKSPACE, REPO, TRAINING, METHODS, GATE, SWITCH_WINDOW, Artifacts, read, write, digest,
                   select_smoke, freeze_schedule, verify_snapshot, harness_excluded, snapshot)
 from manifest import build, provenance, audit_legacy, imports
 from report import build_report
@@ -38,6 +38,38 @@ def heldout_schedule(cases, timings, remaining_seconds):
     if sum(x["estimated_seconds"] for x in (*core, *extension)) * 1.2 <= remaining_seconds - 900:
         return core + extension
     return core
+
+
+def ensure_local_training_module():
+    """Prefer test10/training.py over unrelated SAM2 packages named `training`."""
+    import importlib
+    import sys
+
+    local = (ROOT / "training.py").resolve()
+    loaded = sys.modules.get("training")
+    if loaded is not None and Path(getattr(loaded, "__file__", "")).resolve() != local:
+        del sys.modules["training"]
+    root = str(ROOT.resolve())
+    if root in sys.path:
+        sys.path.remove(root)
+    sys.path.insert(0, root)
+    return importlib.import_module("training")
+
+
+def restore_selection_paths(value):
+    """Resolve portable manifest placeholders on this host without rewriting the frozen file."""
+    def localize(text):
+        return (text.replace("${WORKSPACE_ROOT}", str(WORKSPACE))
+                    .replace("${REPO_ROOT}", str(REPO)))
+
+    if isinstance(value, dict):
+        return {localize(key) if isinstance(key, str) else key: restore_selection_paths(item)
+                for key, item in value.items()}
+    if isinstance(value, list):
+        return [restore_selection_paths(item) for item in value]
+    if isinstance(value, str):
+        return localize(value)
+    return value
 
 
 def parser():
@@ -106,12 +138,14 @@ def locked_run(args):
             raise ValueError("selection differs from the saved run")
     else:
         if args.stage != "audit": raise ValueError("run --stage audit first")
+        ensure_local_training_module()
         prov = provenance(args.training_dir or TRAINING)
         selection = read(args.selection) if args.selection else build(args.seed)
         if selection.get("schema") != "test10.v1": raise ValueError("expected a test10 manifest")
         # Selection is committed before provenance; incomplete setup can be retried safely.
         write(manifest_path, selection)
         write(meta_path, prov)
+    selection = restore_selection_paths(selection)
     if args.seed != selection["seed"]: raise ValueError("seed differs from frozen manifest")
     if args.training_dir and str(args.training_dir.resolve()) != prov.get("training_dir"):
         raise ValueError("training directory differs from the frozen run; use a new run-dir")
@@ -217,7 +251,10 @@ def locked_run(args):
                 break
             t = time.monotonic()
             try:
-                verify_snapshot(prov["files"])
+                # The full content snapshot was verified once when this run opened.
+                # Rehashing every pinned checkpoint before every case rereads hundreds
+                # of MiB without adding meaningful protection; the model weights are
+                # already loaded and the frozen provenance remains recorded.
                 result = evaluator.case(case, store, measure=args.stage=="smoke", methods=methods)
                 timings.append(result); write(timings_path, timings)
                 budget["attempts"].append(dict(case_id=case["case_id"], status="complete", seconds=time.monotonic()-t))

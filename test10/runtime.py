@@ -124,9 +124,13 @@ def score_positions(case, method, masks):
     stems = case["frame_stems"]
     if not any((Path(case["annotation_dir"]) / f"{stems[p]}.png").is_file() for p in masks):
         return {"post_switch": dict(frames=0, J=None, F=None, J_and_F=None), "checkpoints": {}}
+    # The upstream metric contract requires a contiguous sequence beginning at
+    # switch+1. For a single-frame diagnostic, anchor that frame at p-1 while
+    # retaining the true handoff frame as context for absent/reappearance status.
+    score_switch = min(masks) - 1 if len(masks) == 1 else case["switch"]
     result = score(dict(case_id=case["case_id"], method=method, masks=masks,
                         stems={p: stems[p] for p in masks}, annotation_dir=case["annotation_dir"],
-                        object_id=case["object_id"], switch_position=case["switch"],
+                        object_id=case["object_id"], switch_position=score_switch,
                         context_position=case["switch"], stems_context=stems[case["switch"]]))
     return result["scores"]
 

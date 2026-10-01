@@ -1,0 +1,221 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="800" viewBox="0 0 1200 800">
+<rect width="1200" height="800" fill="white"/>
+<g font-family="sans-serif" fill="#222">
+<text x="600" y="25" font-size="20" text-anchor="middle">Existing native-prefix evaluation: GT-visible drift</text>
+<text x="600" y="47" font-size="13" text-anchor="middle">Full Replay minus method: positive = method worse; point estimates, changing bin support</text>
+<line x1="290" y1="70" x2="315" y2="70" stroke="#0072b2" stroke-width="3"/>
+<text x="322" y="74" font-size="12" text-anchor="start">Affine</text>
+<line x1="455" y1="70" x2="480" y2="70" stroke="#e69f00" stroke-width="3"/>
+<text x="487" y="74" font-size="12" text-anchor="start">MLP</text>
+<line x1="620" y1="70" x2="645" y2="70" stroke="#009e73" stroke-width="3"/>
+<text x="652" y="74" font-size="12" text-anchor="start">Transformer</text>
+<line x1="785" y1="70" x2="810" y2="70" stroke="#cc79a7" stroke-width="3"/>
+<text x="817" y="74" font-size="12" text-anchor="start">Source Only</text>
+<text x="290" y="115" font-size="14" text-anchor="middle">MOSEv2 (development, not official val)</text>
+<line x1="80" y1="355.0" x2="515" y2="355.0" stroke="#ddd"/>
+<text x="72" y="359.0" font-size="11" text-anchor="end">-25</text>
+<line x1="80" y1="330.55555555555554" x2="515" y2="330.55555555555554" stroke="#ddd"/>
+<text x="72" y="334.55555555555554" font-size="11" text-anchor="end">-20</text>
+<line x1="80" y1="306.1111111111111" x2="515" y2="306.1111111111111" stroke="#ddd"/>
+<text x="72" y="310.1111111111111" font-size="11" text-anchor="end">-15</text>
+<line x1="80" y1="281.66666666666663" x2="515" y2="281.66666666666663" stroke="#ddd"/>
+<text x="72" y="285.66666666666663" font-size="11" text-anchor="end">-10</text>
+<line x1="80" y1="257.22222222222223" x2="515" y2="257.22222222222223" stroke="#ddd"/>
+<text x="72" y="261.22222222222223" font-size="11" text-anchor="end">-5</text>
+<line x1="80" y1="232.77777777777777" x2="515" y2="232.77777777777777" stroke="#ddd"/>
+<text x="72" y="236.77777777777777" font-size="11" text-anchor="end">0</text>
+<line x1="80" y1="208.33333333333331" x2="515" y2="208.33333333333331" stroke="#ddd"/>
+<text x="72" y="212.33333333333331" font-size="11" text-anchor="end">5</text>
+<line x1="80" y1="183.88888888888889" x2="515" y2="183.88888888888889" stroke="#ddd"/>
+<text x="72" y="187.88888888888889" font-size="11" text-anchor="end">10</text>
+<line x1="80" y1="159.44444444444446" x2="515" y2="159.44444444444446" stroke="#ddd"/>
+<text x="72" y="163.44444444444446" font-size="11" text-anchor="end">15</text>
+<line x1="80" y1="135.0" x2="515" y2="135.0" stroke="#ddd"/>
+<text x="72" y="139.0" font-size="11" text-anchor="end">20</text>
+<line x1="80" y1="232.77777777777777" x2="515" y2="232.77777777777777" stroke="#555"/>
+<text x="80" y="376" font-size="11" text-anchor="middle">1-5</text>
+<text x="80" y="392" font-size="10" text-anchor="middle">n=33</text>
+<text x="167" y="376" font-size="11" text-anchor="middle">6-10</text>
+<text x="167" y="392" font-size="10" text-anchor="middle">n=34</text>
+<text x="254" y="376" font-size="11" text-anchor="middle">11-20</text>
+<text x="254" y="392" font-size="10" text-anchor="middle">n=34</text>
+<text x="341" y="376" font-size="11" text-anchor="middle">21-50</text>
+<text x="341" y="392" font-size="10" text-anchor="middle">n=33</text>
+<text x="428" y="376" font-size="11" text-anchor="middle">51-100</text>
+<text x="428" y="392" font-size="10" text-anchor="middle">n=11</text>
+<text x="515" y="376" font-size="11" text-anchor="middle">101+</text>
+<text x="515" y="392" font-size="10" text-anchor="middle">n=2</text>
+<polyline points="80.00,226.38 167.00,227.39 254.00,221.50 341.00,181.81 428.00,183.08 515.00,232.78" fill="none" stroke="#0072b2" stroke-width="2"/>
+<circle cx="80.00" cy="226.38" r="3" fill="#0072b2"/>
+<circle cx="167.00" cy="227.39" r="3" fill="#0072b2"/>
+<circle cx="254.00" cy="221.50" r="3" fill="#0072b2"/>
+<circle cx="341.00" cy="181.81" r="3" fill="#0072b2"/>
+<circle cx="428.00" cy="183.08" r="3" fill="#0072b2"/>
+<circle cx="515.00" cy="232.78" r="3" fill="#0072b2"/>
+<polyline points="80.00,216.64 167.00,232.70 254.00,225.75 341.00,192.40 428.00,219.25 515.00,232.78" fill="none" stroke="#e69f00" stroke-width="2"/>
+<circle cx="80.00" cy="216.64" r="3" fill="#e69f00"/>
+<circle cx="167.00" cy="232.70" r="3" fill="#e69f00"/>
+<circle cx="254.00" cy="225.75" r="3" fill="#e69f00"/>
+<circle cx="341.00" cy="192.40" r="3" fill="#e69f00"/>
+<circle cx="428.00" cy="219.25" r="3" fill="#e69f00"/>
+<circle cx="515.00" cy="232.78" r="3" fill="#e69f00"/>
+<polyline points="80.00,231.84 167.00,242.26 254.00,228.20 341.00,184.57 428.00,140.13 515.00,232.78" fill="none" stroke="#009e73" stroke-width="2"/>
+<circle cx="80.00" cy="231.84" r="3" fill="#009e73"/>
+<circle cx="167.00" cy="242.26" r="3" fill="#009e73"/>
+<circle cx="254.00" cy="228.20" r="3" fill="#009e73"/>
+<circle cx="341.00" cy="184.57" r="3" fill="#009e73"/>
+<circle cx="428.00" cy="140.13" r="3" fill="#009e73"/>
+<circle cx="515.00" cy="232.78" r="3" fill="#009e73"/>
+<polyline points="80.00,253.82 167.00,266.24 254.00,247.32 341.00,222.74 428.00,307.08 515.00,343.83" fill="none" stroke="#cc79a7" stroke-width="2" stroke-dasharray="6 4"/>
+<circle cx="80.00" cy="253.82" r="3" fill="#cc79a7"/>
+<circle cx="167.00" cy="266.24" r="3" fill="#cc79a7"/>
+<circle cx="254.00" cy="247.32" r="3" fill="#cc79a7"/>
+<circle cx="341.00" cy="222.74" r="3" fill="#cc79a7"/>
+<circle cx="428.00" cy="307.08" r="3" fill="#cc79a7"/>
+<circle cx="515.00" cy="343.83" r="3" fill="#cc79a7"/>
+<text x="80" y="415" font-size="11" text-anchor="start">Gap in J&amp;F points; x = processed post-switch offsets</text>
+<text x="880" y="115" font-size="14" text-anchor="middle">LVOSv2</text>
+<line x1="670" y1="355.0" x2="1105" y2="355.0" stroke="#ddd"/>
+<text x="662" y="359.0" font-size="11" text-anchor="end">-5</text>
+<line x1="670" y1="281.66666666666663" x2="1105" y2="281.66666666666663" stroke="#ddd"/>
+<text x="662" y="285.66666666666663" font-size="11" text-anchor="end">0</text>
+<line x1="670" y1="208.33333333333331" x2="1105" y2="208.33333333333331" stroke="#ddd"/>
+<text x="662" y="212.33333333333331" font-size="11" text-anchor="end">5</text>
+<line x1="670" y1="135.0" x2="1105" y2="135.0" stroke="#ddd"/>
+<text x="662" y="139.0" font-size="11" text-anchor="end">10</text>
+<line x1="670" y1="281.66666666666663" x2="1105" y2="281.66666666666663" stroke="#555"/>
+<text x="670" y="376" font-size="11" text-anchor="middle">1-5</text>
+<text x="670" y="392" font-size="10" text-anchor="middle">n=36</text>
+<text x="757" y="376" font-size="11" text-anchor="middle">6-10</text>
+<text x="757" y="392" font-size="10" text-anchor="middle">n=37</text>
+<text x="844" y="376" font-size="11" text-anchor="middle">11-20</text>
+<text x="844" y="392" font-size="10" text-anchor="middle">n=38</text>
+<text x="931" y="376" font-size="11" text-anchor="middle">21-50</text>
+<text x="931" y="392" font-size="10" text-anchor="middle">n=39</text>
+<text x="1018" y="376" font-size="11" text-anchor="middle">51-100</text>
+<text x="1018" y="392" font-size="10" text-anchor="middle">n=39</text>
+<text x="1105" y="376" font-size="11" text-anchor="middle">101+</text>
+<text x="1105" y="392" font-size="10" text-anchor="middle">n=37</text>
+<polyline points="670.00,262.06 757.00,256.31 844.00,263.27 931.00,255.75 1018.00,184.57 1105.00,145.32" fill="none" stroke="#0072b2" stroke-width="2"/>
+<circle cx="670.00" cy="262.06" r="3" fill="#0072b2"/>
+<circle cx="757.00" cy="256.31" r="3" fill="#0072b2"/>
+<circle cx="844.00" cy="263.27" r="3" fill="#0072b2"/>
+<circle cx="931.00" cy="255.75" r="3" fill="#0072b2"/>
+<circle cx="1018.00" cy="184.57" r="3" fill="#0072b2"/>
+<circle cx="1105.00" cy="145.32" r="3" fill="#0072b2"/>
+<polyline points="670.00,260.85 757.00,264.00 844.00,273.86 931.00,289.61 1018.00,269.57 1105.00,212.72" fill="none" stroke="#e69f00" stroke-width="2"/>
+<circle cx="670.00" cy="260.85" r="3" fill="#e69f00"/>
+<circle cx="757.00" cy="264.00" r="3" fill="#e69f00"/>
+<circle cx="844.00" cy="273.86" r="3" fill="#e69f00"/>
+<circle cx="931.00" cy="289.61" r="3" fill="#e69f00"/>
+<circle cx="1018.00" cy="269.57" r="3" fill="#e69f00"/>
+<circle cx="1105.00" cy="212.72" r="3" fill="#e69f00"/>
+<polyline points="670.00,259.70 757.00,251.91 844.00,261.65 931.00,259.60 1018.00,225.52 1105.00,136.90" fill="none" stroke="#009e73" stroke-width="2"/>
+<circle cx="670.00" cy="259.70" r="3" fill="#009e73"/>
+<circle cx="757.00" cy="251.91" r="3" fill="#009e73"/>
+<circle cx="844.00" cy="261.65" r="3" fill="#009e73"/>
+<circle cx="931.00" cy="259.60" r="3" fill="#009e73"/>
+<circle cx="1018.00" cy="225.52" r="3" fill="#009e73"/>
+<circle cx="1105.00" cy="136.90" r="3" fill="#009e73"/>
+<polyline points="670.00,237.44 757.00,274.55 844.00,274.83 931.00,298.01 1018.00,337.29 1105.00,293.20" fill="none" stroke="#cc79a7" stroke-width="2" stroke-dasharray="6 4"/>
+<circle cx="670.00" cy="237.44" r="3" fill="#cc79a7"/>
+<circle cx="757.00" cy="274.55" r="3" fill="#cc79a7"/>
+<circle cx="844.00" cy="274.83" r="3" fill="#cc79a7"/>
+<circle cx="931.00" cy="298.01" r="3" fill="#cc79a7"/>
+<circle cx="1018.00" cy="337.29" r="3" fill="#cc79a7"/>
+<circle cx="1105.00" cy="293.20" r="3" fill="#cc79a7"/>
+<text x="670" y="415" font-size="11" text-anchor="start">Gap in J&amp;F points; x = processed post-switch offsets</text>
+<text x="290" y="445" font-size="14" text-anchor="middle">DAVIS2017 (train, exploratory)</text>
+<line x1="80" y1="685.0" x2="515" y2="685.0" stroke="#ddd"/>
+<text x="72" y="689.0" font-size="11" text-anchor="end">0</text>
+<line x1="80" y1="465.0" x2="515" y2="465.0" stroke="#ddd"/>
+<text x="72" y="469.0" font-size="11" text-anchor="end">5</text>
+<line x1="80" y1="685.0" x2="515" y2="685.0" stroke="#555"/>
+<text x="80" y="706" font-size="11" text-anchor="middle">1-5</text>
+<text x="80" y="722" font-size="10" text-anchor="middle">n=40</text>
+<text x="167" y="706" font-size="11" text-anchor="middle">6-10</text>
+<text x="167" y="722" font-size="10" text-anchor="middle">n=40</text>
+<text x="254" y="706" font-size="11" text-anchor="middle">11-20</text>
+<text x="254" y="722" font-size="10" text-anchor="middle">n=39</text>
+<text x="341" y="706" font-size="11" text-anchor="middle">21-50</text>
+<text x="341" y="722" font-size="10" text-anchor="middle">n=38</text>
+<text x="428" y="706" font-size="11" text-anchor="middle">51-100</text>
+<text x="428" y="722" font-size="10" text-anchor="middle">n=0</text>
+<text x="515" y="706" font-size="11" text-anchor="middle">101+</text>
+<text x="515" y="722" font-size="10" text-anchor="middle">n=0</text>
+<polyline points="80.00,517.56 167.00,518.32 254.00,554.91 341.00,577.86" fill="none" stroke="#0072b2" stroke-width="2"/>
+<circle cx="80.00" cy="517.56" r="3" fill="#0072b2"/>
+<circle cx="167.00" cy="518.32" r="3" fill="#0072b2"/>
+<circle cx="254.00" cy="554.91" r="3" fill="#0072b2"/>
+<circle cx="341.00" cy="577.86" r="3" fill="#0072b2"/>
+<polyline points="80.00,567.51 167.00,635.70 254.00,631.80 341.00,610.41" fill="none" stroke="#e69f00" stroke-width="2"/>
+<circle cx="80.00" cy="567.51" r="3" fill="#e69f00"/>
+<circle cx="167.00" cy="635.70" r="3" fill="#e69f00"/>
+<circle cx="254.00" cy="631.80" r="3" fill="#e69f00"/>
+<circle cx="341.00" cy="610.41" r="3" fill="#e69f00"/>
+<polyline points="80.00,546.03 167.00,621.35 254.00,602.92 341.00,585.64" fill="none" stroke="#009e73" stroke-width="2"/>
+<circle cx="80.00" cy="546.03" r="3" fill="#009e73"/>
+<circle cx="167.00" cy="621.35" r="3" fill="#009e73"/>
+<circle cx="254.00" cy="602.92" r="3" fill="#009e73"/>
+<circle cx="341.00" cy="585.64" r="3" fill="#009e73"/>
+<polyline points="80.00,597.49 167.00,671.80 254.00,675.31 341.00,674.37" fill="none" stroke="#cc79a7" stroke-width="2" stroke-dasharray="6 4"/>
+<circle cx="80.00" cy="597.49" r="3" fill="#cc79a7"/>
+<circle cx="167.00" cy="671.80" r="3" fill="#cc79a7"/>
+<circle cx="254.00" cy="675.31" r="3" fill="#cc79a7"/>
+<circle cx="341.00" cy="674.37" r="3" fill="#cc79a7"/>
+<text x="80" y="745" font-size="11" text-anchor="start">Gap in J&amp;F points; x = processed post-switch offsets</text>
+<text x="880" y="445" font-size="14" text-anchor="middle">VOST</text>
+<line x1="670" y1="685.0" x2="1105" y2="685.0" stroke="#ddd"/>
+<text x="662" y="689.0" font-size="11" text-anchor="end">-15</text>
+<line x1="670" y1="630.0" x2="1105" y2="630.0" stroke="#ddd"/>
+<text x="662" y="634.0" font-size="11" text-anchor="end">-10</text>
+<line x1="670" y1="575.0" x2="1105" y2="575.0" stroke="#ddd"/>
+<text x="662" y="579.0" font-size="11" text-anchor="end">-5</text>
+<line x1="670" y1="520.0" x2="1105" y2="520.0" stroke="#ddd"/>
+<text x="662" y="524.0" font-size="11" text-anchor="end">0</text>
+<line x1="670" y1="465.0" x2="1105" y2="465.0" stroke="#ddd"/>
+<text x="662" y="469.0" font-size="11" text-anchor="end">5</text>
+<line x1="670" y1="520.0" x2="1105" y2="520.0" stroke="#555"/>
+<text x="670" y="706" font-size="11" text-anchor="middle">1-5</text>
+<text x="670" y="722" font-size="10" text-anchor="middle">n=36</text>
+<text x="757" y="706" font-size="11" text-anchor="middle">6-10</text>
+<text x="757" y="722" font-size="10" text-anchor="middle">n=36</text>
+<text x="844" y="706" font-size="11" text-anchor="middle">11-20</text>
+<text x="844" y="722" font-size="10" text-anchor="middle">n=40</text>
+<text x="931" y="706" font-size="11" text-anchor="middle">21-50</text>
+<text x="931" y="722" font-size="10" text-anchor="middle">n=40</text>
+<text x="1018" y="706" font-size="11" text-anchor="middle">51-100</text>
+<text x="1018" y="722" font-size="10" text-anchor="middle">n=22</text>
+<text x="1105" y="706" font-size="11" text-anchor="middle">101+</text>
+<text x="1105" y="722" font-size="10" text-anchor="middle">n=2</text>
+<polyline points="670.00,585.11 757.00,591.18 844.00,574.34 931.00,501.56 1018.00,551.15 1105.00,502.44" fill="none" stroke="#0072b2" stroke-width="2"/>
+<circle cx="670.00" cy="585.11" r="3" fill="#0072b2"/>
+<circle cx="757.00" cy="591.18" r="3" fill="#0072b2"/>
+<circle cx="844.00" cy="574.34" r="3" fill="#0072b2"/>
+<circle cx="931.00" cy="501.56" r="3" fill="#0072b2"/>
+<circle cx="1018.00" cy="551.15" r="3" fill="#0072b2"/>
+<circle cx="1105.00" cy="502.44" r="3" fill="#0072b2"/>
+<polyline points="670.00,557.97 757.00,560.19 844.00,551.25 931.00,518.08 1018.00,562.92 1105.00,502.41" fill="none" stroke="#e69f00" stroke-width="2"/>
+<circle cx="670.00" cy="557.97" r="3" fill="#e69f00"/>
+<circle cx="757.00" cy="560.19" r="3" fill="#e69f00"/>
+<circle cx="844.00" cy="551.25" r="3" fill="#e69f00"/>
+<circle cx="931.00" cy="518.08" r="3" fill="#e69f00"/>
+<circle cx="1018.00" cy="562.92" r="3" fill="#e69f00"/>
+<circle cx="1105.00" cy="502.41" r="3" fill="#e69f00"/>
+<polyline points="670.00,569.26 757.00,581.56 844.00,567.54 931.00,509.42 1018.00,563.59 1105.00,502.42" fill="none" stroke="#009e73" stroke-width="2"/>
+<circle cx="670.00" cy="569.26" r="3" fill="#009e73"/>
+<circle cx="757.00" cy="581.56" r="3" fill="#009e73"/>
+<circle cx="844.00" cy="567.54" r="3" fill="#009e73"/>
+<circle cx="931.00" cy="509.42" r="3" fill="#009e73"/>
+<circle cx="1018.00" cy="563.59" r="3" fill="#009e73"/>
+<circle cx="1105.00" cy="502.42" r="3" fill="#009e73"/>
+<polyline points="670.00,589.23 757.00,587.06 844.00,589.24 931.00,538.95 1018.00,633.58 1105.00,600.77" fill="none" stroke="#cc79a7" stroke-width="2" stroke-dasharray="6 4"/>
+<circle cx="670.00" cy="589.23" r="3" fill="#cc79a7"/>
+<circle cx="757.00" cy="587.06" r="3" fill="#cc79a7"/>
+<circle cx="844.00" cy="589.24" r="3" fill="#cc79a7"/>
+<circle cx="931.00" cy="538.95" r="3" fill="#cc79a7"/>
+<circle cx="1018.00" cy="633.58" r="3" fill="#cc79a7"/>
+<circle cx="1105.00" cy="600.77" r="3" fill="#cc79a7"/>
+<text x="670" y="745" font-size="11" text-anchor="start">Gap in J points; x = processed post-switch offsets</text>
+<text x="600" y="770" font-size="12" text-anchor="middle">LVOS stride=5; VOST stride=6. n counts videos with visible GT in each bin.</text>
+</g></svg>

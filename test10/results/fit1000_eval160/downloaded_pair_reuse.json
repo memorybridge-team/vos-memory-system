@@ -1,0 +1,314 @@
+{
+  "catalog_sha256": "3bbf4ebbb6fb6d83975b812ccb6700cc7aa664cca1a9035cfa854a0cda53e69c",
+  "code_sha256": "27d60e2ff694c3d965b26b324b555157a429cfaf0e052b8b96547111210cbd23",
+  "candidate_pairs": [
+    {
+      "case_id": "MOSEv2:tug3h8uh:obj1:switch00026",
+      "source_file": "mose_tug3h8uh_obj1_switch26.pt",
+      "sha256": "102b55ca2a05102d0abd76c8bfd9dd8208d88b1ad3ee85e237672fe7da93c15e",
+      "metadata_compatible": true,
+      "different_source_tensors": [
+        "spatial_memory",
+        "object_pointer",
+        "presence_logits"
+      ],
+      "different_target_tensors": [
+        "spatial_memory",
+        "object_pointer",
+        "presence_logits"
+      ],
+      "state_mse_to_local_reference": {
+        "downloaded_source_to_local_small": {
+          "spatial_memory": 0.0002182697062380612,
+          "object_pointer": 0.0002819194342009723
+        },
+        "downloaded_source_to_local_base": {
+          "spatial_memory": 1.6625019311904907,
+          "object_pointer": 1.055114984512329
+        },
+        "downloaded_target_to_local_base": {
+          "spatial_memory": 0.00013080905773676932,
+          "object_pointer": 6.579546607099473e-05
+        },
+        "downloaded_target_to_local_small": {
+          "spatial_memory": 1.6608551740646362,
+          "object_pointer": 1.0504069328308105
+        }
+      },
+      "downloaded_target_full_suffix_logit_hash_equal_to_native": false,
+      "verified_reusable": false,
+      "reason": "not numerically equivalent to this execution; retain locally generated evaluation pair"
+    },
+    {
+      "case_id": "MOSEv2:r2iallw7:obj1:switch00028",
+      "source_file": "mose_r2iallw7_obj1_switch28.pt",
+      "sha256": "4228e559bafbb54d4466631e23bd60a889128a2f8d6b5150830e10ac9718e851",
+      "metadata_compatible": true,
+      "different_source_tensors": [
+        "spatial_memory",
+        "object_pointer",
+        "presence_logits"
+      ],
+      "different_target_tensors": [
+        "spatial_memory",
+        "object_pointer",
+        "presence_logits"
+      ],
+      "state_mse_to_local_reference": {
+        "downloaded_source_to_local_small": {
+          "spatial_memory": 0.0008747098036110401,
+          "object_pointer": 0.0008042706176638603
+        },
+        "downloaded_source_to_local_base": {
+          "spatial_memory": 1.6261744499206543,
+          "object_pointer": 1.477606177330017
+        },
+        "downloaded_target_to_local_base": {
+          "spatial_memory": 0.0003941896720789373,
+          "object_pointer": 0.0007377360598184168
+        },
+        "downloaded_target_to_local_small": {
+          "spatial_memory": 1.625529408454895,
+          "object_pointer": 1.4525935649871826
+        }
+      },
+      "downloaded_target_full_suffix_logit_hash_equal_to_native": false,
+      "verified_reusable": false,
+      "reason": "not numerically equivalent to this execution; retain locally generated evaluation pair"
+    },
+    {
+      "case_id": "MOSEv2:67138c33:obj1:switch00026",
+      "source_file": "mose_67138c33_obj1_switch26.pt",
+      "sha256": "729ecf747c196f6a0975f0e6a62877bf026795b1c3aabef2b4d68c681309f437",
+      "metadata_compatible": true,
+      "different_source_tensors": [
+        "spatial_memory",
+        "object_pointer",
+        "presence_logits"
+      ],
+      "different_target_tensors": [
+        "spatial_memory",
+        "object_pointer",
+        "presence_logits"
+      ],
+      "state_mse_to_local_reference": {
+        "downloaded_source_to_local_small": {
+          "spatial_memory": 0.0004382718470878899,
+          "object_pointer": 8.81291925907135e-05
+        },
+        "downloaded_source_to_local_base": {
+          "spatial_memory": 1.6617817878723145,
+          "object_pointer": 0.6528858542442322
+        },
+        "downloaded_target_to_local_base": {
+          "spatial_memory": 0.000363771163392812,
+          "object_pointer": 0.0001897524343803525
+        },
+        "downloaded_target_to_local_small": {
+          "spatial_memory": 1.6616355180740356,
+          "object_pointer": 0.6553909778594971
+        }
+      },
+      "downloaded_target_full_suffix_logit_hash_equal_to_native": false,
+      "verified_reusable": false,
+      "reason": "not numerically equivalent to this execution; retain locally generated evaluation pair"
+    },
+    {
+      "case_id": "MOSEv2:ln3zsx8y:obj1:switch00027",
+      "source_file": "mose_ln3zsx8y_obj1_switch27.pt",
+      "sha256": "c24fec98f24cc2abe3bf5f48e763f85f78f7337aa57a26ab116bcc1a43bc1522",
+      "metadata_compatible": true,
+      "different_source_tensors": [
+        "spatial_memory",
+        "object_pointer",
+        "presence_logits"
+      ],
+      "different_target_tensors": [
+        "spatial_memory",
+        "object_pointer",
+        "presence_logits"
+      ],
+      "state_mse_to_local_reference": {
+        "downloaded_source_to_local_small": {
+          "spatial_memory": 0.0013440725160762668,
+          "object_pointer": 0.203502357006073
+        },
+        "downloaded_source_to_local_base": {
+          "spatial_memory": 1.6101324558258057,
+          "object_pointer": 1.2596886157989502
+        },
+        "downloaded_target_to_local_base": {
+          "spatial_memory": 0.00034951145062223077,
+          "object_pointer": 0.0010828556260094047
+        },
+        "downloaded_target_to_local_small": {
+          "spatial_memory": 1.6113967895507812,
+          "object_pointer": 1.1579478979110718
+        }
+      },
+      "downloaded_target_full_suffix_logit_hash_equal_to_native": false,
+      "verified_reusable": false,
+      "reason": "not numerically equivalent to this execution; retain locally generated evaluation pair"
+    }
+  ],
+  "no_video_object_switch_match": [
+    "MOSEv2:e33cddc9:obj1:switch00016",
+    "LVOSv2:fqbAXAoT:obj1:switch00000521",
+    "DAVIS2017:tuk-tuk:obj2:switch00029",
+    "VOST:6922_split_paper:obj1:switch00228",
+    "MOSEv2:31rry8ca:obj1:switch00045",
+    "LVOSv2:UZzAPST3:obj2:switch00000661",
+    "DAVIS2017:scooter-gray:obj2:switch00037",
+    "VOST:10625_knead_dough:obj1:switch00354",
+    "MOSEv2:k0vcz0st:obj1:switch00114",
+    "LVOSv2:vjG0jbkQ:obj2:switch00002531",
+    "DAVIS2017:stroller:obj1:switch00045",
+    "VOST:5118_squeeze_bag:obj1:switch00444",
+    "MOSEv2:aa185af5:obj2:switch00024",
+    "LVOSv2:rSFfONgp:obj1:switch00000586",
+    "DAVIS2017:motocross-bumps:obj2:switch00029",
+    "VOST:559_cut_cucumber:obj4:switch00480",
+    "MOSEv2:51vddywa:obj1:switch00037",
+    "LVOSv2:3nsHQkEK:obj1:switch00000816",
+    "DAVIS2017:kid-football:obj2:switch00033",
+    "VOST:5304_unpack_broccoli:obj1:switch00264",
+    "MOSEv2:aatd0ihe:obj1:switch00053",
+    "LVOSv2:afoR2rH6:obj1:switch00001561",
+    "DAVIS2017:drone:obj1:switch00045",
+    "VOST:9383_spread_cement:obj1:switch00444",
+    "MOSEv2:5d107jy0:obj1:switch00021",
+    "LVOSv2:bxjTooAn:obj4:switch00000961",
+    "DAVIS2017:crossing:obj2:switch00025",
+    "VOST:8267_pour_flour:obj1:switch00192",
+    "MOSEv2:pz9rf3kp:obj1:switch00040",
+    "LVOSv2:LEo03dYV:obj1:switch00000906",
+    "DAVIS2017:stunt:obj1:switch00035",
+    "VOST:4340_roll_dough:obj1:switch00366",
+    "MOSEv2:or8eklj5:obj1:switch00059",
+    "LVOSv2:HYSm91eM:obj6:switch00001246",
+    "DAVIS2017:bmx-bumps:obj1:switch00044",
+    "VOST:4031_cut_broccoli:obj1:switch00528",
+    "LVOSv2:cmprgw5z:obj1:switch00000586",
+    "DAVIS2017:surf:obj3:switch00027",
+    "VOST:4357_trim_dough:obj1:switch00138",
+    "LVOSv2:3bvEjhOT:obj2:switch00001151",
+    "DAVIS2017:tennis:obj2:switch00034",
+    "VOST:1206_cut_mango:obj1:switch00480",
+    "MOSEv2:bd9untye:obj1:switch00059",
+    "LVOSv2:UgZ759gD:obj1:switch00001416",
+    "DAVIS2017:mallard-water:obj1:switch00039",
+    "VOST:5110_paint_nail:obj1:switch00654",
+    "MOSEv2:ca619b7f:obj2:switch00016",
+    "LVOSv2:yExgitit:obj1:switch00000656",
+    "DAVIS2017:horsejump-low:obj2:switch00029",
+    "VOST:1205_cut_mango:obj3:switch00300",
+    "MOSEv2:iijj01lq:obj1:switch00041",
+    "LVOSv2:Erx5Q6Vf:obj1:switch00001011",
+    "DAVIS2017:breakdance-flare:obj1:switch00035",
+    "VOST:4222_peel_wire:obj1:switch00348",
+    "MOSEv2:zj3p2iaa:obj1:switch00050",
+    "LVOSv2:x3nD3QQ9:obj1:switch00001491",
+    "DAVIS2017:dog-gooses:obj4:switch00042",
+    "VOST:7202_clean_car:obj1:switch00390",
+    "MOSEv2:nu73npba:obj1:switch00023",
+    "LVOSv2:pyq6I5Hh:obj3:switch00000486",
+    "DAVIS2017:dance-jump:obj1:switch00029",
+    "VOST:1210_cut_garlic:obj1:switch00310",
+    "MOSEv2:730bc486:obj1:switch00043",
+    "LVOSv2:aT6JIUVU:obj1:switch00000891",
+    "DAVIS2017:car-turn:obj1:switch00039",
+    "VOST:9691_divide_dough:obj1:switch00318",
+    "MOSEv2:vd2kzgc9:obj1:switch00052",
+    "LVOSv2:SRRojucs:obj1:switch00001326",
+    "DAVIS2017:color-run:obj1:switch00041",
+    "VOST:4030_cut_broccoli:obj2:switch00678",
+    "MOSEv2:rj6on8oa:obj1:switch00024",
+    "LVOSv2:xWs99Q4N:obj1:switch00000596",
+    "DAVIS2017:rallye:obj1:switch00024",
+    "VOST:9692_divide_dough:obj1:switch00174",
+    "MOSEv2:0644075b:obj1:switch00043",
+    "LVOSv2:8lxxCA5h:obj1:switch00000836",
+    "DAVIS2017:tractor-sand:obj2:switch00037",
+    "VOST:8032_divide_dough:obj1:switch00270",
+    "MOSEv2:1e95ef5e:obj1:switch00052",
+    "LVOSv2:KhDr3o6f:obj1:switch00002036",
+    "DAVIS2017:scooter-board:obj1:switch00045",
+    "VOST:7049_paint_nail:obj2:switch00558",
+    "MOSEv2:edab084s:obj1:switch00024",
+    "LVOSv2:xpI7xRWN:obj1:switch00000621",
+    "DAVIS2017:classic-car:obj1:switch00031",
+    "VOST:9673_cut_tomato:obj1:switch00150",
+    "MOSEv2:0518cuig:obj1:switch00041",
+    "LVOSv2:YfoFnMgm:obj1:switch00000696",
+    "DAVIS2017:walking:obj1:switch00035",
+    "VOST:3993_cut_tomato:obj1:switch00324",
+    "MOSEv2:cv63itgy:obj1:switch00061",
+    "LVOSv2:4H7FEAHv:obj1:switch00002726",
+    "DAVIS2017:train:obj3:switch00039",
+    "VOST:7869_squeeze_bag:obj1:switch00426",
+    "MOSEv2:54eda06d:obj1:switch00023",
+    "LVOSv2:iWjeKM6a:obj2:switch00000586",
+    "DAVIS2017:snowboard:obj2:switch00032",
+    "VOST:3562_break_egg:obj1:switch00444",
+    "MOSEv2:qcyzntli:obj1:switch00047",
+    "LVOSv2:vJ8W2TO5:obj1:switch00001146",
+    "DAVIS2017:sheep:obj3:switch00033",
+    "VOST:1179_cut_onion:obj1:switch00600",
+    "MOSEv2:my6cd5xb:obj1:switch00346",
+    "LVOSv2:NFbsxmYE:obj1:switch00002016",
+    "DAVIS2017:skate-park:obj1:switch00039",
+    "VOST:4626_cut_paper:obj1:switch00456",
+    "MOSEv2:2080824a:obj1:switch00018",
+    "LVOSv2:gYaLtvfc:obj1:switch00000586",
+    "DAVIS2017:motorbike:obj3:switch00021",
+    "VOST:3161_peel_banana:obj1:switch00504",
+    "MOSEv2:f7935d24:obj1:switch00049",
+    "LVOSv2:Q7jVRHO5:obj1:switch00000751",
+    "DAVIS2017:varanus-cage:obj1:switch00033",
+    "VOST:7866_squeeze_bag:obj1:switch00336",
+    "MOSEv2:hxaid41o:obj1:switch00054",
+    "LVOSv2:N6CONZUW:obj1:switch00002716",
+    "DAVIS2017:dogs-scale:obj4:switch00041",
+    "VOST:6503_apply_paint:obj1:switch00534",
+    "MOSEv2:5949ee84:obj1:switch00019",
+    "LVOSv2:oWARMtpa:obj1:switch00000526",
+    "DAVIS2017:swing:obj2:switch00029",
+    "VOST:8028_divide_dough:obj1:switch00234",
+    "MOSEv2:ouyf2et0:obj1:switch00029",
+    "LVOSv2:gAHn8WFw:obj1:switch00001216",
+    "DAVIS2017:boat:obj1:switch00037",
+    "VOST:1184_cut_chilli:obj2:switch00480",
+    "MOSEv2:zxh1jkdr:obj1:switch00066",
+    "LVOSv2:Q3kk9fuH:obj1:switch00002786",
+    "DAVIS2017:koala:obj1:switch00049",
+    "VOST:4021_cut_broccoli:obj1:switch00414",
+    "MOSEv2:c9080ed1:obj1:switch00017",
+    "LVOSv2:usxBn0LJ:obj3:switch00000586",
+    "DAVIS2017:longboard:obj5:switch00025",
+    "VOST:8024_divide_dough:obj1:switch00222",
+    "MOSEv2:hy97dn1d:obj1:switch00029",
+    "LVOSv2:ae7pGvGx:obj1:switch00001026",
+    "DAVIS2017:lindy-hop:obj3:switch00036",
+    "VOST:1211_cut_garlic:obj1:switch00510",
+    "MOSEv2:efk04oqc:obj1:switch00055",
+    "LVOSv2:beR0WT11:obj1:switch00001746",
+    "DAVIS2017:rhino:obj1:switch00044",
+    "VOST:1207_break_garlic:obj1:switch00690",
+    "LVOSv2:F52kIGgi:obj1:switch00000586",
+    "DAVIS2017:upside-down:obj1:switch00032",
+    "VOST:1200_cut_onion:obj1:switch00270",
+    "LVOSv2:FFMl5yqs:obj1:switch00000666",
+    "DAVIS2017:elephant:obj1:switch00039",
+    "VOST:4016_cut_herbs:obj1:switch00300",
+    "MOSEv2:hzkwgfld:obj1:switch00049",
+    "LVOSv2:KPDIQo5u:obj2:switch00002761",
+    "DAVIS2017:flamingo:obj1:switch00039",
+    "VOST:994_cut_onion:obj2:switch00816",
+    "MOSEv2:0rvb6kp2:obj1:switch00020",
+    "LVOSv2:KGguT1Cu:obj1:switch00000611",
+    "DAVIS2017:lady-running:obj2:switch00032",
+    "VOST:5551_close_notepad:obj1:switch00150"
+  ],
+  "seconds": 9.286438636998355,
+  "note": "Matching IDs alone do not prove prompt/preprocessing/numerical execution compatibility. No reused target is accepted when it fails the exact native continuation gate. This audit diagnoses differences; it does not establish their cause or invalidate the fit training bank."
+}

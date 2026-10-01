@@ -2,6 +2,20 @@
 
 Small이 frame `t`까지 처리한 상태를 Base+에 전달해 `t+1`부터 이어 처리하는 방법을 비교한다. 결과 패키지에는 평가 harness, 선택 manifest, case별 점수 JSON, 요약 통계, 실행·비용·provenance 기록이 포함되어 있다.
 
+## 2026-10-02: 실험·논문 지표·Affine 분석 산출물 공개
+
+[산출물 전체 안내와 기존 보고서 정정](results/README.md), [Affine 비교 보고서](results/affine_comparison_20261001/REPORT.md), [구간별 전체 CSV](results/affine_comparison_20261001/windows.csv)를 먼저 참조한다. 이전 결과 파일과 날짜를 그대로 보존했으며 원시 method 점수·로그·코드 snapshot도 무손실 archive로 포함했다. 사용자 승인에 따라 약 20GB 예측 캐시는 로컬에 남기고 경로·크기·SHA-256 목록을 공개한다. 새 추론·학습은 수행하지 않았다. 기존 보고서의 AdamW 표기는 실제 코드의 **Adam**으로 정정하며, 최신 비교는 GT-visible 기준 +1..+5와 full suffix를 분리한다.
+
+## 최신 실행: fit 1,000 pair / validation 200 pair
+
+2026-10-01에는 기존 fit bank에서 영상 단위로 분리한 학습 1,000 pair와 validation 200 pair로 Affine·MLP·Transformer를 새로 학습했다(seed 7, batch_records=4, 8 epoch). 선택 epoch는 각각 6/8/8이며, MLP와 Transformer의 수렴은 확인되지 않았다.
+
+MOSEv2·LVOSv2·DAVIS 2017·VOST 각각 40영상, 총 160영상에서 핵심 8개 방법을 모두 완료했다. Self-injection 160/160 통과, 본 평가 실패 및 미완료 0건이다. 주 지표는 전환 후 +1..+10 처리 프레임 J&F다. Affine은 Direct보다 네 데이터셋 모두 개선됐지만 nonlinear의 추가 이점은 데이터셋 의존적이었다. 이전 평가 영상이 포함되므로 untouched test로 부르지 않는다.
+
+최신 [보고서](results/fit1000_eval160/REPORT.md), [학습 곡선](results/fit1000_eval160/training_curves.svg), [pair 목록](results/fit1000_eval160/training_pairs.csv), [평가 영상 목록](results/fit1000_eval160/evaluation_cases.csv), [검증 기록](results/fit1000_eval160/audit.json)을 참조한다. 전체 suffix·paired CI·비용·VRAM·준비 단계 실패·다운로드 state pair의 호환성 점검도 같은 폴더에 보존했다. 원본 영상과 대용량 state tensor는 결과 export에 포함하지 않는다.
+
+속도 개선은 매 case마다 반복하던 checkpoint 전체 hash 읽기를 제거한 것이다. 시작 시와 최종 export 시의 hash 검증, case 입력 검증 및 self-injection gate는 유지했다. 비교군·suffix·추론 정밀도를 줄여 속도를 높인 것은 아니다.
+
 ## 현재 코드와 실행된 결과의 구분
 
 현재 코드는 `state_pair_examples`와 같은 **`cmmt.prepared_handoff_case.v2` state-only pair**를 학습·handoff에 사용한다. 새 학습 결과만 평가에 사용하며, 주 지표는 Base+ 전환 후 **첫 10개 처리 프레임의 J&F**다. `+1`부터 `+10`까지 J/F/J&F를 각각 기록한다. 아래 기존 Run01/Heldout01 수치는 이전 학습·suffix 평가 결과이며 새 코드의 학습 또는 10프레임 평가를 실행한 결과가 아니다.

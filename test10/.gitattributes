@@ -1,0 +1,7 @@
+# Preserve original generated outputs byte-for-byte, including CSV CRLF and
+# matplotlib SVG path whitespace. Do not apply text normalization to them.
+results/**/*.csv -text whitespace=-blank-at-eol
+results/**/*.svg -text whitespace=-blank-at-eol
+training/run_fit1000_val200/*.svg -text whitespace=-blank-at-eol
+training/run_fit1000_val200/*.pt -text
+results/publication_20261002/raw_runs/*.tar.gz -text

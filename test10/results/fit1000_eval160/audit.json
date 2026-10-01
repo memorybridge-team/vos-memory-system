@@ -1,0 +1,95 @@
+{
+  "training_counts": {
+    "MOSEv2:train": {
+      "pairs": 500,
+      "videos": 500,
+      "valid_records": 7189
+    },
+    "MOSEv2:validation": {
+      "pairs": 100,
+      "videos": 100,
+      "valid_records": 1425
+    },
+    "LVOSv2:train": {
+      "pairs": 500,
+      "videos": 250,
+      "valid_records": 8000
+    },
+    "LVOSv2:validation": {
+      "pairs": 100,
+      "videos": 75,
+      "valid_records": 1600
+    }
+  },
+  "evaluation_counts": {
+    "MOSEv2": 40,
+    "LVOSv2": 40,
+    "DAVIS2017": 40,
+    "VOST": 40
+  },
+  "length_bins": {
+    "MOSEv2": {
+      "0": 14,
+      "1": 13,
+      "2": 13
+    },
+    "LVOSv2": {
+      "0": 14,
+      "1": 13,
+      "2": 13
+    },
+    "DAVIS2017": {
+      "0": 14,
+      "1": 13,
+      "2": 13
+    },
+    "VOST": {
+      "0": 14,
+      "1": 13,
+      "2": 13
+    }
+  },
+  "no_training_validation_evaluation_video_overlap": true,
+  "fit_only": true,
+  "gates": 160,
+  "no_replay_contract_checked": true,
+  "anchor_replay_16_contract_checked": true,
+  "scored_frame_contract_checked": true,
+  "checkpoint_and_input_provenance_verified": true,
+  "cost_cases": 12,
+  "failed": [],
+  "incomplete": [],
+  "evaluation_seconds": 7639.382988842997,
+  "excluded_setup_failures": 2,
+  "prior_evaluation_sources": {
+    "run01": {
+      "selection.json": "b1ceeb6b632fd95e97d05f8344385b6ade51f918a29d16707f8311a784172902",
+      "budget.json": "0945dc62f47091a211fcd2fc25227fff92e3fdbcf493e4b03ad2620ad1ab8943"
+    },
+    "heldout01": {
+      "selection.json": "2418fa31e77bc6deac595527472801982c487af03dec5b1a98ef9ead96bb47ea",
+      "budget.json": "114d73ed251a3bc78520461528b135fc53781df84cc6167d58da0c70565e46e2"
+    }
+  },
+  "previously_evaluated_counts": {
+    "MOSEv2": 34,
+    "LVOSv2": 35,
+    "DAVIS2017": 34,
+    "VOST": 35
+  },
+  "last_mask_empty_prompts": {
+    "MOSEv2": 15,
+    "VOST": 5,
+    "DAVIS2017": 4,
+    "LVOSv2": 8
+  },
+  "checkpoint_at_epoch_limit": {
+    "affine": false,
+    "residual_mlp": true,
+    "transformer": true
+  },
+  "downloaded_pair_reuse": {
+    "candidates": 4,
+    "verified_reusable": 0
+  }
+}

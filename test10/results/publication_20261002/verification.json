@@ -1,0 +1,29 @@
+{
+  "schema": "test10.publication_verification.v1",
+  "verified_date_kst": "2026-10-02",
+  "experiment_inference_performed": false,
+  "experiment_retraining_performed": false,
+  "archive_members_read_back_and_sha256_matched": 81447,
+  "publication_inventory_entries_verified": 93,
+  "publication_inventory_mismatches": [],
+  "original_export_files_verified": 22,
+  "modified_original_export_files": [],
+  "translator_checkpoints_sha256_verified": 3,
+  "translator_checkpoint_mismatches": [],
+  "affine_reaggregation": {
+    "cases": 159,
+    "full_suffix_parity": true,
+    "windows.csv_byte_identical": true,
+    "affine_differences.csv_byte_identical": true,
+    "metrics.json_byte_identical": true
+  },
+  "cpu_tests": {
+    "command": "TEST10_WORKSPACE=/home/home/test TEST10_TRANSLATOR_REPO=/home/home/test/test9/vos-memory-translator-nonlinear /home/home/test/.cuda-bench-env/bin/python -m unittest discover -s test10/tests -v",
+    "tests": 68,
+    "result": "OK",
+    "seconds": 9.424,
+    "note": "Includes a temporary synthetic CPU optimizer roundtrip; no dataset inference or experiment checkpoint update"
+  },
+  "git_diff_check": "passed",
+  "prediction_cache_policy": "User approved retaining raw caches locally and publishing paths, sizes and recorded SHA-256 hashes"
+}

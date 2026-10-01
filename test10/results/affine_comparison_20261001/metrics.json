@@ -1,0 +1,5738 @@
+{
+  "schema": "test10.affine_windows.v1",
+  "inference": false,
+  "training": false,
+  "cohort": "native159_prompt0",
+  "cases": 159,
+  "quality": [
+    {
+      "dataset": "MOSEv2",
+      "method": "small_only",
+      "window": "first5",
+      "primary_metric": "J_and_F",
+      "videos": 33,
+      "visible_frames": 150,
+      "J": 58.52073502088643,
+      "F": 70.91594039943205,
+      "J_and_F": 64.71833771015923
+    },
+    {
+      "dataset": "MOSEv2",
+      "method": "base_native",
+      "window": "first5",
+      "primary_metric": "J_and_F",
+      "videos": 33,
+      "visible_frames": 150,
+      "J": 54.942276110634246,
+      "F": 65.88507614841618,
+      "J_and_F": 60.41367612952521
+    },
+    {
+      "dataset": "MOSEv2",
+      "method": "direct",
+      "window": "first5",
+      "primary_metric": "J_and_F",
+      "videos": 33,
+      "visible_frames": 150,
+      "J": 0.5596002159743393,
+      "F": 0.7969423515359634,
+      "J_and_F": 0.6782712837551513
+    },
+    {
+      "dataset": "MOSEv2",
+      "method": "affine",
+      "window": "first5",
+      "primary_metric": "J_and_F",
+      "videos": 33,
+      "visible_frames": 150,
+      "J": 53.351013607491616,
+      "F": 64.86075481531638,
+      "J_and_F": 59.105884211404
+    },
+    {
+      "dataset": "MOSEv2",
+      "method": "residual_mlp",
+      "window": "first5",
+      "primary_metric": "J_and_F",
+      "videos": 33,
+      "visible_frames": 150,
+      "J": 51.951946275063584,
+      "F": 62.27330572481667,
+      "J_and_F": 57.11262599994013
+    },
+    {
+      "dataset": "MOSEv2",
+      "method": "transformer",
+      "window": "first5",
+      "primary_metric": "J_and_F",
+      "videos": 33,
+      "visible_frames": 150,
+      "J": 54.16409306994904,
+      "F": 66.28136834418433,
+      "J_and_F": 60.22273070706668
+    },
+    {
+      "dataset": "MOSEv2",
+      "method": "last_mask",
+      "window": "first5",
+      "primary_metric": "J_and_F",
+      "videos": 33,
+      "visible_frames": 150,
+      "J": 47.980594000368825,
+      "F": 58.67103867377357,
+      "J_and_F": 53.325816337071196
+    },
+    {
+      "dataset": "MOSEv2",
+      "method": "anchor_replay_16",
+      "window": "first5",
+      "primary_metric": "J_and_F",
+      "videos": 33,
+      "visible_frames": 150,
+      "J": 46.26341496446259,
+      "F": 55.89144360555018,
+      "J_and_F": 51.07742928500638
+    },
+    {
+      "dataset": "MOSEv2",
+      "method": "small_only",
+      "window": "full_suffix",
+      "primary_metric": "J_and_F",
+      "videos": 40,
+      "visible_frames": 1411,
+      "J": 53.19383649495615,
+      "F": 62.80332677075181,
+      "J_and_F": 57.99858163285398
+    },
+    {
+      "dataset": "MOSEv2",
+      "method": "base_native",
+      "window": "full_suffix",
+      "primary_metric": "J_and_F",
+      "videos": 40,
+      "visible_frames": 1411,
+      "J": 50.657579703212406,
+      "F": 59.02353469243955,
+      "J_and_F": 54.84055719782597
+    },
+    {
+      "dataset": "MOSEv2",
+      "method": "direct",
+      "window": "full_suffix",
+      "primary_metric": "J_and_F",
+      "videos": 40,
+      "visible_frames": 1411,
+      "J": 0.05745816123897723,
+      "F": 0.08420194253645846,
+      "J_and_F": 0.07083005188771785
+    },
+    {
+      "dataset": "MOSEv2",
+      "method": "affine",
+      "window": "full_suffix",
+      "primary_metric": "J_and_F",
+      "videos": 40,
+      "visible_frames": 1411,
+      "J": 44.160190767232855,
+      "F": 52.93803837998988,
+      "J_and_F": 48.54911457361136
+    },
+    {
+      "dataset": "MOSEv2",
+      "method": "residual_mlp",
+      "window": "full_suffix",
+      "primary_metric": "J_and_F",
+      "videos": 40,
+      "visible_frames": 1411,
+      "J": 45.915632632921714,
+      "F": 54.48776591427156,
+      "J_and_F": 50.20169927359664
+    },
+    {
+      "dataset": "MOSEv2",
+      "method": "transformer",
+      "window": "full_suffix",
+      "primary_metric": "J_and_F",
+      "videos": 40,
+      "visible_frames": 1411,
+      "J": 44.26096243726266,
+      "F": 53.31585011218717,
+      "J_and_F": 48.78840627472491
+    },
+    {
+      "dataset": "MOSEv2",
+      "method": "last_mask",
+      "window": "full_suffix",
+      "primary_metric": "J_and_F",
+      "videos": 40,
+      "visible_frames": 1411,
+      "J": 41.16898943573461,
+      "F": 48.19887923865581,
+      "J_and_F": 44.68393433719521
+    },
+    {
+      "dataset": "MOSEv2",
+      "method": "anchor_replay_16",
+      "window": "full_suffix",
+      "primary_metric": "J_and_F",
+      "videos": 40,
+      "visible_frames": 1411,
+      "J": 44.0577477479592,
+      "F": 51.79472766461548,
+      "J_and_F": 47.92623770628734
+    },
+    {
+      "dataset": "MOSEv2",
+      "method": "small_only",
+      "window": "last5",
+      "primary_metric": "J_and_F",
+      "videos": 38,
+      "visible_frames": 184,
+      "J": 49.78510113631817,
+      "F": 59.45429685782556,
+      "J_and_F": 54.619698997071865
+    },
+    {
+      "dataset": "MOSEv2",
+      "method": "base_native",
+      "window": "last5",
+      "primary_metric": "J_and_F",
+      "videos": 38,
+      "visible_frames": 184,
+      "J": 50.59674151011356,
+      "F": 59.33163561916688,
+      "J_and_F": 54.964188564640224
+    },
+    {
+      "dataset": "MOSEv2",
+      "method": "direct",
+      "window": "last5",
+      "primary_metric": "J_and_F",
+      "videos": 38,
+      "visible_frames": 184,
+      "J": 0.0,
+      "F": 0.0,
+      "J_and_F": 0.0
+    },
+    {
+      "dataset": "MOSEv2",
+      "method": "affine",
+      "window": "last5",
+      "primary_metric": "J_and_F",
+      "videos": 38,
+      "visible_frames": 184,
+      "J": 39.708119157841274,
+      "F": 48.24478450784708,
+      "J_and_F": 43.97645183284418
+    },
+    {
+      "dataset": "MOSEv2",
+      "method": "residual_mlp",
+      "window": "last5",
+      "primary_metric": "J_and_F",
+      "videos": 38,
+      "visible_frames": 184,
+      "J": 42.197334576719655,
+      "F": 50.66500257004776,
+      "J_and_F": 46.43116857338371
+    },
+    {
+      "dataset": "MOSEv2",
+      "method": "transformer",
+      "window": "last5",
+      "primary_metric": "J_and_F",
+      "videos": 38,
+      "visible_frames": 184,
+      "J": 36.966180831264474,
+      "F": 45.23344086953231,
+      "J_and_F": 41.09981085039839
+    },
+    {
+      "dataset": "MOSEv2",
+      "method": "last_mask",
+      "window": "last5",
+      "primary_metric": "J_and_F",
+      "videos": 38,
+      "visible_frames": 184,
+      "J": 40.9270128087599,
+      "F": 46.76700300633574,
+      "J_and_F": 43.84700790754782
+    },
+    {
+      "dataset": "MOSEv2",
+      "method": "anchor_replay_16",
+      "window": "last5",
+      "primary_metric": "J_and_F",
+      "videos": 38,
+      "visible_frames": 184,
+      "J": 43.76569466649012,
+      "F": 52.25948425956413,
+      "J_and_F": 48.012589463027126
+    },
+    {
+      "dataset": "MOSEv2",
+      "method": "small_only",
+      "window": "last_frame",
+      "primary_metric": "J_and_F",
+      "videos": 36,
+      "visible_frames": 36,
+      "J": 51.60959423165883,
+      "F": 61.81598490817661,
+      "J_and_F": 56.712789569917724
+    },
+    {
+      "dataset": "MOSEv2",
+      "method": "base_native",
+      "window": "last_frame",
+      "primary_metric": "J_and_F",
+      "videos": 36,
+      "visible_frames": 36,
+      "J": 51.462072683904346,
+      "F": 61.35350435275337,
+      "J_and_F": 56.40778851832886
+    },
+    {
+      "dataset": "MOSEv2",
+      "method": "direct",
+      "window": "last_frame",
+      "primary_metric": "J_and_F",
+      "videos": 36,
+      "visible_frames": 36,
+      "J": 0.0,
+      "F": 0.0,
+      "J_and_F": 0.0
+    },
+    {
+      "dataset": "MOSEv2",
+      "method": "affine",
+      "window": "last_frame",
+      "primary_metric": "J_and_F",
+      "videos": 36,
+      "visible_frames": 36,
+      "J": 39.379808061448514,
+      "F": 48.37048686995168,
+      "J_and_F": 43.875147465700095
+    },
+    {
+      "dataset": "MOSEv2",
+      "method": "residual_mlp",
+      "window": "last_frame",
+      "primary_metric": "J_and_F",
+      "videos": 36,
+      "visible_frames": 36,
+      "J": 41.67979927837849,
+      "F": 51.11031633694363,
+      "J_and_F": 46.39505780766106
+    },
+    {
+      "dataset": "MOSEv2",
+      "method": "transformer",
+      "window": "last_frame",
+      "primary_metric": "J_and_F",
+      "videos": 36,
+      "visible_frames": 36,
+      "J": 36.31026429254251,
+      "F": 44.90186738125621,
+      "J_and_F": 40.60606583689936
+    },
+    {
+      "dataset": "MOSEv2",
+      "method": "last_mask",
+      "window": "last_frame",
+      "primary_metric": "J_and_F",
+      "videos": 36,
+      "visible_frames": 36,
+      "J": 40.703184018945784,
+      "F": 47.026860636449776,
+      "J_and_F": 43.86502232769778
+    },
+    {
+      "dataset": "MOSEv2",
+      "method": "anchor_replay_16",
+      "window": "last_frame",
+      "primary_metric": "J_and_F",
+      "videos": 36,
+      "visible_frames": 36,
+      "J": 44.24089168203461,
+      "F": 54.26541037684732,
+      "J_and_F": 49.253151029440964
+    },
+    {
+      "dataset": "MOSEv2",
+      "method": "small_only",
+      "window": "offset1",
+      "primary_metric": "J_and_F",
+      "videos": 28,
+      "visible_frames": 28,
+      "J": 54.413482235609045,
+      "F": 66.70417302381031,
+      "J_and_F": 60.558827629709675
+    },
+    {
+      "dataset": "MOSEv2",
+      "method": "base_native",
+      "window": "offset1",
+      "primary_metric": "J_and_F",
+      "videos": 28,
+      "visible_frames": 28,
+      "J": 52.01401370701701,
+      "F": 60.44219420086273,
+      "J_and_F": 56.228103953939865
+    },
+    {
+      "dataset": "MOSEv2",
+      "method": "direct",
+      "window": "offset1",
+      "primary_metric": "J_and_F",
+      "videos": 28,
+      "visible_frames": 28,
+      "J": 3.1294669832543724,
+      "F": 3.9162936323437854,
+      "J_and_F": 3.522880307799079
+    },
+    {
+      "dataset": "MOSEv2",
+      "method": "affine",
+      "window": "offset1",
+      "primary_metric": "J_and_F",
+      "videos": 28,
+      "visible_frames": 28,
+      "J": 53.78229941041581,
+      "F": 66.17670712860432,
+      "J_and_F": 59.97950326951007
+    },
+    {
+      "dataset": "MOSEv2",
+      "method": "residual_mlp",
+      "window": "offset1",
+      "primary_metric": "J_and_F",
+      "videos": 28,
+      "visible_frames": 28,
+      "J": 52.69536116739441,
+      "F": 63.88599385238682,
+      "J_and_F": 58.290677509890614
+    },
+    {
+      "dataset": "MOSEv2",
+      "method": "transformer",
+      "window": "offset1",
+      "primary_metric": "J_and_F",
+      "videos": 28,
+      "visible_frames": 28,
+      "J": 53.395651405623234,
+      "F": 65.9969877460423,
+      "J_and_F": 59.69631957583276
+    },
+    {
+      "dataset": "MOSEv2",
+      "method": "last_mask",
+      "window": "offset1",
+      "primary_metric": "J_and_F",
+      "videos": 28,
+      "visible_frames": 28,
+      "J": 55.58301782333343,
+      "F": 68.31815533240935,
+      "J_and_F": 61.95058657787139
+    },
+    {
+      "dataset": "MOSEv2",
+      "method": "anchor_replay_16",
+      "window": "offset1",
+      "primary_metric": "J_and_F",
+      "videos": 28,
+      "visible_frames": 28,
+      "J": 45.297780058124545,
+      "F": 52.835938452690385,
+      "J_and_F": 49.066859255407465
+    },
+    {
+      "dataset": "MOSEv2",
+      "method": "small_only",
+      "window": "offset2",
+      "primary_metric": "J_and_F",
+      "videos": 27,
+      "visible_frames": 27,
+      "J": 59.76718214034019,
+      "F": 73.50240866775464,
+      "J_and_F": 66.63479540404741
+    },
+    {
+      "dataset": "MOSEv2",
+      "method": "base_native",
+      "window": "offset2",
+      "primary_metric": "J_and_F",
+      "videos": 27,
+      "visible_frames": 27,
+      "J": 56.55657178678061,
+      "F": 68.34104676810968,
+      "J_and_F": 62.44880927744514
+    },
+    {
+      "dataset": "MOSEv2",
+      "method": "direct",
+      "window": "offset2",
+      "primary_metric": "J_and_F",
+      "videos": 27,
+      "visible_frames": 27,
+      "J": 0.17440592980161326,
+      "F": 0.808861714733628,
+      "J_and_F": 0.4916338222676206
+    },
+    {
+      "dataset": "MOSEv2",
+      "method": "affine",
+      "window": "offset2",
+      "primary_metric": "J_and_F",
+      "videos": 27,
+      "visible_frames": 27,
+      "J": 56.03437769202967,
+      "F": 67.38591436703996,
+      "J_and_F": 61.71014602953481
+    },
+    {
+      "dataset": "MOSEv2",
+      "method": "residual_mlp",
+      "window": "offset2",
+      "primary_metric": "J_and_F",
+      "videos": 27,
+      "visible_frames": 27,
+      "J": 55.8397665262908,
+      "F": 67.31035027719652,
+      "J_and_F": 61.57505840174366
+    },
+    {
+      "dataset": "MOSEv2",
+      "method": "transformer",
+      "window": "offset2",
+      "primary_metric": "J_and_F",
+      "videos": 27,
+      "visible_frames": 27,
+      "J": 58.12314012310953,
+      "F": 70.07135949797707,
+      "J_and_F": 64.0972498105433
+    },
+    {
+      "dataset": "MOSEv2",
+      "method": "last_mask",
+      "window": "offset2",
+      "primary_metric": "J_and_F",
+      "videos": 27,
+      "visible_frames": 27,
+      "J": 59.24590763510349,
+      "F": 71.1188267758572,
+      "J_and_F": 65.18236720548035
+    },
+    {
+      "dataset": "MOSEv2",
+      "method": "anchor_replay_16",
+      "window": "offset2",
+      "primary_metric": "J_and_F",
+      "videos": 27,
+      "visible_frames": 27,
+      "J": 46.91879680013782,
+      "F": 57.268542177017935,
+      "J_and_F": 52.09366948857788
+    },
+    {
+      "dataset": "MOSEv2",
+      "method": "small_only",
+      "window": "offset3",
+      "primary_metric": "J_and_F",
+      "videos": 32,
+      "visible_frames": 32,
+      "J": 60.37306140602358,
+      "F": 72.1375235739602,
+      "J_and_F": 66.25529248999189
+    },
+    {
+      "dataset": "MOSEv2",
+      "method": "base_native",
+      "window": "offset3",
+      "primary_metric": "J_and_F",
+      "videos": 32,
+      "visible_frames": 32,
+      "J": 56.75098794475322,
+      "F": 66.36053698709424,
+      "J_and_F": 61.55576246592373
+    },
+    {
+      "dataset": "MOSEv2",
+      "method": "direct",
+      "window": "offset3",
+      "primary_metric": "J_and_F",
+      "videos": 32,
+      "visible_frames": 32,
+      "J": 0.0,
+      "F": 0.0,
+      "J_and_F": 0.0
+    },
+    {
+      "dataset": "MOSEv2",
+      "method": "affine",
+      "window": "offset3",
+      "primary_metric": "J_and_F",
+      "videos": 32,
+      "visible_frames": 32,
+      "J": 55.78347474587835,
+      "F": 66.5237504960203,
+      "J_and_F": 61.15361262094933
+    },
+    {
+      "dataset": "MOSEv2",
+      "method": "residual_mlp",
+      "window": "offset3",
+      "primary_metric": "J_and_F",
+      "videos": 32,
+      "visible_frames": 32,
+      "J": 52.881631400015856,
+      "F": 62.25451613036509,
+      "J_and_F": 57.56807376519047
+    },
+    {
+      "dataset": "MOSEv2",
+      "method": "transformer",
+      "window": "offset3",
+      "primary_metric": "J_and_F",
+      "videos": 32,
+      "visible_frames": 32,
+      "J": 58.06222366193251,
+      "F": 70.23537679653177,
+      "J_and_F": 64.14880022923214
+    },
+    {
+      "dataset": "MOSEv2",
+      "method": "last_mask",
+      "window": "offset3",
+      "primary_metric": "J_and_F",
+      "videos": 32,
+      "visible_frames": 32,
+      "J": 48.81670143690467,
+      "F": 59.10057475181952,
+      "J_and_F": 53.9586380943621
+    },
+    {
+      "dataset": "MOSEv2",
+      "method": "anchor_replay_16",
+      "window": "offset3",
+      "primary_metric": "J_and_F",
+      "videos": 32,
+      "visible_frames": 32,
+      "J": 47.90612342522254,
+      "F": 56.21336316461622,
+      "J_and_F": 52.05974329491938
+    },
+    {
+      "dataset": "MOSEv2",
+      "method": "small_only",
+      "window": "offset4",
+      "primary_metric": "J_and_F",
+      "videos": 32,
+      "visible_frames": 32,
+      "J": 55.750087607726286,
+      "F": 67.65233307597133,
+      "J_and_F": 61.70121034184881
+    },
+    {
+      "dataset": "MOSEv2",
+      "method": "base_native",
+      "window": "offset4",
+      "primary_metric": "J_and_F",
+      "videos": 32,
+      "visible_frames": 32,
+      "J": 54.8996155216637,
+      "F": 66.17873136124297,
+      "J_and_F": 60.53917344145333
+    },
+    {
+      "dataset": "MOSEv2",
+      "method": "direct",
+      "window": "offset4",
+      "primary_metric": "J_and_F",
+      "videos": 32,
+      "visible_frames": 32,
+      "J": 0.0,
+      "F": 0.0,
+      "J_and_F": 0.0
+    },
+    {
+      "dataset": "MOSEv2",
+      "method": "affine",
+      "window": "offset4",
+      "primary_metric": "J_and_F",
+      "videos": 32,
+      "visible_frames": 32,
+      "J": 53.29562119109025,
+      "F": 64.1742151214305,
+      "J_and_F": 58.73491815626038
+    },
+    {
+      "dataset": "MOSEv2",
+      "method": "residual_mlp",
+      "window": "offset4",
+      "primary_metric": "J_and_F",
+      "videos": 32,
+      "visible_frames": 32,
+      "J": 52.590651642384465,
+      "F": 62.1150943054228,
+      "J_and_F": 57.35287297390363
+    },
+    {
+      "dataset": "MOSEv2",
+      "method": "transformer",
+      "window": "offset4",
+      "primary_metric": "J_and_F",
+      "videos": 32,
+      "visible_frames": 32,
+      "J": 53.29538157792291,
+      "F": 65.02997770195026,
+      "J_and_F": 59.162679639936584
+    },
+    {
+      "dataset": "MOSEv2",
+      "method": "last_mask",
+      "window": "offset4",
+      "primary_metric": "J_and_F",
+      "videos": 32,
+      "visible_frames": 32,
+      "J": 44.850969279807906,
+      "F": 55.334988326519834,
+      "J_and_F": 50.092978803163874
+    },
+    {
+      "dataset": "MOSEv2",
+      "method": "anchor_replay_16",
+      "window": "offset4",
+      "primary_metric": "J_and_F",
+      "videos": 32,
+      "visible_frames": 32,
+      "J": 44.23215120234583,
+      "F": 54.02463325628676,
+      "J_and_F": 49.1283922293163
+    },
+    {
+      "dataset": "MOSEv2",
+      "method": "small_only",
+      "window": "offset5",
+      "primary_metric": "J_and_F",
+      "videos": 31,
+      "visible_frames": 31,
+      "J": 63.44010741843716,
+      "F": 75.63535614702468,
+      "J_and_F": 69.53773178273092
+    },
+    {
+      "dataset": "MOSEv2",
+      "method": "base_native",
+      "window": "offset5",
+      "primary_metric": "J_and_F",
+      "videos": 31,
+      "visible_frames": 31,
+      "J": 58.71599898741195,
+      "F": 70.90853048348544,
+      "J_and_F": 64.8122647354487
+    },
+    {
+      "dataset": "MOSEv2",
+      "method": "direct",
+      "window": "offset5",
+      "primary_metric": "J_and_F",
+      "videos": 31,
+      "visible_frames": 31,
+      "J": 0.0,
+      "F": 0.0,
+      "J_and_F": 0.0
+    },
+    {
+      "dataset": "MOSEv2",
+      "method": "affine",
+      "window": "offset5",
+      "primary_metric": "J_and_F",
+      "videos": 31,
+      "visible_frames": 31,
+      "J": 57.394970176450144,
+      "F": 70.07268869573566,
+      "J_and_F": 63.733829436092904
+    },
+    {
+      "dataset": "MOSEv2",
+      "method": "residual_mlp",
+      "window": "offset5",
+      "primary_metric": "J_and_F",
+      "videos": 31,
+      "visible_frames": 31,
+      "J": 53.13044147369128,
+      "F": 63.30631388872588,
+      "J_and_F": 58.21837768120858
+    },
+    {
+      "dataset": "MOSEv2",
+      "method": "transformer",
+      "window": "offset5",
+      "primary_metric": "J_and_F",
+      "videos": 31,
+      "visible_frames": 31,
+      "J": 57.710347250372905,
+      "F": 70.2125279026373,
+      "J_and_F": 63.9614375765051
+    },
+    {
+      "dataset": "MOSEv2",
+      "method": "last_mask",
+      "window": "offset5",
+      "primary_metric": "J_and_F",
+      "videos": 31,
+      "visible_frames": 31,
+      "J": 50.31651790650318,
+      "F": 60.2529639060506,
+      "J_and_F": 55.28474090627689
+    },
+    {
+      "dataset": "MOSEv2",
+      "method": "anchor_replay_16",
+      "window": "offset5",
+      "primary_metric": "J_and_F",
+      "videos": 31,
+      "visible_frames": 31,
+      "J": 47.47895481911753,
+      "F": 57.99336353105622,
+      "J_and_F": 52.736159175086875
+    },
+    {
+      "dataset": "LVOSv2",
+      "method": "small_only",
+      "window": "first5",
+      "primary_metric": "J_and_F",
+      "videos": 36,
+      "visible_frames": 180,
+      "J": 70.14493058165779,
+      "F": 77.78081022940685,
+      "J_and_F": 73.96287040553233
+    },
+    {
+      "dataset": "LVOSv2",
+      "method": "base_native",
+      "window": "first5",
+      "primary_metric": "J_and_F",
+      "videos": 36,
+      "visible_frames": 180,
+      "J": 73.4228863188023,
+      "F": 80.53332128817809,
+      "J_and_F": 76.9781038034902
+    },
+    {
+      "dataset": "LVOSv2",
+      "method": "direct",
+      "window": "first5",
+      "primary_metric": "J_and_F",
+      "videos": 36,
+      "visible_frames": 180,
+      "J": 0.14348455328216603,
+      "F": 0.37239615469899584,
+      "J_and_F": 0.2579403539905809
+    },
+    {
+      "dataset": "LVOSv2",
+      "method": "affine",
+      "window": "first5",
+      "primary_metric": "J_and_F",
+      "videos": 36,
+      "visible_frames": 180,
+      "J": 72.07178385271368,
+      "F": 79.21037082143663,
+      "J_and_F": 75.64107733707516
+    },
+    {
+      "dataset": "LVOSv2",
+      "method": "residual_mlp",
+      "window": "first5",
+      "primary_metric": "J_and_F",
+      "videos": 36,
+      "visible_frames": 180,
+      "J": 71.81826422334653,
+      "F": 79.29896832466683,
+      "J_and_F": 75.55861627400668
+    },
+    {
+      "dataset": "LVOSv2",
+      "method": "transformer",
+      "window": "first5",
+      "primary_metric": "J_and_F",
+      "videos": 36,
+      "visible_frames": 180,
+      "J": 71.93666222454502,
+      "F": 79.02419911264955,
+      "J_and_F": 75.4804306685973
+    },
+    {
+      "dataset": "LVOSv2",
+      "method": "last_mask",
+      "window": "first5",
+      "primary_metric": "J_and_F",
+      "videos": 36,
+      "visible_frames": 180,
+      "J": 68.17717045926175,
+      "F": 75.57473097595866,
+      "J_and_F": 71.8759507176102
+    },
+    {
+      "dataset": "LVOSv2",
+      "method": "anchor_replay_16",
+      "window": "first5",
+      "primary_metric": "J_and_F",
+      "videos": 36,
+      "visible_frames": 180,
+      "J": 48.25630038816225,
+      "F": 52.38078346782861,
+      "J_and_F": 50.31854192799543
+    },
+    {
+      "dataset": "LVOSv2",
+      "method": "small_only",
+      "window": "full_suffix",
+      "primary_metric": "J_and_F",
+      "videos": 39,
+      "visible_frames": 8702,
+      "J": 72.58416491502037,
+      "F": 80.12760847278626,
+      "J_and_F": 76.35588669390332
+    },
+    {
+      "dataset": "LVOSv2",
+      "method": "base_native",
+      "window": "full_suffix",
+      "primary_metric": "J_and_F",
+      "videos": 39,
+      "visible_frames": 8702,
+      "J": 71.82013205563122,
+      "F": 79.00798082553695,
+      "J_and_F": 75.41405644058409
+    },
+    {
+      "dataset": "LVOSv2",
+      "method": "direct",
+      "window": "full_suffix",
+      "primary_metric": "J_and_F",
+      "videos": 39,
+      "visible_frames": 8702,
+      "J": 0.010307084495463449,
+      "F": 0.03127535543378075,
+      "J_and_F": 0.0207912199646221
+    },
+    {
+      "dataset": "LVOSv2",
+      "method": "affine",
+      "window": "full_suffix",
+      "primary_metric": "J_and_F",
+      "videos": 39,
+      "visible_frames": 8702,
+      "J": 65.35299213150238,
+      "F": 71.86819784160265,
+      "J_and_F": 68.61059498655251
+    },
+    {
+      "dataset": "LVOSv2",
+      "method": "residual_mlp",
+      "window": "full_suffix",
+      "primary_metric": "J_and_F",
+      "videos": 39,
+      "visible_frames": 8702,
+      "J": 68.8739788192866,
+      "F": 76.12168778506594,
+      "J_and_F": 72.49783330217628
+    },
+    {
+      "dataset": "LVOSv2",
+      "method": "transformer",
+      "window": "full_suffix",
+      "primary_metric": "J_and_F",
+      "videos": 39,
+      "visible_frames": 8702,
+      "J": 65.72340851949475,
+      "F": 72.77724852335614,
+      "J_and_F": 69.25032852142544
+    },
+    {
+      "dataset": "LVOSv2",
+      "method": "last_mask",
+      "window": "full_suffix",
+      "primary_metric": "J_and_F",
+      "videos": 39,
+      "visible_frames": 8702,
+      "J": 59.230829996658024,
+      "F": 65.72983786501763,
+      "J_and_F": 62.48033393083783
+    },
+    {
+      "dataset": "LVOSv2",
+      "method": "anchor_replay_16",
+      "window": "full_suffix",
+      "primary_metric": "J_and_F",
+      "videos": 39,
+      "visible_frames": 8702,
+      "J": 54.73839708543928,
+      "F": 60.95123133609446,
+      "J_and_F": 57.84481421076688
+    },
+    {
+      "dataset": "LVOSv2",
+      "method": "small_only",
+      "window": "last5",
+      "primary_metric": "J_and_F",
+      "videos": 36,
+      "visible_frames": 177,
+      "J": 68.90011257466989,
+      "F": 76.52844849687304,
+      "J_and_F": 72.71428053577146
+    },
+    {
+      "dataset": "LVOSv2",
+      "method": "base_native",
+      "window": "last5",
+      "primary_metric": "J_and_F",
+      "videos": 36,
+      "visible_frames": 177,
+      "J": 69.11841075910542,
+      "F": 75.79275844400152,
+      "J_and_F": 72.45558460155347
+    },
+    {
+      "dataset": "LVOSv2",
+      "method": "direct",
+      "window": "last5",
+      "primary_metric": "J_and_F",
+      "videos": 36,
+      "visible_frames": 177,
+      "J": 0.005846823747559397,
+      "F": 0.049899487692812036,
+      "J_and_F": 0.027873155720185713
+    },
+    {
+      "dataset": "LVOSv2",
+      "method": "affine",
+      "window": "last5",
+      "primary_metric": "J_and_F",
+      "videos": 36,
+      "visible_frames": 177,
+      "J": 63.78400042271006,
+      "F": 70.93643141832537,
+      "J_and_F": 67.36021592051772
+    },
+    {
+      "dataset": "LVOSv2",
+      "method": "residual_mlp",
+      "window": "last5",
+      "primary_metric": "J_and_F",
+      "videos": 36,
+      "visible_frames": 177,
+      "J": 64.89871988704783,
+      "F": 71.6934115891159,
+      "J_and_F": 68.29606573808186
+    },
+    {
+      "dataset": "LVOSv2",
+      "method": "transformer",
+      "window": "last5",
+      "primary_metric": "J_and_F",
+      "videos": 36,
+      "visible_frames": 177,
+      "J": 61.480095153287536,
+      "F": 68.76311713904391,
+      "J_and_F": 65.12160614616573
+    },
+    {
+      "dataset": "LVOSv2",
+      "method": "last_mask",
+      "window": "last5",
+      "primary_metric": "J_and_F",
+      "videos": 36,
+      "visible_frames": 177,
+      "J": 56.147537998515,
+      "F": 62.817929889174934,
+      "J_and_F": 59.48273394384497
+    },
+    {
+      "dataset": "LVOSv2",
+      "method": "anchor_replay_16",
+      "window": "last5",
+      "primary_metric": "J_and_F",
+      "videos": 36,
+      "visible_frames": 177,
+      "J": 54.475131384254595,
+      "F": 61.221728505720726,
+      "J_and_F": 57.84842994498766
+    },
+    {
+      "dataset": "LVOSv2",
+      "method": "small_only",
+      "window": "last_frame",
+      "primary_metric": "J_and_F",
+      "videos": 36,
+      "visible_frames": 36,
+      "J": 69.03365834481733,
+      "F": 76.6949822263845,
+      "J_and_F": 72.86432028560091
+    },
+    {
+      "dataset": "LVOSv2",
+      "method": "base_native",
+      "window": "last_frame",
+      "primary_metric": "J_and_F",
+      "videos": 36,
+      "visible_frames": 36,
+      "J": 69.49769527990068,
+      "F": 76.11868563290687,
+      "J_and_F": 72.80819045640378
+    },
+    {
+      "dataset": "LVOSv2",
+      "method": "direct",
+      "window": "last_frame",
+      "primary_metric": "J_and_F",
+      "videos": 36,
+      "visible_frames": 36,
+      "J": 0.005789873558328224,
+      "F": 0.08058745475639663,
+      "J_and_F": 0.04318866415736243
+    },
+    {
+      "dataset": "LVOSv2",
+      "method": "affine",
+      "window": "last_frame",
+      "primary_metric": "J_and_F",
+      "videos": 36,
+      "visible_frames": 36,
+      "J": 62.03259572454751,
+      "F": 69.15050624437784,
+      "J_and_F": 65.59155098446267
+    },
+    {
+      "dataset": "LVOSv2",
+      "method": "residual_mlp",
+      "window": "last_frame",
+      "primary_metric": "J_and_F",
+      "videos": 36,
+      "visible_frames": 36,
+      "J": 65.55207487625566,
+      "F": 72.06133472257443,
+      "J_and_F": 68.80670479941504
+    },
+    {
+      "dataset": "LVOSv2",
+      "method": "transformer",
+      "window": "last_frame",
+      "primary_metric": "J_and_F",
+      "videos": 36,
+      "visible_frames": 36,
+      "J": 61.72744466539872,
+      "F": 69.23549275185185,
+      "J_and_F": 65.48146870862529
+    },
+    {
+      "dataset": "LVOSv2",
+      "method": "last_mask",
+      "window": "last_frame",
+      "primary_metric": "J_and_F",
+      "videos": 36,
+      "visible_frames": 36,
+      "J": 56.561151562337486,
+      "F": 63.334001131594725,
+      "J_and_F": 59.94757634696611
+    },
+    {
+      "dataset": "LVOSv2",
+      "method": "anchor_replay_16",
+      "window": "last_frame",
+      "primary_metric": "J_and_F",
+      "videos": 36,
+      "visible_frames": 36,
+      "J": 55.15298706709853,
+      "F": 61.562634978454135,
+      "J_and_F": 58.35781102277633
+    },
+    {
+      "dataset": "LVOSv2",
+      "method": "small_only",
+      "window": "offset1",
+      "primary_metric": "J_and_F",
+      "videos": 36,
+      "visible_frames": 36,
+      "J": 67.96816793170731,
+      "F": 74.98167039425701,
+      "J_and_F": 71.47491916298216
+    },
+    {
+      "dataset": "LVOSv2",
+      "method": "base_native",
+      "window": "offset1",
+      "primary_metric": "J_and_F",
+      "videos": 36,
+      "visible_frames": 36,
+      "J": 71.15964494429271,
+      "F": 78.82910477981372,
+      "J_and_F": 74.9943748620532
+    },
+    {
+      "dataset": "LVOSv2",
+      "method": "direct",
+      "window": "offset1",
+      "primary_metric": "J_and_F",
+      "videos": 36,
+      "visible_frames": 36,
+      "J": 0.7160877985736859,
+      "F": 1.760395823098631,
+      "J_and_F": 1.2382418108361584
+    },
+    {
+      "dataset": "LVOSv2",
+      "method": "affine",
+      "window": "offset1",
+      "primary_metric": "J_and_F",
+      "videos": 36,
+      "visible_frames": 36,
+      "J": 69.80940895158662,
+      "F": 76.5162847510518,
+      "J_and_F": 73.16284685131922
+    },
+    {
+      "dataset": "LVOSv2",
+      "method": "residual_mlp",
+      "window": "offset1",
+      "primary_metric": "J_and_F",
+      "videos": 36,
+      "visible_frames": 36,
+      "J": 69.76488898097452,
+      "F": 76.6155352235301,
+      "J_and_F": 73.19021210225232
+    },
+    {
+      "dataset": "LVOSv2",
+      "method": "transformer",
+      "window": "offset1",
+      "primary_metric": "J_and_F",
+      "videos": 36,
+      "visible_frames": 36,
+      "J": 69.39609567368676,
+      "F": 76.04275410862286,
+      "J_and_F": 72.7194248911548
+    },
+    {
+      "dataset": "LVOSv2",
+      "method": "last_mask",
+      "window": "offset1",
+      "primary_metric": "J_and_F",
+      "videos": 36,
+      "visible_frames": 36,
+      "J": 67.52889384326352,
+      "F": 75.17087861590687,
+      "J_and_F": 71.3498862295852
+    },
+    {
+      "dataset": "LVOSv2",
+      "method": "anchor_replay_16",
+      "window": "offset1",
+      "primary_metric": "J_and_F",
+      "videos": 36,
+      "visible_frames": 36,
+      "J": 46.791087092722606,
+      "F": 50.67101545290983,
+      "J_and_F": 48.73105127281622
+    },
+    {
+      "dataset": "LVOSv2",
+      "method": "small_only",
+      "window": "offset2",
+      "primary_metric": "J_and_F",
+      "videos": 36,
+      "visible_frames": 36,
+      "J": 69.70480115317511,
+      "F": 78.13681479957607,
+      "J_and_F": 73.92080797637558
+    },
+    {
+      "dataset": "LVOSv2",
+      "method": "base_native",
+      "window": "offset2",
+      "primary_metric": "J_and_F",
+      "videos": 36,
+      "visible_frames": 36,
+      "J": 73.00014710822025,
+      "F": 80.57621895886152,
+      "J_and_F": 76.78818303354089
+    },
+    {
+      "dataset": "LVOSv2",
+      "method": "direct",
+      "window": "offset2",
+      "primary_metric": "J_and_F",
+      "videos": 36,
+      "visible_frames": 36,
+      "J": 0.0013016493638499638,
+      "F": 0.08683433587521118,
+      "J_and_F": 0.044067992619530566
+    },
+    {
+      "dataset": "LVOSv2",
+      "method": "affine",
+      "window": "offset2",
+      "primary_metric": "J_and_F",
+      "videos": 36,
+      "visible_frames": 36,
+      "J": 71.70504349488664,
+      "F": 79.97063340332053,
+      "J_and_F": 75.83783844910359
+    },
+    {
+      "dataset": "LVOSv2",
+      "method": "residual_mlp",
+      "window": "offset2",
+      "primary_metric": "J_and_F",
+      "videos": 36,
+      "visible_frames": 36,
+      "J": 71.44816722247906,
+      "F": 79.94996260077068,
+      "J_and_F": 75.69906491162486
+    },
+    {
+      "dataset": "LVOSv2",
+      "method": "transformer",
+      "window": "offset2",
+      "primary_metric": "J_and_F",
+      "videos": 36,
+      "visible_frames": 36,
+      "J": 71.3173612773334,
+      "F": 79.41274232433308,
+      "J_and_F": 75.36505180083324
+    },
+    {
+      "dataset": "LVOSv2",
+      "method": "last_mask",
+      "window": "offset2",
+      "primary_metric": "J_and_F",
+      "videos": 36,
+      "visible_frames": 36,
+      "J": 68.06578280257193,
+      "F": 75.88666548796694,
+      "J_and_F": 71.97622414526943
+    },
+    {
+      "dataset": "LVOSv2",
+      "method": "anchor_replay_16",
+      "window": "offset2",
+      "primary_metric": "J_and_F",
+      "videos": 36,
+      "visible_frames": 36,
+      "J": 48.302608075144995,
+      "F": 52.57725824489458,
+      "J_and_F": 50.439933160019784
+    },
+    {
+      "dataset": "LVOSv2",
+      "method": "small_only",
+      "window": "offset3",
+      "primary_metric": "J_and_F",
+      "videos": 36,
+      "visible_frames": 36,
+      "J": 70.89934389680798,
+      "F": 78.27824593955147,
+      "J_and_F": 74.58879491817972
+    },
+    {
+      "dataset": "LVOSv2",
+      "method": "base_native",
+      "window": "offset3",
+      "primary_metric": "J_and_F",
+      "videos": 36,
+      "visible_frames": 36,
+      "J": 73.83179559594517,
+      "F": 80.96541645402911,
+      "J_and_F": 77.39860602498715
+    },
+    {
+      "dataset": "LVOSv2",
+      "method": "direct",
+      "window": "offset3",
+      "primary_metric": "J_and_F",
+      "videos": 36,
+      "visible_frames": 36,
+      "J": 3.33184732942441e-05,
+      "F": 0.014750614521137104,
+      "J_and_F": 0.007391966497215673
+    },
+    {
+      "dataset": "LVOSv2",
+      "method": "affine",
+      "window": "offset3",
+      "primary_metric": "J_and_F",
+      "videos": 36,
+      "visible_frames": 36,
+      "J": 73.1142213207137,
+      "F": 80.03944970999663,
+      "J_and_F": 76.57683551535516
+    },
+    {
+      "dataset": "LVOSv2",
+      "method": "residual_mlp",
+      "window": "offset3",
+      "primary_metric": "J_and_F",
+      "videos": 36,
+      "visible_frames": 36,
+      "J": 72.71051345881641,
+      "F": 80.26181170958635,
+      "J_and_F": 76.48616258420138
+    },
+    {
+      "dataset": "LVOSv2",
+      "method": "transformer",
+      "window": "offset3",
+      "primary_metric": "J_and_F",
+      "videos": 36,
+      "visible_frames": 36,
+      "J": 73.1740379444535,
+      "F": 80.1315941862787,
+      "J_and_F": 76.65281606536611
+    },
+    {
+      "dataset": "LVOSv2",
+      "method": "last_mask",
+      "window": "offset3",
+      "primary_metric": "J_and_F",
+      "videos": 36,
+      "visible_frames": 36,
+      "J": 68.18691436258167,
+      "F": 75.62914308829816,
+      "J_and_F": 71.90802872543992
+    },
+    {
+      "dataset": "LVOSv2",
+      "method": "anchor_replay_16",
+      "window": "offset3",
+      "primary_metric": "J_and_F",
+      "videos": 36,
+      "visible_frames": 36,
+      "J": 48.556866151660664,
+      "F": 52.541849994549764,
+      "J_and_F": 50.54935807310522
+    },
+    {
+      "dataset": "LVOSv2",
+      "method": "small_only",
+      "window": "offset4",
+      "primary_metric": "J_and_F",
+      "videos": 36,
+      "visible_frames": 36,
+      "J": 70.86682863026297,
+      "F": 78.37128554935973,
+      "J_and_F": 74.61905708981135
+    },
+    {
+      "dataset": "LVOSv2",
+      "method": "base_native",
+      "window": "offset4",
+      "primary_metric": "J_and_F",
+      "videos": 36,
+      "visible_frames": 36,
+      "J": 74.36615252893591,
+      "F": 80.77211726613088,
+      "J_and_F": 77.56913489753339
+    },
+    {
+      "dataset": "LVOSv2",
+      "method": "direct",
+      "window": "offset4",
+      "primary_metric": "J_and_F",
+      "videos": 36,
+      "visible_frames": 36,
+      "J": 0.0,
+      "F": 0.0,
+      "J_and_F": 0.0
+    },
+    {
+      "dataset": "LVOSv2",
+      "method": "affine",
+      "window": "offset4",
+      "primary_metric": "J_and_F",
+      "videos": 36,
+      "visible_frames": 36,
+      "J": 72.76336662662166,
+      "F": 79.48145900035647,
+      "J_and_F": 76.12241281348906
+    },
+    {
+      "dataset": "LVOSv2",
+      "method": "residual_mlp",
+      "window": "offset4",
+      "primary_metric": "J_and_F",
+      "videos": 36,
+      "visible_frames": 36,
+      "J": 72.32930172985277,
+      "F": 79.69877337405353,
+      "J_and_F": 76.01403755195315
+    },
+    {
+      "dataset": "LVOSv2",
+      "method": "transformer",
+      "window": "offset4",
+      "primary_metric": "J_and_F",
+      "videos": 36,
+      "visible_frames": 36,
+      "J": 72.78777687517392,
+      "F": 79.48381174976016,
+      "J_and_F": 76.13579431246704
+    },
+    {
+      "dataset": "LVOSv2",
+      "method": "last_mask",
+      "window": "offset4",
+      "primary_metric": "J_and_F",
+      "videos": 36,
+      "visible_frames": 36,
+      "J": 68.28573906615097,
+      "F": 75.54216081391145,
+      "J_and_F": 71.91394994003122
+    },
+    {
+      "dataset": "LVOSv2",
+      "method": "anchor_replay_16",
+      "window": "offset4",
+      "primary_metric": "J_and_F",
+      "videos": 36,
+      "visible_frames": 36,
+      "J": 48.75126448907015,
+      "F": 52.45799642821287,
+      "J_and_F": 50.60463045864151
+    },
+    {
+      "dataset": "LVOSv2",
+      "method": "small_only",
+      "window": "offset5",
+      "primary_metric": "J_and_F",
+      "videos": 36,
+      "visible_frames": 36,
+      "J": 71.28551129633559,
+      "F": 79.13603446429002,
+      "J_and_F": 75.2107728803128
+    },
+    {
+      "dataset": "LVOSv2",
+      "method": "base_native",
+      "window": "offset5",
+      "primary_metric": "J_and_F",
+      "videos": 36,
+      "visible_frames": 36,
+      "J": 74.75669141661743,
+      "F": 81.52374898205524,
+      "J_and_F": 78.14022019933633
+    },
+    {
+      "dataset": "LVOSv2",
+      "method": "direct",
+      "window": "offset5",
+      "primary_metric": "J_and_F",
+      "videos": 36,
+      "visible_frames": 36,
+      "J": 0.0,
+      "F": 0.0,
+      "J_and_F": 0.0
+    },
+    {
+      "dataset": "LVOSv2",
+      "method": "affine",
+      "window": "offset5",
+      "primary_metric": "J_and_F",
+      "videos": 36,
+      "visible_frames": 36,
+      "J": 72.96687886975982,
+      "F": 80.04402724245769,
+      "J_and_F": 76.50545305610875
+    },
+    {
+      "dataset": "LVOSv2",
+      "method": "residual_mlp",
+      "window": "offset5",
+      "primary_metric": "J_and_F",
+      "videos": 36,
+      "visible_frames": 36,
+      "J": 72.83844972460992,
+      "F": 79.96875871539349,
+      "J_and_F": 76.40360422000171
+    },
+    {
+      "dataset": "LVOSv2",
+      "method": "transformer",
+      "window": "offset5",
+      "primary_metric": "J_and_F",
+      "videos": 36,
+      "visible_frames": 36,
+      "J": 73.00803935207752,
+      "F": 80.05009319425298,
+      "J_and_F": 76.52906627316524
+    },
+    {
+      "dataset": "LVOSv2",
+      "method": "last_mask",
+      "window": "offset5",
+      "primary_metric": "J_and_F",
+      "videos": 36,
+      "visible_frames": 36,
+      "J": 68.81852222174061,
+      "F": 75.64480687370985,
+      "J_and_F": 72.23166454772523
+    },
+    {
+      "dataset": "LVOSv2",
+      "method": "anchor_replay_16",
+      "window": "offset5",
+      "primary_metric": "J_and_F",
+      "videos": 36,
+      "visible_frames": 36,
+      "J": 48.87967613221284,
+      "F": 53.655797218576005,
+      "J_and_F": 51.267736675394424
+    },
+    {
+      "dataset": "DAVIS2017",
+      "method": "small_only",
+      "window": "first5",
+      "primary_metric": "J_and_F",
+      "videos": 40,
+      "visible_frames": 197,
+      "J": 82.76090599797809,
+      "F": 88.7846488039734,
+      "J_and_F": 85.77277740097574
+    },
+    {
+      "dataset": "DAVIS2017",
+      "method": "base_native",
+      "window": "first5",
+      "primary_metric": "J_and_F",
+      "videos": 40,
+      "visible_frames": 197,
+      "J": 84.92984284635924,
+      "F": 90.59322670503374,
+      "J_and_F": 87.76153477569649
+    },
+    {
+      "dataset": "DAVIS2017",
+      "method": "direct",
+      "window": "first5",
+      "primary_metric": "J_and_F",
+      "videos": 40,
+      "visible_frames": 197,
+      "J": 3.7102477508953178,
+      "F": 3.545983596404432,
+      "J_and_F": 3.6281156736498748
+    },
+    {
+      "dataset": "DAVIS2017",
+      "method": "affine",
+      "window": "first5",
+      "primary_metric": "J_and_F",
+      "videos": 40,
+      "visible_frames": 197,
+      "J": 81.24738407122794,
+      "F": 86.66488579308107,
+      "J_and_F": 83.9561349321545
+    },
+    {
+      "dataset": "DAVIS2017",
+      "method": "residual_mlp",
+      "window": "first5",
+      "primary_metric": "J_and_F",
+      "videos": 40,
+      "visible_frames": 197,
+      "J": 82.50491120661776,
+      "F": 87.67779714116962,
+      "J_and_F": 85.09135417389369
+    },
+    {
+      "dataset": "DAVIS2017",
+      "method": "transformer",
+      "window": "first5",
+      "primary_metric": "J_and_F",
+      "videos": 40,
+      "visible_frames": 197,
+      "J": 81.67494847828097,
+      "F": 87.53135331514363,
+      "J_and_F": 84.6031508967123
+    },
+    {
+      "dataset": "DAVIS2017",
+      "method": "last_mask",
+      "window": "first5",
+      "primary_metric": "J_and_F",
+      "videos": 40,
+      "visible_frames": 197,
+      "J": 79.0585093943207,
+      "F": 84.17182616458778,
+      "J_and_F": 81.61516777945424
+    },
+    {
+      "dataset": "DAVIS2017",
+      "method": "anchor_replay_16",
+      "window": "first5",
+      "primary_metric": "J_and_F",
+      "videos": 40,
+      "visible_frames": 197,
+      "J": 82.9841607096009,
+      "F": 89.3019214247833,
+      "J_and_F": 86.1430410671921
+    },
+    {
+      "dataset": "DAVIS2017",
+      "method": "small_only",
+      "window": "full_suffix",
+      "primary_metric": "J_and_F",
+      "videos": 40,
+      "visible_frames": 1326,
+      "J": 82.64947134291943,
+      "F": 90.27866169533242,
+      "J_and_F": 86.46406651912592
+    },
+    {
+      "dataset": "DAVIS2017",
+      "method": "base_native",
+      "window": "full_suffix",
+      "primary_metric": "J_and_F",
+      "videos": 40,
+      "visible_frames": 1326,
+      "J": 83.64706241722268,
+      "F": 90.1987055391657,
+      "J_and_F": 86.92288397819419
+    },
+    {
+      "dataset": "DAVIS2017",
+      "method": "direct",
+      "window": "full_suffix",
+      "primary_metric": "J_and_F",
+      "videos": 40,
+      "visible_frames": 1326,
+      "J": 2.0573227328181334,
+      "F": 3.459204005995607,
+      "J_and_F": 2.7582633694068703
+    },
+    {
+      "dataset": "DAVIS2017",
+      "method": "affine",
+      "window": "full_suffix",
+      "primary_metric": "J_and_F",
+      "videos": 40,
+      "visible_frames": 1326,
+      "J": 80.57735308439074,
+      "F": 87.20507446100257,
+      "J_and_F": 83.89121377269664
+    },
+    {
+      "dataset": "DAVIS2017",
+      "method": "residual_mlp",
+      "window": "full_suffix",
+      "primary_metric": "J_and_F",
+      "videos": 40,
+      "visible_frames": 1326,
+      "J": 82.10209536356884,
+      "F": 88.45459472773454,
+      "J_and_F": 85.27834504565169
+    },
+    {
+      "dataset": "DAVIS2017",
+      "method": "transformer",
+      "window": "full_suffix",
+      "primary_metric": "J_and_F",
+      "videos": 40,
+      "visible_frames": 1326,
+      "J": 81.34746488753402,
+      "F": 87.98282974875453,
+      "J_and_F": 84.66514731814426
+    },
+    {
+      "dataset": "DAVIS2017",
+      "method": "last_mask",
+      "window": "full_suffix",
+      "primary_metric": "J_and_F",
+      "videos": 40,
+      "visible_frames": 1326,
+      "J": 77.44239717776601,
+      "F": 83.89032166709178,
+      "J_and_F": 80.6663594224289
+    },
+    {
+      "dataset": "DAVIS2017",
+      "method": "anchor_replay_16",
+      "window": "full_suffix",
+      "primary_metric": "J_and_F",
+      "videos": 40,
+      "visible_frames": 1326,
+      "J": 82.10697161512199,
+      "F": 89.17318191328889,
+      "J_and_F": 85.64007676420545
+    },
+    {
+      "dataset": "DAVIS2017",
+      "method": "small_only",
+      "window": "last5",
+      "primary_metric": "J_and_F",
+      "videos": 38,
+      "visible_frames": 189,
+      "J": 83.22876664177349,
+      "F": 91.39823006726273,
+      "J_and_F": 87.31349835451812
+    },
+    {
+      "dataset": "DAVIS2017",
+      "method": "base_native",
+      "window": "last5",
+      "primary_metric": "J_and_F",
+      "videos": 38,
+      "visible_frames": 189,
+      "J": 84.30369566244426,
+      "F": 91.32701065124189,
+      "J_and_F": 87.81535315684307
+    },
+    {
+      "dataset": "DAVIS2017",
+      "method": "direct",
+      "window": "last5",
+      "primary_metric": "J_and_F",
+      "videos": 38,
+      "visible_frames": 189,
+      "J": 1.8764026978617485,
+      "F": 3.2347194895177847,
+      "J_and_F": 2.555561093689766
+    },
+    {
+      "dataset": "DAVIS2017",
+      "method": "affine",
+      "window": "last5",
+      "primary_metric": "J_and_F",
+      "videos": 38,
+      "visible_frames": 189,
+      "J": 80.82162153101356,
+      "F": 87.66196152263237,
+      "J_and_F": 84.24179152682296
+    },
+    {
+      "dataset": "DAVIS2017",
+      "method": "residual_mlp",
+      "window": "last5",
+      "primary_metric": "J_and_F",
+      "videos": 38,
+      "visible_frames": 189,
+      "J": 81.77260511768824,
+      "F": 88.10376984249099,
+      "J_and_F": 84.93818748008961
+    },
+    {
+      "dataset": "DAVIS2017",
+      "method": "transformer",
+      "window": "last5",
+      "primary_metric": "J_and_F",
+      "videos": 38,
+      "visible_frames": 189,
+      "J": 80.87811501218494,
+      "F": 87.81040021941706,
+      "J_and_F": 84.344257615801
+    },
+    {
+      "dataset": "DAVIS2017",
+      "method": "last_mask",
+      "window": "last5",
+      "primary_metric": "J_and_F",
+      "videos": 38,
+      "visible_frames": 189,
+      "J": 76.40985456911365,
+      "F": 83.70378471973567,
+      "J_and_F": 80.05681964442465
+    },
+    {
+      "dataset": "DAVIS2017",
+      "method": "anchor_replay_16",
+      "window": "last5",
+      "primary_metric": "J_and_F",
+      "videos": 38,
+      "visible_frames": 189,
+      "J": 83.90216306491904,
+      "F": 90.98600556067133,
+      "J_and_F": 87.44408431279518
+    },
+    {
+      "dataset": "DAVIS2017",
+      "method": "small_only",
+      "window": "last_frame",
+      "primary_metric": "J_and_F",
+      "videos": 37,
+      "visible_frames": 37,
+      "J": 82.83434790599892,
+      "F": 91.32777633929926,
+      "J_and_F": 87.0810621226491
+    },
+    {
+      "dataset": "DAVIS2017",
+      "method": "base_native",
+      "window": "last_frame",
+      "primary_metric": "J_and_F",
+      "videos": 37,
+      "visible_frames": 37,
+      "J": 84.13944711102229,
+      "F": 92.25613091959642,
+      "J_and_F": 88.19778901530935
+    },
+    {
+      "dataset": "DAVIS2017",
+      "method": "direct",
+      "window": "last_frame",
+      "primary_metric": "J_and_F",
+      "videos": 37,
+      "visible_frames": 37,
+      "J": 1.9998939788348273,
+      "F": 3.6905205472189646,
+      "J_and_F": 2.845207263026896
+    },
+    {
+      "dataset": "DAVIS2017",
+      "method": "affine",
+      "window": "last_frame",
+      "primary_metric": "J_and_F",
+      "videos": 37,
+      "visible_frames": 37,
+      "J": 79.86377828083737,
+      "F": 87.6676941419163,
+      "J_and_F": 83.76573621137683
+    },
+    {
+      "dataset": "DAVIS2017",
+      "method": "residual_mlp",
+      "window": "last_frame",
+      "primary_metric": "J_and_F",
+      "videos": 37,
+      "visible_frames": 37,
+      "J": 81.12254117923607,
+      "F": 88.69717870047121,
+      "J_and_F": 84.90985993985363
+    },
+    {
+      "dataset": "DAVIS2017",
+      "method": "transformer",
+      "window": "last_frame",
+      "primary_metric": "J_and_F",
+      "videos": 37,
+      "visible_frames": 37,
+      "J": 80.03505146766551,
+      "F": 88.1508715414324,
+      "J_and_F": 84.09296150454895
+    },
+    {
+      "dataset": "DAVIS2017",
+      "method": "last_mask",
+      "window": "last_frame",
+      "primary_metric": "J_and_F",
+      "videos": 37,
+      "visible_frames": 37,
+      "J": 75.26977705447881,
+      "F": 83.77610852477218,
+      "J_and_F": 79.5229427896255
+    },
+    {
+      "dataset": "DAVIS2017",
+      "method": "anchor_replay_16",
+      "window": "last_frame",
+      "primary_metric": "J_and_F",
+      "videos": 37,
+      "visible_frames": 37,
+      "J": 83.96662701433915,
+      "F": 92.17954876963188,
+      "J_and_F": 88.07308789198552
+    },
+    {
+      "dataset": "DAVIS2017",
+      "method": "small_only",
+      "window": "offset1",
+      "primary_metric": "J_and_F",
+      "videos": 40,
+      "visible_frames": 40,
+      "J": 81.189438246807,
+      "F": 86.81715214621441,
+      "J_and_F": 84.0032951965107
+    },
+    {
+      "dataset": "DAVIS2017",
+      "method": "base_native",
+      "window": "offset1",
+      "primary_metric": "J_and_F",
+      "videos": 40,
+      "visible_frames": 40,
+      "J": 84.32588712624509,
+      "F": 89.53239820843866,
+      "J_and_F": 86.92914266734188
+    },
+    {
+      "dataset": "DAVIS2017",
+      "method": "direct",
+      "window": "offset1",
+      "primary_metric": "J_and_F",
+      "videos": 40,
+      "visible_frames": 40,
+      "J": 6.185488409267432,
+      "F": 6.3623981263852105,
+      "J_and_F": 6.273943267826321
+    },
+    {
+      "dataset": "DAVIS2017",
+      "method": "affine",
+      "window": "offset1",
+      "primary_metric": "J_and_F",
+      "videos": 40,
+      "visible_frames": 40,
+      "J": 81.64685120907548,
+      "F": 86.55466365482275,
+      "J_and_F": 84.10075743194912
+    },
+    {
+      "dataset": "DAVIS2017",
+      "method": "residual_mlp",
+      "window": "offset1",
+      "primary_metric": "J_and_F",
+      "videos": 40,
+      "visible_frames": 40,
+      "J": 81.67706453882646,
+      "F": 86.51064904355036,
+      "J_and_F": 84.0938567911884
+    },
+    {
+      "dataset": "DAVIS2017",
+      "method": "transformer",
+      "window": "offset1",
+      "primary_metric": "J_and_F",
+      "videos": 40,
+      "visible_frames": 40,
+      "J": 80.85941539982602,
+      "F": 86.52570814467217,
+      "J_and_F": 83.69256177224909
+    },
+    {
+      "dataset": "DAVIS2017",
+      "method": "last_mask",
+      "window": "offset1",
+      "primary_metric": "J_and_F",
+      "videos": 40,
+      "visible_frames": 40,
+      "J": 79.21865161450687,
+      "F": 83.81615825337619,
+      "J_and_F": 81.51740493394152
+    },
+    {
+      "dataset": "DAVIS2017",
+      "method": "anchor_replay_16",
+      "window": "offset1",
+      "primary_metric": "J_and_F",
+      "videos": 40,
+      "visible_frames": 40,
+      "J": 82.40387899013743,
+      "F": 88.35379091803078,
+      "J_and_F": 85.37883495408411
+    },
+    {
+      "dataset": "DAVIS2017",
+      "method": "small_only",
+      "window": "offset2",
+      "primary_metric": "J_and_F",
+      "videos": 40,
+      "visible_frames": 40,
+      "J": 82.80712662528693,
+      "F": 88.43771609237551,
+      "J_and_F": 85.62242135883122
+    },
+    {
+      "dataset": "DAVIS2017",
+      "method": "base_native",
+      "window": "offset2",
+      "primary_metric": "J_and_F",
+      "videos": 40,
+      "visible_frames": 40,
+      "J": 84.19688669098936,
+      "F": 89.57157049724238,
+      "J_and_F": 86.88422859411587
+    },
+    {
+      "dataset": "DAVIS2017",
+      "method": "direct",
+      "window": "offset2",
+      "primary_metric": "J_and_F",
+      "videos": 40,
+      "visible_frames": 40,
+      "J": 3.2012045281356327,
+      "F": 3.036049768201753,
+      "J_and_F": 3.118627148168693
+    },
+    {
+      "dataset": "DAVIS2017",
+      "method": "affine",
+      "window": "offset2",
+      "primary_metric": "J_and_F",
+      "videos": 40,
+      "visible_frames": 40,
+      "J": 81.35369934705793,
+      "F": 86.60442030090587,
+      "J_and_F": 83.9790598239819
+    },
+    {
+      "dataset": "DAVIS2017",
+      "method": "residual_mlp",
+      "window": "offset2",
+      "primary_metric": "J_and_F",
+      "videos": 40,
+      "visible_frames": 40,
+      "J": 81.61894586484055,
+      "F": 86.61526149698648,
+      "J_and_F": 84.11710368091352
+    },
+    {
+      "dataset": "DAVIS2017",
+      "method": "transformer",
+      "window": "offset2",
+      "primary_metric": "J_and_F",
+      "videos": 40,
+      "visible_frames": 40,
+      "J": 80.96712733964141,
+      "F": 86.60581315376423,
+      "J_and_F": 83.78647024670282
+    },
+    {
+      "dataset": "DAVIS2017",
+      "method": "last_mask",
+      "window": "offset2",
+      "primary_metric": "J_and_F",
+      "videos": 40,
+      "visible_frames": 40,
+      "J": 78.97324909127404,
+      "F": 84.32136028269507,
+      "J_and_F": 81.64730468698455
+    },
+    {
+      "dataset": "DAVIS2017",
+      "method": "anchor_replay_16",
+      "window": "offset2",
+      "primary_metric": "J_and_F",
+      "videos": 40,
+      "visible_frames": 40,
+      "J": 82.32414027720029,
+      "F": 88.28850118651899,
+      "J_and_F": 85.30632073185964
+    },
+    {
+      "dataset": "DAVIS2017",
+      "method": "small_only",
+      "window": "offset3",
+      "primary_metric": "J_and_F",
+      "videos": 39,
+      "visible_frames": 39,
+      "J": 85.00308783957182,
+      "F": 91.25612135012882,
+      "J_and_F": 88.12960459485032
+    },
+    {
+      "dataset": "DAVIS2017",
+      "method": "base_native",
+      "window": "offset3",
+      "primary_metric": "J_and_F",
+      "videos": 39,
+      "visible_frames": 39,
+      "J": 83.96024754845956,
+      "F": 89.63838073293348,
+      "J_and_F": 86.79931414069652
+    },
+    {
+      "dataset": "DAVIS2017",
+      "method": "direct",
+      "window": "offset3",
+      "primary_metric": "J_and_F",
+      "videos": 39,
+      "visible_frames": 39,
+      "J": 3.2060215490258472,
+      "F": 2.940956776865321,
+      "J_and_F": 3.073489162945584
+    },
+    {
+      "dataset": "DAVIS2017",
+      "method": "affine",
+      "window": "offset3",
+      "primary_metric": "J_and_F",
+      "videos": 39,
+      "visible_frames": 39,
+      "J": 83.22675582688962,
+      "F": 88.88945686981467,
+      "J_and_F": 86.05810634835214
+    },
+    {
+      "dataset": "DAVIS2017",
+      "method": "residual_mlp",
+      "window": "offset3",
+      "primary_metric": "J_and_F",
+      "videos": 39,
+      "visible_frames": 39,
+      "J": 83.7753121559471,
+      "F": 89.15241136063132,
+      "J_and_F": 86.46386175828921
+    },
+    {
+      "dataset": "DAVIS2017",
+      "method": "transformer",
+      "window": "offset3",
+      "primary_metric": "J_and_F",
+      "videos": 39,
+      "visible_frames": 39,
+      "J": 83.13688119275324,
+      "F": 89.17893975615553,
+      "J_and_F": 86.15791047445438
+    },
+    {
+      "dataset": "DAVIS2017",
+      "method": "last_mask",
+      "window": "offset3",
+      "primary_metric": "J_and_F",
+      "videos": 39,
+      "visible_frames": 39,
+      "J": 81.00606646636813,
+      "F": 86.67231702617481,
+      "J_and_F": 83.83919174627147
+    },
+    {
+      "dataset": "DAVIS2017",
+      "method": "anchor_replay_16",
+      "window": "offset3",
+      "primary_metric": "J_and_F",
+      "videos": 39,
+      "visible_frames": 39,
+      "J": 81.92830542377794,
+      "F": 88.18973204118181,
+      "J_and_F": 85.05901873247988
+    },
+    {
+      "dataset": "DAVIS2017",
+      "method": "small_only",
+      "window": "offset4",
+      "primary_metric": "J_and_F",
+      "videos": 39,
+      "visible_frames": 39,
+      "J": 84.93982000094705,
+      "F": 91.97548380918006,
+      "J_and_F": 88.45765190506356
+    },
+    {
+      "dataset": "DAVIS2017",
+      "method": "base_native",
+      "window": "offset4",
+      "primary_metric": "J_and_F",
+      "videos": 39,
+      "visible_frames": 39,
+      "J": 86.41101725930369,
+      "F": 92.00887003895537,
+      "J_and_F": 89.20994364912953
+    },
+    {
+      "dataset": "DAVIS2017",
+      "method": "direct",
+      "window": "offset4",
+      "primary_metric": "J_and_F",
+      "videos": 39,
+      "visible_frames": 39,
+      "J": 3.1338114229353367,
+      "F": 3.128104464546022,
+      "J_and_F": 3.130957943740679
+    },
+    {
+      "dataset": "DAVIS2017",
+      "method": "affine",
+      "window": "offset4",
+      "primary_metric": "J_and_F",
+      "videos": 39,
+      "visible_frames": 39,
+      "J": 82.47299808057541,
+      "F": 88.74551525218791,
+      "J_and_F": 85.60925666638165
+    },
+    {
+      "dataset": "DAVIS2017",
+      "method": "residual_mlp",
+      "window": "offset4",
+      "primary_metric": "J_and_F",
+      "videos": 39,
+      "visible_frames": 39,
+      "J": 85.52922823330596,
+      "F": 91.27366492006314,
+      "J_and_F": 88.40144657668455
+    },
+    {
+      "dataset": "DAVIS2017",
+      "method": "transformer",
+      "window": "offset4",
+      "primary_metric": "J_and_F",
+      "videos": 39,
+      "visible_frames": 39,
+      "J": 84.40385949105521,
+      "F": 90.92232360177077,
+      "J_and_F": 87.663091546413
+    },
+    {
+      "dataset": "DAVIS2017",
+      "method": "last_mask",
+      "window": "offset4",
+      "primary_metric": "J_and_F",
+      "videos": 39,
+      "visible_frames": 39,
+      "J": 80.93345951661853,
+      "F": 86.45466090808189,
+      "J_and_F": 83.69406021235021
+    },
+    {
+      "dataset": "DAVIS2017",
+      "method": "anchor_replay_16",
+      "window": "offset4",
+      "primary_metric": "J_and_F",
+      "videos": 39,
+      "visible_frames": 39,
+      "J": 84.35701837859978,
+      "F": 90.61604848963293,
+      "J_and_F": 87.48653343411635
+    },
+    {
+      "dataset": "DAVIS2017",
+      "method": "small_only",
+      "window": "offset5",
+      "primary_metric": "J_and_F",
+      "videos": 39,
+      "visible_frames": 39,
+      "J": 86.27038971619552,
+      "F": 92.32570333430863,
+      "J_and_F": 89.29804652525208
+    },
+    {
+      "dataset": "DAVIS2017",
+      "method": "base_native",
+      "window": "offset5",
+      "primary_metric": "J_and_F",
+      "videos": 39,
+      "visible_frames": 39,
+      "J": 86.30220149968639,
+      "F": 91.54471314553444,
+      "J_and_F": 88.92345732261042
+    },
+    {
+      "dataset": "DAVIS2017",
+      "method": "direct",
+      "window": "offset5",
+      "primary_metric": "J_and_F",
+      "videos": 39,
+      "visible_frames": 39,
+      "J": 3.0597011993962764,
+      "F": 2.476036284163219,
+      "J_and_F": 2.7678687417797474
+    },
+    {
+      "dataset": "DAVIS2017",
+      "method": "affine",
+      "window": "offset5",
+      "primary_metric": "J_and_F",
+      "videos": 39,
+      "visible_frames": 39,
+      "J": 83.77344588741323,
+      "F": 89.20127916997353,
+      "J_and_F": 86.48736252869338
+    },
+    {
+      "dataset": "DAVIS2017",
+      "method": "residual_mlp",
+      "window": "offset5",
+      "primary_metric": "J_and_F",
+      "videos": 39,
+      "visible_frames": 39,
+      "J": 86.31448076912831,
+      "F": 91.63861619654783,
+      "J_and_F": 88.97654848283807
+    },
+    {
+      "dataset": "DAVIS2017",
+      "method": "transformer",
+      "window": "offset5",
+      "primary_metric": "J_and_F",
+      "videos": 39,
+      "visible_frames": 39,
+      "J": 85.329207677153,
+      "F": 91.20668051620885,
+      "J_and_F": 88.26794409668092
+    },
+    {
+      "dataset": "DAVIS2017",
+      "method": "last_mask",
+      "window": "offset5",
+      "primary_metric": "J_and_F",
+      "videos": 39,
+      "visible_frames": 39,
+      "J": 81.24062403324159,
+      "F": 86.07467569329987,
+      "J_and_F": 83.65764986327073
+    },
+    {
+      "dataset": "DAVIS2017",
+      "method": "anchor_replay_16",
+      "window": "offset5",
+      "primary_metric": "J_and_F",
+      "videos": 39,
+      "visible_frames": 39,
+      "J": 84.30234134210275,
+      "F": 90.2889015403306,
+      "J_and_F": 87.29562144121668
+    },
+    {
+      "dataset": "VOST",
+      "method": "small_only",
+      "window": "first5",
+      "primary_metric": "J",
+      "videos": 36,
+      "visible_frames": 179,
+      "J": 56.40253020770385,
+      "F": 63.43477389323784,
+      "J_and_F": 59.91865205047085
+    },
+    {
+      "dataset": "VOST",
+      "method": "base_native",
+      "window": "first5",
+      "primary_metric": "J",
+      "videos": 36,
+      "visible_frames": 179,
+      "J": 50.10929430969184,
+      "F": 57.598979060927284,
+      "J_and_F": 53.85413668530956
+    },
+    {
+      "dataset": "VOST",
+      "method": "direct",
+      "window": "first5",
+      "primary_metric": "J",
+      "videos": 36,
+      "visible_frames": 179,
+      "J": 0.057726430956158994,
+      "F": 0.15525364857973822,
+      "J_and_F": 0.10649003976794863
+    },
+    {
+      "dataset": "VOST",
+      "method": "affine",
+      "window": "first5",
+      "primary_metric": "J",
+      "videos": 36,
+      "visible_frames": 179,
+      "J": 56.027985079443845,
+      "F": 62.233084208080804,
+      "J_and_F": 59.130534643762324
+    },
+    {
+      "dataset": "VOST",
+      "method": "residual_mlp",
+      "window": "first5",
+      "primary_metric": "J",
+      "videos": 36,
+      "visible_frames": 179,
+      "J": 53.56081672806332,
+      "F": 59.75543963421988,
+      "J_and_F": 56.658128181141606
+    },
+    {
+      "dataset": "VOST",
+      "method": "transformer",
+      "window": "first5",
+      "primary_metric": "J",
+      "videos": 36,
+      "visible_frames": 179,
+      "J": 54.58741602202279,
+      "F": 61.05557076557542,
+      "J_and_F": 57.82149339379911
+    },
+    {
+      "dataset": "VOST",
+      "method": "last_mask",
+      "window": "first5",
+      "primary_metric": "J",
+      "videos": 36,
+      "visible_frames": 179,
+      "J": 56.07993601327261,
+      "F": 62.58878568291693,
+      "J_and_F": 59.33436084809477
+    },
+    {
+      "dataset": "VOST",
+      "method": "anchor_replay_16",
+      "window": "first5",
+      "primary_metric": "J",
+      "videos": 36,
+      "visible_frames": 179,
+      "J": 40.29040006925716,
+      "F": 47.524237836637965,
+      "J_and_F": 43.90731895294756
+    },
+    {
+      "dataset": "VOST",
+      "method": "small_only",
+      "window": "full_suffix",
+      "primary_metric": "J",
+      "videos": 40,
+      "visible_frames": 2051,
+      "J": 46.789631629571886,
+      "F": 53.4073020445595,
+      "J_and_F": 50.09846683706569
+    },
+    {
+      "dataset": "VOST",
+      "method": "base_native",
+      "window": "full_suffix",
+      "primary_metric": "J",
+      "videos": 40,
+      "visible_frames": 2051,
+      "J": 39.76836126637642,
+      "F": 47.861472908217195,
+      "J_and_F": 43.814917087296806
+    },
+    {
+      "dataset": "VOST",
+      "method": "direct",
+      "window": "full_suffix",
+      "primary_metric": "J",
+      "videos": 40,
+      "visible_frames": 2051,
+      "J": 0.004109965153346292,
+      "F": 0.011462040948075238,
+      "J_and_F": 0.007786003050710765
+    },
+    {
+      "dataset": "VOST",
+      "method": "affine",
+      "window": "full_suffix",
+      "primary_metric": "J",
+      "videos": 40,
+      "visible_frames": 2051,
+      "J": 43.58978704785081,
+      "F": 49.847125336127284,
+      "J_and_F": 46.71845619198905
+    },
+    {
+      "dataset": "VOST",
+      "method": "residual_mlp",
+      "window": "full_suffix",
+      "primary_metric": "J",
+      "videos": 40,
+      "visible_frames": 2051,
+      "J": 43.342071838715846,
+      "F": 49.482192205688776,
+      "J_and_F": 46.41213202220231
+    },
+    {
+      "dataset": "VOST",
+      "method": "transformer",
+      "window": "full_suffix",
+      "primary_metric": "J",
+      "videos": 40,
+      "visible_frames": 2051,
+      "J": 43.119115278905284,
+      "F": 49.13460592425353,
+      "J_and_F": 46.1268606015794
+    },
+    {
+      "dataset": "VOST",
+      "method": "last_mask",
+      "window": "full_suffix",
+      "primary_metric": "J",
+      "videos": 40,
+      "visible_frames": 2051,
+      "J": 43.62554453824145,
+      "F": 50.09771904763986,
+      "J_and_F": 46.861631792940656
+    },
+    {
+      "dataset": "VOST",
+      "method": "anchor_replay_16",
+      "window": "full_suffix",
+      "primary_metric": "J",
+      "videos": 40,
+      "visible_frames": 2051,
+      "J": 34.1424227993122,
+      "F": 42.39723999178072,
+      "J_and_F": 38.26983139554646
+    },
+    {
+      "dataset": "VOST",
+      "method": "small_only",
+      "window": "last5",
+      "primary_metric": "J",
+      "videos": 40,
+      "visible_frames": 185,
+      "J": 37.91958941731315,
+      "F": 43.72210265372431,
+      "J_and_F": 40.82084603551873
+    },
+    {
+      "dataset": "VOST",
+      "method": "base_native",
+      "window": "last5",
+      "primary_metric": "J",
+      "videos": 40,
+      "visible_frames": 185,
+      "J": 34.15639003299859,
+      "F": 42.85361421526911,
+      "J_and_F": 38.505002124133846
+    },
+    {
+      "dataset": "VOST",
+      "method": "direct",
+      "window": "last5",
+      "primary_metric": "J",
+      "videos": 40,
+      "visible_frames": 185,
+      "J": 0.0,
+      "F": 0.0,
+      "J_and_F": 0.0
+    },
+    {
+      "dataset": "VOST",
+      "method": "affine",
+      "window": "last5",
+      "primary_metric": "J",
+      "videos": 40,
+      "visible_frames": 185,
+      "J": 35.710378834046985,
+      "F": 42.848409882980775,
+      "J_and_F": 39.279394358513876
+    },
+    {
+      "dataset": "VOST",
+      "method": "residual_mlp",
+      "window": "last5",
+      "primary_metric": "J",
+      "videos": 40,
+      "visible_frames": 185,
+      "J": 35.32287774967411,
+      "F": 42.06800153018992,
+      "J_and_F": 38.69543963993201
+    },
+    {
+      "dataset": "VOST",
+      "method": "transformer",
+      "window": "last5",
+      "primary_metric": "J",
+      "videos": 40,
+      "visible_frames": 185,
+      "J": 37.37360705466525,
+      "F": 42.95540706781036,
+      "J_and_F": 40.164507061237806
+    },
+    {
+      "dataset": "VOST",
+      "method": "last_mask",
+      "window": "last5",
+      "primary_metric": "J",
+      "videos": 40,
+      "visible_frames": 185,
+      "J": 36.2206798967582,
+      "F": 43.670078229588555,
+      "J_and_F": 39.94537906317338
+    },
+    {
+      "dataset": "VOST",
+      "method": "anchor_replay_16",
+      "window": "last5",
+      "primary_metric": "J",
+      "videos": 40,
+      "visible_frames": 185,
+      "J": 30.589098162711924,
+      "F": 39.507786850977084,
+      "J_and_F": 35.0484425068445
+    },
+    {
+      "dataset": "VOST",
+      "method": "small_only",
+      "window": "last_frame",
+      "primary_metric": "J",
+      "videos": 35,
+      "visible_frames": 35,
+      "J": 41.17454888589892,
+      "F": 47.974999490515856,
+      "J_and_F": 44.574774188207385
+    },
+    {
+      "dataset": "VOST",
+      "method": "base_native",
+      "window": "last_frame",
+      "primary_metric": "J",
+      "videos": 35,
+      "visible_frames": 35,
+      "J": 34.52471740178433,
+      "F": 44.54875358257749,
+      "J_and_F": 39.53673549218091
+    },
+    {
+      "dataset": "VOST",
+      "method": "direct",
+      "window": "last_frame",
+      "primary_metric": "J",
+      "videos": 35,
+      "visible_frames": 35,
+      "J": 0.0,
+      "F": 0.0,
+      "J_and_F": 0.0
+    },
+    {
+      "dataset": "VOST",
+      "method": "affine",
+      "window": "last_frame",
+      "primary_metric": "J",
+      "videos": 35,
+      "visible_frames": 35,
+      "J": 35.993115414107685,
+      "F": 42.49659212458624,
+      "J_and_F": 39.24485376934697
+    },
+    {
+      "dataset": "VOST",
+      "method": "residual_mlp",
+      "window": "last_frame",
+      "primary_metric": "J",
+      "videos": 35,
+      "visible_frames": 35,
+      "J": 36.46702670256027,
+      "F": 44.00211231619991,
+      "J_and_F": 40.23456950938009
+    },
+    {
+      "dataset": "VOST",
+      "method": "transformer",
+      "window": "last_frame",
+      "primary_metric": "J",
+      "videos": 35,
+      "visible_frames": 35,
+      "J": 38.003343313715675,
+      "F": 43.03194472614621,
+      "J_and_F": 40.51764401993094
+    },
+    {
+      "dataset": "VOST",
+      "method": "last_mask",
+      "window": "last_frame",
+      "primary_metric": "J",
+      "videos": 35,
+      "visible_frames": 35,
+      "J": 36.032226961267106,
+      "F": 42.4958472280318,
+      "J_and_F": 39.26403709464945
+    },
+    {
+      "dataset": "VOST",
+      "method": "anchor_replay_16",
+      "window": "last_frame",
+      "primary_metric": "J",
+      "videos": 35,
+      "visible_frames": 35,
+      "J": 31.003846694935568,
+      "F": 40.646458993170874,
+      "J_and_F": 35.82515284405322
+    },
+    {
+      "dataset": "VOST",
+      "method": "small_only",
+      "window": "offset1",
+      "primary_metric": "J",
+      "videos": 36,
+      "visible_frames": 36,
+      "J": 57.00781754669267,
+      "F": 64.00476052616409,
+      "J_and_F": 60.50628903642838
+    },
+    {
+      "dataset": "VOST",
+      "method": "base_native",
+      "window": "offset1",
+      "primary_metric": "J",
+      "videos": 36,
+      "visible_frames": 36,
+      "J": 51.29992239231724,
+      "F": 59.79292169327231,
+      "J_and_F": 55.546422042794774
+    },
+    {
+      "dataset": "VOST",
+      "method": "direct",
+      "window": "offset1",
+      "primary_metric": "J",
+      "videos": 36,
+      "visible_frames": 36,
+      "J": 0.288632154780795,
+      "F": 0.7762682428986911,
+      "J_and_F": 0.5324501988397431
+    },
+    {
+      "dataset": "VOST",
+      "method": "affine",
+      "window": "offset1",
+      "primary_metric": "J",
+      "videos": 36,
+      "visible_frames": 36,
+      "J": 56.80693162576809,
+      "F": 63.43214962045811,
+      "J_and_F": 60.1195406231131
+    },
+    {
+      "dataset": "VOST",
+      "method": "residual_mlp",
+      "window": "offset1",
+      "primary_metric": "J",
+      "videos": 36,
+      "visible_frames": 36,
+      "J": 54.198851603343016,
+      "F": 61.40184847367563,
+      "J_and_F": 57.80035003850932
+    },
+    {
+      "dataset": "VOST",
+      "method": "transformer",
+      "window": "offset1",
+      "primary_metric": "J",
+      "videos": 36,
+      "visible_frames": 36,
+      "J": 54.84684393254449,
+      "F": 62.51766827918709,
+      "J_and_F": 58.68225610586579
+    },
+    {
+      "dataset": "VOST",
+      "method": "last_mask",
+      "window": "offset1",
+      "primary_metric": "J",
+      "videos": 36,
+      "visible_frames": 36,
+      "J": 57.454769207457936,
+      "F": 64.79875015906534,
+      "J_and_F": 61.12675968326164
+    },
+    {
+      "dataset": "VOST",
+      "method": "anchor_replay_16",
+      "window": "offset1",
+      "primary_metric": "J",
+      "videos": 36,
+      "visible_frames": 36,
+      "J": 40.4160232750217,
+      "F": 48.81032246280912,
+      "J_and_F": 44.613172868915406
+    },
+    {
+      "dataset": "VOST",
+      "method": "small_only",
+      "window": "offset2",
+      "primary_metric": "J",
+      "videos": 36,
+      "visible_frames": 36,
+      "J": 57.30594981589075,
+      "F": 64.12364875193659,
+      "J_and_F": 60.71479928391366
+    },
+    {
+      "dataset": "VOST",
+      "method": "base_native",
+      "window": "offset2",
+      "primary_metric": "J",
+      "videos": 36,
+      "visible_frames": 36,
+      "J": 50.5546665260584,
+      "F": 58.00451083093797,
+      "J_and_F": 54.27958867849818
+    },
+    {
+      "dataset": "VOST",
+      "method": "direct",
+      "window": "offset2",
+      "primary_metric": "J",
+      "videos": 36,
+      "visible_frames": 36,
+      "J": 0.0,
+      "F": 0.0,
+      "J_and_F": 0.0
+    },
+    {
+      "dataset": "VOST",
+      "method": "affine",
+      "window": "offset2",
+      "primary_metric": "J",
+      "videos": 36,
+      "visible_frames": 36,
+      "J": 57.325949591448584,
+      "F": 63.06514566662029,
+      "J_and_F": 60.19554762903444
+    },
+    {
+      "dataset": "VOST",
+      "method": "residual_mlp",
+      "window": "offset2",
+      "primary_metric": "J",
+      "videos": 36,
+      "visible_frames": 36,
+      "J": 54.29656552780403,
+      "F": 60.00099080406287,
+      "J_and_F": 57.14877816593345
+    },
+    {
+      "dataset": "VOST",
+      "method": "transformer",
+      "window": "offset2",
+      "primary_metric": "J",
+      "videos": 36,
+      "visible_frames": 36,
+      "J": 54.88823985681959,
+      "F": 60.81822461544874,
+      "J_and_F": 57.85323223613416
+    },
+    {
+      "dataset": "VOST",
+      "method": "last_mask",
+      "window": "offset2",
+      "primary_metric": "J",
+      "videos": 36,
+      "visible_frames": 36,
+      "J": 57.51474091059574,
+      "F": 63.37131088739046,
+      "J_and_F": 60.4430258989931
+    },
+    {
+      "dataset": "VOST",
+      "method": "anchor_replay_16",
+      "window": "offset2",
+      "primary_metric": "J",
+      "videos": 36,
+      "visible_frames": 36,
+      "J": 40.22994114557808,
+      "F": 47.74065522896508,
+      "J_and_F": 43.98529818727158
+    },
+    {
+      "dataset": "VOST",
+      "method": "small_only",
+      "window": "offset3",
+      "primary_metric": "J",
+      "videos": 36,
+      "visible_frames": 36,
+      "J": 56.518462923829766,
+      "F": 63.52093071449413,
+      "J_and_F": 60.01969681916195
+    },
+    {
+      "dataset": "VOST",
+      "method": "base_native",
+      "window": "offset3",
+      "primary_metric": "J",
+      "videos": 36,
+      "visible_frames": 36,
+      "J": 49.79483024221444,
+      "F": 57.60558335385211,
+      "J_and_F": 53.70020679803327
+    },
+    {
+      "dataset": "VOST",
+      "method": "direct",
+      "window": "offset3",
+      "primary_metric": "J",
+      "videos": 36,
+      "visible_frames": 36,
+      "J": 0.0,
+      "F": 0.0,
+      "J_and_F": 0.0
+    },
+    {
+      "dataset": "VOST",
+      "method": "affine",
+      "window": "offset3",
+      "primary_metric": "J",
+      "videos": 36,
+      "visible_frames": 36,
+      "J": 55.0514362293187,
+      "F": 60.77958700035673,
+      "J_and_F": 57.91551161483772
+    },
+    {
+      "dataset": "VOST",
+      "method": "residual_mlp",
+      "window": "offset3",
+      "primary_metric": "J",
+      "videos": 36,
+      "visible_frames": 36,
+      "J": 52.65343479342311,
+      "F": 59.72526900833854,
+      "J_and_F": 56.18935190088082
+    },
+    {
+      "dataset": "VOST",
+      "method": "transformer",
+      "window": "offset3",
+      "primary_metric": "J",
+      "videos": 36,
+      "visible_frames": 36,
+      "J": 52.77286262038846,
+      "F": 59.752692887827656,
+      "J_and_F": 56.26277775410806
+    },
+    {
+      "dataset": "VOST",
+      "method": "last_mask",
+      "window": "offset3",
+      "primary_metric": "J",
+      "videos": 36,
+      "visible_frames": 36,
+      "J": 55.553698129155705,
+      "F": 61.72700144731932,
+      "J_and_F": 58.640349788237515
+    },
+    {
+      "dataset": "VOST",
+      "method": "anchor_replay_16",
+      "window": "offset3",
+      "primary_metric": "J",
+      "videos": 36,
+      "visible_frames": 36,
+      "J": 39.33521309423704,
+      "F": 46.64302007229039,
+      "J_and_F": 42.989116583263716
+    },
+    {
+      "dataset": "VOST",
+      "method": "small_only",
+      "window": "offset4",
+      "primary_metric": "J",
+      "videos": 36,
+      "visible_frames": 36,
+      "J": 56.66042202146899,
+      "F": 64.873752196001,
+      "J_and_F": 60.767087108735
+    },
+    {
+      "dataset": "VOST",
+      "method": "base_native",
+      "window": "offset4",
+      "primary_metric": "J",
+      "videos": 36,
+      "visible_frames": 36,
+      "J": 50.020174693724535,
+      "F": 56.70820976602168,
+      "J_and_F": 53.364192229873105
+    },
+    {
+      "dataset": "VOST",
+      "method": "direct",
+      "window": "offset4",
+      "primary_metric": "J",
+      "videos": 36,
+      "visible_frames": 36,
+      "J": 0.0,
+      "F": 0.0,
+      "J_and_F": 0.0
+    },
+    {
+      "dataset": "VOST",
+      "method": "affine",
+      "window": "offset4",
+      "primary_metric": "J",
+      "videos": 36,
+      "visible_frames": 36,
+      "J": 54.725547121239046,
+      "F": 61.61501693801364,
+      "J_and_F": 58.17028202962634
+    },
+    {
+      "dataset": "VOST",
+      "method": "residual_mlp",
+      "window": "offset4",
+      "primary_metric": "J",
+      "videos": 36,
+      "visible_frames": 36,
+      "J": 51.83793259376592,
+      "F": 57.063207686176256,
+      "J_and_F": 54.450570139971084
+    },
+    {
+      "dataset": "VOST",
+      "method": "transformer",
+      "window": "offset4",
+      "primary_metric": "J",
+      "videos": 36,
+      "visible_frames": 36,
+      "J": 54.62959319822118,
+      "F": 60.471278076339615,
+      "J_and_F": 57.5504356372804
+    },
+    {
+      "dataset": "VOST",
+      "method": "last_mask",
+      "window": "offset4",
+      "primary_metric": "J",
+      "videos": 36,
+      "visible_frames": 36,
+      "J": 55.464149117141446,
+      "F": 61.97211068283139,
+      "J_and_F": 58.71812989998642
+    },
+    {
+      "dataset": "VOST",
+      "method": "anchor_replay_16",
+      "window": "offset4",
+      "primary_metric": "J",
+      "videos": 36,
+      "visible_frames": 36,
+      "J": 40.8759353821975,
+      "F": 47.947230156334,
+      "J_and_F": 44.41158276926575
+    },
+    {
+      "dataset": "VOST",
+      "method": "small_only",
+      "window": "offset5",
+      "primary_metric": "J",
+      "videos": 35,
+      "visible_frames": 35,
+      "J": 55.87413712595038,
+      "F": 62.01222805695322,
+      "J_and_F": 58.943182591451794
+    },
+    {
+      "dataset": "VOST",
+      "method": "base_native",
+      "window": "offset5",
+      "primary_metric": "J",
+      "videos": 35,
+      "visible_frames": 35,
+      "J": 50.065801054002094,
+      "F": 57.108917365139554,
+      "J_and_F": 53.58735920957082
+    },
+    {
+      "dataset": "VOST",
+      "method": "direct",
+      "window": "offset5",
+      "primary_metric": "J",
+      "videos": 35,
+      "visible_frames": 35,
+      "J": 0.0,
+      "F": 0.0,
+      "J_and_F": 0.0
+    },
+    {
+      "dataset": "VOST",
+      "method": "affine",
+      "window": "offset5",
+      "primary_metric": "J",
+      "videos": 35,
+      "visible_frames": 35,
+      "J": 57.63023609941843,
+      "F": 63.681336723953955,
+      "J_and_F": 60.655786411686194
+    },
+    {
+      "dataset": "VOST",
+      "method": "residual_mlp",
+      "window": "offset5",
+      "primary_metric": "J",
+      "videos": 35,
+      "visible_frames": 35,
+      "J": 56.174922420438946,
+      "F": 61.94547883309884,
+      "J_and_F": 59.06020062676889
+    },
+    {
+      "dataset": "VOST",
+      "method": "transformer",
+      "window": "offset5",
+      "primary_metric": "J",
+      "videos": 35,
+      "visible_frames": 35,
+      "J": 57.18622790792096,
+      "F": 63.10993253961893,
+      "J_and_F": 60.148080223769945
+    },
+    {
+      "dataset": "VOST",
+      "method": "last_mask",
+      "window": "offset5",
+      "primary_metric": "J",
+      "videos": 35,
+      "visible_frames": 35,
+      "J": 55.76056259691632,
+      "F": 62.44831967334894,
+      "J_and_F": 59.10444113513263
+    },
+    {
+      "dataset": "VOST",
+      "method": "anchor_replay_16",
+      "window": "offset5",
+      "primary_metric": "J",
+      "videos": 35,
+      "visible_frames": 35,
+      "J": 41.54731103581567,
+      "F": 47.43653158458528,
+      "J_and_F": 44.491921310200475
+    }
+  ],
+  "paired_differences": [
+    {
+      "dataset": "MOSEv2",
+      "window": "first5",
+      "contrast": "affine-minus-small_only",
+      "mean": -5.612453498755234,
+      "videos": 33,
+      "ci95_low": -11.229097626780721,
+      "ci95_high": -1.0021890223986827
+    },
+    {
+      "dataset": "MOSEv2",
+      "window": "first5",
+      "contrast": "affine-minus-base_native",
+      "mean": -1.3077919181212059,
+      "videos": 33,
+      "ci95_low": -7.439446254645595,
+      "ci95_high": 6.1118485245676215
+    },
+    {
+      "dataset": "MOSEv2",
+      "window": "first5",
+      "contrast": "affine-minus-direct",
+      "mean": 58.427612927648845,
+      "videos": 33,
+      "ci95_low": 45.72366198021934,
+      "ci95_high": 70.73622655137846
+    },
+    {
+      "dataset": "MOSEv2",
+      "window": "first5",
+      "contrast": "affine-minus-residual_mlp",
+      "mean": 1.9932582114638708,
+      "videos": 33,
+      "ci95_low": -1.650320960866378,
+      "ci95_high": 7.260779387643204
+    },
+    {
+      "dataset": "MOSEv2",
+      "window": "first5",
+      "contrast": "affine-minus-transformer",
+      "mean": -1.116846495662681,
+      "videos": 33,
+      "ci95_low": -3.357967705177112,
+      "ci95_high": 0.48221096084311277
+    },
+    {
+      "dataset": "MOSEv2",
+      "window": "first5",
+      "contrast": "affine-minus-last_mask",
+      "mean": 5.7800678743328024,
+      "videos": 33,
+      "ci95_low": 0.47880987413036746,
+      "ci95_high": 11.66145308912696
+    },
+    {
+      "dataset": "MOSEv2",
+      "window": "first5",
+      "contrast": "affine-minus-anchor_replay_16",
+      "mean": 8.028454926397618,
+      "videos": 33,
+      "ci95_low": -2.400732005161878,
+      "ci95_high": 19.997533970707472
+    },
+    {
+      "dataset": "MOSEv2",
+      "window": "full_suffix",
+      "contrast": "affine-minus-small_only",
+      "mean": -9.449467059242613,
+      "videos": 40,
+      "ci95_low": -16.163443354225986,
+      "ci95_high": -3.7362695383865963
+    },
+    {
+      "dataset": "MOSEv2",
+      "window": "full_suffix",
+      "contrast": "affine-minus-base_native",
+      "mean": -6.291442624214611,
+      "videos": 40,
+      "ci95_low": -13.491095134141595,
+      "ci95_high": 0.8493642028321092
+    },
+    {
+      "dataset": "MOSEv2",
+      "window": "full_suffix",
+      "contrast": "affine-minus-direct",
+      "mean": 48.478284521723644,
+      "videos": 40,
+      "ci95_low": 36.577281018918114,
+      "ci95_high": 60.16348462469316
+    },
+    {
+      "dataset": "MOSEv2",
+      "window": "full_suffix",
+      "contrast": "affine-minus-residual_mlp",
+      "mean": -1.6525846999852738,
+      "videos": 40,
+      "ci95_low": -4.27371623500851,
+      "ci95_high": 0.1989328836727695
+    },
+    {
+      "dataset": "MOSEv2",
+      "window": "full_suffix",
+      "contrast": "affine-minus-transformer",
+      "mean": -0.2392917011135502,
+      "videos": 40,
+      "ci95_low": -4.358132814933982,
+      "ci95_high": 4.827881983727776
+    },
+    {
+      "dataset": "MOSEv2",
+      "window": "full_suffix",
+      "contrast": "affine-minus-last_mask",
+      "mean": 3.8651802364161547,
+      "videos": 40,
+      "ci95_low": -2.7111465108410417,
+      "ci95_high": 10.420158774596937
+    },
+    {
+      "dataset": "MOSEv2",
+      "window": "full_suffix",
+      "contrast": "affine-minus-anchor_replay_16",
+      "mean": 0.6228768673240261,
+      "videos": 40,
+      "ci95_low": -9.58965411479597,
+      "ci95_high": 11.860576999513679
+    },
+    {
+      "dataset": "MOSEv2",
+      "window": "last5",
+      "contrast": "affine-minus-small_only",
+      "mean": -10.64324716422769,
+      "videos": 38,
+      "ci95_low": -22.605758831673466,
+      "ci95_high": -0.199609116599528
+    },
+    {
+      "dataset": "MOSEv2",
+      "window": "last5",
+      "contrast": "affine-minus-base_native",
+      "mean": -10.987736731796044,
+      "videos": 38,
+      "ci95_low": -22.46402602586335,
+      "ci95_high": -0.5580807543083499
+    },
+    {
+      "dataset": "MOSEv2",
+      "window": "last5",
+      "contrast": "affine-minus-direct",
+      "mean": 43.97645183284418,
+      "videos": 38,
+      "ci95_low": 29.957273669890654,
+      "ci95_high": 57.68343933761433
+    },
+    {
+      "dataset": "MOSEv2",
+      "window": "last5",
+      "contrast": "affine-minus-residual_mlp",
+      "mean": -2.4547167405395345,
+      "videos": 38,
+      "ci95_low": -8.083644002757907,
+      "ci95_high": 0.6207421436356002
+    },
+    {
+      "dataset": "MOSEv2",
+      "window": "last5",
+      "contrast": "affine-minus-transformer",
+      "mean": 2.8766409824457826,
+      "videos": 38,
+      "ci95_low": -0.05213265385546442,
+      "ci95_high": 8.303784492542958
+    },
+    {
+      "dataset": "MOSEv2",
+      "window": "last5",
+      "contrast": "affine-minus-last_mask",
+      "mean": 0.12944392529635632,
+      "videos": 38,
+      "ci95_low": -10.936350663908463,
+      "ci95_high": 10.866519856892099
+    },
+    {
+      "dataset": "MOSEv2",
+      "window": "last5",
+      "contrast": "affine-minus-anchor_replay_16",
+      "mean": -4.03613763018295,
+      "videos": 38,
+      "ci95_low": -18.60723560698878,
+      "ci95_high": 9.663327783650033
+    },
+    {
+      "dataset": "MOSEv2",
+      "window": "last_frame",
+      "contrast": "affine-minus-small_only",
+      "mean": -12.837642104217629,
+      "videos": 36,
+      "ci95_low": -25.363366474293166,
+      "ci95_high": -1.4239960355742192
+    },
+    {
+      "dataset": "MOSEv2",
+      "window": "last_frame",
+      "contrast": "affine-minus-base_native",
+      "mean": -12.532641052628763,
+      "videos": 36,
+      "ci95_low": -24.33810434022017,
+      "ci95_high": -1.43728737671912
+    },
+    {
+      "dataset": "MOSEv2",
+      "window": "last_frame",
+      "contrast": "affine-minus-direct",
+      "mean": 43.875147465700095,
+      "videos": 36,
+      "ci95_low": 29.70488289996463,
+      "ci95_high": 58.31740142571192
+    },
+    {
+      "dataset": "MOSEv2",
+      "window": "last_frame",
+      "contrast": "affine-minus-residual_mlp",
+      "mean": -2.519910341960968,
+      "videos": 36,
+      "ci95_low": -8.227322702526347,
+      "ci95_high": 0.5994770255992219
+    },
+    {
+      "dataset": "MOSEv2",
+      "window": "last_frame",
+      "contrast": "affine-minus-transformer",
+      "mean": 3.2690816288007296,
+      "videos": 36,
+      "ci95_low": -0.09145733187185016,
+      "ci95_high": 9.182807553768454
+    },
+    {
+      "dataset": "MOSEv2",
+      "window": "last_frame",
+      "contrast": "affine-minus-last_mask",
+      "mean": 0.010125138002313763,
+      "videos": 36,
+      "ci95_low": -12.118092872194833,
+      "ci95_high": 12.033161179340643
+    },
+    {
+      "dataset": "MOSEv2",
+      "window": "last_frame",
+      "contrast": "affine-minus-anchor_replay_16",
+      "mean": -5.37800356374087,
+      "videos": 36,
+      "ci95_low": -20.46227980384447,
+      "ci95_high": 9.412529244565308
+    },
+    {
+      "dataset": "MOSEv2",
+      "window": "offset1",
+      "contrast": "affine-minus-small_only",
+      "mean": -0.5793243601996082,
+      "videos": 28,
+      "ci95_low": -1.8243398425758386,
+      "ci95_high": 0.49695199524951394
+    },
+    {
+      "dataset": "MOSEv2",
+      "window": "offset1",
+      "contrast": "affine-minus-base_native",
+      "mean": 3.7513993155702,
+      "videos": 28,
+      "ci95_low": -5.751296448428427,
+      "ci95_high": 13.607671032311778
+    },
+    {
+      "dataset": "MOSEv2",
+      "window": "offset1",
+      "contrast": "affine-minus-direct",
+      "mean": 56.456622961711,
+      "videos": 28,
+      "ci95_low": 41.05664513629662,
+      "ci95_high": 70.88691103433828
+    },
+    {
+      "dataset": "MOSEv2",
+      "window": "offset1",
+      "contrast": "affine-minus-residual_mlp",
+      "mean": 1.6888257596194542,
+      "videos": 28,
+      "ci95_low": -3.3767891642731547,
+      "ci95_high": 8.304150190587668
+    },
+    {
+      "dataset": "MOSEv2",
+      "window": "offset1",
+      "contrast": "affine-minus-transformer",
+      "mean": 0.2831836936773041,
+      "videos": 28,
+      "ci95_low": -1.0867448250157579,
+      "ci95_high": 2.0489914343307447
+    },
+    {
+      "dataset": "MOSEv2",
+      "window": "offset1",
+      "contrast": "affine-minus-last_mask",
+      "mean": -1.9710833083613208,
+      "videos": 28,
+      "ci95_low": -8.018035066250794,
+      "ci95_high": 1.9114803430110283
+    },
+    {
+      "dataset": "MOSEv2",
+      "window": "offset1",
+      "contrast": "affine-minus-anchor_replay_16",
+      "mean": 10.9126440141026,
+      "videos": 28,
+      "ci95_low": -0.6842206380811194,
+      "ci95_high": 23.65908929967114
+    },
+    {
+      "dataset": "MOSEv2",
+      "window": "offset2",
+      "contrast": "affine-minus-small_only",
+      "mean": -4.924649374512601,
+      "videos": 27,
+      "ci95_low": -12.321714426710994,
+      "ci95_high": 0.28885197824339004
+    },
+    {
+      "dataset": "MOSEv2",
+      "window": "offset2",
+      "contrast": "affine-minus-base_native",
+      "mean": -0.7386632479103302,
+      "videos": 27,
+      "ci95_low": -8.584409781427647,
+      "ci95_high": 8.435208701681816
+    },
+    {
+      "dataset": "MOSEv2",
+      "window": "offset2",
+      "contrast": "affine-minus-direct",
+      "mean": 61.21851220726718,
+      "videos": 27,
+      "ci95_low": 45.87780980744082,
+      "ci95_high": 75.79361647454805
+    },
+    {
+      "dataset": "MOSEv2",
+      "window": "offset2",
+      "contrast": "affine-minus-residual_mlp",
+      "mean": 0.13508762779114944,
+      "videos": 27,
+      "ci95_low": -1.0645977866396212,
+      "ci95_high": 1.9053895665228597
+    },
+    {
+      "dataset": "MOSEv2",
+      "window": "offset2",
+      "contrast": "affine-minus-transformer",
+      "mean": -2.3871037810084887,
+      "videos": 27,
+      "ci95_low": -8.08293406164081,
+      "ci95_high": 1.2193355903362237
+    },
+    {
+      "dataset": "MOSEv2",
+      "window": "offset2",
+      "contrast": "affine-minus-last_mask",
+      "mean": -3.472221175945538,
+      "videos": 27,
+      "ci95_low": -10.237697122218929,
+      "ci95_high": 1.067813891937549
+    },
+    {
+      "dataset": "MOSEv2",
+      "window": "offset2",
+      "contrast": "affine-minus-anchor_replay_16",
+      "mean": 9.616476540956931,
+      "videos": 27,
+      "ci95_low": -3.224942709485971,
+      "ci95_high": 24.335354760072143
+    },
+    {
+      "dataset": "MOSEv2",
+      "window": "offset3",
+      "contrast": "affine-minus-small_only",
+      "mean": -5.101679869042559,
+      "videos": 32,
+      "ci95_low": -12.244849827026416,
+      "ci95_high": 0.5157425485494256
+    },
+    {
+      "dataset": "MOSEv2",
+      "window": "offset3",
+      "contrast": "affine-minus-base_native",
+      "mean": -0.40214984497439943,
+      "videos": 32,
+      "ci95_low": -9.784607668250272,
+      "ci95_high": 9.830903765392662
+    },
+    {
+      "dataset": "MOSEv2",
+      "window": "offset3",
+      "contrast": "affine-minus-direct",
+      "mean": 61.15361262094933,
+      "videos": 32,
+      "ci95_low": 47.681039525913626,
+      "ci95_high": 74.1500049770219
+    },
+    {
+      "dataset": "MOSEv2",
+      "window": "offset3",
+      "contrast": "affine-minus-residual_mlp",
+      "mean": 3.5855388557588572,
+      "videos": 32,
+      "ci95_low": 0.08668184053357078,
+      "ci95_high": 9.50564532380512
+    },
+    {
+      "dataset": "MOSEv2",
+      "window": "offset3",
+      "contrast": "affine-minus-transformer",
+      "mean": -2.9951876082828117,
+      "videos": 32,
+      "ci95_low": -9.014023175166296,
+      "ci95_high": 0.5608235897812076
+    },
+    {
+      "dataset": "MOSEv2",
+      "window": "offset3",
+      "contrast": "affine-minus-last_mask",
+      "mean": 7.19497452658723,
+      "videos": 32,
+      "ci95_low": 2.0376972697952165,
+      "ci95_high": 13.449862909727964
+    },
+    {
+      "dataset": "MOSEv2",
+      "window": "offset3",
+      "contrast": "affine-minus-anchor_replay_16",
+      "mean": 9.093869326029951,
+      "videos": 32,
+      "ci95_low": -4.058687930448094,
+      "ci95_high": 22.617671087950395
+    },
+    {
+      "dataset": "MOSEv2",
+      "window": "offset4",
+      "contrast": "affine-minus-small_only",
+      "mean": -2.96629218558843,
+      "videos": 32,
+      "ci95_low": -8.203299814080959,
+      "ci95_high": 1.0033044430428908
+    },
+    {
+      "dataset": "MOSEv2",
+      "window": "offset4",
+      "contrast": "affine-minus-base_native",
+      "mean": -1.8042552851929512,
+      "videos": 32,
+      "ci95_low": -8.10569623210783,
+      "ci95_high": 5.843330412222852
+    },
+    {
+      "dataset": "MOSEv2",
+      "window": "offset4",
+      "contrast": "affine-minus-direct",
+      "mean": 58.73491815626038,
+      "videos": 32,
+      "ci95_low": 44.72097438550363,
+      "ci95_high": 72.11312096895811
+    },
+    {
+      "dataset": "MOSEv2",
+      "window": "offset4",
+      "contrast": "affine-minus-residual_mlp",
+      "mean": 1.3820451823567472,
+      "videos": 32,
+      "ci95_low": -4.4405876820661785,
+      "ci95_high": 8.442066108965605
+    },
+    {
+      "dataset": "MOSEv2",
+      "window": "offset4",
+      "contrast": "affine-minus-transformer",
+      "mean": -0.4277614836762065,
+      "videos": 32,
+      "ci95_low": -1.5966339490095605,
+      "ci95_high": 0.5945640702766156
+    },
+    {
+      "dataset": "MOSEv2",
+      "window": "offset4",
+      "contrast": "affine-minus-last_mask",
+      "mean": 8.641939353096507,
+      "videos": 32,
+      "ci95_low": 2.6535593813569327,
+      "ci95_high": 16.037786343322217
+    },
+    {
+      "dataset": "MOSEv2",
+      "window": "offset4",
+      "contrast": "affine-minus-anchor_replay_16",
+      "mean": 9.606525926944082,
+      "videos": 32,
+      "ci95_low": -2.206654614586668,
+      "ci95_high": 22.873412037952715
+    },
+    {
+      "dataset": "MOSEv2",
+      "window": "offset5",
+      "contrast": "affine-minus-small_only",
+      "mean": -5.803902346638013,
+      "videos": 31,
+      "ci95_low": -14.833640888213361,
+      "ci95_high": 1.0185787614367454
+    },
+    {
+      "dataset": "MOSEv2",
+      "window": "offset5",
+      "contrast": "affine-minus-base_native",
+      "mean": -1.0784352993557877,
+      "videos": 31,
+      "ci95_low": -7.33605236729031,
+      "ci95_high": 6.720620163359781
+    },
+    {
+      "dataset": "MOSEv2",
+      "window": "offset5",
+      "contrast": "affine-minus-direct",
+      "mean": 63.7338294360929,
+      "videos": 31,
+      "ci95_low": 50.24450184603276,
+      "ci95_high": 76.22159185298108
+    },
+    {
+      "dataset": "MOSEv2",
+      "window": "offset5",
+      "contrast": "affine-minus-residual_mlp",
+      "mean": 5.51545175488432,
+      "videos": 31,
+      "ci95_low": -1.165963344156405,
+      "ci95_high": 14.579739155937988
+    },
+    {
+      "dataset": "MOSEv2",
+      "window": "offset5",
+      "contrast": "affine-minus-transformer",
+      "mean": -0.2276081404121994,
+      "videos": 31,
+      "ci95_low": -1.4650972250250136,
+      "ci95_high": 0.6517481270239733
+    },
+    {
+      "dataset": "MOSEv2",
+      "window": "offset5",
+      "contrast": "affine-minus-last_mask",
+      "mean": 8.449088529816013,
+      "videos": 31,
+      "ci95_low": 1.9416428308635403,
+      "ci95_high": 16.822106801141697
+    },
+    {
+      "dataset": "MOSEv2",
+      "window": "offset5",
+      "contrast": "affine-minus-anchor_replay_16",
+      "mean": 10.997670261006027,
+      "videos": 31,
+      "ci95_low": -1.2138131299700528,
+      "ci95_high": 24.839285261456137
+    },
+    {
+      "dataset": "LVOSv2",
+      "window": "first5",
+      "contrast": "affine-minus-small_only",
+      "mean": 1.6782069315428307,
+      "videos": 36,
+      "ci95_low": -0.4819282285408251,
+      "ci95_high": 5.4471133656365245
+    },
+    {
+      "dataset": "LVOSv2",
+      "window": "first5",
+      "contrast": "affine-minus-base_native",
+      "mean": -1.337026466415038,
+      "videos": 36,
+      "ci95_low": -12.383217294430388,
+      "ci95_high": 9.850036600427574
+    },
+    {
+      "dataset": "LVOSv2",
+      "window": "first5",
+      "contrast": "affine-minus-direct",
+      "mean": 75.38313698308458,
+      "videos": 36,
+      "ci95_low": 63.41350601791112,
+      "ci95_high": 86.24230742475987
+    },
+    {
+      "dataset": "LVOSv2",
+      "window": "first5",
+      "contrast": "affine-minus-residual_mlp",
+      "mean": 0.08246106306847246,
+      "videos": 36,
+      "ci95_low": -0.0613167296000931,
+      "ci95_high": 0.2508936590246504
+    },
+    {
+      "dataset": "LVOSv2",
+      "window": "first5",
+      "contrast": "affine-minus-transformer",
+      "mean": 0.16064666847786413,
+      "videos": 36,
+      "ci95_low": -0.03288720296705717,
+      "ci95_high": 0.4466621599644344
+    },
+    {
+      "dataset": "LVOSv2",
+      "window": "first5",
+      "contrast": "affine-minus-last_mask",
+      "mean": 3.765126619464954,
+      "videos": 36,
+      "ci95_low": -0.40766256136362006,
+      "ci95_high": 9.788866971757972
+    },
+    {
+      "dataset": "LVOSv2",
+      "window": "first5",
+      "contrast": "affine-minus-anchor_replay_16",
+      "mean": 25.32253540907972,
+      "videos": 36,
+      "ci95_low": 10.729000885750478,
+      "ci95_high": 40.97309762079301
+    },
+    {
+      "dataset": "LVOSv2",
+      "window": "full_suffix",
+      "contrast": "affine-minus-small_only",
+      "mean": -7.745291707350807,
+      "videos": 39,
+      "ci95_low": -15.143425787873575,
+      "ci95_high": -1.0632983613845752
+    },
+    {
+      "dataset": "LVOSv2",
+      "window": "full_suffix",
+      "contrast": "affine-minus-base_native",
+      "mean": -6.803461454031575,
+      "videos": 39,
+      "ci95_low": -17.36833298860198,
+      "ci95_high": 3.886669703984037
+    },
+    {
+      "dataset": "LVOSv2",
+      "window": "full_suffix",
+      "contrast": "affine-minus-direct",
+      "mean": 68.58980376658789,
+      "videos": 39,
+      "ci95_low": 57.054994632468805,
+      "ci95_high": 79.5023743728042
+    },
+    {
+      "dataset": "LVOSv2",
+      "window": "full_suffix",
+      "contrast": "affine-minus-residual_mlp",
+      "mean": -3.8872383156237627,
+      "videos": 39,
+      "ci95_low": -9.866416218493598,
+      "ci95_high": 0.39686031559987134
+    },
+    {
+      "dataset": "LVOSv2",
+      "window": "full_suffix",
+      "contrast": "affine-minus-transformer",
+      "mean": -0.6397335348729357,
+      "videos": 39,
+      "ci95_low": -3.3190951793513115,
+      "ci95_high": 2.291058645178487
+    },
+    {
+      "dataset": "LVOSv2",
+      "window": "full_suffix",
+      "contrast": "affine-minus-last_mask",
+      "mean": 6.1302610557146835,
+      "videos": 39,
+      "ci95_low": 0.9252653028122297,
+      "ci95_high": 12.628630368318513
+    },
+    {
+      "dataset": "LVOSv2",
+      "window": "full_suffix",
+      "contrast": "affine-minus-anchor_replay_16",
+      "mean": 10.765780775785634,
+      "videos": 39,
+      "ci95_low": -3.0965030340704676,
+      "ci95_high": 26.02185224716469
+    },
+    {
+      "dataset": "LVOSv2",
+      "window": "last5",
+      "contrast": "affine-minus-small_only",
+      "mean": -5.354064615253757,
+      "videos": 36,
+      "ci95_low": -16.0041201972065,
+      "ci95_high": 4.846531941760873
+    },
+    {
+      "dataset": "LVOSv2",
+      "window": "last5",
+      "contrast": "affine-minus-base_native",
+      "mean": -5.095368681035751,
+      "videos": 36,
+      "ci95_low": -16.925848529190663,
+      "ci95_high": 6.748054334860909
+    },
+    {
+      "dataset": "LVOSv2",
+      "window": "last5",
+      "contrast": "affine-minus-direct",
+      "mean": 67.33234276479752,
+      "videos": 36,
+      "ci95_low": 53.72237227645876,
+      "ci95_high": 80.10249870293958
+    },
+    {
+      "dataset": "LVOSv2",
+      "window": "last5",
+      "contrast": "affine-minus-residual_mlp",
+      "mean": -0.9358498175641548,
+      "videos": 36,
+      "ci95_low": -5.238026435974721,
+      "ci95_high": 2.388045597758749
+    },
+    {
+      "dataset": "LVOSv2",
+      "window": "last5",
+      "contrast": "affine-minus-transformer",
+      "mean": 2.2386097743519855,
+      "videos": 36,
+      "ci95_low": -1.5352338538082742,
+      "ci95_high": 8.162905440938209
+    },
+    {
+      "dataset": "LVOSv2",
+      "window": "last5",
+      "contrast": "affine-minus-last_mask",
+      "mean": 7.877481976672744,
+      "videos": 36,
+      "ci95_low": 0.6446781289849997,
+      "ci95_high": 16.793997893173227
+    },
+    {
+      "dataset": "LVOSv2",
+      "window": "last5",
+      "contrast": "affine-minus-anchor_replay_16",
+      "mean": 9.511785975530051,
+      "videos": 36,
+      "ci95_low": -5.858472170942915,
+      "ci95_high": 26.14220482935276
+    },
+    {
+      "dataset": "LVOSv2",
+      "window": "last_frame",
+      "contrast": "affine-minus-small_only",
+      "mean": -7.2727693011382355,
+      "videos": 36,
+      "ci95_low": -18.706673652579447,
+      "ci95_high": 3.513291945658351
+    },
+    {
+      "dataset": "LVOSv2",
+      "window": "last_frame",
+      "contrast": "affine-minus-base_native",
+      "mean": -7.216639471941101,
+      "videos": 36,
+      "ci95_low": -20.186209881044846,
+      "ci95_high": 5.461747005713485
+    },
+    {
+      "dataset": "LVOSv2",
+      "window": "last_frame",
+      "contrast": "affine-minus-direct",
+      "mean": 65.54836232030533,
+      "videos": 36,
+      "ci95_low": 51.27438703179056,
+      "ci95_high": 79.12019356060308
+    },
+    {
+      "dataset": "LVOSv2",
+      "window": "last_frame",
+      "contrast": "affine-minus-residual_mlp",
+      "mean": -3.2151538149523713,
+      "videos": 36,
+      "ci95_low": -9.904770742937625,
+      "ci95_high": 1.9333121554531039
+    },
+    {
+      "dataset": "LVOSv2",
+      "window": "last_frame",
+      "contrast": "affine-minus-transformer",
+      "mean": 0.11008227583738754,
+      "videos": 36,
+      "ci95_low": -8.054055526566149,
+      "ci95_high": 8.163315671142437
+    },
+    {
+      "dataset": "LVOSv2",
+      "window": "last_frame",
+      "contrast": "affine-minus-last_mask",
+      "mean": 5.643974637496569,
+      "videos": 36,
+      "ci95_low": 0.1540473119186068,
+      "ci95_high": 13.652472070825747
+    },
+    {
+      "dataset": "LVOSv2",
+      "window": "last_frame",
+      "contrast": "affine-minus-anchor_replay_16",
+      "mean": 7.233739961686346,
+      "videos": 36,
+      "ci95_low": -8.577147270281095,
+      "ci95_high": 24.232787853920545
+    },
+    {
+      "dataset": "LVOSv2",
+      "window": "offset1",
+      "contrast": "affine-minus-small_only",
+      "mean": 1.6879276883370524,
+      "videos": 36,
+      "ci95_low": -0.22176321048387662,
+      "ci95_high": 5.058379700412079
+    },
+    {
+      "dataset": "LVOSv2",
+      "window": "offset1",
+      "contrast": "affine-minus-base_native",
+      "mean": -1.8315280107339993,
+      "videos": 36,
+      "ci95_low": -13.189655700589727,
+      "ci95_high": 9.611515422369667
+    },
+    {
+      "dataset": "LVOSv2",
+      "window": "offset1",
+      "contrast": "affine-minus-direct",
+      "mean": 71.92460504048304,
+      "videos": 36,
+      "ci95_low": 59.148876578383216,
+      "ci95_high": 83.69896070472291
+    },
+    {
+      "dataset": "LVOSv2",
+      "window": "offset1",
+      "contrast": "affine-minus-residual_mlp",
+      "mean": -0.027365250933098925,
+      "videos": 36,
+      "ci95_low": -0.23359325889088878,
+      "ci95_high": 0.17419828686830302
+    },
+    {
+      "dataset": "LVOSv2",
+      "window": "offset1",
+      "contrast": "affine-minus-transformer",
+      "mean": 0.4434219601644094,
+      "videos": 36,
+      "ci95_low": 0.031352697673267316,
+      "ci95_high": 0.9694941098014455
+    },
+    {
+      "dataset": "LVOSv2",
+      "window": "offset1",
+      "contrast": "affine-minus-last_mask",
+      "mean": 1.8129606217340155,
+      "videos": 36,
+      "ci95_low": -0.45797113275674456,
+      "ci95_high": 5.648123467886773
+    },
+    {
+      "dataset": "LVOSv2",
+      "window": "offset1",
+      "contrast": "affine-minus-anchor_replay_16",
+      "mean": 24.431795578502992,
+      "videos": 36,
+      "ci95_low": 9.868477203184968,
+      "ci95_high": 40.01749373284157
+    },
+    {
+      "dataset": "LVOSv2",
+      "window": "offset2",
+      "contrast": "affine-minus-small_only",
+      "mean": 1.9170304727279932,
+      "videos": 36,
+      "ci95_low": -0.4037779649237721,
+      "ci95_high": 5.929088295958441
+    },
+    {
+      "dataset": "LVOSv2",
+      "window": "offset2",
+      "contrast": "affine-minus-base_native",
+      "mean": -0.950344584437299,
+      "videos": 36,
+      "ci95_low": -12.036023097013848,
+      "ci95_high": 10.114012385222992
+    },
+    {
+      "dataset": "LVOSv2",
+      "window": "offset2",
+      "contrast": "affine-minus-direct",
+      "mean": 75.79377045648405,
+      "videos": 36,
+      "ci95_low": 63.62479145317497,
+      "ci95_high": 86.70544691901802
+    },
+    {
+      "dataset": "LVOSv2",
+      "window": "offset2",
+      "contrast": "affine-minus-residual_mlp",
+      "mean": 0.1387735374787203,
+      "videos": 36,
+      "ci95_low": -0.06714358450626182,
+      "ci95_high": 0.38045929582798504
+    },
+    {
+      "dataset": "LVOSv2",
+      "window": "offset2",
+      "contrast": "affine-minus-transformer",
+      "mean": 0.4727866482703378,
+      "videos": 36,
+      "ci95_low": -0.10653440471524421,
+      "ci95_high": 1.4384753628414968
+    },
+    {
+      "dataset": "LVOSv2",
+      "window": "offset2",
+      "contrast": "affine-minus-last_mask",
+      "mean": 3.861614303834153,
+      "videos": 36,
+      "ci95_low": -1.0061734947842003,
+      "ci95_high": 10.863657926333333
+    },
+    {
+      "dataset": "LVOSv2",
+      "window": "offset2",
+      "contrast": "affine-minus-anchor_replay_16",
+      "mean": 25.397905289083795,
+      "videos": 36,
+      "ci95_low": 10.914944506546533,
+      "ci95_high": 41.012990609520024
+    },
+    {
+      "dataset": "LVOSv2",
+      "window": "offset3",
+      "contrast": "affine-minus-small_only",
+      "mean": 1.988040597175445,
+      "videos": 36,
+      "ci95_low": -0.15803180685689783,
+      "ci95_high": 5.742535625233056
+    },
+    {
+      "dataset": "LVOSv2",
+      "window": "offset3",
+      "contrast": "affine-minus-base_native",
+      "mean": -0.8217705096319818,
+      "videos": 36,
+      "ci95_low": -11.87542345703504,
+      "ci95_high": 10.38027274919193
+    },
+    {
+      "dataset": "LVOSv2",
+      "window": "offset3",
+      "contrast": "affine-minus-direct",
+      "mean": 76.56944354885793,
+      "videos": 36,
+      "ci95_low": 64.51430531470116,
+      "ci95_high": 87.51121668741641
+    },
+    {
+      "dataset": "LVOSv2",
+      "window": "offset3",
+      "contrast": "affine-minus-residual_mlp",
+      "mean": 0.0906729311537802,
+      "videos": 36,
+      "ci95_low": -0.13665981265599444,
+      "ci95_high": 0.34724058606920455
+    },
+    {
+      "dataset": "LVOSv2",
+      "window": "offset3",
+      "contrast": "affine-minus-transformer",
+      "mean": -0.0759805500109471,
+      "videos": 36,
+      "ci95_low": -0.28179141943234576,
+      "ci95_high": 0.15633726998278466
+    },
+    {
+      "dataset": "LVOSv2",
+      "window": "offset3",
+      "contrast": "affine-minus-last_mask",
+      "mean": 4.66880678991524,
+      "videos": 36,
+      "ci95_low": -0.11943683243377161,
+      "ci95_high": 11.728112313364116
+    },
+    {
+      "dataset": "LVOSv2",
+      "window": "offset3",
+      "contrast": "affine-minus-anchor_replay_16",
+      "mean": 26.027477442249946,
+      "videos": 36,
+      "ci95_low": 11.416121760127542,
+      "ci95_high": 41.823245172968434
+    },
+    {
+      "dataset": "LVOSv2",
+      "window": "offset4",
+      "contrast": "affine-minus-small_only",
+      "mean": 1.5033557236777093,
+      "videos": 36,
+      "ci95_low": -0.8548367707958084,
+      "ci95_high": 5.438275221915342
+    },
+    {
+      "dataset": "LVOSv2",
+      "window": "offset4",
+      "contrast": "affine-minus-base_native",
+      "mean": -1.4467220840443349,
+      "videos": 36,
+      "ci95_low": -12.400461924764665,
+      "ci95_high": 9.673389862969687
+    },
+    {
+      "dataset": "LVOSv2",
+      "window": "offset4",
+      "contrast": "affine-minus-direct",
+      "mean": 76.12241281348906,
+      "videos": 36,
+      "ci95_low": 64.04045765809714,
+      "ci95_high": 87.21478788620423
+    },
+    {
+      "dataset": "LVOSv2",
+      "window": "offset4",
+      "contrast": "affine-minus-residual_mlp",
+      "mean": 0.10837526153590717,
+      "videos": 36,
+      "ci95_low": -0.15486584254423225,
+      "ci95_high": 0.39964713490014114
+    },
+    {
+      "dataset": "LVOSv2",
+      "window": "offset4",
+      "contrast": "affine-minus-transformer",
+      "mean": -0.013381498977983833,
+      "videos": 36,
+      "ci95_low": -0.128944588723758,
+      "ci95_high": 0.10075873632055225
+    },
+    {
+      "dataset": "LVOSv2",
+      "window": "offset4",
+      "contrast": "affine-minus-last_mask",
+      "mean": 4.208462873457847,
+      "videos": 36,
+      "ci95_low": -0.8504283700522729,
+      "ci95_high": 11.538289395535962
+    },
+    {
+      "dataset": "LVOSv2",
+      "window": "offset4",
+      "contrast": "affine-minus-anchor_replay_16",
+      "mean": 25.517782354847547,
+      "videos": 36,
+      "ci95_low": 10.746093953579535,
+      "ci95_high": 41.24659225765127
+    },
+    {
+      "dataset": "LVOSv2",
+      "window": "offset5",
+      "contrast": "affine-minus-small_only",
+      "mean": 1.2946801757959505,
+      "videos": 36,
+      "ci95_low": -1.9448592209812292,
+      "ci95_high": 5.859860780472698
+    },
+    {
+      "dataset": "LVOSv2",
+      "window": "offset5",
+      "contrast": "affine-minus-base_native",
+      "mean": -1.6347671432275732,
+      "videos": 36,
+      "ci95_low": -12.542430702560251,
+      "ci95_high": 9.24219196074426
+    },
+    {
+      "dataset": "LVOSv2",
+      "window": "offset5",
+      "contrast": "affine-minus-direct",
+      "mean": 76.50545305610876,
+      "videos": 36,
+      "ci95_low": 64.40793228768653,
+      "ci95_high": 87.38848490653571
+    },
+    {
+      "dataset": "LVOSv2",
+      "window": "offset5",
+      "contrast": "affine-minus-residual_mlp",
+      "mean": 0.10184883610705163,
+      "videos": 36,
+      "ci95_low": -0.10372362946099148,
+      "ci95_high": 0.33715009573292715
+    },
+    {
+      "dataset": "LVOSv2",
+      "window": "offset5",
+      "contrast": "affine-minus-transformer",
+      "mean": -0.023613217056492095,
+      "videos": 36,
+      "ci95_low": -0.13159643870985127,
+      "ci95_high": 0.08836551474308665
+    },
+    {
+      "dataset": "LVOSv2",
+      "window": "offset5",
+      "contrast": "affine-minus-last_mask",
+      "mean": 4.273788508383522,
+      "videos": 36,
+      "ci95_low": -0.25162193744605527,
+      "ci95_high": 11.067153842198087
+    },
+    {
+      "dataset": "LVOSv2",
+      "window": "offset5",
+      "contrast": "affine-minus-anchor_replay_16",
+      "mean": 25.237716380714335,
+      "videos": 36,
+      "ci95_low": 10.62624665475393,
+      "ci95_high": 40.71416947828276
+    },
+    {
+      "dataset": "DAVIS2017",
+      "window": "first5",
+      "contrast": "affine-minus-small_only",
+      "mean": -1.8166424688212424,
+      "videos": 40,
+      "ci95_low": -5.569194980436969,
+      "ci95_high": 0.4213279235806196
+    },
+    {
+      "dataset": "DAVIS2017",
+      "window": "first5",
+      "contrast": "affine-minus-base_native",
+      "mean": -3.8053998435419913,
+      "videos": 40,
+      "ci95_low": -9.32277278671626,
+      "ci95_high": -0.4837324501624551
+    },
+    {
+      "dataset": "DAVIS2017",
+      "window": "first5",
+      "contrast": "affine-minus-direct",
+      "mean": 80.32801925850463,
+      "videos": 40,
+      "ci95_low": 70.9771157416121,
+      "ci95_high": 88.31542494864817
+    },
+    {
+      "dataset": "DAVIS2017",
+      "window": "first5",
+      "contrast": "affine-minus-residual_mlp",
+      "mean": -1.1352192417391924,
+      "videos": 40,
+      "ci95_low": -3.0165750725531475,
+      "ci95_high": -0.08729686341991137
+    },
+    {
+      "dataset": "DAVIS2017",
+      "window": "first5",
+      "contrast": "affine-minus-transformer",
+      "mean": -0.6470159645577972,
+      "videos": 40,
+      "ci95_low": -2.7165997471775714,
+      "ci95_high": 0.7911157434198932
+    },
+    {
+      "dataset": "DAVIS2017",
+      "window": "first5",
+      "contrast": "affine-minus-last_mask",
+      "mean": 2.3409671527002667,
+      "videos": 40,
+      "ci95_low": -0.46859988232274946,
+      "ci95_high": 7.347290545390689
+    },
+    {
+      "dataset": "DAVIS2017",
+      "window": "first5",
+      "contrast": "affine-minus-anchor_replay_16",
+      "mean": -2.1869061350375993,
+      "videos": 40,
+      "ci95_low": -8.134245432291237,
+      "ci95_high": 2.399125410590676
+    },
+    {
+      "dataset": "DAVIS2017",
+      "window": "full_suffix",
+      "contrast": "affine-minus-small_only",
+      "mean": -2.572852746429276,
+      "videos": 40,
+      "ci95_low": -5.481868885404705,
+      "ci95_high": -0.4273593072959099
+    },
+    {
+      "dataset": "DAVIS2017",
+      "window": "full_suffix",
+      "contrast": "affine-minus-base_native",
+      "mean": -3.031670205497544,
+      "videos": 40,
+      "ci95_low": -6.0785892564604564,
+      "ci95_high": -0.825415066894584
+    },
+    {
+      "dataset": "DAVIS2017",
+      "window": "full_suffix",
+      "contrast": "affine-minus-direct",
+      "mean": 81.13295040328978,
+      "videos": 40,
+      "ci95_low": 72.5357728261244,
+      "ci95_high": 88.3106910506281
+    },
+    {
+      "dataset": "DAVIS2017",
+      "window": "full_suffix",
+      "contrast": "affine-minus-residual_mlp",
+      "mean": -1.3871312729550342,
+      "videos": 40,
+      "ci95_low": -3.326728392458442,
+      "ci95_high": -0.18824692303006516
+    },
+    {
+      "dataset": "DAVIS2017",
+      "window": "full_suffix",
+      "contrast": "affine-minus-transformer",
+      "mean": -0.7739335454476162,
+      "videos": 40,
+      "ci95_low": -2.2373838758877977,
+      "ci95_high": 0.04204719153494415
+    },
+    {
+      "dataset": "DAVIS2017",
+      "window": "full_suffix",
+      "contrast": "affine-minus-last_mask",
+      "mean": 3.2248543502677576,
+      "videos": 40,
+      "ci95_low": -0.5399699479167707,
+      "ci95_high": 9.125175628017953
+    },
+    {
+      "dataset": "DAVIS2017",
+      "window": "full_suffix",
+      "contrast": "affine-minus-anchor_replay_16",
+      "mean": -1.748862991508787,
+      "videos": 40,
+      "ci95_low": -5.266565550672837,
+      "ci95_high": 1.6261759961366393
+    },
+    {
+      "dataset": "DAVIS2017",
+      "window": "last5",
+      "contrast": "affine-minus-small_only",
+      "mean": -3.071706827695147,
+      "videos": 38,
+      "ci95_low": -7.182234212975466,
+      "ci95_high": -0.3490352624661955
+    },
+    {
+      "dataset": "DAVIS2017",
+      "window": "last5",
+      "contrast": "affine-minus-base_native",
+      "mean": -3.5735616300201034,
+      "videos": 38,
+      "ci95_low": -7.8705168870323385,
+      "ci95_high": -0.8766472980490572
+    },
+    {
+      "dataset": "DAVIS2017",
+      "window": "last5",
+      "contrast": "affine-minus-direct",
+      "mean": 81.6862304331332,
+      "videos": 38,
+      "ci95_low": 72.22640594908405,
+      "ci95_high": 89.46276485266199
+    },
+    {
+      "dataset": "DAVIS2017",
+      "window": "last5",
+      "contrast": "affine-minus-residual_mlp",
+      "mean": -0.6963959532666493,
+      "videos": 38,
+      "ci95_low": -1.8050714483617327,
+      "ci95_high": -0.024594613038068504
+    },
+    {
+      "dataset": "DAVIS2017",
+      "window": "last5",
+      "contrast": "affine-minus-transformer",
+      "mean": -0.10246608897803103,
+      "videos": 38,
+      "ci95_low": -0.2810795338913468,
+      "ci95_high": 0.046445902269992796
+    },
+    {
+      "dataset": "DAVIS2017",
+      "window": "last5",
+      "contrast": "affine-minus-last_mask",
+      "mean": 4.184971882398311,
+      "videos": 38,
+      "ci95_low": -1.456046574297436,
+      "ci95_high": 12.243129156404816
+    },
+    {
+      "dataset": "DAVIS2017",
+      "window": "last5",
+      "contrast": "affine-minus-anchor_replay_16",
+      "mean": -3.2022927859722263,
+      "videos": 38,
+      "ci95_low": -7.5887925414095285,
+      "ci95_high": -0.32321027674911434
+    },
+    {
+      "dataset": "DAVIS2017",
+      "window": "last_frame",
+      "contrast": "affine-minus-small_only",
+      "mean": -3.3153259112722573,
+      "videos": 37,
+      "ci95_low": -7.5031266764968185,
+      "ci95_high": -0.48985426877910276
+    },
+    {
+      "dataset": "DAVIS2017",
+      "window": "last_frame",
+      "contrast": "affine-minus-base_native",
+      "mean": -4.432052803932516,
+      "videos": 37,
+      "ci95_low": -9.92312397227194,
+      "ci95_high": -1.0255547616734386
+    },
+    {
+      "dataset": "DAVIS2017",
+      "window": "last_frame",
+      "contrast": "affine-minus-direct",
+      "mean": 80.92052894834995,
+      "videos": 37,
+      "ci95_low": 70.64721560291034,
+      "ci95_high": 89.44604853263303
+    },
+    {
+      "dataset": "DAVIS2017",
+      "window": "last_frame",
+      "contrast": "affine-minus-residual_mlp",
+      "mean": -1.1441237284767967,
+      "videos": 37,
+      "ci95_low": -2.453360733595486,
+      "ci95_high": -0.12790202044381754
+    },
+    {
+      "dataset": "DAVIS2017",
+      "window": "last_frame",
+      "contrast": "affine-minus-transformer",
+      "mean": -0.3272252931721169,
+      "videos": 37,
+      "ci95_low": -0.8567328293073837,
+      "ci95_high": 0.0627708868425759
+    },
+    {
+      "dataset": "DAVIS2017",
+      "window": "last_frame",
+      "contrast": "affine-minus-last_mask",
+      "mean": 4.242793421751335,
+      "videos": 37,
+      "ci95_low": -1.5032508193444412,
+      "ci95_high": 12.494754364445642
+    },
+    {
+      "dataset": "DAVIS2017",
+      "window": "last_frame",
+      "contrast": "affine-minus-anchor_replay_16",
+      "mean": -4.307351680608681,
+      "videos": 37,
+      "ci95_low": -9.805589628095069,
+      "ci95_high": -0.9353607688552645
+    },
+    {
+      "dataset": "DAVIS2017",
+      "window": "offset1",
+      "contrast": "affine-minus-small_only",
+      "mean": 0.09746223543841417,
+      "videos": 40,
+      "ci95_low": -0.8138812176933677,
+      "ci95_high": 1.1102720618030513
+    },
+    {
+      "dataset": "DAVIS2017",
+      "window": "offset1",
+      "contrast": "affine-minus-base_native",
+      "mean": -2.8283852353927608,
+      "videos": 40,
+      "ci95_low": -7.7640843092102845,
+      "ci95_high": -0.13860729950017464
+    },
+    {
+      "dataset": "DAVIS2017",
+      "window": "offset1",
+      "contrast": "affine-minus-direct",
+      "mean": 77.8268141641228,
+      "videos": 40,
+      "ci95_low": 68.4491911984802,
+      "ci95_high": 85.74550639930857
+    },
+    {
+      "dataset": "DAVIS2017",
+      "window": "offset1",
+      "contrast": "affine-minus-residual_mlp",
+      "mean": 0.0069006407607128395,
+      "videos": 40,
+      "ci95_low": -0.1760233661584603,
+      "ci95_high": 0.206093959308282
+    },
+    {
+      "dataset": "DAVIS2017",
+      "window": "offset1",
+      "contrast": "affine-minus-transformer",
+      "mean": 0.40819565970002963,
+      "videos": 40,
+      "ci95_low": -0.13704113961000816,
+      "ci95_high": 1.3529305907101423
+    },
+    {
+      "dataset": "DAVIS2017",
+      "window": "offset1",
+      "contrast": "affine-minus-last_mask",
+      "mean": 2.5833524980075917,
+      "videos": 40,
+      "ci95_low": -0.4591944537897336,
+      "ci95_high": 7.975673267278115
+    },
+    {
+      "dataset": "DAVIS2017",
+      "window": "offset1",
+      "contrast": "affine-minus-anchor_replay_16",
+      "mean": -1.2780775221349914,
+      "videos": 40,
+      "ci95_low": -6.919208769721051,
+      "ci95_high": 2.741039042724774
+    },
+    {
+      "dataset": "DAVIS2017",
+      "window": "offset2",
+      "contrast": "affine-minus-small_only",
+      "mean": -1.6433615348493213,
+      "videos": 40,
+      "ci95_low": -6.214083096914015,
+      "ci95_high": 1.2027408173160912
+    },
+    {
+      "dataset": "DAVIS2017",
+      "window": "offset2",
+      "contrast": "affine-minus-base_native",
+      "mean": -2.9051687701339666,
+      "videos": 40,
+      "ci95_low": -7.8218399808132775,
+      "ci95_high": -0.105051000468066
+    },
+    {
+      "dataset": "DAVIS2017",
+      "window": "offset2",
+      "contrast": "affine-minus-direct",
+      "mean": 80.8604326758132,
+      "videos": 40,
+      "ci95_low": 71.4409029025258,
+      "ci95_high": 88.93915682775008
+    },
+    {
+      "dataset": "DAVIS2017",
+      "window": "offset2",
+      "contrast": "affine-minus-residual_mlp",
+      "mean": -0.13804385693161922,
+      "videos": 40,
+      "ci95_low": -0.2882205696096782,
+      "ci95_high": -0.011428055997669396
+    },
+    {
+      "dataset": "DAVIS2017",
+      "window": "offset2",
+      "contrast": "affine-minus-transformer",
+      "mean": 0.19258957727907725,
+      "videos": 40,
+      "ci95_low": -0.30933926882280827,
+      "ci95_high": 0.9735087624888267
+    },
+    {
+      "dataset": "DAVIS2017",
+      "window": "offset2",
+      "contrast": "affine-minus-last_mask",
+      "mean": 2.3317551369973417,
+      "videos": 40,
+      "ci95_low": -0.403381808133931,
+      "ci95_high": 7.2226777256863475
+    },
+    {
+      "dataset": "DAVIS2017",
+      "window": "offset2",
+      "contrast": "affine-minus-anchor_replay_16",
+      "mean": -1.327260907877745,
+      "videos": 40,
+      "ci95_low": -6.738069030542162,
+      "ci95_high": 2.9448846174769083
+    },
+    {
+      "dataset": "DAVIS2017",
+      "window": "offset3",
+      "contrast": "affine-minus-small_only",
+      "mean": -2.071498246498186,
+      "videos": 39,
+      "ci95_low": -6.72231263992934,
+      "ci95_high": 0.8272928996377268
+    },
+    {
+      "dataset": "DAVIS2017",
+      "window": "offset3",
+      "contrast": "affine-minus-base_native",
+      "mean": -0.7412077923443863,
+      "videos": 39,
+      "ci95_low": -1.6670679856640152,
+      "ci95_high": 0.09735623582228739
+    },
+    {
+      "dataset": "DAVIS2017",
+      "window": "offset3",
+      "contrast": "affine-minus-direct",
+      "mean": 82.98461718540656,
+      "videos": 39,
+      "ci95_low": 74.36907250435475,
+      "ci95_high": 90.16566570493825
+    },
+    {
+      "dataset": "DAVIS2017",
+      "window": "offset3",
+      "contrast": "affine-minus-residual_mlp",
+      "mean": -0.40575540993708087,
+      "videos": 39,
+      "ci95_low": -1.0981954435500287,
+      "ci95_high": 0.028220820990305606
+    },
+    {
+      "dataset": "DAVIS2017",
+      "window": "offset3",
+      "contrast": "affine-minus-transformer",
+      "mean": -0.09980412610224385,
+      "videos": 39,
+      "ci95_low": -0.9380385605728843,
+      "ci95_high": 0.7188284441770072
+    },
+    {
+      "dataset": "DAVIS2017",
+      "window": "offset3",
+      "contrast": "affine-minus-last_mask",
+      "mean": 2.2189146020806714,
+      "videos": 39,
+      "ci95_low": -0.8016073683699709,
+      "ci95_high": 7.51134477136044
+    },
+    {
+      "dataset": "DAVIS2017",
+      "window": "offset3",
+      "contrast": "affine-minus-anchor_replay_16",
+      "mean": 0.999087615872256,
+      "videos": 39,
+      "ci95_low": -1.164892752216661,
+      "ci95_high": 3.78303698615259
+    },
+    {
+      "dataset": "DAVIS2017",
+      "window": "offset4",
+      "contrast": "affine-minus-small_only",
+      "mean": -2.8483952386818965,
+      "videos": 39,
+      "ci95_low": -7.859799756978592,
+      "ci95_high": 0.30120863913668205
+    },
+    {
+      "dataset": "DAVIS2017",
+      "window": "offset4",
+      "contrast": "affine-minus-base_native",
+      "mean": -3.600686982747874,
+      "videos": 39,
+      "ci95_low": -8.746139650082188,
+      "ci95_high": -0.4885209874875539
+    },
+    {
+      "dataset": "DAVIS2017",
+      "window": "offset4",
+      "contrast": "affine-minus-direct",
+      "mean": 82.47829872264096,
+      "videos": 39,
+      "ci95_low": 74.12063710737276,
+      "ci95_high": 89.49724902898514
+    },
+    {
+      "dataset": "DAVIS2017",
+      "window": "offset4",
+      "contrast": "affine-minus-residual_mlp",
+      "mean": -2.792189910302895,
+      "videos": 39,
+      "ci95_low": -7.739110645473277,
+      "ci95_high": -0.015597043391522182
+    },
+    {
+      "dataset": "DAVIS2017",
+      "window": "offset4",
+      "contrast": "affine-minus-transformer",
+      "mean": -2.053834880031338,
+      "videos": 39,
+      "ci95_low": -6.4347103450371455,
+      "ci95_high": 0.25211753872917686
+    },
+    {
+      "dataset": "DAVIS2017",
+      "window": "offset4",
+      "contrast": "affine-minus-last_mask",
+      "mean": 1.9151964540314441,
+      "videos": 39,
+      "ci95_low": -1.4483102834109303,
+      "ci95_high": 7.189710066260154
+    },
+    {
+      "dataset": "DAVIS2017",
+      "window": "offset4",
+      "contrast": "affine-minus-anchor_replay_16",
+      "mean": -1.8772767677346969,
+      "videos": 39,
+      "ci95_low": -7.5277357038055905,
+      "ci95_high": 2.615245886613145
+    },
+    {
+      "dataset": "DAVIS2017",
+      "window": "offset5",
+      "contrast": "affine-minus-small_only",
+      "mean": -2.810683996558688,
+      "videos": 39,
+      "ci95_low": -7.971785662654001,
+      "ci95_high": 0.36350352907358
+    },
+    {
+      "dataset": "DAVIS2017",
+      "window": "offset5",
+      "contrast": "affine-minus-base_native",
+      "mean": -2.4360947939170297,
+      "videos": 39,
+      "ci95_low": -7.3863288759645185,
+      "ci95_high": 0.30367969224045
+    },
+    {
+      "dataset": "DAVIS2017",
+      "window": "offset5",
+      "contrast": "affine-minus-direct",
+      "mean": 83.71949378691362,
+      "videos": 39,
+      "ci95_low": 75.47144156445482,
+      "ci95_high": 90.76918664229146
+    },
+    {
+      "dataset": "DAVIS2017",
+      "window": "offset5",
+      "contrast": "affine-minus-residual_mlp",
+      "mean": -2.489185954144683,
+      "videos": 39,
+      "ci95_low": -7.141755751983251,
+      "ci95_high": -0.09996164819274471
+    },
+    {
+      "dataset": "DAVIS2017",
+      "window": "offset5",
+      "contrast": "affine-minus-transformer",
+      "mean": -1.7805815679875325,
+      "videos": 39,
+      "ci95_low": -6.910747488963926,
+      "ci95_high": 1.4501936690173811
+    },
+    {
+      "dataset": "DAVIS2017",
+      "window": "offset5",
+      "contrast": "affine-minus-last_mask",
+      "mean": 2.8297126654226585,
+      "videos": 39,
+      "ci95_low": -0.38223351299211605,
+      "ci95_high": 8.555279568133761
+    },
+    {
+      "dataset": "DAVIS2017",
+      "window": "offset5",
+      "contrast": "affine-minus-anchor_replay_16",
+      "mean": -0.8082589125232866,
+      "videos": 39,
+      "ci95_low": -6.55205986817353,
+      "ci95_high": 3.3727295945364566
+    },
+    {
+      "dataset": "VOST",
+      "window": "first5",
+      "contrast": "affine-minus-small_only",
+      "mean": -0.37454512826000375,
+      "videos": 36,
+      "ci95_low": -1.8444701350407529,
+      "ci95_high": 1.2896522253373548
+    },
+    {
+      "dataset": "VOST",
+      "window": "first5",
+      "contrast": "affine-minus-base_native",
+      "mean": 5.918690769752004,
+      "videos": 36,
+      "ci95_low": -3.8391038712442107,
+      "ci95_high": 16.47010147377925
+    },
+    {
+      "dataset": "VOST",
+      "window": "first5",
+      "contrast": "affine-minus-direct",
+      "mean": 55.970258648487686,
+      "videos": 36,
+      "ci95_low": 44.814982691936045,
+      "ci95_high": 66.99880201354189
+    },
+    {
+      "dataset": "VOST",
+      "window": "first5",
+      "contrast": "affine-minus-residual_mlp",
+      "mean": 2.4671683513805216,
+      "videos": 36,
+      "ci95_low": -0.3869118147927978,
+      "ci95_high": 6.9149964336148
+    },
+    {
+      "dataset": "VOST",
+      "window": "first5",
+      "contrast": "affine-minus-transformer",
+      "mean": 1.4405690574210508,
+      "videos": 36,
+      "ci95_low": -0.7221077758779922,
+      "ci95_high": 5.039833865085182
+    },
+    {
+      "dataset": "VOST",
+      "window": "first5",
+      "contrast": "affine-minus-last_mask",
+      "mean": -0.05195093382876189,
+      "videos": 36,
+      "ci95_low": -1.394967594824155,
+      "ci95_high": 1.6054049558412495
+    },
+    {
+      "dataset": "VOST",
+      "window": "first5",
+      "contrast": "affine-minus-anchor_replay_16",
+      "mean": 15.737585010186686,
+      "videos": 36,
+      "ci95_low": 4.1358176161496365,
+      "ci95_high": 28.028144350338174
+    },
+    {
+      "dataset": "VOST",
+      "window": "full_suffix",
+      "contrast": "affine-minus-small_only",
+      "mean": -3.1998445817210714,
+      "videos": 40,
+      "ci95_low": -6.773292172087178,
+      "ci95_high": -0.2584969075359428
+    },
+    {
+      "dataset": "VOST",
+      "window": "full_suffix",
+      "contrast": "affine-minus-base_native",
+      "mean": 3.821425781474396,
+      "videos": 40,
+      "ci95_low": -3.228746883874459,
+      "ci95_high": 11.891411720507518
+    },
+    {
+      "dataset": "VOST",
+      "window": "full_suffix",
+      "contrast": "affine-minus-direct",
+      "mean": 43.585677082697465,
+      "videos": 40,
+      "ci95_low": 33.43211794670673,
+      "ci95_high": 53.889298504056846
+    },
+    {
+      "dataset": "VOST",
+      "window": "full_suffix",
+      "contrast": "affine-minus-residual_mlp",
+      "mean": 0.2477152091349671,
+      "videos": 40,
+      "ci95_low": -2.3652575285257553,
+      "ci95_high": 2.4564969901763303
+    },
+    {
+      "dataset": "VOST",
+      "window": "full_suffix",
+      "contrast": "affine-minus-transformer",
+      "mean": 0.47067176894552903,
+      "videos": 40,
+      "ci95_low": -0.5826652113461722,
+      "ci95_high": 1.6189584796284486
+    },
+    {
+      "dataset": "VOST",
+      "window": "full_suffix",
+      "contrast": "affine-minus-last_mask",
+      "mean": -0.03575749039063503,
+      "videos": 40,
+      "ci95_low": -2.434815975607702,
+      "ci95_high": 2.6249762805146366
+    },
+    {
+      "dataset": "VOST",
+      "window": "full_suffix",
+      "contrast": "affine-minus-anchor_replay_16",
+      "mean": 9.447364248538612,
+      "videos": 40,
+      "ci95_low": 0.5940942744668871,
+      "ci95_high": 18.95786138730476
+    },
+    {
+      "dataset": "VOST",
+      "window": "last5",
+      "contrast": "affine-minus-small_only",
+      "mean": -2.209210583266157,
+      "videos": 40,
+      "ci95_low": -7.999801683278667,
+      "ci95_high": 3.0178008448126086
+    },
+    {
+      "dataset": "VOST",
+      "window": "last5",
+      "contrast": "affine-minus-base_native",
+      "mean": 1.553988801048402,
+      "videos": 40,
+      "ci95_low": -4.020634622222217,
+      "ci95_high": 8.101024285642744
+    },
+    {
+      "dataset": "VOST",
+      "window": "last5",
+      "contrast": "affine-minus-direct",
+      "mean": 35.710378834046985,
+      "videos": 40,
+      "ci95_low": 25.16951622770363,
+      "ci95_high": 46.17053826900597
+    },
+    {
+      "dataset": "VOST",
+      "window": "last5",
+      "contrast": "affine-minus-residual_mlp",
+      "mean": 0.3875010843728748,
+      "videos": 40,
+      "ci95_low": -1.4338040527587845,
+      "ci95_high": 2.7418027284338637
+    },
+    {
+      "dataset": "VOST",
+      "window": "last5",
+      "contrast": "affine-minus-transformer",
+      "mean": -1.663228220618264,
+      "videos": 40,
+      "ci95_low": -6.024758506334201,
+      "ci95_high": 0.8024929538133173
+    },
+    {
+      "dataset": "VOST",
+      "window": "last5",
+      "contrast": "affine-minus-last_mask",
+      "mean": -0.5103010627112108,
+      "videos": 40,
+      "ci95_low": -5.204219640308749,
+      "ci95_high": 4.778589038529492
+    },
+    {
+      "dataset": "VOST",
+      "window": "last5",
+      "contrast": "affine-minus-anchor_replay_16",
+      "mean": 5.1212806713350645,
+      "videos": 40,
+      "ci95_low": -2.079935965878101,
+      "ci95_high": 13.040258178910504
+    },
+    {
+      "dataset": "VOST",
+      "window": "last_frame",
+      "contrast": "affine-minus-small_only",
+      "mean": -5.181433471791237,
+      "videos": 35,
+      "ci95_low": -11.119627540366363,
+      "ci95_high": -0.4843474520652262
+    },
+    {
+      "dataset": "VOST",
+      "window": "last_frame",
+      "contrast": "affine-minus-base_native",
+      "mean": 1.468398012323355,
+      "videos": 35,
+      "ci95_low": -4.500575330495305,
+      "ci95_high": 8.709144170542183
+    },
+    {
+      "dataset": "VOST",
+      "window": "last_frame",
+      "contrast": "affine-minus-direct",
+      "mean": 35.99311541410768,
+      "videos": 35,
+      "ci95_low": 24.36130486960035,
+      "ci95_high": 48.50959184113885
+    },
+    {
+      "dataset": "VOST",
+      "window": "last_frame",
+      "contrast": "affine-minus-residual_mlp",
+      "mean": -0.4739112884525835,
+      "videos": 35,
+      "ci95_low": -1.7437978915016548,
+      "ci95_high": 0.5516927169912826
+    },
+    {
+      "dataset": "VOST",
+      "window": "last_frame",
+      "contrast": "affine-minus-transformer",
+      "mean": -2.0102278996079903,
+      "videos": 35,
+      "ci95_low": -7.092720025587764,
+      "ci95_high": 0.9603743365144433
+    },
+    {
+      "dataset": "VOST",
+      "window": "last_frame",
+      "contrast": "affine-minus-last_mask",
+      "mean": -0.03911154715942148,
+      "videos": 35,
+      "ci95_low": -4.745874723693103,
+      "ci95_high": 5.84951271408958
+    },
+    {
+      "dataset": "VOST",
+      "window": "last_frame",
+      "contrast": "affine-minus-anchor_replay_16",
+      "mean": 4.989268719172113,
+      "videos": 35,
+      "ci95_low": -2.70403270570498,
+      "ci95_high": 13.95566927824687
+    },
+    {
+      "dataset": "VOST",
+      "window": "offset1",
+      "contrast": "affine-minus-small_only",
+      "mean": -0.20088592092458088,
+      "videos": 36,
+      "ci95_low": -1.7086557800362379,
+      "ci95_high": 1.4643776392323469
+    },
+    {
+      "dataset": "VOST",
+      "window": "offset1",
+      "contrast": "affine-minus-base_native",
+      "mean": 5.507009233450848,
+      "videos": 36,
+      "ci95_low": -3.657209047534974,
+      "ci95_high": 15.563143037898865
+    },
+    {
+      "dataset": "VOST",
+      "window": "offset1",
+      "contrast": "affine-minus-direct",
+      "mean": 56.518299470987294,
+      "videos": 36,
+      "ci95_low": 45.46801659596893,
+      "ci95_high": 67.53368158085944
+    },
+    {
+      "dataset": "VOST",
+      "window": "offset1",
+      "contrast": "affine-minus-residual_mlp",
+      "mean": 2.6080800224250753,
+      "videos": 36,
+      "ci95_low": -0.981661985477101,
+      "ci95_high": 8.607467942268348
+    },
+    {
+      "dataset": "VOST",
+      "window": "offset1",
+      "contrast": "affine-minus-transformer",
+      "mean": 1.9600876932236002,
+      "videos": 36,
+      "ci95_low": -1.4275207910681218,
+      "ci95_high": 7.740365277237884
+    },
+    {
+      "dataset": "VOST",
+      "window": "offset1",
+      "contrast": "affine-minus-last_mask",
+      "mean": -0.647837581689848,
+      "videos": 36,
+      "ci95_low": -3.020049904981873,
+      "ci95_high": 1.5362166232855086
+    },
+    {
+      "dataset": "VOST",
+      "window": "offset1",
+      "contrast": "affine-minus-anchor_replay_16",
+      "mean": 16.390908350746386,
+      "videos": 36,
+      "ci95_low": 4.302510305561022,
+      "ci95_high": 29.196407944179374
+    },
+    {
+      "dataset": "VOST",
+      "window": "offset2",
+      "contrast": "affine-minus-small_only",
+      "mean": 0.01999977555783398,
+      "videos": 36,
+      "ci95_low": -1.0403921485871233,
+      "ci95_high": 1.1560906543782663
+    },
+    {
+      "dataset": "VOST",
+      "window": "offset2",
+      "contrast": "affine-minus-base_native",
+      "mean": 6.771283065390187,
+      "videos": 36,
+      "ci95_low": -3.2896901568559698,
+      "ci95_high": 17.77889629060922
+    },
+    {
+      "dataset": "VOST",
+      "window": "offset2",
+      "contrast": "affine-minus-direct",
+      "mean": 57.32594959144857,
+      "videos": 36,
+      "ci95_low": 45.7077642911872,
+      "ci95_high": 68.62936612218967
+    },
+    {
+      "dataset": "VOST",
+      "window": "offset2",
+      "contrast": "affine-minus-residual_mlp",
+      "mean": 3.0293840636445557,
+      "videos": 36,
+      "ci95_low": -0.140401477166702,
+      "ci95_high": 8.741192727446887
+    },
+    {
+      "dataset": "VOST",
+      "window": "offset2",
+      "contrast": "affine-minus-transformer",
+      "mean": 2.437709734628995,
+      "videos": 36,
+      "ci95_low": -0.893094880941265,
+      "ci95_high": 8.219533183711485
+    },
+    {
+      "dataset": "VOST",
+      "window": "offset2",
+      "contrast": "affine-minus-last_mask",
+      "mean": -0.1887913191471616,
+      "videos": 36,
+      "ci95_low": -1.461606593887099,
+      "ci95_high": 1.1717527831271082
+    },
+    {
+      "dataset": "VOST",
+      "window": "offset2",
+      "contrast": "affine-minus-anchor_replay_16",
+      "mean": 17.0960084458705,
+      "videos": 36,
+      "ci95_low": 5.1052822631172425,
+      "ci95_high": 29.839235901549646
+    },
+    {
+      "dataset": "VOST",
+      "window": "offset3",
+      "contrast": "affine-minus-small_only",
+      "mean": -1.467026694511067,
+      "videos": 36,
+      "ci95_low": -3.7410223802890563,
+      "ci95_high": 0.42740848685880994
+    },
+    {
+      "dataset": "VOST",
+      "window": "offset3",
+      "contrast": "affine-minus-base_native",
+      "mean": 5.256605987104264,
+      "videos": 36,
+      "ci95_low": -4.930993638493295,
+      "ci95_high": 15.955877339407852
+    },
+    {
+      "dataset": "VOST",
+      "window": "offset3",
+      "contrast": "affine-minus-direct",
+      "mean": 55.0514362293187,
+      "videos": 36,
+      "ci95_low": 43.660393875377665,
+      "ci95_high": 66.37004001681673
+    },
+    {
+      "dataset": "VOST",
+      "window": "offset3",
+      "contrast": "affine-minus-residual_mlp",
+      "mean": 2.3980014358955937,
+      "videos": 36,
+      "ci95_low": -0.5833286874081628,
+      "ci95_high": 7.7161764443743825
+    },
+    {
+      "dataset": "VOST",
+      "window": "offset3",
+      "contrast": "affine-minus-transformer",
+      "mean": 2.278573608930243,
+      "videos": 36,
+      "ci95_low": -0.813383465529745,
+      "ci95_high": 7.8137618308805585
+    },
+    {
+      "dataset": "VOST",
+      "window": "offset3",
+      "contrast": "affine-minus-last_mask",
+      "mean": -0.5022618998370072,
+      "videos": 36,
+      "ci95_low": -2.1515865884853462,
+      "ci95_high": 1.1736631082140163
+    },
+    {
+      "dataset": "VOST",
+      "window": "offset3",
+      "contrast": "affine-minus-anchor_replay_16",
+      "mean": 15.716223135081659,
+      "videos": 36,
+      "ci95_low": 3.94881781799926,
+      "ci95_high": 28.085887975657183
+    },
+    {
+      "dataset": "VOST",
+      "window": "offset4",
+      "contrast": "affine-minus-small_only",
+      "mean": -1.9348749002299417,
+      "videos": 36,
+      "ci95_low": -5.176583777763686,
+      "ci95_high": 0.8341133958761372
+    },
+    {
+      "dataset": "VOST",
+      "window": "offset4",
+      "contrast": "affine-minus-base_native",
+      "mean": 4.705372427514516,
+      "videos": 36,
+      "ci95_low": -5.0051559817254505,
+      "ci95_high": 15.112509242072855
+    },
+    {
+      "dataset": "VOST",
+      "window": "offset4",
+      "contrast": "affine-minus-direct",
+      "mean": 54.725547121239046,
+      "videos": 36,
+      "ci95_low": 44.066186677979026,
+      "ci95_high": 65.62530153699582
+    },
+    {
+      "dataset": "VOST",
+      "window": "offset4",
+      "contrast": "affine-minus-residual_mlp",
+      "mean": 2.8876145274731275,
+      "videos": 36,
+      "ci95_low": -1.9230294966560049,
+      "ci95_high": 8.251769728531245
+    },
+    {
+      "dataset": "VOST",
+      "window": "offset4",
+      "contrast": "affine-minus-transformer",
+      "mean": 0.09595392301786705,
+      "videos": 36,
+      "ci95_low": -0.968459421971577,
+      "ci95_high": 1.1535225247771654
+    },
+    {
+      "dataset": "VOST",
+      "window": "offset4",
+      "contrast": "affine-minus-last_mask",
+      "mean": -0.7386019959023964,
+      "videos": 36,
+      "ci95_low": -3.7189759360317027,
+      "ci95_high": 1.9108341722302027
+    },
+    {
+      "dataset": "VOST",
+      "window": "offset4",
+      "contrast": "affine-minus-anchor_replay_16",
+      "mean": 13.849611739041555,
+      "videos": 36,
+      "ci95_low": 2.773654749030539,
+      "ci95_high": 25.52435352835752
+    },
+    {
+      "dataset": "VOST",
+      "window": "offset5",
+      "contrast": "affine-minus-small_only",
+      "mean": 1.756098973468055,
+      "videos": 35,
+      "ci95_low": -0.4066704896521194,
+      "ci95_high": 4.5694983109329455
+    },
+    {
+      "dataset": "VOST",
+      "window": "offset5",
+      "contrast": "affine-minus-base_native",
+      "mean": 7.564435045416337,
+      "videos": 35,
+      "ci95_low": -2.9181500562136296,
+      "ci95_high": 18.966881772749435
+    },
+    {
+      "dataset": "VOST",
+      "window": "offset5",
+      "contrast": "affine-minus-direct",
+      "mean": 57.63023609941843,
+      "videos": 35,
+      "ci95_low": 45.86163638102552,
+      "ci95_high": 69.1551547329093
+    },
+    {
+      "dataset": "VOST",
+      "window": "offset5",
+      "contrast": "affine-minus-residual_mlp",
+      "mean": 1.4553136789794838,
+      "videos": 35,
+      "ci95_low": -0.21892878089033882,
+      "ci95_high": 3.6040592016818507
+    },
+    {
+      "dataset": "VOST",
+      "window": "offset5",
+      "contrast": "affine-minus-transformer",
+      "mean": 0.44400819149747356,
+      "videos": 35,
+      "ci95_low": -0.7448487872161751,
+      "ci95_high": 1.7931193219192092
+    },
+    {
+      "dataset": "VOST",
+      "window": "offset5",
+      "contrast": "affine-minus-last_mask",
+      "mean": 1.8696735025021063,
+      "videos": 35,
+      "ci95_low": -0.17172895037586158,
+      "ci95_high": 4.362477001023527
+    },
+    {
+      "dataset": "VOST",
+      "window": "offset5",
+      "contrast": "affine-minus-anchor_replay_16",
+      "mean": 16.082925063602765,
+      "videos": 35,
+      "ci95_low": 4.436120477488722,
+      "ci95_high": 28.744925985488987
+    }
+  ],
+  "matched_gap_change": [
+    {
+      "dataset": "MOSEv2",
+      "method": "affine",
+      "late_window": "full_suffix",
+      "definition": "Same-video change of native-minus-method gap relative to first5; positive means gap larger",
+      "mean": 4.3245487686717174,
+      "ci95": [
+        -1.0810028295178458,
+        10.475321566615625
+      ],
+      "videos": 33
+    },
+    {
+      "dataset": "MOSEv2",
+      "method": "affine",
+      "late_window": "last5",
+      "definition": "Same-video change of native-minus-method gap relative to first5; positive means gap larger",
+      "mean": 10.332017503794813,
+      "ci95": [
+        -0.7029301313259897,
+        22.262430310020406
+      ],
+      "videos": 31
+    },
+    {
+      "dataset": "MOSEv2",
+      "method": "residual_mlp",
+      "late_window": "full_suffix",
+      "definition": "Same-video change of native-minus-method gap relative to first5; positive means gap larger",
+      "mean": 1.44476882641488,
+      "ci95": [
+        -3.8863288232401096,
+        7.616753947245757
+      ],
+      "videos": 33
+    },
+    {
+      "dataset": "MOSEv2",
+      "method": "residual_mlp",
+      "late_window": "last5",
+      "definition": "Same-video change of native-minus-method gap relative to first5; positive means gap larger",
+      "mean": 5.193832587563417,
+      "ci95": [
+        -3.9323070008796255,
+        15.88397838163164
+      ],
+      "videos": 31
+    },
+    {
+      "dataset": "MOSEv2",
+      "method": "transformer",
+      "late_window": "full_suffix",
+      "definition": "Same-video change of native-minus-method gap relative to first5; positive means gap larger",
+      "mean": 3.9773830545300473,
+      "ci95": [
+        -1.6290222259337923,
+        10.212170132323509
+      ],
+      "videos": 33
+    },
+    {
+      "dataset": "MOSEv2",
+      "method": "transformer",
+      "late_window": "last5",
+      "definition": "Same-video change of native-minus-method gap relative to first5; positive means gap larger",
+      "mean": 11.943768267249444,
+      "ci95": [
+        1.0448893055073059,
+        23.792074344243886
+      ],
+      "videos": 31
+    },
+    {
+      "dataset": "LVOSv2",
+      "method": "affine",
+      "late_window": "full_suffix",
+      "definition": "Same-video change of native-minus-method gap relative to first5; positive means gap larger",
+      "mean": 2.837952604343151,
+      "ci95": [
+        -0.8547270968305405,
+        7.337410014299217
+      ],
+      "videos": 36
+    },
+    {
+      "dataset": "LVOSv2",
+      "method": "affine",
+      "late_window": "last5",
+      "definition": "Same-video change of native-minus-method gap relative to first5; positive means gap larger",
+      "mean": 3.019111272857245,
+      "ci95": [
+        -0.5935145281877315,
+        9.1290766829841
+      ],
+      "videos": 33
+    },
+    {
+      "dataset": "LVOSv2",
+      "method": "residual_mlp",
+      "late_window": "full_suffix",
+      "definition": "Same-video change of native-minus-method gap relative to first5; positive means gap larger",
+      "mean": -0.4944475565947881,
+      "ci95": [
+        -5.019496762761675,
+        2.9874625478086947
+      ],
+      "videos": 36
+    },
+    {
+      "dataset": "LVOSv2",
+      "method": "residual_mlp",
+      "late_window": "last5",
+      "definition": "Same-video change of native-minus-method gap relative to first5; positive means gap larger",
+      "mean": 1.8977521585526562,
+      "ci95": [
+        -0.4020953617132753,
+        4.924474453779473
+      ],
+      "videos": 33
+    },
+    {
+      "dataset": "LVOSv2",
+      "method": "transformer",
+      "late_window": "full_suffix",
+      "definition": "Same-video change of native-minus-method gap relative to first5; positive means gap larger",
+      "mean": 2.9597304296908993,
+      "ci95": [
+        -1.0752488018943158,
+        7.978712373160264
+      ],
+      "videos": 36
+    },
+    {
+      "dataset": "LVOSv2",
+      "method": "transformer",
+      "late_window": "last5",
+      "definition": "Same-video change of native-minus-method gap relative to first5; positive means gap larger",
+      "mean": 5.288002696574651,
+      "ci95": [
+        -0.5062349132937329,
+        13.721109879510909
+      ],
+      "videos": 33
+    },
+    {
+      "dataset": "DAVIS2017",
+      "method": "affine",
+      "late_window": "full_suffix",
+      "definition": "Same-video change of native-minus-method gap relative to first5; positive means gap larger",
+      "mean": -0.7737296380444469,
+      "ci95": [
+        -3.418193420986102,
+        0.848568277153175
+      ],
+      "videos": 40
+    },
+    {
+      "dataset": "DAVIS2017",
+      "method": "affine",
+      "late_window": "last5",
+      "definition": "Same-video change of native-minus-method gap relative to first5; positive means gap larger",
+      "mean": -0.24155218211494756,
+      "ci95": [
+        -2.823738771239102,
+        1.915044807041164
+      ],
+      "videos": 38
+    },
+    {
+      "dataset": "DAVIS2017",
+      "method": "residual_mlp",
+      "late_window": "full_suffix",
+      "definition": "Same-video change of native-minus-method gap relative to first5; positive means gap larger",
+      "mean": -1.0256416692602888,
+      "ci95": [
+        -3.547103206359143,
+        0.43059622111620827
+      ],
+      "videos": 40
+    },
+    {
+      "dataset": "DAVIS2017",
+      "method": "residual_mlp",
+      "late_window": "last5",
+      "definition": "Same-video change of native-minus-method gap relative to first5; positive means gap larger",
+      "mean": 0.26253197908346676,
+      "ci95": [
+        -1.1922801360248083,
+        1.5521204865030598
+      ],
+      "videos": 38
+    },
+    {
+      "dataset": "DAVIS2017",
+      "method": "transformer",
+      "late_window": "full_suffix",
+      "definition": "Same-video change of native-minus-method gap relative to first5; positive means gap larger",
+      "mean": -0.9006472189342659,
+      "ci95": [
+        -3.6288278390944586,
+        0.8053219348135511
+      ],
+      "videos": 40
+    },
+    {
+      "dataset": "DAVIS2017",
+      "method": "transformer",
+      "late_window": "last5",
+      "definition": "Same-video change of native-minus-method gap relative to first5; positive means gap larger",
+      "mean": 0.3356693676645693,
+      "ci95": [
+        -1.124957411299496,
+        1.6689703819068886
+      ],
+      "videos": 38
+    },
+    {
+      "dataset": "VOST",
+      "method": "affine",
+      "late_window": "full_suffix",
+      "definition": "Same-video change of native-minus-method gap relative to first5; positive means gap larger",
+      "mean": -0.12569529960601647,
+      "ci95": [
+        -4.248321037855273,
+        3.8083184677230375
+      ],
+      "videos": 36
+    },
+    {
+      "dataset": "VOST",
+      "method": "affine",
+      "late_window": "last5",
+      "definition": "Same-video change of native-minus-method gap relative to first5; positive means gap larger",
+      "mean": 3.5435181166314447,
+      "ci95": [
+        -4.570627312056619,
+        11.895477945887968
+      ],
+      "videos": 36
+    },
+    {
+      "dataset": "VOST",
+      "method": "residual_mlp",
+      "late_window": "full_suffix",
+      "definition": "Same-video change of native-minus-method gap relative to first5; positive means gap larger",
+      "mean": -1.0816884507537579,
+      "ci95": [
+        -6.4681207885777185,
+        3.965587023955201
+      ],
+      "videos": 36
+    },
+    {
+      "dataset": "VOST",
+      "method": "residual_mlp",
+      "late_window": "last5",
+      "definition": "Same-video change of native-minus-method gap relative to first5; positive means gap larger",
+      "mean": 1.9926964076882416,
+      "ci95": [
+        -7.497239584385822,
+        11.65083763038797
+      ],
+      "videos": 36
+    },
+    {
+      "dataset": "VOST",
+      "method": "transformer",
+      "late_window": "full_suffix",
+      "definition": "Same-video change of native-minus-method gap relative to first5; positive means gap larger",
+      "mean": -0.8291758031115817,
+      "ci95": [
+        -5.7425008775161235,
+        3.7953708224801477
+      ],
+      "videos": 36
+    },
+    {
+      "dataset": "VOST",
+      "method": "transformer",
+      "late_window": "last5",
+      "definition": "Same-video change of native-minus-method gap relative to first5; positive means gap larger",
+      "mean": -0.06762618533851554,
+      "ci95": [
+        -10.614459468987613,
+        10.045657553869344
+      ],
+      "videos": 36
+    }
+  ],
+  "warning": "GT-visible only; support changes by window, offsets are processed sampled frames. MOSE train/development and DAVIS train/exploratory, not official scores. CI: paired-video bootstrap, 5000 draws, seed 7; pointwise, no multiplicity correction. Window-relative gaps are not a proof of causal time deterioration."
+}
