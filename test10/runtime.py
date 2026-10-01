@@ -8,7 +8,8 @@ import shutil
 import time
 from pathlib import Path
 
-from core import EPOCHS, LEGACY, METHODS, GATE, sha, write, read, key
+from core import EPOCHS, LEGACY, METHODS, GATE, sha, write, read, key, suffix_scores
+from core import rescore_case as core_rescore_case
 from manifest import imports, verify_case
 
 C = imports()
@@ -83,15 +84,36 @@ def load_blob(store, case, name):
     return torch.load(path, map_location="cpu", weights_only=False)
 
 
-def score_masks(case, method, masks):
-    expected = set(range(case["switch"] + 1, case["end"] + 1))
-    if set(masks) != expected: raise ValueError("suffix frame mismatch")
+def score_positions(case, method, masks):
+    """test9 scorer on any contiguous post-switch prefix given by the mask positions."""
     stems = case["frame_stems"]
     result = score(dict(case_id=case["case_id"], method=method, masks=masks,
-                        stems={p: stems[p] for p in expected}, annotation_dir=case["annotation_dir"],
+                        stems={p: stems[p] for p in masks}, annotation_dir=case["annotation_dir"],
                         object_id=case["object_id"], switch_position=case["switch"],
                         context_position=case["switch"], stems_context=stems[case["switch"]]))
     return result["scores"]
+
+
+def score_masks(case, method, masks):
+    return suffix_scores(case, masks, lambda subset: score_positions(case, method, subset))
+
+
+def rescore_case(case, store, methods):
+    """CPU-only: rescore existing rows from sha-verified prediction caches."""
+    cache = {}
+
+    def blob(name):
+        if name not in cache:
+            cache[name] = load_blob(store, case, name)
+            if cache[name] is None:
+                raise FileNotFoundError(f"missing cache {name} for {case['case_id']}")
+        return cache[name]
+
+    def masks_for(method):
+        name = {"small_only": "source_prefix", "base_native": "base_prefix"}.get(method, method + "_predictions")
+        return blob(name)["masks"]
+
+    return core_rescore_case(case, store, methods, masks_for, score_masks)
 
 
 class Evaluator:

@@ -34,6 +34,35 @@ Component ablation에서는 spatial-only affine이 full affine에 가까운 점�
 
 * DAVIS validation 영상의 과거 모델 선택 사용 여부를 확인하지 못해 탐색적 결과로 표시한다. 전체 지표·95% bootstrap CI·paired 비교·비용 표는 [summary.md](runs/run01/summary.md)와 [summary.json](runs/run01/summary.json)을 참조한다.
 
+## 전환 시점 지표 (주 지표)
+
+주 지표는 **전환 직후 J&F**다. 처리 프레임 `switch+1`..`switch+6`, 즉 Base+의 첫 6개 출력에서 annotation이 있는 프레임의 J&F 평균이다. `switch` 프레임은 Small의 마지막 출력이므로 채점하지 않는다. 창 길이 6(`core.SWITCH_WINDOW`)은 SAM 2.1 `num_maskmem=7`(conditioning 1 + 최근 6)에서 변환된 최근 메모리가 남아 있는 구간이다. `+7`부터는 conditioning 기록만 변환된 상태로 남는다. LVOS/VOST offset은 처리 프레임 기준이므로 `+1..+6`은 원본 기준 LVOS 5~30, VOST 6~36 프레임 뒤다.
+
+- `+1`: Base+의 첫 출력 한 프레임
+- Suffix J&F(`post_switch`): 기존 지표, `switch+1`..`end` 전체 평균
+- summary.json의 `paired_switch_window`는 전환 직후 J&F, `paired`는 suffix J&F 기준 paired CI다.
+
+`runs/run01`, `runs/heldout01`의 현재 summary는 이 지표 도입 전에 만든 suffix 기준 결과다. 원 workspace에서 아래 명령으로 저장된 예측 cache를 다시 채점하면 갱신된다. 모델 load·추론은 하지 않으며, 다시 계산한 suffix 점수가 기존 값과 다르면 중단한다. `--stage rescore`와 `--report-only`는 test10 harness 코드 변경만 허용하고 모델·checkpoint·SAM 2·test9 채점 코드 hash는 계속 검증한다.
+
+```sh
+python test10/run.py --stage rescore --run-dir test10/runs/run01
+python test10/run.py --stage rescore --run-dir test10/runs/heldout01
+```
+
+## 전환 직후·Base+ 일치도 진단
+
+`handoff_diagnostics.py`는 저장된 prediction cache(`.pt`)만 읽어 두 지표를 계산한다. 모델 load·GPU 추론은 하지 않는다.
+
+- Early J&F: 전환 후 +1..+K 프레임(기본 6, SAM 2.1 `num_maskmem=7`에서 변환된 최근 메모리가 남아 있는 구간)의 GT J&F. 기존 `mvp_scoring.score` 경로를 그대로 사용한다.
+- IoU vs Base+: GT 없이 Base+-native 예측 mask와의 프레임별 IoU. early 구간과 suffix 전체를 따로 보고하며, 전환 프레임에서 Small/Base+ mask가 일치한 case(`switch_iou ≥ 0.9`)만 따로 집계한다.
+
+`.pt` cache와 원 workspace(`test9/`, `vos-data/`)가 있는 환경에서 원래 run directory를 대상으로 실행한다. 공개 사본은 cache가 없고 provenance 경로가 치환되어 있어 실행되지 않는다. 결과는 `<run-dir>/handoff_diagnostics.{json,md}`에 쓴다.
+
+```sh
+python test10/handoff_diagnostics.py --run-dir test10/runs/heldout01
+python test10/handoff_diagnostics.py --run-dir test10/runs/run01
+```
+
 ## 포함 파일과 큰 산출물
 
 `runs/run01/artifacts/*.json`에는 case별 점수와 self-injection 결과가 있고 `.sha.json` sidecar는 content-addressed artifact의 hash를 보존한다. 크기가 큰 `.pt` 예측/state blob 1,924개(약 40.44 GiB)는 GitHub 저장소에 올리지 않았다. 따라서 점수·통계는 검토할 수 있지만, 이 공개 패키지만으로 binary mask/state를 복원하거나 해당 cache에서 `--resume`할 수는 없다.

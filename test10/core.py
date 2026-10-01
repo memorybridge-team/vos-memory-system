@@ -19,6 +19,12 @@ DATASETS = ("MOSEv2", "LVOSv2", "DAVIS2017")
 WEIGHTS = {"MOSEv2": .4, "LVOSv2": .4, "DAVIS2017": .2}
 EPOCHS = {"linear": 30, "residual_mlp": 12, "base": 6}
 PROTOCOL = "test10.v1"
+# "At the switch" = the first SWITCH_WINDOW Base+ outputs (processed frames switch+1..switch+6).
+# SAM 2.1 num_maskmem=7 (1 conditioning + 6 recent): through +6 the recent-memory window still
+# holds translated records; from +7 only the conditioning record is translated.
+SWITCH_WINDOW = 6
+SCORE_ROW_FIELDS = ("case_id", "dataset", "video_id", "object_id", "cohort", "checkpoint_video",
+                    "method", "key", "status", "scores")
 
 
 def read(path):
@@ -62,6 +68,53 @@ def replay_frames(first, switch, k):
     if k not in (4, 8, 16) or switch - first < k:
         raise ValueError("anchor must precede the entire recent replay window")
     return [first, *range(switch - k + 1, switch + 1)]
+
+
+def switch_window(case, k=SWITCH_WINDOW):
+    """Processed-frame positions scored as 'at the switch': the first k Base+ outputs.
+
+    The switch frame itself is the last Source (Small) output and is never scored.
+    LVOS/VOST offsets are processed frames (raw stride 5/6)."""
+    if k < 1:
+        raise ValueError("switch window must contain at least one frame")
+    return list(range(case["switch"] + 1, min(case["switch"] + k, case["end"]) + 1))
+
+
+def suffix_scores(case, masks, score_positions, k=SWITCH_WINDOW):
+    """Whole-suffix scores plus the switch-window score, both via the same scorer."""
+    if set(masks) != set(range(case["switch"] + 1, case["end"] + 1)):
+        raise ValueError("suffix frame mismatch")
+    scores = score_positions(masks)
+    window = switch_window(case, k)
+    early = score_positions({p: masks[p] for p in window})["post_switch"]
+    scores["switch_window"] = dict(
+        definition=f"annotated processed frames switch+1..switch+{k} (first {k} Base+ outputs)",
+        k=k, offsets=[p - case["switch"] for p in window],
+        frames=early["frames"], J=early["J"], F=early["F"], J_and_F=early["J_and_F"])
+    return scores
+
+
+def _same(a, b, tol=1e-9):
+    return a == b if a is None or b is None else abs(a - b) <= tol
+
+
+def rescore_case(case, store, methods, masks_for, score_masks):
+    """Recompute saved score rows from cached predictions; never runs a model.
+
+    The whole-suffix score must reproduce exactly, otherwise the cache or scorer drifted."""
+    updated = 0
+    for method in methods:
+        row = store.load(case, method)
+        if row is None:
+            continue
+        scores = score_masks(case, method, masks_for(method))
+        old, new = row["scores"]["post_switch"], scores["post_switch"]
+        if old["frames"] != new["frames"] or not all(_same(old[f], new[f]) for f in ("J", "F", "J_and_F")):
+            raise ValueError(f"suffix score changed on rescore: {case['case_id']} {method}")
+        kept = {k: v for k, v in row.items() if k not in SCORE_ROW_FIELDS}
+        store.save(case, method, **kept, scores=scores)
+        updated += 1
+    return updated
 
 
 def case_contract(case):
@@ -177,6 +230,13 @@ def freeze_schedule(cases, timings, remaining_seconds, seed=7):
 
 def snapshot(paths):
     return {str(Path(p).resolve()): sha(p) for p in sorted(set(map(Path, paths)))}
+
+
+def harness_excluded(files):
+    """Offline report/rescore may use newer test10 harness code; models, checkpoints,
+    SAM 2 and test9 scoring code remain pinned by the remaining hashes."""
+    root = ROOT.resolve()
+    return {p: h for p, h in files.items() if not (Path(p).parent == root and Path(p).suffix == ".py")}
 
 
 def verify_snapshot(files):

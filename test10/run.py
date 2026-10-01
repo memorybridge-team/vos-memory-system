@@ -10,8 +10,8 @@ import time
 import traceback
 from statistics import median
 
-from core import (ROOT, WORKSPACE, METHODS, GATE, Artifacts, read, write, digest,
-                  select_smoke, freeze_schedule, verify_snapshot)
+from core import (ROOT, WORKSPACE, METHODS, GATE, SWITCH_WINDOW, Artifacts, read, write, digest,
+                  select_smoke, freeze_schedule, verify_snapshot, harness_excluded, snapshot)
 from manifest import build, provenance, audit_legacy, imports
 from report import build_report
 
@@ -42,7 +42,8 @@ def heldout_schedule(cases, timings, remaining_seconds):
 
 def parser():
     p = argparse.ArgumentParser(description=__doc__)
-    p.add_argument("--stage", choices=("audit", "smoke", "full"), required=True)
+    p.add_argument("--stage", choices=("audit", "smoke", "full", "rescore"), required=True,
+                   help="rescore: CPU-only rescoring of saved predictions (adds the switch-window metric)")
     p.add_argument("--selection", type=Path, help="existing test10 manifest; omitted: deterministic candidates")
     p.add_argument("--run-dir", type=Path, default=ROOT / "runs/default")
     p.add_argument("--seed", type=int, default=7)
@@ -72,13 +73,29 @@ def run(args):
         return locked_run(args)
 
 
+def rescore(selection, store, methods):
+    """Rescore saved rows from cached predictions without loading any model."""
+    from runtime import rescore_case
+    started = time.monotonic()
+    rows = sum(rescore_case(c, store, methods) for c in selection["cases"]
+               if any(store.load(c, m) for m in methods))
+    write(store.root / "rescore.json", dict(switch_window=SWITCH_WINDOW, rows=rows,
+                                            seconds=time.monotonic() - started,
+                                            harness=snapshot(ROOT.glob("*.py")),
+                                            note="scores recomputed from sha-verified prediction caches; "
+                                                 "whole-suffix scores reproduced exactly; no inference"))
+    return rows
+
+
 def locked_run(args):
     meta_path = args.run_dir / "provenance.json"
     manifest_path = args.run_dir / "selection.json"
+    offline = args.report_only or args.stage == "rescore"
     if meta_path.exists():
-        if not args.resume and not args.report_only:
+        if not args.resume and not offline:
             raise ValueError("existing run: use --resume or a new --run-dir")
-        prov = read(meta_path); verify_snapshot(prov["files"])
+        # Offline stages may run newer harness code; everything else stays pinned.
+        prov = read(meta_path); verify_snapshot(harness_excluded(prov["files"]) if offline else prov["files"])
         selection = read(manifest_path)
         if args.selection and digest(read(args.selection)) != digest(selection):
             raise ValueError("selection differs from the saved run")
@@ -98,6 +115,9 @@ def locked_run(args):
     if selection.get("design") == "heldout.v1" and not {"small_only", "base_native"}.issubset(methods):
         raise ValueError("heldout requires both native references")
     store = Artifacts(args.run_dir, prov, args.reuse_run)
+    if args.stage == "rescore":
+        print(json.dumps({"rescored_rows": rescore(selection, store, methods)}), flush=True)
+        return build_report(selection, store, args.seed)
     if args.report_only:
         return build_report(selection, store, args.seed)
     if args.stage == "audit":

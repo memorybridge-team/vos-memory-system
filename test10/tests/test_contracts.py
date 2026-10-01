@@ -10,8 +10,9 @@ from dataclasses import dataclass
 import time
 
 sys.path.insert(0, str(Path(__file__).resolve().parents[1]))
-from core import (Artifacts, METHODS, GATE, digest, key, positions, replay_frames,
-                  select_smoke, freeze_schedule, snapshot, verify_snapshot, write)
+from core import (Artifacts, METHODS, GATE, ROOT, SWITCH_WINDOW, digest, key, positions, replay_frames,
+                  select_smoke, freeze_schedule, snapshot, verify_snapshot, write, sha,
+                  switch_window, suffix_scores, rescore_case, harness_excluded)
 from manifest import imports, make_case, normalize
 from report import per_video, paired, build_report
 
@@ -155,6 +156,91 @@ class Contracts(unittest.TestCase):
             run.run(args)
             self.assertTrue((Path(tmp)/"audit.json").exists())
             self.assertFalse((Path(tmp)/"budget.json").exists())
+
+
+def fake_scorer(calls):
+    """Deterministic stand-in for mvp_scoring.score: J = fraction of scored positions that are even."""
+    def score_positions(masks):
+        calls.append(sorted(masks))
+        j = sum(p % 2 == 0 for p in masks) / len(masks)
+        return {"post_switch": {"frames": len(masks), "J": j, "F": j, "J_and_F": j}, "checkpoints": {}}
+    return score_positions
+
+
+class SwitchWindow(unittest.TestCase):
+    def test_window_is_first_k_base_outputs(self):
+        c = dict(case(), switch=16, end=30)
+        self.assertEqual(SWITCH_WINDOW, 6)
+        self.assertEqual(switch_window(c), [17, 18, 19, 20, 21, 22])
+        self.assertEqual(switch_window(c, 1), [17])
+        self.assertEqual(switch_window(case()), [17, 18, 19, 20])  # suffix shorter than k
+        with self.assertRaises(ValueError): switch_window(c, 0)
+
+    def test_suffix_scores_add_window_with_same_scorer(self):
+        c = dict(case(), switch=16, end=30); calls = []
+        masks = {p: "m" for p in range(17, 31)}
+        scores = suffix_scores(c, masks, fake_scorer(calls))
+        self.assertEqual(calls, [list(range(17, 31)), list(range(17, 23))])
+        w = scores["switch_window"]
+        self.assertEqual((w["k"], w["offsets"], w["frames"]), (6, [1, 2, 3, 4, 5, 6], 6))
+        self.assertEqual(w["J_and_F"], .5)
+        self.assertEqual(scores["post_switch"]["frames"], 14)
+        with self.assertRaisesRegex(ValueError, "suffix frame mismatch"):
+            suffix_scores(c, {p: "m" for p in range(17, 30)}, fake_scorer([]))
+
+    def test_rescore_keeps_row_metadata_and_requires_same_suffix(self):
+        with tempfile.TemporaryDirectory() as tmp:
+            store = Artifacts(tmp, {}); c = case()
+            masks = {p: "m" for p in range(17, 21)}
+            old = fake_scorer([])(masks)
+            store.save(c, "affine", origin="executed", runtime={"handoff_s": 1.}, scores=old)
+            score = lambda case_, method, m: suffix_scores(case_, m, fake_scorer([]))
+            self.assertEqual(rescore_case(c, store, ("affine", "direct"), lambda m: masks, score), 1)
+            row = store.load(c, "affine")
+            self.assertEqual((row["origin"], row["runtime"]), ("executed", {"handoff_s": 1.}))
+            self.assertEqual(row["scores"]["switch_window"]["offsets"], [1, 2, 3, 4])
+            drift = lambda case_, method, m: dict(suffix_scores(case_, m, fake_scorer([])),
+                                                  post_switch={"frames": 4, "J": 0., "F": 0., "J_and_F": 0.})
+            with self.assertRaisesRegex(ValueError, "suffix score changed"):
+                rescore_case(c, store, ("affine",), lambda m: masks, drift)
+
+    def test_report_primary_window_and_rejects_partial_rescore(self):
+        with tempfile.TemporaryDirectory() as tmp:
+            store = Artifacts(tmp, {}); c = case()
+            masks = {p: "m" for p in range(17, 21)}
+            for method in METHODS:
+                store.save(c, method, origin="executed", scores=suffix_scores(c, masks, fake_scorer([])))
+            store.save(c, GATE, gate_passed=True)
+            r = build_report({"cases": [c]}, store)
+            self.assertEqual((r["switch_window"]["k"], r["switch_window"]["primary"]), (6, True))
+            d = r["groups"]["all"]["datasets"]["MOSEv2"]
+            self.assertEqual(d["methods"]["affine"]["switch_window"]["mean"], .5)
+            self.assertEqual(d["paired_switch_window"]["affine-minus-direct"]["mean"], 0.)
+            self.assertIn("switch+1..switch+6", (Path(tmp) / "summary.md").read_text(encoding="utf-8"))
+            store.save(c, "direct", origin="executed", scores=fake_scorer([])(masks))
+            with self.assertRaisesRegex(ValueError, "partial switch-window"):
+                build_report({"cases": [c]}, store)
+
+    def test_harness_exclusion_only_drops_test10_python(self):
+        files = {str(ROOT / "report.py"): "a", str(ROOT / "runs/x.json"): "b", str(ROOT.parent / "test9/s.py"): "c"}
+        self.assertEqual(harness_excluded(files), {str(ROOT / "runs/x.json"): "b", str(ROOT.parent / "test9/s.py"): "c"})
+
+    def test_offline_stages_accept_newer_harness_but_inference_does_not(self):
+        import run
+        with tempfile.TemporaryDirectory() as tmp, ExitStack() as stack:
+            pinned = Path(tmp) / "pinned.txt"; pinned.write_text("model")
+            write(Path(tmp) / "provenance.json", {"files": {str(ROOT / "report.py"): "old", str(pinned): sha(pinned)}})
+            write(Path(tmp) / "selection.json", {"schema": "test10.v1", "seed": 7, "cases": [case()]})
+            rescored = stack.enter_context(patch("run.rescore", return_value=0))
+            stack.enter_context(patch("run.build_report", return_value={}))
+            run.run(run.parser().parse_args(["--stage", "rescore", "--run-dir", tmp]))
+            run.run(run.parser().parse_args(["--stage", "full", "--report-only", "--run-dir", tmp]))
+            self.assertEqual(rescored.call_count, 1)
+            with self.assertRaisesRegex(ValueError, "referenced inputs changed"):
+                run.run(run.parser().parse_args(["--stage", "full", "--resume", "--run-dir", tmp]))
+            pinned.write_text("changed")
+            with self.assertRaisesRegex(ValueError, "referenced inputs changed"):
+                run.run(run.parser().parse_args(["--stage", "rescore", "--run-dir", tmp]))
 
 
 class AffineCPU(unittest.TestCase):
