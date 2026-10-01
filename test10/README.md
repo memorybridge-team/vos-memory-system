@@ -2,6 +2,50 @@
 
 Small이 frame `t`까지 처리한 상태를 Base+에 전달해 `t+1`부터 이어 처리하는 방법을 비교한다. 결과 패키지에는 평가 harness, 선택 manifest, case별 점수 JSON, 요약 통계, 실행·비용·provenance 기록이 포함되어 있다.
 
+## 현재 코드와 실행된 결과의 구분
+
+현재 코드는 `state_pair_examples`와 같은 **`cmmt.prepared_handoff_case.v2` state-only pair**를 학습·handoff에 사용한다. 새 학습 결과만 평가에 사용하며, 주 지표는 Base+ 전환 후 **첫 10개 처리 프레임의 J&F**다. `+1`부터 `+10`까지 J/F/J&F를 각각 기록한다. 아래 기존 Run01/Heldout01 수치는 이전 학습·suffix 평가 결과이며 새 코드의 학습 또는 10프레임 평가를 실행한 결과가 아니다.
+
+## Pair 형식과 새 학습
+
+`.pt`의 최상위 필드는 `schema_version`, `source_canonical`, `target_canonical`, `metadata`다. `.pt.sha256`과 `.prepare.json`도 필요하다. 파일명에서 switch를 추측하지 않고 metadata의 **처리 프레임 위치**를 사용한다. LVOS 예시의 파일명 `switch491`과 실제 `switch_frame=98`은 서로 다른 단위다.
+
+- spatial memory: `[B,O,K,64,64,64]`, bf16
+- object pointer: `[B,O,K,256]`, fp32
+- presence logits: `[B,O,K,1]`, fp32 진단용 보존 값
+- frame indices, slot order, conditioning, validity 및 object IDs를 보존한다. Source/Target의 discrete 필드가 다르면 학습을 중단한다.
+- 예시와 같이 모든 conditioning 및 최근 `max(num_maskmem-1,max_obj_ptrs_in_encoder-1)`개의 non-conditioning 기록을 저장한다. 기본값은 최근 15개이며, padding은 loss에서 제외한다.
+
+학습 collection은 명시적인 JSON으로 지정한다. 경로는 이 JSON 파일 기준이며, 각 pair에는 세 파일이 모두 있어야 한다. 예시 2개를 자동으로 학습 데이터로 사용하지 않는다.
+
+```json
+{
+  "schema": "test10.pair_selection.v1",
+  "pairs": [
+    {"dataset": "MOSEv2", "video_id": "train_video", "split": "train", "path": "train/train_video.pt"},
+    {"dataset": "MOSEv2", "video_id": "validation_video", "split": "validation", "path": "validation/validation_video.pt"}
+  ]
+}
+```
+
+실제 collection의 모든 pair를 나열한다. train/validation은 `(dataset, video_id)` 기준으로 겹칠 수 없다. 새 평가 영상은 학습 및 checkpoint 선택에 사용한 validation 영상과도 겹칠 수 없다.
+
+```sh
+python test10/training.py --pairs /path/to/pair_selection.json \
+  --output-dir test10/training/run02 --epochs 30 --batch-records 4 --device cuda
+python test10/run.py --stage audit --training-dir test10/training/run02 --run-dir test10/runs/run02
+python test10/run.py --stage smoke --run-dir test10/runs/run02 --resume --budget-hours 4
+python test10/run.py --stage full --run-dir test10/runs/run02 --resume --budget-hours 4
+```
+
+`training.py`는 affine, residual MLP, spatial Transformer를 모두 새로 초기화해 동일 pair로 학습한다. MLP는 공간 head `64→128→64`, pointer head `256→512→256`의 residual 구조다. Transformer는 memory frame별 4×4 patch token 간 attention을 사용하며 시간·객체를 섞지 않는다. 모든 방법은 **전체 memory frame**을 입력으로 사용하므로 Transformer에 독립 pixel sampling을 적용하지 않는다. Loss는 valid record의 spatial MSE + pointer MSE이고, video 평균 validation loss가 최소인 epoch를 선택한다. 이는 state 정렬 학습이며 GT segmentation 품질을 직접 최적화하는 학습은 아니다.
+
+Affine의 형태는 그대로 `M̂[h,w]=W_s M[h,w]+b_s`, `p̂=W_p p+b_p`다. 공간 위치마다 같은 채널 변환을 사용하며 이웃 위치의 문맥은 보지 않는다. 가중치는 새 pair로 재학습해 nonlinear와 같은 데이터 조건에서 비교한다. MLP/Transformer에는 test9의 과거 checkpoint를 불러오는 fallback이 없다. 새 `train_report.json`, pair fingerprint, 학습 코드 hash와 checkpoint SHA-256이 일치해야 평가가 시작된다.
+
+runtime은 native prediction cache와 **state-only pair cache를 분리**한다. 새 pair는 `.pt` / `.pt.sha256` / `.prepare.json`으로 저장하고, self-injection gate로 active-memory Base+ 상태가 native continuation과 같은지 확인한다. 외부 pair를 평가 manifest의 `state_pair_path`와 `state_pair_sha256`으로 지정할 수도 있다. metadata의 video/object/처리 프레임/switch/SAM2 commit이 평가 조건과 일치해야 한다. Prefix가 16프레임보다 짧은 pair는 manifest의 `methods`에서 적용할 수 없는 replay 방법을 제외한다.
+
+데이터·SAM2·test9 adapter 경로의 기본 workspace는 이 저장소다. 다른 실험 workspace에서는 `TEST10_WORKSPACE=/workspace/...`, translator package 경로는 `TEST10_TRANSLATOR_REPO=/path/to/vos-memory-translator-nonlinear`로 지정한다. 학습에는 translator package가 필요하고, 영상 평가에는 기존 test9의 `mvp_common`, `mvp_scoring`, `sam2_session`과 원본 데이터·SAM2 checkpoint도 필요하다.
+
 ## 추가 영상 평가
 
 기존 결과와 겹치지 않는 영상 140개를 MOSEv2 development, LVOS v2 validation, DAVIS 2017 train, VOST validation에서 각각 35개씩 평가했다. 모두 완료됐고 self-injection gate 140/140 통과, 실패 0건, 단일 GPU 누적 시간 125.53분이었다. Direct Copy 대비 Affine의 큰 이득은 네 데이터셋에서 유지됐다. 새 MOSE 집합에서는 Affine이 Small-only보다 평균 8.68 J&F point 낮아, 원래 개발 집합의 결론을 그대로 일반화할 수 없다.
@@ -36,13 +80,17 @@ Component ablation에서는 spatial-only affine이 full affine에 가까운 점�
 
 ## 전환 시점 지표 (주 지표)
 
-주 지표는 **전환 직후 J&F**다. 처리 프레임 `switch+1`..`switch+6`, 즉 Base+의 첫 6개 출력에서 annotation이 있는 프레임의 J&F 평균이다. `switch` 프레임은 Small의 마지막 출력이므로 채점하지 않는다. 창 길이 6(`core.SWITCH_WINDOW`)은 SAM 2.1 `num_maskmem=7`(conditioning 1 + 최근 6)에서 변환된 최근 메모리가 남아 있는 구간이다. `+7`부터는 conditioning 기록만 변환된 상태로 남는다. LVOS/VOST offset은 처리 프레임 기준이므로 `+1..+6`은 원본 기준 LVOS 5~30, VOST 6~36 프레임 뒤다.
+주 지표는 처리 프레임 `switch+1`..`switch+10`, 즉 Base+ 첫 10개 출력에서 annotation이 있는 프레임의 J&F 평균이다. `switch`는 Small의 마지막 출력이므로 채점하지 않는다. 평가 창 10은 `num_maskmem=7`과 별개의 설정이다. spatial memory와 object pointer는 서로 다른 history 범위를 사용한다.
 
-- `+1`: Base+의 첫 출력 한 프레임
-- Suffix J&F(`post_switch`): 기존 지표, `switch+1`..`end` 전체 평균
-- summary.json의 `paired_switch_window`는 전환 직후 J&F, `paired`는 suffix J&F 기준 paired CI다.
+- `switch_window`: 첫 10개 출력 중 annotation이 있는 프레임의 J/F/J&F 평균 및 채점 수
+- `switch_frames`: `+1`부터 `+10`까지 각각의 처리 위치, 원본 stem, J/F/J&F, 채점 수와 상태
+- `scored`: GT로 채점됨; `missing_annotation`: GT 없음; `outside_suffix`: 과거 짧은 결과의 suffix 밖
+- 새 영상 평가에는 전환 후 10개 출력이 모두 있어야 한다. GT가 없는 위치도 기록하며 점수를 0으로 대체하지 않는다.
+- Suffix J&F(`post_switch`)는 `switch+1`..`end` 전체 평균으로 함께 남긴다.
 
-`runs/run01`, `runs/heldout01`의 현재 summary는 이 지표 도입 전에 만든 suffix 기준 결과다. 원 workspace에서 아래 명령으로 저장된 예측 cache를 다시 채점하면 갱신된다. 모델 load·추론은 하지 않으며, 다시 계산한 suffix 점수가 기존 값과 다르면 중단한다. `--stage rescore`와 `--report-only`는 test10 harness 코드 변경만 허용하고 모델·checkpoint·SAM 2·test9 채점 코드 hash는 계속 검증한다.
+case별 score JSON과 `switch_frames.csv`에 프레임별 값을 저장한다. `summary.json`에는 `+1`..`+10`의 J/F/J&F video 평균·CI·coverage, `paired_switch_frames`, `paired_switch_window` 및 기존 suffix `paired`를 기록한다. `summary.md`에도 10개 offset을 모두 표로 표시한다. LVOS/VOST offset은 처리 프레임 단위이며 원본 기준 각각 5/6 프레임 간격이다.
+
+기존 `runs/run01`, `runs/heldout01`의 공개 summary는 이전 suffix 기준 결과다. 원 workspace의 저장된 prediction cache에서 아래 명령으로 새 지표를 추가할 수 있다. 모델 load·추론은 하지 않으며, 기존 suffix 점수가 달라지면 중단한다. 새 translator 성능을 얻으려면 새 학습 후 새 run directory에서 추론해야 한다.
 
 ```sh
 python test10/run.py --stage rescore --run-dir test10/runs/run01
@@ -53,7 +101,7 @@ python test10/run.py --stage rescore --run-dir test10/runs/heldout01
 
 `handoff_diagnostics.py`는 저장된 prediction cache(`.pt`)만 읽어 두 지표를 계산한다. 모델 load·GPU 추론은 하지 않는다.
 
-- Early J&F: 전환 후 +1..+K 프레임(기본 6, SAM 2.1 `num_maskmem=7`에서 변환된 최근 메모리가 남아 있는 구간)의 GT J&F. 기존 `mvp_scoring.score` 경로를 그대로 사용한다.
+- Early J&F: 전환 후 +1..+K 프레임(기본 10, 프레임별 값도 별도 기록)의 GT J&F. 기존 `mvp_scoring.score` 경로를 그대로 사용한다.
 - IoU vs Base+: GT 없이 Base+-native 예측 mask와의 프레임별 IoU. early 구간과 suffix 전체를 따로 보고하며, 전환 프레임에서 Small/Base+ mask가 일치한 case(`switch_iou ≥ 0.9`)만 따로 집계한다.
 
 `.pt` cache와 원 workspace(`test9/`, `vos-data/`)가 있는 환경에서 원래 run directory를 대상으로 실행한다. 공개 사본은 cache가 없고 provenance 경로가 치환되어 있어 실행되지 않는다. 결과는 `<run-dir>/handoff_diagnostics.{json,md}`에 쓴다.
@@ -73,15 +121,14 @@ python test10/handoff_diagnostics.py --run-dir test10/runs/run01
 
 ## 재현 관련 주의
 
-CPU 계약 테스트 22개가 통과했다. 실험은 SAM 2 + CUDA 환경에서 실행됐으며, 선택적 `_C` post-processing extension을 불러오지 못해 fill-holes 후처리를 건너뛴다는 upstream 경고가 기록됐다. 추론과 gate는 완료됐지만, 이 동작은 재현 환경에서 확인해야 한다.
+기존 실험 실행 시 CPU 계약 테스트 22개가 통과했다. 실험은 SAM 2 + CUDA 환경에서 실행됐으며, 선택적 `_C` post-processing extension을 불러오지 못해 fill-holes 후처리를 건너뛴다는 upstream 경고가 기록됐다. 추론과 gate는 완료됐지만, 이 동작은 재현 환경에서 확인해야 한다.
 
-Harness는 실행 시 sibling `test9/`, `vos-data/`, `vos-checkpoints/`, `sam2/`와 맞는 Python/CUDA 환경을 기대한다. 현재 GitHub 저장소 clone만으로는 이 실험을 독립 재실행할 수 없다. 따라서 `test9` 패키지가 없는 clone에서는 해당 패키지를 import하는 affine/model adapter 테스트도 실행되지 않는다(현재 repository-only 확인에서 `mvp_common` 부재로 실패). 원 실험 workspace에서는 CPU 계약 테스트 22개가 통과했다. 필요한 데이터·checkpoint 권리와 경로를 준비한 뒤 실행한다. 이 실험 실행의 source 경로/hash와 설정은 [provenance.json](runs/run01/provenance.json)에 기록되어 있다.
+Harness는 실행 시 sibling `test9/`, `vos-data/`, `vos-checkpoints/`, `sam2/`와 맞는 Python/CUDA 환경을 기대한다. 현재 GitHub 저장소 clone만으로는 이 실험을 독립 재실행할 수 없다. 따라서 `test9` 패키지가 없는 clone에서는 해당 패키지를 import하는 affine/model adapter 테스트도 실행되지 않는다(현재 repository-only 확인에서 `mvp_common` 부재로 실패). 원 실험 workspace에서는 기존 실험 실행 시 CPU 계약 테스트 22개가 통과했다. 필요한 데이터·checkpoint 권리와 경로를 준비한 뒤 실행한다. 이 실험 실행의 source 경로/hash와 설정은 [provenance.json](runs/run01/provenance.json)에 기록되어 있다.
 
-기본 명령(위 외부 자산이 준비되어 있고, workspace root에서 실행):
+로컬 CPU 코드 검증 명령:
 
 ```sh
 python -m unittest discover -s test10/tests -v
-python test10/run.py --stage audit --run-dir test10/runs/run01
-python test10/run.py --stage smoke --run-dir test10/runs/run01 --resume --budget-hours 4
-python test10/run.py --stage full --run-dir test10/runs/run01 --resume --budget-hours 4
 ```
+
+실제 pair 예시 읽기·checksum·discrete alignment, 10개 offset/GT missingness 및 synthetic pair의 optimizer/checkpoint roundtrip을 확인한다. runtime 흐름은 CPU predictor 모형으로 확인한다. 실제 test9 평가 adapter, SAM2 GPU continuation 및 실제 데이터 재학습 성능은 이 CPU 검증에 포함되지 않는다.

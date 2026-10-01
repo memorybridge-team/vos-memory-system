@@ -13,7 +13,7 @@ sys.path.insert(0, str(Path(__file__).resolve().parents[1]))
 from core import (Artifacts, METHODS, GATE, ROOT, SWITCH_WINDOW, digest, key, positions, replay_frames,
                   select_smoke, freeze_schedule, snapshot, verify_snapshot, write, sha,
                   switch_window, suffix_scores, rescore_case, harness_excluded)
-from manifest import imports, make_case, normalize
+from manifest import library_imports, make_case, normalize
 from report import per_video, paired, build_report
 
 
@@ -141,13 +141,13 @@ class Contracts(unittest.TestCase):
 
     def test_audit_orchestration_does_not_infer(self):
         import run
-        selection={"schema":"test10.v1","seed":7,"cases":[case()]}
+        selection={"schema":"test10.v1","seed":7,"cases":[dict(case(),end=30,frame_stems=list(map(str,range(31))))]}
         fit={"fingerprint":{"sha256":"fit"},"videos":{"MOSEv2":[]},"shards":600,"records":11677}
         with tempfile.TemporaryDirectory() as tmp, ExitStack() as stack:
             args=run.parser().parse_args(["--stage","audit","--run-dir",tmp])
             stack.enter_context(patch("run.provenance",return_value={"files":{}}))
             stack.enter_context(patch("run.build",return_value=selection))
-            stack.enter_context(patch("run.verify_fit_store",return_value=fit))
+            stack.enter_context(patch("run.verify_training_collection",return_value=fit))
             stack.enter_context(patch("run.audit_legacy",return_value=[]))
             stack.enter_context(patch("run.select_smoke",return_value=selection["cases"]))
             real_read=run.read
@@ -169,20 +169,20 @@ def fake_scorer(calls):
 
 class SwitchWindow(unittest.TestCase):
     def test_window_is_first_k_base_outputs(self):
-        c = dict(case(), switch=16, end=30)
-        self.assertEqual(SWITCH_WINDOW, 6)
-        self.assertEqual(switch_window(c), [17, 18, 19, 20, 21, 22])
+        c = dict(case(), switch=16, end=30, frame_stems=list(map(str,range(31))))
+        self.assertEqual(SWITCH_WINDOW, 10)
+        self.assertEqual(switch_window(c), list(range(17, 27)))
         self.assertEqual(switch_window(c, 1), [17])
         self.assertEqual(switch_window(case()), [17, 18, 19, 20])  # suffix shorter than k
         with self.assertRaises(ValueError): switch_window(c, 0)
 
     def test_suffix_scores_add_window_with_same_scorer(self):
-        c = dict(case(), switch=16, end=30); calls = []
+        c = dict(case(), switch=16, end=30, frame_stems=list(map(str,range(31)))); calls = []
         masks = {p: "m" for p in range(17, 31)}
         scores = suffix_scores(c, masks, fake_scorer(calls))
-        self.assertEqual(calls, [list(range(17, 31)), list(range(17, 23))])
+        self.assertEqual(calls, [list(range(17, 31)), list(range(17, 27)), *[[i] for i in range(17, 27)]])
         w = scores["switch_window"]
-        self.assertEqual((w["k"], w["offsets"], w["frames"]), (6, [1, 2, 3, 4, 5, 6], 6))
+        self.assertEqual((w["k"], w["offsets"], w["frames"]), (10, list(range(1, 11)), 10))
         self.assertEqual(w["J_and_F"], .5)
         self.assertEqual(scores["post_switch"]["frames"], 14)
         with self.assertRaisesRegex(ValueError, "suffix frame mismatch"):
@@ -212,11 +212,11 @@ class SwitchWindow(unittest.TestCase):
                 store.save(c, method, origin="executed", scores=suffix_scores(c, masks, fake_scorer([])))
             store.save(c, GATE, gate_passed=True)
             r = build_report({"cases": [c]}, store)
-            self.assertEqual((r["switch_window"]["k"], r["switch_window"]["primary"]), (6, True))
+            self.assertEqual((r["switch_window"]["k"], r["switch_window"]["primary"]), (10, True))
             d = r["groups"]["all"]["datasets"]["MOSEv2"]
             self.assertEqual(d["methods"]["affine"]["switch_window"]["mean"], .5)
             self.assertEqual(d["paired_switch_window"]["affine-minus-direct"]["mean"], 0.)
-            self.assertIn("switch+1..switch+6", (Path(tmp) / "summary.md").read_text(encoding="utf-8"))
+            self.assertIn("switch+1..switch+10", (Path(tmp) / "summary.md").read_text(encoding="utf-8"))
             store.save(c, "direct", origin="executed", scores=fake_scorer([])(masks))
             with self.assertRaisesRegex(ValueError, "partial switch-window"):
                 build_report({"cases": [c]}, store)
@@ -246,16 +246,15 @@ class SwitchWindow(unittest.TestCase):
 class AffineCPU(unittest.TestCase):
     @classmethod
     def setUpClass(cls):
-        imports()
+        library_imports()
         import torch
         cls.torch=torch
 
-    def test_existing_affine_checkpoint_is_wx_plus_b(self):
+    def test_affine_form_is_wx_plus_b(self):
         from core import LEGACY
         from vos_memory_inspector.transformer_translator import build_translator,SAM21_MEMORY_SPEC
         torch=self.torch
         model=build_translator("linear",SAM21_MEMORY_SPEC,SAM21_MEMORY_SPEC)
-        model.load_state_dict(torch.load(LEGACY/"train/linear/epoch_030.pt",map_location="cpu",weights_only=True)["state_dict"])
         self.assertEqual(sum(p.numel() for p in model.parameters()),69952)
         x=torch.randn(3,64); p=torch.randn(3,256)
         torch.testing.assert_close(model._feature_head(x), x@model.feature.weight.T+model.feature.bias)
@@ -274,14 +273,21 @@ class AffineCPU(unittest.TestCase):
             t.testing.assert_close(getattr(result,unchanged),getattr(state,unchanged))
             self.assertFalse(t.equal(getattr(result,component),getattr(state,component)))
 
+    def runtime(self):
+        try:
+            import runtime
+            return runtime
+        except ModuleNotFoundError as exc:
+            raise unittest.SkipTest(f"external evaluation runtime is unavailable: {exc}")
+
     def test_logit_hash_detects_same_mask_different_logits(self):
-        from runtime import logit_hash
+        logit_hash = self.runtime().logit_hash
         t=self.torch
         self.assertNotEqual(logit_hash(t.tensor([1.,2.])),logit_hash(t.tensor([1.,3.])))
         with self.assertRaises(ValueError): logit_hash(t.tensor([float("nan")]))
 
     def test_backbone_hooks_restore_on_exception(self):
-        from runtime import Counter
+        Counter = self.runtime().Counter
         class Fake:
             def forward_image(self,x): return x
             def _get_image_feature(self,state,frame_idx,batch_size): return self.forward_image(frame_idx)
@@ -293,7 +299,7 @@ class AffineCPU(unittest.TestCase):
 
     def test_runtime_replay_restart_and_no_replay_with_cpu_predictor(self):
         """Exercise orchestration, hooks and interval checks without loading SAM2/GPU."""
-        import runtime
+        runtime = self.runtime()
         t=self.torch
         class FakePredictor:
             device=t.device("cpu")
@@ -322,7 +328,14 @@ class AffineCPU(unittest.TestCase):
         evaluator.base=FakePredictor(); evaluator.methods={"direct":Identity()}; evaluator.model_load_s=0.
         payload=dict(state=State(t.zeros(1),t.zeros(1),t.zeros(1)), export_s=.1,last_mask=t.zeros(2,2).numpy())
         c=case(); c["annotation_dir"]="unused"
+        def fake_propagate(model, state, *, start, end):
+            for pos, _, mask in model.propagate_in_video(state, start_frame_idx=start,
+                                                        max_frame_num_to_track=end-start):
+                yield pos, mask
         with ExitStack() as stack:
+            stack.enter_context(patch("runtime.fresh_inference_state", side_effect=lambda *_: {}))
+            stack.enter_context(patch("runtime.propagate", side_effect=fake_propagate))
+            stack.enter_context(patch("runtime.pack", side_effect=lambda mask: mask))
             stack.enter_context(patch("runtime.now",side_effect=time.perf_counter))
             stack.enter_context(patch("runtime.inference_context",side_effect=lambda *_:nullcontext()))
             stack.enter_context(patch("runtime.torch.autocast",side_effect=lambda *a,**k:nullcontext()))
@@ -347,7 +360,8 @@ class AffineCPU(unittest.TestCase):
                 evaluator.method(c,Frames(),payload,payload,"direct")
 
     def test_prediction_blob_cross_run_and_checksum(self):
-        from runtime import save_blob,load_blob
+        runtime = self.runtime()
+        save_blob, load_blob = runtime.save_blob, runtime.load_blob
         with tempfile.TemporaryDirectory() as tmp:
             source=Artifacts(Path(tmp)/"a",{}); target=Artifacts(Path(tmp)/"b",{},[source.root])
             save_blob(source,case(),"predictions",{"masks":{17:((1,),b"x")}})

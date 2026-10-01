@@ -6,14 +6,19 @@ from functools import lru_cache
 from pathlib import Path
 import sys
 
-from core import (WORKSPACE, REPO, LEGACY, ROOT, EPOCHS, DATASETS, PROTOCOL,
+from core import (WORKSPACE, REPO, LEGACY, ROOT, SWITCH_WINDOW, DATASETS, PROTOCOL,
                   digest, read, sha, rank, positions, snapshot)
 
 
-def imports():
+def library_imports():
+    """Training needs translator classes, without test9/SAM2 runtime imports."""
     for path in (REPO / "scripts", REPO / "src"):
         if str(path) not in sys.path:
             sys.path.insert(0, str(path))
+
+
+def imports():
+    library_imports()
     import mvp_common
     return mvp_common
 
@@ -52,14 +57,21 @@ def normalize(raw, dataset):
                 end_stem=int(raw.get("future_end_frame", raw.get("end_stem"))))
 
 
-def make_case(raw, checkpoint_videos, *, additional=False):
+def make_case(raw, checkpoint_videos, *, additional=False, preserve_switch=False):
     d, v = raw["dataset"], raw["video_id"]
     inv = inventory(d, v, raw.get("data_split", "train"), raw.get("video_dir_override"),
                     raw.get("annotation_dir_override")); stems = inv["frame_stems"]
     first = [int(s) for s in stems].index(raw["first_prompt_stem"])
     end = [int(s) for s in stems].index(raw["end_stem"])
     proposed = stems[max(first + 16, (first + end) // 2)] if additional and first + 16 < end else raw["switch_stem"]
-    first, switch, end = positions(stems, raw["first_prompt_stem"], proposed, raw["end_stem"])
+    if preserve_switch or raw.get("state_pair_path"):
+        switch = [int(s) for s in stems].index(raw["switch_stem"])
+        if not first <= switch < end:
+            raise ValueError("invalid prepared-pair switch position")
+    else:
+        first, switch, end = positions(stems, raw["first_prompt_stem"], proposed, raw["end_stem"])
+    if end - switch < SWITCH_WINDOW:
+        raise ValueError("fewer than ten post-switch processed frames")
     if stems[first] not in inv["annotations"]:
         raise ValueError("missing prompt annotation")
     if not any(s in inv["annotations"] for s in stems[switch + 1:end + 1]):
@@ -133,27 +145,32 @@ def verify_case(case):
     # Fresh content checks before a case; cached inventory is for manifest generation only.
     inventory.cache_clear()
     raw = dict(case, switch_stem=int(case["frame_stems"][case["switch"]]))
-    current = make_case(raw, set(), additional=False)
+    current = make_case(raw, set(), additional=False, preserve_switch=True)
     for field in ("input_sha256", "annotation_sha256", "frame_stems"):
         if current[field] != case[field]: raise ValueError(f"case inputs changed: {case['case_id']} {field}")
 
 
-def provenance():
+def provenance(training_dir):
     C = imports()
     import torch
     import numpy
     import PIL
     paths = list((REPO / "src").rglob("*.py")) + list((REPO / "scripts").glob("mvp_*.py"))
     paths += list(ROOT.glob("*.py"))
-    paths += [LEGACY / "train" / p / f"epoch_{e:03d}.pt" for p, e in EPOCHS.items()]
+    from training import training_report
+    trained = training_report(training_dir)
+    paths += [Path(training_dir) / "train_report.json"]
+    paths += [Path(training_dir) / row["checkpoint"] for row in trained["models"].values()]
     paths += [LEGACY / "selection.json", LEGACY / "ckpt_cases.json", LEGACY / "eval_ckpt/selection.json",
-              LEGACY / "train/train_report.json", LEGACY / "eval_dev/results.jsonl"]
+              LEGACY / "eval_dev/results.jsonl"]
     paths += list((LEGACY / "eval_dev").glob("run_meta_*.json"))
     paths += list((WORKSPACE / "sam2/sam2").rglob("*.py")) + list((WORKSPACE / "sam2/sam2/configs").rglob("*.yaml"))
     paths += [C.MODELS[k]["checkpoint"] for k in C.MODELS]
     return dict(protocol=PROTOCOL, files=snapshot(paths), models=C.model_provenance(),
                 legacy_source_digest=C.code_revision()["source_digest"], autocast="bfloat16",
-                epochs=EPOCHS, software={"python": sys.version, "torch": torch.__version__,
+                training=trained, training_dir=str(Path(training_dir).resolve()),
+                state_pair_schema="cmmt.prepared_handoff_case.v2", switch_window=10,
+                software={"python": sys.version, "torch": torch.__version__,
                                         "numpy": numpy.__version__, "PIL": PIL.__version__})
 
 

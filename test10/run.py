@@ -10,7 +10,7 @@ import time
 import traceback
 from statistics import median
 
-from core import (ROOT, WORKSPACE, METHODS, GATE, SWITCH_WINDOW, Artifacts, read, write, digest,
+from core import (ROOT, WORKSPACE, TRAINING, METHODS, GATE, SWITCH_WINDOW, Artifacts, read, write, digest,
                   select_smoke, freeze_schedule, verify_snapshot, harness_excluded, snapshot)
 from manifest import build, provenance, audit_legacy, imports
 from report import build_report
@@ -46,6 +46,8 @@ def parser():
                    help="rescore: CPU-only rescoring of saved predictions (adds the switch-window metric)")
     p.add_argument("--selection", type=Path, help="existing test10 manifest; omitted: deterministic candidates")
     p.add_argument("--run-dir", type=Path, default=ROOT / "runs/default")
+    p.add_argument("--training-dir", type=Path,
+                   help="completed fresh prepared-state-pair training; no legacy fallback")
     p.add_argument("--seed", type=int, default=7)
     p.add_argument("--resume", action="store_true")
     p.add_argument("--budget-hours", type=float, default=4.)
@@ -54,14 +56,17 @@ def parser():
     return p
 
 
-def verify_fit_store():
-    imports()
-    from vos_memory_inspector.paired_state_store import PairedStateStore
-    store = PairedStateStore(WORKSPACE / "test9/mvp_store", create=False)
-    shards = list(store.index(split="fit", verify_checksum=True))
-    return dict(shards=len(shards), records=sum(s["records"] for s in shards),
-                videos={d: sorted({s["video_id"] for s in shards if s["dataset"] == d}) for d in ("MOSEv2", "LVOSv2")},
-                fingerprint=store.fingerprint(split="fit"))
+def verify_training_collection(directory):
+    from training import training_report
+    report = training_report(directory)
+    rows = report["collection"]["pairs"]
+    # Validation also influenced checkpoint selection, so exclude both splits from evaluation.
+    videos = {}
+    for row in rows:
+        videos.setdefault(row["dataset"], set()).add(row["video_id"])
+    return dict(pairs=len(rows), records=sum(r["valid_records"] for r in rows),
+                videos={d: sorted(v) for d, v in videos.items()},
+                fingerprint=report["collection"]["fingerprint"])
 
 
 def run(args):
@@ -101,13 +106,15 @@ def locked_run(args):
             raise ValueError("selection differs from the saved run")
     else:
         if args.stage != "audit": raise ValueError("run --stage audit first")
-        prov = provenance()
+        prov = provenance(args.training_dir or TRAINING)
         selection = read(args.selection) if args.selection else build(args.seed)
         if selection.get("schema") != "test10.v1": raise ValueError("expected a test10 manifest")
         # Selection is committed before provenance; incomplete setup can be retried safely.
         write(manifest_path, selection)
         write(meta_path, prov)
     if args.seed != selection["seed"]: raise ValueError("seed differs from frozen manifest")
+    if args.training_dir and str(args.training_dir.resolve()) != prov.get("training_dir"):
+        raise ValueError("training directory differs from the frozen run; use a new run-dir")
     verify_snapshot(selection.get("source_hashes", {}))
     methods = tuple(selection.get("methods", METHODS))
     if not methods or any(m not in METHODS for m in methods):
@@ -121,15 +128,25 @@ def locked_run(args):
     if args.report_only:
         return build_report(selection, store, args.seed)
     if args.stage == "audit":
-        fit = verify_fit_store()
-        from core import LEGACY
-        trained = read(LEGACY / "train/train_report.json")
-        if fit["fingerprint"] != trained["store_fingerprint"]:
-            raise ValueError("fit store differs from trained checkpoint provenance")
+        fit = verify_training_collection(prov.get("training_dir", TRAINING))
         for dataset, videos in fit["videos"].items():
             eval_videos = {c["video_id"] for c in selection["cases"] if c["dataset"] == dataset}
             if set(videos) & eval_videos:
-                raise ValueError(f"fit/evaluation video overlap: {dataset}")
+                raise ValueError(f"training/validation and evaluation video overlap: {dataset}")
+        if any(c["end"] - c["switch"] < SWITCH_WINDOW for c in selection["cases"]):
+            raise ValueError("new evaluation requires all ten post-switch frames in every case")
+        for method in methods:
+            if method.startswith("anchor_replay_"):
+                count = int(method.rsplit("_", 1)[1])
+                if any(c["switch"] - c["first"] < count for c in selection["cases"]):
+                    raise ValueError(f"insufficient prefix frames for {method}; remove it from selection.methods")
+        for case in selection["cases"]:
+            if case.get("state_pair_path"):
+                from state_pairs import load_pair, verify_case_pair
+                if not case.get("state_pair_sha256"):
+                    raise ValueError("external state pairs require state_pair_sha256")
+                source, _, metadata = load_pair(case["state_pair_path"], expected_sha=case["state_pair_sha256"])
+                verify_case_pair(case, source, metadata)
         legacy = audit_legacy(selection, prov)
         write(args.run_dir / "legacy_audit.json", legacy)
         smoke = heldout_smoke(selection["cases"]) if selection.get("design") == "heldout.v1" else select_smoke(selection["cases"], args.seed)
@@ -173,7 +190,7 @@ def locked_run(args):
         if device_path.exists() and read(device_path) != device:
             raise ValueError("GPU/software environment changed; use a new run")
         write(device_path, device)
-        evaluator = Evaluator(args.seed)
+        evaluator = Evaluator(args.seed, training_dir=Path(prov["training_dir"]))
         if args.stage == "smoke":
             queue = [{"case_id": cid} for cid in smoke_ids]
         else:

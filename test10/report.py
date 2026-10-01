@@ -2,17 +2,20 @@
 from collections import defaultdict
 from statistics import mean, median
 import random
+import csv
 
 from core import METHODS, GATE, DATASETS, SWITCH_WINDOW, write
 
 METRICS = {
     "switch_window": ("switch_window", "J_and_F"),
     "J&F": ("post_switch", "J_and_F"), "J": ("post_switch", "J"), "F": ("post_switch", "F"),
-    "+1": ("checkpoints", "+1", "J_and_F"), "+5": ("checkpoints", "+5", "J_and_F"),
     "+20": ("checkpoints", "+20", "J_and_F"), "remaining": ("remaining", "J_and_F"),
     "visible_J&F": ("gt_visible", "J_and_F"), "absent_FP": ("false_positives", "rate"),
     "reappearance_failure": ("reappearance", "no_recovery_rate"),
     "reappearance_delay": ("reappearance", "mean_recovery_length")}
+for offset in range(1, SWITCH_WINDOW + 1):
+    for label, field in (("", "J_and_F"), ("_J", "J"), ("_F", "F")):
+        METRICS[f"+{offset}{label}"] = ("switch_frames", f"+{offset}", field)
 
 
 def value(row, path):
@@ -70,6 +73,10 @@ def build_report(selection, store, seed=7, scheduled=None):
     if len(set(windows) - {None}) > 1 or (None in windows and set(windows) != {None}):
         raise ValueError("mixed or partial switch-window scores; run --stage rescore to completion")
     window_k = windows[0] if windows else None
+    frame_rows = [r.get("scores", {}).get("switch_frames") for r in rows]
+    if any(frame_rows) and not all(f and all(f"+{i}" in f for i in range(1, SWITCH_WINDOW + 1))
+                                   for f in frame_rows):
+        raise ValueError("mixed or partial per-frame switch scores; run --stage rescore to completion")
     report = dict(protocol="test10.v1", design=selection.get("design", "original"),
                   methods=methods, candidate_cases=len(selection["cases"]), complete_cases=len(gates),
                   incomplete=missing, gate_cases=len(gates), groups={}, timing={},
@@ -107,12 +114,20 @@ def build_report(selection, store, seed=7, scheduled=None):
                                  for name, path in METRICS.items()}
                 table[method]["cases"] = len(method_rows)
                 table[method]["objects"] = len({(r["video_id"], r["object_id"]) for r in method_rows})
+                table[method]["switch_frame_coverage"] = {
+                    f"+{i}": {status: sum(value(r, ("switch_frames", f"+{i}", "status")) == status
+                                         for r in method_rows)
+                              for status in ("scored", "missing_annotation", "outside_suffix")}
+                    for i in range(1, SWITCH_WINDOW + 1)}
                 for event, field in (("absent", ("false_positives", "gt_absent_frames")),
                                      ("reappearance", ("reappearance", "count"))):
                     table[method][event + "_videos"] = len({r["video_id"] for r in method_rows if (value(r, field) or 0) > 0})
             datasets[dataset] = dict(methods=table, paired={f"{a}-minus-{b}": paired(sub,a,b,seed) for a,b in comparisons},
                                      paired_switch_window={f"{a}-minus-{b}": paired(sub,a,b,seed,"switch_window")
-                                                           for a,b in comparisons})
+                                                           for a,b in comparisons},
+                                     paired_switch_frames={f"+{i}": {
+                                         f"{a}-minus-{b}": paired(sub,a,b,seed,f"+{i}") for a,b in comparisons}
+                                         for i in range(1, SWITCH_WINDOW + 1)})
         macro, macro_window = {}, {}
         for method in methods:
             for target, name in ((macro, "J&F"), (macro_window, "switch_window")):
@@ -127,6 +142,15 @@ def build_report(selection, store, seed=7, scheduled=None):
             vals = [r[field] for r in measured if isinstance(r.get(field), (int,float))]
             report["timing"][method]["fields"][field] = median(vals) if vals else None
     write(store.root / "summary.json", report)
+    columns = ("case_id", "dataset", "video_id", "object_id", "method", "offset", "position",
+               "frame_stem", "status", "frames", "J", "F", "J_and_F")
+    with (store.root / "switch_frames.csv").open("w", newline="", encoding="utf-8") as stream:
+        writer = csv.DictWriter(stream, fieldnames=columns)
+        writer.writeheader()
+        for row in rows:
+            for frame in row.get("scores", {}).get("switch_frames", {}).values():
+                writer.writerow({**{key: row[key] for key in columns[:5]},
+                                 **{key: frame.get(key) for key in columns[5:]}})
     k = window_k or SWITCH_WINDOW
     def cell(metric):
         return "—" if metric is None else f"{100*metric['mean']:.2f} [{100*metric['ci95'][0]:.2f}, {100*metric['ci95'][1]:.2f}]"
@@ -146,6 +170,17 @@ def build_report(selection, store, seed=7, scheduled=None):
             first = "—" if row["+1"] is None else f"{100*row['+1']['mean']:.2f}"
             lines.append(f"| {d} | {m} | {row['cases']} | {metric['videos'] if metric else 0} | "
                          f"{cell(row['switch_window'])} | {first} | {cell(metric)} |")
+    lines += ["", "## 전환 후 프레임별 J&F (point)", "",
+              "GT가 없는 프레임 및 suffix 밖 프레임은 —로 표시합니다. "
+              "프레임별 J/F/J&F와 채점 상태는 switch_frames.csv, CI·paired 차이·누락 수는 summary.json에 기록합니다.", "",
+              "| Dataset | Method | " + " | ".join(f"+{i}" for i in range(1, SWITCH_WINDOW + 1)) + " |",
+              "|---|---|" + "---:|" * SWITCH_WINDOW]
+    for d in datasets_in_run:
+        for m in methods:
+            row = report["groups"]["all"]["datasets"][d]["methods"][m]
+            cells = ["—" if row[f"+{i}"] is None else f"{100*row[f'+{i}']['mean']:.2f}"
+                     for i in range(1, SWITCH_WINDOW + 1)]
+            lines.append(f"| {d} | {m} | " + " | ".join(cells) + " |")
     lines += ["", "세부 cohort, component ablation, visible/absent/reappearance, paired CI(`paired_switch_window`, `paired`) 및 비용은 summary.json을 참조하세요."]
     (store.root / "summary.md").write_text("\n".join(lines)+"\n", encoding="utf-8")
     return report

@@ -1,9 +1,9 @@
 #!/usr/bin/env python3
 """Offline post-switch diagnostics from saved prediction caches (no model load, no GPU).
 
-1. early_*: GT J/F/J&F over the first K post-switch frames only (default K=6). With
-   SAM 2.1 ``num_maskmem=7`` these are the frames whose recent-memory window still
-   contains translated records; from +7 on only the conditioning record is translated.
+1. early_*: GT J/F/J&F over the first K post-switch frames (default K=10),
+   with an individual score/status for every offset +1..+K. This horizon is
+   independent of the SAM 2.1 recent-memory lifetime.
    Scores reuse the test10 metric path (``mvp_scoring.score``) on a truncated suffix.
 2. agree_*: per-frame mask IoU against the Base+-native continuation (no GT), over the
    same early window and over the whole suffix. Both-empty frames score 1.
@@ -121,6 +121,17 @@ def case_rows(case, methods, load, decode, score, early_frames):
                    method=method, switch_iou=switch_iou, early_frames=len(early),
                    early_annotated=scores["frames"], early_J=scores["J"], early_F=scores["F"],
                    early_JF=scores["J_and_F"], agree_early=None, agree_full=None)
+        row["switch_frames"] = {}
+        for offset in range(1, early_frames + 1):
+            pos = case["switch"] + offset
+            frame = dict(position=pos, frame_stem=None, status="outside_suffix", frames=0,
+                         J=None, F=None, J_and_F=None, agree_base=None)
+            if pos <= case["end"]:
+                metric = score(case, method, {pos: predicted[pos]})["post_switch"]
+                frame.update(metric, frame_stem=case["frame_stems"][pos],
+                             status="scored" if metric["frames"] else "missing_annotation",
+                             agree_base=iou(decode(predicted[pos]), reference[pos]))
+            row["switch_frames"][f"+{offset}"] = frame
         if method != REFERENCE:
             ious = [iou(decode(predicted[p]), reference[p]) for p in suffix]
             row.update(agree_early=mean(ious[:len(early)]), agree_full=mean(ious))

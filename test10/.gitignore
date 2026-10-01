@@ -9,3 +9,4 @@ runs/heldout01/views/
 runs/heldout01/*.log
 *.pt
 .pytest_cache/
+training/

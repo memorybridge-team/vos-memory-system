@@ -8,8 +8,11 @@ from pathlib import Path
 from statistics import median
 
 ROOT = Path(__file__).resolve().parent
-WORKSPACE = ROOT.parent
-REPO = WORKSPACE / "test9/vos-memory-translator-nonlinear"
+WORKSPACE = Path(os.environ.get("TEST10_WORKSPACE", ROOT.parent)).resolve()
+REPO = Path(os.environ.get("TEST10_TRANSLATOR_REPO", WORKSPACE / "test9/vos-memory-translator-nonlinear")).resolve()
+if not REPO.is_dir() and "TEST10_TRANSLATOR_REPO" not in os.environ:
+    REPO = ROOT.parent.parent / "vos-memory-translator-nonlinear"
+TRAINING = ROOT / "training/default"
 LEGACY = WORKSPACE / "test9/mvp_runs/2026-09-28_mvp"
 METHODS = ("small_only", "base_native", "direct", "affine", "affine_spatial",
            "affine_pointer", "residual_mlp", "transformer", "last_mask",
@@ -17,12 +20,10 @@ METHODS = ("small_only", "base_native", "direct", "affine", "affine_spatial",
 GATE = "self_injection"
 DATASETS = ("MOSEv2", "LVOSv2", "DAVIS2017")
 WEIGHTS = {"MOSEv2": .4, "LVOSv2": .4, "DAVIS2017": .2}
-EPOCHS = {"linear": 30, "residual_mlp": 12, "base": 6}
 PROTOCOL = "test10.v1"
-# "At the switch" = the first SWITCH_WINDOW Base+ outputs (processed frames switch+1..switch+6).
-# SAM 2.1 num_maskmem=7 (1 conditioning + 6 recent): through +6 the recent-memory window still
-# holds translated records; from +7 only the conditioning record is translated.
-SWITCH_WINDOW = 6
+# Evaluate each of the first ten processed frames, including missing-GT status.
+# This is an evaluation horizon, not the SAM 2 memory lifetime (num_maskmem=7).
+SWITCH_WINDOW = 10
 SCORE_ROW_FIELDS = ("case_id", "dataset", "video_id", "object_id", "cohort", "checkpoint_video",
                     "method", "key", "status", "scores")
 
@@ -91,6 +92,17 @@ def suffix_scores(case, masks, score_positions, k=SWITCH_WINDOW):
         definition=f"annotated processed frames switch+1..switch+{k} (first {k} Base+ outputs)",
         k=k, offsets=[p - case["switch"] for p in window],
         frames=early["frames"], J=early["J"], F=early["F"], J_and_F=early["J_and_F"])
+    per_frame = {}
+    for offset in range(1, k + 1):
+        position = case["switch"] + offset
+        row = dict(offset=offset, position=position, frame_stem=None,
+                   status="outside_suffix", frames=0, J=None, F=None, J_and_F=None)
+        if position <= case["end"]:
+            metric = score_positions({position: masks[position]})["post_switch"]
+            row.update(frame_stem=case["frame_stems"][position], **metric)
+            row["status"] = "scored" if metric["frames"] else "missing_annotation"
+        per_frame[f"+{offset}"] = row
+    scores["switch_frames"] = per_frame
     return scores
 
 
@@ -121,7 +133,10 @@ def case_contract(case):
     # Selection order, cohort and filenames do not affect inference semantics.
     keys = ("dataset", "video_id", "object_id", "first", "switch", "end", "frame_stems",
             "input_sha256", "annotation_sha256", "sampling")
-    return {k: case[k] for k in keys}
+    contract = {k: case[k] for k in keys}
+    if "state_pair_sha256" in case:
+        contract["state_pair_sha256"] = case["state_pair_sha256"]
+    return contract
 
 
 def key(case, method, provenance):

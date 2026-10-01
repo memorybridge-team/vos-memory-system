@@ -8,18 +8,53 @@ import shutil
 import time
 from pathlib import Path
 
-from core import EPOCHS, LEGACY, METHODS, GATE, sha, write, read, key, suffix_scores
+from core import TRAINING, METHODS, GATE, sha, write, read, key, suffix_scores
 from core import rescore_case as core_rescore_case
-from manifest import imports, verify_case
+from manifest import imports, library_imports, verify_case
 
-C = imports()
+library_imports()
 import torch
-from mvp_scoring import pack, score
-from vos_memory_inspector.sam2_session import (SharedVideoFrames, fresh_inference_state,
-    inference_context, load_label_mask, propagate)
 from vos_memory_inspector.sam2_state import canonicalize_sam2_inference_state, inject_sam2_canonical_state
 from vos_memory_inspector.transformer_translator import build_translator, SAM21_MEMORY_SPEC
 from vos_memory_inspector.translators import DirectCopyTranslator, LearnedComponentPolicyTranslator
+from vos_memory_inspector.upstream import SUPPORTED_SAM2_COMMIT
+from state_pairs import active_state, load_pair, save_pair, verify_case_pair, MODELS
+from training import load_models
+
+
+def session():
+    from vos_memory_inspector import sam2_session
+    return sam2_session
+
+
+def SharedVideoFrames(*args, **kwargs):
+    return session().SharedVideoFrames(*args, **kwargs)
+
+
+def fresh_inference_state(*args, **kwargs):
+    return session().fresh_inference_state(*args, **kwargs)
+
+
+def inference_context(*args, **kwargs):
+    return session().inference_context(*args, **kwargs)
+
+
+def load_label_mask(*args, **kwargs):
+    return session().load_label_mask(*args, **kwargs)
+
+
+def propagate(*args, **kwargs):
+    return session().propagate(*args, **kwargs)
+
+
+def pack(mask):
+    from mvp_scoring import pack as pack_mask
+    return pack_mask(mask)
+
+
+def score(payload):
+    from mvp_scoring import score as score_predictions
+    return score_predictions(payload)
 
 
 def now():
@@ -87,6 +122,8 @@ def load_blob(store, case, name):
 def score_positions(case, method, masks):
     """test9 scorer on any contiguous post-switch prefix given by the mask positions."""
     stems = case["frame_stems"]
+    if not any((Path(case["annotation_dir"]) / f"{stems[p]}.png").is_file() for p in masks):
+        return {"post_switch": dict(frames=0, J=None, F=None, J_and_F=None), "checkpoints": {}}
     result = score(dict(case_id=case["case_id"], method=method, masks=masks,
                         stems={p: stems[p] for p in masks}, annotation_dir=case["annotation_dir"],
                         object_id=case["object_id"], switch_position=case["switch"],
@@ -117,26 +154,23 @@ def rescore_case(case, store, methods):
 
 
 class Evaluator:
-    def __init__(self, seed=7):
+    def __init__(self, seed=7, *, training_dir=TRAINING):
         if not torch.cuda.is_available(): raise RuntimeError("CUDA is required for smoke/full")
+        C = imports()
         torch.manual_seed(seed)
+        self.seed = seed
         t0 = now()
         self.small, self.base = C.build_predictor("small"), C.build_predictor("base_plus")
         self.model_load_s = now() - t0
         self.methods = {"direct": DirectCopyTranslator(SAM21_MEMORY_SPEC)}
-        for preset, epoch in EPOCHS.items():
-            payload = torch.load(LEGACY / "train" / preset / f"epoch_{epoch:03d}.pt", map_location="cpu", weights_only=True)
-            model = build_translator(preset, SAM21_MEMORY_SPEC, SAM21_MEMORY_SPEC).cuda().eval()
-            model.load_state_dict(payload["state_dict"])
-            name = {"linear": "affine", "base": "transformer"}.get(preset, preset)
-            self.methods[name] = model
+        self.methods.update(load_models(training_dir, "cuda"))
         affine = self.methods["affine"]
         self.methods["affine_spatial"] = LearnedComponentPolicyTranslator(affine, learned_components=("spatial_memory",))
         self.methods["affine_pointer"] = LearnedComponentPolicyTranslator(affine, learned_components=("object_pointer",))
 
-    def prefix(self, case, frames, model, store, name):
+    def prefix(self, case, frames, model, store, name, *, need_state=False):
         cached = load_blob(store, case, name)
-        if cached is not None: return cached
+        if cached is not None and not need_state: return cached
         state = fresh_inference_state(model, frames)
         prompt = load_label_mask(Path(case["annotation_dir"]) / f"{case['frame_stems'][case['first']]}.png", case["object_id"])
         with inference_context("bfloat16"), Counter(model) as counter:
@@ -150,7 +184,9 @@ class Evaluator:
             prefix_s = now() - started
             last_mask = (mask > 0).cpu().numpy()
             started = now()
-            canonical = canonicalize_sam2_inference_state(state, switch_frame=case["switch"], strict=True)
+            canonical = active_state(canonicalize_sam2_inference_state(
+                state, switch_frame=case["switch"], strict=True),
+                num_maskmem=model.num_maskmem, max_obj_ptrs=model.max_obj_ptrs_in_encoder)
             export_s = now() - started
             # Preserve the true native suffix, not a suffix produced by reinjection.
             masks, hashes = {}, {}
@@ -161,11 +197,44 @@ class Evaluator:
             continuation_s = now() - cont_start
             if counter.frames != list(range(case["first"], case["end"] + 1)):
                 raise RuntimeError("native prefix/suffix backbone calls differ from frame timeline")
-        payload = dict(state=canonical, last_mask=last_mask, masks=masks, logit_hashes=hashes,
+        payload = dict(last_mask=last_mask, masks=masks, logit_hashes=hashes,
                        prefix_s=prefix_s, export_s=export_s, continuation_s=continuation_s,
                        backbone_frames=counter.frames)
         save_blob(store, case, name, payload)
+        # Canonical states are saved together only in the state-only v2 pair.
+        if need_state: payload["state"] = canonical
         return payload
+
+    def paired_prefix(self, case, frames, store):
+        path = store.path(case, "state_pair", ".pt")
+        external = case.get("state_pair_path")
+        if external:
+            if not case.get("state_pair_sha256"):
+                raise ValueError("external state_pair_path requires state_pair_sha256 in the manifest")
+            pair = load_pair(external, expected_sha=case["state_pair_sha256"])
+        elif path.is_file():
+            pair = load_pair(path)
+        else:
+            pair = None
+        source = self.prefix(case, frames, self.small, store, "source_prefix", need_state=pair is None)
+        native = self.prefix(case, frames, self.base, store, "base_prefix", need_state=pair is None)
+        if pair is None:
+            metadata = dict(MODELS, upstream_commit=SUPPORTED_SAM2_COMMIT,
+                video_id=case["video_id"], object_id=case["object_id"], switch_frame=case["switch"],
+                num_frames=len(frames), seed=self.seed, device="cuda", path_policy="runtime_paths_not_stored",
+                cache_mode="state_only", active_memory_only=True, num_maskmem=self.base.num_maskmem,
+                max_obj_ptrs_in_encoder=self.base.max_obj_ptrs_in_encoder)
+            save_pair(path, source.pop("state"), native.pop("state"), metadata)
+            pair = load_pair(path)
+        small_state, base_state, metadata = pair
+        verify_case_pair(case, small_state, metadata)
+        if metadata["upstream_commit"] != SUPPORTED_SAM2_COMMIT:
+            raise ValueError("pair was prepared with a different SAM2 upstream commit")
+        if (metadata["num_maskmem"] != self.base.num_maskmem or
+                metadata["max_obj_ptrs_in_encoder"] != self.base.max_obj_ptrs_in_encoder):
+            raise ValueError("pair active-memory limits differ from target predictor")
+        source["state"], native["state"] = small_state, base_state
+        return source, native
 
     def case(self, case, store, *, measure=False, methods=METHODS):
         started = time.perf_counter()
@@ -175,8 +244,7 @@ class Evaluator:
         frames = SharedVideoFrames(case["video_dir"], device="cuda")
         if frames.stems != case["frame_stems"]: raise ValueError("frame order changed")
         try:
-            source = self.prefix(case, frames, self.small, store, "source_prefix")
-            native = self.prefix(case, frames, self.base, store, "base_prefix")
+            source, native = self.paired_prefix(case, frames, store)
             for method, payload in (("small_only", source), ("base_native", native)):
                 if store.load(case, method) is None:
                     store.save(case, method, origin="executed_or_cached_prefix", scores=score_masks(case, method, payload["masks"]),
