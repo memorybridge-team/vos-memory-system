@@ -30,6 +30,15 @@ TEST10_TRANSLATOR_REPO=/home/home/test/test9/vos-memory-translator-nonlinear \
 
 선택 JSON은 로컬 절대 경로를 담으므로 Git에 올리지 않는다. 전체 collection은 22,644 pairs로 매우 크며 학습 전에 디스크 I/O와 학습 시간을 따로 계획해야 한다. State pair만으로 영상 평가가 가능한 것은 아니다. 평가에는 원본 RGB·annotation, SAM2 checkpoint, 일치하는 case manifest가 추가로 필요하다. 특히 학습/validation에 쓴 영상은 평가 held-out 집합에서 제외한다.
 
+5시간 budget 실험처럼 fit 영상을 다시 train/validation으로 분리하려면 catalog 대신 `experiment_selection.py`를 사용한다. Seed 7로 MOSEv2는 500/100개 서로 다른 영상, LVOSv2는 각각 250/75개 영상에서 train 500 pair와 validation 100 pair를 선택한다. 영상별 최대 2 pair이며, 두 split의 영상은 겹치지 않는다.
+
+```sh
+TEST10_WORKSPACE=/home/home/test TEST10_TRANSLATOR_REPO=/home/home/test/test9/vos-memory-translator-nonlinear \
+/home/home/test/.cuda-bench-env/bin/python test10/experiment_selection.py \
+  --catalog /home/home/test/test10_pair_selection.json \
+  --output /home/home/test/test10_fit_1000_train_200_val.json
+```
+
 ```json
 {
   "schema": "test10.pair_selection.v1",
