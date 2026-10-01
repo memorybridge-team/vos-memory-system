@@ -18,6 +18,18 @@ Small이 frame `t`까지 처리한 상태를 Base+에 전달해 `t+1`부터 이�
 
 학습 collection은 명시적인 JSON으로 지정한다. 경로는 이 JSON 파일 기준이며, 각 pair에는 세 파일이 모두 있어야 한다. 예시 2개를 자동으로 학습 데이터로 사용하지 않는다.
 
+RunPod에서 내려받은 전체 state-pair 디렉터리는 변환하거나 복사할 필요가 없다. `MOSEv2/{fit,development}`, `LVOSv2/{fit,development}`, `manifests/`가 한 root 아래 있으면 다음 명령으로 선택 JSON을 만든다. `fit`은 train, `development`는 validation이며 영상 단위 분리를 확인한다. 원본 tensor의 SHA256은 학습 로더가 실제로 읽을 때 검증한다.
+
+```sh
+TEST10_WORKSPACE=/home/home/test \
+TEST10_TRANSLATOR_REPO=/home/home/test/test9/vos-memory-translator-nonlinear \
+/home/home/test/.cuda-bench-env/bin/python test10/pair_catalog.py \
+  --root /mnt/c/Users/Home/runpod-state-pairs \
+  --output /home/home/test/test10_pair_selection.json
+```
+
+선택 JSON은 로컬 절대 경로를 담으므로 Git에 올리지 않는다. 전체 collection은 22,644 pairs로 매우 크며 학습 전에 디스크 I/O와 학습 시간을 따로 계획해야 한다. State pair만으로 영상 평가가 가능한 것은 아니다. 평가에는 원본 RGB·annotation, SAM2 checkpoint, 일치하는 case manifest가 추가로 필요하다. 특히 학습/validation에 쓴 영상은 평가 held-out 집합에서 제외한다.
+
 ```json
 {
   "schema": "test10.pair_selection.v1",

@@ -36,12 +36,12 @@ def collection(path):
         if file in seen:
             raise ValueError("duplicate pair path")
         seen.add(file)
-        source, _, metadata = load_pair(file)
+        source, _, metadata = load_pair(file, expected_sha=item.get("sha256"))
         if metadata["video_id"] != item["video_id"]:
             raise ValueError("pair/selection video mismatch")
         video = (item["dataset"], item["video_id"])
         videos[split].add(video)
-        rows.append(dict(item, path=str(file), sha256=sha(file),
+        rows.append(dict(item, path=str(file), sha256=item.get("sha256") or sha(file),
                          valid_records=source.valid_record_count(),
                          upstream_commit=metadata["upstream_commit"]))
     if not all(videos.values()) or videos["train"] & videos["validation"]:

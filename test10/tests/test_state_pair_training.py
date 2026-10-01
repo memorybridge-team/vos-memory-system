@@ -11,6 +11,7 @@ sys.path.insert(0, str(Path(__file__).resolve().parents[1]))
 from core import ROOT, Artifacts, write, read, suffix_scores
 from state_pairs import load_pair, save_pair, validate_pair, active_state, SCHEMA, MODELS
 import training
+import pair_catalog
 import torch
 from vos_memory_inspector.state_schema import CanonicalState
 from vos_memory_inspector.upstream import SUPPORTED_SAM2_COMMIT
@@ -109,6 +110,30 @@ class PairContract(unittest.TestCase):
 
 
 class FreshTraining(unittest.TestCase):
+    def test_downloaded_pair_catalog_uses_fit_and_development_without_copying(self):
+        with tempfile.TemporaryDirectory() as tmp:
+            root = Path(tmp)
+            for dataset, prefix in pair_catalog.DATASETS.items():
+                for source_split in pair_catalog.SPLITS:
+                    video = f"{prefix}_{source_split}"
+                    directory = root / dataset / source_split
+                    directory.mkdir(parents=True)
+                    synthetic_pair(directory / f"{video}.pt", video)
+                    write(root / "manifests" / f"{prefix}_train_v1_{source_split}.json", dict(
+                        schema_version="cmmt.video_split_manifest.v1",
+                        dataset="LVOS v2" if dataset == "LVOSv2" else dataset,
+                        split=source_split, videos=[video], video_count=1, case_count=1))
+            selection = pair_catalog.build(root)
+            self.assertEqual(len(selection["pairs"]), 4)
+            self.assertEqual({row["split"] for row in selection["pairs"]}, {"train", "validation"})
+            self.assertTrue(all(Path(row["path"]).is_file() for row in selection["pairs"]))
+            write(root / "pairs.json", selection)
+            self.assertEqual(len(training.collection(root / "pairs.json")["pairs"]), 4)
+            manifest = root / "manifests/mosev2_train_v1_fit.json"
+            info = read(manifest); info["videos"] = ["wrong_video"]; write(manifest, info)
+            with self.assertRaisesRegex(ValueError, "outside split"):
+                pair_catalog.build(root)
+
     def test_synthetic_optimizer_checkpoint_and_evaluation_loader_roundtrip(self):
         # A one-step synthetic integration check; does not train on the example videos.
         old_threads = torch.get_num_threads(); torch.set_num_threads(1)
