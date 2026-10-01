@@ -1,0 +1,93 @@
+{
+  "admitted": true,
+  "available_seconds": 3404.831052995003,
+  "estimated_seconds": 932.3357439210049,
+  "margin": 1.2,
+  "reserve_seconds": 1800,
+  "rule": "all 20 predeclared videos or none; dataset/length-bin median runtime only; no accuracy selection",
+  "original_schedule_digest": "47af36316cc29ae76da2db4f2cc6d5b70da37cd4faf8e712fc8390b7a778551b",
+  "selection_digest": "cae2cb26a9d067fac0941f6d247d965c485aaf8176a91b7906f47d45ca41aeb5",
+  "cases": [
+    {
+      "case_id": "MOSEv2:efk04oqc:obj1:switch00055",
+      "estimated_seconds": 35.44109417499567
+    },
+    {
+      "case_id": "LVOSv2:beR0WT11:obj1:switch00001746",
+      "estimated_seconds": 176.76174201999675
+    },
+    {
+      "case_id": "DAVIS2017:rhino:obj1:switch00044",
+      "estimated_seconds": 17.581146199001523
+    },
+    {
+      "case_id": "VOST:1207_break_garlic:obj1:switch00690",
+      "estimated_seconds": 52.91936401100247
+    },
+    {
+      "case_id": "MOSEv2:67138c33:obj1:switch00026",
+      "estimated_seconds": 13.63420679149931
+    },
+    {
+      "case_id": "LVOSv2:F52kIGgi:obj1:switch00000586",
+      "estimated_seconds": 53.39412341050411
+    },
+    {
+      "case_id": "DAVIS2017:upside-down:obj1:switch00032",
+      "estimated_seconds": 12.313450008001382
+    },
+    {
+      "case_id": "VOST:1200_cut_onion:obj1:switch00270",
+      "estimated_seconds": 23.078966738001327
+    },
+    {
+      "case_id": "MOSEv2:ln3zsx8y:obj1:switch00027",
+      "estimated_seconds": 26.068683544999658
+    },
+    {
+      "case_id": "LVOSv2:FFMl5yqs:obj1:switch00000666",
+      "estimated_seconds": 87.27300695599843
+    },
+    {
+      "case_id": "DAVIS2017:elephant:obj1:switch00039",
+      "estimated_seconds": 14.688606048999645
+    },
+    {
+      "case_id": "VOST:4016_cut_herbs:obj1:switch00300",
+      "estimated_seconds": 34.057260665002104
+    },
+    {
+      "case_id": "MOSEv2:hzkwgfld:obj1:switch00049",
+      "estimated_seconds": 35.44109417499567
+    },
+    {
+      "case_id": "LVOSv2:KPDIQo5u:obj2:switch00002761",
+      "estimated_seconds": 176.76174201999675
+    },
+    {
+      "case_id": "DAVIS2017:flamingo:obj1:switch00039",
+      "estimated_seconds": 17.581146199001523
+    },
+    {
+      "case_id": "VOST:994_cut_onion:obj2:switch00816",
+      "estimated_seconds": 52.91936401100247
+    },
+    {
+      "case_id": "MOSEv2:0rvb6kp2:obj1:switch00020",
+      "estimated_seconds": 13.63420679149931
+    },
+    {
+      "case_id": "LVOSv2:KGguT1Cu:obj1:switch00000611",
+      "estimated_seconds": 53.39412341050411
+    },
+    {
+      "case_id": "DAVIS2017:lady-running:obj2:switch00032",
+      "estimated_seconds": 12.313450008001382
+    },
+    {
+      "case_id": "VOST:5551_close_notepad:obj1:switch00150",
+      "estimated_seconds": 23.078966738001327
+    }
+  ],
+  "core_complete_before_extension": true
+}

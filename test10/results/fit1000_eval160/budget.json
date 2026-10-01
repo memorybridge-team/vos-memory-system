@@ -1,0 +1,806 @@
+{
+  "elapsed_seconds": 7639.382988842997,
+  "hours": 2.8,
+  "attempts": [
+    {
+      "case_id": "MOSEv2:e33cddc9:obj1:switch00016",
+      "status": "complete",
+      "seconds": 16.63796435000404
+    },
+    {
+      "case_id": "LVOSv2:fqbAXAoT:obj1:switch00000521",
+      "status": "complete",
+      "seconds": 55.03390048100118
+    },
+    {
+      "case_id": "DAVIS2017:tuk-tuk:obj2:switch00029",
+      "status": "complete",
+      "seconds": 14.588842044999183
+    },
+    {
+      "case_id": "VOST:6922_split_paper:obj1:switch00228",
+      "status": "complete",
+      "seconds": 30.055618808000872
+    },
+    {
+      "case_id": "MOSEv2:31rry8ca:obj1:switch00045",
+      "status": "complete",
+      "seconds": 32.68088290399464
+    },
+    {
+      "case_id": "LVOSv2:UZzAPST3:obj2:switch00000661",
+      "status": "complete",
+      "seconds": 97.21731339699909
+    },
+    {
+      "case_id": "DAVIS2017:scooter-gray:obj2:switch00037",
+      "status": "complete",
+      "seconds": 19.366188569998485
+    },
+    {
+      "case_id": "VOST:10625_knead_dough:obj1:switch00354",
+      "status": "complete",
+      "seconds": 42.155138412999804
+    },
+    {
+      "case_id": "MOSEv2:k0vcz0st:obj1:switch00114",
+      "status": "complete",
+      "seconds": 76.9473030520021
+    },
+    {
+      "case_id": "LVOSv2:vjG0jbkQ:obj2:switch00002531",
+      "status": "complete",
+      "seconds": 263.72680577300343
+    },
+    {
+      "case_id": "DAVIS2017:stroller:obj1:switch00045",
+      "status": "complete",
+      "seconds": 21.554215184005443
+    },
+    {
+      "case_id": "VOST:5118_squeeze_bag:obj1:switch00444",
+      "status": "complete",
+      "seconds": 53.671039213004406
+    },
+    {
+      "case_id": "MOSEv2:aa185af5:obj2:switch00024",
+      "status": "complete",
+      "seconds": 14.25193405799655
+    },
+    {
+      "case_id": "LVOSv2:rSFfONgp:obj1:switch00000586",
+      "status": "complete",
+      "seconds": 54.358600679006486
+    },
+    {
+      "case_id": "DAVIS2017:motocross-bumps:obj2:switch00029",
+      "status": "complete",
+      "seconds": 12.434361204999732
+    },
+    {
+      "case_id": "VOST:559_cut_cucumber:obj4:switch00480",
+      "status": "complete",
+      "seconds": 25.433248868997907
+    },
+    {
+      "case_id": "MOSEv2:51vddywa:obj1:switch00037",
+      "status": "complete",
+      "seconds": 24.906051909994858
+    },
+    {
+      "case_id": "LVOSv2:3nsHQkEK:obj1:switch00000816",
+      "status": "complete",
+      "seconds": 74.86299859800056
+    },
+    {
+      "case_id": "DAVIS2017:kid-football:obj2:switch00033",
+      "status": "complete",
+      "seconds": 13.9037372160019
+    },
+    {
+      "case_id": "VOST:5304_unpack_broccoli:obj1:switch00264",
+      "status": "complete",
+      "seconds": 33.9577030090004
+    },
+    {
+      "case_id": "MOSEv2:aatd0ihe:obj1:switch00053",
+      "status": "complete",
+      "seconds": 25.210752512997715
+    },
+    {
+      "case_id": "LVOSv2:afoR2rH6:obj1:switch00001561",
+      "status": "complete",
+      "seconds": 204.76581435000116
+    },
+    {
+      "case_id": "DAVIS2017:drone:obj1:switch00045",
+      "status": "complete",
+      "seconds": 18.49242649399821
+    },
+    {
+      "case_id": "VOST:9383_spread_cement:obj1:switch00444",
+      "status": "complete",
+      "seconds": 53.5041141019974
+    },
+    {
+      "case_id": "MOSEv2:5d107jy0:obj1:switch00021",
+      "status": "complete",
+      "seconds": 16.176580649000243
+    },
+    {
+      "case_id": "LVOSv2:bxjTooAn:obj4:switch00000961",
+      "status": "complete",
+      "seconds": 59.256333772995276
+    },
+    {
+      "case_id": "DAVIS2017:crossing:obj2:switch00025",
+      "status": "complete",
+      "seconds": 11.085759724999662
+    },
+    {
+      "case_id": "VOST:8267_pour_flour:obj1:switch00192",
+      "status": "complete",
+      "seconds": 21.940106977999676
+    },
+    {
+      "case_id": "MOSEv2:pz9rf3kp:obj1:switch00040",
+      "status": "complete",
+      "seconds": 26.117420732000028
+    },
+    {
+      "case_id": "LVOSv2:LEo03dYV:obj1:switch00000906",
+      "status": "complete",
+      "seconds": 83.31623077100085
+    },
+    {
+      "case_id": "DAVIS2017:stunt:obj1:switch00035",
+      "status": "complete",
+      "seconds": 14.476506702005281
+    },
+    {
+      "case_id": "VOST:4340_roll_dough:obj1:switch00366",
+      "status": "complete",
+      "seconds": 37.68299786299758
+    },
+    {
+      "case_id": "MOSEv2:or8eklj5:obj1:switch00059",
+      "status": "complete",
+      "seconds": 37.347529630998906
+    },
+    {
+      "case_id": "LVOSv2:HYSm91eM:obj6:switch00001246",
+      "status": "complete",
+      "seconds": 134.21391347600002
+    },
+    {
+      "case_id": "DAVIS2017:bmx-bumps:obj1:switch00044",
+      "status": "complete",
+      "seconds": 18.445024632004788
+    },
+    {
+      "case_id": "VOST:4031_cut_broccoli:obj1:switch00528",
+      "status": "complete",
+      "seconds": 62.81669966699701
+    },
+    {
+      "case_id": "MOSEv2:tug3h8uh:obj1:switch00026",
+      "status": "complete",
+      "seconds": 19.117507308001223
+    },
+    {
+      "case_id": "LVOSv2:cmprgw5z:obj1:switch00000586",
+      "status": "complete",
+      "seconds": 53.30138681599783
+    },
+    {
+      "case_id": "DAVIS2017:surf:obj3:switch00027",
+      "status": "complete",
+      "seconds": 11.389261707001424
+    },
+    {
+      "case_id": "VOST:4357_trim_dough:obj1:switch00138",
+      "status": "complete",
+      "seconds": 16.752774803004286
+    },
+    {
+      "case_id": "MOSEv2:r2iallw7:obj1:switch00028",
+      "status": "complete",
+      "seconds": 19.76786994899885
+    },
+    {
+      "case_id": "LVOSv2:3bvEjhOT:obj2:switch00001151",
+      "status": "complete",
+      "seconds": 158.25365645800048
+    },
+    {
+      "case_id": "DAVIS2017:tennis:obj2:switch00034",
+      "status": "complete",
+      "seconds": 15.060352735003107
+    },
+    {
+      "case_id": "VOST:1206_cut_mango:obj1:switch00480",
+      "status": "complete",
+      "seconds": 30.541351174993906
+    },
+    {
+      "case_id": "MOSEv2:bd9untye:obj1:switch00059",
+      "status": "complete",
+      "seconds": 35.86133135000273
+    },
+    {
+      "case_id": "LVOSv2:UgZ759gD:obj1:switch00001416",
+      "status": "complete",
+      "seconds": 128.00020365900127
+    },
+    {
+      "case_id": "DAVIS2017:mallard-water:obj1:switch00039",
+      "status": "complete",
+      "seconds": 16.54038164800295
+    },
+    {
+      "case_id": "VOST:5110_paint_nail:obj1:switch00654",
+      "status": "complete",
+      "seconds": 64.62820450700383
+    },
+    {
+      "case_id": "MOSEv2:ca619b7f:obj2:switch00016",
+      "status": "complete",
+      "seconds": 10.994337748001271
+    },
+    {
+      "case_id": "LVOSv2:yExgitit:obj1:switch00000656",
+      "status": "complete",
+      "seconds": 59.37794181299978
+    },
+    {
+      "case_id": "DAVIS2017:horsejump-low:obj2:switch00029",
+      "status": "complete",
+      "seconds": 12.406668955998612
+    },
+    {
+      "case_id": "VOST:1205_cut_mango:obj3:switch00300",
+      "status": "complete",
+      "seconds": 20.512525570004073
+    },
+    {
+      "case_id": "MOSEv2:iijj01lq:obj1:switch00041",
+      "status": "complete",
+      "seconds": 26.190033614999265
+    },
+    {
+      "case_id": "LVOSv2:Erx5Q6Vf:obj1:switch00001011",
+      "status": "complete",
+      "seconds": 91.23230051500286
+    },
+    {
+      "case_id": "DAVIS2017:breakdance-flare:obj1:switch00035",
+      "status": "complete",
+      "seconds": 14.50483099399571
+    },
+    {
+      "case_id": "VOST:4222_peel_wire:obj1:switch00348",
+      "status": "complete",
+      "seconds": 37.45459251700231
+    },
+    {
+      "case_id": "MOSEv2:zj3p2iaa:obj1:switch00050",
+      "status": "complete",
+      "seconds": 19.68841718800104
+    },
+    {
+      "case_id": "LVOSv2:x3nD3QQ9:obj1:switch00001491",
+      "status": "complete",
+      "seconds": 133.54085021300125
+    },
+    {
+      "case_id": "DAVIS2017:dog-gooses:obj4:switch00042",
+      "status": "complete",
+      "seconds": 17.58169977200305
+    },
+    {
+      "case_id": "VOST:7202_clean_car:obj1:switch00390",
+      "status": "complete",
+      "seconds": 41.237359844999446
+    },
+    {
+      "case_id": "MOSEv2:nu73npba:obj1:switch00023",
+      "status": "complete",
+      "seconds": 13.017548198004079
+    },
+    {
+      "case_id": "LVOSv2:pyq6I5Hh:obj3:switch00000486",
+      "status": "complete",
+      "seconds": 45.135503729994525
+    },
+    {
+      "case_id": "DAVIS2017:dance-jump:obj1:switch00029",
+      "status": "complete",
+      "seconds": 12.28578143800405
+    },
+    {
+      "case_id": "VOST:1210_cut_garlic:obj1:switch00310",
+      "status": "complete",
+      "seconds": 21.214197952998802
+    },
+    {
+      "case_id": "MOSEv2:730bc486:obj1:switch00043",
+      "status": "complete",
+      "seconds": 26.309366815999965
+    },
+    {
+      "case_id": "LVOSv2:aT6JIUVU:obj1:switch00000891",
+      "status": "complete",
+      "seconds": 80.24171046599804
+    },
+    {
+      "case_id": "DAVIS2017:car-turn:obj1:switch00039",
+      "status": "complete",
+      "seconds": 16.23766268399777
+    },
+    {
+      "case_id": "VOST:9691_divide_dough:obj1:switch00318",
+      "status": "complete",
+      "seconds": 33.6751453560064
+    },
+    {
+      "case_id": "MOSEv2:vd2kzgc9:obj1:switch00052",
+      "status": "complete",
+      "seconds": 32.03302649500256
+    },
+    {
+      "case_id": "LVOSv2:SRRojucs:obj1:switch00001326",
+      "status": "complete",
+      "seconds": 174.39580203700461
+    },
+    {
+      "case_id": "DAVIS2017:color-run:obj1:switch00041",
+      "status": "complete",
+      "seconds": 17.219190536998212
+    },
+    {
+      "case_id": "VOST:4030_cut_broccoli:obj2:switch00678",
+      "status": "complete",
+      "seconds": 73.86908108100033
+    },
+    {
+      "case_id": "MOSEv2:rj6on8oa:obj1:switch00024",
+      "status": "complete",
+      "seconds": 17.377062182000373
+    },
+    {
+      "case_id": "LVOSv2:xWs99Q4N:obj1:switch00000596",
+      "status": "complete",
+      "seconds": 53.48870433800039
+    },
+    {
+      "case_id": "DAVIS2017:rallye:obj1:switch00024",
+      "status": "complete",
+      "seconds": 10.472225956997136
+    },
+    {
+      "case_id": "VOST:9692_divide_dough:obj1:switch00174",
+      "status": "complete",
+      "seconds": 20.464661817997694
+    },
+    {
+      "case_id": "MOSEv2:0644075b:obj1:switch00043",
+      "status": "complete",
+      "seconds": 20.646530949998123
+    },
+    {
+      "case_id": "LVOSv2:8lxxCA5h:obj1:switch00000836",
+      "status": "complete",
+      "seconds": 74.26288127899898
+    },
+    {
+      "case_id": "DAVIS2017:tractor-sand:obj2:switch00037",
+      "status": "complete",
+      "seconds": 15.757409508005367
+    },
+    {
+      "case_id": "VOST:8032_divide_dough:obj1:switch00270",
+      "status": "complete",
+      "seconds": 28.812940315998276
+    },
+    {
+      "case_id": "MOSEv2:1e95ef5e:obj1:switch00052",
+      "status": "complete",
+      "seconds": 21.693387330000405
+    },
+    {
+      "case_id": "LVOSv2:KhDr3o6f:obj1:switch00002036",
+      "status": "complete",
+      "seconds": 176.76368810799613
+    },
+    {
+      "case_id": "DAVIS2017:scooter-board:obj1:switch00045",
+      "status": "complete",
+      "seconds": 18.72085598400008
+    },
+    {
+      "case_id": "VOST:7049_paint_nail:obj2:switch00558",
+      "status": "complete",
+      "seconds": 52.920274488998984
+    },
+    {
+      "case_id": "MOSEv2:edab084s:obj1:switch00024",
+      "status": "complete",
+      "seconds": 17.338014311004372
+    },
+    {
+      "case_id": "LVOSv2:xpI7xRWN:obj1:switch00000621",
+      "status": "complete",
+      "seconds": 55.5069472719988
+    },
+    {
+      "case_id": "DAVIS2017:classic-car:obj1:switch00031",
+      "status": "complete",
+      "seconds": 12.72467124099785
+    },
+    {
+      "case_id": "VOST:9673_cut_tomato:obj1:switch00150",
+      "status": "complete",
+      "seconds": 18.026848215005884
+    },
+    {
+      "case_id": "MOSEv2:0518cuig:obj1:switch00041",
+      "status": "complete",
+      "seconds": 26.023719621000055
+    },
+    {
+      "case_id": "LVOSv2:YfoFnMgm:obj1:switch00000696",
+      "status": "complete",
+      "seconds": 65.75740562099963
+    },
+    {
+      "case_id": "DAVIS2017:walking:obj1:switch00035",
+      "status": "complete",
+      "seconds": 14.69787568099855
+    },
+    {
+      "case_id": "VOST:3993_cut_tomato:obj1:switch00324",
+      "status": "complete",
+      "seconds": 34.16293788800249
+    },
+    {
+      "case_id": "MOSEv2:cv63itgy:obj1:switch00061",
+      "status": "complete",
+      "seconds": 35.44186890200217
+    },
+    {
+      "case_id": "LVOSv2:4H7FEAHv:obj1:switch00002726",
+      "status": "complete",
+      "seconds": 249.3543417109977
+    },
+    {
+      "case_id": "DAVIS2017:train:obj3:switch00039",
+      "status": "complete",
+      "seconds": 16.8327356209993
+    },
+    {
+      "case_id": "VOST:7869_squeeze_bag:obj1:switch00426",
+      "status": "complete",
+      "seconds": 45.00503446500079
+    },
+    {
+      "case_id": "MOSEv2:54eda06d:obj1:switch00023",
+      "status": "complete",
+      "seconds": 9.19822525199561
+    },
+    {
+      "case_id": "LVOSv2:iWjeKM6a:obj2:switch00000586",
+      "status": "complete",
+      "seconds": 52.42092202100321
+    },
+    {
+      "case_id": "DAVIS2017:snowboard:obj2:switch00032",
+      "status": "complete",
+      "seconds": 13.450211638999463
+    },
+    {
+      "case_id": "VOST:3562_break_egg:obj1:switch00444",
+      "status": "complete",
+      "seconds": 24.319634471001336
+    },
+    {
+      "case_id": "MOSEv2:qcyzntli:obj1:switch00047",
+      "status": "complete",
+      "seconds": 29.454503576002026
+    },
+    {
+      "case_id": "LVOSv2:vJ8W2TO5:obj1:switch00001146",
+      "status": "complete",
+      "seconds": 103.28667058400606
+    },
+    {
+      "case_id": "DAVIS2017:sheep:obj3:switch00033",
+      "status": "complete",
+      "seconds": 13.928039897997223
+    },
+    {
+      "case_id": "VOST:1179_cut_onion:obj1:switch00600",
+      "status": "complete",
+      "seconds": 40.43273177599622
+    },
+    {
+      "case_id": "MOSEv2:my6cd5xb:obj1:switch00346",
+      "status": "complete",
+      "seconds": 194.78634289599722
+    },
+    {
+      "case_id": "LVOSv2:NFbsxmYE:obj1:switch00002016",
+      "status": "complete",
+      "seconds": 176.53487485700316
+    },
+    {
+      "case_id": "DAVIS2017:skate-park:obj1:switch00039",
+      "status": "complete",
+      "seconds": 16.73704607700347
+    },
+    {
+      "case_id": "VOST:4626_cut_paper:obj1:switch00456",
+      "status": "complete",
+      "seconds": 46.107130509000854
+    },
+    {
+      "case_id": "MOSEv2:2080824a:obj1:switch00018",
+      "status": "complete",
+      "seconds": 8.700203672000498
+    },
+    {
+      "case_id": "LVOSv2:gYaLtvfc:obj1:switch00000586",
+      "status": "complete",
+      "seconds": 52.51990019100049
+    },
+    {
+      "case_id": "DAVIS2017:motorbike:obj3:switch00021",
+      "status": "complete",
+      "seconds": 9.092920429000515
+    },
+    {
+      "case_id": "VOST:3161_peel_banana:obj1:switch00504",
+      "status": "complete",
+      "seconds": 25.875926769003854
+    },
+    {
+      "case_id": "MOSEv2:f7935d24:obj1:switch00049",
+      "status": "complete",
+      "seconds": 29.518223492006655
+    },
+    {
+      "case_id": "LVOSv2:Q7jVRHO5:obj1:switch00000751",
+      "status": "complete",
+      "seconds": 66.24771067899565
+    },
+    {
+      "case_id": "DAVIS2017:varanus-cage:obj1:switch00033",
+      "status": "complete",
+      "seconds": 13.530381598997337
+    },
+    {
+      "case_id": "VOST:7866_squeeze_bag:obj1:switch00336",
+      "status": "complete",
+      "seconds": 35.37353104700014
+    },
+    {
+      "case_id": "MOSEv2:hxaid41o:obj1:switch00054",
+      "status": "complete",
+      "seconds": 31.933899871000904
+    },
+    {
+      "case_id": "LVOSv2:N6CONZUW:obj1:switch00002716",
+      "status": "complete",
+      "seconds": 235.81428936799784
+    },
+    {
+      "case_id": "DAVIS2017:dogs-scale:obj4:switch00041",
+      "status": "complete",
+      "seconds": 17.05190615599713
+    },
+    {
+      "case_id": "VOST:6503_apply_paint:obj1:switch00534",
+      "status": "complete",
+      "seconds": 52.57067137100239
+    },
+    {
+      "case_id": "MOSEv2:5949ee84:obj1:switch00019",
+      "status": "complete",
+      "seconds": 8.376646101001825
+    },
+    {
+      "case_id": "LVOSv2:oWARMtpa:obj1:switch00000526",
+      "status": "complete",
+      "seconds": 47.074105861000135
+    },
+    {
+      "case_id": "DAVIS2017:swing:obj2:switch00029",
+      "status": "complete",
+      "seconds": 12.342490558999998
+    },
+    {
+      "case_id": "VOST:8028_divide_dough:obj1:switch00234",
+      "status": "complete",
+      "seconds": 24.92015591600648
+    },
+    {
+      "case_id": "MOSEv2:ouyf2et0:obj1:switch00029",
+      "status": "complete",
+      "seconds": 19.516819118995045
+    },
+    {
+      "case_id": "LVOSv2:gAHn8WFw:obj1:switch00001216",
+      "status": "complete",
+      "seconds": 106.8526371400003
+    },
+    {
+      "case_id": "DAVIS2017:boat:obj1:switch00037",
+      "status": "complete",
+      "seconds": 15.206630808002956
+    },
+    {
+      "case_id": "VOST:1184_cut_chilli:obj2:switch00480",
+      "status": "complete",
+      "seconds": 28.776446889998624
+    },
+    {
+      "case_id": "MOSEv2:zxh1jkdr:obj1:switch00066",
+      "status": "complete",
+      "seconds": 37.767407997998816
+    },
+    {
+      "case_id": "LVOSv2:Q3kk9fuH:obj1:switch00002786",
+      "status": "complete",
+      "seconds": 243.40176360400073
+    },
+    {
+      "case_id": "DAVIS2017:koala:obj1:switch00049",
+      "status": "complete",
+      "seconds": 20.084031929996854
+    },
+    {
+      "case_id": "VOST:4021_cut_broccoli:obj1:switch00414",
+      "status": "complete",
+      "seconds": 47.69372997800383
+    },
+    {
+      "case_id": "MOSEv2:c9080ed1:obj1:switch00017",
+      "status": "complete",
+      "seconds": 12.005093589003081
+    },
+    {
+      "case_id": "LVOSv2:usxBn0LJ:obj3:switch00000586",
+      "status": "complete",
+      "seconds": 51.884290048001276
+    },
+    {
+      "case_id": "DAVIS2017:longboard:obj5:switch00025",
+      "status": "complete",
+      "seconds": 10.764159842998197
+    },
+    {
+      "case_id": "VOST:8024_divide_dough:obj1:switch00222",
+      "status": "complete",
+      "seconds": 24.22189517300285
+    },
+    {
+      "case_id": "MOSEv2:hy97dn1d:obj1:switch00029",
+      "status": "complete",
+      "seconds": 19.446316260000458
+    },
+    {
+      "case_id": "LVOSv2:ae7pGvGx:obj1:switch00001026",
+      "status": "complete",
+      "seconds": 91.50577627000166
+    },
+    {
+      "case_id": "DAVIS2017:lindy-hop:obj3:switch00036",
+      "status": "complete",
+      "seconds": 14.680955329000426
+    },
+    {
+      "case_id": "VOST:1211_cut_garlic:obj1:switch00510",
+      "status": "complete",
+      "seconds": 30.589327792004042
+    },
+    {
+      "case_id": "MOSEv2:efk04oqc:obj1:switch00055",
+      "status": "complete",
+      "seconds": 34.75619945800281
+    },
+    {
+      "case_id": "LVOSv2:beR0WT11:obj1:switch00001746",
+      "status": "complete",
+      "seconds": 228.42562338500284
+    },
+    {
+      "case_id": "DAVIS2017:rhino:obj1:switch00044",
+      "status": "complete",
+      "seconds": 18.265049666995765
+    },
+    {
+      "case_id": "VOST:1207_break_garlic:obj1:switch00690",
+      "status": "complete",
+      "seconds": 40.709359270003915
+    },
+    {
+      "case_id": "MOSEv2:67138c33:obj1:switch00026",
+      "status": "complete",
+      "seconds": 17.398463069999707
+    },
+    {
+      "case_id": "LVOSv2:F52kIGgi:obj1:switch00000586",
+      "status": "complete",
+      "seconds": 52.504097905999515
+    },
+    {
+      "case_id": "DAVIS2017:upside-down:obj1:switch00032",
+      "status": "complete",
+      "seconds": 13.170420903996273
+    },
+    {
+      "case_id": "VOST:1200_cut_onion:obj1:switch00270",
+      "status": "complete",
+      "seconds": 17.912094984007126
+    },
+    {
+      "case_id": "MOSEv2:ln3zsx8y:obj1:switch00027",
+      "status": "complete",
+      "seconds": 18.585713766995468
+    },
+    {
+      "case_id": "LVOSv2:FFMl5yqs:obj1:switch00000666",
+      "status": "complete",
+      "seconds": 59.45400661700114
+    },
+    {
+      "case_id": "DAVIS2017:elephant:obj1:switch00039",
+      "status": "complete",
+      "seconds": 15.98578806599835
+    },
+    {
+      "case_id": "VOST:4016_cut_herbs:obj1:switch00300",
+      "status": "complete",
+      "seconds": 31.965694409998832
+    },
+    {
+      "case_id": "MOSEv2:hzkwgfld:obj1:switch00049",
+      "status": "complete",
+      "seconds": 18.470836991000397
+    },
+    {
+      "case_id": "LVOSv2:KPDIQo5u:obj2:switch00002761",
+      "status": "complete",
+      "seconds": 242.37522802699823
+    },
+    {
+      "case_id": "DAVIS2017:flamingo:obj1:switch00039",
+      "status": "complete",
+      "seconds": 16.578679940001166
+    },
+    {
+      "case_id": "VOST:994_cut_onion:obj2:switch00816",
+      "status": "complete",
+      "seconds": 39.225706855999306
+    },
+    {
+      "case_id": "MOSEv2:0rvb6kp2:obj1:switch00020",
+      "status": "complete",
+      "seconds": 9.928324330001487
+    },
+    {
+      "case_id": "LVOSv2:KGguT1Cu:obj1:switch00000611",
+      "status": "complete",
+      "seconds": 52.800243416997546
+    },
+    {
+      "case_id": "DAVIS2017:lady-running:obj2:switch00032",
+      "status": "complete",
+      "seconds": 12.992383497003175
+    },
+    {
+      "case_id": "VOST:5551_close_notepad:obj1:switch00150",
+      "status": "complete",
+      "seconds": 18.47202599299635
+    }
+  ]
+}

@@ -1,0 +1,22 @@
+{
+  "schema": "test10.publication.v1",
+  "publication_date_kst": "2026-10-02",
+  "source_export_dates_preserved": true,
+  "inference_performed": false,
+  "training_performed": false,
+  "original_result_files_rewritten": false,
+  "archived_member_count": 81447,
+  "archived_original_bytes": 366428471,
+  "listed_publication_files": 93,
+  "listed_publication_bytes": 145500301,
+  "archived_members_sha256": "9c1320d86d79db2788e4e8d48d357cc26a194a92276f9016a35c5aac366bff03",
+  "published_files_sha256": "f5158ff2d89e4a0e0003147452f8b61d44d07e74f71bba6a1a0932bba31b88ad",
+  "excluded_prediction_cache_files": 1280,
+  "excluded_prediction_cache_bytes": 20278615616,
+  "exclusions": [
+    "Raw RGB/GT datasets and original downloaded training state-pair bank are existing inputs, not new results",
+    "User approved retaining prediction caches locally; each original path, size and recorded SHA-256 is inventoried",
+    "Other intermediate binary state caches, virtual environments, __pycache__ and lock files are not published"
+  ],
+  "verification": "Every archived member was read back and matched to the original-file SHA-256 and size"
+}

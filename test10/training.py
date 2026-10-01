@@ -131,9 +131,11 @@ def collection(path, *, lazy=False, deadline=None):
             if records < 1 or records != metadata["target_contract"]["valid_record_count"]:
                 raise ValueError(f"invalid pair record counts: {file}")
         else:
-            source, _, metadata = load_pair(file)
+            source, _, metadata = load_pair(file, expected_sha=item.get("sha256"))
             checksum = file.with_suffix(".pt.sha256").read_text(encoding="ascii").split()[0]
             records = source.valid_record_count()
+        if item.get("sha256") and checksum != item["sha256"]:
+            raise ValueError(f"pair checksum mismatch with selection: {file}")
         if metadata["video_id"] != item["video_id"]:
             raise ValueError("pair/selection video mismatch")
         video = (item["dataset"], item["video_id"])

@@ -1,0 +1,20 @@
+[
+  {
+    "case_id": "MOSEv2:e33cddc9:obj1:switch00016",
+    "status": "failed",
+    "seconds": 0.02988526499393629,
+    "error": "FileNotFoundError(2, 'No such file or directory')",
+    "traceback": "Traceback (most recent call last):\n  File \"${TEST10_ROOT}/run.py\", line 241, in locked_run\n    result = evaluator.case(case, store, measure=args.stage==\"smoke\", methods=methods)\n             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"${TEST10_ROOT}/runtime.py\", line 244, in case\n    frames = SharedVideoFrames(case[\"video_dir\"], device=\"cuda\")\n             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"${TEST10_ROOT}/runtime.py\", line 31, in SharedVideoFrames\n    return session().SharedVideoFrames(*args, **kwargs)\n           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"${TRANSLATOR_ROOT}/src/vos_memory_inspector/sam2_session.py\", line 64, in __init__\n    self.paths = sorted_frame_paths(video_dir)\n                 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"${TRANSLATOR_ROOT}/src/vos_memory_inspector/sam2_session.py\", line 33, in sorted_frame_paths\n    for path in Path(video_dir).iterdir()\n                ^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"${WORKSPACE_ROOT}/.cuda-bench-env/lib/python3.12/pathlib.py\", line 1056, in iterdir\n    for name in os.listdir(self):\n                ^^^^^^^^^^^^^^^^\nFileNotFoundError: [Errno 2] No such file or directory: '${WORKSPACE_ROOT}/vos-data/MOSEv2/train/JPEGImages/e33cddc9'\n",
+    "run": "fit1_eval40",
+    "excluded_from_final_scores": true
+  },
+  {
+    "case_id": "MOSEv2:e33cddc9:obj1:switch00016",
+    "status": "failed",
+    "seconds": 4.175630313999136,
+    "error": "ValueError('post-switch predictions are not contiguous; missing frames [17]')",
+    "traceback": "Traceback (most recent call last):\n  File \"${TEST10_ROOT}/run.py\", line 258, in locked_run\n    result = evaluator.case(case, store, measure=args.stage==\"smoke\", methods=methods)\n             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"${TEST10_ROOT}/runtime.py\", line 250, in case\n    store.save(case, method, origin=\"executed_or_cached_prefix\", scores=score_masks(case, method, payload[\"masks\"]),\n                                                                        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"${TEST10_ROOT}/runtime.py\", line 135, in score_masks\n    return suffix_scores(case, masks, lambda subset: score_positions(case, method, subset))\n           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"${TEST10_ROOT}/core.py\", line 101, in suffix_scores\n    metric = score_positions({position: masks[position]})[\"post_switch\"]\n             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"${TEST10_ROOT}/runtime.py\", line 135, in <lambda>\n    return suffix_scores(case, masks, lambda subset: score_positions(case, method, subset))\n                                                     ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"${TEST10_ROOT}/runtime.py\", line 127, in score_positions\n    result = score(dict(case_id=case[\"case_id\"], method=method, masks=masks,\n             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"${TEST10_ROOT}/runtime.py\", line 57, in score\n    return score_predictions(payload)\n           ^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"${TRANSLATOR_ROOT}/scripts/mvp_scoring.py\", line 37, in score\n    report = evaluate_case(predictions, annotations, switch_frame=task[\"switch_position\"], voids=voids)\n             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"${TRANSLATOR_ROOT}/src/vos_memory_inspector/vos_metrics.py\", line 368, in evaluate_case\n    raise ValueError(f\"post-switch predictions are not contiguous; missing frames {missing}\")\nValueError: post-switch predictions are not contiguous; missing frames [17]\n",
+    "run": "fit1_eval40_optimized",
+    "excluded_from_final_scores": true
+  }
+]

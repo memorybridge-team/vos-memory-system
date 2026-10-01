@@ -110,14 +110,18 @@ def candidates(seed):
         obj = min(labels, key=lambda x: rank(seed, "VOST", video, x))
         vost.append(dict(video_id=video, length=len(frames), object_id=obj,
                          first=frame_number(frames[0]), end=frame_number(frames[-1])))
-    return {"MOSEv2": mose, "LVOSv2": lvos, "DAVIS2017": davis, "VOST": vost}
+    pools = {"MOSEv2": mose, "LVOSv2": lvos, "DAVIS2017": davis, "VOST": vost}
+    # Replay-16 needs a 16-frame prefix and every case needs ten scored outputs.
+    for dataset, rows in pools.items():
+        pools[dataset] = [row for row in rows if row["length"] >= 27]
+    return pools
 
 
-def build(run_dir, seed=7):
+def build(run_dir, seed=7, count=35):
     pools = candidates(seed)
-    chosen = {d: pick(pools[d], d, seed) for d in DATASETS}
+    chosen = {d: pick(pools[d], d, seed, count=count) for d in DATASETS}
     cases = []
-    for slot in range(35):
+    for slot in range(count):
         for dataset in DATASETS:
             row = chosen[dataset][slot]
             if dataset == "MOSEv2":
@@ -133,7 +137,7 @@ def build(run_dir, seed=7):
                     images, annotations = link_vost(video, run_dir)
                     raw.update(video_dir_override=str(images), annotation_dir_override=str(annotations))
                 case = make_case(raw, set(), additional=True)
-            case.update(cohort="heldout_core" if slot < 30 else "heldout_extension",
+            case.update(cohort="heldout_core" if slot < count - 5 else "heldout_extension",
                         checkpoint_video=False, length_bin=row["length_bin"], slot=slot,
                         data_split="valid" if dataset == "LVOSv2" else "val" if dataset == "VOST" else "train")
             if dataset == "DAVIS2017": case["prior_selection_status"] = "exploratory_train_split"
@@ -143,7 +147,7 @@ def build(run_dir, seed=7):
     for d in ("MOSEv2", "LVOSv2"):
         if fit[d] & {c["video_id"] for c in cases if c["dataset"] == d}:
             raise ValueError(f"fit/evaluation video overlap: {d}")
-    if len({(c["dataset"], c["video_id"]) for c in cases}) != 140:
+    if len({(c["dataset"], c["video_id"]) for c in cases}) != count * len(DATASETS):
         raise ValueError("evaluation videos are not unique")
     return dict(schema="test10.v1", design="heldout.v1", seed=seed, methods=METHODS,
                 cases=cases, source_hashes={str(p): sha(p) for p in (
@@ -151,16 +155,17 @@ def build(run_dir, seed=7):
                     WORKSPACE / "vos-data/DAVIS/ImageSets/2017/train.txt",
                     WORKSPACE / "vos-data/VOST/VOST/ImageSets/val.txt")},
                 candidate_counts={d: len(pools[d]) for d in DATASETS},
-                note="30 videos per dataset primary; 5 per dataset predeclared extension; no score-based selection")
+                note=f"{count-5} videos per dataset primary; 5 per dataset predeclared extension; no score-based selection")
 
 
 if __name__ == "__main__":
     parser = argparse.ArgumentParser()
     parser.add_argument("--run-dir", type=Path, required=True)
     parser.add_argument("--seed", type=int, default=7)
+    parser.add_argument("--count-per-dataset", type=int, default=35)
     args = parser.parse_args()
     args.run_dir.mkdir(parents=True, exist_ok=True)
     path = args.run_dir / "frozen_selection.json"
     if path.exists(): raise ValueError(f"selection already exists: {path}")
-    write(path, build(args.run_dir.resolve(), args.seed))
+    write(path, build(args.run_dir.resolve(), args.seed, args.count_per_dataset))
     print(path)
