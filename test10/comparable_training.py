@@ -1,5 +1,9 @@
 #!/usr/bin/env python3
-"""Fixed LVOS record-level recipe for Affine, with an optional verified Transformer bundle."""
+"""Fixed LVOS record-level recipe for Affine, matching the reference DDP Transformer trainer.
+
+Reference: vos-memory-translator-nonlinear lvos_ddp.py at the recipe's reference_revision.
+tools/verify_reference_recipe.py runs that trainer on Affine and compares trajectories.
+"""
 import argparse
 from collections import OrderedDict
 import copy
@@ -9,6 +13,7 @@ import os
 from pathlib import Path
 import random
 import shutil
+import subprocess
 import time
 
 from core import ROOT, REPO, read, write, sha, digest, snapshot, verify_snapshot
@@ -20,6 +25,8 @@ from vos_memory_inspector.transformer_translator import TransformerStateTranslat
 
 RECIPE_PATH = ROOT / 'configs/affine_comparable_v1.json'
 INDEX_SCHEMA = 'cmmt.lvos_operational_cache_index.v1'
+AFFINE_PARAMETERS = [('feature.weight', (64, 64)), ('feature.bias', (64,)),
+                     ('pointer.weight', (256, 256)), ('pointer.bias', (256,))]
 
 
 def recipe():
@@ -31,6 +38,15 @@ def data_fingerprint(rows):
                           sha256=r['sha256'], valid_indices=r['valid_indices']) for r in rows],
                     key=lambda r: (r['split'], r['video_id'], r['sha256']))
     return digest(ledger)
+
+
+def index_rows(document):
+    return [dict(dataset='LVOSv2', video_id=e['case']['video_id'],
+                 split={'fit': 'train', 'development': 'validation'}[e['case']['paired_split']],
+                 path=e['path'], sha256=e['sha256'], valid_indices=e['valid_indices'],
+                 valid_records=e['records'], case_id=e['case']['case_id'],
+                 object_id=e['case'].get('object_id'),
+                 runtime_switch_frame=e.get('runtime_switch_frame')) for e in document['entries']]
 
 
 class PairData:
@@ -54,12 +70,7 @@ class PairData:
             excluded = document['identity'].get('exclusion_plan')
             if excluded and not (excluded.get('approved_by') and excluded.get('recorded_at')):
                 raise ValueError('raw index contains an unapproved exclusion plan')
-            items = [dict(dataset='LVOSv2', video_id=e['case']['video_id'],
-                          split={'fit':'train', 'development':'validation'}[e['case']['paired_split']],
-                          path=e['path'], sha256=e['sha256'], valid_indices=e['valid_indices'],
-                          valid_records=e['records'], case_id=e['case']['case_id'],
-                          object_id=e['case'].get('object_id'),
-                          runtime_switch_frame=e.get('runtime_switch_frame')) for e in document['entries']]
+            items = index_rows(document)
         elif document.get('schema') == 'test10.pair_selection.v1':
             items = document['pairs']
         else:
@@ -138,6 +149,8 @@ class PairData:
         return result
 
     def batches(self, split, size, epoch=None, seed=7):
+        """Case order is shuffled with the reference generator; records keep their slot order
+        and windows span case boundaries, exactly as lvos_ddp.schedule does."""
         rows = [r for r in self.rows if r['split'] == split]
         if epoch is not None:
             order = torch.randperm(len(rows), generator=torch.Generator().manual_seed(seed + epoch)).tolist()
@@ -160,6 +173,7 @@ def check_time(deadline):
 
 
 def fit_scales(data, deadline=None):
+    """Fit-target RMS in FP64. With a raw index, train on its recorded scales as the reference does."""
     totals = {'spatial':[0.,0], 'pointer':[0.,0]}
     for batch in data.batches('train', 16):
         check_time(deadline)
@@ -172,15 +186,18 @@ def fit_scales(data, deadline=None):
         recorded = data.index['normalization']
         if recorded['scope'] != 'fit_only' or any(not math.isclose(scales[k], recorded['scales'][k], rel_tol=1e-7, abs_tol=1e-12) for k in scales):
             raise ValueError('fit RMS does not match the raw index')
+        return {k: float(recorded['scales'][k]) for k in scales}
     return scales
 
 
-def objective(model, batch, scales, device):
+def objective(model, batch, scales, config, device):
+    """lvos_training.component_objective: per-record mean, record mean, then RMS² weighting."""
     x,p,y,q = [v.to(device=device, dtype=torch.float32) for v in batch]
     spatial, pointer = model.translate_tensors(x[None,None], p[None,None])
-    spatial_mse = (spatial[0,0]-y).square().mean()
-    pointer_mse = (pointer[0,0]-q).square().mean()
-    total = spatial_mse/max(scales['spatial']**2,1e-12) + pointer_mse/max(scales['pointer']**2,1e-12)
+    spatial_mse = (spatial[0,0]-y).square().flatten(1).mean(1).mean()
+    pointer_mse = (pointer[0,0]-q).square().mean(1).mean()
+    total = (config['lambda_spatial']*(spatial_mse/max(scales['spatial']**2,1e-12)) +
+             config['lambda_pointer']*(pointer_mse/max(scales['pointer']**2,1e-12)))
     if not torch.isfinite(total): raise ValueError('nonfinite loss')
     return total, spatial_mse, pointer_mse
 
@@ -204,19 +221,23 @@ def optimizer_and_scheduler(model, config, updates):
 
 
 def optimize_window(model, batch, optimizer, scales, config, device, deadline=None):
+    """One global window: sum of loss×records over microbatches, then divide by the window's
+    actual valid record count (lvos_ddp with world size 1)."""
     optimizer.zero_grad(set_to_none=True)
     count = len(batch[0]); totals = [0.,0.,0.]
     for start in range(0, count, config['microbatch_records']):
         check_time(deadline)
         tensors = tuple(v[start:start+config['microbatch_records']] for v in batch)
-        losses = objective(model, tensors, scales, device)
-        weight = len(tensors[0])/count  # Tail windows divide by their actual valid record count.
-        (losses[0]*weight).backward()
-        for i, loss in enumerate(losses): totals[i] += float(loss.detach())*weight
+        records = len(tensors[0])
+        losses = objective(model, tensors, scales, config, device)
+        (losses[0]*records).backward()
+        for i, loss in enumerate(losses): totals[i] += float(loss.detach())*records
     check_time(deadline)
+    for parameter in model.parameters():
+        if parameter.grad is not None: parameter.grad.mul_(1/count)
     torch.nn.utils.clip_grad_norm_(model.parameters(), config['clip_norm'], error_if_nonfinite=True)
     optimizer.step()
-    return totals
+    return [total/count for total in totals]
 
 
 def validate(model, data, scales, config, device, deadline=None):
@@ -224,11 +245,38 @@ def validate(model, data, scales, config, device, deadline=None):
     with torch.no_grad():
         for batch in data.batches('validation', config['microbatch_records']):
             check_time(deadline)
-            for i, loss in enumerate(objective(model, batch, scales, device)):
+            for i, loss in enumerate(objective(model, batch, scales, config, device)):
                 totals[i] += float(loss)*len(batch[0])
             count += len(batch[0])
     check_time(deadline)
     return dict(loss=totals[0]/count, spatial_mse=totals[1]/count, pointer_mse=totals[2]/count, records=count)
+
+
+def affine_contract(model):
+    """The comparison defines Affine by its function, not by a source revision of the translator repo."""
+    names = [(n, tuple(p.shape)) for n, p in model.named_parameters()]
+    if names != AFFINE_PARAMETERS:
+        raise ValueError(f'Affine must be position-shared 64x64 spatial + 256x256 pointer Wx+b, got {names}')
+    if getattr(model, 'output_dtype', None) != 'source' or model.output_dtypes(torch.bfloat16, torch.float32) != (torch.bfloat16, torch.float32):
+        raise ValueError('Affine handoff must keep bf16 spatial memory and fp32 pointers')
+    probe = copy.deepcopy(model).cpu().float()
+    generator = torch.Generator().manual_seed(0)
+    with torch.no_grad():
+        for parameter in probe.parameters():
+            parameter.copy_(.1*torch.randn(parameter.shape, generator=generator))
+        x = torch.randn(1, 1, 3, 64, 64, 64, generator=generator); p = torch.randn(1, 1, 3, 256, generator=generator)
+        spatial, pointer = probe.translate_tensors(x, p)
+        expected = torch.nn.functional.linear(x.movedim(3, -1), probe.feature.weight, probe.feature.bias).movedim(-1, 3)
+        torch.testing.assert_close(spatial, expected, rtol=1e-5, atol=1e-6)
+        torch.testing.assert_close(pointer, torch.nn.functional.linear(p, probe.pointer.weight, probe.pointer.bias), rtol=1e-5, atol=1e-6)
+    try:
+        revision = subprocess.run(['git', '-C', str(REPO), 'rev-parse', 'HEAD'], capture_output=True, text=True)
+        revision = revision.stdout.strip() if revision.returncode == 0 else 'unavailable'
+    except FileNotFoundError:
+        revision = 'unavailable'
+    return dict(definition='position-shared spatial 64->64 and pointer 256->256 Wx+b; bf16 spatial handoff',
+                parameters=sum(p.numel() for p in model.parameters()), class_name=type(model).__name__,
+                translator_repository=str(REPO), translator_revision=revision)
 
 
 def save_weights(path, method, model, data, epoch, steps, seed):
@@ -237,7 +285,62 @@ def save_weights(path, method, model, data, epoch, steps, seed):
                    state_pair_schema=SCHEMA)
     if method == 'transformer': payload['model_payload'] = model.to_payload()
     else: payload['state_dict'] = {k:v.detach().cpu() for k,v in model.state_dict().items()}
+    path.parent.mkdir(parents=True, exist_ok=True)
     temp = path.with_suffix('.partial'); torch.save(payload, temp); temp.replace(path)
+
+
+def transformer_reference(run_dir, collection, scales, training_records, development_records, reference_index=None):
+    """Read-only binding to the completed Transformer run: data, recipe, normalization and coverage.
+
+    Reads run.json and metrics/history.json only; Transformer weights are never loaded."""
+    cfg = recipe(); reference = Path(run_dir).resolve()
+    evidence = snapshot([reference/'run.json', reference/'metrics/history.json'])
+    run = read(reference/'run.json'); history = read(reference/'metrics/history.json')
+    identity = run['identity']; config = identity['configuration']
+    if identity['collection_digest'] != collection.get('source_index_sha256'):
+        # A relocated/rebuilt index may differ byte-for-byte while selecting the same data.
+        index = Path(reference_index) if reference_index else reference/'raw_index.json'
+        if not index.is_file() or sha(index) != identity['collection_digest']:
+            raise ValueError('provide --reference-index matching the Transformer run to compare data membership')
+        evidence.update(snapshot([index]))
+        source = read(index)
+        if source.get('schema_version') != INDEX_SCHEMA: raise ValueError('unsupported reference index')
+        if data_fingerprint(index_rows(source)) != collection['fingerprint']:
+            raise ValueError('Transformer and Affine fit/development pairs or valid records differ')
+    expected = dict(lr=cfg['learning_rate'], weight_decay=cfg['weight_decay'], lambda_spatial=cfg['lambda_spatial'],
+                    lambda_pointer=cfg['lambda_pointer'], lambda_cos=cfg['lambda_cos'], max_epochs=cfg['epochs'],
+                    warmup_fraction=cfg['warmup_fraction'], min_lr=cfg['min_learning_rate'], clip_norm=cfg['clip_norm'],
+                    seed=cfg['seed'], precision='fp32', augmentation='none')
+    differences = {k:dict(expected=v, actual=config.get(k)) for k,v in expected.items() if config.get(k)!=v}
+    if identity['training_contract']['global_batch'] != cfg['global_records']:
+        differences['global_batch'] = identity['training_contract']['global_batch']
+    if differences: raise ValueError(f'Transformer training recipe differs: {differences}')
+    if identity.get('scope') != 'state_supervised_ddp' or run.get('JF_early_stopping_applied'):
+        raise ValueError('reference must be the state-supervised DDP run without J&F early stopping')
+    if sorted(h['epoch'] for h in history) != list(range(1,cfg['epochs']+1)):
+        raise ValueError('Transformer needs all 30 completed epochs for this comparison')
+    recorded = run['normalization']
+    if recorded['scope'] != 'fit_only' or any(not math.isclose(recorded['scales'][k], v, rel_tol=1e-7, abs_tol=1e-12)
+                                            for k,v in scales.items()):
+        raise ValueError('Transformer/Affine normalization mismatch')
+    per_epoch = math.ceil(training_records/cfg['global_records'])
+    for h in history:
+        if (h['records'] != training_records or h['dev']['records'] != development_records or
+                h['optimizer_step'] != h['epoch']*per_epoch or not math.isfinite(h['dev']['loss'])):
+            raise ValueError('Transformer training/development coverage or updates mismatch')
+    return dict(run=str(reference), files=evidence, history=history,
+                best_state_loss_epoch=select_epoch([dict(epoch=h['epoch'], loss=h['dev']['loss']) for h in history]),
+                verified_conditions='same data membership, fit RMS, optimization recipe, epochs, coverage and updates',
+                gpu_count_required_to_match=False, microbatch_required_to_match=False, weights_read=False)
+
+
+def select_epoch(rows):
+    """Reference best_state_loss.ckpt.json: rewritten whenever dev loss equals the running
+    minimum, so an exact tie selects the later epoch."""
+    best = None
+    for row in sorted(rows, key=lambda r: r['epoch']):
+        if best is None or row['loss'] <= best['loss']: best = row
+    return best['epoch']
 
 
 def train(args):
@@ -257,20 +360,32 @@ def train(args):
         data = PairData(args.pairs or args.index, args.pair_root, args.cache_gib, deadline)
         check_time(deadline)
         device = torch.device(args.device if args.device != 'auto' else 'cuda' if torch.cuda.is_available() else 'cpu')
-        torch.manual_seed(config['seed']); random.seed(config['seed'])
+        import numpy
+        torch.manual_seed(config['seed']); random.seed(config['seed']); numpy.random.seed(config['seed'])
+        if torch.cuda.is_available(): torch.cuda.manual_seed_all(config['seed'])
         torch.use_deterministic_algorithms(True)
         model = fresh_model(args.method).to(device=device, dtype=torch.float32)
+        if args.method == 'affine': report['model_contract'] = affine_contract(model)
         count = sum(r['valid_records'] for r in data.rows if r['split']=='train')
+        dev_count = sum(r['valid_records'] for r in data.rows if r['split']=='validation')
         updates = math.ceil(count/config['global_records'])*config['epochs']
         optimizer, scheduler = optimizer_and_scheduler(model, config, updates)
         scales = fit_scales(data, deadline)
+        reference = None
+        if getattr(args, 'transformer_run', None):
+            reference = transformer_reference(args.transformer_run, data.collection, scales, count, dev_count,
+                                              getattr(args, 'reference_index', None))
         files = snapshot([data.path, RECIPE_PATH, ROOT/'comparable_training.py', ROOT/'training.py', ROOT/'state_pairs.py',
                           ROOT/'core.py', ROOT/'manifest.py', *sorted((REPO/'src').rglob('*.py'))])
-        report.update(collection=data.collection, files=files, normalization=dict(scope='fit_only', scales=scales),
+        report.update(collection=data.collection, files=files,
+                      normalization=dict(scope='fit_only', scales=scales,
+                                         source='raw_index' if data.index else 'recomputed_fit_targets'),
                       device=str(device), planned_updates=updates, training_records=count,
-                      torch=str(torch.__version__), history=[], optimizer_steps=0)
+                      development_records=dev_count, torch=str(torch.__version__), history=[],
+                      optimizer_steps=0, epoch_checkpoints=[],
+                      transformer_reference={k:v for k,v in reference.items() if k != 'history'} if reference else None)
         write(output/'training_inputs.json', report)
-        best, steps = math.inf, 0
+        steps = 0
         for epoch in range(config['epochs']):
             check_time(deadline); model.train(); totals=[0.,0.,0.]; seen=0
             for batch in data.batches('train', config['global_records'], epoch, config['seed']):
@@ -284,16 +399,21 @@ def train(args):
             row = dict(epoch=epoch+1, optimizer_steps=steps, train_loss=totals[0]/seen,
                        training_records=seen, validation=dev, learning_rate=optimizer.param_groups[0]['lr'])
             report['history'].append(row); report['completed_epochs']=epoch+1
-            if dev['loss'] < best:
-                best = dev['loss']; path = output/f'{args.method}.pt'
-                save_weights(path, args.method, model, data, epoch+1, steps, config['seed'])
-                report['models'][args.method] = dict(checkpoint=path.name, sha256=sha(path), preset=PRESETS[args.method],
+            path = output/'epochs'/f'{args.method}-epoch-{epoch+1:05d}.pt'
+            save_weights(path, args.method, model, data, epoch+1, steps, config['seed'])
+            report['epoch_checkpoints'].append(dict(epoch=epoch+1, checkpoint=str(path.relative_to(output)), sha256=sha(path)))
+            if epoch+1 == select_epoch([dict(epoch=h['epoch'], loss=h['validation']['loss']) for h in report['history']]):
+                target = output/f'{args.method}.pt'
+                shutil.copyfile(path, target.with_suffix('.partial')); target.with_suffix('.partial').replace(target)
+                report['models'][args.method] = dict(checkpoint=target.name, sha256=sha(target), preset=PRESETS[args.method],
                     epoch=epoch+1, optimizer_steps=steps, origin='fresh', validation=dev,
+                    selection=dict(rule=config['checkpoint_selection'], epoch=epoch+1),
                     parameters=sum(p.numel() for p in model.parameters()))
             write(output/f'{args.method}.history.json', report['history'])
             write(output/'train_report.json', report)
             print(f"{args.method}: epoch {epoch+1}/{config['epochs']}, records={seen}, dev={dev['loss']:.6g}", flush=True)
         verify_snapshot(files)
+        if reference: verify_snapshot(reference['files'])
         report.update(status='complete', stop_reason='all_epochs_completed')
     except TimeoutError:
         report.update(status='incomplete', stop_reason='time_budget')
@@ -306,50 +426,48 @@ def train(args):
     return report
 
 
+def select_checkpoint(args):
+    """New training directory whose Affine checkpoint is a declared epoch of a completed run.
+
+    Use this only to apply the rule that chose the Transformer checkpoint being compared
+    (for example its final epoch); never choose by test10 evaluation scores."""
+    source = Path(args.affine_dir).resolve()
+    fit = training_report(source, ['affine'])
+    if fit.get('comparison_protocol') != recipe()['schema'] or fit['config'] != recipe():
+        raise ValueError('Affine was not trained with the fixed comparison recipe')
+    if not args.reason.strip(): raise ValueError('record why this epoch is the comparison checkpoint')
+    entry = next((e for e in fit.get('epoch_checkpoints', []) if e['epoch'] == args.epoch), None)
+    row = next((h for h in fit['history'] if h['epoch'] == args.epoch), None)
+    if entry is None or row is None: raise ValueError(f'epoch {args.epoch} has no saved Affine checkpoint')
+    if sha(source/entry['checkpoint']) != entry['sha256']: raise ValueError('epoch checkpoint checksum mismatch')
+    output = args.output_dir.resolve()
+    if output.exists() and any(output.iterdir()): raise ValueError('use a new empty directory')
+    output.mkdir(parents=True, exist_ok=True)
+    shutil.copyfile(source/entry['checkpoint'], output/'affine.pt')
+    report = copy.deepcopy(fit)
+    report['models']['affine'] = dict(fit['models']['affine'], checkpoint='affine.pt', sha256=sha(output/'affine.pt'),
+        epoch=args.epoch, optimizer_steps=row['optimizer_steps'], validation=row['validation'],
+        selection=dict(rule='declared_epoch', epoch=args.epoch, reason=args.reason.strip(), source=str(source),
+                       default_rule_epoch=fit['models']['affine']['epoch']))
+    write(output/'train_report.json', report)
+    return report
+
+
 def attach_transformer(args):
     """Import the best full-development state-loss export; never use test10 GT for selection."""
     fit = training_report(args.affine_dir, ['affine'])
     cfg = recipe()
     if fit.get('comparison_protocol') != cfg['schema'] or fit['config'] != cfg:
         raise ValueError('Affine was not trained with the fixed comparison recipe')
-    reference = args.transformer_run.resolve()
-    evidence = snapshot([reference/'run.json', reference/'metrics/history.json'])
-    run = read(reference/'run.json'); history = read(reference/'metrics/history.json')
-    identity = run['identity']; config = identity['configuration']
-    if identity['collection_digest'] != fit['collection'].get('source_index_sha256'):
-        # A relocated/rebuilt index may differ byte-for-byte while selecting the same data.
-        ref_index = getattr(args, 'reference_index', None) or reference/'raw_index.json'
-        if not ref_index.is_file() or sha(ref_index) != identity['collection_digest']:
-            raise ValueError('provide --reference-index matching the Transformer run to compare data membership')
-        evidence.update(snapshot([ref_index]))
-        source = read(ref_index)
-        if source.get('schema_version') != INDEX_SCHEMA: raise ValueError('unsupported reference index')
-        rows = [dict(dataset='LVOSv2', video_id=e['case']['video_id'],
-                     split={'fit':'train','development':'validation'}[e['case']['paired_split']],
-                     sha256=e['sha256'], valid_indices=e['valid_indices']) for e in source['entries']]
-        if data_fingerprint(rows) != fit['collection']['fingerprint']:
-            raise ValueError('Transformer and Affine fit/development pairs or valid records differ')
-    expected = dict(lr=cfg['learning_rate'], weight_decay=cfg['weight_decay'], lambda_spatial=1., lambda_pointer=1.,
-                    lambda_cos=0., max_epochs=cfg['epochs'], warmup_fraction=cfg['warmup_fraction'],
-                    min_lr=cfg['min_learning_rate'], clip_norm=cfg['clip_norm'], seed=cfg['seed'],
-                    precision='fp32', augmentation='none')
-    differences = {k:dict(expected=v, actual=config.get(k)) for k,v in expected.items() if config.get(k)!=v}
-    if identity['training_contract']['global_batch'] != cfg['global_records']:
-        differences['global_batch'] = identity['training_contract']['global_batch']
-    if differences: raise ValueError(f'Transformer training recipe differs: {differences}')
-    if sorted(h['epoch'] for h in history) != list(range(1,cfg['epochs']+1)):
-        raise ValueError('Transformer needs all 30 completed epochs for this comparison')
-    scales = run['normalization']
-    if scales['scope'] != 'fit_only' or any(not math.isclose(scales['scales'][k], v, rel_tol=1e-7, abs_tol=1e-12)
-                                          for k,v in fit['normalization']['scales'].items()):
-        raise ValueError('Transformer/Affine normalization mismatch')
     dev_records = sum(r['valid_records'] for r in fit['collection']['pairs'] if r['split']=='validation')
-    per_epoch = math.ceil(fit['training_records']/cfg['global_records'])
-    for h in history:
-        if (h['records'] != fit['training_records'] or h['dev']['records'] != dev_records or
-                h['optimizer_step'] != h['epoch']*per_epoch or not math.isfinite(h['dev']['loss'])):
-            raise ValueError('Transformer training/development coverage or updates mismatch')
-    chosen = min(history, key=lambda h:(h['dev']['loss'], h['epoch']))
+    bound = transformer_reference(args.transformer_run, fit['collection'], fit['normalization']['scales'],
+                                  fit['training_records'], dev_records, getattr(args, 'reference_index', None))
+    reference, evidence, history = Path(bound['run']), bound['files'], bound['history']
+    identity = read(reference/'run.json')['identity']
+    chosen = next(h for h in history if h['epoch'] == bound['best_state_loss_epoch'])
+    marker = reference/'best_state_loss.ckpt.json'
+    if marker.is_file() and f"epoch-{chosen['epoch']:05d}" not in read(marker)['path']:
+        raise ValueError('best_state_loss.ckpt.json disagrees with the development history')
     export_path = reference/f"translator/epoch-{chosen['epoch']:05d}.pth"
     meta_path = export_path.with_suffix('.json')
     evidence.update(snapshot([meta_path, export_path]))
@@ -376,9 +494,8 @@ def attach_transformer(args):
         parameters=sum(p.numel() for p in model.parameters()), validation=chosen['dev'])
     report['requested_methods'] = ['affine','transformer']
     report['files'].update(evidence)
-    report['transformer_reference'] = dict(run=str(reference), files=evidence,
-        selected_epoch=chosen['epoch'], verified_conditions='same data membership, fit RMS, optimization recipe, coverage and dev selection',
-        gpu_count_required_to_match=False, microbatch_required_to_match=False)
+    report['transformer_reference'] = dict({k:v for k,v in bound.items() if k != 'history'}, files=evidence,
+                                           selected_epoch=chosen['epoch'], weights_read=True)
     write(output/'train_report.json', report)
     return report
 
@@ -396,6 +513,14 @@ def parser():
     t.add_argument('--device', default='auto')
     t.add_argument('--cache-gib', type=float, default=2.)
     t.add_argument('--budget-hours', type=float, help='optional cap; incomplete epochs/runs are not completed comparisons')
+    t.add_argument('--transformer-run', type=Path,
+                   help='completed Transformer DDP run dir; checks run.json/history.json before training, reads no weights')
+    t.add_argument('--reference-index', type=Path, help='original Transformer index if the Affine input manifest differs')
+    s = sub.add_parser('select', help='copy a completed run with a declared Affine epoch as the comparison checkpoint')
+    s.add_argument('--affine-dir', required=True, type=Path)
+    s.add_argument('--epoch', required=True, type=int)
+    s.add_argument('--reason', required=True, help='rule that chose the compared Transformer checkpoint')
+    s.add_argument('--output-dir', required=True, type=Path)
     a = sub.add_parser('attach-transformer', help='bundle an already trained LVOS Transformer with Affine')
     a.add_argument('--affine-dir', required=True, type=Path)
     a.add_argument('--transformer-run', required=True, type=Path)
@@ -406,5 +531,5 @@ def parser():
 
 if __name__ == '__main__':
     args = parser().parse_args()
-    result = train(args) if args.command == 'train' else attach_transformer(args)
+    result = {'train': train, 'select': select_checkpoint, 'attach-transformer': attach_transformer}[args.command](args)
     if result['status'] != 'complete': raise SystemExit('incomplete run; see train_report.json')
