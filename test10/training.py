@@ -355,7 +355,12 @@ def train(args):
     return report
 
 
-def training_report(directory):
+def required_translators(methods):
+    return {"affine" if m in ("affine_spatial", "affine_pointer") else m
+            for m in methods if m in PRESETS or m in ("affine_spatial", "affine_pointer")}
+
+
+def training_report(directory, methods=None):
     directory = Path(directory).resolve()
     report = read(directory / "train_report.json")
     if report.get("schema") != REPORT_SCHEMA or report.get("status") != "complete":
@@ -363,28 +368,42 @@ def training_report(directory):
     if report.get("state_pair_schema") != SCHEMA:
         raise ValueError("training pair schema mismatch")
     verify_snapshot(report["files"])
-    if set(report["models"]) != set(PRESETS):
-        raise ValueError("affine/MLP/Transformer training must all be complete")
+    expected = set(report.get("requested_methods", PRESETS))
+    if not expected or not expected.issubset(PRESETS) or set(report["models"]) != expected:
+        raise ValueError("all requested translators must have complete checkpoints")
+    if methods is not None and not required_translators(methods).issubset(expected):
+        raise ValueError("selected evaluation methods require missing translator checkpoints")
     for method, row in report["models"].items():
-        if row.get("origin") != "fresh" or row["optimizer_steps"] < 1 or row["preset"] != PRESETS[method]:
+        origins = ("fresh", "verified_external") if report.get("comparison_protocol") else ("fresh",)
+        if row.get("origin") not in origins or row["optimizer_steps"] < 1 or row["preset"] != PRESETS[method]:
             raise ValueError("old or untrained translator is not allowed")
         if sha(directory / row["checkpoint"]) != row["sha256"]:
             raise ValueError(f"trained checkpoint checksum mismatch: {method}")
     return report
 
 
-def load_models(directory, device):
-    report = training_report(directory)
+def load_models(directory, device, methods=None):
+    report = training_report(directory, methods)
     models = {}
     for method, row in report["models"].items():
+        if methods is not None and method not in required_translators(methods):
+            continue
         payload = torch.load(Path(directory) / row["checkpoint"], map_location="cpu", weights_only=True)
         if (payload.get("schema") != CHECKPOINT_SCHEMA or payload.get("method") != method or
                 payload.get("state_pair_schema") != SCHEMA or payload.get("preset") != row["preset"] or
                 payload.get("training_fingerprint") != report["collection"]["fingerprint"] or
                 payload.get("optimizer_steps") != row["optimizer_steps"] or payload.get("epoch") != row["epoch"]):
             raise ValueError("checkpoint and training report mismatch")
-        model = fresh_model(method)
-        model.load_state_dict(payload["state_dict"], strict=True)
+        if "model_payload" in payload:
+            if method != "transformer":
+                raise ValueError("model payload is supported only for a Transformer export")
+            from vos_memory_inspector.transformer_translator import TransformerStateTranslator
+            model = TransformerStateTranslator.from_payload(payload["model_payload"])
+            if model.source_spec != SAM21_MEMORY_SPEC or model.target_spec != SAM21_MEMORY_SPEC:
+                raise ValueError("imported Transformer memory spec mismatch")
+        else:
+            model = fresh_model(method)
+            model.load_state_dict(payload["state_dict"], strict=True)
         models[method] = model.to(device).eval()
     return models
 

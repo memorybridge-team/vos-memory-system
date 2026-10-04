@@ -20,6 +20,22 @@ def heldout_smoke(cases):
     return [c for c in cases if c.get("cohort") == "heldout_core" and c.get("slot") in (0, 1, 2)]
 
 
+def comparison_smoke(cases, seed):
+    """Up to three cases per present dataset, cycling length bins without reading scores."""
+    if not cases: raise ValueError("comparison requires evaluation cases")
+    result = []
+    for dataset in sorted({c["dataset"] for c in cases}):
+        pool = sorted((c for c in cases if c["dataset"] == dataset),
+                      key=lambda c: digest([seed, c["case_id"]]))
+        bins = [[c for c in pool if c["length_bin"] == b] for b in range(3)]
+        count = 0
+        while count < 3 and any(bins):
+            for bucket in bins:
+                if count < 3 and bucket:
+                    result.append(bucket.pop(0)); count += 1
+    return result
+
+
 def heldout_schedule(cases, timings, remaining_seconds):
     """Freeze equal-dataset core cases first; use time estimates only for extension."""
     def estimate(case):
@@ -77,6 +93,8 @@ def parser():
     p.add_argument("--stage", choices=("audit", "smoke", "full", "rescore"), required=True,
                    help="rescore: CPU-only rescoring of saved predictions (adds the switch-window metric)")
     p.add_argument("--selection", type=Path, help="existing test10 manifest; omitted: deterministic candidates")
+    p.add_argument("--methods", nargs="+", choices=METHODS,
+                   help="freeze evaluation methods at audit; resume must use the same methods")
     p.add_argument("--run-dir", type=Path, default=ROOT / "runs/default")
     p.add_argument("--training-dir", type=Path,
                    help="completed fresh prepared-state-pair training; no legacy fallback")
@@ -88,9 +106,9 @@ def parser():
     return p
 
 
-def verify_training_collection(directory):
+def verify_training_collection(directory, methods=None):
     from training import training_report
-    report = training_report(directory)
+    report = training_report(directory, methods)
     rows = report["collection"]["pairs"]
     # Validation also influenced checkpoint selection, so exclude both splits from evaluation.
     videos = {}
@@ -134,13 +152,17 @@ def locked_run(args):
         # Offline stages may run newer harness code; everything else stays pinned.
         prov = read(meta_path); verify_snapshot(harness_excluded(prov["files"]) if offline else prov["files"])
         selection = read(manifest_path)
-        if args.selection and digest(read(args.selection)) != digest(selection):
-            raise ValueError("selection differs from the saved run")
+        if args.selection:
+            supplied = read(args.selection)
+            if getattr(args, "methods", None): supplied = dict(supplied, methods=args.methods)
+            if digest(supplied) != digest(selection):
+                raise ValueError("selection differs from the saved run")
     else:
         if args.stage != "audit": raise ValueError("run --stage audit first")
         ensure_local_training_module()
         prov = provenance(args.training_dir or TRAINING)
         selection = read(args.selection) if args.selection else build(args.seed)
+        if getattr(args, "methods", None): selection = dict(selection, methods=args.methods)
         if selection.get("schema") != "test10.v1": raise ValueError("expected a test10 manifest")
         # Selection is committed before provenance; incomplete setup can be retried safely.
         write(manifest_path, selection)
@@ -151,6 +173,8 @@ def locked_run(args):
         raise ValueError("training directory differs from the frozen run; use a new run-dir")
     verify_snapshot(selection.get("source_hashes", {}))
     methods = tuple(selection.get("methods", METHODS))
+    if getattr(args, "methods", None) and tuple(args.methods) != methods:
+        raise ValueError("methods differ from the frozen run; use a new run-dir")
     if not methods or any(m not in METHODS for m in methods):
         raise ValueError("invalid selected methods")
     if selection.get("design") == "heldout.v1" and not {"small_only", "base_native"}.issubset(methods):
@@ -162,7 +186,7 @@ def locked_run(args):
     if args.report_only:
         return build_report(selection, store, args.seed)
     if args.stage == "audit":
-        fit = verify_training_collection(prov.get("training_dir", TRAINING))
+        fit = verify_training_collection(prov.get("training_dir", TRAINING), methods)
         for dataset, videos in fit["videos"].items():
             eval_videos = {c["video_id"] for c in selection["cases"] if c["dataset"] == dataset}
             if set(videos) & eval_videos:
@@ -183,7 +207,8 @@ def locked_run(args):
                 verify_case_pair(case, source, metadata)
         legacy = audit_legacy(selection, prov)
         write(args.run_dir / "legacy_audit.json", legacy)
-        smoke = heldout_smoke(selection["cases"]) if selection.get("design") == "heldout.v1" else select_smoke(selection["cases"], args.seed)
+        smoke = (comparison_smoke(selection["cases"], args.seed) if prov.get("training", {}).get("comparison_protocol") else
+                 heldout_smoke(selection["cases"]) if selection.get("design") == "heldout.v1" else select_smoke(selection["cases"], args.seed))
         write(args.run_dir / "smoke_selection.json", {"case_ids": [c["case_id"] for c in smoke]})
         write(args.run_dir / "audit.json", dict(fit=fit,
             candidate_counts={d: sum(c["dataset"]==d for c in selection["cases"]) for d in dict.fromkeys(c["dataset"] for c in selection["cases"])},
@@ -224,7 +249,7 @@ def locked_run(args):
         if device_path.exists() and read(device_path) != device:
             raise ValueError("GPU/software environment changed; use a new run")
         write(device_path, device)
-        evaluator = Evaluator(args.seed, training_dir=Path(prov["training_dir"]))
+        evaluator = Evaluator(args.seed, training_dir=Path(prov["training_dir"]), methods=methods)
         if args.stage == "smoke":
             queue = [{"case_id": cid} for cid in smoke_ids]
         else:

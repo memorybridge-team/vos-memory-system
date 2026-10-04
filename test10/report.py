@@ -55,8 +55,10 @@ def paired(rows, a, b, seed=7, metric="J&F"):
 
 def build_report(selection, store, seed=7, scheduled=None):
     methods = tuple(selection.get("methods", METHODS))
+    training = store.provenance.get("training", {})
+    comparison = training.get("comparison_protocol")
     datasets_in_run = (tuple(dict.fromkeys(c["dataset"] for c in selection["cases"]))
-                       if selection.get("design") == "heldout.v1" else DATASETS)
+                       if selection.get("design") == "heldout.v1" or comparison else DATASETS)
     rows, missing, gates, costs = [], [], [], []
     for case in selection["cases"]:
         found = {m: store.load(case, m) for m in (*methods, GATE)}
@@ -78,6 +80,8 @@ def build_report(selection, store, seed=7, scheduled=None):
                                    for f in frame_rows):
         raise ValueError("mixed or partial per-frame switch scores; run --stage rescore to completion")
     report = dict(protocol="test10.v1", design=selection.get("design", "original"),
+                  comparison_protocol=comparison,
+                  training_conditions=training.get("config") if comparison else None,
                   methods=methods, candidate_cases=len(selection["cases"]), complete_cases=len(gates),
                   incomplete=missing, gate_cases=len(gates), groups={}, timing={},
                   switch_window=dict(k=window_k, primary=window_k is not None,

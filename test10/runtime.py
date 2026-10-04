@@ -158,7 +158,7 @@ def rescore_case(case, store, methods):
 
 
 class Evaluator:
-    def __init__(self, seed=7, *, training_dir=TRAINING):
+    def __init__(self, seed=7, *, training_dir=TRAINING, methods=None):
         if not torch.cuda.is_available(): raise RuntimeError("CUDA is required for smoke/full")
         C = imports()
         torch.manual_seed(seed)
@@ -167,10 +167,11 @@ class Evaluator:
         self.small, self.base = C.build_predictor("small"), C.build_predictor("base_plus")
         self.model_load_s = now() - t0
         self.methods = {"direct": DirectCopyTranslator(SAM21_MEMORY_SPEC)}
-        self.methods.update(load_models(training_dir, "cuda"))
-        affine = self.methods["affine"]
-        self.methods["affine_spatial"] = LearnedComponentPolicyTranslator(affine, learned_components=("spatial_memory",))
-        self.methods["affine_pointer"] = LearnedComponentPolicyTranslator(affine, learned_components=("object_pointer",))
+        self.methods.update(load_models(training_dir, "cuda", methods))
+        if "affine" in self.methods:
+            affine = self.methods["affine"]
+            self.methods["affine_spatial"] = LearnedComponentPolicyTranslator(affine, learned_components=("spatial_memory",))
+            self.methods["affine_pointer"] = LearnedComponentPolicyTranslator(affine, learned_components=("object_pointer",))
 
     def prefix(self, case, frames, model, store, name, *, need_state=False):
         cached = load_blob(store, case, name)
