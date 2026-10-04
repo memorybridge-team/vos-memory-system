@@ -82,6 +82,13 @@ def build_report(selection, store, seed=7, scheduled=None):
     report = dict(protocol="test10.v1", design=selection.get("design", "original"),
                   comparison_protocol=comparison,
                   training_conditions=training.get("config") if comparison else None,
+                  comparison_checkpoints={m: dict(epoch=row.get("epoch"), selection=row.get("selection"),
+                                                  development=row.get("validation"), origin=row.get("origin"))
+                                          for m, row in training.get("models", {}).items()} if comparison else None,
+                  transformer_reference={k: v for k, v in (training.get("transformer_reference") or {}).items()
+                                         if k in ("run", "best_state_loss_epoch", "selected_epoch",
+                                                  "verified_conditions", "weights_read")} or None
+                                        if comparison else None,
                   methods=methods, candidate_cases=len(selection["cases"]), complete_cases=len(gates),
                   incomplete=missing, gate_cases=len(gates), groups={}, timing={},
                   switch_window=dict(k=window_k, primary=window_k is not None,
@@ -166,6 +173,13 @@ def build_report(selection, store, seed=7, scheduled=None):
              "Suffix J&F는 switch+1..end 전체 평균입니다. LVOS/VOST offset은 처리 프레임(원본 5/6 프레임 간격)입니다.", ""]
     if window_k is None:
         lines += ["전환 직후 J&F가 없는 row입니다. `--stage rescore`로 저장된 예측을 다시 채점하세요.", ""]
+    if comparison:
+        for method, row in report["comparison_checkpoints"].items():
+            rule = (row.get("selection") or {}).get("rule", "unrecorded")
+            lines.append(f"비교 학습 `{comparison}`: {method} checkpoint epoch {row['epoch']} ({rule}).")
+        bound = report["transformer_reference"]
+        lines += [f"Transformer run 대조: {bound['run']} ({bound['verified_conditions']})." if bound else
+                  "Transformer run 대조: 없음. 데이터·recipe 일치는 이 run에서 검증되지 않았습니다.", ""]
     lines += [f"| Dataset | Method | Cases | Videos | 전환 직후 J&F +1..+{k} (95% CI) | +1 J&F | Suffix J&F (95% CI) |",
               "|---|---|---:|---:|---|---:|---|"]
     for d in datasets_in_run:
