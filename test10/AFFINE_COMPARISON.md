@@ -100,6 +100,8 @@ python test10/comparable_training.py select \
 
 평가 manifest는 `test10.v1` 형식이며 train/development와 겹치지 않는 영상으로 준비한다. 겹치면 audit에서 거절한다. 전환 후 최소 10개 처리 프레임이 필요하다.
 
+`legacy_dev` cohort가 없는 새 manifest는 과거 test9 결과 파일을 읽거나 provenance에 포함하지 않는다. `legacy_dev`가 있더라도 과거 기록은 선택 사항이다. 결과 파일이 없으면 `legacy_audit.json`에 `unusable`과 `missing legacy results file`을 남기고 현재 평가 audit을 계속한다. 현재 학습 가중치·평가 입력의 checksum 검사는 그대로 적용한다.
+
 ```bash
 python test10/run.py --stage audit \
   --selection /data/evaluation_selection.json \

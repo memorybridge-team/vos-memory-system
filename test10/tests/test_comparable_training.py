@@ -226,17 +226,34 @@ class ComparableTraining(unittest.TestCase):
                 return dict(case_id=f'LVOSv2:{video}:obj1',dataset='LVOSv2',video_id=video,object_id=1,first=0,switch=4,end=20,
                             cohort='heldout_core',checkpoint_video=False,length_bin=i%3,frame_stems=[str(f) for f in range(21)],
                             input_sha256='rgb',annotation_sha256='gt',sampling=dict(raw_stride=5))
+            checkpoint = root/'runtime_checkpoint.pt'
+            checkpoint.write_bytes(b'audit runtime checkpoint fixture')
+            common = SimpleNamespace(MODELS={'small':dict(checkpoint=checkpoint)},
+                                     model_provenance=lambda: {'small':'audit-fixture'},
+                                     code_revision=lambda: {'source_digest':'audit-fixture'})
+            legacy = root/'legacy'
             def audit(run_dir,videos):
                 selection=root/f'{run_dir}.json'
                 write(selection,dict(schema='test10.v1',seed=7,cases=[case(i,v) for i,v in enumerate(videos)]))
-                prov=dict(files={},training=training_report(args.output_dir),training_dir=str(args.output_dir.resolve()))
-                with patch('run.provenance',return_value=prov),patch('run.audit_legacy',return_value=[]):
+                # Exercise the real provenance and legacy audit; only the separately
+                # supplied runtime adapter is a fixture, so missing history cannot be masked.
+                with patch('manifest.imports',return_value=common), patch('manifest.WORKSPACE',root), \
+                     patch('manifest.LEGACY',legacy):
                     run.run(run.parser().parse_args(['--stage','audit','--run-dir',str(root/run_dir),'--selection',str(selection),
                         '--training-dir',str(args.output_dir),'--methods','affine']))
             audit('eval',['v1','v2','v3','v4'])
             self.assertEqual(read(root/'eval/selection.json')['methods'],['affine'])
             self.assertEqual(read(root/'eval/audit.json')['fit']['videos'],{'LVOSv2':['dev','fit']})
             self.assertEqual(len(read(root/'eval/smoke_selection.json')['case_ids']),3)
+            self.assertEqual(read(root/'eval/legacy_audit.json'),[])
+            self.assertFalse(read(root/'eval/audit.json')['legacy_requested'])
+            self.assertFalse(read(root/'eval/provenance.json')['legacy']['results_available'])
+            # Even an unrelated, malformed historical archive must not affect a fresh manifest.
+            (legacy/'eval_dev').mkdir(parents=True)
+            (legacy/'eval_dev/results.jsonl').write_text('invalid unrelated history')
+            (legacy/'eval_dev/run_meta_0.json').write_text('invalid unrelated metadata')
+            audit('fresh_with_archive',['v1','v2','v3','v4'])
+            self.assertFalse(any(str(legacy) in p for p in read(root/'fresh_with_archive/provenance.json')['files']))
             with self.assertRaisesRegex(ValueError,'overlap'): audit('leak',['v1','dev'])
 
     def test_budget_stop_never_claims_completed_comparison(self):

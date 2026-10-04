@@ -160,10 +160,11 @@ def locked_run(args):
     else:
         if args.stage != "audit": raise ValueError("run --stage audit first")
         ensure_local_training_module()
-        prov = provenance(args.training_dir or TRAINING)
         selection = read(args.selection) if args.selection else build(args.seed)
         if getattr(args, "methods", None): selection = dict(selection, methods=args.methods)
         if selection.get("schema") != "test10.v1": raise ValueError("expected a test10 manifest")
+        prov = provenance(args.training_dir or TRAINING,
+                          include_legacy=any(c.get("cohort") == "legacy_dev" for c in selection["cases"]))
         # Selection is committed before provenance; incomplete setup can be retried safely.
         write(manifest_path, selection)
         write(meta_path, prov)
@@ -215,7 +216,11 @@ def locked_run(args):
             missing=[{"case_id": c["case_id"], "methods": [m for m in (*methods,GATE) if store.load(c,m) is None]}
                      for c in selection["cases"]],
             legacy_unverified=sum(r["status"]=="unverified" for r in legacy),
-            note="Legacy rows retained for historical comparison; missing past input hashes prevent verified score reuse. No training or inference performed."))
+            legacy_requested=prov.get("legacy", {}).get("requested"),
+            legacy_results_available=prov.get("legacy", {}).get("results_available"),
+            note=("Historical comparison entries are diagnostic only; missing or unverifiable results are not reused. "
+                  if legacy else "Independent evaluation; no historical result rows requested. ")
+                 + "No training or inference performed."))
         print(json.dumps(read(args.run_dir / "audit.json")["candidate_counts"]), flush=True)
         return
     if not (args.run_dir / "audit.json").exists(): raise ValueError("completed audit required")

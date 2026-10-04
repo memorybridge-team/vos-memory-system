@@ -150,7 +150,7 @@ def verify_case(case):
         if current[field] != case[field]: raise ValueError(f"case inputs changed: {case['case_id']} {field}")
 
 
-def provenance(training_dir):
+def provenance(training_dir, *, include_legacy=True):
     C = imports()
     import torch
     import numpy
@@ -161,14 +161,20 @@ def provenance(training_dir):
     trained = training_report(training_dir)
     paths += [Path(training_dir) / "train_report.json"]
     paths += [Path(training_dir) / row["checkpoint"] for row in trained["models"].values()]
-    paths += [LEGACY / "selection.json", LEGACY / "ckpt_cases.json", LEGACY / "eval_ckpt/selection.json",
-              LEGACY / "eval_dev/results.jsonl"]
-    paths += list((LEGACY / "eval_dev").glob("run_meta_*.json"))
+    legacy_paths = []
+    if include_legacy:
+        candidates = [LEGACY / "selection.json", LEGACY / "ckpt_cases.json", LEGACY / "eval_ckpt/selection.json",
+                      LEGACY / "eval_dev/results.jsonl", *(LEGACY / "eval_dev").glob("run_meta_*.json")]
+        legacy_paths = [p for p in candidates if p.is_file()]
+        paths += legacy_paths
     paths += list((WORKSPACE / "sam2/sam2").rglob("*.py")) + list((WORKSPACE / "sam2/sam2/configs").rglob("*.yaml"))
     paths += [C.MODELS[k]["checkpoint"] for k in C.MODELS]
     return dict(protocol=PROTOCOL, files=snapshot(paths), models=C.model_provenance(),
                 legacy_source_digest=C.code_revision()["source_digest"], autocast="bfloat16",
                 training=trained, training_dir=str(Path(training_dir).resolve()),
+                legacy=dict(requested=include_legacy,
+                            results_available=include_legacy and (LEGACY / "eval_dev/results.jsonl").is_file(),
+                            files=[str(p.resolve()) for p in legacy_paths]),
                 state_pair_schema="cmmt.prepared_handoff_case.v2", switch_window=10,
                 software={"python": sys.version, "torch": torch.__version__,
                                         "numpy": numpy.__version__, "PIL": PIL.__version__})
@@ -176,17 +182,22 @@ def provenance(training_dir):
 
 def audit_legacy(selection, prov):
     """Never promote unverifiable historical scores into the main comparison."""
-    metas = [read(p) for p in (LEGACY / "eval_dev").glob("run_meta_*.json")]
+    cases = [c for c in selection["cases"] if c.get("cohort") == "legacy_dev"]
+    if not cases:
+        return []
+    results_path = LEGACY / "eval_dev/results.jsonl"
+    available = results_path.is_file()
+    metas = [read(p) for p in (LEGACY / "eval_dev").glob("run_meta_*.json")] if available else []
     matching = [m for m in metas if m["code_revision"]["source_digest"] == prov["legacy_source_digest"]
                 and m["models"] == prov["models"] and m.get("autocast") == prov["autocast"]]
-    rows = [__import__("json").loads(line) for line in (LEGACY / "eval_dev/results.jsonl").read_text().splitlines()]
+    rows = [__import__("json").loads(line) for line in results_path.read_text().splitlines()] if available else []
     index = {(r["dataset"], r["case_id"], r["method"]): r for r in rows}
     output = []
-    for c in selection["cases"]:
-        if c["cohort"] != "legacy_dev": continue
+    for c in cases:
         for method in ("small_only", "direct", "linear", "residual_mlp", "base", "moment_match"):
             row = index.get((c["dataset"], c["original_case_id"], method))
-            if row is None: reason = "missing result"
+            if not available: reason = "missing legacy results file"
+            elif row is None: reason = "missing result"
             elif c["changed"]: reason = "switch changed"
             elif not matching: reason = "code/model/autocast mismatch"
             elif row["switch_position"] != c["switch"] or row["future_positions"] != c["end"] - c["switch"]:
