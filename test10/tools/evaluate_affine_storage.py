@@ -8,6 +8,7 @@ Missing GT remains missing. Memory scores cover valid whole records only.
 import argparse
 from collections import OrderedDict, defaultdict
 import dataclasses
+import hashlib
 import json
 import math
 from pathlib import Path
@@ -15,6 +16,14 @@ import sys
 import time
 
 DEADLINE = float('inf')
+SUMMARY_CACHE = {}
+SUMMARY_INITIALIZED = False
+
+
+def compact(row):
+    return {k:row[k] for k in ['dataset','video_id','role','memory']} | {
+        'jf': {method:{k:scores[k] for k in ['first10','suffix']}
+               for method,scores in row.get('jf',{}).items()}}
 
 
 def check_deadline():
@@ -125,7 +134,7 @@ def video(args, row):
     return paths, gt
 
 
-def continuation(predictor, frames, canonical, row, end, gt, paths, metrics):
+def continuation(predictor, frames, canonical, row, end, gt, paths, metrics, capture_hashes=False):
     from vos_memory_inspector.sam2_state import inject_sam2_canonical_state
     from vos_memory_inspector.vos_metrics import read_indexed_png
     state = fresh(predictor, frames)
@@ -140,7 +149,7 @@ def continuation(predictor, frames, canonical, row, end, gt, paths, metrics):
         calls.append(current[0])
         return original_forward(image)
     predictor._get_image_feature, predictor.forward_image = feature, forward
-    scores = []
+    scores, hashes = [], []
     try:
         with torch.inference_mode(), torch.autocast('cuda', dtype=torch.bfloat16):
             inject_sam2_canonical_state(canonical, predictor=predictor, inference_state=state)
@@ -154,6 +163,7 @@ def continuation(predictor, frames, canonical, row, end, gt, paths, metrics):
                 if len(ids)!=1 or str(ids[0])!=str(row['object_id']):
                     raise RuntimeError('object identity mismatch')
                 mask = (logits[0,0]>0).cpu().numpy()
+                if capture_hashes: hashes.append(hashlib.sha256(logits.float().cpu().numpy().tobytes()).hexdigest())
                 annotation = gt / (paths[position].stem+'.png')
                 item = dict(position=position, offset=position-row['switch'], J=None,F=None,J_and_F=None,
                             gt_present=None, status='missing_annotation')
@@ -168,7 +178,63 @@ def continuation(predictor, frames, canonical, row, end, gt, paths, metrics):
         predictor._get_image_feature, predictor.forward_image = original_feature, original_forward
     if [r['position'] for r in scores]!=list(range(row['switch']+1,end+1)):
         raise RuntimeError('incomplete continuation')
-    return dict(frames=scores, past_backbone_calls=0, future_backbone_calls=len(calls))
+    return dict(frames=scores, past_backbone_calls=0, future_backbone_calls=len(calls),logit_hashes=hashes)
+
+
+def shared_continuations(predictor, frames, canonicals, row, end, gt, paths, metrics, capture_hashes=False):
+    """Interleave independent tracking states; reuse only the current RGB encoder output."""
+    from vos_memory_inspector.sam2_state import inject_sam2_canonical_state
+    from vos_memory_inspector.vos_metrics import read_indexed_png
+    original_feature, original_forward = predictor._get_image_feature, predictor.forward_image
+    cache, calls, current = {}, [], [None]
+    def feature(state, frame_idx, batch_size):
+        if frame_idx<=row['switch']: raise RuntimeError('past RGB requested')
+        current[0]=int(frame_idx)
+        if frame_idx in cache: state['cached_features'][frame_idx]=cache[frame_idx]
+        result=original_feature(state,frame_idx,batch_size)
+        cache.clear();cache[frame_idx]=state['cached_features'][frame_idx]
+        return result
+    def forward(image):
+        calls.append(current[0]);return original_forward(image)
+    predictor._get_image_feature,predictor.forward_image=feature,forward
+    output={m:dict(frames=[],logit_hashes=[]) for m,_ in canonicals}
+    generators={};states={}
+    try:
+        with torch.inference_mode(),torch.autocast('cuda',dtype=torch.bfloat16):
+            for method,canonical in canonicals:
+                state=fresh(predictor,frames);states[method]=state
+                inject_sam2_canonical_state(canonical,predictor=predictor,inference_state=state)
+                generators[method]=predictor.propagate_in_video(state,start_frame_idx=row['switch']+1,
+                    max_frame_num_to_track=end-row['switch']-1)
+            if calls: raise RuntimeError('injection ran backbone')
+            for expected in range(row['switch']+1,end+1):
+                check_deadline()
+                annotation=gt/(paths[expected].stem+'.png')
+                label=read_indexed_png(annotation) if annotation.is_file() else None
+                target=label==row['object_id'] if label is not None else None
+                void=label==255 if label is not None else None
+                for method,generator in generators.items():
+                    position,ids,logits=next(generator)
+                    if position!=expected or len(ids)!=1 or str(ids[0])!=str(row['object_id']):
+                        raise RuntimeError('shared continuation identity/timeline mismatch')
+                    if capture_hashes:
+                        output[method]['logit_hashes'].append(hashlib.sha256(logits.float().cpu().numpy().tobytes()).hexdigest())
+                    mask=(logits[0,0]>0).cpu().numpy()
+                    item=dict(position=position,offset=position-row['switch'],J=None,F=None,J_and_F=None,
+                              gt_present=None,status='missing_annotation')
+                    if label is not None:
+                        j=float(metrics.db_eval_iou(target,mask,void));f=float(metrics.db_eval_boundary(target,mask,void))
+                        item.update(J=j,F=f,J_and_F=(j+f)/2,gt_present=bool(target.any()),status='ok')
+                    output[method]['frames'].append(item)
+            if calls!=list(range(row['switch']+1,end+1)):
+                raise RuntimeError('expected exactly one future backbone call per frame')
+    finally:
+        predictor._get_image_feature,predictor.forward_image=original_feature,original_forward
+        for generator in generators.values():generator.close()
+    for result in output.values():
+        result.update(past_backbone_calls=0,future_backbone_calls=len(calls),
+                      backbone_call_scope='one shared image encoder call per frame across all methods; independent temporal states')
+    return output
 
 
 def averages(rows):
@@ -207,7 +273,11 @@ def native_gate(predictor, frames, source, row, paths, gt):
 
 
 def summarize(directory):
-    rows = [read(p) for p in (directory/'cases').glob('*.json')]
+    global SUMMARY_INITIALIZED
+    if not SUMMARY_INITIALIZED:
+        for p in (directory/'cases').glob('*.json'): SUMMARY_CACHE[p.name]=compact(read(p))
+        SUMMARY_INITIALIZED=True
+    rows = list(SUMMARY_CACHE.values())
     groups = defaultdict(list)
     for row in rows:
         groups[row['dataset'],row['role']].append(row)
@@ -252,6 +322,7 @@ def main():
     p.add_argument('--jf-mose-cases',type=int)
     p.add_argument('--jf-lvos-cases',type=int)
     p.add_argument('--deadline-unix',type=float,help='shared absolute wall-time deadline for memory and J&F')
+    p.add_argument('--verify-shared-features',action='store_true',help='once per dataset compare every future full-logit hash to uncached execution')
     args=p.parse_args()
     global DEADLINE
     DEADLINE=args.deadline_unix if args.deadline_unix else float('inf')
@@ -317,15 +388,31 @@ def main():
                     gpu=dataclasses.replace(source,spatial_memory=source.spatial_memory.to('cuda'),
                         object_pointer=source.object_pointer.to('cuda'),presence_logits=source.presence_logits.to('cuda'))
                     translated=model.translate(gpu)
-                result['jf']={}
-                for method,canonical in [('direct',source),('affine',translated),('target_state_reference',target)]:
-                    scores=continuation(predictor,frames,canonical,row,end,gt,paths,metrics)
+                canonicals=[('direct',source),('affine',translated),('target_state_reference',target)]
+                equivalence=args.output_dir/('shared_feature_equivalence_'+row['dataset']+'.json')
+                verify=args.verify_shared_features and not equivalence.exists()
+                cached_started=time.monotonic()
+                result['jf']=shared_continuations(predictor,frames,canonicals,row,end,gt,paths,metrics,verify)
+                cached_seconds=time.monotonic()-cached_started
+                if verify:
+                    old_started=time.monotonic()
+                    for method,canonical in canonicals:
+                        old_scores=continuation(predictor,frames,canonical,row,end,gt,paths,metrics,True)
+                        if (old_scores['logit_hashes']!=result['jf'][method]['logit_hashes'] or
+                                old_scores['frames']!=result['jf'][method]['frames']):
+                            raise RuntimeError('shared RGB features changed full logits or per-frame scores')
+                    write(equivalence,dict(passed=True,case=row,frames=end-row['switch'],methods=len(canonicals),
+                        full_logits_bitwise_equal=True,per_frame_scores_equal=True,cached_seconds=cached_seconds,
+                        uncached_seconds=time.monotonic()-old_started))
+                for method,scores in result['jf'].items():
+                    scores.pop('logit_hashes',None)
                     scores['first10']=averages(scores['frames'][:10])
                     scores['suffix']=averages(scores['frames']) if args.horizon=='suffix' else dict(J_and_F=None,status='not_run')
                     result['jf'][method]=scores
                 result['horizon']=args.horizon
             write(output,result)
-        interval=100 if args.stage=='memory' else 10
+        SUMMARY_CACHE[output.name]=compact(result)
+        interval=100
         if index%interval==0 or index==1 or index==len(pairs):
             summarize(args.output_dir)
             write(args.output_dir/'progress.json',dict(stage=args.stage,horizon=args.horizon,
