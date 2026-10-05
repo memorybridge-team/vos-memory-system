@@ -1,61 +1,37 @@
-# test10 — Small → Base+ 상태 전환 실험
+# test10 — Small → Base+ Affine 상태 전환 실험
 
 Small이 frame `t`까지 처리한 상태를 Base+에 전달해 `t+1`부터 이어 처리하는 방법을 비교한다. 결과 패키지에는 평가 harness, 선택 manifest, case별 점수 JSON, 요약 통계, 실행·비용·provenance 기록이 포함되어 있다.
 
-## 최신 실행: fit 1,000 pair / validation 200 pair
+| 구분 | 항목 | 설정 |
+|---|---|---|
+| 모델 | 변환 방식 | Spatial memory와 object pointer에 각각 `Wx+b` 적용 |
+| 모델 | Spatial 변환 | 위치마다 같은 64 → 64 선형층 사용 |
+| 모델 | Pointer 변환 | 256 → 256 선형층 |
+| 모델 | 파라미터 수 | 69,952개 |
+| 데이터 | 학습 데이터 | LVOSv2 fit: 1,488 pair / 347영상 |
+| 데이터 | 검증 데이터 | LVOSv2 development: 315 pair / 73영상 |
+| 데이터 | 유효 memory record | 학습 23,808개 / 검증 5,040개 |
+| 데이터 | 학습 목표 | 같은 영상·객체·시점의 Small 상태 → Base+ 상태 |
+| 데이터 | 증강 | 없음 |
+| 손실 | 구성 | 정규화된 spatial MSE + 정규화된 pointer MSE |
+| 손실 | 정규화 | 각 MSE를 학습 데이터의 target RMS²로 나눔 |
+| 손실 | Target RMS | Spatial 0.7997500379 / Pointer 0.5666758775 |
+| 손실 | 적용 범위 | 유효 record만 계산하며 padding 제외 |
+| 손실 | 입력 정규화 | 하지 않음 — RMS는 손실 계산에만 사용 |
+| 최적화 | Optimizer | AdamW |
+| 최적화 | Learning rate | 0.0003 |
+| 최적화 | AdamW 설정 | β₁ 0.9 β₂ 0.999 ε 1e−8 |
+| 최적화 | Weight decay | 가중치 .0001 / bias 0 |
+| 스케줄 | Learning rate 감소 | Cosine decay 최소 0.00001 |
+| 실행 | Epoch | 30 조기 종료 없음 |
+| 실행 | Update 수 | Epoch당 372회 총 11,160회 |
+| 실행 | 학습 정밀도 | FP32 |
+| 실행 | Seed | 7 |
+| 모델 선택 | 검증 주기 | 매 epoch, 검증 유효 record 전체 평가 |
+| 모델 선택 | 선택 기준 | 검증 normalized loss 최소 동점이면 나중 epoch |
+| 모델 선택 | 선택 결과 | Epoch 28 / optimizer step 10,416 |
+| 모델 선택 | 선택 시 검증 손실 | 0.452371 |
 
-2026-10-01에는 기존 fit bank에서 영상 단위로 분리한 학습 1,000 pair와 validation 200 pair로 Affine·MLP·Transformer를 새로 학습했다(seed 7, batch_records=4, 8 epoch). 선택 epoch는 각각 6/8/8이며, MLP와 Transformer의 수렴은 확인되지 않았다.
-
-MOSEv2·LVOSv2·DAVIS 2017·VOST 각각 40영상, 총 160영상에서 핵심 8개 방법을 모두 완료했다. Self-injection 160/160 통과, 본 평가 실패 및 미완료 0건이다. 주 지표는 전환 후 +1..+10 처리 프레임 J&F다. Affine은 Direct보다 네 데이터셋 모두 개선됐지만 nonlinear의 추가 이점은 데이터셋 의존적이었다. 이전 평가 영상이 포함되므로 untouched test로 부르지 않는다.
-
-## 현재 코드와 실행된 결과의 구분
-
-현재 코드는 `state_pair_examples`와 같은 **`cmmt.prepared_handoff_case.v2` state-only pair**를 학습·handoff에 사용한다. 새 학습 결과만 평가에 사용하며, 주 지표는 Base+ 전환 후 **첫 10개 처리 프레임의 J&F**다. `+1`부터 `+10`까지 J/F/J&F를 각각 기록한다. 아래 기존 Run01/Heldout01 수치는 이전 학습·suffix 평가 결과이며 새 코드의 학습 또는 10프레임 평가를 실행한 결과가 아니다.
-
-## Pair 형식과 새 학습
-
-`.pt`의 최상위 필드는 `schema_version`, `source_canonical`, `target_canonical`, `metadata`다. `.pt.sha256`과 `.prepare.json`도 필요하다. 파일명에서 switch를 추측하지 않고 metadata의 **처리 프레임 위치**를 사용한다. LVOS 예시의 파일명 `switch491`과 실제 `switch_frame=98`은 서로 다른 단위다.
-
-- spatial memory: `[B,O,K,64,64,64]`, bf16
-- object pointer: `[B,O,K,256]`, fp32
-- presence logits: `[B,O,K,1]`, fp32 진단용 보존 값
-- frame indices, slot order, conditioning, validity 및 object IDs를 보존한다. Source/Target의 discrete 필드가 다르면 학습을 중단한다.
-- 예시와 같이 모든 conditioning 및 최근 `max(num_maskmem-1,max_obj_ptrs_in_encoder-1)`개의 non-conditioning 기록을 저장한다. 기본값은 최근 15개이며, padding은 loss에서 제외한다.
-
-학습 collection은 명시적인 JSON으로 지정한다. 경로는 이 JSON 파일 기준이며, 각 pair에는 세 파일이 모두 있어야 한다. 예시 2개를 자동으로 학습 데이터로 사용하지 않는다.
-
-RunPod에서 내려받은 전체 state-pair 디렉터리는 변환하거나 복사할 필요가 없다. `MOSEv2/{fit,development}`, `LVOSv2/{fit,development}`, `manifests/`가 한 root 아래 있으면 다음 명령으로 선택 JSON을 만든다. `fit`은 train, `development`는 validation이며 영상 단위 분리를 확인한다. 원본 tensor의 SHA256은 학습 로더가 실제로 읽을 때 검증한다.
-
-```sh
-TEST10_WORKSPACE=/home/home/test \
-TEST10_TRANSLATOR_REPO=/home/home/test/test9/vos-memory-translator-nonlinear \
-/home/home/test/.cuda-bench-env/bin/python test10/pair_catalog.py \
-  --root /mnt/c/Users/Home/runpod-state-pairs \
-  --output /home/home/test/test10_pair_selection.json
-```
-
-```sh
-TEST10_WORKSPACE=/home/home/test TEST10_TRANSLATOR_REPO=/home/home/test/test9/vos-memory-translator-nonlinear \
-/home/home/test/.cuda-bench-env/bin/python test10/experiment_selection.py \
-  --catalog /home/home/test/test10_pair_selection.json \
-  --output /home/home/test/test10_fit_1000_train_200_val.json
-```
-
-```json
-{
-  "schema": "test10.pair_selection.v1",
-  "pairs": [
-    {"dataset": "MOSEv2", "video_id": "train_video", "split": "train", "path": "train/train_video.pt"},
-    {"dataset": "MOSEv2", "video_id": "validation_video", "split": "validation", "path": "validation/validation_video.pt"}
-  ]
-}
-```
-
-## 추가 영상 평가
-
-기존 결과와 겹치지 않는 영상 140개를 MOSEv2 development, LVOS v2 validation, DAVIS 2017 train, VOST validation에서 각각 35개씩 평가했다. 모두 완료됐고 self-injection gate 140/140 통과, 실패 0건, 단일 GPU 누적 시간 125.53분이었다. Direct Copy 대비 Affine의 큰 이득은 네 데이터셋에서 유지됐다. 새 MOSE 집합에서는 Affine이 Small-only보다 평균 8.68 J&F point 낮아, 원래 개발 집합의 결론을 그대로 일반화할 수 없다.
-
-선정 규칙, 방법별 결과, paired CI 및 평가 범위는 [HELDOUT_RESULTS.md](HELDOUT_RESULTS.md)와 [heldout01 요약](runs/heldout01/summary.md)을 참조한다. DAVIS는 공식 train split을 사용한 translator 기준 보조 평가이며, VOST 결과는 객체별 독립 실행의 test10 지표다. 추가 평가에서 사용한 8개 방법과 self-injection gate는 기존 통합 비교의 12개 방법 중 핵심 비교군이다.
 
 ## 결과 요약
 
