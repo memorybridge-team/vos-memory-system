@@ -7,6 +7,7 @@ Missing GT remains missing. Memory scores cover valid whole records only.
 """
 import argparse
 from collections import OrderedDict, defaultdict
+from concurrent.futures import ThreadPoolExecutor
 import dataclasses
 import hashlib
 import json
@@ -83,28 +84,42 @@ def memory(source, target, model, scales):
 
 class LazyFrames:
     """Same pinned SAM2 JPEG resize/normalization, without whole-video RAM use."""
-    def __init__(self, paths, size):
+    def __init__(self, paths, size, prefetch=0):
         self.paths, self.size = paths, size
         with Image.open(paths[0]) as image:
             self.width, self.height = image.size
         self.cache = OrderedDict()
+        self.prefetch=prefetch
+        self.pending={}
+        self.pool=ThreadPoolExecutor(max_workers=2,thread_name_prefix='rgb') if prefetch else None
 
     def __len__(self):
         return len(self.paths)
 
-    def __getitem__(self, index):
+    def load(self,index):
         from sam2.utils.misc import _load_img_as_tensor
+        image,h,w=_load_img_as_tensor(str(self.paths[index]),self.size)
+        if (h,w)!=(self.height,self.width):raise ValueError('variable video dimensions')
+        image=image.float()
+        image.sub_(torch.tensor([.485,.456,.406])[:,None,None])
+        image.div_(torch.tensor([.229,.224,.225])[:,None,None])
+        return image
+
+    def __getitem__(self, index):
         if index not in self.cache:
-            image, h, w = _load_img_as_tensor(str(self.paths[index]), self.size)
-            if (h, w) != (self.height, self.width):
-                raise ValueError('variable video dimensions')
-            image = image.float()
-            image.sub_(torch.tensor([.485,.456,.406])[:,None,None])
-            image.div_(torch.tensor([.229,.224,.225])[:,None,None])
-            self.cache[index] = image
+            self.cache[index] = self.pending.pop(index).result() if index in self.pending else self.load(index)
             while len(self.cache) > 2:
                 self.cache.popitem(last=False)
+        if self.pool:
+            for stale in [k for k in self.pending if k<index]:self.pending.pop(stale).cancel()
+            for future in range(index+1,min(len(self),index+self.prefetch+1)):
+                if future not in self.pending and future not in self.cache:
+                    self.pending[future]=self.pool.submit(self.load,future)
         return self.cache[index]
+
+    def close(self):
+        if self.pool:self.pool.shutdown(wait=True,cancel_futures=True)
+        self.pending.clear();self.cache.clear()
 
 
 def fresh(predictor, frames):
@@ -181,7 +196,8 @@ def continuation(predictor, frames, canonical, row, end, gt, paths, metrics, cap
     return dict(frames=scores, past_backbone_calls=0, future_backbone_calls=len(calls),logit_hashes=hashes)
 
 
-def shared_continuations(predictor, frames, canonicals, row, end, gt, paths, metrics, capture_hashes=False):
+def shared_continuations(predictor, frames, canonicals, row, end, gt, paths, metrics, capture_hashes=False,
+                         score_workers=4,queue_frames=8):
     """Interleave independent tracking states; reuse only the current RGB encoder output."""
     from vos_memory_inspector.sam2_state import inject_sam2_canonical_state
     from vos_memory_inspector.vos_metrics import read_indexed_png
@@ -199,6 +215,25 @@ def shared_continuations(predictor, frames, canonicals, row, end, gt, paths, met
     predictor._get_image_feature,predictor.forward_image=feature,forward
     output={m:dict(frames=[],logit_hashes=[]) for m,_ in canonicals}
     generators={};states={}
+    pool=ThreadPoolExecutor(max_workers=score_workers,thread_name_prefix='score') if score_workers else None
+    pending=OrderedDict()
+    def score_frame(position,masks):
+        annotation=gt/(paths[position].stem+'.png')
+        label=read_indexed_png(annotation) if annotation.is_file() else None
+        target=label==row['object_id'] if label is not None else None
+        void=label==255 if label is not None else None
+        scored={}
+        for method,mask in masks.items():
+            item=dict(position=position,offset=position-row['switch'],J=None,F=None,J_and_F=None,
+                      gt_present=None,status='missing_annotation')
+            if label is not None:
+                j=float(metrics.db_eval_iou(target,mask,void));f=float(metrics.db_eval_boundary(target,mask,void))
+                item.update(J=j,F=f,J_and_F=(j+f)/2,gt_present=bool(target.any()),status='ok')
+            scored[method]=item
+        return scored
+    def drain():
+        _,future=pending.popitem(last=False)
+        for method,item in future.result().items():output[method]['frames'].append(item)
     try:
         with torch.inference_mode(),torch.autocast('cuda',dtype=torch.bfloat16):
             for method,canonical in canonicals:
@@ -209,28 +244,26 @@ def shared_continuations(predictor, frames, canonicals, row, end, gt, paths, met
             if calls: raise RuntimeError('injection ran backbone')
             for expected in range(row['switch']+1,end+1):
                 check_deadline()
-                annotation=gt/(paths[expected].stem+'.png')
-                label=read_indexed_png(annotation) if annotation.is_file() else None
-                target=label==row['object_id'] if label is not None else None
-                void=label==255 if label is not None else None
+                masks={}
                 for method,generator in generators.items():
                     position,ids,logits=next(generator)
                     if position!=expected or len(ids)!=1 or str(ids[0])!=str(row['object_id']):
                         raise RuntimeError('shared continuation identity/timeline mismatch')
                     if capture_hashes:
                         output[method]['logit_hashes'].append(hashlib.sha256(logits.float().cpu().numpy().tobytes()).hexdigest())
-                    mask=(logits[0,0]>0).cpu().numpy()
-                    item=dict(position=position,offset=position-row['switch'],J=None,F=None,J_and_F=None,
-                              gt_present=None,status='missing_annotation')
-                    if label is not None:
-                        j=float(metrics.db_eval_iou(target,mask,void));f=float(metrics.db_eval_boundary(target,mask,void))
-                        item.update(J=j,F=f,J_and_F=(j+f)/2,gt_present=bool(target.any()),status='ok')
-                    output[method]['frames'].append(item)
+                    masks[method]=(logits[0,0]>0).cpu().numpy()
+                if pool:
+                    pending[expected]=pool.submit(score_frame,expected,masks)
+                    if len(pending)>=queue_frames:drain()
+                else:
+                    for method,item in score_frame(expected,masks).items():output[method]['frames'].append(item)
+            while pending:drain()
             if calls!=list(range(row['switch']+1,end+1)):
                 raise RuntimeError('expected exactly one future backbone call per frame')
     finally:
         predictor._get_image_feature,predictor.forward_image=original_feature,original_forward
         for generator in generators.values():generator.close()
+        if pool:pool.shutdown(wait=True,cancel_futures=True)
     for result in output.values():
         result.update(past_backbone_calls=0,future_backbone_calls=len(calls),
                       backbone_call_scope='one shared image encoder call per frame across all methods; independent temporal states')
@@ -323,10 +356,17 @@ def main():
     p.add_argument('--jf-lvos-cases',type=int)
     p.add_argument('--deadline-unix',type=float,help='shared absolute wall-time deadline for memory and J&F')
     p.add_argument('--verify-shared-features',action='store_true',help='once per dataset compare every future full-logit hash to uncached execution')
+    p.add_argument('--score-workers',type=int,default=8)
+    p.add_argument('--prefetch-frames',type=int,default=8)
+    p.add_argument('--queue-frames',type=int,default=16)
     args=p.parse_args()
     global DEADLINE
     DEADLINE=args.deadline_unix if args.deadline_unix else float('inf')
     if not 0<args.fraction<=1: p.error('fraction must be in (0,1]')
+    if args.score_workers<0 or args.prefetch_frames<0 or args.queue_frames<1:p.error('invalid worker/queue limits')
+    import cv2
+    cv2.setNumThreads(1)
+    torch.set_num_threads(2)
     torch.manual_seed(args.seed)
     model=load_models(args.training_dir,'cuda',['affine'])['affine']
     training=read(args.training_dir/'train_report.json')
@@ -378,7 +418,7 @@ def main():
             if need_memory: result['memory']=memory(source,target,model,scales)
             if need_jf:
                 paths,gt=video(args,row)
-                frames=LazyFrames(paths,predictor.image_size)
+                frames=LazyFrames(paths,predictor.image_size,args.prefetch_frames)
                 gate=args.output_dir/('native_gate_'+row['dataset']+'.json')
                 if not gate.exists():
                     write(gate,native_gate(predictor,frames,source,row,paths,gt))
@@ -392,7 +432,8 @@ def main():
                 equivalence=args.output_dir/('shared_feature_equivalence_'+row['dataset']+'.json')
                 verify=args.verify_shared_features and not equivalence.exists()
                 cached_started=time.monotonic()
-                result['jf']=shared_continuations(predictor,frames,canonicals,row,end,gt,paths,metrics,verify)
+                result['jf']=shared_continuations(predictor,frames,canonicals,row,end,gt,paths,metrics,verify,
+                    args.score_workers,args.queue_frames)
                 cached_seconds=time.monotonic()-cached_started
                 if verify:
                     old_started=time.monotonic()
@@ -410,6 +451,7 @@ def main():
                     scores['suffix']=averages(scores['frames']) if args.horizon=='suffix' else dict(J_and_F=None,status='not_run')
                     result['jf'][method]=scores
                 result['horizon']=args.horizon
+                frames.close()
             write(output,result)
         SUMMARY_CACHE[output.name]=compact(result)
         interval=100
