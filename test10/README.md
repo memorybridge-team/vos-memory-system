@@ -2,10 +2,6 @@
 
 Small이 frame `t`까지 처리한 상태를 Base+에 전달해 `t+1`부터 이어 처리하는 방법을 비교한다. 결과 패키지에는 평가 harness, 선택 manifest, case별 점수 JSON, 요약 통계, 실행·비용·provenance 기록이 포함되어 있다.
 
-## 2026-10-02: 실험·논문 지표·Affine 분석 산출물 공개
-
-[산출물 전체 안내와 기존 보고서 정정](results/README.md), [Affine 비교 보고서](results/affine_comparison_20261001/REPORT.md), [구간별 전체 CSV](results/affine_comparison_20261001/windows.csv)를 먼저 참조한다. 이전 결과 파일과 날짜를 그대로 보존했으며 원시 method 점수·로그·코드 snapshot도 무손실 archive로 포함했다. 사용자 승인에 따라 약 20GB 예측 캐시는 로컬에 남기고 경로·크기·SHA-256 목록을 공개한다. 새 추론·학습은 수행하지 않았다. 기존 보고서의 AdamW 표기는 실제 코드의 **Adam**으로 정정하며, 최신 비교는 GT-visible 기준 +1..+5와 full suffix를 분리한다.
-
 ## 최신 실행: fit 1,000 pair / validation 200 pair
 
 2026-10-01에는 기존 fit bank에서 영상 단위로 분리한 학습 1,000 pair와 validation 200 pair로 Affine·MLP·Transformer를 새로 학습했다(seed 7, batch_records=4, 8 epoch). 선택 epoch는 각각 6/8/8이며, MLP와 Transformer의 수렴은 확인되지 않았다.
