@@ -190,7 +190,7 @@ def shared_continuations(predictor, frames, canonicals, row, end, gt, paths, met
     def feature(state, frame_idx, batch_size):
         if frame_idx<=row['switch']: raise RuntimeError('past RGB requested')
         current[0]=int(frame_idx)
-        if frame_idx in cache: state['cached_features'][frame_idx]=cache[frame_idx]
+        if frame_idx in cache: state['cached_features']={frame_idx:cache[frame_idx]}
         result=original_feature(state,frame_idx,batch_size)
         cache.clear();cache[frame_idx]=state['cached_features'][frame_idx]
         return result
