@@ -2,7 +2,8 @@
 
 SAM 2.1 Small에서 Base+로 모델을 전환할 때, 선형 변환의 가능성을 검토해본다. 
 간단한 선형 구조 Wx+b 를 통하여 상대적으로 유사한 small 과 base+의 representation 차이가
-단순한 선형(affine?) 변환으로 설명될 수 있는지 확인한다. 선형 모델 학습 조건은 다음과 같다
+단순한 선형(affine?) 변환으로 설명될 수 있는지 확인한다. 선형 모델 학습 조건은 다음과 같다. 
+학습 조건은 최대한 non-linear translator의 transfomer의 학습 조건과 유사하게 설정하였다.
 
 ### Affine 모델 학습 조건
 
