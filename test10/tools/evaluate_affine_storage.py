@@ -14,6 +14,13 @@ from pathlib import Path
 import sys
 import time
 
+DEADLINE = float('inf')
+
+
+def check_deadline():
+    if time.time() >= DEADLINE:
+        raise TimeoutError('evaluation wall-time budget exhausted')
+
 ROOT = Path(__file__).resolve().parents[1]
 sys.path.insert(0, str(ROOT))
 from core import read, write, sha, rank
@@ -141,6 +148,7 @@ def continuation(predictor, frames, canonical, row, end, gt, paths, metrics):
                 raise RuntimeError('injection ran the backbone')
             for position, ids, logits in predictor.propagate_in_video(state,
                     start_frame_idx=row['switch']+1, max_frame_num_to_track=end-row['switch']-1):
+                check_deadline()
                 if position>end:
                     raise RuntimeError('unexpected prediction position')
                 if len(ids)!=1 or str(ids[0])!=str(row['object_id']):
@@ -165,7 +173,9 @@ def continuation(predictor, frames, canonical, row, end, gt, paths, metrics):
 
 def averages(rows):
     valid = [r for r in rows if r['status']=='ok']
+    visible=[r for r in valid if r['gt_present']]
     return dict(predicted_frames=len(rows), annotated_frames=len(valid),
+        visible_frames=len(visible), visible_J_and_F=sum(r['J_and_F'] for r in visible)/len(visible) if visible else None,
         **{k: sum(r[k] for r in valid)/len(valid) if valid else None for k in ['J','F','J_and_F']})
 
 
@@ -181,7 +191,7 @@ def native_gate(predictor, frames, source, row, paths, gt):
     with torch.inference_mode(),torch.autocast('cuda',dtype=torch.bfloat16):
         predictor.add_new_mask(state,frame_idx=first,obj_id=row['object_id'],mask=prompt)
         for _ in predictor.propagate_in_video(state,start_frame_idx=first,
-                max_frame_num_to_track=row['switch']-first): pass
+                max_frame_num_to_track=row['switch']-first): check_deadline()
         canonical=active_state(canonicalize_sam2_inference_state(state,switch_frame=row['switch'],strict=True),
             num_maskmem=predictor.num_maskmem,max_obj_ptrs=predictor.max_obj_ptrs_in_encoder)
         native={i:logits.float().cpu() for i,_,logits in predictor.propagate_in_video(state,
@@ -239,7 +249,12 @@ def main():
     p.add_argument('--stage',choices=['memory','jf','both'],default='both')
     p.add_argument('--max-cases',type=int)
     p.add_argument('--horizon',choices=['first10','suffix'],default='suffix')
+    p.add_argument('--jf-mose-cases',type=int)
+    p.add_argument('--jf-lvos-cases',type=int)
+    p.add_argument('--deadline-unix',type=float,help='shared absolute wall-time deadline for memory and J&F')
     args=p.parse_args()
+    global DEADLINE
+    DEADLINE=args.deadline_unix if args.deadline_unix else float('inf')
     if not 0<args.fraction<=1: p.error('fraction must be in (0,1]')
     torch.manual_seed(args.seed)
     model=load_models(args.training_dir,'cuda',['affine'])['affine']
@@ -266,7 +281,23 @@ def main():
         write(args.output_dir/'metric_provenance.json',metrics.to_dict())
     started=time.monotonic()
     pairs=selection['pairs'][:args.max_cases] if args.max_cases else selection['pairs']
+    if args.stage=='jf' and (args.jf_mose_cases is not None or args.jf_lvos_cases is not None):
+        cohorts=[]
+        for dataset,limit in [('MOSEv2',args.jf_mose_cases),('LVOSv2',args.jf_lvos_cases)]:
+            candidates=[r for r in selection['pairs'] if r['dataset']==dataset]
+            candidates.sort(key=lambda r:rank(args.seed,'jf',dataset,r['video_id'],r['path']))
+            videos=set(); chosen=[]
+            for row in candidates:
+                if row['video_id'] in videos: continue
+                videos.add(row['video_id']);chosen.append(row)
+                if limit is not None and len(chosen)>=limit: break
+            cohorts.append(chosen)
+        pairs=[g[i] for i in range(max(map(len,cohorts))) for g in cohorts if i<len(g)]
+        write(args.output_dir/'jf_selection.json',dict(seed=args.seed,policy='one pair per video; hash order; no score selection',pairs=pairs))
     for index,row in enumerate(pairs,1):
+        write(args.output_dir/'active_case.json',dict(index=index,requested=len(pairs),case=row,
+            deadline_unix=args.deadline_unix))
+        check_deadline()
         output=args.output_dir/'cases'/(row['dataset']+'_'+Path(row['path']).stem+'.json')
         result=read(output) if output.exists() else dict(row)
         need_memory='memory' not in result
