@@ -12,10 +12,6 @@ Small이 frame `t`까지 처리한 상태를 Base+에 전달해 `t+1`부터 이�
 
 MOSEv2·LVOSv2·DAVIS 2017·VOST 각각 40영상, 총 160영상에서 핵심 8개 방법을 모두 완료했다. Self-injection 160/160 통과, 본 평가 실패 및 미완료 0건이다. 주 지표는 전환 후 +1..+10 처리 프레임 J&F다. Affine은 Direct보다 네 데이터셋 모두 개선됐지만 nonlinear의 추가 이점은 데이터셋 의존적이었다. 이전 평가 영상이 포함되므로 untouched test로 부르지 않는다.
 
-최신 [보고서](results/fit1000_eval160/REPORT.md), [학습 곡선](results/fit1000_eval160/training_curves.svg), [pair 목록](results/fit1000_eval160/training_pairs.csv), [평가 영상 목록](results/fit1000_eval160/evaluation_cases.csv), [검증 기록](results/fit1000_eval160/audit.json)을 참조한다. 전체 suffix·paired CI·비용·VRAM·준비 단계 실패·다운로드 state pair의 호환성 점검도 같은 폴더에 보존했다. 원본 영상과 대용량 state tensor는 결과 export에 포함하지 않는다.
-
-속도 개선은 매 case마다 반복하던 checkpoint 전체 hash 읽기를 제거한 것이다. 시작 시와 최종 export 시의 hash 검증, case 입력 검증 및 self-injection gate는 유지했다. 비교군·suffix·추론 정밀도를 줄여 속도를 높인 것은 아니다.
-
 ## 현재 코드와 실행된 결과의 구분
 
 현재 코드는 `state_pair_examples`와 같은 **`cmmt.prepared_handoff_case.v2` state-only pair**를 학습·handoff에 사용한다. 새 학습 결과만 평가에 사용하며, 주 지표는 Base+ 전환 후 **첫 10개 처리 프레임의 J&F**다. `+1`부터 `+10`까지 J/F/J&F를 각각 기록한다. 아래 기존 Run01/Heldout01 수치는 이전 학습·suffix 평가 결과이며 새 코드의 학습 또는 10프레임 평가를 실행한 결과가 아니다.
@@ -42,10 +38,6 @@ TEST10_TRANSLATOR_REPO=/home/home/test/test9/vos-memory-translator-nonlinear \
   --output /home/home/test/test10_pair_selection.json
 ```
 
-선택 JSON은 로컬 절대 경로를 담으므로 Git에 올리지 않는다. 전체 collection은 22,644 pairs로 매우 크며 학습 전에 디스크 I/O와 학습 시간을 따로 계획해야 한다. State pair만으로 영상 평가가 가능한 것은 아니다. 평가에는 원본 RGB·annotation, SAM2 checkpoint, 일치하는 case manifest가 추가로 필요하다. 특히 학습/validation에 쓴 영상은 평가 held-out 집합에서 제외한다.
-
-5시간 budget 실험처럼 fit 영상을 다시 train/validation으로 분리하려면 catalog 대신 `experiment_selection.py`를 사용한다. Seed 7로 MOSEv2는 500/100개 서로 다른 영상, LVOSv2는 각각 250/75개 영상에서 train 500 pair와 validation 100 pair를 선택한다. 영상별 최대 2 pair이며, 두 split의 영상은 겹치지 않는다.
-
 ```sh
 TEST10_WORKSPACE=/home/home/test TEST10_TRANSLATOR_REPO=/home/home/test/test9/vos-memory-translator-nonlinear \
 /home/home/test/.cuda-bench-env/bin/python test10/experiment_selection.py \
@@ -62,50 +54,6 @@ TEST10_WORKSPACE=/home/home/test TEST10_TRANSLATOR_REPO=/home/home/test/test9/vo
   ]
 }
 ```
-
-실제 collection의 모든 pair를 나열한다. train/validation은 `(dataset, video_id)` 기준으로 겹칠 수 없다. 새 평가 영상은 학습 및 checkpoint 선택에 사용한 validation 영상과도 겹칠 수 없다.
-
-```sh
-python test10/training.py --pairs /path/to/pair_selection.json \
-  --output-dir test10/training/run02 --epochs 30 --batch-records 4 --device cuda
-python test10/run.py --stage audit --training-dir test10/training/run02 --run-dir test10/runs/run02
-python test10/run.py --stage smoke --run-dir test10/runs/run02 --resume --budget-hours 4
-python test10/run.py --stage full --run-dir test10/runs/run02 --resume --budget-hours 4
-```
-
-### 학습과 평가를 합쳐 5시간 실행
-
-기존 `run.py --budget-hours`는 smoke/full 추론 시간만 제한한다. **학습·audit·추론·요약까지 합친 제한**에는 다음 명령을 사용한다. 실제 학습·GPU 평가는 이 코드 수정 과정에서 실행하지 않았다.
-
-```sh
-python test10/budget_pipeline.py \
-  --pairs /path/to/pair_selection.json \
-  --selection /path/to/evaluation_selection.json \
-  --output-dir test10/runs/budget5h \
-  --budget-hours 5 --training-hours 3.5
-```
-
-`evaluation_selection.json`은 기존 `test10.v1` 평가 manifest 형식이며, 학습 및 validation 영상과 겹치지 않는 영상으로 미리 준비한다. 출력 폴더는 비어 있어야 한다. 데이터 준비·pair 생성은 이 명령 실행 전 작업이다.
-
-- 학습에는 최대 3시간 30분을 배정하고, 남은 시간을 평가에 사용한다. 부모 프로세스가 전체 wall time을 관리하며 마지막 70초는 요약과 종료에 남긴다. 단계별 stdout/stderr는 `<output-dir>/*.log`에 저장한다.
-- Affine·MLP·Transformer에 남은 학습 시간을 균등 배정한다. 30 epoch는 상한이며, 시간이 부족하면 epoch 중간에 종료하고 **완전히 검증한 checkpoint 중 validation loss가 가장 낮은 것**을 선택한다. 세 모델의 유효 checkpoint가 없으면 평가를 시작하지 않는다.
-- 모든 train pair를 순회 후보로 유지한다. 영상별 pair를 번갈아 방문하고 데이터셋 비율을 유지하는 같은 seed의 순서를 사용한다. 모델별 속도 차이 때문에 시간 안에 사용한 pair 수가 달라질 수 있다. 정확히 같은 학습량 비교가 필요하면 `--epochs 1`과 충분한 시간 예산을 사용한다.
-- budget mode의 validation은 데이터셋·영상별로 고정 선정한 최대 64 pair다(`--validation-pairs`). 2,048 train pair마다 검증한다(`--validate-every`). 전체 validation 결과로 해석하지 않는다. budget을 생략한 `training.py`는 기존처럼 전체 validation을 epoch마다 사용한다.
-- 시작 시 모든 tensor를 읽는 사전 순회를 줄이고, 실제 소비한 pair에 checksum·tensor contract 검사를 수행한다. 소비하지 않은 pair 수도 기록한다. CPU tensor cache 기본 상한은 총 2 GiB다(`--cache-gib`); 이 값은 프로세스 전체 RAM 또는 GPU VRAM 한도가 아니다.
-- 기본 평가 방법은 Small-only, Base+-native, Direct Copy, Affine, MLP, Transformer 6개이며 self-injection gate도 유지한다. manifest의 원래 전체 방법을 사용하려면 `--all-methods`를 지정한다. 첫 `+1..+10` 개별 J/F/J&F 및 전체 suffix 점수를 모두 유지하며 시간 때문에 영상의 suffix를 임의로 줄이지 않는다.
-- 제한 시간이 되면 실행 중인 단계와 자식 프로세스를 종료한다. 완료된 공통 case만 집계하고, 미완료 case는 따로 남긴다. 장치·OS 종료 지연 때문에 절대적인 초 단위 종료를 보장하는 실시간 시스템은 아니다.
-
-`training/train_report.json`에는 선택 checkpoint와 최종 학습 시도 각각의 pair·영상 coverage, 실제 optimizer step, 유효 epoch 수와 종료 사유가 기록된다. `evaluation/summary.{json,md}`, `evaluation/switch_frames.csv`는 완료된 case의 성능을 담는다. `pipeline_report.json`은 전체 시간, 단계 종료 상태, 완료/미완료 case 수를 기록한다. pipeline의 `finished`는 시간 내 계획된 단계 종료를 뜻하며 **모든 후보 영상 평가 또는 30 epoch 수렴을 뜻하지 않는다**. 완료 여부는 `evaluation.all_candidates_completed` 및 모델별 실제 학습량을 함께 확인한다.
-
-22,671개가 pair 수이고 pair당 0.2초가 세 모델 모두의 실측 학습 속도라면, 전체 데이터 1회 학습만 세 모델 합계 약 3시간 47분이다. 검증·입출력·영상 평가까지 고려하면 기본 3시간 30분 학습 예산에서는 일부 모델이 전체 1회를 끝내지 못할 수 있다. 이 명령은 **시간 제한 내 산출물 확보**를 위한 설정이며 수렴 또는 Base+ 성능 복구를 보장하지 않는다.
-
-`training.py`는 affine, residual MLP, spatial Transformer를 모두 새로 초기화해 동일 pair로 학습한다. MLP는 공간 head `64→128→64`, pointer head `256→512→256`의 residual 구조다. Transformer는 memory frame별 4×4 patch token 간 attention을 사용하며 시간·객체를 섞지 않는다. 모든 방법은 **전체 memory frame**을 입력으로 사용하므로 Transformer에 독립 pixel sampling을 적용하지 않는다. Loss는 valid record의 spatial MSE + pointer MSE이고, video 평균 validation loss가 최소인 epoch를 선택한다. 이는 state 정렬 학습이며 GT segmentation 품질을 직접 최적화하는 학습은 아니다.
-
-Affine의 형태는 그대로 `M̂[h,w]=W_s M[h,w]+b_s`, `p̂=W_p p+b_p`다. 공간 위치마다 같은 채널 변환을 사용하며 이웃 위치의 문맥은 보지 않는다. 가중치는 새 pair로 재학습해 nonlinear와 같은 데이터 조건에서 비교한다. MLP/Transformer에는 test9의 과거 checkpoint를 불러오는 fallback이 없다. 새 `train_report.json`, pair fingerprint, 학습 코드 hash와 checkpoint SHA-256이 일치해야 평가가 시작된다.
-
-runtime은 native prediction cache와 **state-only pair cache를 분리**한다. 새 pair는 `.pt` / `.pt.sha256` / `.prepare.json`으로 저장하고, self-injection gate로 active-memory Base+ 상태가 native continuation과 같은지 확인한다. 외부 pair를 평가 manifest의 `state_pair_path`와 `state_pair_sha256`으로 지정할 수도 있다. metadata의 video/object/처리 프레임/switch/SAM2 commit이 평가 조건과 일치해야 한다. Prefix가 16프레임보다 짧은 pair는 manifest의 `methods`에서 적용할 수 없는 replay 방법을 제외한다.
-
-데이터·SAM2·test9 adapter 경로의 기본 workspace는 이 저장소다. 다른 실험 workspace에서는 `TEST10_WORKSPACE=/workspace/...`, translator package 경로는 `TEST10_TRANSLATOR_REPO=/path/to/vos-memory-translator-nonlinear`로 지정한다. 학습에는 translator package가 필요하고, 영상 평가에는 기존 test9의 `mvp_common`, `mvp_scoring`, `sam2_session`과 원본 데이터·SAM2 checkpoint도 필요하다.
 
 ## 추가 영상 평가
 
@@ -185,11 +133,3 @@ python test10/handoff_diagnostics.py --run-dir test10/runs/run01
 기존 실험 실행 시 CPU 계약 테스트 22개가 통과했다. 실험은 SAM 2 + CUDA 환경에서 실행됐으며, 선택적 `_C` post-processing extension을 불러오지 못해 fill-holes 후처리를 건너뛴다는 upstream 경고가 기록됐다. 추론과 gate는 완료됐지만, 이 동작은 재현 환경에서 확인해야 한다.
 
 Harness는 실행 시 sibling `test9/`, `vos-data/`, `vos-checkpoints/`, `sam2/`와 맞는 Python/CUDA 환경을 기대한다. 현재 GitHub 저장소 clone만으로는 이 실험을 독립 재실행할 수 없다. 따라서 `test9` 패키지가 없는 clone에서는 해당 패키지를 import하는 affine/model adapter 테스트도 실행되지 않는다(현재 repository-only 확인에서 `mvp_common` 부재로 실패). 원 실험 workspace에서는 기존 실험 실행 시 CPU 계약 테스트 22개가 통과했다. 필요한 데이터·checkpoint 권리와 경로를 준비한 뒤 실행한다. 이 실험 실행의 source 경로/hash와 설정은 [provenance.json](runs/run01/provenance.json)에 기록되어 있다.
-
-로컬 CPU 코드 검증 명령:
-
-```sh
-python -m unittest discover -s test10/tests -v
-```
-
-실제 pair 예시 읽기·checksum·discrete alignment, 10개 offset/GT missingness 및 synthetic pair의 optimizer/checkpoint roundtrip을 확인한다. runtime 흐름은 CPU predictor 모형으로 확인한다. 실제 test9 평가 adapter, SAM2 GPU continuation 및 실제 데이터 재학습 성능은 이 CPU 검증에 포함되지 않는다.
