@@ -42,8 +42,10 @@ def select(args, training):
                 num_frames=int(meta['num_frames']), sha256=meta['cache']['sha256'],
                 role={'train':'training_video', 'validation':'checkpoint_selection_video'}.get(
                     membership, 'excluded_from_training_and_selection')))
+    groups=[[r for r in selected if r['dataset']==d] for d in ['MOSEv2','LVOSv2']]
+    interleaved=[g[i] for i in range(max(map(len,groups))) for g in groups if i<len(g)]
     return dict(schema='test10.affine_storage_selection.v1', seed=args.seed,
-                fraction=args.fraction, counts=counts, pairs=selected)
+                fraction=args.fraction, counts=counts, pairs=interleaved)
 
 
 def memory(source, target, model, scales):
@@ -245,6 +247,7 @@ def main():
     args.output_dir.mkdir(parents=True,exist_ok=True)
     selection=select(args,training)
     selection['checkpoint_sha256']=sha(args.training_dir/'affine.pt')
+    selection['evaluator_sha256']=sha(__file__)
     old=args.output_dir/'selection.json'
     if old.exists() and read(old)!=selection: raise ValueError('selection changed')
     write(old,selection)
@@ -291,7 +294,8 @@ def main():
                     result['jf'][method]=scores
                 result['horizon']=args.horizon
             write(output,result)
-        if index%10==0 or index==1 or index==len(pairs):
+        interval=100 if args.stage=='memory' else 10
+        if index%interval==0 or index==1 or index==len(pairs):
             summarize(args.output_dir)
             write(args.output_dir/'progress.json',dict(stage=args.stage,horizon=args.horizon,
                 processed=index,requested=len(pairs),seconds=time.monotonic()-started,status='running'))
