@@ -7,10 +7,14 @@ SAM 2.1 Small에서 Base+로 모델을 전환할 때, 선형 변환의 가능성
 선형 모델 학습 조건은 다음과 같다. 학습 조건 및 비교군은 최대한 non-linear translator의 
 transfomer과 유사하게 설정하였다.
 
-maskmem_features에 대해서는 
+maskmem_features에 대해서는
+$$
 \hat{M}_{h,w} = M_{h,w}W_s + b_s
+$4
 obj_ptr에 대해서는 
+$$
 \hat{p} = pW_p + b_p
+$$
 로 각각 선형 변환을 수행한다
 
 
