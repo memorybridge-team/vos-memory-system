@@ -8,13 +8,13 @@ SAM 2.1 Small에서 Base+로 모델을 전환할 때, 선형 변환의 가능성
 transfomer과 유사하게 설정하였다.
 
 maskmem_features에 대해서는
-'''math
+```math
 \hat{M}_{h,w} = M_{h,w}W_s + b_s
-'''
+```
 obj_ptr에 대해서는 
-'''math
+```math
 \hat{p} = pW_p + b_p
-'''
+```
 로 각각 선형 변환을 수행한다
 
 
