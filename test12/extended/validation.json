@@ -1,0 +1,43 @@
+{
+  "validation_passed": true,
+  "same_inputs_weights_and_sources_across_devices": true,
+  "devices": {
+    "cpu": {
+      "videos": 3,
+      "inference_frames": 594,
+      "frame_pairs": 495,
+      "exact_frame_pairs": 495,
+      "mask_exact_pairs": 495,
+      "full_state_pairs": 45,
+      "exact_full_state_pairs": 45,
+      "metadata_equal_state_pairs": 45,
+      "cached_feature_exact_state_pairs": 45,
+      "exact_restart_preflights": 9
+    },
+    "mps": {
+      "videos": 3,
+      "inference_frames": 594,
+      "frame_pairs": 495,
+      "exact_frame_pairs": 20,
+      "mask_exact_pairs": 21,
+      "full_state_pairs": 45,
+      "exact_full_state_pairs": 0,
+      "metadata_equal_state_pairs": 45,
+      "cached_feature_exact_state_pairs": 45,
+      "exact_restart_preflights": 9
+    }
+  },
+  "unique_rgb_frames": 99,
+  "unique_videos": 3,
+  "scope": "Local FP32 paths; CPU deterministic, MPS default; one object per video",
+  "evidence_sha256": {
+    "extended/cpu/environment.json": "fa9a44c1d3915c177a4520f4860f471acde53695f2b462879d2a47219ff0c8a0",
+    "extended/cpu/bmx-bumps.json": "c1c69250a2bf1da77f1b4f749e386485227ae52b09ae4cd9efb5957c67e36f68",
+    "extended/cpu/camel.json": "bf75c3167d210d66c7790d5818f3d20ba3c84562c70a0ec2526cd9cd68351e04",
+    "extended/cpu/breakdance.json": "fdfb0dcb1212a9cadcfddd1e76322502da1e79e131c2eccf7db8047d4e923cf9",
+    "extended/mps/environment.json": "9a9b2cc1bf9b75a468c384f87fdceffc85525a587bda9e605df3785e23c857cb",
+    "extended/mps/bmx-bumps.json": "33a11c1ead9e298e2275bbdd428c0da349b71c255fd92d5bfd7406f7bfe42584",
+    "extended/mps/camel.json": "baacb1a9fc35971e8497450dfd7714b81f8652537895084deac10cd84eb01b33",
+    "extended/mps/breakdance.json": "b9a43b6f9594ada58e302392d149e5080c741e4694ee8bb34e90ab7c1b6f7955"
+  }
+}

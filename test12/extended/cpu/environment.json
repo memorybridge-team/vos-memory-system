@@ -1,0 +1,24 @@
+{
+  "device": "cpu",
+  "torch": "2.8.0",
+  "platform": "macOS-15.7.7-arm64-arm-64bit",
+  "frames": 33,
+  "deterministic_algorithms": true,
+  "checkpoint_sha256": "a2345aede8715ab1d5d31b4a509fb160c5a4af1970f199d9054ccfb746c004c5",
+  "parameter_sha256": "98b32c1cef98e50f33684267b8c1f47fe51b595f0a744967e911fd50af2dbf86",
+  "predictor_sha256": "912555920a77f72ded07839efa33fcceecc79f3523abbec783f0be46ee2c55c2",
+  "test_script_sha256": "9963070727bdb2e7fe662e4ed06964bd34e44d23e3bbf135573ebea0edc550a3",
+  "session_sha256": "2db8eeef182b75fa65006503a1e3feb56cd1e32f04bed84d130769adb7be9f60",
+  "full_replay_sha256": "150341c252861d9a75bddbafa305536323cbd5356f67922f3385cbfa06948ebf",
+  "seed": 0,
+  "inference_precision": "FP32; SAM2 stored memory BF16",
+  "images_excluded_from_state_snapshot": "LazyFrames reader; exact RGB SHA256 recorded separately",
+  "tolerances": {
+    "rtol": 1e-05,
+    "atol": 1e-06
+  },
+  "postprocessing": "CUDA _C extension absent; identical skipped hole filling",
+  "parameter_sha256_after": "98b32c1cef98e50f33684267b8c1f47fe51b595f0a744967e911fd50af2dbf86",
+  "model_weights_unchanged": true,
+  "complete": true
+}

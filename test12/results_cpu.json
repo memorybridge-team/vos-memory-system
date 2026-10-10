@@ -1,0 +1,1027 @@
+{
+  "device": "cpu",
+  "inference_dtype": "float32",
+  "memory_storage_dtype": "SAM2 internally casts maskmem_features to bfloat16",
+  "torch": "2.8.0",
+  "platform": "macOS-15.7.7-arm64-arm-64bit",
+  "video": "/Users/rokpolar/Documents/\u110c\u1169\u11bc\u1111\u11732/sam2/notebooks/videos/bedroom",
+  "frame_count": 9,
+  "object_count": 1,
+  "min_pre_frames": 2,
+  "checkpoint_sha256": "a2345aede8715ab1d5d31b4a509fb160c5a4af1970f199d9054ccfb746c004c5",
+  "predictor_sha256": "912555920a77f72ded07839efa33fcceecc79f3523abbec783f0be46ee2c55c2",
+  "prompt_fixture_sha256": "6c2ca75aeaa3fffa7946c1608a3c86a30b5c6bd180221e76557091ac8e579654",
+  "frame_sha256": {
+    "00000.jpg": "376b034cca151817aeee7b27b581baa4aec9c9aef3807223d2deeb8dcc8d3032",
+    "00001.jpg": "71d4ecceceeb0e53cb9d1c0332c89123946cf71cbd807e4fc6afacc244055b47",
+    "00002.jpg": "f643d5f97fab2ee9b02d310850fb33392a3135cb7f3e997f1746c18cd8fa8b95",
+    "00003.jpg": "0ad258da8d7f3f1ac8f6bde25f0cc78fd6c82d57bc8a7862382e4d43465463c6",
+    "00004.jpg": "87ccc6c23c287e39e622d3ae2319d7c52e8dbad7fd16003979585461130c1e99",
+    "00005.jpg": "e5bc58632793d2cee08b3ce3aca8e77fcb41e07306c226e44fa2ab16fbcea0db",
+    "00006.jpg": "28d5d374ce9a72dc2995e48e8b3d783b2d1c937b188b95b33db3660e3108a586",
+    "00007.jpg": "52715597733352744331baeb95593136f479788112f147135f0d4f26e70c355c",
+    "00008.jpg": "14288fea237adf4f68bf3c9d6a809426edcc429d8537932a1891c9250cb4a383"
+  },
+  "prompt_source": "test11 Small prediction; no ground-truth accuracy evaluation",
+  "control_only": false,
+  "comparisons": [
+    {
+      "switch_percent": 25,
+      "switch_frame": 2,
+      "future_frames": 6,
+      "seconds": 23.49362624999776,
+      "frames": [
+        {
+          "frame": 0,
+          "phase": "prefix",
+          "fields": {
+            "binary_mask": {
+              "equal": true,
+              "max_abs_error": 0.0,
+              "different_elements": 0
+            },
+            "maskmem_features/0": {
+              "equal": true,
+              "max_abs_error": 0.0,
+              "different_elements": 0
+            },
+            "maskmem_pos_enc/0": {
+              "equal": true,
+              "max_abs_error": 0.0,
+              "different_elements": 0
+            },
+            "pred_masks/0": {
+              "equal": true,
+              "max_abs_error": 0.0,
+              "different_elements": 0
+            },
+            "obj_ptr/0": {
+              "equal": true,
+              "max_abs_error": 0.0,
+              "different_elements": 0
+            },
+            "object_score_logits/0": {
+              "equal": true,
+              "max_abs_error": 0.0,
+              "different_elements": 0
+            }
+          }
+        },
+        {
+          "frame": 1,
+          "phase": "prefix",
+          "fields": {
+            "binary_mask": {
+              "equal": true,
+              "max_abs_error": 0.0,
+              "different_elements": 0
+            },
+            "maskmem_features/0": {
+              "equal": true,
+              "max_abs_error": 0.0,
+              "different_elements": 0
+            },
+            "maskmem_pos_enc/0": {
+              "equal": true,
+              "max_abs_error": 0.0,
+              "different_elements": 0
+            },
+            "pred_masks/0": {
+              "equal": true,
+              "max_abs_error": 0.0,
+              "different_elements": 0
+            },
+            "obj_ptr/0": {
+              "equal": true,
+              "max_abs_error": 0.0,
+              "different_elements": 0
+            },
+            "object_score_logits/0": {
+              "equal": true,
+              "max_abs_error": 0.0,
+              "different_elements": 0
+            }
+          }
+        },
+        {
+          "frame": 2,
+          "phase": "prefix",
+          "fields": {
+            "binary_mask": {
+              "equal": true,
+              "max_abs_error": 0.0,
+              "different_elements": 0
+            },
+            "maskmem_features/0": {
+              "equal": true,
+              "max_abs_error": 0.0,
+              "different_elements": 0
+            },
+            "maskmem_pos_enc/0": {
+              "equal": true,
+              "max_abs_error": 0.0,
+              "different_elements": 0
+            },
+            "pred_masks/0": {
+              "equal": true,
+              "max_abs_error": 0.0,
+              "different_elements": 0
+            },
+            "obj_ptr/0": {
+              "equal": true,
+              "max_abs_error": 0.0,
+              "different_elements": 0
+            },
+            "object_score_logits/0": {
+              "equal": true,
+              "max_abs_error": 0.0,
+              "different_elements": 0
+            }
+          }
+        },
+        {
+          "frame": 3,
+          "phase": "future",
+          "fields": {
+            "binary_mask": {
+              "equal": true,
+              "max_abs_error": 0.0,
+              "different_elements": 0
+            },
+            "maskmem_features/0": {
+              "equal": true,
+              "max_abs_error": 0.0,
+              "different_elements": 0
+            },
+            "maskmem_pos_enc/0": {
+              "equal": true,
+              "max_abs_error": 0.0,
+              "different_elements": 0
+            },
+            "pred_masks/0": {
+              "equal": true,
+              "max_abs_error": 0.0,
+              "different_elements": 0
+            },
+            "obj_ptr/0": {
+              "equal": true,
+              "max_abs_error": 0.0,
+              "different_elements": 0
+            },
+            "object_score_logits/0": {
+              "equal": true,
+              "max_abs_error": 0.0,
+              "different_elements": 0
+            }
+          }
+        },
+        {
+          "frame": 4,
+          "phase": "future",
+          "fields": {
+            "binary_mask": {
+              "equal": true,
+              "max_abs_error": 0.0,
+              "different_elements": 0
+            },
+            "maskmem_features/0": {
+              "equal": true,
+              "max_abs_error": 0.0,
+              "different_elements": 0
+            },
+            "maskmem_pos_enc/0": {
+              "equal": true,
+              "max_abs_error": 0.0,
+              "different_elements": 0
+            },
+            "pred_masks/0": {
+              "equal": true,
+              "max_abs_error": 0.0,
+              "different_elements": 0
+            },
+            "obj_ptr/0": {
+              "equal": true,
+              "max_abs_error": 0.0,
+              "different_elements": 0
+            },
+            "object_score_logits/0": {
+              "equal": true,
+              "max_abs_error": 0.0,
+              "different_elements": 0
+            }
+          }
+        },
+        {
+          "frame": 5,
+          "phase": "future",
+          "fields": {
+            "binary_mask": {
+              "equal": true,
+              "max_abs_error": 0.0,
+              "different_elements": 0
+            },
+            "maskmem_features/0": {
+              "equal": true,
+              "max_abs_error": 0.0,
+              "different_elements": 0
+            },
+            "maskmem_pos_enc/0": {
+              "equal": true,
+              "max_abs_error": 0.0,
+              "different_elements": 0
+            },
+            "pred_masks/0": {
+              "equal": true,
+              "max_abs_error": 0.0,
+              "different_elements": 0
+            },
+            "obj_ptr/0": {
+              "equal": true,
+              "max_abs_error": 0.0,
+              "different_elements": 0
+            },
+            "object_score_logits/0": {
+              "equal": true,
+              "max_abs_error": 0.0,
+              "different_elements": 0
+            }
+          }
+        },
+        {
+          "frame": 6,
+          "phase": "future",
+          "fields": {
+            "binary_mask": {
+              "equal": true,
+              "max_abs_error": 0.0,
+              "different_elements": 0
+            },
+            "maskmem_features/0": {
+              "equal": true,
+              "max_abs_error": 0.0,
+              "different_elements": 0
+            },
+            "maskmem_pos_enc/0": {
+              "equal": true,
+              "max_abs_error": 0.0,
+              "different_elements": 0
+            },
+            "pred_masks/0": {
+              "equal": true,
+              "max_abs_error": 0.0,
+              "different_elements": 0
+            },
+            "obj_ptr/0": {
+              "equal": true,
+              "max_abs_error": 0.0,
+              "different_elements": 0
+            },
+            "object_score_logits/0": {
+              "equal": true,
+              "max_abs_error": 0.0,
+              "different_elements": 0
+            }
+          }
+        },
+        {
+          "frame": 7,
+          "phase": "future",
+          "fields": {
+            "binary_mask": {
+              "equal": true,
+              "max_abs_error": 0.0,
+              "different_elements": 0
+            },
+            "maskmem_features/0": {
+              "equal": true,
+              "max_abs_error": 0.0,
+              "different_elements": 0
+            },
+            "maskmem_pos_enc/0": {
+              "equal": true,
+              "max_abs_error": 0.0,
+              "different_elements": 0
+            },
+            "pred_masks/0": {
+              "equal": true,
+              "max_abs_error": 0.0,
+              "different_elements": 0
+            },
+            "obj_ptr/0": {
+              "equal": true,
+              "max_abs_error": 0.0,
+              "different_elements": 0
+            },
+            "object_score_logits/0": {
+              "equal": true,
+              "max_abs_error": 0.0,
+              "different_elements": 0
+            }
+          }
+        },
+        {
+          "frame": 8,
+          "phase": "future",
+          "fields": {
+            "binary_mask": {
+              "equal": true,
+              "max_abs_error": 0.0,
+              "different_elements": 0
+            },
+            "maskmem_features/0": {
+              "equal": true,
+              "max_abs_error": 0.0,
+              "different_elements": 0
+            },
+            "maskmem_pos_enc/0": {
+              "equal": true,
+              "max_abs_error": 0.0,
+              "different_elements": 0
+            },
+            "pred_masks/0": {
+              "equal": true,
+              "max_abs_error": 0.0,
+              "different_elements": 0
+            },
+            "obj_ptr/0": {
+              "equal": true,
+              "max_abs_error": 0.0,
+              "different_elements": 0
+            },
+            "object_score_logits/0": {
+              "equal": true,
+              "max_abs_error": 0.0,
+              "different_elements": 0
+            }
+          }
+        }
+      ]
+    },
+    {
+      "switch_percent": 50,
+      "switch_frame": 4,
+      "future_frames": 4,
+      "seconds": 24.59893891599495,
+      "frames": [
+        {
+          "frame": 0,
+          "phase": "prefix",
+          "fields": {
+            "binary_mask": {
+              "equal": true,
+              "max_abs_error": 0.0,
+              "different_elements": 0
+            },
+            "maskmem_features/0": {
+              "equal": true,
+              "max_abs_error": 0.0,
+              "different_elements": 0
+            },
+            "maskmem_pos_enc/0": {
+              "equal": true,
+              "max_abs_error": 0.0,
+              "different_elements": 0
+            },
+            "pred_masks/0": {
+              "equal": true,
+              "max_abs_error": 0.0,
+              "different_elements": 0
+            },
+            "obj_ptr/0": {
+              "equal": true,
+              "max_abs_error": 0.0,
+              "different_elements": 0
+            },
+            "object_score_logits/0": {
+              "equal": true,
+              "max_abs_error": 0.0,
+              "different_elements": 0
+            }
+          }
+        },
+        {
+          "frame": 1,
+          "phase": "prefix",
+          "fields": {
+            "binary_mask": {
+              "equal": true,
+              "max_abs_error": 0.0,
+              "different_elements": 0
+            },
+            "maskmem_features/0": {
+              "equal": true,
+              "max_abs_error": 0.0,
+              "different_elements": 0
+            },
+            "maskmem_pos_enc/0": {
+              "equal": true,
+              "max_abs_error": 0.0,
+              "different_elements": 0
+            },
+            "pred_masks/0": {
+              "equal": true,
+              "max_abs_error": 0.0,
+              "different_elements": 0
+            },
+            "obj_ptr/0": {
+              "equal": true,
+              "max_abs_error": 0.0,
+              "different_elements": 0
+            },
+            "object_score_logits/0": {
+              "equal": true,
+              "max_abs_error": 0.0,
+              "different_elements": 0
+            }
+          }
+        },
+        {
+          "frame": 2,
+          "phase": "prefix",
+          "fields": {
+            "binary_mask": {
+              "equal": true,
+              "max_abs_error": 0.0,
+              "different_elements": 0
+            },
+            "maskmem_features/0": {
+              "equal": true,
+              "max_abs_error": 0.0,
+              "different_elements": 0
+            },
+            "maskmem_pos_enc/0": {
+              "equal": true,
+              "max_abs_error": 0.0,
+              "different_elements": 0
+            },
+            "pred_masks/0": {
+              "equal": true,
+              "max_abs_error": 0.0,
+              "different_elements": 0
+            },
+            "obj_ptr/0": {
+              "equal": true,
+              "max_abs_error": 0.0,
+              "different_elements": 0
+            },
+            "object_score_logits/0": {
+              "equal": true,
+              "max_abs_error": 0.0,
+              "different_elements": 0
+            }
+          }
+        },
+        {
+          "frame": 3,
+          "phase": "prefix",
+          "fields": {
+            "binary_mask": {
+              "equal": true,
+              "max_abs_error": 0.0,
+              "different_elements": 0
+            },
+            "maskmem_features/0": {
+              "equal": true,
+              "max_abs_error": 0.0,
+              "different_elements": 0
+            },
+            "maskmem_pos_enc/0": {
+              "equal": true,
+              "max_abs_error": 0.0,
+              "different_elements": 0
+            },
+            "pred_masks/0": {
+              "equal": true,
+              "max_abs_error": 0.0,
+              "different_elements": 0
+            },
+            "obj_ptr/0": {
+              "equal": true,
+              "max_abs_error": 0.0,
+              "different_elements": 0
+            },
+            "object_score_logits/0": {
+              "equal": true,
+              "max_abs_error": 0.0,
+              "different_elements": 0
+            }
+          }
+        },
+        {
+          "frame": 4,
+          "phase": "prefix",
+          "fields": {
+            "binary_mask": {
+              "equal": true,
+              "max_abs_error": 0.0,
+              "different_elements": 0
+            },
+            "maskmem_features/0": {
+              "equal": true,
+              "max_abs_error": 0.0,
+              "different_elements": 0
+            },
+            "maskmem_pos_enc/0": {
+              "equal": true,
+              "max_abs_error": 0.0,
+              "different_elements": 0
+            },
+            "pred_masks/0": {
+              "equal": true,
+              "max_abs_error": 0.0,
+              "different_elements": 0
+            },
+            "obj_ptr/0": {
+              "equal": true,
+              "max_abs_error": 0.0,
+              "different_elements": 0
+            },
+            "object_score_logits/0": {
+              "equal": true,
+              "max_abs_error": 0.0,
+              "different_elements": 0
+            }
+          }
+        },
+        {
+          "frame": 5,
+          "phase": "future",
+          "fields": {
+            "binary_mask": {
+              "equal": true,
+              "max_abs_error": 0.0,
+              "different_elements": 0
+            },
+            "maskmem_features/0": {
+              "equal": true,
+              "max_abs_error": 0.0,
+              "different_elements": 0
+            },
+            "maskmem_pos_enc/0": {
+              "equal": true,
+              "max_abs_error": 0.0,
+              "different_elements": 0
+            },
+            "pred_masks/0": {
+              "equal": true,
+              "max_abs_error": 0.0,
+              "different_elements": 0
+            },
+            "obj_ptr/0": {
+              "equal": true,
+              "max_abs_error": 0.0,
+              "different_elements": 0
+            },
+            "object_score_logits/0": {
+              "equal": true,
+              "max_abs_error": 0.0,
+              "different_elements": 0
+            }
+          }
+        },
+        {
+          "frame": 6,
+          "phase": "future",
+          "fields": {
+            "binary_mask": {
+              "equal": true,
+              "max_abs_error": 0.0,
+              "different_elements": 0
+            },
+            "maskmem_features/0": {
+              "equal": true,
+              "max_abs_error": 0.0,
+              "different_elements": 0
+            },
+            "maskmem_pos_enc/0": {
+              "equal": true,
+              "max_abs_error": 0.0,
+              "different_elements": 0
+            },
+            "pred_masks/0": {
+              "equal": true,
+              "max_abs_error": 0.0,
+              "different_elements": 0
+            },
+            "obj_ptr/0": {
+              "equal": true,
+              "max_abs_error": 0.0,
+              "different_elements": 0
+            },
+            "object_score_logits/0": {
+              "equal": true,
+              "max_abs_error": 0.0,
+              "different_elements": 0
+            }
+          }
+        },
+        {
+          "frame": 7,
+          "phase": "future",
+          "fields": {
+            "binary_mask": {
+              "equal": true,
+              "max_abs_error": 0.0,
+              "different_elements": 0
+            },
+            "maskmem_features/0": {
+              "equal": true,
+              "max_abs_error": 0.0,
+              "different_elements": 0
+            },
+            "maskmem_pos_enc/0": {
+              "equal": true,
+              "max_abs_error": 0.0,
+              "different_elements": 0
+            },
+            "pred_masks/0": {
+              "equal": true,
+              "max_abs_error": 0.0,
+              "different_elements": 0
+            },
+            "obj_ptr/0": {
+              "equal": true,
+              "max_abs_error": 0.0,
+              "different_elements": 0
+            },
+            "object_score_logits/0": {
+              "equal": true,
+              "max_abs_error": 0.0,
+              "different_elements": 0
+            }
+          }
+        },
+        {
+          "frame": 8,
+          "phase": "future",
+          "fields": {
+            "binary_mask": {
+              "equal": true,
+              "max_abs_error": 0.0,
+              "different_elements": 0
+            },
+            "maskmem_features/0": {
+              "equal": true,
+              "max_abs_error": 0.0,
+              "different_elements": 0
+            },
+            "maskmem_pos_enc/0": {
+              "equal": true,
+              "max_abs_error": 0.0,
+              "different_elements": 0
+            },
+            "pred_masks/0": {
+              "equal": true,
+              "max_abs_error": 0.0,
+              "different_elements": 0
+            },
+            "obj_ptr/0": {
+              "equal": true,
+              "max_abs_error": 0.0,
+              "different_elements": 0
+            },
+            "object_score_logits/0": {
+              "equal": true,
+              "max_abs_error": 0.0,
+              "different_elements": 0
+            }
+          }
+        }
+      ]
+    },
+    {
+      "switch_percent": 75,
+      "switch_frame": 6,
+      "future_frames": 2,
+      "seconds": 20.039232458999322,
+      "frames": [
+        {
+          "frame": 0,
+          "phase": "prefix",
+          "fields": {
+            "binary_mask": {
+              "equal": true,
+              "max_abs_error": 0.0,
+              "different_elements": 0
+            },
+            "maskmem_features/0": {
+              "equal": true,
+              "max_abs_error": 0.0,
+              "different_elements": 0
+            },
+            "maskmem_pos_enc/0": {
+              "equal": true,
+              "max_abs_error": 0.0,
+              "different_elements": 0
+            },
+            "pred_masks/0": {
+              "equal": true,
+              "max_abs_error": 0.0,
+              "different_elements": 0
+            },
+            "obj_ptr/0": {
+              "equal": true,
+              "max_abs_error": 0.0,
+              "different_elements": 0
+            },
+            "object_score_logits/0": {
+              "equal": true,
+              "max_abs_error": 0.0,
+              "different_elements": 0
+            }
+          }
+        },
+        {
+          "frame": 1,
+          "phase": "prefix",
+          "fields": {
+            "binary_mask": {
+              "equal": true,
+              "max_abs_error": 0.0,
+              "different_elements": 0
+            },
+            "maskmem_features/0": {
+              "equal": true,
+              "max_abs_error": 0.0,
+              "different_elements": 0
+            },
+            "maskmem_pos_enc/0": {
+              "equal": true,
+              "max_abs_error": 0.0,
+              "different_elements": 0
+            },
+            "pred_masks/0": {
+              "equal": true,
+              "max_abs_error": 0.0,
+              "different_elements": 0
+            },
+            "obj_ptr/0": {
+              "equal": true,
+              "max_abs_error": 0.0,
+              "different_elements": 0
+            },
+            "object_score_logits/0": {
+              "equal": true,
+              "max_abs_error": 0.0,
+              "different_elements": 0
+            }
+          }
+        },
+        {
+          "frame": 2,
+          "phase": "prefix",
+          "fields": {
+            "binary_mask": {
+              "equal": true,
+              "max_abs_error": 0.0,
+              "different_elements": 0
+            },
+            "maskmem_features/0": {
+              "equal": true,
+              "max_abs_error": 0.0,
+              "different_elements": 0
+            },
+            "maskmem_pos_enc/0": {
+              "equal": true,
+              "max_abs_error": 0.0,
+              "different_elements": 0
+            },
+            "pred_masks/0": {
+              "equal": true,
+              "max_abs_error": 0.0,
+              "different_elements": 0
+            },
+            "obj_ptr/0": {
+              "equal": true,
+              "max_abs_error": 0.0,
+              "different_elements": 0
+            },
+            "object_score_logits/0": {
+              "equal": true,
+              "max_abs_error": 0.0,
+              "different_elements": 0
+            }
+          }
+        },
+        {
+          "frame": 3,
+          "phase": "prefix",
+          "fields": {
+            "binary_mask": {
+              "equal": true,
+              "max_abs_error": 0.0,
+              "different_elements": 0
+            },
+            "maskmem_features/0": {
+              "equal": true,
+              "max_abs_error": 0.0,
+              "different_elements": 0
+            },
+            "maskmem_pos_enc/0": {
+              "equal": true,
+              "max_abs_error": 0.0,
+              "different_elements": 0
+            },
+            "pred_masks/0": {
+              "equal": true,
+              "max_abs_error": 0.0,
+              "different_elements": 0
+            },
+            "obj_ptr/0": {
+              "equal": true,
+              "max_abs_error": 0.0,
+              "different_elements": 0
+            },
+            "object_score_logits/0": {
+              "equal": true,
+              "max_abs_error": 0.0,
+              "different_elements": 0
+            }
+          }
+        },
+        {
+          "frame": 4,
+          "phase": "prefix",
+          "fields": {
+            "binary_mask": {
+              "equal": true,
+              "max_abs_error": 0.0,
+              "different_elements": 0
+            },
+            "maskmem_features/0": {
+              "equal": true,
+              "max_abs_error": 0.0,
+              "different_elements": 0
+            },
+            "maskmem_pos_enc/0": {
+              "equal": true,
+              "max_abs_error": 0.0,
+              "different_elements": 0
+            },
+            "pred_masks/0": {
+              "equal": true,
+              "max_abs_error": 0.0,
+              "different_elements": 0
+            },
+            "obj_ptr/0": {
+              "equal": true,
+              "max_abs_error": 0.0,
+              "different_elements": 0
+            },
+            "object_score_logits/0": {
+              "equal": true,
+              "max_abs_error": 0.0,
+              "different_elements": 0
+            }
+          }
+        },
+        {
+          "frame": 5,
+          "phase": "prefix",
+          "fields": {
+            "binary_mask": {
+              "equal": true,
+              "max_abs_error": 0.0,
+              "different_elements": 0
+            },
+            "maskmem_features/0": {
+              "equal": true,
+              "max_abs_error": 0.0,
+              "different_elements": 0
+            },
+            "maskmem_pos_enc/0": {
+              "equal": true,
+              "max_abs_error": 0.0,
+              "different_elements": 0
+            },
+            "pred_masks/0": {
+              "equal": true,
+              "max_abs_error": 0.0,
+              "different_elements": 0
+            },
+            "obj_ptr/0": {
+              "equal": true,
+              "max_abs_error": 0.0,
+              "different_elements": 0
+            },
+            "object_score_logits/0": {
+              "equal": true,
+              "max_abs_error": 0.0,
+              "different_elements": 0
+            }
+          }
+        },
+        {
+          "frame": 6,
+          "phase": "prefix",
+          "fields": {
+            "binary_mask": {
+              "equal": true,
+              "max_abs_error": 0.0,
+              "different_elements": 0
+            },
+            "maskmem_features/0": {
+              "equal": true,
+              "max_abs_error": 0.0,
+              "different_elements": 0
+            },
+            "maskmem_pos_enc/0": {
+              "equal": true,
+              "max_abs_error": 0.0,
+              "different_elements": 0
+            },
+            "pred_masks/0": {
+              "equal": true,
+              "max_abs_error": 0.0,
+              "different_elements": 0
+            },
+            "obj_ptr/0": {
+              "equal": true,
+              "max_abs_error": 0.0,
+              "different_elements": 0
+            },
+            "object_score_logits/0": {
+              "equal": true,
+              "max_abs_error": 0.0,
+              "different_elements": 0
+            }
+          }
+        },
+        {
+          "frame": 7,
+          "phase": "future",
+          "fields": {
+            "binary_mask": {
+              "equal": true,
+              "max_abs_error": 0.0,
+              "different_elements": 0
+            },
+            "maskmem_features/0": {
+              "equal": true,
+              "max_abs_error": 0.0,
+              "different_elements": 0
+            },
+            "maskmem_pos_enc/0": {
+              "equal": true,
+              "max_abs_error": 0.0,
+              "different_elements": 0
+            },
+            "pred_masks/0": {
+              "equal": true,
+              "max_abs_error": 0.0,
+              "different_elements": 0
+            },
+            "obj_ptr/0": {
+              "equal": true,
+              "max_abs_error": 0.0,
+              "different_elements": 0
+            },
+            "object_score_logits/0": {
+              "equal": true,
+              "max_abs_error": 0.0,
+              "different_elements": 0
+            }
+          }
+        },
+        {
+          "frame": 8,
+          "phase": "future",
+          "fields": {
+            "binary_mask": {
+              "equal": true,
+              "max_abs_error": 0.0,
+              "different_elements": 0
+            },
+            "maskmem_features/0": {
+              "equal": true,
+              "max_abs_error": 0.0,
+              "different_elements": 0
+            },
+            "maskmem_pos_enc/0": {
+              "equal": true,
+              "max_abs_error": 0.0,
+              "different_elements": 0
+            },
+            "pred_masks/0": {
+              "equal": true,
+              "max_abs_error": 0.0,
+              "different_elements": 0
+            },
+            "obj_ptr/0": {
+              "equal": true,
+              "max_abs_error": 0.0,
+              "different_elements": 0
+            },
+            "object_score_logits/0": {
+              "equal": true,
+              "max_abs_error": 0.0,
+              "different_elements": 0
+            }
+          }
+        }
+      ]
+    }
+  ],
+  "native_seconds": 24.578452957997797,
+  "all_equal": true
+}

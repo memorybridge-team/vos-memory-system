@@ -1,0 +1,7 @@
+device,video,runs,inference_frames,frame_pairs_vs_native_0,all_fields_exact_pairs,full_state_pairs,exact_full_state_pairs,state_metadata_equal_pairs,restart_preflight_audits,exact_idempotent_preflights,all_inference_schedules_match,all_states_independent,model_weights_unchanged,first_native_repeat_any_difference
+cpu,bmx-bumps,6,198,165,165,15,15,15,3,3,True,True,True,
+cpu,breakdance,6,198,165,165,15,15,15,3,3,True,True,True,
+cpu,camel,6,198,165,165,15,15,15,3,3,True,True,True,
+mps,bmx-bumps,6,198,165,10,15,0,15,3,3,True,True,True,2
+mps,breakdance,6,198,165,5,15,0,15,3,3,True,True,True,1
+mps,camel,6,198,165,5,15,0,15,3,3,True,True,True,1

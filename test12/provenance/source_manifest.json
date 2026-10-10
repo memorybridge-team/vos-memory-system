@@ -1,0 +1,132 @@
+{
+  "recorded_at": "2026-10-10",
+  "benchmark_repository": "https://github.com/memorybridge-team/vos-memory-benchmark",
+  "benchmark_head": "c07d953bf4ee91867253e2c323c150da05ccaffe",
+  "benchmark_tracked_dirty": true,
+  "sam2_repository": "https://github.com/facebookresearch/sam2",
+  "sam2_head": "2b90b9f5ceec907a1c18123530e92e794ad901a4",
+  "sam2_tracked_sources_dirty": false,
+  "source_snapshots": [
+    {
+      "original_path": "/Users/rokpolar/Documents/\u110c\u1169\u11bc\u1111\u11732/vos-memory-benchmark/settings.py",
+      "snapshot_path": "runtime/settings.py",
+      "sha256": "876dde5ea1d998b4eca27a83c552587de4c04dce20c5834d2d1339acd27892c0"
+    },
+    {
+      "original_path": "/Users/rokpolar/Documents/\u110c\u1169\u11bc\u1111\u11732/vos-memory-benchmark/model/sam2_runner.py",
+      "snapshot_path": "runtime/model/sam2_runner.py",
+      "sha256": "2db8eeef182b75fa65006503a1e3feb56cd1e32f04bed84d130769adb7be9f60"
+    },
+    {
+      "original_path": "/Users/rokpolar/Documents/\u110c\u1169\u11bc\u1111\u11732/vos-memory-benchmark/model/sam2_check.py",
+      "snapshot_path": "runtime/model/sam2_check.py",
+      "sha256": "3f206c62d7848c158bc689e39c8d88dda010bb1d45a91b5d43480416d336b3d9"
+    },
+    {
+      "original_path": "/Users/rokpolar/Documents/\u110c\u1169\u11bc\u1111\u11732/vos-memory-benchmark/baseline/no_handoff.py",
+      "snapshot_path": "runtime/baseline/no_handoff.py",
+      "sha256": "150341c252861d9a75bddbafa305536323cbd5356f67922f3385cbfa06948ebf"
+    },
+    {
+      "original_path": "/Users/rokpolar/Documents/\u110c\u1169\u11bc\u1111\u11732/vos-memory-benchmark/evaluation/scoring/jf.py",
+      "snapshot_path": "runtime/evaluation/scoring/jf.py",
+      "sha256": "7b41cc6dd1e59a4bbc62ad139e7ff55856ae9b8f5169ce3959901b2b4a9cdf1c"
+    },
+    {
+      "original_path": "/Users/rokpolar/Documents/\u110c\u1169\u11bc\u1111\u11732/vos-memory-benchmark/evaluation/switches.py",
+      "snapshot_path": "runtime/evaluation/switches.py",
+      "sha256": "c0cd98ad3606abd340be7a5c022daa5d4b6b21fb96e3e6257f5bea964dade03f"
+    },
+    {
+      "original_path": "/Users/rokpolar/Documents/\u110c\u1169\u11bc\u1111\u11732/vos-memory-benchmark/evaluation/evaluate_video.py",
+      "snapshot_path": "provenance/benchmark/evaluation/evaluate_video.py",
+      "sha256": "a2c3e4f4237593292524520196329fbb9430e6e5cf29dd799f2a6b801948e7f3"
+    },
+    {
+      "original_path": "/Users/rokpolar/Documents/\u110c\u1169\u11bc\u1111\u11732/sam2/sam2/configs/sam2.1/sam2.1_hiera_b+.yaml",
+      "snapshot_path": "provenance/sam2/sam2/configs/sam2.1/sam2.1_hiera_b+.yaml",
+      "sha256": "37d6c56b07a7f8d08baaa314315c60dc3aabe2edc66cd92bac6d1ed50038e788"
+    },
+    {
+      "original_path": "/Users/rokpolar/Documents/\u110c\u1169\u11bc\u1111\u11732/sam2/sam2/modeling/sam2_base.py",
+      "snapshot_path": "provenance/sam2/sam2/modeling/sam2_base.py",
+      "sha256": "69a46b44e8625f509791352bd09beaafe589cd7d872721384e63d37f9fdc6e41"
+    },
+    {
+      "original_path": "/Users/rokpolar/Documents/\u110c\u1169\u11bc\u1111\u11732/sam2/sam2/modeling/memory_attention.py",
+      "snapshot_path": "provenance/sam2/sam2/modeling/memory_attention.py",
+      "sha256": "07358cb7f58ec3788e88ff4e6415f8a9d628a3963529d6e2c915494a5347c8e2"
+    },
+    {
+      "original_path": "/Users/rokpolar/Documents/\u110c\u1169\u11bc\u1111\u11732/sam2/sam2/modeling/sam/transformer.py",
+      "snapshot_path": "provenance/sam2/sam2/modeling/sam/transformer.py",
+      "sha256": "cda19052331e775190ce8b1159efcb828a4632d931a6d8bd4d47109f121782f1"
+    },
+    {
+      "original_path": "/Users/rokpolar/Documents/\u110c\u1169\u11bc\u1111\u11732/sam2/sam2/sam2_video_predictor.py",
+      "snapshot_path": "provenance/sam2/sam2/sam2_video_predictor.py",
+      "sha256": "912555920a77f72ded07839efa33fcceecc79f3523abbec783f0be46ee2c55c2"
+    },
+    {
+      "original_path": "/Users/rokpolar/Documents/\u110c\u1169\u11bc\u1111\u11732/sam2/LICENSE",
+      "snapshot_path": "provenance/sam2/LICENSE",
+      "sha256": "c71d239df91726fc519c6eb72d318ec65820627232b2f796219e87dcf35d0ab4"
+    },
+    {
+      "original_path": "/Users/rokpolar/Documents/\u110c\u1169\u11bc\u1111\u11732/vos-memory-benchmark/test11/fixture_cpu.npz",
+      "snapshot_path": "fixtures/fixture_cpu.npz",
+      "sha256": "6c2ca75aeaa3fffa7946c1608a3c86a30b5c6bd180221e76557091ac8e579654"
+    }
+  ],
+  "original_scripts": {
+    "write_multivideo_report.py": "61ede8a5e5953539259a48144dc5176fad2936e5993ac236594a78fdd125a999",
+    "compare_multiple_videos.py": "9963070727bdb2e7fe662e4ed06964bd34e44d23e3bbf135573ebea0edc550a3",
+    "probe_mps_determinism.py": "cdc39f88036be552fc7848d7721f3c16df1951626d51feb5c12d17023670b859",
+    "summarize_multiple_videos.py": "dfaaa5a813c42a72b4746f2bb2c8746f5c3d38d76910214f5e43db439ec5272b",
+    "validate_multiple_videos.py": "82d5ab6a0e31657926ebaaee3c6729f000dd82dfd45a632ddfff33b7165ba824",
+    "check_native_replay.py": "a3e0d3cd75d697de08abc90f94ee4f4280c4f46886746b12b3106137590d2d4c"
+  },
+  "packaging_changes": [
+    "Entry points use test12/runtime and SAM2_ROOT.",
+    "Bedroom prompt fixture included in test12/fixtures.",
+    "Reruns write to separate outputs; original CPU/MPS evidence preserved.",
+    "Inference and comparison logic unchanged; full inference not rerun after packaging.",
+    "Summary regeneration reads only the two recorded device folders."
+  ],
+  "excluded": [
+    "model checkpoints",
+    "RGB/GT datasets",
+    "virtual environment",
+    "full tensor dumps"
+  ],
+  "recorded_results_sha256": {
+    "control_mps.log": "f90788d74d5e10b5820d6ff0ee40dd526b5b490d7cdf81eb9a2ccc8f50cc9e2a",
+    "results_mps.json": "895f25430a95dc5bb2b5dec0d685dc7dafa7acce79587c72173a62a1ddab3e26",
+    "run_cpu.log": "c576928ddd8f730fb815c1e3eb2170d12513a049a71e2c1a441ce09caad4a8b7",
+    "summary.json": "4e953dfa7a0db74a5e748306c255bfa436271bf0da6a2591d605e8f52bdcdd39",
+    "install_opencv.log": "052e774a1b3b3339e2e27951402d328cd87470e2074d3adb554213204415fe63",
+    "mps_default_probe.json": "000fd8b559f03d1df605b76badbe8d4664bd64c392cfcc51b40c1a5af7c31929",
+    "extended_mps.log": "de40114154684b165bb1ee4e37e6d0e20ee480deeecde3e42dc9217eb3056537",
+    "control_mps.json": "a83fed5f1e37767eec86ff3ae0f977832b7ae919575af56116e24f1a24e71bea",
+    "results_cpu.json": "3375b44223d34516cfa47637e2aa9845414e35f670ea3b43efaa1aa57561ed73",
+    "mps_default_probe.log": "eba22a2ebab107994c9076729f98d347d6e22797d8b505dd8b369f06d4cbfc2e",
+    "mps_deterministic_probe.log": "f7f15d33d4e363978ea1502468927b027fbe88c79140471a41010a66f9608f07",
+    "mps_deterministic_probe.json": "15399aa47b902d86b6f73464ff5f20423db05acb5d9ae5da7b419814a761894b",
+    "run_mps.log": "c71d5ed1bc99a2bbf3e9cc539af1c369bd4d75fe7d09aeab7b4d57ceb07e3b98",
+    "extended_cpu.log": "b2a59fe0e99107e70f845dbcc72ebdea5ac0e2770190f38e66b6679b2ce6166c",
+    "extended/summary.json": "c121ae722cef94904b28fa3c0c4e755d47d3c4df3b5dcbc3f76124392a895565",
+    "extended/condition_summary.csv": "7a452305291ffcfb71912efe39b2be88b5d0e9c73e70ff93b08aa274dc29e608",
+    "extended/frame_comparisons.csv": "c5ff52e9858f085d2ab1a78c80de3e41ce099832bf82b20b7d3e1ea9be91fb31",
+    "extended/video_audit_summary.csv": "220bd93007cb5b7d5230f177e1837ec397cfdbff2262cef6bcdc3f25df59a4a8",
+    "extended/validation.json": "0bb19cfb3f3bbcecb281120e3a2228e6c47c0d8862805e87a9f0e7473a602de7",
+    "extended/configuration_manifest.json": "86b0681f4a09abe150a0e07db2edbdb5d090659a2aca33476bca5dfb0bbc0aa8",
+    "extended/mps/breakdance.json": "b9a43b6f9594ada58e302392d149e5080c741e4694ee8bb34e90ab7c1b6f7955",
+    "extended/mps/bmx-bumps.json": "33a11c1ead9e298e2275bbdd428c0da349b71c255fd92d5bfd7406f7bfe42584",
+    "extended/mps/camel.json": "baacb1a9fc35971e8497450dfd7714b81f8652537895084deac10cd84eb01b33",
+    "extended/mps/environment.json": "9a9b2cc1bf9b75a468c384f87fdceffc85525a587bda9e605df3785e23c857cb",
+    "extended/cpu/breakdance.json": "fdfb0dcb1212a9cadcfddd1e76322502da1e79e131c2eccf7db8047d4e923cf9",
+    "extended/cpu/bmx-bumps.json": "c1c69250a2bf1da77f1b4f749e386485227ae52b09ae4cd9efb5957c67e36f68",
+    "extended/cpu/camel.json": "bf75c3167d210d66c7790d5818f3d20ba3c84562c70a0ec2526cd9cd68351e04",
+    "extended/cpu/environment.json": "fa9a44c1d3915c177a4520f4860f471acde53695f2b462879d2a47219ff0c8a0"
+  }
+}

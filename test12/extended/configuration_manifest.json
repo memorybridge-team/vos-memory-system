@@ -1,0 +1,21 @@
+{
+  "source_files": {
+    "/Users/rokpolar/Documents/\u110c\u1169\u11bc\u1111\u11732/vos-memory-benchmark/settings.py": "876dde5ea1d998b4eca27a83c552587de4c04dce20c5834d2d1339acd27892c0",
+    "/Users/rokpolar/Documents/\u110c\u1169\u11bc\u1111\u11732/vos-memory-benchmark/model/sam2_check.py": "3f206c62d7848c158bc689e39c8d88dda010bb1d45a91b5d43480416d336b3d9",
+    "/Users/rokpolar/Documents/\u110c\u1169\u11bc\u1111\u11732/sam2/sam2/configs/sam2.1/sam2.1_hiera_b+.yaml": "37d6c56b07a7f8d08baaa314315c60dc3aabe2edc66cd92bac6d1ed50038e788",
+    "/Users/rokpolar/Documents/\u110c\u1169\u11bc\u1111\u11732/sam2/sam2/modeling/sam2_base.py": "69a46b44e8625f509791352bd09beaafe589cd7d872721384e63d37f9fdc6e41",
+    "/Users/rokpolar/Documents/\u110c\u1169\u11bc\u1111\u11732/sam2/sam2/modeling/memory_attention.py": "07358cb7f58ec3788e88ff4e6415f8a9d628a3963529d6e2c915494a5347c8e2",
+    "/Users/rokpolar/Documents/\u110c\u1169\u11bc\u1111\u11732/sam2/sam2/modeling/sam/transformer.py": "cda19052331e775190ce8b1159efcb828a4632d931a6d8bd4d47109f121782f1"
+  },
+  "effective_test_overrides": {
+    "USE_BF16": false,
+    "PREFETCH_FRAMES": false,
+    "CPU_torch_threads": 4,
+    "CPU_deterministic_algorithms": true,
+    "MPS_deterministic_algorithms": false,
+    "MEMORY_WINDOW": 16,
+    "OFFLOAD_STATE_TO_CPU": false,
+    "BENCHMARK_SKIP_VISIBLE": true
+  },
+  "source_scope": "Local sources and overrides from recorded test script; no CUDA comparison"
+}

@@ -1,0 +1,72 @@
+"""Write the Korean evidence report only after complete result validation."""
+import json
+import hashlib
+from pathlib import Path
+from statistics import mean
+
+HERE = Path(__file__).resolve().parent
+
+
+def main():
+    validation = json.loads((HERE/'extended/validation.json').read_text())
+    assert validation['validation_passed']
+    for relative, digest in validation['evidence_sha256'].items():
+        assert hashlib.sha256((HERE/relative).read_bytes()).hexdigest() == digest
+    summary = json.loads((HERE/'extended/summary.json').read_text())
+    lines = ['# 여러 영상의 Base+ Native–Full Replay 검증', '',
+             '## 결론', '',
+             '동일 가중치·최초 프롬프트·RGB·추론 설정에서 Full Replay와 Base+ Native는 같은 상태 전이열을 계산한다. 구간 재시작의 추가 preflight가 상태를 변경하지 않고 연산이 결정적이면, 귀납적으로 모든 상태와 출력이 동일하다. 코드에 따른 조건부 논증은 `STRUCTURAL_ARGUMENT_KO.md`에 있다.', '',
+             '이번 CPU 결정적 실행에서는 세 영상의 모든 비교 출력과 전환 시점 전체 상태가 정확히 일치했다. 현재 MPS에서는 Native 반복 자체도 달라졌으며 결정적 연산 옵션의 짧은 대조에서도 완전 일치를 확보하지 못했다. 따라서 알고리즘 동등성과 모든 장치에서의 수치 재현성을 같은 주장으로 제시해서는 안 된다.', '',
+             '## 실험 범위', '',
+             '- 실제 SAM2.1 Hiera Base+ 체크포인트, FP32 추론. SAM2는 저장 기억 특징을 BF16으로 변환한다.',
+             '- 로컬 DAVIS `bmx-bumps`, `camel`, `breakdance`, 각 앞 33프레임. 영상마다 최초 GT 객체 ID 1을 선택하고 Session 객체 ID 1/인덱스 0으로 추적한다.',
+             '- 서로 다른 영상 3개, 객체 3개, RGB 99프레임. 각 장치에서 영상마다 6회, 18개 실행/594개 추적 출력을 생성했다. 본 실험은 두 장치 합계 36회/1,188개 출력이다.',
+             '- Native 2회, 독립 연속 Full Replay 1회, 25/50/75%에서 구간을 나누는 Full Replay 각 1회. 전환 프레임은 8/16/24, 전환 이후 길이는 24/16/8이다.',
+             '- 모델 가중치는 재사용하지만 모든 실행은 독립 추론 상태와 입력 reader를 만든다. Native 예측/기억을 Replay의 입력으로 사용하지 않는다. GT는 최초 프롬프트 이후 채점에만 사용한다.',
+             '- Native_0를 기준으로 장치마다 495개 프레임 출력 쌍과 45개 전체 상태 쌍을 비교했다. 각 출력은 원본 해상도 로짓/마스크, 저해상도 로짓, 기억 특징/위치 부호화, 포인터, 존재 로짓을 포함한다.', '',
+             '## 구조 및 정확한 일치', '',
+             '| 항목 | CPU 결정적 실행 | MPS 기본 실행 |',
+             '| --- | ---: | ---: |']
+    cpu, mps = validation['devices']['cpu'], validation['devices']['mps']
+    for label,key,total in [('출력 필드 전체 정확히 일치','exact_frame_pairs',495),
+                            ('이진 마스크 정확히 일치','mask_exact_pairs',495),
+                            ('전환 시점 전체 상태 정확히 일치','exact_full_state_pairs',45),
+                            ('전체 상태 메타데이터 일치','metadata_equal_state_pairs',45),
+                            ('전환 시점 캐시된 이미지 특징 일치','cached_feature_exact_state_pairs',45),
+                            ('추가 preflight 전후 상태 일치','exact_restart_preflights',9)]:
+        lines.append(f'| {label} | {cpu[key]}/{total} | {mps[key]}/{total} |')
+    lines += ['', '두 장치 모두 15개 독립 비교 경로의 단일 프레임 추론 호출과 기억 인코딩 요청 플래그가 Native와 같았다. 단일 프레임 추론은 0~32로 한 번씩 기록됐다. `_run_memory_encoder` 호출 기록은 최초 프롬프트 preflight의 프레임 0만 계측한다. 후속 프레임은 SAM2Base의 다른 내부 경로를 사용하므로 실제 기억 인코더 모듈 전체 호출을 직접 기록한 자료가 아니다. 후속 프레임 1~32의 `run_mem_encoder=True` 요청과 실제 생성된 기억 텐서는 검사했다. 모델 가중치 해시는 장치별 실행 전후 및 두 장치 사이에서 일치했다. 입력 RGB/GT/최초 마스크와 검사 소스 해시도 장치 사이에서 같았다.', '',
+              '출력의 정확한 값 일치 여부와 배열 SHA256의 일치 여부를 교차 검사했다. CPU에서 정확히 같은 출력은 마스크 IoU=1, GT J/F/J&F 차이=0이었다. BF16 비교 값의 FP32 변환은 유한한 BF16 값을 보존한다. 모든 비교 텐서가 유한값인지도 검사했다.', '',
+              '24번 프레임의 비조건 기억은 8~24번만 유지됐고 최초 조건 기억 0번은 유지됐다. 따라서 기억 창 이동과 오래된 기억 삭제가 발생한 뒤의 상태도 검사했다. 객체 매핑과 최초 프롬프트 외 추가 입력이 없다는 점도 저장 상태로 확인했다.', '',
+              '## MPS의 수치 차이', '',
+              '아래 IoU는 두 예측 마스크 사이의 값이며 GT 대비 정확도가 아니다. 각 영상에서 25/50/75% 이후 구간의 평균을 같은 비중으로 평균했다. ΔJ&F는 Native_0 대비 GT 점수 차이이며 단위는 %p다.', '',
+              '| 영상 | Native 반복 IoU | 연속 Full Replay IoU | 분리 Full Replay IoU | Native 반복 ΔJ&F | 연속 Replay ΔJ&F | 분리 Replay ΔJ&F |',
+              '| --- | ---: | ---: | ---: | ---: | ---: | ---: |']
+    for video in ['bmx-bumps','camel','breakdance']:
+        values = []
+        for variants in [['native_1'],['full_replay_continuous'],['full_replay_25','full_replay_50','full_replay_75']]:
+            rows = [r for r in summary['conditions'] if r['device']=='mps' and r['video']==video and r['variant'] in variants]
+            assert len(rows)==3
+            values.append((100*mean(r['mean_mask_iou'] for r in rows),mean(r['mean_gt_jf_difference_pp'] for r in rows)))
+        lines.append(f'| {video} | '+ ' | '.join([f'{v[0]:.4f}%' for v in values]+[f'{v[1]:+.4f}' for v in values])+' |')
+    lines += ['', 'Native 반복의 최초 출력 필드 차이는 bmx-bumps 2번, camel 1번, breakdance 1번 프레임이다. 25% 전환 프레임 8보다 앞서 차이가 발생하므로 구간 재시작만으로 설명할 수 없다.', '',
+              'Full Replay 차이가 항상 Native 반복 차이보다 작지는 않았다. 특히 camel 연속 Replay의 평균 ΔJ&F는 Native 반복보다 컸으며, breakdance에서는 원본 해상도 로짓 MAE가 Native 반복보다 컸다. 이 자료만으로 모든 차이를 작은 반올림 오차라고 분류하거나 두 오차 분포의 통계적 동등성을 선언할 수 없다. Native 반복 쌍은 영상별 하나뿐이며 프레임들은 서로 독립인 통계 표본도 아니다.', '',
+              'CPU 작업 없이 실행한 9프레임 MPS 대조에서는 기본 옵션에서 마스크 2/9, 결정적 연산 옵션에서 1/9만 정확히 같았다. 두 경우 모두 모든 필드의 정확한 일치를 확보하지 못했다. 특정 MPS 커널이나 연산의 원인은 이번 검사로 확정하지 않았다.', '',
+              '## 논문에 사용할 수 있는 표현', '',
+              '> Full Replay는 동일한 Base+ 모델과 최초 프롬프트로 관측 프레임을 다시 처리하므로, 결정적 추론과 상태를 변경하지 않는 재시작 조건에서 Native와 동일한 상태 전이 및 출력을 생성한다. 로컬 DAVIS 세 영상의 33프레임 검증에서 CPU 결정적 실행은 495개 프레임 출력 비교와 45개 전체 상태 비교 모두 오차 0으로 일치했다. MPS 실행에서는 Native 반복에서도 수치 차이가 관측됐고 정확한 재현성을 확보하지 못했으므로 모든 장치에서의 독립 실행 일치까지 주장하지 않는다.', '',
+              '현재 벤치마크 표의 Native와 Full Replay는 같은 실행 점수와 기억을 재사용한다. 그 표의 동점 및 복원율 100%는 독립 실행의 재현성 근거가 아니다. 이번 실험은 별도의 실행을 생성해 이 구분을 검사했다.', '',
+              '## 범위와 재현', '',
+              '전체 영상 길이, 전체 DAVIS/PUMaVOS/VOST, 다중 객체 동시 추적, 후속 프롬프트, CUDA BF16은 검사하지 않았다. 로컬 predictor 소스는 기존 RunPod 소스와 다르다. CUDA 구멍 채우기 확장이 없어 두 로컬 경로 모두 해당 후처리를 생략했다. GT 점수는 경로 비교를 위한 진단이며 새로운 데이터셋 벤치마크 성능으로 제시하면 안 된다.', '',
+              '최초 MPS 영상의 Native 실행 일부는 초기 CPU 작업과 겹쳤다. 그 CPU 작업은 완료 전에 종료했고 전체 CPU 검증은 GPU 작업 후 단독으로 다시 실행했다. 추가 MPS 대조는 CPU 작업 없이 수행했다. 계측 시간을 장치/방법 속도 비교에 사용하지 않는다.', '',
+              '[PyTorch 2.8 재현성 문서](https://docs.pytorch.org/docs/2.8/notes/randomness.html)는 버전/플랫폼 사이의 완전 재현성을 보장하지 않으며, seed 고정과 결정적 연산 설정을 별도로 설명한다. 반올림이 존재한다는 이유만으로 같은 환경의 반복 결과가 반드시 달라지는 것은 아니다.', '',
+              '실행 명령은 `README.md`, 소스/설정 해시는 `extended/configuration_manifest.json` 및 장치별 `environment.json`, 패키지는 `requirements-lock.txt`를 참조한다. `extended/validation.json`은 결과 커버리지와 해시/점수 일관성의 최종 검사다.', '',
+              '- `extended/cpu/*.json`, `extended/mps/*.json`: 프레임별 필드 오차와 해시, 전체 상태 비교, 추론 호출 추적.',
+              '- `extended/frame_comparisons.csv`: 모든 프레임의 IoU/픽셀 차이/로짓 오차/RMSE/GT 점수.',
+              '- `extended/condition_summary.csv`: 모든 전환 조건별 평균과 최댓값, Native 반복 로짓 오차 대비 비율.',
+              '- `extended/video_audit_summary.csv`: 전체 상태와 재시작 검증.', '',
+              '원시 전체 텐서를 보존한 파일은 아니며 원소별 비교 수치와 배열 해시를 저장했다. 동일 코드와 입력으로 다시 실행할 수 있다.']
+    (HERE/'MULTIVIDEO_REPORT_KO.md').write_text('\n'.join(lines)+'\n')
+
+
+if __name__ == '__main__':
+    main()

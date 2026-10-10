@@ -1,0 +1,86 @@
+[
+  {
+    "file": "results_mps.json",
+    "device": "mps",
+    "comparison": "Native vs segmented Full Replay",
+    "switch_percent": 25,
+    "switch_frame": 8,
+    "compared_frames": 24,
+    "exact_binary_mask_frames": 0,
+    "max_different_pixels": 214,
+    "max_pred_masks_absolute_error": 11.933900833129883,
+    "all_fields_equal": false
+  },
+  {
+    "file": "results_mps.json",
+    "device": "mps",
+    "comparison": "Native vs segmented Full Replay",
+    "switch_percent": 50,
+    "switch_frame": 16,
+    "compared_frames": 16,
+    "exact_binary_mask_frames": 0,
+    "max_different_pixels": 301,
+    "max_pred_masks_absolute_error": 12.766499519348145,
+    "all_fields_equal": false
+  },
+  {
+    "file": "results_mps.json",
+    "device": "mps",
+    "comparison": "Native vs segmented Full Replay",
+    "switch_percent": 75,
+    "switch_frame": 24,
+    "compared_frames": 8,
+    "exact_binary_mask_frames": 0,
+    "max_different_pixels": 41,
+    "max_pred_masks_absolute_error": 10.854303359985352,
+    "all_fields_equal": false
+  },
+  {
+    "file": "control_mps.json",
+    "device": "mps",
+    "comparison": "Native repeat",
+    "switch_percent": 100,
+    "switch_frame": 8,
+    "compared_frames": 9,
+    "exact_binary_mask_frames": 2,
+    "max_different_pixels": 245,
+    "max_pred_masks_absolute_error": 11.01011848449707,
+    "all_fields_equal": false
+  },
+  {
+    "file": "results_cpu.json",
+    "device": "cpu",
+    "comparison": "Native vs segmented Full Replay",
+    "switch_percent": 25,
+    "switch_frame": 2,
+    "compared_frames": 6,
+    "exact_binary_mask_frames": 6,
+    "max_different_pixels": 0,
+    "max_pred_masks_absolute_error": 0.0,
+    "all_fields_equal": true
+  },
+  {
+    "file": "results_cpu.json",
+    "device": "cpu",
+    "comparison": "Native vs segmented Full Replay",
+    "switch_percent": 50,
+    "switch_frame": 4,
+    "compared_frames": 4,
+    "exact_binary_mask_frames": 4,
+    "max_different_pixels": 0,
+    "max_pred_masks_absolute_error": 0.0,
+    "all_fields_equal": true
+  },
+  {
+    "file": "results_cpu.json",
+    "device": "cpu",
+    "comparison": "Native vs segmented Full Replay",
+    "switch_percent": 75,
+    "switch_frame": 6,
+    "compared_frames": 2,
+    "exact_binary_mask_frames": 2,
+    "max_different_pixels": 0,
+    "max_pred_masks_absolute_error": 0.0,
+    "all_fields_equal": true
+  }
+]

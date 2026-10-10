@@ -1,0 +1,3 @@
+# Keep published source and result hashes stable across Git line-ending settings.
+* -text
+*.csv whitespace=blank-at-eol,blank-at-eof,space-before-tab,cr-at-eol
