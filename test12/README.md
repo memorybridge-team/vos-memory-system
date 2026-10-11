@@ -1,6 +1,8 @@
 # test12: SAM2 Base+ Native와 Full Replay의 독립 검증
 
-2026-10-10에 Apple M2 Mac에서 실행한 실제 체크포인트 실험이다. 같은 Base+ 가중치로 Native와 Full Replay를 독립 실행하고, 프레임별 출력과 전체 추론 상태를 비교했다.
+> Full Replay와 Base+ Native가 동일한가?
+> 
+같은 Base+ 가중치로 Native와 Full Replay를 독립 실행하고, 프레임별 출력과 전체 추론 상태를 비교했다.
 
 ## 결과
 
