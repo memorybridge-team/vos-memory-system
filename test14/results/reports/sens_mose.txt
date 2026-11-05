@@ -1,0 +1,86 @@
+sens_mose cases 300 videos 300
+
+[+1..10] J&F (visible frames, video mean, x100)
+  target_ref                 73.83  diff  +0.00 [+0.00,+0.00]  n=241  worst3 [0.0, 0.0, 0.0]
+  legacy                     73.10  diff  -0.73 [-2.50,+1.05]  n=241  worst3 [-89.1, -83.4, -35.1]
+  ridge                      73.07  diff  -0.76 [-2.80,+1.30]  n=241  worst3 [-94.0, -84.9, -83.4]
+  legacy_sp_only             73.22  diff  -0.61 [-2.32,+1.14]  n=241  worst3 [-89.1, -83.4, -35.1]
+  legacy_ptr_only            73.66  diff  -0.17 [-0.93,+0.76]  n=241  worst3 [-35.1, -26.3, -24.9]
+  legacy_cond_oracle         73.77  diff  -0.06 [-1.96,+1.94]  n=241  worst3 [-83.4, -77.7, -75.7]
+  legacy_recent_oracle       72.54  diff  -1.29 [-2.54,-0.30]  n=241  worst3 [-92.0, -89.1, -34.0]
+  legacy_meanptr             72.16  diff  -1.67 [-3.66,+0.15]  n=241  worst3 [-94.0, -89.1, -83.4]
+  ridge_sp_only              72.94  diff  -0.89 [-2.75,+0.88]  n=241  worst3 [-92.0, -84.9, -83.4]
+  ridge_ptr_only             73.69  diff  -0.14 [-0.89,+0.82]  n=241  worst3 [-35.1, -26.2, -24.9]
+
+[+11..30] J&F (visible frames, video mean, x100)
+  target_ref                 64.47  diff  +0.00 [+0.00,+0.00]  n=255  worst3 [0.0, 0.0, 0.0]
+  legacy                     61.69  diff  -2.78 [-5.14,-0.39]  n=255  worst3 [-95.4, -93.1, -87.7]
+  ridge                      61.27  diff  -3.20 [-6.02,-0.55]  n=255  worst3 [-95.4, -93.1, -90.8]
+  legacy_sp_only             61.30  diff  -3.17 [-5.53,-1.06]  n=255  worst3 [-95.4, -93.1, -87.7]
+  legacy_ptr_only            64.59  diff  +0.12 [-0.41,+0.65]  n=255  worst3 [-43.4, -8.6, -6.6]
+  legacy_cond_oracle         64.27  diff  -0.20 [-1.77,+1.30]  n=255  worst3 [-86.8, -75.6, -58.6]
+  legacy_recent_oracle       60.59  diff  -3.88 [-6.10,-1.89]  n=255  worst3 [-97.3, -95.4, -93.1]
+  legacy_meanptr             61.59  diff  -2.88 [-5.21,-0.59]  n=255  worst3 [-95.4, -93.1, -90.8]
+  ridge_sp_only              60.19  diff  -4.28 [-7.03,-1.72]  n=255  worst3 [-97.3, -95.4, -93.1]
+  ridge_ptr_only             64.46  diff  -0.01 [-0.52,+0.43]  n=255  worst3 [-43.5, -15.2, -8.6]
+
+[+31..100] J&F (visible frames, video mean, x100)
+  target_ref                 56.21  diff  +0.00 [+0.00,+0.00]  n=175  worst3 [0.0, 0.0, 0.0]
+  legacy                     52.45  diff  -3.76 [-7.29,-0.35]  n=175  worst3 [-99.5, -97.4, -95.6]
+  ridge                      52.46  diff  -3.75 [-7.48,+0.05]  n=175  worst3 [-99.5, -98.6, -97.4]
+  legacy_sp_only             52.55  diff  -3.66 [-7.29,-0.17]  n=175  worst3 [-99.5, -97.4, -95.6]
+  legacy_ptr_only            56.38  diff  +0.17 [-0.30,+0.64]  n=175  worst3 [-25.0, -2.3, -1.5]
+  legacy_cond_oracle         56.89  diff  +0.68 [+0.08,+1.47]  n=175  worst3 [-8.3, -3.5, -1.8]
+  legacy_recent_oracle       51.25  diff  -4.96 [-8.50,-1.47]  n=175  worst3 [-99.5, -97.4, -95.6]
+  legacy_meanptr             52.24  diff  -3.97 [-7.50,-0.58]  n=175  worst3 [-99.5, -97.4, -95.6]
+  ridge_sp_only              52.39  diff  -3.82 [-7.69,+0.03]  n=175  worst3 [-99.5, -98.6, -97.4]
+  ridge_ptr_only             56.38  diff  +0.17 [-0.28,+0.65]  n=175  worst3 [-25.1, -1.6, -1.5]
+
+[+101..] J&F (visible frames, video mean, x100)
+  target_ref                 71.77  diff  +0.00 [+0.00,+0.00]  n=14  worst3 [0.0, 0.0, 0.0]
+  legacy                     47.04  diff -24.73 [-44.08,-6.69]  n=14  worst3 [-92.0, -89.2, -76.6]
+  ridge                      52.42  diff -19.35 [-38.68,-1.53]  n=14  worst3 [-92.0, -89.2, -76.6]
+  legacy_sp_only             46.96  diff -24.81 [-45.10,-6.61]  n=14  worst3 [-92.0, -89.2, -76.6]
+  legacy_ptr_only            71.69  diff  -0.08 [-0.30,+0.06]  n=14  worst3 [-1.4, -0.1, -0.0]
+  legacy_cond_oracle         71.70  diff  -0.07 [-0.30,+0.07]  n=14  worst3 [-1.4, -0.0, -0.0]
+  legacy_recent_oracle       43.67  diff -28.10 [-48.75,-9.76]  n=14  worst3 [-92.0, -89.2, -76.6]
+  legacy_meanptr             47.04  diff -24.73 [-45.53,-6.42]  n=14  worst3 [-92.0, -89.2, -76.6]
+  ridge_sp_only              52.41  diff -19.36 [-38.88,-2.62]  n=14  worst3 [-92.0, -89.2, -76.6]
+  ridge_ptr_only             71.56  diff  -0.21 [-0.57,+0.04]  n=14  worst3 [-1.9, -1.4, -0.0]
+
+[all] J&F (visible frames, video mean, x100)
+  target_ref                 64.50  diff  +0.00 [+0.00,+0.00]  n=287  worst3 [0.0, 0.0, 0.0]
+  legacy                     60.93  diff  -3.57 [-5.81,-1.28]  n=287  worst3 [-93.1, -90.3, -84.9]
+  ridge                      60.63  diff  -3.87 [-6.45,-1.30]  n=287  worst3 [-98.6, -93.1, -87.3]
+  legacy_sp_only             60.93  diff  -3.56 [-5.75,-1.54]  n=287  worst3 [-93.1, -90.3, -84.8]
+  legacy_ptr_only            64.36  diff  -0.13 [-0.56,+0.25]  n=287  worst3 [-34.3, -26.3, -18.8]
+  legacy_cond_oracle         64.38  diff  -0.12 [-1.49,+1.26]  n=287  worst3 [-84.9, -75.6, -66.9]
+  legacy_recent_oracle       59.94  diff  -4.56 [-6.62,-2.65]  n=287  worst3 [-93.1, -92.6, -90.3]
+  legacy_meanptr             60.67  diff  -3.83 [-6.09,-1.65]  n=287  worst3 [-93.1, -90.3, -84.9]
+  ridge_sp_only              60.00  diff  -4.50 [-7.09,-2.10]  n=287  worst3 [-98.6, -93.1, -92.6]
+  ridge_ptr_only             64.29  diff  -0.21 [-0.61,+0.13]  n=287  worst3 [-34.2, -26.2, -18.8]
+
+failures: videos more than 10 points below / above the reference (all frames)
+  target_ref               below   0  above   0  of 287  []
+  legacy                   below  38  above  15  of 287  ['15f0b0cd', '228a0234', '414ca58b', '45572497', '4a6fb202']
+  ridge                    below  42  above  16  of 287  ['0b99f522', '15f0b0cd', '228a0234', '409dcb8a', '414ca58b']
+  legacy_sp_only           below  38  above  13  of 287  ['15f0b0cd', '228a0234', '45572497', '4a6fb202', '4e0597a0']
+  legacy_ptr_only          below   3  above   2  of 287  ['414ca58b', '9707f1e3', 'g2l925f4']
+  legacy_cond_oracle       below   6  above   6  of 287  ['414ca58b', '4hnws43a', '9707f1e3', '9ed4317a', 'eaed776d']
+  legacy_recent_oracle     below  38  above   8  of 287  ['0d967fd1', '15f0b0cd', '228a0234', '414ca58b', '4344808d']
+  legacy_meanptr           below  39  above  12  of 287  ['0b99f522', '15f0b0cd', '414ca58b', '45572497', '4a6fb202']
+  ridge_sp_only            below  40  above  14  of 287  ['0d967fd1', '15f0b0cd', '228a0234', '409dcb8a', '414ca58b']
+  ridge_ptr_only           below   3  above   1  of 287  ['414ca58b', '9707f1e3', 'g2l925f4']
+
+normalized state error (case mean):
+  target_ref               spatial 0.0000 pointer 0.0000
+  legacy                   spatial 0.1416 pointer 0.3753
+  ridge                    spatial 0.1642 pointer 0.3848
+  legacy_sp_only           spatial 0.1416 pointer 0.0000
+  legacy_ptr_only          spatial 0.0000 pointer 0.3753
+  legacy_cond_oracle       spatial 0.1308 pointer 0.3684
+  legacy_recent_oracle     spatial 0.0108 pointer 0.0069
+  legacy_meanptr           spatial 0.1416 pointer 0.7308
+  ridge_sp_only            spatial 0.1642 pointer 0.0000
+  ridge_ptr_only           spatial 0.0000 pointer 0.3848
+seconds per case 18.1

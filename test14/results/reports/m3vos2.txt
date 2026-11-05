@@ -1,0 +1,43 @@
+m3vos2 objects 75 switch cases 75 videos 56
+
+[all frames after switch: J] video mean x100, difference from Base+ Full Replay
+  small                61.23  diff  +3.98 [-0.22,+8.27]  n=56
+  base                 57.25  diff  +0.00 [+0.00,+0.00]  n=56
+  direct                1.26  diff -55.99 [-63.78,-48.03]  n=56
+  direct_nc            44.45  diff -12.80 [-19.79,-6.37]  n=56
+  orig                 52.16  diff  -5.09 [-12.37,+2.25]  n=56
+  lastvis              60.75  diff  +3.50 [-0.91,+8.03]  n=56
+  recent_ridge         60.81  diff  +3.56 [-0.77,+8.02]  n=56
+  olv                  61.11  diff  +3.86 [+0.11,+8.02]  n=56
+
+[all frames after switch: J&F] video mean x100, difference from Base+ Full Replay
+  small                65.14  diff  +4.17 [+0.18,+8.26]  n=56
+  base                 60.97  diff  +0.00 [+0.00,+0.00]  n=56
+  direct                1.29  diff -59.68 [-66.73,-52.26]  n=56
+  direct_nc            47.24  diff -13.73 [-20.76,-7.23]  n=56
+  orig                 55.85  diff  -5.12 [-12.90,+2.42]  n=56
+  lastvis              64.82  diff  +3.85 [-0.53,+8.26]  n=56
+  recent_ridge         64.88  diff  +3.91 [-0.36,+8.32]  n=56
+  olv                  65.12  diff  +4.15 [+0.52,+8.28]  n=56
+
+[first 30 frames: J&F] video mean x100, difference from Base+ Full Replay
+  small                70.69  diff  +4.53 [+0.88,+8.62]  n=56
+  base                 66.16  diff  +0.00 [+0.00,+0.00]  n=56
+  direct                1.35  diff -64.81 [-72.52,-56.74]  n=56
+  direct_nc            47.12  diff -19.04 [-27.98,-10.55]  n=56
+  orig                 59.07  diff  -7.09 [-16.01,+1.90]  n=56
+  lastvis              69.57  diff  +3.41 [-1.25,+8.27]  n=56
+  recent_ridge         69.62  diff  +3.46 [-1.40,+8.51]  n=56
+  olv                  69.67  diff  +3.51 [-1.10,+8.17]  n=56
+
+failures: switch cases with J at least 0.2 below Base+ while Base+ J >= 0.5
+  eligible cases 41
+  small                 3  ['0036_pull_noodles_1:50', '0078_assemble_puzzle_3:50', '0001_open_cup_1:50']
+  base                  0  []
+  pinned                0  []
+  direct               40  ['0015_cut_brocolli_7:50', '0044_shake_chemical_liquid_3:50', '0013_break_brocolli_4:50', '0024_disassemble_firework_1:50']
+  direct_nc            12  ['0078_assemble_puzzle_3:50', '0036_pull_noodles_1:50', '0011_cut_brocolli_2:50', '0021_cut_green_pepper_3:50']
+  orig                  9  ['0078_assemble_puzzle_3:50', '0036_pull_noodles_1:50', '0011_cut_brocolli_2:50', '0010_cut_blueberry_1:50']
+  lastvis               1  ['0068_ground_herbal_1:50']
+  recent_ridge          1  ['0068_ground_herbal_1:50']
+  olv                   1  ['0068_ground_herbal_1:50']

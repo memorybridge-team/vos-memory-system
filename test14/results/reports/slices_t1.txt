@@ -1,0 +1,176 @@
+
+===== t1_val: 140 cases
+{'absent-at-switch': 7, 'continuous-visible': 62, 'disappearance': 76, 'no-return': 8, 'reappearance': 73}
+
+-- continuous-visible: 62 cases
+  target_ref       - small         +0.22 [-5.96,+6.53]  n=62  win 4 lose 4
+  olv              - small         +2.91 [+0.44,+6.35]  n=62  win 4 lose 1
+  ridge_nc         - small         -0.83 [-2.48,+0.36]  n=62  win 0 lose 2
+  legacy_nc        - small         -0.89 [-2.53,+0.31]  n=62  win 0 lose 2
+  olv              - ridge_nc      +3.75 [+0.99,+7.39]  n=62  win 7 lose 1
+  olv              - legacy_nc     +3.80 [+1.04,+7.45]  n=62  win 7 lose 1
+  ridge_nc_anchor  - olv           -0.18 [-0.64,+0.08]  n=62  win 0 lose 1
+
+-- absent-at-switch: 7 cases
+
+-- disappearance: 76 cases
+  target_ref       - small         +3.98 [-2.30,+10.39]  n=76  win 17 lose 9
+  olv              - small         +1.29 [-3.39,+5.89]  n=76  win 14 lose 9
+  ridge_nc         - small         +4.12 [-1.42,+9.63]  n=76  win 16 lose 7
+  legacy_nc        - small         +3.86 [-1.67,+9.39]  n=76  win 15 lose 7
+  olv              - ridge_nc      -2.84 [-7.72,+1.79]  n=76  win 9 lose 12
+  olv              - legacy_nc     -2.58 [-7.43,+2.03]  n=76  win 9 lose 12
+  ridge_nc_anchor  - olv           +0.12 [-0.01,+0.36]  n=76  win 0 lose 0
+
+-- reappearance: 73 cases
+  target_ref       - small         +2.84 [-3.27,+9.00]  n=73  win 16 lose 9
+  olv              - small         +2.39 [-2.74,+7.51]  n=73  win 16 lose 9
+  ridge_nc         - small         +2.99 [-2.16,+8.19]  n=73  win 15 lose 7
+  legacy_nc        - small         +2.72 [-2.44,+7.92]  n=73  win 14 lose 7
+  olv              - ridge_nc      -0.60 [-5.50,+4.24]  n=73  win 11 lose 11
+  olv              - legacy_nc     -0.33 [-5.18,+4.44]  n=73  win 11 lose 11
+  ridge_nc_anchor  - olv           +0.13 [-0.01,+0.37]  n=73  win 0 lose 0
+
+-- no-return: 8 cases
+  target_ref       - small        +12.97 [-0.60,+36.46]  n=8  win 2 lose 0
+  olv              - small         -0.28 [-8.01,+5.46]  n=8  win 1 lose 1
+  ridge_nc         - small        +15.52 [+1.78,+38.43]  n=8  win 3 lose 0
+  legacy_nc        - small        +15.49 [+1.75,+38.41]  n=8  win 3 lose 0
+  olv              - ridge_nc     -15.79 [-37.20,-0.14]  n=8  win 0 lose 2
+  olv              - legacy_nc    -15.77 [-37.16,-0.12]  n=8  win 0 lose 2
+  ridge_nc_anchor  - olv           -0.00 [-0.03,+0.02]  n=8  win 0 lose 0
+
+-- any absence event after the switch: 78 cases
+  target_ref       - small         +3.93 [-2.09,+10.15]  n=78  win 17 lose 9
+  olv              - small         +2.38 [-2.46,+7.22]  n=78  win 16 lose 9
+  ridge_nc         - small         +4.07 [-1.21,+9.52]  n=78  win 16 lose 7
+  legacy_nc        - small         +3.82 [-1.45,+9.28]  n=78  win 15 lose 7
+  olv              - ridge_nc      -1.68 [-6.85,+3.17]  n=78  win 11 lose 12
+  olv              - legacy_nc     -1.43 [-6.54,+3.37]  n=78  win 11 lose 12
+  ridge_nc_anchor  - olv           +0.12 [-0.01,+0.36]  n=78  win 0 lose 0
+
+GT-absent frames: share with any predicted foreground (case mean)
+  target_ref       rate  28.29%  mean area 0.336%  n=78
+  small            rate  34.55%  mean area 0.310%  n=78
+  legacy_nc        rate  33.02%  mean area 0.380%  n=78
+  ridge_nc         rate  33.20%  mean area 0.376%  n=78
+  orig             rate  30.67%  mean area 0.293%  n=78
+  lastvis          rate  40.64%  mean area 0.712%  n=78
+  olv              rate  36.60%  mean area 0.555%  n=78
+  ridge_nc_anchor  rate  35.98%  mean area 0.446%  n=78
+
+First reappearance after a GT-absent stretch: J&F of the first 1 / 5 / 20 visible annotated frames, and never-recovered share
+  target_ref       +1  46.12  first5  50.98  first20  54.40  no-recovery  24.7%  n=73
+  small            +1  39.93  first5  46.71  first20  50.49  no-recovery  32.9%  n=73
+  legacy_nc        +1  43.83  first5  49.60  first20  53.26  no-recovery  27.4%  n=73
+  ridge_nc         +1  44.12  first5  49.99  first20  54.50  no-recovery  26.0%  n=73
+  orig             +1  35.48  first5  40.37  first20  42.65  no-recovery  42.5%  n=73
+  lastvis          +1  40.96  first5  45.30  first20  48.31  no-recovery  34.2%  n=73
+  olv              +1  43.69  first5  51.03  first20  53.25  no-recovery  27.4%  n=73
+  ridge_nc_anchor  +1  42.86  first5  50.56  first20  53.25  no-recovery  27.4%  n=73
+
+Early deficit, t1_val: cases where olv falls more than 10 points below ridge_nc in +1..10
+  case          last-gap  small  target  ridge_nc  olv  lastvis  | small@+1  olv@+1  ridge@+1
+  vqD4tiYh            0    0.0    0.0   95.7    0.0    0.0  | 0.00 0.00 0.91
+  8MfWMkrt            0   18.6   89.0   90.3    5.9    5.3  | 0.00 0.00 0.98
+  cjD5WPSv          111    0.0    0.0   83.9    0.0    0.0  | 0.00 0.00 0.68
+  NFbsxmYE            0   15.6   92.5   92.5   15.8   15.9  | 0.00 0.00 0.90
+  SRRojucs            0    0.9    0.0   56.4    0.0    0.0  | 0.00 0.00 0.08
+  z87e3Ay0            0    0.0   66.0   54.8    0.0    0.0  | 0.00 0.00 0.13
+  YGsDmkre            0   53.4   84.7   97.1   54.0   54.4  | 0.43 0.43 0.89
+  f4DjwV55            8    0.0    0.0   33.3    0.0    0.0  | 0.00 0.00 0.57
+  BNjN2BuH           49    0.0    0.0   19.8    0.0    0.1  | 0.00 0.00 0.22
+  rUaDdVmD            0   93.0   90.8   90.8   80.3   80.3  | 0.75 0.75 0.75
+  last visible equals switch in 121/140 cases; gap over 10 frames in 13
+  recent_ridge vs lastvis: identical J timeline in 10.0% of cases; area differs on 57.1% of frames
+  ridge_nc_anchor vs olv: identical J timeline in 8.6% of cases; area differs on 57.2% of frames
+
+===== t1_mose: 300 cases
+{'absent-at-switch': 79, 'continuous-visible': 108, 'disappearance': 146, 'never-visible': 13, 'no-return': 49, 'reappearance': 155}
+
+-- continuous-visible: 108 cases
+  target_ref       - small         +1.50 [-1.01,+3.87]  n=108  win 11 lose 4
+  olv              - small         +1.14 [-0.64,+2.99]  n=108  win 9 lose 6
+  ridge_nc         - small         +2.22 [+0.21,+4.51]  n=108  win 10 lose 4
+  legacy_nc        - small         +1.33 [-0.14,+2.79]  n=108  win 10 lose 2
+  olv              - ridge_nc      -1.08 [-3.69,+1.15]  n=108  win 6 lose 4
+  olv              - legacy_nc     -0.18 [-2.00,+1.36]  n=108  win 4 lose 4
+  ridge_nc_anchor  - olv           +0.12 [-0.10,+0.34]  n=108  win 0 lose 0
+
+-- absent-at-switch: 79 cases
+  target_ref       - small         +5.02 [-1.00,+11.45]  n=66  win 12 lose 4
+  olv              - small         +6.44 [+0.84,+12.67]  n=66  win 13 lose 5
+  ridge_nc         - small         +3.80 [-1.97,+9.72]  n=66  win 11 lose 5
+  legacy_nc        - small         +5.30 [-0.89,+11.94]  n=66  win 12 lose 4
+  olv              - ridge_nc      +2.64 [-1.13,+7.43]  n=66  win 7 lose 5
+  olv              - legacy_nc     +1.14 [-3.87,+6.47]  n=66  win 7 lose 6
+  ridge_nc_anchor  - olv           +0.32 [-0.32,+1.12]  n=66  win 1 lose 1
+
+-- disappearance: 146 cases
+  target_ref       - small         +3.21 [+0.07,+6.45]  n=146  win 21 lose 11
+  olv              - small         +4.70 [+2.05,+7.46]  n=146  win 29 lose 7
+  ridge_nc         - small         +2.54 [-0.23,+5.40]  n=146  win 20 lose 10
+  legacy_nc        - small         +3.04 [+0.11,+6.07]  n=146  win 21 lose 9
+  olv              - ridge_nc      +2.16 [+0.32,+4.15]  n=146  win 15 lose 7
+  olv              - legacy_nc     +1.66 [-0.70,+3.92]  n=146  win 15 lose 7
+  ridge_nc_anchor  - olv           +0.46 [-0.28,+1.38]  n=146  win 3 lose 1
+
+-- reappearance: 155 cases
+  target_ref       - small         +3.22 [+0.09,+6.42]  n=155  win 21 lose 12
+  olv              - small         +5.73 [+2.65,+8.97]  n=155  win 33 lose 9
+  ridge_nc         - small         +2.40 [-0.75,+5.64]  n=155  win 21 lose 12
+  legacy_nc        - small         +2.99 [-0.36,+6.41]  n=155  win 22 lose 11
+  olv              - ridge_nc      +3.33 [+0.96,+6.00]  n=155  win 20 lose 8
+  olv              - legacy_nc     +2.73 [-0.02,+5.60]  n=155  win 20 lose 9
+  ridge_nc_anchor  - olv           +0.56 [-0.04,+1.39]  n=155  win 3 lose 1
+
+-- no-return: 49 cases
+  target_ref       - small         +4.89 [-2.01,+11.96]  n=49  win 8 lose 2
+  olv              - small         +5.24 [+1.10,+9.95]  n=49  win 8 lose 1
+  ridge_nc         - small         +3.53 [-0.10,+7.82]  n=49  win 5 lose 2
+  legacy_nc        - small         +5.01 [+0.41,+10.61]  n=49  win 6 lose 2
+  olv              - ridge_nc      +1.70 [-0.80,+4.57]  n=49  win 5 lose 2
+  olv              - legacy_nc     +0.23 [-4.94,+4.25]  n=49  win 5 lose 2
+  ridge_nc_anchor  - olv           -0.44 [-1.58,+0.26]  n=49  win 0 lose 1
+
+-- any absence event after the switch: 192 cases
+  target_ref       - small         +3.13 [+0.04,+6.39]  n=179  win 24 lose 13
+  olv              - small         +5.38 [+2.69,+8.28]  n=179  win 35 lose 9
+  ridge_nc         - small         +2.60 [-0.25,+5.57]  n=179  win 23 lose 12
+  legacy_nc        - small         +3.03 [+0.05,+6.12]  n=179  win 24 lose 11
+  olv              - ridge_nc      +2.79 [+0.70,+5.08]  n=179  win 20 lose 9
+  olv              - legacy_nc     +2.36 [-0.02,+4.80]  n=179  win 20 lose 9
+  ridge_nc_anchor  - olv           +0.35 [-0.28,+1.11]  n=179  win 3 lose 2
+
+GT-absent frames: share with any predicted foreground (case mean)
+  target_ref       rate  16.61%  mean area 0.214%  n=192
+  small            rate  15.26%  mean area 0.177%  n=192
+  legacy_nc        rate  17.41%  mean area 0.188%  n=192
+  ridge_nc         rate  17.88%  mean area 0.200%  n=192
+  orig             rate  20.45%  mean area 0.287%  n=192
+  lastvis          rate  17.00%  mean area 0.203%  n=192
+  olv              rate  16.81%  mean area 0.257%  n=192
+  ridge_nc_anchor  rate  16.21%  mean area 0.224%  n=192
+
+First reappearance after a GT-absent stretch: J&F of the first 1 / 5 / 20 visible annotated frames, and never-recovered share
+  target_ref       +1  40.12  first5  44.35  first20  47.86  no-recovery  32.3%  n=155
+  small            +1  38.55  first5  42.87  first20  45.30  no-recovery  35.5%  n=155
+  legacy_nc        +1  40.80  first5  44.16  first20  47.63  no-recovery  32.9%  n=155
+  ridge_nc         +1  39.18  first5  43.19  first20  47.05  no-recovery  34.2%  n=155
+  orig             +1  35.57  first5  39.46  first20  44.57  no-recovery  37.4%  n=155
+  lastvis          +1  43.94  first5  45.47  first20  45.89  no-recovery  33.5%  n=155
+  olv              +1  45.74  first5  48.10  first20  50.95  no-recovery  27.1%  n=155
+  ridge_nc_anchor  +1  46.22  first5  49.04  first20  51.64  no-recovery  26.5%  n=155
+
+Early deficit, t1_mose: cases where olv falls more than 10 points below ridge_nc in +1..10
+  case          last-gap  small  target  ridge_nc  olv  lastvis  | small@+1  olv@+1  ridge@+1
+  eaed776d            0   27.1   84.1   74.4    3.2    3.3  | 0.03 0.01 0.00
+  c07ab37e            0   29.9   89.1   89.3   19.6   19.2  | 0.08 0.10 0.71
+  yz21zlok            2    0.0    1.6   66.1    7.1    7.2  | 0.00 0.00 0.00
+  23e046fb            0   56.0   61.7   61.9   16.1   21.2  | 0.26 0.30 0.38
+  alfdbu4o            0   25.3   66.3   61.3   33.1   33.1  | 0.65 0.66 0.63
+  9lav7dy0           26    0.0   19.7   21.0    0.0    0.0  | 0.00 0.00 0.00
+  g2l925f4            0   36.3   62.5   78.8   62.4   54.2  | 0.35 0.34 0.34
+  last visible equals switch in 221/300 cases; gap over 10 frames in 48
+  recent_ridge vs lastvis: identical J timeline in 20.7% of cases; area differs on 59.6% of frames
+  ridge_nc_anchor vs olv: identical J timeline in 21.3% of cases; area differs on 58.7% of frames

@@ -1,0 +1,29 @@
+{
+ "alpha": {
+  "spatial": 0,
+  "pointer": 1e-06
+ },
+ "splits": {
+  "fit": {
+   "records": 263635,
+   "spatial_nmse_ridge": 0.16477201924514503,
+   "spatial_nmse_mean": 0.7551950764345681,
+   "pointer_nmse_ridge": 0.3231954320456599,
+   "pointer_nmse_mean": 0.6344323468762999
+  },
+  "dev": {
+   "records": 60222,
+   "spatial_nmse_ridge": 0.16488222787524925,
+   "spatial_nmse_mean": 0.7551543585327342,
+   "pointer_nmse_ridge": 0.319033188996293,
+   "pointer_nmse_mean": 0.6272185419528613
+  },
+  "val": {
+   "records": 11424,
+   "spatial_nmse_ridge": 0.16760265281846132,
+   "spatial_nmse_mean": 0.7538136902372303,
+   "pointer_nmse_ridge": 0.35412292157363845,
+   "pointer_nmse_mean": 0.5439228200676132
+  }
+ }
+}

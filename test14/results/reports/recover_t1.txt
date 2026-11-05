@@ -1,0 +1,93 @@
+
+===== t1_val: 140 scored cases
+Small already failing in +1..10 (J&F under 30): 29 cases; otherwise 111
+ [Small failing] all-frame J&F, video mean
+  small            +1..10   2.02   all  29.68
+  target_ref       +1..10  38.46   all  52.37
+  orig             +1..10  16.03   all  38.66
+  lastvis          +1..10   5.20   all  23.42
+  olv              +1..10   9.62   all  35.94
+  ridge_nc         +1..10  31.62   all  43.25
+  legacy_nc        +1..10  30.66   all  42.68
+  ridge_nc_anchor  +1..10  13.36   all  36.28
+  direct_nc        +1..10  10.53   all  37.20
+ [Small fine] all-frame J&F, video mean
+  small            +1..10  90.32   all  85.01
+  target_ref       +1..10  86.02   all  81.97
+  orig             +1..10  57.54   all  61.71
+  lastvis          +1..10  90.36   all  84.60
+  olv              +1..10  90.47   all  86.67
+  ridge_nc         +1..10  90.43   all  83.86
+  legacy_nc        +1..10  90.41   all  83.79
+  ridge_nc_anchor  +1..10  90.40   all  86.57
+  direct_nc        +1..10  36.44   all  56.93
+
+Strongest early wins of ridge_nc over olv: J&F in +1..10 and mean predicted area %
+  case          gap   small target   orig   olv  ridge | area small target orig olv ridge
+  vqD4tiYh        0     0.0    0.0    0.1    0.0   95.7  |  0.58  0.20  0.08  0.59  0.18
+  8MfWMkrt        0    18.6   89.0   89.0    5.9   90.3  |  4.15  5.46  5.46  4.82  5.47
+  cjD5WPSv      111     0.0    0.0    0.0    0.0   83.9  |  0.00  0.00  0.00  0.00  1.53
+  NFbsxmYE        0    15.6   92.5    0.0   15.8   92.5  |  0.23  0.34  0.33  0.22  0.34
+  SRRojucs        0     0.9    0.0    0.0    0.0   56.4  |  0.20  0.00  0.00  0.21  0.61
+  z87e3Ay0        0     0.0   66.0   62.7    0.0   54.8  |  0.08  0.02  0.02  0.08  0.02
+  YGsDmkre        0    53.4   84.7    3.1   54.0   97.1  |  2.43  1.45  2.33  2.42  1.01
+  f4DjwV55        8     0.0    0.0    0.0    0.0   33.3  |  0.00  0.00  0.70  0.70  1.98
+  BNjN2BuH       49     0.0    0.0   20.8    0.0   19.8  |  0.00  0.00  0.28  0.00  0.27
+  rUaDdVmD        0    93.0   90.8    0.0   80.3   90.8  |  2.15  2.23  0.00  2.53  2.23
+
+Upper bound of a per-case selector (uses GT, so not achievable)
+  olv alone 76.16   target_ref 75.84
+  best of olv or ridge_nc             79.92  vs target_ref +4.08 [+0.19,+7.96]
+  best of olv or orig                 78.84  vs target_ref +3.01 [-0.82,+6.89]
+  best of olv or small                78.91  vs target_ref +3.08 [-1.29,+7.52]
+  best of olv, ridge_nc or small      81.55  vs target_ref +5.71 [+1.60,+9.89]
+
+Cases with Small mask lost at switch: does last-visible age matter?
+  gap 0..0: 121 cases, olv - ridge_nc +0.44 [-2.72,+3.40]
+  gap 1..10: 6 cases, olv - ridge_nc +6.90 [-18.27,+35.64]
+  gap 11..100: 11 cases, olv - ridge_nc +5.45 [-7.43,+20.33]
+
+===== t1_mose: 287 scored cases
+Small already failing in +1..10 (J&F under 30): 82 cases; otherwise 205
+ [Small failing] all-frame J&F, video mean
+  small            +1..10   5.11   all  25.21
+  target_ref       +1..10  15.67   all  32.93
+  orig             +1..10  12.01   all  30.41
+  lastvis          +1..10  16.24   all  22.95
+  olv              +1..10  12.00   all  30.92
+  ridge_nc         +1..10  17.19   all  31.86
+  legacy_nc        +1..10  13.83   all  31.44
+  ridge_nc_anchor  +1..10  13.57   all  31.24
+  direct_nc        +1..10   4.35   all  29.03
+ [Small fine] all-frame J&F, video mean
+  small            +1..10  84.26   all  76.81
+  target_ref       +1..10  84.06   all  77.24
+  orig             +1..10  64.62   all  63.62
+  lastvis          +1..10  83.83   all  78.29
+  olv              +1..10  85.11   all  79.83
+  ridge_nc         +1..10  84.04   all  77.59
+  legacy_nc        +1..10  84.30   all  77.66
+  ridge_nc_anchor  +1..10  84.81   all  80.07
+  direct_nc        +1..10  45.16   all  50.18
+
+Strongest early wins of ridge_nc over olv: J&F in +1..10 and mean predicted area %
+  case          gap   small target   orig   olv  ridge | area small target orig olv ridge
+  eaed776d        0    27.1   84.1   76.5    3.2   74.4  |  0.16  0.28  0.40  1.01  0.43
+  c07ab37e        0    29.9   89.1   85.5   19.6   89.3  |  6.24 23.47 25.81  2.39 23.45
+  yz21zlok        2     0.0    1.6    0.0    7.1   66.1  |  0.00  0.52  0.18  0.05  0.08
+  23e046fb        0    56.0   61.7   63.0   16.1   61.9  |  0.80  0.93  0.98  1.36  0.92
+  alfdbu4o        0    25.3   66.3    0.0   33.1   61.3  |  0.01  0.03  0.00  0.03  0.03
+  9lav7dy0       26     0.0   19.7    0.0    0.0   21.0  |  0.00  0.04  0.00  0.00  0.04
+  g2l925f4        0    36.3   62.5    0.5   62.4   78.8  |  0.87  1.09  0.94  1.09  1.09
+
+Upper bound of a per-case selector (uses GT, so not achievable)
+  olv alone 65.86   target_ref 64.58
+  best of olv or ridge_nc             67.82  vs target_ref +3.23 [+1.44,+5.15]
+  best of olv or orig                 67.72  vs target_ref +3.14 [+1.30,+5.08]
+  best of olv or small                67.82  vs target_ref +3.24 [+1.35,+5.21]
+  best of olv, ridge_nc or small      68.92  vs target_ref +4.33 [+2.52,+6.25]
+
+Cases with Small mask lost at switch: does last-visible age matter?
+  gap 0..0: 218 cases, olv - ridge_nc +1.39 [-0.29,+3.01]
+  gap 1..10: 25 cases, olv - ridge_nc +2.52 [-6.74,+13.10]
+  gap 11..100: 43 cases, olv - ridge_nc +0.38 [-3.36,+5.72]
