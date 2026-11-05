@@ -1,0 +1,100 @@
+t1_mose cases 300 videos 300
+
+[+1..10] J&F (visible frames, video mean, x100)
+  target_ref                 73.84  diff  +0.00 [+0.00,+0.00]  n=241  worst3 [0.0, 0.0, 0.0]
+  direct                      1.09  diff -72.75 [-76.59,-68.54]  n=241  worst3 [-99.0, -99.0, -98.8]
+  direct_nc                  39.07  diff -34.77 [-39.80,-30.05]  n=241  worst3 [-98.7, -98.5, -97.9]
+  ridge_nc                   74.05  diff  +0.21 [-1.70,+2.33]  n=241  worst3 [-83.4, -77.7, -71.3]
+  legacy_nc                  73.78  diff  -0.07 [-1.98,+1.90]  n=241  worst3 [-83.4, -77.7, -75.7]
+  orig                       56.76  diff -17.08 [-21.28,-12.91]  n=241  worst3 [-98.5, -97.9, -97.9]
+  lastvis                    73.73  diff  -0.11 [-2.44,+2.33]  n=241  worst3 [-83.4, -80.8, -69.9]
+  olv                        74.18  diff  +0.34 [-1.71,+2.47]  n=241  worst3 [-83.4, -80.9, -69.6]
+  ridge_nc_anchor            74.17  diff  +0.32 [-1.74,+2.42]  n=241  worst3 [-83.4, -80.8, -69.5]
+  ridge_anchor               73.35  diff  -0.49 [-2.63,+1.83]  n=241  worst3 [-94.0, -83.4, -80.8]
+  recent_ridge               73.66  diff  -0.18 [-2.52,+2.22]  n=241  worst3 [-83.4, -80.7, -70.5]
+  small                      72.44  diff  -1.40 [-3.36,+0.56]  n=241  worst3 [-94.0, -72.8, -59.2]
+
+[+11..30] J&F (visible frames, video mean, x100)
+  target_ref                 64.62  diff  +0.00 [+0.00,+0.00]  n=255  worst3 [0.0, 0.0, 0.0]
+  direct                      0.59  diff -64.03 [-68.48,-59.42]  n=255  worst3 [-99.1, -99.0, -98.5]
+  direct_nc                  46.03  diff -18.59 [-22.97,-14.34]  n=255  worst3 [-97.3, -97.0, -96.4]
+  ridge_nc                   64.46  diff  -0.16 [-1.82,+1.55]  n=255  worst3 [-93.1, -86.8, -58.6]
+  legacy_nc                  64.38  diff  -0.24 [-1.76,+1.33]  n=255  worst3 [-86.8, -75.6, -58.6]
+  orig                       54.63  diff  -9.99 [-13.41,-6.84]  n=255  worst3 [-96.2, -95.1, -95.1]
+  lastvis                    64.69  diff  +0.07 [-3.13,+3.36]  n=255  worst3 [-95.4, -93.1, -87.6]
+  olv                        66.10  diff  +1.48 [-1.15,+4.14]  n=255  worst3 [-95.4, -93.1, -86.8]
+  ridge_nc_anchor            66.56  diff  +1.94 [-0.72,+4.65]  n=255  worst3 [-95.4, -93.1, -86.8]
+  ridge_anchor               64.63  diff  +0.01 [-3.05,+3.06]  n=255  worst3 [-95.4, -93.1, -90.8]
+  recent_ridge               64.60  diff  -0.02 [-3.27,+3.21]  n=255  worst3 [-95.4, -93.1, -87.6]
+  small                      60.98  diff  -3.64 [-6.36,-0.97]  n=255  worst3 [-97.3, -95.4, -93.1]
+
+[+31..100] J&F (visible frames, video mean, x100)
+  target_ref                 56.33  diff  +0.00 [+0.00,+0.00]  n=175  worst3 [0.0, 0.0, 0.0]
+  direct                      0.32  diff -56.01 [-61.75,-49.89]  n=175  worst3 [-99.5, -99.3, -99.0]
+  direct_nc                  47.38  diff  -8.95 [-13.53,-4.64]  n=175  worst3 [-97.5, -97.2, -95.7]
+  ridge_nc                   56.86  diff  +0.53 [-0.13,+1.38]  n=175  worst3 [-20.8, -8.4, -2.2]
+  legacy_nc                  56.99  diff  +0.66 [+0.05,+1.45]  n=175  worst3 [-8.3, -3.5, -2.2]
+  orig                       52.32  diff  -4.01 [-7.63,-0.47]  n=175  worst3 [-97.5, -91.7, -91.3]
+  lastvis                    55.31  diff  -1.03 [-5.46,+3.34]  n=175  worst3 [-99.5, -98.6, -97.5]
+  olv                        60.14  diff  +3.81 [+1.24,+6.76]  n=175  worst3 [-55.4, -32.2, -28.2]
+  ridge_nc_anchor            60.36  diff  +4.02 [+1.42,+6.89]  n=175  worst3 [-55.4, -32.2, -28.2]
+  ridge_anchor               57.73  diff  +1.40 [-2.94,+5.66]  n=175  worst3 [-99.5, -98.6, -97.0]
+  recent_ridge               55.49  diff  -0.85 [-5.24,+3.48]  n=175  worst3 [-99.5, -98.6, -97.5]
+  small                      55.07  diff  -1.27 [-4.85,+2.18]  n=175  worst3 [-97.5, -93.3, -73.2]
+
+[+101..] J&F (visible frames, video mean, x100)
+  target_ref                 71.79  diff  +0.00 [+0.00,+0.00]  n=14  worst3 [0.0, 0.0, 0.0]
+  direct                      0.00  diff -71.79 [-86.42,-52.96]  n=14  worst3 [-97.4, -96.4, -95.9]
+  direct_nc                  53.38  diff -18.41 [-38.64,-0.19]  n=14  worst3 [-95.9, -94.3, -66.2]
+  ridge_nc                   71.72  diff  -0.07 [-0.29,+0.06]  n=14  worst3 [-1.4, -0.0, -0.0]
+  legacy_nc                  71.69  diff  -0.10 [-0.30,+0.00]  n=14  worst3 [-1.4, -0.0, -0.0]
+  orig                       60.25  diff -11.54 [-27.75,+0.01]  n=14  worst3 [-94.3, -66.2, -1.4]
+  lastvis                    63.37  diff  -8.42 [-22.19,-0.32]  n=14  worst3 [-92.2, -14.9, -8.3]
+  olv                        71.05  diff  -0.74 [-2.13,+0.28]  n=14  worst3 [-8.2, -2.7, -2.5]
+  ridge_nc_anchor            71.05  diff  -0.74 [-2.12,+0.29]  n=14  worst3 [-8.2, -2.7, -2.5]
+  ridge_anchor               64.38  diff  -7.41 [-20.94,+0.07]  n=14  worst3 [-92.2, -8.2, -3.4]
+  recent_ridge               63.37  diff  -8.42 [-22.10,-0.33]  n=14  worst3 [-92.2, -14.9, -8.3]
+  small                      65.08  diff  -6.72 [-17.19,-0.34]  n=14  worst3 [-68.0, -15.4, -6.5]
+
+[all] J&F (visible frames, video mean, x100)
+  target_ref                 64.58  diff  +0.00 [+0.00,+0.00]  n=287  worst3 [0.0, 0.0, 0.0]
+  direct                      0.64  diff -63.95 [-67.86,-59.85]  n=287  worst3 [-99.1, -99.0, -98.6]
+  direct_nc                  44.13  diff -20.45 [-24.39,-16.61]  n=287  worst3 [-98.5, -97.9, -96.6]
+  ridge_nc                   64.52  diff  -0.06 [-1.58,+1.42]  n=287  worst3 [-93.1, -84.9, -66.9]
+  legacy_nc                  64.46  diff  -0.13 [-1.47,+1.22]  n=287  worst3 [-84.9, -75.7, -66.9]
+  orig                       54.13  diff -10.45 [-13.62,-7.49]  n=287  worst3 [-98.5, -97.9, -96.5]
+  lastvis                    62.48  diff  -2.10 [-5.01,+0.83]  n=287  worst3 [-98.6, -93.1, -91.7]
+  olv                        65.86  diff  +1.27 [-0.77,+3.25]  n=287  worst3 [-93.1, -84.9, -78.1]
+  ridge_nc_anchor            66.12  diff  +1.53 [-0.51,+3.60]  n=287  worst3 [-93.1, -84.9, -78.0]
+  ridge_anchor               63.22  diff  -1.37 [-4.07,+1.23]  n=287  worst3 [-98.6, -93.1, -90.2]
+  recent_ridge               62.35  diff  -2.23 [-5.15,+0.64]  n=287  worst3 [-98.6, -93.1, -91.7]
+  small                      62.07  diff  -2.52 [-4.65,-0.36]  n=287  worst3 [-93.1, -91.7, -79.0]
+
+failures: videos more than 10 points below / above the reference (all frames)
+  target_ref               below   0  above   0  of 287  []
+  direct                   below 241  above   1  of 287  ['0165667b', '059fde0h', '0a43a414', '0b4b662c', '0b99f522']
+  direct_nc                below 106  above   6  of 287  ['0165667b', '059fde0h', '0b99f522', '0d967fd1', '10hp9f0p']
+  ridge_nc                 below  10  above   9  of 287  ['414ca58b', '4hnws43a', '9707f1e3', '9ed4317a', 'cv93mtux']
+  legacy_nc                below   6  above   6  of 287  ['414ca58b', '4hnws43a', '9707f1e3', '9ed4317a', 'eaed776d']
+  orig                     below  55  above   7  of 287  ['0b99f522', '115adda4', '1291276c', '1sbd4ima', '29cffe2f']
+  lastvis                  below  31  above  27  of 287  ['22167a50', '23e046fb', '414ca58b', '42dn1p4x', '42ff84a5']
+  olv                      below  16  above  30  of 287  ['15e7e4d1', '23e046fb', '414ca58b', '9ed4317a', '9lav7dy0']
+  ridge_nc_anchor          below  15  above  31  of 287  ['23e046fb', '8ef55579', '9ed4317a', 'c07ab37e', 'ddd383cc']
+  ridge_anchor             below  31  above  31  of 287  ['23e046fb', '42ff84a5', '5d107jy0', '8kbx6r2m', '9ed4317a']
+  recent_ridge             below  32  above  26  of 287  ['22167a50', '23e046fb', '414ca58b', '42dn1p4x', '42ff84a5']
+  small                    below  35  above  17  of 287  ['059fde0h', '0d967fd1', '22e1f53c', '32ecef67', '42dn1p4x']
+
+normalized state error (case mean):
+  target_ref               spatial 0.0000 pointer 0.0000
+  direct                   spatial 2.5796 pointer 2.3382
+  direct_nc                spatial 2.3783 pointer 2.2044
+  ridge_nc                 spatial 0.1517 pointer 0.3770
+  legacy_nc                spatial 0.1308 pointer 0.3684
+  orig                     spatial nan pointer nan
+  lastvis                  spatial nan pointer nan
+  olv                      spatial nan pointer nan
+  ridge_nc_anchor          spatial nan pointer nan
+  ridge_anchor             spatial nan pointer nan
+  recent_ridge             spatial nan pointer nan
+  small                    spatial nan pointer nan
+seconds per case 18.1

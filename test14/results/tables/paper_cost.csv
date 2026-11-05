@@ -1,0 +1,46 @@
+gpu,dataset,method,switch,rows,seconds_mean,seconds_median,gpu_mib_mean
+L4,pumavos,Full Replay,25,78,24.36186,23.25283,380.2
+L4,pumavos,Full Replay,50,78,48.44292,46.53941,380.3
+L4,pumavos,Full Replay,75,78,72.55486,69.9942,380.4
+L4,pumavos,Original+Last-Visible,25,78,0.31784,0.31264,387.5
+L4,pumavos,Original+Last-Visible,50,78,0.33338,0.3309,387.5
+L4,pumavos,Original+Last-Visible,75,78,0.37502,0.38094,387.5
+L4,pumavos,Direct Copy,25,78,0.00567,0.00531,22.5
+L4,pumavos,Direct Copy,50,78,0.00698,0.00531,22.5
+L4,pumavos,Direct Copy,75,78,0.00666,0.00534,22.5
+L4,pumavos,Replay-8,25,78,0.8872,0.88026,369.3
+L4,pumavos,Replay-8,50,78,0.92711,0.90924,369.3
+L4,pumavos,Replay-8,75,78,1.04247,0.98496,369.3
+L4,pumavos,paper Translator,25,78,0.02536,0.01227,84.0
+L4,pumavos,paper Translator,50,78,0.02444,0.01149,84.0
+L4,pumavos,paper Translator,75,78,0.03248,0.01549,84.0
+L4,vost_val,Full Replay,25,89,3.3737,3.18354,383.0
+L4,vost_val,Full Replay,50,89,6.79256,6.3606,385.1
+L4,vost_val,Full Replay,75,89,10.22571,9.60866,385.7
+L4,vost_val,Original+Last-Visible,25,89,0.32311,0.31785,384.1
+L4,vost_val,Original+Last-Visible,50,89,0.34225,0.33897,384.1
+L4,vost_val,Original+Last-Visible,75,88,0.36692,0.36234,384.1
+L4,vost_val,Direct Copy,25,89,0.00649,0.00543,21.5
+L4,vost_val,Direct Copy,50,89,0.00655,0.00552,22.5
+L4,vost_val,Direct Copy,75,89,0.00617,0.00551,22.5
+L4,vost_val,Replay-8,25,89,0.9517,0.95752,376.2
+L4,vost_val,Replay-8,50,89,0.99684,0.98975,376.2
+L4,vost_val,Replay-8,75,88,1.03202,1.04697,376.3
+L4,vost_val,paper Translator,25,89,0.02991,0.01097,80.3
+L4,vost_val,paper Translator,50,89,0.03531,0.01192,84.0
+L4,vost_val,paper Translator,75,87,0.03132,0.01169,84.0
+RTX 4090,vost_val,Full Replay,25,342,2.71988,2.58835,383.4
+RTX 4090,vost_val,Full Replay,50,342,5.26112,4.996,385.5
+RTX 4090,vost_val,Full Replay,75,342,7.80956,7.42846,386.2
+RTX 4090,vost_val,Original+Last-Visible,25,114,0.33273,0.33086,385.4
+RTX 4090,vost_val,Original+Last-Visible,50,114,0.34474,0.33915,385.4
+RTX 4090,vost_val,Original+Last-Visible,75,114,0.36006,0.3543,385.4
+RTX 4090,vost_val,Direct Copy,25,114,0.00475,0.00469,21.7
+RTX 4090,vost_val,Direct Copy,50,114,0.00496,0.00475,22.5
+RTX 4090,vost_val,Direct Copy,75,114,0.00504,0.00473,22.5
+RTX 4090,vost_val,Replay-8,25,114,0.81288,0.79836,376.6
+RTX 4090,vost_val,Replay-8,50,114,0.85417,0.82907,376.6
+RTX 4090,vost_val,Replay-8,75,114,0.89518,0.89009,376.6
+RTX 4090,vost_val,paper Translator,25,114,0.01059,0.00905,81.1
+RTX 4090,vost_val,paper Translator,50,114,0.00981,0.00934,84.0
+RTX 4090,vost_val,paper Translator,75,114,0.01132,0.01087,84.0

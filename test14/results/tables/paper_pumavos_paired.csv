@@ -1,0 +1,193 @@
+switch,method,paper_method,diff,ci_low,ci_high,videos,better_by_1pt,worse_by_1pt
+50,small,paper Translator,5.84,-1.2,12.52,24,12,3
+50,base,paper Translator,4.98,2.32,7.95,24,11,1
+50,olv,paper Translator,5.87,2.15,10.11,24,10,2
+50,direct,paper Translator,-69.42,-80.78,-56.73,24,0,23
+50,legacy,paper Translator,-0.26,-1.26,0.34,24,2,1
+50,mlp_context,paper Translator,-1.68,-5.94,1.09,24,2,4
+50,e2e_mlp_f,paper Translator,-0.68,-4.14,2.2,24,5,3
+50,e2e_tf_f,paper Translator,-0.13,-5.21,3.32,24,7,3
+50,e2e_ctx_f,paper Translator,-0.67,-4.43,2.35,24,5,3
+50,e2e3_ctx_f,paper Translator,0.92,-1.38,3.1,24,6,2
+50,e2e_ctx_pin7,paper Translator,3.13,0.56,6.26,24,7,3
+50,e2e3_ctx_pin5,paper Translator,3.79,1.12,7.12,24,7,2
+50,small,Source-only,-0.05,-0.34,0.12,24,0,1
+50,base,Source-only,-0.92,-6.67,5.42,24,5,7
+50,olv,Source-only,-0.03,-3.64,5.22,24,3,8
+50,direct,Source-only,-75.32,-85.46,-63.45,24,0,23
+50,legacy,Source-only,-6.15,-12.94,1.0,24,2,12
+50,mlp_context,Source-only,-7.58,-15.35,0.35,24,2,12
+50,e2e_mlp_f,Source-only,-6.57,-14.1,1.09,24,2,10
+50,e2e_tf_f,Source-only,-6.02,-14.6,2.01,24,2,11
+50,e2e_ctx_f,Source-only,-6.56,-14.23,1.19,24,2,10
+50,e2e3_ctx_f,Source-only,-4.98,-11.69,2.09,24,2,10
+50,e2e_ctx_pin7,Source-only,-2.77,-7.58,3.19,24,2,11
+50,e2e3_ctx_pin5,Source-only,-2.11,-6.67,3.74,24,3,11
+50,small,Full Replay,0.91,-5.42,6.61,24,8,6
+50,base,Full Replay,0.04,-0.13,0.16,24,0,1
+50,olv,Full Replay,0.93,-1.97,3.97,24,4,4
+50,direct,Full Replay,-74.36,-84.75,-62.4,24,0,23
+50,legacy,Full Replay,-5.19,-8.63,-2.25,24,1,10
+50,mlp_context,Full Replay,-6.62,-11.98,-2.42,24,1,10
+50,e2e_mlp_f,Full Replay,-5.61,-9.83,-2.1,24,0,9
+50,e2e_tf_f,Full Replay,-5.06,-10.51,-1.28,24,0,7
+50,e2e_ctx_f,Full Replay,-5.6,-10.06,-1.94,24,0,8
+50,e2e3_ctx_f,Full Replay,-4.02,-7.25,-1.32,24,0,8
+50,e2e_ctx_pin7,Full Replay,-1.81,-4.91,1.23,24,3,7
+50,e2e3_ctx_pin5,Full Replay,-1.14,-4.28,1.99,24,4,7
+50,small,Original+Last-Visible,0.04,-5.22,3.7,24,8,3
+50,base,Original+Last-Visible,-0.83,-3.97,2.13,24,4,4
+50,olv,Original+Last-Visible,0.06,-0.0,0.13,24,0,0
+50,direct,Original+Last-Visible,-75.23,-85.58,-63.25,24,0,23
+50,legacy,Original+Last-Visible,-6.06,-10.64,-2.08,24,2,8
+50,mlp_context,Original+Last-Visible,-7.49,-12.98,-2.79,24,2,9
+50,e2e_mlp_f,Original+Last-Visible,-6.48,-11.37,-2.26,24,2,8
+50,e2e_tf_f,Original+Last-Visible,-5.93,-12.0,-1.1,24,2,6
+50,e2e_ctx_f,Original+Last-Visible,-6.47,-11.53,-2.13,24,2,8
+50,e2e3_ctx_f,Original+Last-Visible,-4.89,-9.03,-1.43,24,2,8
+50,e2e_ctx_pin7,Original+Last-Visible,-2.68,-5.22,-0.7,24,1,7
+50,e2e3_ctx_pin5,Original+Last-Visible,-2.01,-4.75,0.01,24,2,6
+25,small,paper Translator,6.91,0.22,13.76,24,13,4
+25,base,paper Translator,5.14,2.18,8.7,24,11,1
+25,olv,paper Translator,7.31,3.61,11.49,24,12,0
+25,direct,paper Translator,-71.25,-81.72,-59.56,24,0,23
+25,legacy,paper Translator,-0.63,-2.09,0.3,24,1,3
+25,mlp_context,paper Translator,-0.24,-3.29,1.95,24,3,2
+25,e2e_mlp_f,paper Translator,2.47,-0.01,5.14,24,8,2
+25,e2e_tf_f,paper Translator,3.73,1.66,6.16,24,10,0
+25,e2e_ctx_f,paper Translator,2.67,0.33,5.26,24,9,1
+25,e2e3_ctx_f,paper Translator,2.5,-0.05,5.31,24,8,2
+25,e2e_ctx_pin7,paper Translator,4.3,1.87,7.0,24,10,1
+25,e2e3_ctx_pin5,paper Translator,5.07,2.45,7.94,24,11,0
+25,small,Source-only,-0.01,-0.2,0.12,24,0,1
+25,base,Source-only,-1.78,-7.26,3.62,24,5,7
+25,olv,Source-only,0.39,-4.0,5.37,24,5,8
+25,direct,Source-only,-78.17,-86.99,-67.69,24,0,23
+25,legacy,Source-only,-7.55,-14.41,-0.69,24,3,12
+25,mlp_context,Source-only,-7.16,-13.99,-0.38,24,3,12
+25,e2e_mlp_f,Source-only,-4.46,-10.21,1.4,24,3,9
+25,e2e_tf_f,Source-only,-3.19,-8.94,2.56,24,3,10
+25,e2e_ctx_f,Source-only,-4.26,-10.21,1.75,24,3,9
+25,e2e3_ctx_f,Source-only,-4.42,-10.06,1.34,24,3,9
+25,e2e_ctx_pin7,Source-only,-2.62,-8.38,3.17,24,4,8
+25,e2e3_ctx_pin5,Source-only,-1.85,-6.58,3.26,24,5,8
+25,small,Full Replay,1.84,-3.53,7.29,24,7,6
+25,base,Full Replay,0.07,-0.06,0.17,24,0,1
+25,olv,Full Replay,2.24,0.48,4.33,24,7,2
+25,direct,Full Replay,-76.32,-86.08,-64.85,24,0,23
+25,legacy,Full Replay,-5.71,-9.57,-2.52,24,1,11
+25,mlp_context,Full Replay,-5.32,-9.72,-1.75,24,1,11
+25,e2e_mlp_f,Full Replay,-2.61,-5.22,-0.49,24,1,8
+25,e2e_tf_f,Full Replay,-1.34,-2.88,-0.2,24,2,7
+25,e2e_ctx_f,Full Replay,-2.41,-4.89,-0.41,24,1,7
+25,e2e3_ctx_f,Full Replay,-2.58,-5.04,-0.55,24,1,8
+25,e2e_ctx_pin7,Full Replay,-0.78,-3.23,1.15,24,6,5
+25,e2e3_ctx_pin5,Full Replay,-0.0,-2.22,2.1,24,5,5
+25,small,Original+Last-Visible,-0.32,-5.33,4.15,24,8,5
+25,base,Original+Last-Visible,-2.09,-4.25,-0.33,24,2,7
+25,olv,Original+Last-Visible,0.08,-0.02,0.17,24,0,0
+25,direct,Original+Last-Visible,-78.48,-87.18,-68.06,24,0,23
+25,legacy,Original+Last-Visible,-7.86,-12.18,-4.0,24,1,10
+25,mlp_context,Original+Last-Visible,-7.47,-13.0,-2.97,24,1,9
+25,e2e_mlp_f,Original+Last-Visible,-4.77,-8.51,-1.64,24,1,8
+25,e2e_tf_f,Original+Last-Visible,-3.5,-5.99,-1.33,24,1,8
+25,e2e_ctx_f,Original+Last-Visible,-4.57,-8.16,-1.57,24,1,7
+25,e2e3_ctx_f,Original+Last-Visible,-4.73,-8.39,-1.66,24,1,7
+25,e2e_ctx_pin7,Original+Last-Visible,-2.93,-5.73,-0.65,24,2,7
+25,e2e3_ctx_pin5,Original+Last-Visible,-2.16,-4.42,-0.41,24,2,7
+75,small,paper Translator,6.26,2.64,10.82,24,10,1
+75,base,paper Translator,6.52,1.32,14.68,24,8,2
+75,olv,paper Translator,3.38,-1.78,7.92,24,10,3
+75,direct,paper Translator,-65.45,-78.58,-51.39,24,0,21
+75,legacy,paper Translator,-0.11,-0.44,0.09,24,0,1
+75,mlp_context,paper Translator,0.82,-0.01,1.82,24,6,1
+75,e2e_mlp_f,paper Translator,2.75,0.98,4.87,24,9,1
+75,e2e_tf_f,paper Translator,2.57,0.82,4.73,24,8,1
+75,e2e_ctx_f,paper Translator,3.25,1.15,5.9,24,9,0
+75,e2e3_ctx_f,paper Translator,2.99,0.73,5.88,24,8,1
+75,e2e_ctx_pin7,paper Translator,1.72,-2.57,5.1,24,8,1
+75,e2e3_ctx_pin5,paper Translator,1.88,-2.39,5.26,24,7,1
+75,small,Source-only,0.04,-0.1,0.15,24,0,1
+75,base,Source-only,0.3,-6.12,9.22,24,4,6
+75,olv,Source-only,-2.84,-8.14,1.06,24,6,4
+75,direct,Source-only,-71.67,-83.92,-57.84,24,0,21
+75,legacy,Source-only,-6.34,-10.92,-2.67,24,1,11
+75,mlp_context,Source-only,-5.4,-9.23,-2.2,24,1,10
+75,e2e_mlp_f,Source-only,-3.48,-6.64,-0.96,24,1,8
+75,e2e_tf_f,Source-only,-3.65,-7.25,-0.85,24,2,8
+75,e2e_ctx_f,Source-only,-2.97,-5.48,-0.84,24,1,7
+75,e2e3_ctx_f,Source-only,-3.23,-5.77,-0.99,24,1,7
+75,e2e_ctx_pin7,Source-only,-4.5,-9.5,-0.66,24,2,5
+75,e2e3_ctx_pin5,Source-only,-4.34,-9.26,-0.61,24,2,7
+75,small,Full Replay,-0.28,-9.19,6.08,24,5,2
+75,base,Full Replay,-0.02,-0.3,0.16,24,0,1
+75,olv,Full Replay,-3.16,-12.42,3.81,24,5,3
+75,direct,Full Replay,-71.98,-83.97,-58.4,24,0,22
+75,legacy,Full Replay,-6.65,-14.81,-1.43,24,2,8
+75,mlp_context,Full Replay,-5.71,-13.71,-0.78,24,2,8
+75,e2e_mlp_f,Full Replay,-3.79,-11.53,0.67,24,4,4
+75,e2e_tf_f,Full Replay,-3.96,-11.66,0.41,24,2,5
+75,e2e_ctx_f,Full Replay,-3.29,-11.16,1.46,24,3,4
+75,e2e3_ctx_f,Full Replay,-3.54,-11.47,1.33,24,2,5
+75,e2e_ctx_pin7,Full Replay,-4.82,-13.77,1.5,24,5,4
+75,e2e3_ctx_pin5,Full Replay,-4.66,-13.54,1.54,24,5,4
+75,small,Original+Last-Visible,3.03,-0.83,8.24,24,4,3
+75,base,Original+Last-Visible,3.29,-3.76,12.51,24,2,3
+75,olv,Original+Last-Visible,0.15,-0.05,0.41,24,1,1
+75,direct,Original+Last-Visible,-68.68,-81.43,-54.53,24,0,21
+75,legacy,Original+Last-Visible,-3.35,-7.88,1.82,24,2,9
+75,mlp_context,Original+Last-Visible,-2.41,-6.67,2.6,24,2,7
+75,e2e_mlp_f,Original+Last-Visible,-0.49,-4.38,4.63,24,1,6
+75,e2e_tf_f,Original+Last-Visible,-0.66,-4.39,4.09,24,1,5
+75,e2e_ctx_f,Original+Last-Visible,0.02,-3.8,4.91,24,2,5
+75,e2e3_ctx_f,Original+Last-Visible,-0.24,-4.29,4.74,24,2,5
+75,e2e_ctx_pin7,Original+Last-Visible,-1.51,-3.36,-0.04,24,2,5
+75,e2e3_ctx_pin5,Original+Last-Visible,-1.35,-2.95,-0.09,24,2,5
+all switches,small,paper Translator,6.34,0.88,12.02,24,12,4
+all switches,base,paper Translator,5.55,2.53,9.03,24,11,2
+all switches,olv,paper Translator,5.52,2.42,9.04,24,12,1
+all switches,direct,paper Translator,-68.7,-79.85,-56.52,24,0,23
+all switches,legacy,paper Translator,-0.33,-1.06,0.18,24,0,2
+all switches,mlp_context,paper Translator,-0.37,-2.77,1.3,24,3,4
+all switches,e2e_mlp_f,paper Translator,1.51,-0.33,3.64,24,6,4
+all switches,e2e_tf_f,paper Translator,2.06,-0.05,4.26,24,9,2
+all switches,e2e_ctx_f,paper Translator,1.75,-0.2,3.94,24,7,2
+all switches,e2e3_ctx_f,paper Translator,2.14,0.25,4.3,24,7,2
+all switches,e2e_ctx_pin7,paper Translator,3.05,0.67,5.63,24,9,1
+all switches,e2e3_ctx_pin5,paper Translator,3.58,1.05,6.36,24,7,1
+all switches,small,Source-only,-0.01,-0.19,0.12,24,0,1
+all switches,base,Source-only,-0.8,-6.53,5.93,24,5,7
+all switches,olv,Source-only,-0.83,-4.23,2.91,24,6,6
+all switches,direct,Source-only,-75.05,-85.34,-63.19,24,0,23
+all switches,legacy,Source-only,-6.68,-12.45,-1.11,24,3,13
+all switches,mlp_context,Source-only,-6.71,-12.52,-1.1,24,3,12
+all switches,e2e_mlp_f,Source-only,-4.83,-9.94,0.12,24,3,10
+all switches,e2e_tf_f,Source-only,-4.29,-9.67,0.81,24,3,9
+all switches,e2e_ctx_f,Source-only,-4.6,-9.63,0.35,24,3,9
+all switches,e2e3_ctx_f,Source-only,-4.21,-8.92,0.48,24,2,9
+all switches,e2e_ctx_pin7,Source-only,-3.3,-7.89,1.24,24,3,8
+all switches,e2e3_ctx_pin5,Source-only,-2.77,-7.01,1.5,24,3,8
+all switches,small,Full Replay,0.82,-5.89,6.52,24,8,6
+all switches,base,Full Replay,0.03,-0.16,0.16,24,0,1
+all switches,olv,Full Replay,0.01,-3.46,3.2,24,5,4
+all switches,direct,Full Replay,-74.22,-84.78,-62.09,24,0,23
+all switches,legacy,Full Replay,-5.85,-9.56,-2.7,24,1,11
+all switches,mlp_context,Full Replay,-5.88,-9.93,-2.38,24,1,10
+all switches,e2e_mlp_f,Full Replay,-4.0,-7.17,-1.42,24,1,10
+all switches,e2e_tf_f,Full Replay,-3.46,-6.54,-1.05,24,2,9
+all switches,e2e_ctx_f,Full Replay,-3.77,-6.91,-1.19,24,1,9
+all switches,e2e3_ctx_f,Full Replay,-3.38,-6.52,-0.9,24,1,8
+all switches,e2e_ctx_pin7,Full Replay,-2.47,-6.16,0.59,24,4,6
+all switches,e2e3_ctx_pin5,Full Replay,-1.93,-5.65,1.25,24,4,6
+all switches,small,Original+Last-Visible,0.92,-2.86,4.36,24,6,6
+all switches,base,Original+Last-Visible,0.12,-3.18,3.61,24,4,4
+all switches,olv,Original+Last-Visible,0.1,0.01,0.2,24,0,0
+all switches,direct,Original+Last-Visible,-74.13,-84.11,-62.7,24,0,23
+all switches,legacy,Original+Last-Visible,-5.76,-9.49,-2.52,24,1,11
+all switches,mlp_context,Original+Last-Visible,-5.79,-10.04,-2.1,24,2,9
+all switches,e2e_mlp_f,Original+Last-Visible,-3.91,-6.89,-1.34,24,2,7
+all switches,e2e_tf_f,Original+Last-Visible,-3.36,-6.51,-0.79,24,2,7
+all switches,e2e_ctx_f,Original+Last-Visible,-3.67,-6.59,-1.15,24,3,8
+all switches,e2e3_ctx_f,Original+Last-Visible,-3.29,-5.83,-1.08,24,2,8
+all switches,e2e_ctx_pin7,Original+Last-Visible,-2.37,-4.39,-0.75,24,1,8
+all switches,e2e3_ctx_pin5,Original+Last-Visible,-1.84,-3.56,-0.48,24,1,7
