@@ -1,0 +1,58 @@
+fp32_val cases 10 videos 10
+
+[+1..10] J&F (visible frames, video mean, x100)
+  target_ref                 86.21  diff  +0.00 [+0.00,+0.00]  n=10  worst3 [0.0, 0.0, 0.0]
+  legacy                     85.75  diff  -0.46 [-1.14,-0.00]  n=10  worst3 [-3.3, -0.6, -0.5]
+  legacy_nc                  94.02  diff  +7.81 [-1.47,+25.13]  n=10  worst3 [-4.6, -0.7, -0.4]
+  ridge_nc                   94.13  diff  +7.92 [-1.23,+25.18]  n=10  worst3 [-4.1, -0.8, -0.3]
+  olv                        85.24  diff  -0.97 [-2.19,-0.06]  n=10  worst3 [-5.2, -3.4, -0.7]
+  small                      76.20  diff -10.01 [-28.75,-0.07]  n=10  worst3 [-93.2, -5.4, -1.0]
+
+[+11..30] J&F (visible frames, video mean, x100)
+  target_ref                 95.35  diff  +0.00 [+0.00,+0.00]  n=9  worst3 [0.0, 0.0, 0.0]
+  legacy                     95.12  diff  -0.23 [-0.54,-0.01]  n=9  worst3 [-1.3, -0.3, -0.2]
+  legacy_nc                  95.32  diff  -0.03 [-0.08,+0.02]  n=9  worst3 [-0.2, -0.2, -0.1]
+  ridge_nc                   95.32  diff  -0.04 [-0.10,+0.00]  n=9  worst3 [-0.3, -0.1, -0.0]
+  olv                        94.51  diff  -0.84 [-2.24,+0.18]  n=9  worst3 [-5.3, -3.2, -0.3]
+  small                      83.86  diff -11.49 [-32.48,-0.40]  n=9  worst3 [-93.8, -5.5, -2.6]
+
+[+31..100] J&F (visible frames, video mean, x100)
+  target_ref                 95.72  diff  +0.00 [+0.00,+0.00]  n=10  worst3 [0.0, 0.0, 0.0]
+  legacy                     95.50  diff  -0.23 [-0.69,+0.06]  n=10  worst3 [-2.1, -0.3, -0.1]
+  legacy_nc                  95.73  diff  +0.00 [+0.00,+0.01]  n=10  worst3 [-0.0, -0.0, 0.0]
+  ridge_nc                   95.73  diff  +0.00 [+0.00,+0.01]  n=10  worst3 [0.0, 0.0, 0.0]
+  olv                        95.51  diff  -0.22 [-1.09,+0.35]  n=10  worst3 [-3.8, -0.4, -0.0]
+  small                      85.35  diff -10.37 [-29.79,-0.18]  n=10  worst3 [-95.8, -4.0, -2.9]
+
+[+101..] J&F (visible frames, video mean, x100)
+  target_ref                 80.41  diff  +0.00 [+0.00,+0.00]  n=7  worst3 [0.0, 0.0, 0.0]
+  legacy                     78.64  diff  -1.78 [-4.59,+0.91]  n=7  worst3 [-7.9, -7.5, -0.3]
+  legacy_nc                  80.41  diff  -0.00 [-0.00,+0.00]  n=7  worst3 [-0.0, -0.0, -0.0]
+  ridge_nc                   80.41  diff  -0.00 [-0.00,+0.00]  n=7  worst3 [-0.0, -0.0, 0.0]
+  olv                        86.66  diff  +6.25 [-20.84,+38.31]  n=7  worst3 [-50.6, 0.0, 0.0]
+  small                      89.66  diff  +9.25 [-7.46,+35.34]  n=7  worst3 [-18.8, -2.2, -0.4]
+
+[all] J&F (visible frames, video mean, x100)
+  target_ref                 93.27  diff  +0.00 [+0.00,+0.00]  n=10  worst3 [0.0, 0.0, 0.0]
+  legacy                     92.35  diff  -0.92 [-2.26,+0.05]  n=10  worst3 [-6.3, -1.9, -1.5]
+  legacy_nc                  94.02  diff  +0.75 [-0.15,+2.42]  n=10  worst3 [-0.5, -0.1, -0.0]
+  ridge_nc                   94.03  diff  +0.76 [-0.13,+2.42]  n=10  worst3 [-0.4, -0.1, -0.0]
+  olv                        90.27  diff  -3.00 [-11.75,+2.45]  n=10  worst3 [-39.3, -0.4, -0.2]
+  small                      90.12  diff  -3.15 [-10.90,+1.67]  n=10  worst3 [-35.8, -1.7, -1.6]
+
+failures: videos more than 10 points below / above the reference (all frames)
+  target_ref               below   0  above   0  of 10  []
+  legacy                   below   0  above   0  of 10  []
+  legacy_nc                below   0  above   0  of 10  []
+  ridge_nc                 below   0  above   0  of 10  []
+  olv                      below   1  above   0  of 10  ['ikcMMycg']
+  small                    below   1  above   0  of 10  ['ikcMMycg']
+
+normalized state error (case mean):
+  target_ref               spatial 0.0000 pointer 0.0000
+  legacy                   spatial 0.1454 pointer 0.4049
+  legacy_nc                spatial 0.1369 pointer 0.3965
+  ridge_nc                 spatial 0.1596 pointer 0.4019
+  olv                      spatial nan pointer nan
+  small                    spatial nan pointer nan
+seconds per case 122.4

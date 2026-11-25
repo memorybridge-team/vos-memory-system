@@ -1,0 +1,19 @@
+source,method,switch_25,switch_50,switch_75,mean_of_three
+paper database,Source-only,78.17,75.33,71.68,75.06
+paper database,Full Replay,76.33,74.36,71.99,74.23
+paper database,Original+Last-Visible,78.48,75.23,68.69,74.14
+paper database,Direct Copy,0.0,0.01,0.01,0.01
+paper database,Replay-8,71.27,70.01,66.84,69.37
+paper database,paper Translator,71.25,69.43,65.45,68.71
+design review,small,78.17,75.27,71.71,75.05
+design review,base,76.39,74.4,71.97,74.26
+design review,olv,78.57,75.3,68.83,74.23
+design review,direct,0.0,0.01,0.01,0.01
+design review,legacy,70.62,69.17,65.34,68.38
+design review,mlp_context,71.01,67.74,66.28,68.34
+design review,e2e_mlp_f,73.72,68.75,68.2,70.22
+design review,e2e_tf_f,74.99,69.3,68.03,70.77
+design review,e2e_ctx_f,73.92,68.76,68.7,70.46
+design review,e2e3_ctx_f,73.75,70.34,68.45,70.85
+design review,e2e_ctx_pin7,75.55,72.56,67.17,71.76
+design review,e2e3_ctx_pin5,76.33,73.22,67.33,72.29

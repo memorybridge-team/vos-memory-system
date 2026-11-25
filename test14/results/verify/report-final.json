@@ -1,0 +1,1207 @@
+{
+ "results": [
+  {
+   "group": "구조",
+   "name": "residual_mlp 클래스",
+   "ok": true,
+   "detail": "ResidualMLPStateTranslator"
+  },
+  {
+   "group": "구조",
+   "name": "residual_mlp 파라미터(설정 파일 기준)",
+   "ok": true,
+   "detail": "{'spatial': 20736, 'pointer': 328704, 'total': 349440}"
+  },
+  {
+   "group": "구조",
+   "name": "residual_mlp 공간+포인터=전체",
+   "ok": true,
+   "detail": "{'spatial': 20736, 'pointer': 328704, 'total': 349440}"
+  },
+  {
+   "group": "구조",
+   "name": "residual_mlp README 표는 identity 기준과 일치",
+   "ok": true,
+   "detail": "{'spatial': 16576, 'pointer': 262912, 'total': 279488}"
+  },
+  {
+   "group": "구조",
+   "name": "residual_mlp README MAC은 identity 기준과 일치",
+   "ok": true,
+   "detail": "67108864"
+  },
+  {
+   "group": "구조",
+   "name": "transformer 클래스",
+   "ok": true,
+   "detail": "TransformerStateTranslator"
+  },
+  {
+   "group": "구조",
+   "name": "transformer 파라미터(설정 파일 기준)",
+   "ok": true,
+   "detail": "{'spatial': 194304, 'pointer': 262912, 'total': 457216}"
+  },
+  {
+   "group": "구조",
+   "name": "transformer 공간+포인터=전체",
+   "ok": true,
+   "detail": "{'spatial': 194304, 'pointer': 262912, 'total': 457216}"
+  },
+  {
+   "group": "구조",
+   "name": "transformer README 표는 identity 기준과 일치",
+   "ok": true,
+   "detail": "{'spatial': 194304, 'pointer': 262912, 'total': 457216}"
+  },
+  {
+   "group": "구조",
+   "name": "transformer README MAC은 identity 기준과 일치",
+   "ok": true,
+   "detail": "77594624"
+  },
+  {
+   "group": "구조",
+   "name": "mlp_context 클래스",
+   "ok": true,
+   "detail": "MLPContextStateTranslator"
+  },
+  {
+   "group": "구조",
+   "name": "mlp_context 파라미터(설정 파일 기준)",
+   "ok": true,
+   "detail": "{'spatial': 210880, 'pointer': 328704, 'total': 539584}"
+  },
+  {
+   "group": "구조",
+   "name": "mlp_context 공간+포인터=전체",
+   "ok": true,
+   "detail": "{'spatial': 210880, 'pointer': 328704, 'total': 539584}"
+  },
+  {
+   "group": "구조",
+   "name": "mlp_context README 표는 identity 기준과 일치",
+   "ok": true,
+   "detail": "{'spatial': 206720, 'pointer': 262912, 'total': 469632}"
+  },
+  {
+   "group": "구조",
+   "name": "mlp_context README MAC은 identity 기준과 일치",
+   "ok": true,
+   "detail": "127926272"
+  },
+  {
+   "group": "구조",
+   "name": "residual_mlp 층 구성",
+   "ok": true,
+   "detail": ""
+  },
+  {
+   "group": "구조",
+   "name": "residual_mlp 문맥 없음(Conv/Attention 없음)",
+   "ok": true,
+   "detail": ""
+  },
+  {
+   "group": "구조",
+   "name": "transformer 설정",
+   "ok": true,
+   "detail": "SpatialTransformerConfig(channels=64, height=64, width=64, d_model=64, num_heads=4, num_layers=2, mlp_ratio=2.0, dropout=0.0, patch_size=4, patch_embed='conv', pos_embed='learnable', spatial_context=True, use_attention=True, local_fusion='linear', fusion_hidden_dim=128, use_residual=True, residual_scale_init=0.0, pointer_dim=256, pointer_hidden_dim=512, output_dtype='source', skip_mode='identity')"
+  },
+  {
+   "group": "구조",
+   "name": "transformer 층 구성",
+   "ok": true,
+   "detail": ""
+  },
+  {
+   "group": "구조",
+   "name": "mlp_context 설정",
+   "ok": true,
+   "detail": "SpatialTransformerConfig(channels=64, height=64, width=64, d_model=64, num_heads=4, num_layers=2, mlp_ratio=2.0, dropout=0.0, patch_size=4, patch_embed='conv', pos_embed='learnable', spatial_context=True, use_attention=True, local_fusion='additive_mlp', fusion_hidden_dim=128, use_residual=True, residual_scale_init=0.0, pointer_dim=256, pointer_hidden_dim=512, output_dtype='source', skip_mode='affine')"
+  },
+  {
+   "group": "구조",
+   "name": "mlp_context 층 구성",
+   "ok": true,
+   "detail": ""
+  },
+  {
+   "group": "구조",
+   "name": "residual_mlp 같은 seed면 같은 초기값",
+   "ok": true,
+   "detail": ""
+  },
+  {
+   "group": "구조",
+   "name": "transformer 같은 seed면 같은 초기값",
+   "ok": true,
+   "detail": ""
+  },
+  {
+   "group": "구조",
+   "name": "mlp_context 같은 seed면 같은 초기값",
+   "ok": true,
+   "detail": ""
+  },
+  {
+   "group": "초기화",
+   "name": "residual_mlp 0 초기화 대상",
+   "ok": true,
+   "detail": "('feature.2.weight', 'feature.2.bias', 'pointer.2.weight', 'pointer.2.bias')"
+  },
+  {
+   "group": "형상",
+   "name": "residual_mlp 학습 API 출력",
+   "ok": true,
+   "detail": "((1, 1, 6, 64, 64, 64), (1, 1, 6, 256), torch.float32)"
+  },
+  {
+   "group": "초기화",
+   "name": "residual_mlp ridge 전 출력=입력",
+   "ok": true,
+   "detail": "0.0"
+  },
+  {
+   "group": "형상",
+   "name": "residual_mlp handoff dtype",
+   "ok": true,
+   "detail": "(torch.bfloat16, torch.float32)"
+  },
+  {
+   "group": "패딩",
+   "name": "residual_mlp 패딩 슬롯은 원본 그대로",
+   "ok": true,
+   "detail": ""
+  },
+  {
+   "group": "패딩",
+   "name": "residual_mlp 패딩 값이 유효 기록에 영향 없음",
+   "ok": true,
+   "detail": ""
+  },
+  {
+   "group": "독립성",
+   "name": "residual_mlp 기록 간 섞임 없음",
+   "ok": true,
+   "detail": ""
+  },
+  {
+   "group": "독립성",
+   "name": "residual_mlp 변경한 기록은 출력 변화",
+   "ok": true,
+   "detail": ""
+  },
+  {
+   "group": "공간 문맥",
+   "name": "residual_mlp 한 픽셀 변경의 영향 범위",
+   "ok": true,
+   "detail": "변한 위치 1/4096"
+  },
+  {
+   "group": "형상",
+   "name": "residual_mlp 잘못된 입력 거부",
+   "ok": true,
+   "detail": ""
+  },
+  {
+   "group": "초기화",
+   "name": "transformer 0 초기화 대상",
+   "ok": true,
+   "detail": "('spatial.alpha', 'pointer.fc2.weight', 'pointer.fc2.bias')"
+  },
+  {
+   "group": "형상",
+   "name": "transformer 학습 API 출력",
+   "ok": true,
+   "detail": "((1, 1, 6, 64, 64, 64), (1, 1, 6, 256), torch.float32)"
+  },
+  {
+   "group": "초기화",
+   "name": "transformer ridge 전 출력=입력",
+   "ok": true,
+   "detail": "0.0"
+  },
+  {
+   "group": "형상",
+   "name": "transformer handoff dtype",
+   "ok": true,
+   "detail": "(torch.bfloat16, torch.float32)"
+  },
+  {
+   "group": "패딩",
+   "name": "transformer 패딩 슬롯은 원본 그대로",
+   "ok": true,
+   "detail": ""
+  },
+  {
+   "group": "패딩",
+   "name": "transformer 패딩 값이 유효 기록에 영향 없음",
+   "ok": true,
+   "detail": ""
+  },
+  {
+   "group": "독립성",
+   "name": "transformer 기록 간 섞임 없음",
+   "ok": true,
+   "detail": ""
+  },
+  {
+   "group": "독립성",
+   "name": "transformer 변경한 기록은 출력 변화",
+   "ok": true,
+   "detail": ""
+  },
+  {
+   "group": "공간 문맥",
+   "name": "transformer 한 픽셀 변경의 영향 범위",
+   "ok": true,
+   "detail": "변한 위치 4096/4096"
+  },
+  {
+   "group": "형상",
+   "name": "transformer 잘못된 입력 거부",
+   "ok": true,
+   "detail": ""
+  },
+  {
+   "group": "초기화",
+   "name": "mlp_context 0 초기화 대상",
+   "ok": true,
+   "detail": "('spatial.alpha', 'spatial.local_out.weight', 'spatial.local_out.bias', 'pointer.fc2.weight', 'pointer.fc2.bias')"
+  },
+  {
+   "group": "형상",
+   "name": "mlp_context 학습 API 출력",
+   "ok": true,
+   "detail": "((1, 1, 6, 64, 64, 64), (1, 1, 6, 256), torch.float32)"
+  },
+  {
+   "group": "초기화",
+   "name": "mlp_context ridge 전 출력=입력",
+   "ok": true,
+   "detail": "0.0"
+  },
+  {
+   "group": "형상",
+   "name": "mlp_context handoff dtype",
+   "ok": true,
+   "detail": "(torch.bfloat16, torch.float32)"
+  },
+  {
+   "group": "패딩",
+   "name": "mlp_context 패딩 슬롯은 원본 그대로",
+   "ok": true,
+   "detail": ""
+  },
+  {
+   "group": "패딩",
+   "name": "mlp_context 패딩 값이 유효 기록에 영향 없음",
+   "ok": true,
+   "detail": ""
+  },
+  {
+   "group": "독립성",
+   "name": "mlp_context 기록 간 섞임 없음",
+   "ok": true,
+   "detail": ""
+  },
+  {
+   "group": "독립성",
+   "name": "mlp_context 변경한 기록은 출력 변화",
+   "ok": true,
+   "detail": ""
+  },
+  {
+   "group": "공간 문맥",
+   "name": "mlp_context 한 픽셀 변경의 영향 범위",
+   "ok": true,
+   "detail": "변한 위치 4096/4096"
+  },
+  {
+   "group": "형상",
+   "name": "mlp_context 잘못된 입력 거부",
+   "ok": true,
+   "detail": ""
+  },
+  {
+   "group": "초기화",
+   "name": "residual_mlp ridge 없이 저장 거부",
+   "ok": true,
+   "detail": ""
+  },
+  {
+   "group": "초기화",
+   "name": "residual_mlp ridge 후 출력=행벡터 ridge 해",
+   "ok": true,
+   "detail": "2.1457672119140625e-06"
+  },
+  {
+   "group": "초기화",
+   "name": "mlp_context ridge 없이 저장 거부",
+   "ok": true,
+   "detail": ""
+  },
+  {
+   "group": "초기화",
+   "name": "mlp_context ridge 후 출력=행벡터 ridge 해",
+   "ok": true,
+   "detail": "2.1457672119140625e-06"
+  },
+  {
+   "group": "초기화",
+   "name": "transformer는 affine skip 거부(기존 base 유지)",
+   "ok": true,
+   "detail": ""
+  },
+  {
+   "group": "저장",
+   "name": "residual_mlp payload schema",
+   "ok": true,
+   "detail": "cmmt.residual_mlp_translator.v3"
+  },
+  {
+   "group": "저장",
+   "name": "residual_mlp 복원 클래스",
+   "ok": true,
+   "detail": "ResidualMLPStateTranslator"
+  },
+  {
+   "group": "저장",
+   "name": "residual_mlp 복원 후 출력 동일",
+   "ok": true,
+   "detail": ""
+  },
+  {
+   "group": "저장",
+   "name": "transformer payload schema",
+   "ok": true,
+   "detail": "cmmt.spatial_context_transformer_translator.v1"
+  },
+  {
+   "group": "저장",
+   "name": "transformer 복원 클래스",
+   "ok": true,
+   "detail": "TransformerStateTranslator"
+  },
+  {
+   "group": "저장",
+   "name": "transformer 복원 후 출력 동일",
+   "ok": true,
+   "detail": ""
+  },
+  {
+   "group": "저장",
+   "name": "mlp_context payload schema",
+   "ok": true,
+   "detail": "cmmt.spatial_context_transformer_translator.v2"
+  },
+  {
+   "group": "저장",
+   "name": "mlp_context 복원 클래스",
+   "ok": true,
+   "detail": "MLPContextStateTranslator"
+  },
+  {
+   "group": "저장",
+   "name": "mlp_context 복원 후 출력 동일",
+   "ok": true,
+   "detail": ""
+  },
+  {
+   "group": "옵티마이저",
+   "name": "residual_mlp 모든 파라미터를 한 번씩 포함",
+   "ok": true,
+   "detail": "(6, 6)"
+  },
+  {
+   "group": "옵티마이저",
+   "name": "residual_mlp bias·LN·gate·위치 임베딩은 decay 제외",
+   "ok": true,
+   "detail": ""
+  },
+  {
+   "group": "옵티마이저",
+   "name": "residual_mlp affine skip weight는 decay 적용",
+   "ok": true,
+   "detail": "['feature_skip.weight', 'pointer_skip.weight']"
+  },
+  {
+   "group": "옵티마이저",
+   "name": "transformer 모든 파라미터를 한 번씩 포함",
+   "ok": true,
+   "detail": "(14, 25)"
+  },
+  {
+   "group": "옵티마이저",
+   "name": "transformer bias·LN·gate·위치 임베딩은 decay 제외",
+   "ok": true,
+   "detail": ""
+  },
+  {
+   "group": "옵티마이저",
+   "name": "transformer affine skip weight는 decay 적용",
+   "ok": true,
+   "detail": "[]"
+  },
+  {
+   "group": "옵티마이저",
+   "name": "mlp_context 모든 파라미터를 한 번씩 포함",
+   "ok": true,
+   "detail": "(17, 28)"
+  },
+  {
+   "group": "옵티마이저",
+   "name": "mlp_context bias·LN·gate·위치 임베딩은 decay 제외",
+   "ok": true,
+   "detail": ""
+  },
+  {
+   "group": "옵티마이저",
+   "name": "mlp_context affine skip weight는 decay 적용",
+   "ok": true,
+   "detail": "['spatial.linear_skip.weight', 'pointer.linear_skip.weight']"
+  },
+  {
+   "group": "실제 데이터",
+   "name": "공식 index 로드",
+   "ok": true,
+   "detail": "{'index_sha256': '3ae8b00b5cfdf7df624a6c1b476d95ceee7ce259f796338b02975c201556ae9c', 'content_sha256': '20247caa4ed0099c9ee1a8179f0a9e73eba436b2f64a6c5aabd7399aa85994dc', 'official': True, 'cases': 23358, 'records': 335281}"
+  },
+  {
+   "group": "실제 데이터",
+   "name": "공식 index SHA가 1차 학습과 같음",
+   "ok": true,
+   "detail": ""
+  },
+  {
+   "group": "실제 데이터",
+   "name": "샘플 pair 체크섬·텐서 계약",
+   "ok": true,
+   "detail": "{'cases': 12, 'records': 179, 'invalid': []}"
+  },
+  {
+   "group": "실제 데이터",
+   "name": "실제 spec이 모델 spec과 같음",
+   "ok": true,
+   "detail": "{'feature_channels': 64, 'height': 64, 'width': 64, 'pointer_dim': 256, 'positional_policy': 'regenerate_at_target'}"
+  },
+  {
+   "group": "실제 데이터",
+   "name": "source·target spec 동일",
+   "ok": true,
+   "detail": ""
+  },
+  {
+   "group": "실제 데이터",
+   "name": "ridge 데이터 identity 일치",
+   "ok": true,
+   "detail": ""
+  },
+  {
+   "group": "실제 데이터",
+   "name": "ridge 손실 < Direct Copy 손실",
+   "ok": true,
+   "detail": "(0.34676939249038696, 5.688261985778809)"
+  },
+  {
+   "group": "실제 데이터",
+   "name": "residual_mlp 출력 유한",
+   "ok": true,
+   "detail": ""
+  },
+  {
+   "group": "실제 데이터",
+   "name": "residual_mlp 초기 출력=ridge",
+   "ok": true,
+   "detail": "0.0"
+  },
+  {
+   "group": "기울기",
+   "name": "residual_mlp 첫 step 기울기 유한",
+   "ok": true,
+   "detail": "[]"
+  },
+  {
+   "group": "기울기",
+   "name": "residual_mlp 3번째 step에는 모든 파라미터에 기울기",
+   "ok": true,
+   "detail": "([], [])"
+  },
+  {
+   "group": "학습 가능성",
+   "name": "residual_mlp 작은 배치 과적합으로 손실 감소",
+   "ok": true,
+   "detail": "{'initial': 0.34676939249038696, 'trace': [0.34676939249038696, 0.27171799540519714, 0.21828818321228027, 0.1856633722782135, 0.1675342321395874], 'final': 0.16706325113773346, 'ratio': 0.48177046404799045, 'seconds': 0.9}"
+  },
+  {
+   "group": "장치",
+   "name": "residual_mlp CPU·GPU 출력 일치",
+   "ok": true,
+   "detail": "5.349516868591309e-06"
+  },
+  {
+   "group": "실제 데이터",
+   "name": "transformer 출력 유한",
+   "ok": true,
+   "detail": ""
+  },
+  {
+   "group": "실제 데이터",
+   "name": "transformer 초기 출력=Direct Copy",
+   "ok": true,
+   "detail": "0.0"
+  },
+  {
+   "group": "기울기",
+   "name": "transformer 첫 step 기울기 유한",
+   "ok": true,
+   "detail": "[]"
+  },
+  {
+   "group": "기울기",
+   "name": "transformer 3번째 step에는 모든 파라미터에 기울기",
+   "ok": true,
+   "detail": "([], [])"
+  },
+  {
+   "group": "학습 가능성",
+   "name": "transformer 작은 배치 과적합으로 손실 감소",
+   "ok": true,
+   "detail": "{'initial': 5.688261985778809, 'trace': [5.688261985778809, 3.376277208328247, 2.6453351974487305, 2.1480677127838135, 1.8930566310882568], 'final': 1.8861652612686157, 'ratio': 0.3315890277178173, 'seconds': 1.3}"
+  },
+  {
+   "group": "장치",
+   "name": "transformer CPU·GPU 출력 일치",
+   "ok": true,
+   "detail": "0.00043487548828125"
+  },
+  {
+   "group": "실제 데이터",
+   "name": "mlp_context 출력 유한",
+   "ok": true,
+   "detail": ""
+  },
+  {
+   "group": "실제 데이터",
+   "name": "mlp_context 초기 출력=ridge",
+   "ok": true,
+   "detail": "0.0"
+  },
+  {
+   "group": "기울기",
+   "name": "mlp_context 첫 step 기울기 유한",
+   "ok": true,
+   "detail": "[]"
+  },
+  {
+   "group": "기울기",
+   "name": "mlp_context 3번째 step에는 모든 파라미터에 기울기",
+   "ok": true,
+   "detail": "([], [])"
+  },
+  {
+   "group": "학습 가능성",
+   "name": "mlp_context 작은 배치 과적합으로 손실 감소",
+   "ok": true,
+   "detail": "{'initial': 0.34676939249038696, 'trace': [0.34676939249038696, 0.2718607783317566, 0.21502023935317993, 0.1782807856798172, 0.15775606036186218], 'final': 0.1569819301366806, 'ratio': 0.45269834517195, 'seconds': 1.7}"
+  },
+  {
+   "group": "장치",
+   "name": "mlp_context CPU·GPU 출력 일치",
+   "ok": true,
+   "detail": "0.00021886825561523438"
+  },
+  {
+   "group": "학습 경로",
+   "name": "residual_mlp train() 완료",
+   "ok": true,
+   "detail": "[0.45363, 0.45306]"
+  },
+  {
+   "group": "학습 경로",
+   "name": "residual_mlp last.ckpt 생성",
+   "ok": true,
+   "detail": ""
+  },
+  {
+   "group": "학습 경로",
+   "name": "residual_mlp best.ckpt 생성",
+   "ok": true,
+   "detail": ""
+  },
+  {
+   "group": "학습 경로",
+   "name": "residual_mlp paired_translators.pt 생성",
+   "ok": true,
+   "detail": ""
+  },
+  {
+   "group": "학습 경로",
+   "name": "residual_mlp training_report.json 생성",
+   "ok": true,
+   "detail": ""
+  },
+  {
+   "group": "학습 경로",
+   "name": "residual_mlp handoff 로더 클래스",
+   "ok": true,
+   "detail": "ResidualMLPStateTranslator"
+  },
+  {
+   "group": "학습 경로",
+   "name": "residual_mlp 저장 가중치=선택된 모델",
+   "ok": true,
+   "detail": ""
+  },
+  {
+   "group": "학습 경로",
+   "name": "residual_mlp evaluate 완료",
+   "ok": true,
+   "detail": "0.4530638751364937"
+  },
+  {
+   "group": "학습 경로",
+   "name": "residual_mlp 재개 후 3 epoch",
+   "ok": true,
+   "detail": "[1, 2, 3]"
+  },
+  {
+   "group": "handoff",
+   "name": "residual_mlp 실제 CanonicalState 변환",
+   "ok": true,
+   "detail": "{'translator': 'residual_mlp', 'grid_adapter': 'bilinear', 'per_frame_independent': True, 'invalid_records': {'translated': 'valid_records_only', 'spatial_memory': 'source_copy', 'object_pointer': 'source_copy'}, 'output_dtype': {'policy': 'source', 'spatial_memory': 'bfloat16', 'object_pointer': 'float32'}, 'presence_logits': 'diagnostic_only'}"
+  },
+  {
+   "group": "학습 경로",
+   "name": "transformer train() 완료",
+   "ok": true,
+   "detail": "[3.93829, 3.83543]"
+  },
+  {
+   "group": "학습 경로",
+   "name": "transformer last.ckpt 생성",
+   "ok": true,
+   "detail": ""
+  },
+  {
+   "group": "학습 경로",
+   "name": "transformer best.ckpt 생성",
+   "ok": true,
+   "detail": ""
+  },
+  {
+   "group": "학습 경로",
+   "name": "transformer paired_translators.pt 생성",
+   "ok": true,
+   "detail": ""
+  },
+  {
+   "group": "학습 경로",
+   "name": "transformer training_report.json 생성",
+   "ok": true,
+   "detail": ""
+  },
+  {
+   "group": "학습 경로",
+   "name": "transformer handoff 로더 클래스",
+   "ok": true,
+   "detail": "TransformerStateTranslator"
+  },
+  {
+   "group": "학습 경로",
+   "name": "transformer 저장 가중치=선택된 모델",
+   "ok": true,
+   "detail": ""
+  },
+  {
+   "group": "학습 경로",
+   "name": "transformer evaluate 완료",
+   "ok": true,
+   "detail": "3.835430363204793"
+  },
+  {
+   "group": "학습 경로",
+   "name": "transformer 재개 후 3 epoch",
+   "ok": true,
+   "detail": "[1, 2, 3]"
+  },
+  {
+   "group": "handoff",
+   "name": "transformer 실제 CanonicalState 변환",
+   "ok": true,
+   "detail": "{'translator': 'spatial_context_transformer', 'grid_adapter': 'none', 'per_frame_independent': True, 'invalid_records': {'translated': 'valid_records_only', 'spatial_memory': 'source_copy', 'object_pointer': 'source_copy'}, 'output_dtype': {'policy': 'source', 'spatial_memory': 'bfloat16', 'object_pointer': 'float32'}, 'presence_logits': 'diagnostic_only', 'preset': 'base', 'architecture': 'Spatial-Context Transformer, linear fusion', 'attention_scope': 'per_frame_tokens', 'tokens_per_frame': 256, 'target_positional_encoding': 'regenerated_by_target'}"
+  },
+  {
+   "group": "학습 경로",
+   "name": "mlp_context train() 완료",
+   "ok": true,
+   "detail": "[0.45363, 0.45301]"
+  },
+  {
+   "group": "학습 경로",
+   "name": "mlp_context last.ckpt 생성",
+   "ok": true,
+   "detail": ""
+  },
+  {
+   "group": "학습 경로",
+   "name": "mlp_context best.ckpt 생성",
+   "ok": true,
+   "detail": ""
+  },
+  {
+   "group": "학습 경로",
+   "name": "mlp_context paired_translators.pt 생성",
+   "ok": true,
+   "detail": ""
+  },
+  {
+   "group": "학습 경로",
+   "name": "mlp_context training_report.json 생성",
+   "ok": true,
+   "detail": ""
+  },
+  {
+   "group": "학습 경로",
+   "name": "mlp_context handoff 로더 클래스",
+   "ok": true,
+   "detail": "MLPContextStateTranslator"
+  },
+  {
+   "group": "학습 경로",
+   "name": "mlp_context 저장 가중치=선택된 모델",
+   "ok": true,
+   "detail": ""
+  },
+  {
+   "group": "학습 경로",
+   "name": "mlp_context evaluate 완료",
+   "ok": true,
+   "detail": "0.4530078791833771"
+  },
+  {
+   "group": "학습 경로",
+   "name": "mlp_context 재개 후 3 epoch",
+   "ok": true,
+   "detail": "[1, 2, 3]"
+  },
+  {
+   "group": "handoff",
+   "name": "mlp_context 실제 CanonicalState 변환",
+   "ok": true,
+   "detail": "{'translator': 'spatial_context_transformer', 'grid_adapter': 'none', 'per_frame_independent': True, 'invalid_records': {'translated': 'valid_records_only', 'spatial_memory': 'source_copy', 'object_pointer': 'source_copy'}, 'output_dtype': {'policy': 'source', 'spatial_memory': 'bfloat16', 'object_pointer': 'float32'}, 'presence_logits': 'diagnostic_only', 'preset': 'mlp_context', 'architecture': 'Spatial-Context Transformer, independent residual MLP + gated context', 'attention_scope': 'per_frame_tokens', 'tokens_per_frame': 256, 'target_positional_encoding': 'regenerated_by_target'}"
+  },
+  {
+   "group": "기존 가중치",
+   "name": "선택된 Transformer 가중치 존재",
+   "ok": true,
+   "detail": "[PosixPath('/workspace/j700qtcgrg/CMMT-official-isolated/official-20261005T012256KST/final-state-loss-20261005T1627KST/delivery/selected_state_loss_best/translator_weights.pth')]"
+  },
+  {
+   "group": "기존 가중치",
+   "name": "strict 복원·key·shape가 transformer.json과 같음",
+   "ok": true,
+   "detail": "39"
+  },
+  {
+   "group": "기존 가중치",
+   "name": "구조 설정이 transformer.json과 같음",
+   "ok": true,
+   "detail": "{}"
+  },
+  {
+   "group": "기존 가중치",
+   "name": "파라미터 수",
+   "ok": true,
+   "detail": "457216"
+  },
+  {
+   "group": "기존 가중치",
+   "name": "공식 validation 전체 평가 완료",
+   "ok": true,
+   "detail": "0.49264229149516225"
+  }
+ ],
+ "info": {
+  "environment": {
+   "torch": "2.11.0+cu128",
+   "device": "cuda",
+   "gpu": "NVIDIA GeForce RTX 4080 SUPER",
+   "visible": "0"
+  },
+  "structure": {
+   "residual_mlp": {
+    "config_parameters": {
+     "spatial": 20736,
+     "pointer": 328704,
+     "total": 349440
+    },
+    "identity_parameters": {
+     "spatial": 16576,
+     "pointer": 262912,
+     "total": 279488
+    },
+    "macs_per_frame": 83886080,
+    "identity_macs_per_frame": 67108864,
+    "pointer_macs": 327680,
+    "skip_mode": "affine",
+    "leaf_modules": [
+     "feature.0: Linear(in_features=64, out_features=128, bias=True)",
+     "feature.1: GELU(approximate='none')",
+     "feature.2: Linear(in_features=128, out_features=64, bias=True)",
+     "pointer.0: Linear(in_features=256, out_features=512, bias=True)",
+     "pointer.1: GELU(approximate='none')",
+     "pointer.2: Linear(in_features=512, out_features=256, bias=True)",
+     "feature_skip: Linear(in_features=64, out_features=64, bias=True)",
+     "pointer_skip: Linear(in_features=256, out_features=256, bias=True)"
+    ]
+   },
+   "transformer": {
+    "config_parameters": {
+     "spatial": 194304,
+     "pointer": 262912,
+     "total": 457216
+    },
+    "identity_parameters": {
+     "spatial": 194304,
+     "pointer": 262912,
+     "total": 457216
+    },
+    "macs_per_frame": 77594624,
+    "identity_macs_per_frame": 77594624,
+    "pointer_macs": 262144,
+    "skip_mode": "identity",
+    "leaf_modules": [
+     "spatial.patch_embed: Conv2d(64, 64, kernel_size=(4, 4), stride=(4, 4))",
+     "spatial.blocks.0.norm1: LayerNorm((64,), eps=1e-05, elementwise_affine=True)",
+     "spatial.blocks.0.attn.qkv: Linear(in_features=64, out_features=192, bias=True)",
+     "spatial.blocks.0.attn.proj: Linear(in_features=64, out_features=64, bias=True)",
+     "spatial.blocks.0.norm2: LayerNorm((64,), eps=1e-05, elementwise_affine=True)",
+     "spatial.blocks.0.fc1: Linear(in_features=64, out_features=128, bias=True)",
+     "spatial.blocks.0.fc2: Linear(in_features=128, out_features=64, bias=True)",
+     "spatial.blocks.0.drop: Dropout(p=0.0, inplace=False)",
+     "spatial.blocks.1.norm1: LayerNorm((64,), eps=1e-05, elementwise_affine=True)",
+     "spatial.blocks.1.attn.qkv: Linear(in_features=64, out_features=192, bias=True)",
+     "spatial.blocks.1.attn.proj: Linear(in_features=64, out_features=64, bias=True)",
+     "spatial.blocks.1.norm2: LayerNorm((64,), eps=1e-05, elementwise_affine=True)",
+     "spatial.blocks.1.fc1: Linear(in_features=64, out_features=128, bias=True)",
+     "spatial.blocks.1.fc2: Linear(in_features=128, out_features=64, bias=True)",
+     "spatial.blocks.1.drop: Dropout(p=0.0, inplace=False)",
+     "spatial.norm: LayerNorm((64,), eps=1e-05, elementwise_affine=True)",
+     "spatial.context_conv: Conv2d(64, 64, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1))",
+     "spatial.context_proj: Conv2d(64, 64, kernel_size=(1, 1), stride=(1, 1), bias=False)",
+     "spatial.local_in: Conv2d(64, 64, kernel_size=(1, 1), stride=(1, 1))",
+     "pointer.fc1: Linear(in_features=256, out_features=512, bias=True)",
+     "pointer.fc2: Linear(in_features=512, out_features=256, bias=True)"
+    ]
+   },
+   "mlp_context": {
+    "config_parameters": {
+     "spatial": 210880,
+     "pointer": 328704,
+     "total": 539584
+    },
+    "identity_parameters": {
+     "spatial": 206720,
+     "pointer": 262912,
+     "total": 469632
+    },
+    "macs_per_frame": 144703488,
+    "identity_macs_per_frame": 127926272,
+    "pointer_macs": 327680,
+    "skip_mode": "affine",
+    "leaf_modules": [
+     "spatial.linear_skip: Linear(in_features=64, out_features=64, bias=True)",
+     "spatial.patch_embed: Conv2d(64, 64, kernel_size=(4, 4), stride=(4, 4))",
+     "spatial.blocks.0.norm1: LayerNorm((64,), eps=1e-05, elementwise_affine=True)",
+     "spatial.blocks.0.attn.qkv: Linear(in_features=64, out_features=192, bias=True)",
+     "spatial.blocks.0.attn.proj: Linear(in_features=64, out_features=64, bias=True)",
+     "spatial.blocks.0.norm2: LayerNorm((64,), eps=1e-05, elementwise_affine=True)",
+     "spatial.blocks.0.fc1: Linear(in_features=64, out_features=128, bias=True)",
+     "spatial.blocks.0.fc2: Linear(in_features=128, out_features=64, bias=True)",
+     "spatial.blocks.0.drop: Dropout(p=0.0, inplace=False)",
+     "spatial.blocks.1.norm1: LayerNorm((64,), eps=1e-05, elementwise_affine=True)",
+     "spatial.blocks.1.attn.qkv: Linear(in_features=64, out_features=192, bias=True)",
+     "spatial.blocks.1.attn.proj: Linear(in_features=64, out_features=64, bias=True)",
+     "spatial.blocks.1.norm2: LayerNorm((64,), eps=1e-05, elementwise_affine=True)",
+     "spatial.blocks.1.fc1: Linear(in_features=64, out_features=128, bias=True)",
+     "spatial.blocks.1.fc2: Linear(in_features=128, out_features=64, bias=True)",
+     "spatial.blocks.1.drop: Dropout(p=0.0, inplace=False)",
+     "spatial.norm: LayerNorm((64,), eps=1e-05, elementwise_affine=True)",
+     "spatial.context_conv: Conv2d(64, 64, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1))",
+     "spatial.context_proj: Conv2d(64, 64, kernel_size=(1, 1), stride=(1, 1), bias=False)",
+     "spatial.local_in: Conv2d(64, 128, kernel_size=(1, 1), stride=(1, 1))",
+     "spatial.local_out: Conv2d(128, 64, kernel_size=(1, 1), stride=(1, 1))",
+     "pointer.linear_skip: Linear(in_features=256, out_features=256, bias=True)",
+     "pointer.fc1: Linear(in_features=256, out_features=512, bias=True)",
+     "pointer.fc2: Linear(in_features=512, out_features=256, bias=True)"
+    ]
+   }
+  },
+  "registry_defaults": {
+   "residual_mlp": "identity",
+   "transformer": "identity",
+   "mlp_context": "identity"
+  },
+  "pair": {
+   "direction": [
+    "sam2.1-small",
+    "sam2.1-base-plus"
+   ],
+   "spatial": [
+    1,
+    1,
+    8,
+    64,
+    64,
+    64
+   ],
+   "pointer": [
+    1,
+    1,
+    8,
+    256
+   ],
+   "spatial_dtype": "torch.bfloat16",
+   "pointer_dtype": "torch.float32",
+   "sample_cases": [
+    "MOSEv2|train:001ca3cb:obj1:switch7",
+    "MOSEv2|train:002b4dce:obj1:switch28",
+    "MOSEv2|train:00xdyp74:obj1:switch10",
+    "MOSEv2|train:0165667b:obj1:switch19",
+    "LVOS v2|train:0ClBYzYm:obj1:switch621",
+    "LVOS v2|train:0mCvQcOu:obj1:switch281",
+    "LVOS v2|train:1umdNtrE:obj1:switch491",
+    "LVOS v2|train:2OH7R3w2:obj1:switch1441",
+    "LVOS v2|val:0tCWPOrc:obj1:switch361",
+    "LVOS v2|val:1DNYxl0a:obj1:switch281",
+    "LVOS v2|val:2VegYEbT:obj1:switch651",
+    "LVOS v2|val:2urlAsm8:obj1:switch281"
+   ]
+  },
+  "ridge_alpha": {
+   "spatial": [
+    1e-06
+   ],
+   "pointer": [
+    1
+   ]
+  },
+  "real_reference": {
+   "records": 64,
+   "direct_copy": 5.688261985778809,
+   "sample_ridge": 0.34676939249038696
+  },
+  "zero_gradient_first_step": {
+   "residual_mlp": [
+    "feature.0.weight",
+    "feature.0.bias",
+    "pointer.0.weight",
+    "pointer.0.bias"
+   ],
+   "transformer": [
+    "spatial.pos_embed",
+    "spatial.patch_embed.weight",
+    "spatial.patch_embed.bias",
+    "spatial.blocks.0.norm1.weight",
+    "spatial.blocks.0.norm1.bias",
+    "spatial.blocks.0.attn.qkv.weight",
+    "spatial.blocks.0.attn.qkv.bias",
+    "spatial.blocks.0.attn.proj.weight",
+    "spatial.blocks.0.attn.proj.bias",
+    "spatial.blocks.0.norm2.weight",
+    "spatial.blocks.0.norm2.bias",
+    "spatial.blocks.0.fc1.weight",
+    "spatial.blocks.0.fc1.bias",
+    "spatial.blocks.0.fc2.weight",
+    "spatial.blocks.0.fc2.bias",
+    "spatial.blocks.1.norm1.weight",
+    "spatial.blocks.1.norm1.bias",
+    "spatial.blocks.1.attn.qkv.weight",
+    "spatial.blocks.1.attn.qkv.bias",
+    "spatial.blocks.1.attn.proj.weight",
+    "spatial.blocks.1.attn.proj.bias",
+    "spatial.blocks.1.norm2.weight",
+    "spatial.blocks.1.norm2.bias",
+    "spatial.blocks.1.fc1.weight",
+    "spatial.blocks.1.fc1.bias",
+    "spatial.blocks.1.fc2.weight",
+    "spatial.blocks.1.fc2.bias",
+    "spatial.norm.weight",
+    "spatial.norm.bias",
+    "spatial.context_conv.weight",
+    "spatial.context_conv.bias",
+    "spatial.context_proj.weight",
+    "spatial.local_in.weight",
+    "spatial.local_in.bias",
+    "pointer.fc1.weight",
+    "pointer.fc1.bias"
+   ],
+   "mlp_context": [
+    "spatial.pos_embed",
+    "spatial.patch_embed.weight",
+    "spatial.patch_embed.bias",
+    "spatial.blocks.0.norm1.weight",
+    "spatial.blocks.0.norm1.bias",
+    "spatial.blocks.0.attn.qkv.weight",
+    "spatial.blocks.0.attn.qkv.bias",
+    "spatial.blocks.0.attn.proj.weight",
+    "spatial.blocks.0.attn.proj.bias",
+    "spatial.blocks.0.norm2.weight",
+    "spatial.blocks.0.norm2.bias",
+    "spatial.blocks.0.fc1.weight",
+    "spatial.blocks.0.fc1.bias",
+    "spatial.blocks.0.fc2.weight",
+    "spatial.blocks.0.fc2.bias",
+    "spatial.blocks.1.norm1.weight",
+    "spatial.blocks.1.norm1.bias",
+    "spatial.blocks.1.attn.qkv.weight",
+    "spatial.blocks.1.attn.qkv.bias",
+    "spatial.blocks.1.attn.proj.weight",
+    "spatial.blocks.1.attn.proj.bias",
+    "spatial.blocks.1.norm2.weight",
+    "spatial.blocks.1.norm2.bias",
+    "spatial.blocks.1.fc1.weight",
+    "spatial.blocks.1.fc1.bias",
+    "spatial.blocks.1.fc2.weight",
+    "spatial.blocks.1.fc2.bias",
+    "spatial.norm.weight",
+    "spatial.norm.bias",
+    "spatial.context_conv.weight",
+    "spatial.context_conv.bias",
+    "spatial.context_proj.weight",
+    "spatial.local_in.weight",
+    "spatial.local_in.bias",
+    "pointer.fc1.weight",
+    "pointer.fc1.bias"
+   ]
+  },
+  "overfit": {
+   "residual_mlp": {
+    "initial": 0.34676939249038696,
+    "trace": [
+     0.34676939249038696,
+     0.27171799540519714,
+     0.21828818321228027,
+     0.1856633722782135,
+     0.1675342321395874
+    ],
+    "final": 0.16706325113773346,
+    "ratio": 0.48177046404799045
+   },
+   "transformer": {
+    "initial": 5.688261985778809,
+    "trace": [
+     5.688261985778809,
+     3.376277208328247,
+     2.6453351974487305,
+     2.1480677127838135,
+     1.8930566310882568
+    ],
+    "final": 1.8861652612686157,
+    "ratio": 0.3315890277178173
+   },
+   "mlp_context": {
+    "initial": 0.34676939249038696,
+    "trace": [
+     0.34676939249038696,
+     0.2718607783317566,
+     0.21502023935317993,
+     0.1782807856798172,
+     0.15775606036186218
+    ],
+    "final": 0.1569819301366806,
+    "ratio": 0.45269834517195
+   }
+  },
+  "gpu": {
+   "residual_mlp": {
+    "records_per_second": 9231.0,
+    "peak_allocated_mib": 1034.1,
+    "microbatch": 32
+   },
+   "transformer": {
+    "records_per_second": 5942.2,
+    "peak_allocated_mib": 783.0,
+    "microbatch": 32
+   },
+   "mlp_context": {
+    "records_per_second": 4549.5,
+    "peak_allocated_mib": 1264.0,
+    "microbatch": 32
+   }
+  },
+  "sample_validation": {
+   "ridge": 0.45188419884408193,
+   "residual_mlp": 0.4530638751364937,
+   "transformer": 3.835430363204793,
+   "mlp_context": 0.4530078791833771
+  },
+  "legacy": {
+   "path": "/workspace/j700qtcgrg/CMMT-official-isolated/official-20261005T012256KST/final-state-loss-20261005T1627KST/delivery/selected_state_loss_best/translator_weights.pth",
+   "preset": "base",
+   "full_validation": {
+    "all": {
+     "records": 11424,
+     "spatial_mse": 0.09454943194068416,
+     "pointer_mse": 0.13915524142401725,
+     "normalized_spatial": 0.14619035618630702,
+     "normalized_pointer": 0.3464519353088552,
+     "state_loss": 0.49264229149516225
+    },
+    "present": {
+     "records": 10223,
+     "spatial_mse": 0.09297189041593182,
+     "pointer_mse": 0.1319390080677653,
+     "normalized_spatial": 0.14375119444129605,
+     "normalized_pointer": 0.32848582791448216,
+     "state_loss": 0.47223702235577825
+    },
+    "absent": {
+     "records": 1201,
+     "spatial_mse": 0.1079775809894295,
+     "pointer_mse": 0.20058034850225523,
+     "normalized_spatial": 0.16695267968276584,
+     "normalized_pointer": 0.4993807578672866,
+     "state_loss": 0.6663334375500525
+    },
+    "conditioning": {
+     "records": 714,
+     "spatial_mse": 0.0896730105019584,
+     "pointer_mse": 0.04035333909611355,
+     "normalized_spatial": 0.13865053524387033,
+     "normalized_pointer": 0.10046687629554205,
+     "state_loss": 0.23911741153941238
+    },
+    "nonconditioning": {
+     "records": 10710,
+     "spatial_mse": 0.09487452670326586,
+     "pointer_mse": 0.14574203491254417,
+     "normalized_spatial": 0.14669301091580278,
+     "normalized_pointer": 0.3628509392430761,
+     "state_loss": 0.5095439501588789
+    },
+    "spatial_used": {
+     "records": 4998,
+     "spatial_mse": 0.09405736328170103,
+     "pointer_mse": 0.12596850287242334,
+     "normalized_spatial": 0.14542952990688535,
+     "normalized_pointer": 0.31362118423645546,
+     "state_loss": 0.4590507141433408
+    },
+    "spatial_unused": {
+     "records": 6426,
+     "spatial_mse": 0.09493215200878213,
+     "pointer_mse": 0.14941159363081252,
+     "normalized_spatial": 0.1467821099591905,
+     "normalized_pointer": 0.3719869639207217,
+     "state_loss": 0.5187690738799122
+    },
+    "presence_disagreements": 598,
+    "usage_unsupported_records": 0
+   },
+   "full_validation_seconds": 13.1
+  }
+ }
+}

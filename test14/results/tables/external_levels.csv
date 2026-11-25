@@ -1,0 +1,133 @@
+dataset,switch,method,jf,videos,cases
+pumavos,all switches,base,74.26,24,78
+pumavos,all switches,direct,0.01,24,78
+pumavos,all switches,direct_nc,68.18,24,78
+pumavos,all switches,e2e3_ctx_f,70.85,24,78
+pumavos,all switches,e2e3_ctx_pin5,72.29,24,78
+pumavos,all switches,e2e_ctx_f,70.46,24,78
+pumavos,all switches,e2e_ctx_pin7,71.76,24,78
+pumavos,all switches,e2e_mlp_f,70.22,24,78
+pumavos,all switches,e2e_tf_f,70.77,24,78
+pumavos,all switches,lastvis,69.8,24,78
+pumavos,all switches,legacy,68.38,24,78
+pumavos,all switches,legacy_nc,72.93,24,78
+pumavos,all switches,mlp_context,68.34,24,78
+pumavos,all switches,olv,74.23,24,78
+pumavos,all switches,orig,69.08,24,78
+pumavos,all switches,recent_ridge,69.53,24,78
+pumavos,all switches,ridge,67.66,24,78
+pumavos,all switches,ridge_anchor,72.08,24,78
+pumavos,all switches,ridge_nc,72.9,24,78
+pumavos,all switches,ridge_nc_anchor,74.09,24,78
+pumavos,all switches,small,75.05,24,78
+pumavos,all switches,target_ref,74.23,24,78
+pumavos,25,base,76.39,24,26
+pumavos,25,direct,0.0,24,26
+pumavos,25,direct_nc,70.81,24,26
+pumavos,25,e2e3_ctx_f,73.75,24,26
+pumavos,25,e2e3_ctx_pin5,76.33,24,26
+pumavos,25,e2e_ctx_f,73.92,24,26
+pumavos,25,e2e_ctx_pin7,75.55,24,26
+pumavos,25,e2e_mlp_f,73.72,24,26
+pumavos,25,e2e_tf_f,74.99,24,26
+pumavos,25,lastvis,72.86,24,26
+pumavos,25,legacy,70.62,24,26
+pumavos,25,legacy_nc,77.15,24,26
+pumavos,25,mlp_context,71.01,24,26
+pumavos,25,olv,78.57,24,26
+pumavos,25,orig,71.46,24,26
+pumavos,25,recent_ridge,72.89,24,26
+pumavos,25,ridge,69.7,24,26
+pumavos,25,ridge_anchor,75.8,24,26
+pumavos,25,ridge_nc,76.72,24,26
+pumavos,25,ridge_nc_anchor,78.6,24,26
+pumavos,25,small,78.17,24,26
+pumavos,25,target_ref,76.36,24,26
+pumavos,50,base,74.4,24,26
+pumavos,50,direct,0.01,24,26
+pumavos,50,direct_nc,67.85,24,26
+pumavos,50,e2e3_ctx_f,70.34,24,26
+pumavos,50,e2e3_ctx_pin5,73.22,24,26
+pumavos,50,e2e_ctx_f,68.76,24,26
+pumavos,50,e2e_ctx_pin7,72.56,24,26
+pumavos,50,e2e_mlp_f,68.75,24,26
+pumavos,50,e2e_tf_f,69.3,24,26
+pumavos,50,lastvis,72.16,24,26
+pumavos,50,legacy,69.17,24,26
+pumavos,50,legacy_nc,73.44,24,26
+pumavos,50,mlp_context,67.74,24,26
+pumavos,50,olv,75.3,24,26
+pumavos,50,orig,66.36,24,26
+pumavos,50,recent_ridge,71.67,24,26
+pumavos,50,ridge,68.6,24,26
+pumavos,50,ridge_anchor,73.56,24,26
+pumavos,50,ridge_nc,73.47,24,26
+pumavos,50,ridge_nc_anchor,75.26,24,26
+pumavos,50,small,75.27,24,26
+pumavos,50,target_ref,74.35,24,26
+pumavos,75,base,71.97,24,26
+pumavos,75,direct,0.01,24,26
+pumavos,75,direct_nc,65.88,24,26
+pumavos,75,e2e3_ctx_f,68.45,24,26
+pumavos,75,e2e3_ctx_pin5,67.33,24,26
+pumavos,75,e2e_ctx_f,68.7,24,26
+pumavos,75,e2e_ctx_pin7,67.17,24,26
+pumavos,75,e2e_mlp_f,68.2,24,26
+pumavos,75,e2e_tf_f,68.03,24,26
+pumavos,75,lastvis,64.37,24,26
+pumavos,75,legacy,65.34,24,26
+pumavos,75,legacy_nc,68.2,24,26
+pumavos,75,mlp_context,66.28,24,26
+pumavos,75,olv,68.83,24,26
+pumavos,75,orig,69.41,24,26
+pumavos,75,recent_ridge,64.04,24,26
+pumavos,75,ridge,64.69,24,26
+pumavos,75,ridge_anchor,66.87,24,26
+pumavos,75,ridge_nc,68.5,24,26
+pumavos,75,ridge_nc_anchor,68.43,24,26
+pumavos,75,small,71.71,24,26
+pumavos,75,target_ref,71.97,24,26
+m3vos,all switches,base,60.78,81,110
+m3vos,all switches,direct,1.23,59,110
+m3vos,all switches,direct_nc,47.21,59,110
+m3vos,all switches,e2e3_ctx_f,61.86,81,110
+m3vos,all switches,e2e3_ctx_pin5,66.01,81,110
+m3vos,all switches,e2e_ctx_f,62.0,81,110
+m3vos,all switches,e2e_ctx_pin7,65.73,81,110
+m3vos,all switches,e2e_mlp_f,62.76,81,110
+m3vos,all switches,e2e_tf_f,61.52,81,110
+m3vos,all switches,lastvis,63.79,59,110
+m3vos,all switches,legacy,59.1,81,110
+m3vos,all switches,legacy_nc,61.93,81,110
+m3vos,all switches,mlp_context,60.26,81,110
+m3vos,all switches,olv,64.71,81,110
+m3vos,all switches,orig,54.71,59,110
+m3vos,all switches,recent_ridge,63.85,59,110
+m3vos,all switches,ridge,59.08,81,110
+m3vos,all switches,ridge_anchor,63.66,81,110
+m3vos,all switches,ridge_nc,61.7,81,110
+m3vos,all switches,ridge_nc_anchor,64.78,81,110
+m3vos,all switches,small,62.8,81,110
+m3vos,all switches,target_ref,60.8,81,110
+m3vos,50,base,60.78,81,110
+m3vos,50,direct,1.23,59,110
+m3vos,50,direct_nc,47.21,59,110
+m3vos,50,e2e3_ctx_f,61.86,81,110
+m3vos,50,e2e3_ctx_pin5,66.01,81,110
+m3vos,50,e2e_ctx_f,62.0,81,110
+m3vos,50,e2e_ctx_pin7,65.73,81,110
+m3vos,50,e2e_mlp_f,62.76,81,110
+m3vos,50,e2e_tf_f,61.52,81,110
+m3vos,50,lastvis,63.79,59,110
+m3vos,50,legacy,59.1,81,110
+m3vos,50,legacy_nc,61.93,81,110
+m3vos,50,mlp_context,60.26,81,110
+m3vos,50,olv,64.71,81,110
+m3vos,50,orig,54.71,59,110
+m3vos,50,recent_ridge,63.85,59,110
+m3vos,50,ridge,59.08,81,110
+m3vos,50,ridge_anchor,63.66,81,110
+m3vos,50,ridge_nc,61.7,81,110
+m3vos,50,ridge_nc_anchor,64.78,81,110
+m3vos,50,small,62.8,81,110
+m3vos,50,target_ref,60.8,81,110

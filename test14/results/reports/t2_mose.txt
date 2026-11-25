@@ -1,0 +1,107 @@
+t2_mose cases 300 videos 300
+
+[+1..10] J&F (visible frames, video mean, x100)
+  target_ref                 73.84  diff  +0.00 [+0.00,+0.00]  n=241  worst3 [0.0, 0.0, 0.0]
+  legacy                     73.11  diff  -0.73 [-2.51,+1.05]  n=241  worst3 [-89.1, -83.4, -35.1]
+  ridge                      73.07  diff  -0.77 [-2.81,+1.30]  n=241  worst3 [-94.0, -84.9, -83.4]
+  mlp                        73.97  diff  +0.13 [-1.77,+2.08]  n=241  worst3 [-94.0, -83.4, -35.1]
+  transformer                72.36  diff  -1.48 [-3.55,+0.51]  n=241  worst3 [-94.0, -89.1, -83.4]
+  mlp_context                73.53  diff  -0.31 [-2.29,+1.75]  n=241  worst3 [-94.0, -83.4, -78.2]
+  ds3                        73.31  diff  -0.53 [-2.25,+1.18]  n=241  worst3 [-94.0, -83.4, -35.1]
+  ds_context                 73.45  diff  -0.39 [-2.45,+1.65]  n=241  worst3 [-94.0, -83.4, -78.1]
+  cond25                     73.86  diff  +0.02 [-0.33,+0.36]  n=241  worst3 [-19.7, -12.2, -10.8]
+  cond50                     73.79  diff  -0.05 [-0.46,+0.37]  n=241  worst3 [-24.5, -19.7, -12.1]
+  cond_noise                 73.57  diff  -0.27 [-1.40,+0.81]  n=241  worst3 [-92.0, -25.2, -19.7]
+  recent_noise               73.54  diff  -0.30 [-0.62,-0.04]  n=241  worst3 [-24.3, -16.6, -12.5]
+  ridge_gain                 73.61  diff  -0.23 [-2.11,+1.70]  n=241  worst3 [-94.0, -83.4, -35.1]
+
+[+11..30] J&F (visible frames, video mean, x100)
+  target_ref                 64.62  diff  +0.00 [+0.00,+0.00]  n=255  worst3 [0.0, 0.0, 0.0]
+  legacy                     61.40  diff  -3.22 [-5.58,-0.96]  n=255  worst3 [-95.4, -93.1, -87.7]
+  ridge                      61.27  diff  -3.35 [-6.14,-0.71]  n=255  worst3 [-95.4, -93.1, -90.8]
+  mlp                        62.29  diff  -2.33 [-4.70,+0.01]  n=255  worst3 [-93.1, -90.8, -87.7]
+  transformer                61.86  diff  -2.76 [-5.30,-0.17]  n=255  worst3 [-95.4, -93.1, -90.8]
+  mlp_context                62.52  diff  -2.10 [-4.56,+0.34]  n=255  worst3 [-93.1, -90.8, -86.8]
+  ds3                        61.86  diff  -2.76 [-5.22,-0.39]  n=255  worst3 [-93.1, -90.8, -87.7]
+  ds_context                 61.79  diff  -2.83 [-5.41,-0.34]  n=255  worst3 [-93.1, -90.8, -86.8]
+  cond25                     64.25  diff  -0.37 [-1.03,+0.23]  n=255  worst3 [-41.0, -40.6, -27.4]
+  cond50                     63.77  diff  -0.85 [-1.93,+0.07]  n=255  worst3 [-76.0, -43.5, -40.8]
+  cond_noise                 63.67  diff  -0.96 [-2.18,+0.07]  n=255  worst3 [-97.3, -49.5, -44.4]
+  recent_noise               64.57  diff  -0.06 [-0.51,+0.33]  n=255  worst3 [-43.3, -11.0, -6.9]
+  ridge_gain                 62.35  diff  -2.27 [-4.69,+0.04]  n=255  worst3 [-93.1, -90.8, -86.8]
+
+[+31..100] J&F (visible frames, video mean, x100)
+  target_ref                 56.33  diff  +0.00 [+0.00,+0.00]  n=175  worst3 [0.0, 0.0, 0.0]
+  legacy                     52.45  diff  -3.89 [-7.46,-0.56]  n=175  worst3 [-99.5, -97.4, -95.6]
+  ridge                      52.47  diff  -3.87 [-7.74,-0.10]  n=175  worst3 [-99.5, -98.6, -97.4]
+  mlp                        54.56  diff  -1.77 [-4.89,+1.25]  n=175  worst3 [-99.5, -95.6, -85.1]
+  transformer                53.22  diff  -3.12 [-6.73,+0.48]  n=175  worst3 [-99.5, -97.4, -95.6]
+  mlp_context                55.96  diff  -0.37 [-2.98,+2.27]  n=175  worst3 [-99.5, -78.9, -48.3]
+  ds3                        55.04  diff  -1.30 [-4.52,+1.93]  n=175  worst3 [-99.5, -95.6, -85.1]
+  ds_context                 55.53  diff  -0.80 [-3.98,+2.45]  n=175  worst3 [-99.5, -95.6, -85.1]
+  cond25                     55.59  diff  -0.74 [-1.66,-0.00]  n=175  worst3 [-42.6, -36.4, -32.4]
+  cond50                     55.13  diff  -1.20 [-3.09,+0.84]  n=175  worst3 [-62.4, -52.8, -48.3]
+  cond_noise                 55.66  diff  -0.68 [-2.35,+1.02]  n=175  worst3 [-71.6, -54.5, -42.6]
+  recent_noise               56.33  diff  -0.01 [-0.08,+0.05]  n=175  worst3 [-4.4, -1.5, -0.4]
+  ridge_gain                 55.13  diff  -1.20 [-4.39,+2.10]  n=175  worst3 [-99.5, -95.6, -85.1]
+
+[+101..] J&F (visible frames, video mean, x100)
+  target_ref                 71.79  diff  +0.00 [+0.00,+0.00]  n=14  worst3 [0.0, 0.0, 0.0]
+  legacy                     47.04  diff -24.75 [-45.35,-6.49]  n=14  worst3 [-92.2, -89.2, -76.7]
+  ridge                      52.41  diff -19.38 [-38.63,-1.48]  n=14  worst3 [-92.2, -89.2, -76.7]
+  mlp                        64.72  diff  -7.07 [-20.42,-0.13]  n=14  worst3 [-92.2, -3.2, -1.9]
+  transformer                46.99  diff -24.80 [-44.78,-6.61]  n=14  worst3 [-92.2, -89.2, -76.7]
+  mlp_context                64.76  diff  -7.03 [-20.36,-0.16]  n=14  worst3 [-92.2, -2.5, -1.8]
+  ds3                        52.38  diff -19.41 [-38.82,-4.19]  n=14  worst3 [-92.2, -89.2, -60.8]
+  ds_context                 58.12  diff -13.67 [-29.37,-0.54]  n=14  worst3 [-92.2, -61.1, -33.6]
+  cond25                     65.19  diff  -6.60 [-19.82,+0.05]  n=14  worst3 [-92.2, -0.4, -0.1]
+  cond50                     59.40  diff -12.40 [-27.42,-1.44]  n=14  worst3 [-92.2, -46.5, -24.1]
+  cond_noise                 65.36  diff  -6.43 [-17.66,-0.26]  n=14  worst3 [-76.5, -5.9, -4.3]
+  recent_noise               71.71  diff  -0.08 [-0.24,+0.00]  n=14  worst3 [-1.1, -0.0, -0.0]
+  ridge_gain                 59.65  diff -12.14 [-30.61,+0.00]  n=14  worst3 [-92.2, -76.7, -1.2]
+
+[all] J&F (visible frames, video mean, x100)
+  target_ref                 64.58  diff  +0.00 [+0.00,+0.00]  n=287  worst3 [0.0, 0.0, 0.0]
+  legacy                     60.79  diff  -3.79 [-6.05,-1.56]  n=287  worst3 [-93.1, -90.2, -84.9]
+  ridge                      60.63  diff  -3.95 [-6.54,-1.42]  n=287  worst3 [-98.6, -93.1, -87.3]
+  mlp                        62.52  diff  -2.07 [-4.18,+0.10]  n=287  worst3 [-93.1, -84.9, -72.9]
+  transformer                61.11  diff  -3.47 [-5.83,-1.12]  n=287  worst3 [-93.1, -84.9, -72.9]
+  mlp_context                62.78  diff  -1.81 [-3.89,+0.18]  n=287  worst3 [-93.1, -84.9, -71.7]
+  ds3                        61.78  diff  -2.80 [-4.98,-0.67]  n=287  worst3 [-93.1, -84.9, -73.0]
+  ds_context                 61.79  diff  -2.79 [-5.11,-0.50]  n=287  worst3 [-93.1, -84.9, -73.0]
+  cond25                     63.92  diff  -0.66 [-1.33,-0.10]  n=287  worst3 [-55.3, -32.4, -29.5]
+  cond50                     63.32  diff  -1.26 [-2.29,-0.29]  n=287  worst3 [-55.4, -51.6, -42.4]
+  cond_noise                 63.45  diff  -1.13 [-2.27,-0.15]  n=287  worst3 [-92.6, -61.1, -49.5]
+  recent_noise               64.38  diff  -0.20 [-0.57,+0.07]  n=287  worst3 [-34.2, -24.3, -8.0]
+  ridge_gain                 62.40  diff  -2.18 [-4.41,+0.06]  n=287  worst3 [-93.1, -84.9, -73.0]
+
+failures: videos more than 10 points below / above the reference (all frames)
+  target_ref               below   0  above   0  of 287  []
+  legacy                   below  39  above  15  of 287  ['15f0b0cd', '228a0234', '414ca58b', '45572497', '4a6fb202']
+  ridge                    below  43  above  16  of 287  ['0b99f522', '15f0b0cd', '228a0234', '409dcb8a', '414ca58b']
+  mlp                      below  30  above  13  of 287  ['059fde0h', '15e7e4d1', '15f0b0cd', '228a0234', '409dcb8a']
+  transformer              below  39  above  14  of 287  ['15f0b0cd', '228a0234', '414ca58b', '45572497', '4a6fb202']
+  mlp_context              below  28  above  11  of 287  ['0b99f522', '15f0b0cd', '228a0234', '414ca58b', '45572497']
+  ds3                      below  33  above  12  of 287  ['15f0b0cd', '228a0234', '414ca58b', '45572497', '4e0597a0']
+  ds_context               below  35  above  14  of 287  ['0b99f522', '15f0b0cd', '228a0234', '414ca58b', '45572497']
+  cond25                   below   9  above   2  of 287  ['15f0b0cd', '414ca58b', '9lav7dy0', 'b40cvjbt', 'dzfqjewm']
+  cond50                   below  19  above   5  of 287  ['15f0b0cd', '414ca58b', '4344808d', '4e0597a0', '9lav7dy0']
+  cond_noise               below  12  above   4  of 287  ['0d967fd1', '228a0234', '414ca58b', '4344808d', '7ql545cz']
+  recent_noise             below   2  above   1  of 287  ['414ca58b', 'g2l925f4']
+  ridge_gain               below  30  above  14  of 287  ['0b99f522', '15f0b0cd', '228a0234', '409dcb8a', '414ca58b']
+
+normalized state error (case mean):
+  target_ref               spatial 0.0000 pointer 0.0000
+  legacy                   spatial 0.1416 pointer 0.3753
+  ridge                    spatial 0.1642 pointer 0.3848
+  mlp                      spatial 0.1486 pointer 0.3848
+  transformer              spatial 0.1460 pointer 0.3848
+  mlp_context              spatial 0.1334 pointer 0.3848
+  ds3                      spatial 0.1285 pointer 0.3848
+  ds_context               spatial 0.1271 pointer 0.3848
+  cond25                   spatial 0.0007 pointer 0.0000
+  cond50                   spatial 0.0027 pointer 0.0000
+  cond_noise               spatial 0.0108 pointer 0.0000
+  recent_noise             spatial 0.1308 pointer 0.0000
+  ridge_gain               spatial 0.1692 pointer 0.3848
+seconds per case 28.3

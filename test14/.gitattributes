@@ -1,0 +1,4 @@
+*.pt binary
+*.tar.gz binary
+*.png binary
+*.csv -text

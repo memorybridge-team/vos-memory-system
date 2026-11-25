@@ -1,0 +1,7 @@
+paper_method,review_method,cases,mean_diff,median_diff,within_0.1,within_1,max_abs
+Source-only,small,78,0.004,0.053,45,75,2.83
+Full Replay,base,78,-0.116,0.043,56,75,8.93
+Original+Last-Visible,olv,78,0.099,0.066,41,76,2.54
+Direct Copy,direct,78,0.0,0.0,78,78,0.0
+same switch frame,,78,,,78,,
+same frame count,,78,,,78,,

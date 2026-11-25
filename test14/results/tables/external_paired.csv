@@ -1,0 +1,631 @@
+dataset,switch,method,reference,diff,ci_low,ci_high,videos,better_by_1pt,worse_by_1pt
+pumavos,all switches,direct,base,-74.25,-84.87,-62.05,24,0,23
+pumavos,all switches,direct_nc,base,-6.07,-12.48,-1.78,24,0,10
+pumavos,all switches,e2e3_ctx_f,base,-3.41,-6.61,-0.85,24,1,8
+pumavos,all switches,e2e3_ctx_pin5,base,-1.96,-5.73,1.32,24,4,7
+pumavos,all switches,e2e_ctx_f,base,-3.8,-6.99,-1.16,24,1,9
+pumavos,all switches,e2e_ctx_pin7,base,-2.49,-6.23,0.64,24,3,6
+pumavos,all switches,e2e_mlp_f,base,-4.03,-7.25,-1.36,24,1,10
+pumavos,all switches,e2e_tf_f,base,-3.49,-6.61,-1.01,24,1,9
+pumavos,all switches,lastvis,base,-4.46,-9.1,-0.41,24,4,8
+pumavos,all switches,legacy,base,-5.88,-9.65,-2.68,24,2,11
+pumavos,all switches,legacy_nc,base,-1.33,-4.18,0.82,24,1,3
+pumavos,all switches,mlp_context,base,-5.91,-10.03,-2.36,24,2,10
+pumavos,all switches,olv,base,-0.02,-3.54,3.3,24,4,4
+pumavos,all switches,orig,base,-5.18,-11.95,-0.2,24,1,6
+pumavos,all switches,recent_ridge,base,-4.72,-9.21,-0.84,24,4,8
+pumavos,all switches,ridge,base,-6.59,-10.57,-3.15,24,1,13
+pumavos,all switches,ridge_anchor,base,-2.18,-5.41,0.42,24,3,7
+pumavos,all switches,ridge_nc,base,-1.36,-4.22,0.67,24,2,3
+pumavos,all switches,ridge_nc_anchor,base,-0.16,-3.57,2.93,24,4,4
+pumavos,all switches,small,base,0.79,-5.95,6.56,24,8,6
+pumavos,all switches,target_ref,base,-0.03,-0.08,0.0,24,0,0
+pumavos,all switches,base,legacy,5.88,2.68,9.65,24,11,2
+pumavos,all switches,direct,legacy,-68.37,-79.56,-56.17,24,0,23
+pumavos,all switches,direct_nc,legacy,-0.19,-7.71,6.11,24,6,10
+pumavos,all switches,e2e3_ctx_f,legacy,2.47,0.41,4.81,24,7,2
+pumavos,all switches,e2e3_ctx_pin5,legacy,3.92,1.29,6.77,24,8,1
+pumavos,all switches,e2e_ctx_f,legacy,2.08,-0.09,4.45,24,8,2
+pumavos,all switches,e2e_ctx_pin7,legacy,3.38,0.88,6.01,24,10,1
+pumavos,all switches,e2e_mlp_f,legacy,1.85,-0.19,4.11,24,7,4
+pumavos,all switches,e2e_tf_f,legacy,2.39,0.09,4.78,24,10,2
+pumavos,all switches,lastvis,legacy,1.42,-2.85,5.56,24,8,4
+pumavos,all switches,legacy_nc,legacy,4.55,1.88,7.74,24,10,1
+pumavos,all switches,mlp_context,legacy,-0.03,-2.52,1.71,24,5,3
+pumavos,all switches,olv,legacy,5.86,2.59,9.63,24,11,1
+pumavos,all switches,orig,legacy,0.7,-7.26,7.29,24,10,5
+pumavos,all switches,recent_ridge,legacy,1.16,-3.04,5.22,24,8,4
+pumavos,all switches,ridge,legacy,-0.72,-1.39,-0.13,24,1,7
+pumavos,all switches,ridge_anchor,legacy,3.7,1.27,6.58,24,9,2
+pumavos,all switches,ridge_nc,legacy,4.52,1.86,7.7,24,9,1
+pumavos,all switches,ridge_nc_anchor,legacy,5.72,2.56,9.37,24,11,1
+pumavos,all switches,small,legacy,6.67,1.06,12.47,24,13,4
+pumavos,all switches,target_ref,legacy,5.85,2.67,9.62,24,11,2
+pumavos,all switches,base,mlp_context,5.91,2.36,10.03,24,10,2
+pumavos,all switches,direct,mlp_context,-68.34,-79.91,-55.74,24,0,23
+pumavos,all switches,direct_nc,mlp_context,-0.16,-7.77,6.36,24,6,10
+pumavos,all switches,e2e3_ctx_f,mlp_context,2.5,0.62,4.74,24,7,1
+pumavos,all switches,e2e3_ctx_pin5,mlp_context,3.95,0.6,7.66,24,8,1
+pumavos,all switches,e2e_ctx_f,mlp_context,2.12,0.18,4.36,24,7,2
+pumavos,all switches,e2e_ctx_pin7,mlp_context,3.42,0.11,7.04,24,9,1
+pumavos,all switches,e2e_mlp_f,mlp_context,1.88,0.09,4.04,24,6,3
+pumavos,all switches,e2e_tf_f,mlp_context,2.43,-0.23,5.71,24,7,3
+pumavos,all switches,lastvis,mlp_context,1.45,-3.82,6.72,24,7,5
+pumavos,all switches,legacy,mlp_context,0.03,-1.71,2.52,24,3,5
+pumavos,all switches,legacy_nc,mlp_context,4.59,1.52,8.25,24,9,1
+pumavos,all switches,olv,mlp_context,5.89,2.17,10.17,24,9,2
+pumavos,all switches,orig,mlp_context,0.73,-7.35,7.49,24,8,5
+pumavos,all switches,recent_ridge,mlp_context,1.19,-3.99,6.38,24,7,5
+pumavos,all switches,ridge,mlp_context,-0.68,-2.45,1.58,24,3,8
+pumavos,all switches,ridge_anchor,mlp_context,3.73,0.38,7.62,24,7,4
+pumavos,all switches,ridge_nc,mlp_context,4.55,1.47,8.26,24,9,2
+pumavos,all switches,ridge_nc_anchor,mlp_context,5.75,2.13,9.97,24,10,2
+pumavos,all switches,small,mlp_context,6.71,1.06,12.52,24,12,4
+pumavos,all switches,target_ref,mlp_context,5.89,2.34,10.0,24,10,2
+pumavos,all switches,base,e2e_ctx_f,3.8,1.16,6.99,24,9,1
+pumavos,all switches,direct,e2e_ctx_f,-70.45,-81.52,-58.24,24,0,23
+pumavos,all switches,direct_nc,e2e_ctx_f,-2.28,-9.45,3.49,24,6,7
+pumavos,all switches,e2e3_ctx_f,e2e_ctx_f,0.39,-0.27,1.28,24,4,1
+pumavos,all switches,e2e3_ctx_pin5,e2e_ctx_f,1.83,-0.5,4.41,24,4,1
+pumavos,all switches,e2e_ctx_pin7,e2e_ctx_f,1.3,-0.88,3.54,24,5,2
+pumavos,all switches,e2e_mlp_f,e2e_ctx_f,-0.24,-0.72,0.21,24,3,4
+pumavos,all switches,e2e_tf_f,e2e_ctx_f,0.31,-0.82,1.83,24,3,3
+pumavos,all switches,lastvis,e2e_ctx_f,-0.66,-4.99,3.46,24,6,4
+pumavos,all switches,legacy,e2e_ctx_f,-2.08,-4.45,0.09,24,2,8
+pumavos,all switches,legacy_nc,e2e_ctx_f,2.47,0.48,4.75,24,7,1
+pumavos,all switches,mlp_context,e2e_ctx_f,-2.12,-4.36,-0.18,24,2,7
+pumavos,all switches,olv,e2e_ctx_f,3.77,1.18,6.77,24,8,1
+pumavos,all switches,orig,e2e_ctx_f,-1.38,-8.95,4.55,24,8,4
+pumavos,all switches,recent_ridge,e2e_ctx_f,-0.93,-5.12,3.0,24,5,4
+pumavos,all switches,ridge,e2e_ctx_f,-2.8,-5.39,-0.55,24,2,9
+pumavos,all switches,ridge_anchor,e2e_ctx_f,1.62,-0.63,4.18,24,6,4
+pumavos,all switches,ridge_nc,e2e_ctx_f,2.44,0.37,4.8,24,7,1
+pumavos,all switches,ridge_nc_anchor,e2e_ctx_f,3.63,1.17,6.49,24,8,1
+pumavos,all switches,small,e2e_ctx_f,4.59,-0.39,9.64,24,10,4
+pumavos,all switches,target_ref,e2e_ctx_f,3.77,1.13,6.96,24,9,1
+pumavos,all switches,base,small,-0.79,-6.56,5.95,24,6,8
+pumavos,all switches,direct,small,-75.04,-85.3,-63.17,24,0,23
+pumavos,all switches,direct_nc,small,-6.87,-15.55,1.8,24,3,12
+pumavos,all switches,e2e3_ctx_f,small,-4.2,-8.95,0.5,24,3,10
+pumavos,all switches,e2e3_ctx_pin5,small,-2.76,-7.01,1.53,24,4,8
+pumavos,all switches,e2e_ctx_f,small,-4.59,-9.64,0.39,24,4,10
+pumavos,all switches,e2e_ctx_pin7,small,-3.29,-7.89,1.27,24,4,9
+pumavos,all switches,e2e_mlp_f,small,-4.83,-9.96,0.13,24,4,10
+pumavos,all switches,e2e_tf_f,small,-4.28,-9.7,0.83,24,4,9
+pumavos,all switches,lastvis,small,-5.25,-10.82,0.09,24,4,9
+pumavos,all switches,legacy,small,-6.67,-12.47,-1.06,24,4,13
+pumavos,all switches,legacy_nc,small,-2.12,-6.96,2.36,24,6,7
+pumavos,all switches,mlp_context,small,-6.71,-12.52,-1.06,24,4,12
+pumavos,all switches,olv,small,-0.82,-4.25,2.94,24,6,6
+pumavos,all switches,orig,small,-5.97,-14.32,2.33,24,3,11
+pumavos,all switches,recent_ridge,small,-5.52,-11.07,-0.15,24,4,10
+pumavos,all switches,ridge,small,-7.39,-13.67,-1.44,24,4,15
+pumavos,all switches,ridge_anchor,small,-2.97,-7.55,1.53,24,5,10
+pumavos,all switches,ridge_nc,small,-2.15,-7.09,2.38,24,6,7
+pumavos,all switches,ridge_nc_anchor,small,-0.96,-4.46,2.88,24,6,6
+pumavos,all switches,target_ref,small,-0.82,-6.57,5.92,24,6,8
+pumavos,25,direct,base,-76.39,-86.17,-64.88,24,0,23
+pumavos,25,direct_nc,base,-5.58,-13.71,-0.26,24,0,4
+pumavos,25,e2e3_ctx_f,base,-2.64,-5.17,-0.54,24,1,8
+pumavos,25,e2e3_ctx_pin5,base,-0.07,-2.36,2.12,24,5,5
+pumavos,25,e2e_ctx_f,base,-2.47,-5.01,-0.43,24,2,7
+pumavos,25,e2e_ctx_pin7,base,-0.84,-3.34,1.09,24,5,5
+pumavos,25,e2e_mlp_f,base,-2.67,-5.36,-0.47,24,1,8
+pumavos,25,e2e_tf_f,base,-1.41,-3.0,-0.23,24,3,7
+pumavos,25,lastvis,base,-3.53,-11.57,1.54,24,6,5
+pumavos,25,legacy,base,-5.77,-9.69,-2.55,24,1,11
+pumavos,25,legacy_nc,base,0.76,-0.01,2.1,24,2,0
+pumavos,25,mlp_context,base,-5.38,-9.85,-1.77,24,1,11
+pumavos,25,olv,base,2.17,0.41,4.31,24,7,2
+pumavos,25,orig,base,-4.93,-13.17,0.34,24,2,3
+pumavos,25,recent_ridge,base,-3.5,-11.54,1.56,24,6,5
+pumavos,25,ridge,base,-6.7,-10.86,-3.12,24,1,12
+pumavos,25,ridge_anchor,base,-0.6,-2.82,1.36,24,5,5
+pumavos,25,ridge_nc,base,0.32,-0.02,0.93,24,1,0
+pumavos,25,ridge_nc_anchor,base,2.2,0.42,4.37,24,7,2
+pumavos,25,small,base,1.77,-3.65,7.3,24,7,6
+pumavos,25,target_ref,base,-0.03,-0.1,0.0,24,0,0
+pumavos,25,base,legacy,5.77,2.55,9.69,24,11,1
+pumavos,25,direct,legacy,-70.62,-81.06,-58.94,24,0,23
+pumavos,25,direct_nc,legacy,0.19,-9.05,7.48,24,9,4
+pumavos,25,e2e3_ctx_f,legacy,3.13,0.26,6.25,24,8,2
+pumavos,25,e2e3_ctx_pin5,legacy,5.71,2.87,8.74,24,10,0
+pumavos,25,e2e_ctx_f,legacy,3.3,0.65,6.19,24,9,1
+pumavos,25,e2e_ctx_pin7,legacy,4.93,2.28,7.78,24,10,1
+pumavos,25,e2e_mlp_f,legacy,3.1,0.36,6.06,24,8,2
+pumavos,25,e2e_tf_f,legacy,4.37,2.0,7.04,24,11,0
+pumavos,25,lastvis,legacy,2.24,-5.59,8.23,24,8,2
+pumavos,25,legacy_nc,legacy,6.53,3.11,10.53,24,11,1
+pumavos,25,mlp_context,legacy,0.39,-2.91,3.02,24,5,3
+pumavos,25,olv,legacy,7.95,4.05,12.3,24,10,0
+pumavos,25,orig,legacy,0.84,-8.4,8.12,24,10,3
+pumavos,25,recent_ridge,legacy,2.27,-5.55,8.25,24,8,2
+pumavos,25,ridge,legacy,-0.92,-2.25,0.21,24,2,5
+pumavos,25,ridge_anchor,legacy,5.18,2.1,8.82,24,9,1
+pumavos,25,ridge_nc,legacy,6.1,2.82,10.0,24,11,1
+pumavos,25,ridge_nc_anchor,legacy,7.98,4.09,12.31,24,10,0
+pumavos,25,small,legacy,7.55,0.66,14.47,24,13,4
+pumavos,25,target_ref,legacy,5.74,2.51,9.66,24,11,1
+pumavos,25,base,mlp_context,5.38,1.77,9.85,24,11,1
+pumavos,25,direct,mlp_context,-71.01,-81.9,-58.82,24,0,23
+pumavos,25,direct_nc,mlp_context,-0.2,-9.23,7.2,24,9,4
+pumavos,25,e2e3_ctx_f,mlp_context,2.74,0.46,5.36,24,7,2
+pumavos,25,e2e3_ctx_pin5,mlp_context,5.31,1.88,9.8,24,9,1
+pumavos,25,e2e_ctx_f,mlp_context,2.91,0.74,5.43,24,7,1
+pumavos,25,e2e_ctx_pin7,mlp_context,4.54,0.99,9.12,24,9,1
+pumavos,25,e2e_mlp_f,mlp_context,2.71,0.53,5.23,24,6,2
+pumavos,25,e2e_tf_f,mlp_context,3.97,1.06,7.76,24,8,1
+pumavos,25,lastvis,mlp_context,1.85,-7.76,9.7,24,8,3
+pumavos,25,legacy,mlp_context,-0.39,-3.02,2.91,24,3,5
+pumavos,25,legacy_nc,mlp_context,6.14,2.39,10.65,24,11,1
+pumavos,25,olv,mlp_context,7.55,3.02,13.12,24,11,0
+pumavos,25,orig,mlp_context,0.45,-8.65,7.82,24,11,3
+pumavos,25,recent_ridge,mlp_context,1.88,-7.73,9.71,24,8,3
+pumavos,25,ridge,mlp_context,-1.32,-3.67,1.26,24,2,7
+pumavos,25,ridge_anchor,mlp_context,4.78,0.49,9.99,24,8,3
+pumavos,25,ridge_nc,mlp_context,5.7,2.07,10.17,24,11,1
+pumavos,25,ridge_nc_anchor,mlp_context,7.59,3.05,13.16,24,11,0
+pumavos,25,small,mlp_context,7.15,0.33,14.03,24,12,4
+pumavos,25,target_ref,mlp_context,5.35,1.74,9.81,24,11,1
+pumavos,25,base,e2e_ctx_f,2.47,0.43,5.01,24,7,2
+pumavos,25,direct,e2e_ctx_f,-73.92,-84.19,-62.31,24,0,23
+pumavos,25,direct_nc,e2e_ctx_f,-3.1,-11.7,3.21,24,7,3
+pumavos,25,e2e3_ctx_f,e2e_ctx_f,-0.17,-1.22,0.56,24,2,1
+pumavos,25,e2e3_ctx_pin5,e2e_ctx_f,2.41,0.31,5.2,24,6,1
+pumavos,25,e2e_ctx_pin7,e2e_ctx_f,1.63,-0.17,4.35,24,5,2
+pumavos,25,e2e_mlp_f,e2e_ctx_f,-0.2,-1.14,0.53,24,2,3
+pumavos,25,e2e_tf_f,e2e_ctx_f,1.07,0.02,2.78,24,4,0
+pumavos,25,lastvis,e2e_ctx_f,-1.06,-9.79,5.18,24,6,3
+pumavos,25,legacy,e2e_ctx_f,-3.3,-6.19,-0.65,24,1,9
+pumavos,25,legacy_nc,e2e_ctx_f,3.24,1.0,5.88,24,8,1
+pumavos,25,mlp_context,e2e_ctx_f,-2.91,-5.43,-0.74,24,1,7
+pumavos,25,olv,e2e_ctx_f,4.65,1.63,8.27,24,7,1
+pumavos,25,orig,e2e_ctx_f,-2.46,-11.1,3.84,24,8,2
+pumavos,25,recent_ridge,e2e_ctx_f,-1.03,-9.76,5.19,24,6,3
+pumavos,25,ridge,e2e_ctx_f,-4.22,-7.04,-1.77,24,1,11
+pumavos,25,ridge_anchor,e2e_ctx_f,1.88,-1.19,5.28,24,6,3
+pumavos,25,ridge_nc,e2e_ctx_f,2.8,0.75,5.33,24,8,1
+pumavos,25,ridge_nc_anchor,e2e_ctx_f,4.68,1.65,8.31,24,7,1
+pumavos,25,small,e2e_ctx_f,4.25,-1.79,10.22,24,10,4
+pumavos,25,target_ref,e2e_ctx_f,2.44,0.39,4.99,24,7,2
+pumavos,25,base,small,-1.77,-7.3,3.65,24,6,7
+pumavos,25,direct,small,-78.16,-86.96,-67.72,24,0,23
+pumavos,25,direct_nc,small,-7.35,-16.55,0.62,24,4,10
+pumavos,25,e2e3_ctx_f,small,-4.42,-10.08,1.36,24,4,10
+pumavos,25,e2e3_ctx_pin5,small,-1.84,-6.6,3.3,24,6,8
+pumavos,25,e2e_ctx_f,small,-4.25,-10.22,1.79,24,4,10
+pumavos,25,e2e_ctx_pin7,small,-2.61,-8.4,3.2,24,5,8
+pumavos,25,e2e_mlp_f,small,-4.45,-10.23,1.4,24,4,9
+pumavos,25,e2e_tf_f,small,-3.18,-8.95,2.59,24,4,10
+pumavos,25,lastvis,small,-5.3,-14.76,2.54,24,5,9
+pumavos,25,legacy,small,-7.55,-14.47,-0.66,24,4,13
+pumavos,25,legacy_nc,small,-1.01,-5.57,3.9,24,6,7
+pumavos,25,mlp_context,small,-7.15,-14.03,-0.33,24,4,12
+pumavos,25,olv,small,0.4,-4.03,5.37,24,5,8
+pumavos,25,orig,small,-6.71,-15.52,0.9,24,4,10
+pumavos,25,recent_ridge,small,-5.28,-14.72,2.55,24,5,9
+pumavos,25,ridge,small,-8.47,-15.95,-1.14,24,4,15
+pumavos,25,ridge_anchor,small,-2.37,-8.29,3.62,24,5,10
+pumavos,25,ridge_nc,small,-1.45,-6.48,3.72,24,6,7
+pumavos,25,ridge_nc_anchor,small,0.43,-4.03,5.44,24,5,8
+pumavos,25,target_ref,small,-1.81,-7.32,3.59,24,6,7
+pumavos,50,direct,base,-74.39,-84.8,-62.37,24,0,23
+pumavos,50,direct_nc,base,-6.55,-13.88,-1.3,24,0,7
+pumavos,50,e2e3_ctx_f,base,-4.06,-7.36,-1.3,24,1,9
+pumavos,50,e2e3_ctx_pin5,base,-1.18,-4.38,2.03,24,4,8
+pumavos,50,e2e_ctx_f,base,-5.64,-10.16,-1.93,24,1,9
+pumavos,50,e2e_ctx_pin7,base,-1.85,-5.03,1.29,24,3,8
+pumavos,50,e2e_mlp_f,base,-5.65,-9.96,-2.07,24,0,10
+pumavos,50,e2e_tf_f,base,-5.1,-10.59,-1.28,24,1,9
+pumavos,50,lastvis,base,-2.24,-6.27,1.36,24,2,7
+pumavos,50,legacy,base,-5.23,-8.72,-2.25,24,1,11
+pumavos,50,legacy_nc,base,-0.96,-3.2,0.77,24,1,2
+pumavos,50,mlp_context,base,-6.66,-12.08,-2.42,24,1,10
+pumavos,50,olv,base,0.89,-2.07,4.04,24,4,4
+pumavos,50,orig,base,-8.04,-18.03,-0.48,24,1,4
+pumavos,50,recent_ridge,base,-2.73,-6.65,0.77,24,1,8
+pumavos,50,ridge,base,-5.8,-9.56,-2.6,24,1,12
+pumavos,50,ridge_anchor,base,-0.84,-3.5,1.72,24,3,7
+pumavos,50,ridge_nc,base,-0.93,-3.18,0.83,24,1,2
+pumavos,50,ridge_nc_anchor,base,0.86,-2.1,3.98,24,4,4
+pumavos,50,small,base,0.87,-5.5,6.65,24,8,6
+pumavos,50,target_ref,base,-0.05,-0.14,0.0,24,0,1
+pumavos,50,base,legacy,5.23,2.25,8.72,24,11,1
+pumavos,50,direct,legacy,-69.16,-80.65,-56.41,24,0,23
+pumavos,50,direct_nc,legacy,-1.32,-9.3,5.07,24,8,8
+pumavos,50,e2e3_ctx_f,legacy,1.17,-1.4,3.74,24,6,2
+pumavos,50,e2e3_ctx_pin5,legacy,4.05,1.26,7.35,24,7,2
+pumavos,50,e2e_ctx_f,legacy,-0.41,-4.42,2.93,24,5,3
+pumavos,50,e2e_ctx_pin7,legacy,3.39,0.64,6.58,24,7,3
+pumavos,50,e2e_mlp_f,legacy,-0.42,-4.1,2.72,24,5,3
+pumavos,50,e2e_tf_f,legacy,0.13,-5.18,3.89,24,7,3
+pumavos,50,lastvis,legacy,2.99,-0.48,6.92,24,6,4
+pumavos,50,legacy_nc,legacy,4.27,1.42,7.69,24,9,2
+pumavos,50,mlp_context,legacy,-1.43,-5.73,1.32,24,3,3
+pumavos,50,olv,legacy,6.13,2.12,10.72,24,10,2
+pumavos,50,orig,legacy,-2.81,-13.82,5.6,24,8,5
+pumavos,50,recent_ridge,legacy,2.5,-0.81,6.35,24,6,4
+pumavos,50,ridge,legacy,-0.57,-1.06,-0.17,24,0,4
+pumavos,50,ridge_anchor,legacy,4.39,1.39,7.88,24,8,2
+pumavos,50,ridge_nc,legacy,4.3,1.44,7.72,24,9,2
+pumavos,50,ridge_nc_anchor,legacy,6.09,2.12,10.66,24,10,2
+pumavos,50,small,legacy,6.1,-1.08,12.94,24,12,3
+pumavos,50,target_ref,legacy,5.18,2.23,8.64,24,11,1
+pumavos,50,base,mlp_context,6.66,2.42,12.08,24,10,1
+pumavos,50,direct,mlp_context,-67.74,-80.1,-54.01,24,0,23
+pumavos,50,direct_nc,mlp_context,0.11,-8.46,7.79,24,8,8
+pumavos,50,e2e3_ctx_f,mlp_context,2.6,0.22,5.58,24,7,1
+pumavos,50,e2e3_ctx_pin5,mlp_context,5.47,1.32,10.57,24,7,2
+pumavos,50,e2e_ctx_f,mlp_context,1.02,-2.87,4.63,24,6,2
+pumavos,50,e2e_ctx_pin7,mlp_context,4.81,0.9,9.58,24,7,3
+pumavos,50,e2e_mlp_f,mlp_context,1.01,-2.54,4.47,24,5,2
+pumavos,50,e2e_tf_f,mlp_context,1.56,-4.46,7.58,24,6,3
+pumavos,50,lastvis,mlp_context,4.42,-1.0,10.75,24,6,4
+pumavos,50,legacy,mlp_context,1.43,-1.32,5.73,24,3,3
+pumavos,50,legacy_nc,mlp_context,5.69,1.71,10.97,24,10,1
+pumavos,50,olv,mlp_context,7.55,2.85,13.05,24,10,2
+pumavos,50,orig,mlp_context,-1.38,-12.76,8.05,24,9,4
+pumavos,50,recent_ridge,mlp_context,3.93,-1.38,10.27,24,6,4
+pumavos,50,ridge,mlp_context,0.85,-1.89,5.12,24,3,6
+pumavos,50,ridge_anchor,mlp_context,5.82,1.44,11.1,24,7,4
+pumavos,50,ridge_nc,mlp_context,5.73,1.74,10.98,24,10,1
+pumavos,50,ridge_nc_anchor,mlp_context,7.51,2.84,12.98,24,10,2
+pumavos,50,small,mlp_context,7.53,-0.45,15.36,24,12,3
+pumavos,50,target_ref,mlp_context,6.61,2.39,12.01,24,10,1
+pumavos,50,base,e2e_ctx_f,5.64,1.93,10.16,24,9,1
+pumavos,50,direct,e2e_ctx_f,-68.75,-80.88,-55.5,24,0,23
+pumavos,50,direct_nc,e2e_ctx_f,-0.91,-9.1,6.12,24,7,7
+pumavos,50,e2e3_ctx_f,e2e_ctx_f,1.58,0.01,4.57,24,3,0
+pumavos,50,e2e3_ctx_pin5,e2e_ctx_f,4.46,0.58,9.48,24,4,1
+pumavos,50,e2e_ctx_pin7,e2e_ctx_f,3.8,0.74,7.56,24,7,1
+pumavos,50,e2e_mlp_f,e2e_ctx_f,-0.01,-0.33,0.4,24,1,2
+pumavos,50,e2e_tf_f,e2e_ctx_f,0.54,-1.78,3.26,24,4,4
+pumavos,50,lastvis,e2e_ctx_f,3.4,-1.5,9.39,24,5,5
+pumavos,50,legacy,e2e_ctx_f,0.41,-2.93,4.42,24,3,5
+pumavos,50,legacy_nc,e2e_ctx_f,4.68,1.25,9.0,24,9,0
+pumavos,50,mlp_context,e2e_ctx_f,-1.02,-4.63,2.87,24,2,6
+pumavos,50,olv,e2e_ctx_f,6.54,2.2,11.6,24,9,2
+pumavos,50,orig,e2e_ctx_f,-2.4,-13.7,6.39,24,8,3
+pumavos,50,recent_ridge,e2e_ctx_f,2.91,-1.56,8.19,24,5,5
+pumavos,50,ridge,e2e_ctx_f,-0.16,-3.66,3.9,24,3,7
+pumavos,50,ridge_anchor,e2e_ctx_f,4.8,0.79,9.9,24,7,3
+pumavos,50,ridge_nc,e2e_ctx_f,4.71,1.29,9.03,24,9,0
+pumavos,50,ridge_nc_anchor,e2e_ctx_f,6.5,2.17,11.54,24,9,2
+pumavos,50,small,e2e_ctx_f,6.51,-1.26,14.21,24,10,3
+pumavos,50,target_ref,e2e_ctx_f,5.59,1.91,10.09,24,9,1
+pumavos,50,base,small,-0.87,-6.65,5.5,24,6,8
+pumavos,50,direct,small,-75.26,-85.4,-63.43,24,0,23
+pumavos,50,direct_nc,small,-7.42,-16.67,1.29,24,5,12
+pumavos,50,e2e3_ctx_f,small,-4.93,-11.67,2.14,24,3,10
+pumavos,50,e2e3_ctx_pin5,small,-2.05,-6.64,3.8,24,3,11
+pumavos,50,e2e_ctx_f,small,-6.51,-14.21,1.26,24,3,10
+pumavos,50,e2e_ctx_pin7,small,-2.71,-7.56,3.26,24,3,11
+pumavos,50,e2e_mlp_f,small,-6.52,-14.1,1.19,24,3,10
+pumavos,50,e2e_tf_f,small,-5.97,-14.58,2.11,24,3,11
+pumavos,50,lastvis,small,-3.11,-9.14,3.39,24,3,10
+pumavos,50,legacy,small,-6.1,-12.94,1.08,24,3,12
+pumavos,50,legacy_nc,small,-1.83,-7.82,4.43,24,5,8
+pumavos,50,mlp_context,small,-7.53,-15.36,0.45,24,3,12
+pumavos,50,olv,small,0.03,-3.63,5.29,24,3,7
+pumavos,50,orig,small,-8.91,-19.88,0.82,24,4,11
+pumavos,50,recent_ridge,small,-3.6,-9.66,3.02,24,3,10
+pumavos,50,ridge,small,-6.67,-13.84,0.76,24,3,13
+pumavos,50,ridge_anchor,small,-1.71,-6.19,4.02,24,2,12
+pumavos,50,ridge_nc,small,-1.8,-7.76,4.45,24,5,8
+pumavos,50,ridge_nc_anchor,small,-0.01,-3.69,5.25,24,3,7
+pumavos,50,target_ref,small,-0.92,-6.69,5.43,24,6,8
+pumavos,75,direct,base,-71.96,-84.06,-58.29,24,0,22
+pumavos,75,direct_nc,base,-6.09,-11.48,-1.77,24,0,7
+pumavos,75,e2e3_ctx_f,base,-3.52,-11.53,1.41,24,2,5
+pumavos,75,e2e3_ctx_pin5,base,-4.64,-13.55,1.68,24,4,4
+pumavos,75,e2e_ctx_f,base,-3.27,-11.22,1.56,24,3,4
+pumavos,75,e2e_ctx_pin7,base,-4.8,-13.78,1.63,24,4,4
+pumavos,75,e2e_mlp_f,base,-3.77,-11.6,0.82,24,3,4
+pumavos,75,e2e_tf_f,base,-3.95,-11.73,0.56,24,2,5
+pumavos,75,lastvis,base,-7.6,-17.99,0.57,24,3,5
+pumavos,75,legacy,base,-6.63,-14.82,-1.33,24,2,8
+pumavos,75,legacy_nc,base,-3.77,-11.45,0.79,24,1,2
+pumavos,75,mlp_context,base,-5.7,-13.76,-0.67,24,2,8
+pumavos,75,olv,base,-3.14,-12.46,3.96,24,3,3
+pumavos,75,orig,base,-2.57,-8.05,2.03,24,1,3
+pumavos,75,recent_ridge,base,-7.93,-18.21,0.14,24,3,5
+pumavos,75,ridge,base,-7.28,-15.5,-1.76,24,2,9
+pumavos,75,ridge_anchor,base,-5.1,-14.05,1.12,24,2,6
+pumavos,75,ridge_nc,base,-3.47,-11.34,1.17,24,2,2
+pumavos,75,ridge_nc_anchor,base,-3.54,-12.71,3.14,24,3,3
+pumavos,75,small,base,-0.26,-9.21,6.19,24,5,3
+pumavos,75,target_ref,base,0.0,0.0,0.0,24,0,0
+pumavos,75,base,legacy,6.63,1.33,14.82,24,8,2
+pumavos,75,direct,legacy,-65.33,-78.53,-51.28,24,0,21
+pumavos,75,direct_nc,legacy,0.54,-7.6,10.38,24,6,8
+pumavos,75,e2e3_ctx_f,legacy,3.11,0.81,5.99,24,7,1
+pumavos,75,e2e3_ctx_pin5,legacy,1.99,-2.29,5.41,24,7,1
+pumavos,75,e2e_ctx_f,legacy,3.36,1.22,6.04,24,8,0
+pumavos,75,e2e_ctx_pin7,legacy,1.84,-2.44,5.22,24,8,1
+pumavos,75,e2e_mlp_f,legacy,2.86,1.06,4.98,24,8,1
+pumavos,75,e2e_tf_f,legacy,2.69,0.89,4.86,24,8,1
+pumavos,75,lastvis,legacy,-0.97,-8.68,4.85,24,8,3
+pumavos,75,legacy_nc,legacy,2.86,0.67,5.5,24,7,2
+pumavos,75,mlp_context,legacy,0.94,0.1,1.97,24,6,1
+pumavos,75,olv,legacy,3.5,-1.73,8.1,24,9,2
+pumavos,75,orig,legacy,4.07,-3.89,13.31,24,7,4
+pumavos,75,recent_ridge,legacy,-1.3,-8.91,4.4,24,8,3
+pumavos,75,ridge,legacy,-0.65,-1.35,-0.14,24,0,5
+pumavos,75,ridge_anchor,legacy,1.54,-3.06,5.05,24,8,1
+pumavos,75,ridge_nc,legacy,3.17,0.92,5.85,24,7,2
+pumavos,75,ridge_nc_anchor,legacy,3.09,-1.96,7.35,24,9,2
+pumavos,75,small,legacy,6.37,2.68,11.0,24,11,1
+pumavos,75,target_ref,legacy,6.63,1.33,14.82,24,8,2
+pumavos,75,base,mlp_context,5.7,0.67,13.76,24,8,2
+pumavos,75,direct,mlp_context,-66.27,-79.25,-52.27,24,0,21
+pumavos,75,direct_nc,mlp_context,-0.39,-8.46,9.46,24,6,8
+pumavos,75,e2e3_ctx_f,mlp_context,2.17,0.52,4.31,24,6,0
+pumavos,75,e2e3_ctx_pin5,mlp_context,1.06,-3.19,4.35,24,7,2
+pumavos,75,e2e_ctx_f,mlp_context,2.43,0.79,4.46,24,7,0
+pumavos,75,e2e_ctx_pin7,mlp_context,0.9,-3.39,4.16,24,7,2
+pumavos,75,e2e_mlp_f,mlp_context,1.93,0.53,3.72,24,7,1
+pumavos,75,e2e_tf_f,mlp_context,1.75,0.28,3.65,24,5,1
+pumavos,75,lastvis,mlp_context,-1.91,-9.54,3.89,24,6,4
+pumavos,75,legacy,mlp_context,-0.94,-1.97,-0.1,24,1,6
+pumavos,75,legacy_nc,mlp_context,1.93,-0.29,4.38,24,6,2
+pumavos,75,olv,mlp_context,2.56,-2.5,6.93,24,8,2
+pumavos,75,orig,mlp_context,3.13,-4.67,12.33,24,7,4
+pumavos,75,recent_ridge,mlp_context,-2.24,-9.81,3.43,24,6,4
+pumavos,75,ridge,mlp_context,-1.59,-3.04,-0.37,24,1,7
+pumavos,75,ridge_anchor,mlp_context,0.6,-3.99,4.08,24,6,2
+pumavos,75,ridge_nc,mlp_context,2.23,-0.1,4.79,24,6,2
+pumavos,75,ridge_nc_anchor,mlp_context,2.15,-2.77,6.15,24,8,3
+pumavos,75,small,mlp_context,5.44,2.19,9.29,24,10,1
+pumavos,75,target_ref,mlp_context,5.7,0.67,13.76,24,8,2
+pumavos,75,base,e2e_ctx_f,3.27,-1.56,11.22,24,4,3
+pumavos,75,direct,e2e_ctx_f,-68.7,-81.65,-54.53,24,0,21
+pumavos,75,direct_nc,e2e_ctx_f,-2.82,-11.24,7.28,24,4,8
+pumavos,75,e2e3_ctx_f,e2e_ctx_f,-0.26,-1.07,0.28,24,1,1
+pumavos,75,e2e3_ctx_pin5,e2e_ctx_f,-1.37,-5.51,1.37,24,4,4
+pumavos,75,e2e_ctx_pin7,e2e_ctx_f,-1.53,-5.68,1.26,24,3,3
+pumavos,75,e2e_mlp_f,e2e_ctx_f,-0.5,-1.42,0.11,24,1,3
+pumavos,75,e2e_tf_f,e2e_ctx_f,-0.68,-2.09,0.3,24,1,3
+pumavos,75,lastvis,e2e_ctx_f,-4.34,-11.67,1.19,24,4,3
+pumavos,75,legacy,e2e_ctx_f,-3.36,-6.04,-1.22,24,0,8
+pumavos,75,legacy_nc,e2e_ctx_f,-0.5,-3.29,1.53,24,3,3
+pumavos,75,mlp_context,e2e_ctx_f,-2.43,-4.46,-0.79,24,0,7
+pumavos,75,olv,e2e_ctx_f,0.13,-4.8,4.02,24,5,2
+pumavos,75,orig,e2e_ctx_f,0.7,-7.31,10.2,24,5,3
+pumavos,75,recent_ridge,e2e_ctx_f,-4.67,-11.89,0.78,24,4,3
+pumavos,75,ridge,e2e_ctx_f,-4.02,-6.96,-1.56,24,0,10
+pumavos,75,ridge_anchor,e2e_ctx_f,-1.83,-6.31,1.12,24,4,3
+pumavos,75,ridge_nc,e2e_ctx_f,-0.2,-2.98,1.81,24,4,1
+pumavos,75,ridge_nc_anchor,e2e_ctx_f,-0.28,-5.0,3.09,24,5,2
+pumavos,75,small,e2e_ctx_f,3.01,0.83,5.58,24,7,1
+pumavos,75,target_ref,e2e_ctx_f,3.27,-1.56,11.22,24,4,3
+pumavos,75,base,small,0.26,-6.19,9.21,24,3,5
+pumavos,75,direct,small,-71.71,-83.92,-57.91,24,0,21
+pumavos,75,direct_nc,small,-5.83,-15.33,4.96,24,3,9
+pumavos,75,e2e3_ctx_f,small,-3.27,-5.84,-1.0,24,1,7
+pumavos,75,e2e3_ctx_pin5,small,-4.38,-9.22,-0.65,24,2,7
+pumavos,75,e2e_ctx_f,small,-3.01,-5.58,-0.83,24,1,7
+pumavos,75,e2e_ctx_pin7,small,-4.54,-9.47,-0.7,24,2,5
+pumavos,75,e2e_mlp_f,small,-3.51,-6.73,-0.95,24,1,9
+pumavos,75,e2e_tf_f,small,-3.69,-7.35,-0.84,24,2,8
+pumavos,75,lastvis,small,-7.35,-15.07,-1.18,24,4,7
+pumavos,75,legacy,small,-6.37,-11.0,-2.68,24,1,11
+pumavos,75,legacy_nc,small,-3.51,-8.28,-0.2,24,2,5
+pumavos,75,mlp_context,small,-5.44,-9.29,-2.19,24,1,10
+pumavos,75,olv,small,-2.88,-8.12,1.0,24,6,4
+pumavos,75,orig,small,-2.31,-11.0,7.78,24,4,5
+pumavos,75,recent_ridge,small,-7.67,-15.4,-1.55,24,4,7
+pumavos,75,ridge,small,-7.02,-11.96,-2.99,24,1,11
+pumavos,75,ridge_anchor,small,-4.84,-10.18,-0.68,24,3,7
+pumavos,75,ridge_nc,small,-3.21,-7.95,-0.02,24,1,5
+pumavos,75,ridge_nc_anchor,small,-3.29,-8.37,0.52,24,6,4
+pumavos,75,target_ref,small,0.26,-6.19,9.21,24,3,5
+m3vos,all switches,direct,base,-58.13,-65.35,-50.78,59,0,55
+m3vos,all switches,direct_nc,base,-12.15,-19.12,-5.75,59,9,26
+m3vos,all switches,e2e3_ctx_f,base,1.07,-1.13,3.35,81,22,10
+m3vos,all switches,e2e3_ctx_pin5,base,5.22,2.27,8.5,81,38,11
+m3vos,all switches,e2e_ctx_f,base,1.22,-0.77,3.33,81,23,11
+m3vos,all switches,e2e_ctx_pin7,base,4.94,2.04,8.15,81,41,9
+m3vos,all switches,e2e_mlp_f,base,1.97,-0.38,4.45,81,22,9
+m3vos,all switches,e2e_tf_f,base,0.74,-1.39,2.85,81,24,11
+m3vos,all switches,lastvis,base,4.43,0.3,8.7,59,30,13
+m3vos,all switches,legacy,base,-1.68,-4.38,0.92,81,20,24
+m3vos,all switches,legacy_nc,base,1.14,-0.65,3.1,81,16,7
+m3vos,all switches,mlp_context,base,-0.53,-3.1,1.95,81,22,20
+m3vos,all switches,olv,base,3.92,0.71,7.37,81,34,17
+m3vos,all switches,orig,base,-4.65,-11.96,2.47,59,11,20
+m3vos,all switches,recent_ridge,base,4.5,0.31,8.84,59,31,13
+m3vos,all switches,ridge,base,-1.7,-4.45,1.02,81,17,27
+m3vos,all switches,ridge_anchor,base,2.87,-0.6,6.55,81,34,20
+m3vos,all switches,ridge_nc,base,0.91,-1.11,3.02,81,16,6
+m3vos,all switches,ridge_nc_anchor,base,3.99,0.8,7.44,81,34,16
+m3vos,all switches,small,base,2.02,-1.5,5.83,81,33,23
+m3vos,all switches,target_ref,base,0.01,0.0,0.04,81,1,0
+m3vos,all switches,base,legacy,1.68,-0.92,4.38,81,24,20
+m3vos,all switches,direct,legacy,-58.87,-66.17,-51.41,59,0,56
+m3vos,all switches,direct_nc,legacy,-12.89,-20.4,-6.07,59,11,30
+m3vos,all switches,e2e3_ctx_f,legacy,2.76,1.07,4.6,81,23,9
+m3vos,all switches,e2e3_ctx_pin5,legacy,6.91,4.26,9.84,81,47,5
+m3vos,all switches,e2e_ctx_f,legacy,2.9,1.18,4.81,81,23,6
+m3vos,all switches,e2e_ctx_pin7,legacy,6.62,4.02,9.49,81,46,4
+m3vos,all switches,e2e_mlp_f,legacy,3.65,1.59,5.99,81,26,5
+m3vos,all switches,e2e_tf_f,legacy,2.42,0.83,4.18,81,26,6
+m3vos,all switches,lastvis,legacy,3.69,0.53,7.06,59,29,9
+m3vos,all switches,legacy_nc,legacy,2.82,0.87,4.98,81,26,13
+m3vos,all switches,mlp_context,legacy,1.15,0.05,2.26,81,19,4
+m3vos,all switches,olv,legacy,5.61,2.85,8.66,81,40,12
+m3vos,all switches,orig,legacy,-5.4,-13.05,1.95,59,15,25
+m3vos,all switches,recent_ridge,legacy,3.75,0.54,7.2,59,29,9
+m3vos,all switches,ridge,legacy,-0.02,-1.14,1.15,81,8,12
+m3vos,all switches,ridge_anchor,legacy,4.55,1.62,7.76,81,38,13
+m3vos,all switches,ridge_nc,legacy,2.6,0.31,4.95,81,26,13
+m3vos,all switches,ridge_nc_anchor,legacy,5.67,2.92,8.72,81,41,11
+m3vos,all switches,small,legacy,3.7,-0.0,7.38,81,35,16
+m3vos,all switches,target_ref,legacy,1.7,-0.91,4.39,81,24,20
+m3vos,all switches,base,mlp_context,0.53,-1.95,3.1,81,20,22
+m3vos,all switches,direct,mlp_context,-59.94,-67.22,-52.53,59,0,56
+m3vos,all switches,direct_nc,mlp_context,-13.96,-21.3,-7.25,59,11,29
+m3vos,all switches,e2e3_ctx_f,mlp_context,1.6,0.38,3.05,81,17,9
+m3vos,all switches,e2e3_ctx_pin5,mlp_context,5.75,3.32,8.6,81,42,6
+m3vos,all switches,e2e_ctx_f,mlp_context,1.75,0.34,3.36,81,18,9
+m3vos,all switches,e2e_ctx_pin7,mlp_context,5.47,3.05,8.27,81,40,5
+m3vos,all switches,e2e_mlp_f,mlp_context,2.5,0.82,4.56,81,20,6
+m3vos,all switches,e2e_tf_f,mlp_context,1.27,0.02,2.72,81,19,10
+m3vos,all switches,lastvis,mlp_context,2.62,-0.65,6.06,59,27,11
+m3vos,all switches,legacy,mlp_context,-1.15,-2.26,-0.05,81,4,19
+m3vos,all switches,legacy_nc,mlp_context,1.67,0.08,3.53,81,20,13
+m3vos,all switches,olv,mlp_context,4.45,1.61,7.63,81,36,16
+m3vos,all switches,orig,mlp_context,-6.46,-13.94,0.79,59,15,25
+m3vos,all switches,recent_ridge,mlp_context,2.68,-0.64,6.23,59,27,11
+m3vos,all switches,ridge,mlp_context,-1.18,-2.65,0.34,81,6,22
+m3vos,all switches,ridge_anchor,mlp_context,3.4,0.32,6.74,81,32,18
+m3vos,all switches,ridge_nc,mlp_context,1.44,-0.54,3.51,81,22,13
+m3vos,all switches,ridge_nc_anchor,mlp_context,4.52,1.68,7.69,81,37,15
+m3vos,all switches,small,mlp_context,2.54,-0.79,6.05,81,28,20
+m3vos,all switches,target_ref,mlp_context,0.54,-1.93,3.11,81,20,22
+m3vos,all switches,base,e2e_ctx_f,-1.22,-3.33,0.77,81,11,23
+m3vos,all switches,direct,e2e_ctx_f,-60.07,-67.39,-52.59,59,0,56
+m3vos,all switches,direct_nc,e2e_ctx_f,-14.09,-21.49,-7.39,59,9,30
+m3vos,all switches,e2e3_ctx_f,e2e_ctx_f,-0.14,-0.81,0.45,81,2,3
+m3vos,all switches,e2e3_ctx_pin5,e2e_ctx_f,4.01,1.97,6.59,81,37,7
+m3vos,all switches,e2e_ctx_pin7,e2e_ctx_f,3.72,1.83,6.17,81,38,5
+m3vos,all switches,e2e_mlp_f,e2e_ctx_f,0.75,-0.53,2.46,81,8,4
+m3vos,all switches,e2e_tf_f,e2e_ctx_f,-0.48,-1.2,0.01,81,7,9
+m3vos,all switches,lastvis,e2e_ctx_f,2.49,-0.71,5.87,59,26,12
+m3vos,all switches,legacy,e2e_ctx_f,-2.9,-4.81,-1.18,81,6,23
+m3vos,all switches,legacy_nc,e2e_ctx_f,-0.08,-1.01,0.94,81,14,16
+m3vos,all switches,mlp_context,e2e_ctx_f,-1.75,-3.36,-0.34,81,9,18
+m3vos,all switches,olv,e2e_ctx_f,2.71,0.32,5.5,81,35,17
+m3vos,all switches,orig,e2e_ctx_f,-6.6,-14.05,0.65,59,11,25
+m3vos,all switches,recent_ridge,e2e_ctx_f,2.55,-0.69,6.01,59,26,12
+m3vos,all switches,ridge,e2e_ctx_f,-2.92,-5.03,-0.91,81,10,28
+m3vos,all switches,ridge_anchor,e2e_ctx_f,1.65,-1.24,4.71,81,31,19
+m3vos,all switches,ridge_nc,e2e_ctx_f,-0.3,-1.72,0.96,81,16,12
+m3vos,all switches,ridge_nc_anchor,e2e_ctx_f,2.77,0.37,5.56,81,35,16
+m3vos,all switches,small,e2e_ctx_f,0.8,-2.33,4.11,81,27,23
+m3vos,all switches,target_ref,e2e_ctx_f,-1.2,-3.31,0.79,81,11,23
+m3vos,all switches,base,small,-2.02,-5.83,1.5,81,23,33
+m3vos,all switches,direct,small,-61.05,-68.19,-53.78,59,0,56
+m3vos,all switches,direct_nc,small,-15.07,-22.78,-7.87,59,9,35
+m3vos,all switches,e2e3_ctx_f,small,-0.94,-4.29,2.28,81,23,26
+m3vos,all switches,e2e3_ctx_pin5,small,3.21,0.71,5.83,81,33,16
+m3vos,all switches,e2e_ctx_f,small,-0.8,-4.11,2.33,81,23,27
+m3vos,all switches,e2e_ctx_pin7,small,2.93,0.44,5.56,81,37,16
+m3vos,all switches,e2e_mlp_f,small,-0.04,-2.96,2.88,81,25,26
+m3vos,all switches,e2e_tf_f,small,-1.28,-4.72,2.0,81,24,30
+m3vos,all switches,lastvis,small,1.51,-2.92,6.13,59,22,18
+m3vos,all switches,legacy,small,-3.7,-7.38,0.0,81,16,35
+m3vos,all switches,legacy_nc,small,-0.87,-4.2,2.29,81,23,26
+m3vos,all switches,mlp_context,small,-2.54,-6.05,0.79,81,20,28
+m3vos,all switches,olv,small,1.91,-1.18,5.13,81,33,22
+m3vos,all switches,orig,small,-7.57,-14.56,-0.92,59,14,28
+m3vos,all switches,recent_ridge,small,1.57,-2.87,6.2,59,22,16
+m3vos,all switches,ridge,small,-3.72,-7.64,0.28,81,19,32
+m3vos,all switches,ridge_anchor,small,0.86,-2.76,4.49,81,29,23
+m3vos,all switches,ridge_nc,small,-1.1,-4.6,2.23,81,25,25
+m3vos,all switches,ridge_nc_anchor,small,1.98,-1.11,5.2,81,32,22
+m3vos,all switches,target_ref,small,-2.0,-5.82,1.51,81,23,33
+m3vos,50,direct,base,-58.13,-65.35,-50.78,59,0,55
+m3vos,50,direct_nc,base,-12.15,-19.12,-5.75,59,9,26
+m3vos,50,e2e3_ctx_f,base,1.07,-1.13,3.35,81,22,10
+m3vos,50,e2e3_ctx_pin5,base,5.22,2.27,8.5,81,38,11
+m3vos,50,e2e_ctx_f,base,1.22,-0.77,3.33,81,23,11
+m3vos,50,e2e_ctx_pin7,base,4.94,2.04,8.15,81,41,9
+m3vos,50,e2e_mlp_f,base,1.97,-0.38,4.45,81,22,9
+m3vos,50,e2e_tf_f,base,0.74,-1.39,2.85,81,24,11
+m3vos,50,lastvis,base,4.43,0.3,8.7,59,30,13
+m3vos,50,legacy,base,-1.68,-4.38,0.92,81,20,24
+m3vos,50,legacy_nc,base,1.14,-0.65,3.1,81,16,7
+m3vos,50,mlp_context,base,-0.53,-3.1,1.95,81,22,20
+m3vos,50,olv,base,3.92,0.71,7.37,81,34,17
+m3vos,50,orig,base,-4.65,-11.96,2.47,59,11,20
+m3vos,50,recent_ridge,base,4.5,0.31,8.84,59,31,13
+m3vos,50,ridge,base,-1.7,-4.45,1.02,81,17,27
+m3vos,50,ridge_anchor,base,2.87,-0.6,6.55,81,34,20
+m3vos,50,ridge_nc,base,0.91,-1.11,3.02,81,16,6
+m3vos,50,ridge_nc_anchor,base,3.99,0.8,7.44,81,34,16
+m3vos,50,small,base,2.02,-1.5,5.83,81,33,23
+m3vos,50,target_ref,base,0.01,0.0,0.04,81,1,0
+m3vos,50,base,legacy,1.68,-0.92,4.38,81,24,20
+m3vos,50,direct,legacy,-58.87,-66.17,-51.41,59,0,56
+m3vos,50,direct_nc,legacy,-12.89,-20.4,-6.07,59,11,30
+m3vos,50,e2e3_ctx_f,legacy,2.76,1.07,4.6,81,23,9
+m3vos,50,e2e3_ctx_pin5,legacy,6.91,4.26,9.84,81,47,5
+m3vos,50,e2e_ctx_f,legacy,2.9,1.18,4.81,81,23,6
+m3vos,50,e2e_ctx_pin7,legacy,6.62,4.02,9.49,81,46,4
+m3vos,50,e2e_mlp_f,legacy,3.65,1.59,5.99,81,26,5
+m3vos,50,e2e_tf_f,legacy,2.42,0.83,4.18,81,26,6
+m3vos,50,lastvis,legacy,3.69,0.53,7.06,59,29,9
+m3vos,50,legacy_nc,legacy,2.82,0.87,4.98,81,26,13
+m3vos,50,mlp_context,legacy,1.15,0.05,2.26,81,19,4
+m3vos,50,olv,legacy,5.61,2.85,8.66,81,40,12
+m3vos,50,orig,legacy,-5.4,-13.05,1.95,59,15,25
+m3vos,50,recent_ridge,legacy,3.75,0.54,7.2,59,29,9
+m3vos,50,ridge,legacy,-0.02,-1.14,1.15,81,8,12
+m3vos,50,ridge_anchor,legacy,4.55,1.62,7.76,81,38,13
+m3vos,50,ridge_nc,legacy,2.6,0.31,4.95,81,26,13
+m3vos,50,ridge_nc_anchor,legacy,5.67,2.92,8.72,81,41,11
+m3vos,50,small,legacy,3.7,-0.0,7.38,81,35,16
+m3vos,50,target_ref,legacy,1.7,-0.91,4.39,81,24,20
+m3vos,50,base,mlp_context,0.53,-1.95,3.1,81,20,22
+m3vos,50,direct,mlp_context,-59.94,-67.22,-52.53,59,0,56
+m3vos,50,direct_nc,mlp_context,-13.96,-21.3,-7.25,59,11,29
+m3vos,50,e2e3_ctx_f,mlp_context,1.6,0.38,3.05,81,17,9
+m3vos,50,e2e3_ctx_pin5,mlp_context,5.75,3.32,8.6,81,42,6
+m3vos,50,e2e_ctx_f,mlp_context,1.75,0.34,3.36,81,18,9
+m3vos,50,e2e_ctx_pin7,mlp_context,5.47,3.05,8.27,81,40,5
+m3vos,50,e2e_mlp_f,mlp_context,2.5,0.82,4.56,81,20,6
+m3vos,50,e2e_tf_f,mlp_context,1.27,0.02,2.72,81,19,10
+m3vos,50,lastvis,mlp_context,2.62,-0.65,6.06,59,27,11
+m3vos,50,legacy,mlp_context,-1.15,-2.26,-0.05,81,4,19
+m3vos,50,legacy_nc,mlp_context,1.67,0.08,3.53,81,20,13
+m3vos,50,olv,mlp_context,4.45,1.61,7.63,81,36,16
+m3vos,50,orig,mlp_context,-6.46,-13.94,0.79,59,15,25
+m3vos,50,recent_ridge,mlp_context,2.68,-0.64,6.23,59,27,11
+m3vos,50,ridge,mlp_context,-1.18,-2.65,0.34,81,6,22
+m3vos,50,ridge_anchor,mlp_context,3.4,0.32,6.74,81,32,18
+m3vos,50,ridge_nc,mlp_context,1.44,-0.54,3.51,81,22,13
+m3vos,50,ridge_nc_anchor,mlp_context,4.52,1.68,7.69,81,37,15
+m3vos,50,small,mlp_context,2.54,-0.79,6.05,81,28,20
+m3vos,50,target_ref,mlp_context,0.54,-1.93,3.11,81,20,22
+m3vos,50,base,e2e_ctx_f,-1.22,-3.33,0.77,81,11,23
+m3vos,50,direct,e2e_ctx_f,-60.07,-67.39,-52.59,59,0,56
+m3vos,50,direct_nc,e2e_ctx_f,-14.09,-21.49,-7.39,59,9,30
+m3vos,50,e2e3_ctx_f,e2e_ctx_f,-0.14,-0.81,0.45,81,2,3
+m3vos,50,e2e3_ctx_pin5,e2e_ctx_f,4.01,1.97,6.59,81,37,7
+m3vos,50,e2e_ctx_pin7,e2e_ctx_f,3.72,1.83,6.17,81,38,5
+m3vos,50,e2e_mlp_f,e2e_ctx_f,0.75,-0.53,2.46,81,8,4
+m3vos,50,e2e_tf_f,e2e_ctx_f,-0.48,-1.2,0.01,81,7,9
+m3vos,50,lastvis,e2e_ctx_f,2.49,-0.71,5.87,59,26,12
+m3vos,50,legacy,e2e_ctx_f,-2.9,-4.81,-1.18,81,6,23
+m3vos,50,legacy_nc,e2e_ctx_f,-0.08,-1.01,0.94,81,14,16
+m3vos,50,mlp_context,e2e_ctx_f,-1.75,-3.36,-0.34,81,9,18
+m3vos,50,olv,e2e_ctx_f,2.71,0.32,5.5,81,35,17
+m3vos,50,orig,e2e_ctx_f,-6.6,-14.05,0.65,59,11,25
+m3vos,50,recent_ridge,e2e_ctx_f,2.55,-0.69,6.01,59,26,12
+m3vos,50,ridge,e2e_ctx_f,-2.92,-5.03,-0.91,81,10,28
+m3vos,50,ridge_anchor,e2e_ctx_f,1.65,-1.24,4.71,81,31,19
+m3vos,50,ridge_nc,e2e_ctx_f,-0.3,-1.72,0.96,81,16,12
+m3vos,50,ridge_nc_anchor,e2e_ctx_f,2.77,0.37,5.56,81,35,16
+m3vos,50,small,e2e_ctx_f,0.8,-2.33,4.11,81,27,23
+m3vos,50,target_ref,e2e_ctx_f,-1.2,-3.31,0.79,81,11,23
+m3vos,50,base,small,-2.02,-5.83,1.5,81,23,33
+m3vos,50,direct,small,-61.05,-68.19,-53.78,59,0,56
+m3vos,50,direct_nc,small,-15.07,-22.78,-7.87,59,9,35
+m3vos,50,e2e3_ctx_f,small,-0.94,-4.29,2.28,81,23,26
+m3vos,50,e2e3_ctx_pin5,small,3.21,0.71,5.83,81,33,16
+m3vos,50,e2e_ctx_f,small,-0.8,-4.11,2.33,81,23,27
+m3vos,50,e2e_ctx_pin7,small,2.93,0.44,5.56,81,37,16
+m3vos,50,e2e_mlp_f,small,-0.04,-2.96,2.88,81,25,26
+m3vos,50,e2e_tf_f,small,-1.28,-4.72,2.0,81,24,30
+m3vos,50,lastvis,small,1.51,-2.92,6.13,59,22,18
+m3vos,50,legacy,small,-3.7,-7.38,0.0,81,16,35
+m3vos,50,legacy_nc,small,-0.87,-4.2,2.29,81,23,26
+m3vos,50,mlp_context,small,-2.54,-6.05,0.79,81,20,28
+m3vos,50,olv,small,1.91,-1.18,5.13,81,33,22
+m3vos,50,orig,small,-7.57,-14.56,-0.92,59,14,28
+m3vos,50,recent_ridge,small,1.57,-2.87,6.2,59,22,16
+m3vos,50,ridge,small,-3.72,-7.64,0.28,81,19,32
+m3vos,50,ridge_anchor,small,0.86,-2.76,4.49,81,29,23
+m3vos,50,ridge_nc,small,-1.1,-4.6,2.23,81,25,25
+m3vos,50,ridge_nc_anchor,small,1.98,-1.11,5.2,81,32,22
+m3vos,50,target_ref,small,-2.0,-5.82,1.51,81,23,33

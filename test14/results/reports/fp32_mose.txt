@@ -1,0 +1,58 @@
+fp32_mose cases 30 videos 30
+
+[+1..10] J&F (visible frames, video mean, x100)
+  target_ref                 80.23  diff  +0.00 [+0.00,+0.00]  n=22  worst3 [0.0, 0.0, 0.0]
+  legacy                     79.47  diff  -0.76 [-2.16,+0.09]  n=22  worst3 [-14.2, -2.5, -1.0]
+  legacy_nc                  80.19  diff  -0.04 [-0.14,+0.06]  n=22  worst3 [-0.6, -0.4, -0.4]
+  ridge_nc                   80.25  diff  +0.02 [-0.17,+0.25]  n=22  worst3 [-1.0, -0.6, -0.3]
+  olv                        81.98  diff  +1.75 [-0.92,+6.16]  n=22  worst3 [-7.5, -2.4, -1.8]
+  small                      80.59  diff  +0.36 [-1.03,+1.91]  n=22  worst3 [-8.6, -3.0, -2.2]
+
+[+11..30] J&F (visible frames, video mean, x100)
+  target_ref                 74.58  diff  +0.00 [+0.00,+0.00]  n=23  worst3 [0.0, 0.0, 0.0]
+  legacy                     67.71  diff  -6.87 [-13.61,-1.27]  n=23  worst3 [-46.0, -45.8, -40.4]
+  legacy_nc                  74.60  diff  +0.02 [-0.33,+0.33]  n=23  worst3 [-2.8, -0.1, -0.0]
+  ridge_nc                   75.24  diff  +0.66 [-0.44,+2.52]  n=23  worst3 [-2.8, -2.0, -0.3]
+  olv                        79.42  diff  +4.84 [-3.02,+15.51]  n=23  worst3 [-38.5, -3.3, -1.7]
+  small                      72.54  diff  -2.04 [-12.31,+5.02]  n=23  worst3 [-97.3, -7.3, -2.9]
+
+[+31..100] J&F (visible frames, video mean, x100)
+  target_ref                 81.76  diff  +0.00 [+0.00,+0.00]  n=12  worst3 [0.0, 0.0, 0.0]
+  legacy                     68.74  diff -13.01 [-30.72,-0.24]  n=12  worst3 [-90.2, -62.0, -2.0]
+  legacy_nc                  81.97  diff  +0.22 [-0.03,+0.67]  n=12  worst3 [-0.2, -0.0, -0.0]
+  ridge_nc                   81.98  diff  +0.22 [-0.00,+0.67]  n=12  worst3 [-0.0, -0.0, -0.0]
+  olv                        82.38  diff  +0.62 [-2.36,+4.86]  n=12  worst3 [-7.6, -5.4, -1.2]
+  small                      80.77  diff  -0.98 [-1.84,-0.39]  n=12  worst3 [-5.0, -1.4, -1.3]
+
+[+101..] J&F (visible frames, video mean, x100)
+  target_ref                 86.18  diff  +0.00 [+0.00,+0.00]  n=3  worst3 [0.0, 0.0, 0.0]
+  legacy                      0.00  diff -86.18 [-92.13,-77.18]  n=3  worst3 [-92.1, -89.2, -77.2]
+  legacy_nc                  86.19  diff  +0.01 [+0.00,+0.04]  n=3  worst3 [0.0, 0.0, 0.0]
+  ridge_nc                   86.20  diff  +0.02 [+0.00,+0.06]  n=3  worst3 [0.0, 0.0, 0.1]
+  olv                        85.07  diff  -1.11 [-3.08,+0.35]  n=3  worst3 [-3.1, -0.6, 0.3]
+  small                      70.37  diff -15.81 [-43.15,+0.70]  n=3  worst3 [-43.1, -5.0, 0.7]
+
+[all] J&F (visible frames, video mean, x100)
+  target_ref                 79.51  diff  +0.00 [+0.00,+0.00]  n=26  worst3 [0.0, 0.0, 0.0]
+  legacy                     68.29  diff -11.22 [-21.02,-3.07]  n=26  worst3 [-90.2, -65.3, -55.6]
+  legacy_nc                  79.59  diff  +0.08 [-0.10,+0.26]  n=26  worst3 [-1.3, -0.2, -0.2]
+  ridge_nc                   79.52  diff  +0.01 [-0.21,+0.24]  n=26  worst3 [-1.4, -1.3, -0.3]
+  olv                        82.44  diff  +2.93 [-0.74,+7.79]  n=26  worst3 [-7.6, -5.4, -3.0]
+  small                      78.59  diff  -0.92 [-3.41,+1.39]  n=26  worst3 [-22.7, -12.5, -7.7]
+
+failures: videos more than 10 points below / above the reference (all frames)
+  target_ref               below   0  above   0  of 26  []
+  legacy                   below   6  above   0  of 26  ['228a0234', '4e0597a0', '4est6nnm', 'ax5w48j9', 'b40cvjbt']
+  legacy_nc                below   0  above   0  of 26  []
+  ridge_nc                 below   0  above   0  of 26  []
+  olv                      below   0  above   3  of 26  []
+  small                    below   2  above   1  of 26  ['0d967fd1', '4e0597a0']
+
+normalized state error (case mean):
+  target_ref               spatial 0.0000 pointer 0.0000
+  legacy                   spatial 0.1380 pointer 0.2025
+  legacy_nc                spatial 0.1262 pointer 0.1934
+  ridge_nc                 spatial 0.1477 pointer 0.2031
+  olv                      spatial nan pointer nan
+  small                    spatial nan pointer nan
+seconds per case 32.8

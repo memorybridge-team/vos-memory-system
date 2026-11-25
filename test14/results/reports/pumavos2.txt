@@ -1,0 +1,42 @@
+pumavos2 objects 26 switch cases 78 videos 24
+
+[all frames after switch: J] video mean x100, difference from Base+ Full Replay
+  small                71.68  diff  +0.73 [-5.78,+6.50]  n=24
+  base                 70.95  diff  +0.00 [+0.00,+0.00]  n=24
+  direct                0.01  diff -70.94 [-81.63,-58.46]  n=24
+  direct_nc            65.64  diff  -5.31 [-10.98,-1.59]  n=24
+  orig                 66.35  diff  -4.60 [-10.60,-0.18]  n=24
+  lastvis              66.75  diff  -4.20 [-8.96,-0.07]  n=24
+  recent_ridge         66.48  diff  -4.47 [-9.01,-0.45]  n=24
+  olv                  70.97  diff  +0.02 [-3.35,+3.21]  n=24
+
+[all frames after switch: J&F] video mean x100, difference from Base+ Full Replay
+  small                75.05  diff  +0.82 [-5.77,+6.77]  n=24
+  base                 74.23  diff  +0.00 [+0.00,+0.00]  n=24
+  direct                0.01  diff -74.22 [-84.83,-61.96]  n=24
+  direct_nc            68.18  diff  -6.05 [-12.41,-1.74]  n=24
+  orig                 69.08  diff  -5.15 [-11.71,-0.31]  n=24
+  lastvis              69.80  diff  -4.43 [-9.15,-0.28]  n=24
+  recent_ridge         69.53  diff  -4.70 [-9.11,-0.74]  n=24
+  olv                  74.25  diff  +0.02 [-3.49,+3.19]  n=24
+
+[first 30 frames: J&F] video mean x100, difference from Base+ Full Replay
+  small                81.43  diff  +4.05 [-0.49,+9.75]  n=24
+  base                 77.38  diff  +0.00 [+0.00,+0.00]  n=24
+  direct                0.07  diff -77.30 [-87.08,-66.24]  n=24
+  direct_nc            64.24  diff -13.14 [-23.19,-5.30]  n=24
+  orig                 71.25  diff  -6.13 [-16.59,+2.34]  n=24
+  lastvis              78.23  diff  +0.85 [-3.08,+5.89]  n=24
+  recent_ridge         78.20  diff  +0.82 [-3.24,+5.58]  n=24
+  olv                  80.63  diff  +3.25 [-0.69,+8.15]  n=24
+
+failures: switch cases with J at least 0.2 below Base+ while Base+ J >= 0.5
+  eligible cases 56
+  small                 3  ['dog_tail:25', 'dog_tail:50', 'dog_tail:75']
+  base                  0  []
+  direct               56  ['full_face_2:25', 'full_face_2:50', 'full_face_2:75', 'ice_cream:25']
+  direct_nc             4  ['full_face_2:75', 'billie_hair:50', 'queen_car:25', 'queen_car:50']
+  orig                  4  ['full_face_2:75', 'skz:50', 'queen_car:25', 'queen_car:50']
+  lastvis               5  ['ice_cream:50', 'ice_cream:75', 'skz:75', 'dog_tail:75']
+  recent_ridge          5  ['ice_cream:50', 'ice_cream:75', 'skz:75', 'dog_tail:75']
+  olv                   2  ['ice_cream:75', 'dog_tail:75']

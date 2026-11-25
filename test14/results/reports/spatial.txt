@@ -1,0 +1,11 @@
+tag                     params   val_all  val_cond val_recent | dev_all   lvos    mose  | minutes
+ridge (closed form)       4160   0.16760  (see analysis)     | 0.16488
+legacy (fit+dev trained) 194304  0.14619  0.13865            | biased, trained on dev
+Traceback (most recent call last):
+  File "/workspace/cmmt-design-review-20261104/code/summarize_spatial.py", line 21, in <module>
+    for r in sorted(rows, key=lambda x: x['val']['all']):
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/workspace/cmmt-design-review-20261104/code/summarize_spatial.py", line 21, in <lambda>
+    for r in sorted(rows, key=lambda x: x['val']['all']):
+                                        ~^^^^^^^
+KeyError: 'val'

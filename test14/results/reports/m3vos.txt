@@ -1,0 +1,46 @@
+m3vos objects 110 switch cases 110 videos 81
+
+[all frames after switch: J] video mean x100, difference from Base+ Full Replay
+  small                59.46  diff  +1.81 [-1.87,+5.74]  n=81
+  base                 57.64  diff  +0.00 [+0.00,+0.00]  n=81
+  legacy               55.67  diff  -1.98 [-4.91,+0.75]  n=81
+  ridge                55.59  diff  -2.05 [-4.86,+0.76]  n=81
+  legacy_nc            58.48  diff  +0.83 [-1.03,+2.75]  n=81
+  ridge_nc             58.26  diff  +0.61 [-1.44,+2.59]  n=81
+  ridge_anchor         60.20  diff  +2.56 [-1.04,+6.31]  n=81
+  ridge_nc_anchor      61.28  diff  +3.63 [+0.36,+7.14]  n=81
+  olv                  61.21  diff  +3.57 [+0.38,+7.12]  n=81
+
+[all frames after switch: J&F] video mean x100, difference from Base+ Full Replay
+  small                62.80  diff  +2.02 [-1.48,+5.67]  n=81
+  base                 60.78  diff  +0.00 [+0.00,+0.00]  n=81
+  legacy               59.10  diff  -1.68 [-4.40,+0.94]  n=81
+  ridge                59.08  diff  -1.70 [-4.44,+1.04]  n=81
+  legacy_nc            61.93  diff  +1.14 [-0.65,+3.14]  n=81
+  ridge_nc             61.70  diff  +0.91 [-1.14,+2.95]  n=81
+  ridge_anchor         63.66  diff  +2.87 [-0.67,+6.62]  n=81
+  ridge_nc_anchor      64.78  diff  +3.99 [+0.83,+7.48]  n=81
+  olv                  64.71  diff  +3.92 [+0.66,+7.39]  n=81
+
+[first 30 frames: J&F] video mean x100, difference from Base+ Full Replay
+  small                70.81  diff  +3.29 [+0.51,+6.48]  n=80
+  base                 67.52  diff  +0.00 [+0.00,+0.00]  n=80
+  legacy               70.02  diff  +2.51 [-0.75,+6.02]  n=80
+  ridge                69.80  diff  +2.28 [-0.97,+5.76]  n=80
+  legacy_nc            70.89  diff  +3.37 [+0.66,+6.49]  n=80
+  ridge_nc             70.67  diff  +3.15 [+0.35,+6.43]  n=80
+  ridge_anchor         70.04  diff  +2.53 [-1.32,+6.31]  n=80
+  ridge_nc_anchor      70.15  diff  +2.63 [-1.11,+6.36]  n=80
+  olv                  70.16  diff  +2.65 [-1.12,+6.52]  n=80
+
+failures: switch cases with J at least 0.2 below Base+ while Base+ J >= 0.5
+  eligible cases 66
+  small                 8  ['0063_cut_cigar_wrapper_1:50', '0036_pull_noodles_1:50', '0057_disassemble_gun_1:50', '0078_assemble_puzzle_3:50']
+  base                  0  []
+  legacy                7  ['0061_pour_beer_1:50', '0057_disassemble_gun_1:50', '0039_knitting_sweater_3:50', '0052_shake_wine_2:50']
+  ridge                 6  ['0061_pour_beer_1:50', '0057_disassemble_gun_1:50', '0039_knitting_sweater_3:50', '0052_shake_wine_2:50']
+  legacy_nc             2  ['0057_disassemble_gun_1:50', '0078_assemble_puzzle_3:50']
+  ridge_nc              2  ['0011_cut_brocolli_2:50', '0057_disassemble_gun_1:50']
+  ridge_anchor          4  ['0068_ground_herbal_1:50', '0039_knitting_sweater_3:50', '0057_disassemble_gun_1:50', '0041_knitting_sweater_5:50']
+  ridge_nc_anchor       2  ['0068_ground_herbal_1:50', '0057_disassemble_gun_1:50']
+  olv                   2  ['0068_ground_herbal_1:50', '0057_disassemble_gun_1:50']

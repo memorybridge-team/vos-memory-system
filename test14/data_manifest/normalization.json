@@ -1,0 +1,1 @@
+{"scope": "train_only", "scales": {"spatial": 0.8042111680477584, "pointer": 0.6337650544928317}, "sums": {"spatial": [54907719977.56633, 84897169408], "pointer": [33300429.219166066, 82907392]}, "computations": 1}

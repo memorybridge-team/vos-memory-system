@@ -1,0 +1,86 @@
+cand_val cases 126 videos 126
+
+[+1..10] J&F (visible frames, video mean, x100)
+  target_ref                 76.99  diff  +0.00 [+0.00,+0.00]  n=122  worst3 [0.0, 0.0, 0.0]
+  ridge_nc                   80.08  diff  +3.09 [-2.32,+8.65]  n=122  worst3 [-99.2, -96.9, -96.1]
+  legacy_nc                  79.90  diff  +2.91 [-2.48,+8.42]  n=122  worst3 [-99.2, -96.9, -96.1]
+  mlp_nc                     79.59  diff  +2.61 [-2.94,+8.28]  n=122  worst3 [-99.2, -96.9, -96.1]
+  ds_nc                      79.40  diff  +2.41 [-3.10,+7.91]  n=122  worst3 [-99.2, -96.9, -96.1]
+  ds2_nc                     79.17  diff  +2.19 [-3.78,+8.06]  n=122  worst3 [-99.2, -97.6, -96.9]
+  ds3_nc                     79.20  diff  +2.21 [-3.57,+8.20]  n=122  worst3 [-99.2, -97.6, -96.9]
+  mlp_context_nc             78.26  diff  +1.27 [-4.35,+7.08]  n=122  worst3 [-99.2, -97.6, -96.9]
+  transformer_nc             80.01  diff  +3.02 [-2.50,+8.72]  n=122  worst3 [-99.2, -96.9, -96.1]
+  conv3mlp_nc                78.30  diff  +1.31 [-4.37,+6.96]  n=122  worst3 [-99.2, -97.6, -96.9]
+
+[+11..30] J&F (visible frames, video mean, x100)
+  target_ref                 76.67  diff  +0.00 [+0.00,+0.00]  n=121  worst3 [0.0, 0.0, 0.0]
+  ridge_nc                   78.54  diff  +1.87 [-3.39,+7.26]  n=121  worst3 [-96.9, -96.4, -95.5]
+  legacy_nc                  77.43  diff  +0.76 [-4.41,+5.90]  n=121  worst3 [-96.9, -96.4, -95.5]
+  mlp_nc                     77.71  diff  +1.04 [-3.93,+5.85]  n=121  worst3 [-96.9, -96.4, -95.5]
+  ds_nc                      76.67  diff  -0.00 [-4.71,+4.73]  n=121  worst3 [-96.9, -96.4, -95.5]
+  ds2_nc                     76.61  diff  -0.06 [-5.33,+5.30]  n=121  worst3 [-98.3, -96.9, -96.4]
+  ds3_nc                     76.72  diff  +0.05 [-5.25,+5.28]  n=121  worst3 [-98.3, -96.9, -96.4]
+  mlp_context_nc             75.72  diff  -0.95 [-5.96,+4.10]  n=121  worst3 [-98.3, -96.9, -96.4]
+  transformer_nc             78.00  diff  +1.33 [-3.20,+6.32]  n=121  worst3 [-96.9, -96.4, -95.5]
+  conv3mlp_nc                76.77  diff  +0.10 [-5.13,+5.47]  n=121  worst3 [-98.3, -96.9, -96.4]
+
+[+31..100] J&F (visible frames, video mean, x100)
+  target_ref                 74.81  diff  +0.00 [+0.00,+0.00]  n=126  worst3 [0.0, 0.0, 0.0]
+  ridge_nc                   74.68  diff  -0.12 [-4.51,+4.10]  n=126  worst3 [-97.8, -96.0, -94.8]
+  legacy_nc                  74.41  diff  -0.39 [-4.84,+3.81]  n=126  worst3 [-97.8, -96.0, -94.8]
+  mlp_nc                     74.56  diff  -0.24 [-4.49,+4.00]  n=126  worst3 [-97.8, -96.0, -94.8]
+  ds_nc                      73.87  diff  -0.94 [-5.06,+3.12]  n=126  worst3 [-97.8, -96.0, -94.8]
+  ds2_nc                     74.09  diff  -0.72 [-5.00,+3.40]  n=126  worst3 [-97.8, -96.0, -94.8]
+  ds3_nc                     74.16  diff  -0.65 [-5.12,+3.81]  n=126  worst3 [-97.8, -96.0, -94.8]
+  mlp_context_nc             73.42  diff  -1.39 [-5.35,+2.73]  n=126  worst3 [-97.8, -96.0, -94.8]
+  transformer_nc             73.85  diff  -0.96 [-5.54,+3.65]  n=126  worst3 [-97.8, -96.0, -94.8]
+  conv3mlp_nc                74.21  diff  -0.60 [-4.93,+3.76]  n=126  worst3 [-97.8, -96.0, -94.8]
+
+[+101..] J&F (visible frames, video mean, x100)
+  target_ref                 74.20  diff  +0.00 [+0.00,+0.00]  n=105  worst3 [0.0, 0.0, 0.0]
+  ridge_nc                   72.56  diff  -1.63 [-5.98,+2.57]  n=105  worst3 [-96.2, -94.3, -90.1]
+  legacy_nc                  72.44  diff  -1.76 [-6.06,+2.42]  n=105  worst3 [-96.2, -94.3, -90.1]
+  mlp_nc                     72.80  diff  -1.40 [-5.70,+2.68]  n=105  worst3 [-96.2, -94.6, -90.1]
+  ds_nc                      72.72  diff  -1.48 [-5.95,+2.58]  n=105  worst3 [-96.2, -94.6, -90.1]
+  ds2_nc                     72.48  diff  -1.72 [-6.04,+2.29]  n=105  worst3 [-96.2, -94.6, -90.1]
+  ds3_nc                     71.79  diff  -2.41 [-6.61,+1.69]  n=105  worst3 [-96.2, -94.6, -90.1]
+  mlp_context_nc             72.51  diff  -1.69 [-5.92,+2.10]  n=105  worst3 [-96.2, -94.2, -90.1]
+  transformer_nc             71.64  diff  -2.56 [-7.01,+1.74]  n=105  worst3 [-96.2, -94.3, -90.1]
+  conv3mlp_nc                72.58  diff  -1.62 [-5.91,+2.50]  n=105  worst3 [-96.2, -94.3, -90.1]
+
+[all] J&F (visible frames, video mean, x100)
+  target_ref                 75.18  diff  +0.00 [+0.00,+0.00]  n=126  worst3 [0.0, 0.0, 0.0]
+  ridge_nc                   75.13  diff  -0.04 [-3.75,+3.82]  n=126  worst3 [-97.2, -95.0, -94.5]
+  legacy_nc                  74.96  diff  -0.22 [-3.93,+3.40]  n=126  worst3 [-97.2, -95.0, -94.5]
+  mlp_nc                     75.25  diff  +0.07 [-3.71,+3.72]  n=126  worst3 [-97.2, -95.0, -94.6]
+  ds_nc                      74.69  diff  -0.49 [-4.13,+3.11]  n=126  worst3 [-97.2, -95.0, -94.7]
+  ds2_nc                     74.65  diff  -0.53 [-4.35,+3.11]  n=126  worst3 [-97.2, -95.0, -94.6]
+  ds3_nc                     74.29  diff  -0.89 [-4.90,+2.91]  n=126  worst3 [-97.2, -95.0, -94.6]
+  mlp_context_nc             74.15  diff  -1.03 [-4.75,+2.64]  n=126  worst3 [-97.2, -95.0, -94.5]
+  transformer_nc             74.55  diff  -0.63 [-4.59,+3.08]  n=126  worst3 [-97.2, -95.0, -94.5]
+  conv3mlp_nc                74.72  diff  -0.45 [-4.24,+3.26]  n=126  worst3 [-97.2, -95.0, -94.5]
+
+failures: videos more than 10 points below / above the reference (all frames)
+  target_ref               below   0  above   0  of 126  []
+  ridge_nc                 below   9  above   7  of 126  ['2VegYEbT', '8MfWMkrt', '9bCyStD7', 'D4AgqLQL', 'TYsQAO08']
+  legacy_nc                below  10  above   7  of 126  ['2VegYEbT', '8MfWMkrt', '9bCyStD7', 'D4AgqLQL', 'TYsQAO08']
+  mlp_nc                   below   8  above   7  of 126  ['2VegYEbT', '8MfWMkrt', 'D4AgqLQL', 'TYsQAO08', 'aFytsETk']
+  ds_nc                    below  10  above   6  of 126  ['2VegYEbT', '8MfWMkrt', '9bCyStD7', 'D4AgqLQL', 'TYsQAO08']
+  ds2_nc                   below  10  above   7  of 126  ['2VegYEbT', '8MfWMkrt', '9bCyStD7', 'D4AgqLQL', 'FFMl5yqs']
+  ds3_nc                   below  12  above   6  of 126  ['2VegYEbT', '8MfWMkrt', '9bCyStD7', 'D4AgqLQL', 'FFMl5yqs']
+  mlp_context_nc           below  11  above   6  of 126  ['2VegYEbT', '8MfWMkrt', 'D4AgqLQL', 'FFMl5yqs', 'TYsQAO08']
+  transformer_nc           below  10  above   6  of 126  ['2VegYEbT', '8lxxCA5h', '9bCyStD7', 'D4AgqLQL', 'TYsQAO08']
+  conv3mlp_nc              below  10  above   7  of 126  ['2VegYEbT', '8MfWMkrt', '9bCyStD7', 'D4AgqLQL', 'FFMl5yqs']
+
+normalized state error (case mean):
+  target_ref               spatial 0.0000 pointer 0.0000
+  ridge_nc                 spatial 0.1625 pointer 0.4077
+  legacy_nc                spatial 0.1420 pointer 0.3997
+  mlp_nc                   spatial 0.1473 pointer 0.4077
+  ds_nc                    spatial 0.1384 pointer 0.4077
+  ds2_nc                   spatial 0.1313 pointer 0.4077
+  ds3_nc                   spatial 0.1276 pointer 0.4077
+  mlp_context_nc           spatial 0.1330 pointer 0.4077
+  transformer_nc           spatial 0.1449 pointer 0.4077
+  conv3mlp_nc              spatial 0.1280 pointer 0.4077
+seconds per case 92.6
