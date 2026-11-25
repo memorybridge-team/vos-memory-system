@@ -1,0 +1,307 @@
+{
+ "dataset": "pumavos",
+ "fraction": 0.5,
+ "gpu": "NVIDIA GeForce RTX 4080 SUPER",
+ "summary": {
+  "resume": {
+   "ms_median": 0.33125944901257753,
+   "peak_mb_max": 2.0
+  },
+  "restart_p0": {
+   "ms_median": 21.791460108943284,
+   "peak_mb_max": 362.18505859375,
+   "bytes_median": 159033.0
+  },
+  "restart_mask": {
+   "ms_median": 21.75240300130099,
+   "peak_mb_max": 362.18505859375,
+   "bytes_median": 148842.0
+  },
+  "restart_p0_mask": {
+   "ms_median": 79.64092108886689,
+   "peak_mb_max": 460.21923828125,
+   "bytes_median": 313064.5
+  },
+  "paper": {
+   "ms_median": 2.286522532813251,
+   "peak_mb_max": 82.0322265625
+  },
+  "conv_strip_vm": {
+   "ms_median": 2.103668521158397,
+   "peak_mb_max": 80.021484375
+  },
+  "state_bytes_median": 8405296.0
+ },
+ "cases": [
+  {
+   "video": "billie_hair",
+   "object": 1,
+   "switch": 423,
+   "seconds": {
+    "resume": 0.0003339839167892933,
+    "restart_p0": 0.021744572091847658,
+    "restart_mask": 0.021571411984041333,
+    "restart_p0_mask": 0.07954887696541846,
+    "paper": 0.0024196200538426638,
+    "conv_strip_vm": 0.0022789340000599623
+   },
+   "peak_mb": {
+    "resume": 2.0,
+    "restart_p0": 362.18505859375,
+    "restart_mask": 362.18505859375,
+    "restart_p0_mask": 459.96923828125,
+    "paper": 82.0322265625,
+    "conv_strip_vm": 80.021484375
+   },
+   "state_bytes": 8405296,
+   "bytes": {
+    "restart_p0": 156893,
+    "restart_mask": 151736,
+    "restart_p0_mask": 308629
+   }
+  },
+  {
+   "video": "billie_shoes",
+   "object": 1,
+   "switch": 504,
+   "seconds": {
+    "resume": 0.00033594504930078983,
+    "restart_p0": 0.021796666085720062,
+    "restart_mask": 0.021780022187158465,
+    "restart_p0_mask": 0.07952754897996783,
+    "paper": 0.002298637991771102,
+    "conv_strip_vm": 0.002112239133566618
+   },
+   "peak_mb": {
+    "resume": 2.0,
+    "restart_p0": 362.18505859375,
+    "restart_mask": 362.18505859375,
+    "restart_p0_mask": 459.96923828125,
+    "paper": 82.0322265625,
+    "conv_strip_vm": 80.021484375
+   },
+   "state_bytes": 8405296,
+   "bytes": {
+    "restart_p0": 104820,
+    "restart_mask": 141397,
+    "restart_p0_mask": 246217
+   }
+  },
+  {
+   "video": "caps",
+   "object": 1,
+   "switch": 421,
+   "seconds": {
+    "resume": 0.00033161090686917305,
+    "restart_p0": 0.021691149100661278,
+    "restart_mask": 0.021737570874392986,
+    "restart_p0_mask": 0.0796127060893923,
+    "paper": 0.0022753519006073475,
+    "conv_strip_vm": 0.0020923020783811808
+   },
+   "peak_mb": {
+    "resume": 2.0,
+    "restart_p0": 362.18505859375,
+    "restart_mask": 362.18505859375,
+    "restart_p0_mask": 459.96923828125,
+    "paper": 82.0322265625,
+    "conv_strip_vm": 80.021484375
+   },
+   "state_bytes": 8405296,
+   "bytes": {
+    "restart_p0": 173581,
+    "restart_mask": 145948,
+    "restart_p0_mask": 319529
+   }
+  },
+  {
+   "video": "chair",
+   "object": 1,
+   "switch": 205,
+   "seconds": {
+    "resume": 0.00032702507451176643,
+    "restart_p0": 0.02161801396869123,
+    "restart_mask": 0.021690404042601585,
+    "restart_p0_mask": 0.07967179897241294,
+    "paper": 0.002276682062074542,
+    "conv_strip_vm": 0.0020938909146934748
+   },
+   "peak_mb": {
+    "resume": 2.0,
+    "restart_p0": 362.18505859375,
+    "restart_mask": 362.18505859375,
+    "restart_p0_mask": 460.21923828125,
+    "paper": 82.0322265625,
+    "conv_strip_vm": 80.021484375
+   },
+   "state_bytes": 8405296,
+   "bytes": {
+    "restart_p0": 94805,
+    "restart_mask": 101182,
+    "restart_p0_mask": 195987
+   }
+  },
+  {
+   "video": "couple_1_face",
+   "object": 1,
+   "switch": 434,
+   "seconds": {
+    "resume": 0.0003264660481363535,
+    "restart_p0": 0.021828165045008063,
+    "restart_mask": 0.021731969201937318,
+    "restart_p0_mask": 0.07947438792325556,
+    "paper": 0.002281599910929799,
+    "conv_strip_vm": 0.0020942031405866146
+   },
+   "peak_mb": {
+    "resume": 2.0,
+    "restart_p0": 362.18505859375,
+    "restart_mask": 362.18505859375,
+    "restart_p0_mask": 460.21923828125,
+    "paper": 82.0322265625,
+    "conv_strip_vm": 80.021484375
+   },
+   "state_bytes": 8405296,
+   "bytes": {
+    "restart_p0": 240678,
+    "restart_mask": 246806,
+    "restart_p0_mask": 487484
+   }
+  },
+  {
+   "video": "dog_tail",
+   "object": 1,
+   "switch": 424,
+   "seconds": {
+    "resume": 0.0003303689882159233,
+    "restart_p0": 0.021639093989506364,
+    "restart_mask": 0.021889281924813986,
+    "restart_p0_mask": 0.08004741813056171,
+    "paper": 0.002299804938957095,
+    "conv_strip_vm": 0.0020988730248063803
+   },
+   "peak_mb": {
+    "resume": 2.0,
+    "restart_p0": 362.18505859375,
+    "restart_mask": 362.18505859375,
+    "restart_p0_mask": 459.96923828125,
+    "paper": 82.0322265625,
+    "conv_strip_vm": 80.021484375
+   },
+   "state_bytes": 8405296,
+   "bytes": {
+    "restart_p0": 177784,
+    "restart_mask": 183020,
+    "restart_p0_mask": 360804
+   }
+  },
+  {
+   "video": "eye_area",
+   "object": 1,
+   "switch": 268,
+   "seconds": {
+    "resume": 0.0003330288454890251,
+    "restart_p0": 0.021786254132166505,
+    "restart_mask": 0.021767235128208995,
+    "restart_p0_mask": 0.07966913608834147,
+    "paper": 0.0022827170323580503,
+    "conv_strip_vm": 0.002104860031977296
+   },
+   "peak_mb": {
+    "resume": 2.0,
+    "restart_p0": 362.18505859375,
+    "restart_mask": 362.18505859375,
+    "restart_p0_mask": 460.21923828125,
+    "paper": 82.0322265625,
+    "conv_strip_vm": 80.021484375
+   },
+   "state_bytes": 8405296,
+   "bytes": {
+    "restart_p0": 113303,
+    "restart_mask": 118369,
+    "restart_p0_mask": 231672
+   }
+  },
+  {
+   "video": "full_face_1",
+   "object": 1,
+   "switch": 471,
+   "seconds": {
+    "resume": 0.00033705891110002995,
+    "restart_p0": 0.02183775301091373,
+    "restart_mask": 0.02167016896419227,
+    "restart_p0_mask": 0.07957128784619272,
+    "paper": 0.0023056219797581434,
+    "conv_strip_vm": 0.002110698027536273
+   },
+   "peak_mb": {
+    "resume": 2.0,
+    "restart_p0": 362.18505859375,
+    "restart_mask": 362.18505859375,
+    "restart_p0_mask": 459.96923828125,
+    "paper": 82.0322265625,
+    "conv_strip_vm": 80.021484375
+   },
+   "state_bytes": 8405296,
+   "bytes": {
+    "restart_p0": 310573,
+    "restart_mask": 345704,
+    "restart_p0_mask": 656277
+   }
+  },
+  {
+   "video": "full_face_2",
+   "object": 1,
+   "switch": 900,
+   "seconds": {
+    "resume": 0.000330907991155982,
+    "restart_p0": 0.02196846599690616,
+    "restart_mask": 0.02179373102262616,
+    "restart_p0_mask": 0.0798442498780787,
+    "paper": 0.0022903280332684517,
+    "conv_strip_vm": 0.002123303012922406
+   },
+   "peak_mb": {
+    "resume": 2.0,
+    "restart_p0": 362.18505859375,
+    "restart_mask": 362.18505859375,
+    "restart_p0_mask": 459.96923828125,
+    "paper": 82.0322265625,
+    "conv_strip_vm": 80.021484375
+   },
+   "state_bytes": 8405296,
+   "bytes": {
+    "restart_p0": 161173,
+    "restart_mask": 156327,
+    "restart_p0_mask": 317500
+   }
+  },
+  {
+   "video": "guitar",
+   "object": 1,
+   "switch": 462,
+   "seconds": {
+    "resume": 0.0003153050784021616,
+    "restart_p0": 0.021859829081222415,
+    "restart_mask": 0.021970689995214343,
+    "restart_p0_mask": 0.08004877483472228,
+    "paper": 0.00227208505384624,
+    "conv_strip_vm": 0.0021024770103394985
+   },
+   "peak_mb": {
+    "resume": 2.0,
+    "restart_p0": 362.18505859375,
+    "restart_mask": 362.18505859375,
+    "restart_p0_mask": 460.21923828125,
+    "paper": 82.0322265625,
+    "conv_strip_vm": 80.021484375
+   },
+   "state_bytes": 8405296,
+   "bytes": {
+    "restart_p0": 145516,
+    "restart_mask": 132252,
+    "restart_p0_mask": 277768
+   }
+  }
+ ]
+}

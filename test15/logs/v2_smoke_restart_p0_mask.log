@@ -1,0 +1,9 @@
+restart_p0_mask 1 pumavos billie_hair 1 25 cold 100.49 median 104.57 ms peak 382 MB area 0.04492 ref 0.044924775302852674 
+restart_p0_mask 2 pumavos billie_hair 1 50 cold 103.77 median 104.84 ms peak 382 MB area 0.00726 ref 0.007261137162954279 
+restart_p0_mask 3 pumavos billie_hair 1 75 cold 101.84 median 105.23 ms peak 382 MB area 0.02849 ref 0.028485248143806173 
+restart_p0_mask 4 pumavos caps 1 25 cold 105.32 median 104.30 ms peak 381 MB area 0.00289 ref 0.0028917545916373583 
+restart_p0_mask 5 pumavos caps 1 50 cold 104.40 median 107.43 ms peak 383 MB area 0.00334 ref 0.0033435912465806955 
+restart_p0_mask 6 pumavos caps 1 75 cold 105.49 median 108.29 ms peak 382 MB area 0.00114 ref 0.0011430246189917937 
+restart_p0_mask 7 m3vos 0001_open_cup_1 1 50 cold 105.07 median 109.37 ms peak 385 MB area 0.07546 ref 0.07546006944444444 
+restart_p0_mask 8 m3vos 0004_open_cup_6 1 50 cold 107.53 median 106.74 ms peak 385 MB area 0.11694 ref 0.11694118923611112 
+COMPLETE restart_p0_mask 8

@@ -1,0 +1,103 @@
+{
+ "method": "resume",
+ "gpu": "NVIDIA GeForce RTX 4080 SUPER",
+ "repeat": 10,
+ "cases": [
+  {
+   "dataset": "pumavos",
+   "video": "billie_hair",
+   "switch": 423,
+   "cold_ms": 2.8215241618454456,
+   "median_ms": 1.651202910579741,
+   "min_ms": 1.6307530459016562,
+   "max_ms": 2.0481368992477655,
+   "peak_mb": 2.0,
+   "stages_median_ms": {
+    "export": 1.2717664940282702,
+    "inject": 0.3056770656257868,
+    "preflight": 0.009413575753569603
+   },
+   "prompt_frames": []
+  },
+  {
+   "dataset": "pumavos",
+   "video": "caps",
+   "switch": 421,
+   "cold_ms": 2.893849043175578,
+   "median_ms": 1.6752475639805198,
+   "min_ms": 1.63893005810678,
+   "max_ms": 2.0920129027217627,
+   "peak_mb": 2.0,
+   "stages_median_ms": {
+    "export": 1.2784338323399425,
+    "inject": 0.3168110270053148,
+    "preflight": 0.009602867066860199
+   },
+   "prompt_frames": []
+  },
+  {
+   "dataset": "pumavos",
+   "video": "chair",
+   "switch": 205,
+   "cold_ms": 2.9687019996345043,
+   "median_ms": 1.6773899551481009,
+   "min_ms": 1.6598459333181381,
+   "max_ms": 2.172900829464197,
+   "peak_mb": 2.0,
+   "stages_median_ms": {
+    "export": 1.2856629909947515,
+    "inject": 0.3166064852848649,
+    "preflight": 0.009569921530783176
+   },
+   "prompt_frames": []
+  },
+  {
+   "dataset": "m3vos",
+   "video": "0001_open_cup_1",
+   "switch": 154,
+   "cold_ms": 2.980911871418357,
+   "median_ms": 1.685663592070341,
+   "min_ms": 1.6674250364303589,
+   "max_ms": 2.1230701822787523,
+   "peak_mb": 2.0,
+   "stages_median_ms": {
+    "export": 1.2918340507894754,
+    "inject": 0.31529448460787535,
+    "preflight": 0.009476090781390667
+   },
+   "prompt_frames": []
+  },
+  {
+   "dataset": "m3vos",
+   "video": "0004_open_cup_6",
+   "switch": 75,
+   "cold_ms": 2.8792947996407747,
+   "median_ms": 1.7161411233246326,
+   "min_ms": 1.6758320853114128,
+   "max_ms": 2.1224981173872948,
+   "peak_mb": 2.0,
+   "stages_median_ms": {
+    "export": 1.3166629942134023,
+    "inject": 0.31736958771944046,
+    "preflight": 0.009614508599042892
+   },
+   "prompt_frames": []
+  },
+  {
+   "dataset": "m3vos",
+   "video": "0007_use_measure_1",
+   "switch": 174,
+   "cold_ms": 2.5933829601854086,
+   "median_ms": 1.7237624851986766,
+   "min_ms": 1.685508992522955,
+   "max_ms": 2.0661349408328533,
+   "peak_mb": 2.0,
+   "stages_median_ms": {
+    "export": 1.3204930583015084,
+    "inject": 0.3170325653627515,
+    "preflight": 0.009628012776374817
+   },
+   "prompt_frames": []
+  }
+ ]
+}

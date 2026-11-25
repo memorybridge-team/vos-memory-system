@@ -1,0 +1,307 @@
+{
+ "dataset": "m3vos",
+ "fraction": 0.5,
+ "gpu": "NVIDIA GeForce RTX 4080 SUPER",
+ "summary": {
+  "resume": {
+   "ms_median": 0.3315139329060912,
+   "peak_mb_max": 2.0
+  },
+  "restart_p0": {
+   "ms_median": 21.936404518783092,
+   "peak_mb_max": 361.05224609375,
+   "bytes_median": 243797.0
+  },
+  "restart_mask": {
+   "ms_median": 22.06957689486444,
+   "peak_mb_max": 361.05224609375,
+   "bytes_median": 257988.0
+  },
+  "restart_p0_mask": {
+   "ms_median": 80.16681903973222,
+   "peak_mb_max": 457.46923828125,
+   "bytes_median": 501785.0
+  },
+  "paper": {
+   "ms_median": 2.2834024857729673,
+   "peak_mb_max": 82.0322265625
+  },
+  "conv_strip_vm": {
+   "ms_median": 2.1085100015625358,
+   "peak_mb_max": 80.021484375
+  },
+  "state_bytes_median": 8405296.0
+ },
+ "cases": [
+  {
+   "video": "0001_open_cup_1",
+   "object": 1,
+   "switch": 154,
+   "seconds": {
+    "resume": 0.00033324677497148514,
+    "restart_p0": 0.022042260970920324,
+    "restart_mask": 0.022008391097187996,
+    "restart_p0_mask": 0.0801250368822366,
+    "paper": 0.002410108922049403,
+    "conv_strip_vm": 0.0024033079389482737
+   },
+   "peak_mb": {
+    "resume": 2.0,
+    "restart_p0": 358.87158203125,
+    "restart_mask": 358.87158203125,
+    "restart_p0_mask": 453.68798828125,
+    "paper": 82.0322265625,
+    "conv_strip_vm": 80.021484375
+   },
+   "state_bytes": 8405296,
+   "bytes": {
+    "restart_p0": 189606,
+    "restart_mask": 198598,
+    "restart_p0_mask": 388204
+   }
+  },
+  {
+   "video": "0002_open_cup_2",
+   "object": 1,
+   "switch": 162,
+   "seconds": {
+    "resume": 0.0003346798475831747,
+    "restart_p0": 0.021905725123360753,
+    "restart_mask": 0.022087210090830922,
+    "restart_p0_mask": 0.07999423705041409,
+    "paper": 0.0022846960928291082,
+    "conv_strip_vm": 0.002114060102030635
+   },
+   "peak_mb": {
+    "resume": 2.0,
+    "restart_p0": 361.05224609375,
+    "restart_mask": 361.05224609375,
+    "restart_p0_mask": 457.46923828125,
+    "paper": 82.0322265625,
+    "conv_strip_vm": 80.021484375
+   },
+   "state_bytes": 8405296,
+   "bytes": {
+    "restart_p0": 115560,
+    "restart_mask": 120845,
+    "restart_p0_mask": 236405
+   }
+  },
+  {
+   "video": "0003_open_cup_3",
+   "object": 1,
+   "switch": 164,
+   "seconds": {
+    "resume": 0.0003389408811926842,
+    "restart_p0": 0.021575348917394876,
+    "restart_mask": 0.022197186946868896,
+    "restart_p0_mask": 0.08045862102881074,
+    "paper": 0.00230314489454031,
+    "conv_strip_vm": 0.002123930025845766
+   },
+   "peak_mb": {
+    "resume": 2.0,
+    "restart_p0": 358.87158203125,
+    "restart_mask": 358.87158203125,
+    "restart_p0_mask": 453.68798828125,
+    "paper": 82.0322265625,
+    "conv_strip_vm": 80.021484375
+   },
+   "state_bytes": 8405296,
+   "bytes": {
+    "restart_p0": 204439,
+    "restart_mask": 202497,
+    "restart_p0_mask": 406936
+   }
+  },
+  {
+   "video": "0004_open_cup_6",
+   "object": 1,
+   "switch": 75,
+   "seconds": {
+    "resume": 0.0003218140918761492,
+    "restart_p0": 0.022055353969335556,
+    "restart_mask": 0.0220772298052907,
+    "restart_p0_mask": 0.0803314100485295,
+    "paper": 0.002279808046296239,
+    "conv_strip_vm": 0.0021029599010944366
+   },
+   "peak_mb": {
+    "resume": 2.0,
+    "restart_p0": 358.87158203125,
+    "restart_mask": 358.87158203125,
+    "restart_p0_mask": 453.68798828125,
+    "paper": 82.0322265625,
+    "conv_strip_vm": 80.021484375
+   },
+   "state_bytes": 8405296,
+   "bytes": {
+    "restart_p0": 272380,
+    "restart_mask": 285313,
+    "restart_p0_mask": 557693
+   }
+  },
+  {
+   "video": "0005_open_cup_7",
+   "object": 1,
+   "switch": 80,
+   "seconds": {
+    "resume": 0.00032483204267919064,
+    "restart_p0": 0.02194213098846376,
+    "restart_mask": 0.02209633495658636,
+    "restart_p0_mask": 0.0803496849257499,
+    "paper": 0.0022774110548198223,
+    "conv_strip_vm": 0.0020897160284221172
+   },
+   "peak_mb": {
+    "resume": 2.0,
+    "restart_p0": 358.87158203125,
+    "restart_mask": 358.87158203125,
+    "restart_p0_mask": 453.68798828125,
+    "paper": 82.0322265625,
+    "conv_strip_vm": 80.021484375
+   },
+   "state_bytes": 8405296,
+   "bytes": {
+    "restart_p0": 261675,
+    "restart_mask": 281112,
+    "restart_p0_mask": 542787
+   }
+  },
+  {
+   "video": "0006_open_redpen_1",
+   "object": 1,
+   "switch": 174,
+   "seconds": {
+    "resume": 0.0003313669003546238,
+    "restart_p0": 0.021913800155743957,
+    "restart_mask": 0.02203979901969433,
+    "restart_p0_mask": 0.08015558193437755,
+    "paper": 0.002272374927997589,
+    "conv_strip_vm": 0.0020964930299669504
+   },
+   "peak_mb": {
+    "resume": 2.0,
+    "restart_p0": 358.87158203125,
+    "restart_mask": 358.87158203125,
+    "restart_p0_mask": 453.68798828125,
+    "paper": 82.0322265625,
+    "conv_strip_vm": 80.021484375
+   },
+   "state_bytes": 8405296,
+   "bytes": {
+    "restart_p0": 185493,
+    "restart_mask": 192058,
+    "restart_p0_mask": 377551
+   }
+  },
+  {
+   "video": "0007_use_measure_1",
+   "object": 1,
+   "switch": 174,
+   "seconds": {
+    "resume": 0.00032932916656136513,
+    "restart_p0": 0.022019603988155723,
+    "restart_mask": 0.02206192398443818,
+    "restart_p0_mask": 0.08017805614508688,
+    "paper": 0.00229204585775733,
+    "conv_strip_vm": 0.002119544893503189
+   },
+   "peak_mb": {
+    "resume": 2.0,
+    "restart_p0": 358.87158203125,
+    "restart_mask": 358.87158203125,
+    "restart_p0_mask": 453.68798828125,
+    "paper": 82.0322265625,
+    "conv_strip_vm": 80.021484375
+   },
+   "state_bytes": 8405296,
+   "bytes": {
+    "restart_p0": 272677,
+    "restart_mask": 306372,
+    "restart_p0_mask": 579049
+   }
+  },
+  {
+   "video": "0008_use_measure_3",
+   "object": 1,
+   "switch": 162,
+   "seconds": {
+    "resume": 0.00033166096545755863,
+    "restart_p0": 0.021888779010623693,
+    "restart_mask": 0.022019414929673076,
+    "restart_p0_mask": 0.08015550300478935,
+    "paper": 0.0022821088787168264,
+    "conv_strip_vm": 0.0021186640951782465
+   },
+   "peak_mb": {
+    "resume": 2.0,
+    "restart_p0": 358.87158203125,
+    "restart_mask": 358.87158203125,
+    "restart_p0_mask": 453.68798828125,
+    "paper": 82.0322265625,
+    "conv_strip_vm": 80.021484375
+   },
+   "state_bytes": 8405296,
+   "bytes": {
+    "restart_p0": 271772,
+    "restart_mask": 291276,
+    "restart_p0_mask": 563048
+   }
+  },
+  {
+   "video": "0009_open_mark_2",
+   "object": 1,
+   "switch": 189,
+   "seconds": {
+    "resume": 0.00032560108229517937,
+    "restart_p0": 0.021930678049102426,
+    "restart_mask": 0.022267400985583663,
+    "restart_p0_mask": 0.08026262605562806,
+    "paper": 0.002272455021739006,
+    "conv_strip_vm": 0.002093294868245721
+   },
+   "peak_mb": {
+    "resume": 2.0,
+    "restart_p0": 358.87158203125,
+    "restart_mask": 358.87158203125,
+    "restart_p0_mask": 453.68798828125,
+    "paper": 82.0322265625,
+    "conv_strip_vm": 80.021484375
+   },
+   "state_bytes": 8405296,
+   "bytes": {
+    "restart_p0": 225919,
+    "restart_mask": 234864,
+    "restart_p0_mask": 460783
+   }
+  },
+  {
+   "video": "0010_cut_blueberry_1",
+   "object": 1,
+   "switch": 202,
+   "seconds": {
+    "resume": 0.00033349799923598766,
+    "restart_p0": 0.022362743970006704,
+    "restart_mask": 0.021934259915724397,
+    "restart_p0_mask": 0.08013033191673458,
+    "paper": 0.0022937478497624397,
+    "conv_strip_vm": 0.002096886048093438
+   },
+   "peak_mb": {
+    "resume": 2.0,
+    "restart_p0": 358.87158203125,
+    "restart_mask": 358.87158203125,
+    "restart_p0_mask": 453.68798828125,
+    "paper": 82.0322265625,
+    "conv_strip_vm": 80.021484375
+   },
+   "state_bytes": 8405296,
+   "bytes": {
+    "restart_p0": 293510,
+    "restart_mask": 327812,
+    "restart_p0_mask": 621322
+   }
+  }
+ ]
+}

@@ -1,0 +1,18 @@
+strip mappers /workspace/linear-transfer-large-20261108/runs/sb-linear-20261113/mappers_strip_fp32.pt {'S_cond': False, 'S_rest': True, 'B_cond': False, 'B_rest': True}
+strip contrast gains /workspace/linear-transfer-large-20261108/runs/sb-linear-20261113/variance_gain_strip.pt
+strip call 1: 0/16 records flagged, conditioning flagged 0
+strip call 2: 0/16 records flagged, conditioning flagged 0
+strip call 3: 0/16 records flagged, conditioning flagged 0
+strip call 4: 0/16 records flagged, conditioning flagged 0
+strip call 5: 0/16 records flagged, conditioning flagged 0
+strip call 6: 0/16 records flagged, conditioning flagged 0
+conv_strip_vm 1 pumavos billie_hair 1 25 cold 65.59 median 4.69 ms peak 81 MB area 0.04116 ref 0.04115865572489254 
+conv_strip_vm 2 pumavos billie_hair 1 50 cold 5.44 median 3.58 ms peak 81 MB area 0.00655 ref 0.006552852676826886 
+conv_strip_vm 3 pumavos billie_hair 1 75 cold 8.39 median 3.56 ms peak 81 MB area 0.02872 ref 0.02871971473231731 
+conv_strip_vm 4 pumavos caps 1 25 cold 8.13 median 3.73 ms peak 81 MB area 0.00312 ref 0.0031213364595545135 
+conv_strip_vm 5 pumavos caps 1 50 cold 6.56 median 3.55 ms peak 81 MB area 0.00330 ref 0.0032971864009378664 
+conv_strip_vm 6 pumavos caps 1 75 cold 8.07 median 3.57 ms peak 81 MB area 0.00164 ref 0.0016388237592809692 
+conv_strip_vm 7 m3vos 0001_open_cup_1 1 50 cold 7.76 median 3.56 ms peak 82 MB area 0.07471 ref 0.07471245659722223 
+strip call 200: 0/16 records flagged, conditioning flagged 0
+conv_strip_vm 8 m3vos 0004_open_cup_6 1 50 cold 7.93 median 3.61 ms peak 81 MB area 0.11922 ref 0.11921657986111112 
+COMPLETE conv_strip_vm 8

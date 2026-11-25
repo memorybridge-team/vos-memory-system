@@ -1,0 +1,109 @@
+{
+ "method": "paper",
+ "gpu": "NVIDIA GeForce RTX 4080 SUPER",
+ "repeat": 10,
+ "cases": [
+  {
+   "dataset": "pumavos",
+   "video": "billie_hair",
+   "switch": 423,
+   "cold_ms": 98.26396498829126,
+   "median_ms": 6.195343448780477,
+   "min_ms": 6.094086915254593,
+   "max_ms": 10.151802096515894,
+   "peak_mb": 83.78125,
+   "stages_median_ms": {
+    "export": 3.074716543778777,
+    "translate": 2.0208359928801656,
+    "inject": 0.3287135623395443,
+    "preflight": 0.010672956705093384
+   },
+   "prompt_frames": []
+  },
+  {
+   "dataset": "pumavos",
+   "video": "caps",
+   "switch": 421,
+   "cold_ms": 4.389789886772633,
+   "median_ms": 3.959250054322183,
+   "min_ms": 3.890624037012458,
+   "max_ms": 4.148988053202629,
+   "peak_mb": 82.0322265625,
+   "stages_median_ms": {
+    "export": 1.3431354891508818,
+    "translate": 2.173058921471238,
+    "inject": 0.33408449962735176,
+    "preflight": 0.010348507203161716
+   },
+   "prompt_frames": []
+  },
+  {
+   "dataset": "pumavos",
+   "video": "chair",
+   "switch": 205,
+   "cold_ms": 4.335717065259814,
+   "median_ms": 3.919786890037358,
+   "min_ms": 3.8826800882816315,
+   "max_ms": 4.091335227712989,
+   "peak_mb": 82.0322265625,
+   "stages_median_ms": {
+    "export": 1.3096280163154006,
+    "translate": 2.162478514946997,
+    "inject": 0.343207037076354,
+    "preflight": 0.01037190668284893
+   },
+   "prompt_frames": []
+  },
+  {
+   "dataset": "m3vos",
+   "video": "0001_open_cup_1",
+   "switch": 154,
+   "cold_ms": 4.417503019794822,
+   "median_ms": 3.959925496019423,
+   "min_ms": 3.899439936503768,
+   "max_ms": 4.075723001733422,
+   "peak_mb": 82.0322265625,
+   "stages_median_ms": {
+    "export": 1.3401891337707639,
+    "translate": 2.182238851673901,
+    "inject": 0.3364009317010641,
+    "preflight": 0.010880408808588982
+   },
+   "prompt_frames": []
+  },
+  {
+   "dataset": "m3vos",
+   "video": "0004_open_cup_6",
+   "switch": 75,
+   "cold_ms": 4.248854937031865,
+   "median_ms": 3.7103324430063367,
+   "min_ms": 3.6893021315336227,
+   "max_ms": 3.8928089197725058,
+   "peak_mb": 82.5322265625,
+   "stages_median_ms": {
+    "export": 1.3135995250195265,
+    "translate": 1.9629886373877525,
+    "inject": 0.32889842987060547,
+    "preflight": 0.010633375495672226
+   },
+   "prompt_frames": []
+  },
+  {
+   "dataset": "m3vos",
+   "video": "0007_use_measure_1",
+   "switch": 174,
+   "cold_ms": 4.213510081171989,
+   "median_ms": 3.709614626131952,
+   "min_ms": 3.6933370865881443,
+   "max_ms": 3.9442582055926323,
+   "peak_mb": 82.0322265625,
+   "stages_median_ms": {
+    "export": 1.3126014964655042,
+    "translate": 1.9682500278577209,
+    "inject": 0.3321210388094187,
+    "preflight": 0.010489020496606827
+   },
+   "prompt_frames": []
+  }
+ ]
+}

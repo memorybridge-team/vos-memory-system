@@ -1,0 +1,150 @@
+{
+ "tags": [
+  "smoke_pumavos",
+  "smoke_m3vos"
+ ],
+ "checks": {
+  "1_resume_equals_base": {
+   "passed": true,
+   "failures": [],
+   "n_failures": 0
+  },
+  "2_own_prompt_record": {
+   "passed": true,
+   "failures": [],
+   "n_failures": 0
+  },
+  "4_records_read": {
+   "passed": true,
+   "failures": [],
+   "n_failures": 0
+  },
+  "5_prompt_frames": {
+   "passed": true,
+   "failures": [],
+   "n_failures": 0
+  },
+  "6_repeat": {
+   "passed": true,
+   "failures": [],
+   "n_failures": 0
+  },
+  "3_reproduction": {
+   "pumavos:base vs base_pumavos:base": {
+    "n": 9,
+    "exact": 9,
+    "max_abs": 0.0,
+    "over_0_5": []
+   },
+   "pumavos:base vs pumavos2:base": {
+    "n": 9,
+    "exact": 9,
+    "max_abs": 0.0,
+    "over_0_5": []
+   },
+   "pumavos:small vs base_pumavos:small": {
+    "n": 9,
+    "exact": 9,
+    "max_abs": 0.0,
+    "over_0_5": []
+   },
+   "pumavos:paper vs base_pumavos:paper": {
+    "n": 9,
+    "exact": 9,
+    "max_abs": 0.0,
+    "over_0_5": []
+   },
+   "pumavos:conv_strip_vm vs base_pumavos_strip:conv_strip_vm": {
+    "n": 9,
+    "exact": 9,
+    "max_abs": 0.0,
+    "over_0_5": []
+   },
+   "pumavos:restart_p0 vs pumavos2:orig": {
+    "n": 9,
+    "exact": 9,
+    "max_abs": 0.0,
+    "over_0_5": []
+   },
+   "pumavos:lastvis vs pumavos2:lastvis": {
+    "n": 9,
+    "exact": 9,
+    "max_abs": 0.0,
+    "over_0_5": []
+   },
+   "pumavos:olv vs pumavos2:olv": {
+    "n": 9,
+    "exact": 9,
+    "max_abs": 0.0,
+    "over_0_5": []
+   },
+   "pumavos:olv vs pumavos:olv": {
+    "n": 9,
+    "exact": 6,
+    "max_abs": 0.0006704579833998192,
+    "over_0_5": []
+   },
+   "m3vos:base vs base_m3vos:base": {
+    "n": 3,
+    "exact": 3,
+    "max_abs": 0.0,
+    "over_0_5": []
+   },
+   "m3vos:base vs m3vos2:base": {
+    "n": 3,
+    "exact": 3,
+    "max_abs": 0.0,
+    "over_0_5": []
+   },
+   "m3vos:small vs base_m3vos:small": {
+    "n": 3,
+    "exact": 3,
+    "max_abs": 0.0,
+    "over_0_5": []
+   },
+   "m3vos:paper vs base_m3vos:paper": {
+    "n": 3,
+    "exact": 3,
+    "max_abs": 0.0,
+    "over_0_5": []
+   },
+   "m3vos:conv_strip_vm vs base_m3vos_strip:conv_strip_vm": {
+    "n": 3,
+    "exact": 3,
+    "max_abs": 0.0,
+    "over_0_5": []
+   },
+   "m3vos:restart_p0 vs m3vos2:orig": {
+    "n": 3,
+    "exact": 3,
+    "max_abs": 0.0,
+    "over_0_5": []
+   },
+   "m3vos:lastvis vs m3vos2:lastvis": {
+    "n": 3,
+    "exact": 3,
+    "max_abs": 0.0,
+    "over_0_5": []
+   },
+   "m3vos:olv vs m3vos2:olv": {
+    "n": 3,
+    "exact": 3,
+    "max_abs": 0.0,
+    "over_0_5": []
+   },
+   "m3vos:olv vs m3vos:olv": {
+    "n": 3,
+    "exact": 0,
+    "max_abs": 0.00040478893067785737,
+    "over_0_5": []
+   }
+  }
+ },
+ "cases": {
+  "smoke_pumavos": 9,
+  "smoke_m3vos": 3
+ },
+ "repeat_compared": {
+  "smoke_m3vos=smoke_m3vos_r": 1
+ }
+}

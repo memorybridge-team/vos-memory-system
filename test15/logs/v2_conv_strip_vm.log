@@ -1,0 +1,693 @@
+strip mappers /workspace/linear-transfer-large-20261108/runs/sb-linear-20261113/mappers_strip_fp32.pt {'S_cond': False, 'S_rest': True, 'B_cond': False, 'B_rest': True}
+strip contrast gains /workspace/linear-transfer-large-20261108/runs/sb-linear-20261113/variance_gain_strip.pt
+strip call 1: 0/16 records flagged, conditioning flagged 0
+strip call 2: 0/16 records flagged, conditioning flagged 0
+strip call 3: 0/16 records flagged, conditioning flagged 0
+strip call 4: 0/16 records flagged, conditioning flagged 0
+strip call 5: 0/16 records flagged, conditioning flagged 0
+strip call 6: 0/16 records flagged, conditioning flagged 0
+conv_strip_vm 1 pumavos billie_hair 1 25 cold 66.60 median 4.78 ms peak 81 MB area 0.04116 ref 0.04115865572489254 
+conv_strip_vm 2 pumavos billie_hair 1 50 cold 4.43 median 3.58 ms peak 81 MB area 0.00655 ref 0.006552852676826886 
+conv_strip_vm 3 pumavos billie_hair 1 75 cold 7.44 median 3.60 ms peak 81 MB area 0.02872 ref 0.02871971473231731 
+conv_strip_vm 4 pumavos billie_shoes 1 25 cold 7.51 median 3.57 ms peak 81 MB area 0.01708 ref 0.01708431027745213 
+conv_strip_vm 5 pumavos billie_shoes 1 50 cold 7.81 median 3.57 ms peak 81 MB area 0.01516 ref 0.015164615084017194 
+conv_strip_vm 6 pumavos billie_shoes 1 75 cold 7.71 median 3.47 ms peak 81 MB area 0.00000 ref 0.0 
+conv_strip_vm 7 pumavos caps 1 25 cold 7.91 median 3.57 ms peak 81 MB area 0.00312 ref 0.0031213364595545135 
+strip call 200: 0/16 records flagged, conditioning flagged 0
+conv_strip_vm 8 pumavos caps 1 50 cold 7.66 median 3.57 ms peak 81 MB area 0.00330 ref 0.0032971864009378664 
+conv_strip_vm 9 pumavos caps 1 75 cold 6.82 median 3.57 ms peak 81 MB area 0.00164 ref 0.0016388237592809692 
+conv_strip_vm 10 pumavos chair 1 25 cold 7.70 median 3.60 ms peak 81 MB area 0.01969 ref 0.0196875 
+conv_strip_vm 11 pumavos chair 1 50 cold 7.32 median 3.59 ms peak 81 MB area 0.01439 ref 0.014386574074074074 
+conv_strip_vm 12 pumavos chair 1 75 cold 7.57 median 3.65 ms peak 81 MB area 0.02209 ref 0.022086226851851853 
+conv_strip_vm 13 pumavos couple_1_face 1 25 cold 7.79 median 3.54 ms peak 81 MB area 0.02109 ref 0.021087962962962965 
+conv_strip_vm 14 pumavos couple_1_face 1 50 cold 6.54 median 3.58 ms peak 81 MB area 0.02161 ref 0.021608796296296296 
+conv_strip_vm 15 pumavos couple_1_face 1 75 cold 8.13 median 3.68 ms peak 81 MB area 0.02161 ref 0.021611689814814816 
+strip call 400: 15/16 records flagged, conditioning flagged 0
+conv_strip_vm 16 pumavos dog_tail 1 25 cold 7.14 median 3.49 ms peak 81 MB area 0.00000 ref 0.0 
+conv_strip_vm 17 pumavos dog_tail 1 50 cold 7.90 median 3.59 ms peak 81 MB area 0.00132 ref 0.0013213169206721376 
+conv_strip_vm 18 pumavos dog_tail 1 75 cold 8.19 median 3.66 ms peak 82 MB area 0.01056 ref 0.010560765924189136 
+conv_strip_vm 19 pumavos eye_area 1 25 cold 7.33 median 3.58 ms peak 81 MB area 0.00366 ref 0.0036631944444444446 
+conv_strip_vm 20 pumavos eye_area 1 50 cold 6.53 median 3.62 ms peak 81 MB area 0.00352 ref 0.003515625 
+conv_strip_vm 21 pumavos eye_area 1 75 cold 7.36 median 3.58 ms peak 81 MB area 0.00282 ref 0.002824074074074074 
+conv_strip_vm 22 pumavos full_face_1 1 25 cold 7.67 median 3.59 ms peak 81 MB area 0.06979 ref 0.06979044548651817 
+conv_strip_vm 23 pumavos full_face_1 1 50 cold 7.74 median 3.57 ms peak 81 MB area 0.06848 ref 0.068476455646737 
+strip call 600: 0/16 records flagged, conditioning flagged 0
+conv_strip_vm 24 pumavos full_face_1 1 75 cold 7.19 median 3.69 ms peak 82 MB area 0.06947 ref 0.06947049628761234 
+conv_strip_vm 25 pumavos full_face_2 1 25 cold 7.93 median 3.51 ms peak 81 MB area 0.05168 ref 0.051680343884329814 
+conv_strip_vm 26 pumavos full_face_2 1 50 cold 8.09 median 3.56 ms peak 81 MB area 0.09611 ref 0.09611176240719031 
+conv_strip_vm 27 pumavos full_face_2 1 75 cold 6.11 median 3.62 ms peak 81 MB area 0.04425 ref 0.04424824150058616 
+conv_strip_vm 28 pumavos guitar 1 25 cold 7.87 median 3.49 ms peak 81 MB area 0.02125 ref 0.021252893518518518 
+conv_strip_vm 29 pumavos guitar 1 50 cold 7.66 median 3.60 ms peak 81 MB area 0.06808 ref 0.06807581018518519 
+conv_strip_vm 30 pumavos guitar 1 75 cold 6.69 median 3.62 ms peak 81 MB area 0.04960 ref 0.04960069444444445 
+conv_strip_vm 31 pumavos half_face_1 1 25 cold 7.78 median 3.55 ms peak 81 MB area 0.04170 ref 0.04170085971082454 
+strip call 800: 0/16 records flagged, conditioning flagged 0
+conv_strip_vm 32 pumavos half_face_1 1 50 cold 7.42 median 3.70 ms peak 81 MB area 0.04035 ref 0.04035023446658851 
+conv_strip_vm 33 pumavos half_face_1 1 75 cold 6.50 median 3.78 ms peak 81 MB area 0.02502 ref 0.025019538882375927 
+conv_strip_vm 34 pumavos half_face_2 1 25 cold 6.54 median 3.59 ms peak 81 MB area 0.03041 ref 0.030412270418132083 
+conv_strip_vm 35 pumavos half_face_2 1 50 cold 8.04 median 3.60 ms peak 81 MB area 0.09318 ref 0.0931809300508011 
+conv_strip_vm 36 pumavos half_face_2 1 75 cold 7.73 median 3.64 ms peak 81 MB area 0.04337 ref 0.043371434153966396 
+conv_strip_vm 37 pumavos ice_cream 1 25 cold 7.81 median 3.61 ms peak 81 MB area 0.00584 ref 0.005837241109808519 
+conv_strip_vm 38 pumavos ice_cream 1 50 cold 6.59 median 3.65 ms peak 81 MB area 0.00000 ref 0.0 
+conv_strip_vm 39 pumavos ice_cream 1 75 cold 6.74 median 3.61 ms peak 81 MB area 0.00000 ref 0.0 
+strip call 1000: 0/16 records flagged, conditioning flagged 0
+conv_strip_vm 40 pumavos long_scene_scale 1 25 cold 7.01 median 3.61 ms peak 81 MB area 0.06966 ref 0.06965855803048066 
+conv_strip_vm 41 pumavos long_scene_scale 1 50 cold 7.41 median 3.67 ms peak 81 MB area 0.06835 ref 0.06834945291129348 
+conv_strip_vm 42 pumavos long_scene_scale 1 75 cold 7.83 median 3.68 ms peak 82 MB area 0.06946 ref 0.0694582844861274 
+conv_strip_vm 43 pumavos nails 1 25 cold 7.38 median 3.58 ms peak 81 MB area 0.01037 ref 0.010370261821023838 
+conv_strip_vm 44 pumavos nails 1 50 cold 4.54 median 3.62 ms peak 81 MB area 0.00821 ref 0.008206330597889801 
+conv_strip_vm 45 pumavos nails 1 75 cold 7.59 median 3.68 ms peak 81 MB area 0.00742 ref 0.007415005861664712 
+conv_strip_vm 46 pumavos pants_workout 1 25 cold 7.74 median 3.63 ms peak 81 MB area 0.03220 ref 0.03219519343493552 
+conv_strip_vm 47 pumavos pants_workout 1 50 cold 7.87 median 3.64 ms peak 81 MB area 0.03098 ref 0.030981340367330988 
+strip call 1200: 0/16 records flagged, conditioning flagged 0
+conv_strip_vm 48 pumavos pants_workout 1 75 cold 7.82 median 3.69 ms peak 81 MB area 0.02270 ref 0.02270173896053146 
+conv_strip_vm 49 pumavos pimples 1 25 cold 6.66 median 3.57 ms peak 81 MB area 0.00000 ref 0.0 
+conv_strip_vm 50 pumavos pimples 1 50 cold 7.88 median 3.64 ms peak 81 MB area 0.00000 ref 0.0 
+conv_strip_vm 51 pumavos pimples 1 75 cold 7.59 median 3.62 ms peak 81 MB area 0.00000 ref 0.0 
+conv_strip_vm 52 pumavos queen_car 1 25 cold 7.28 median 3.73 ms peak 81 MB area 0.00577 ref 0.005768855021492771 
+conv_strip_vm 53 pumavos queen_car 1 50 cold 7.50 median 3.63 ms peak 81 MB area 0.00624 ref 0.006235345838218054 
+conv_strip_vm 54 pumavos queen_car 1 75 cold 7.71 median 3.65 ms peak 81 MB area 0.00640 ref 0.006398983978116452 
+conv_strip_vm 55 pumavos shirt 1 25 cold 6.68 median 3.58 ms peak 81 MB area 0.14944 ref 0.14943576388888888 
+strip call 1400: 0/16 records flagged, conditioning flagged 0
+conv_strip_vm 56 pumavos shirt 1 50 cold 7.64 median 3.58 ms peak 81 MB area 0.08684 ref 0.08684027777777778 
+conv_strip_vm 57 pumavos shirt 1 75 cold 8.18 median 3.60 ms peak 81 MB area 0.12269 ref 0.1226880787037037 
+conv_strip_vm 58 pumavos skz 1 25 cold 7.42 median 3.64 ms peak 81 MB area 0.01535 ref 0.015345618709295442 
+conv_strip_vm 59 pumavos skz 1 50 cold 8.09 median 3.59 ms peak 81 MB area 0.00330 ref 0.003298919478981646 
+conv_strip_vm 60 pumavos skz 1 75 cold 6.64 median 3.63 ms peak 81 MB area 0.00366 ref 0.00366156009473061 
+conv_strip_vm 61 pumavos smile 1 25 cold 5.29 median 3.61 ms peak 81 MB area 0.00000 ref 0.0 
+conv_strip_vm 62 pumavos smile 1 50 cold 7.95 median 3.64 ms peak 81 MB area 0.00230 ref 0.002300448868071819 
+conv_strip_vm 63 pumavos smile 1 75 cold 7.92 median 3.70 ms peak 81 MB area 0.00480 ref 0.004796057767369243 
+strip call 1600: 0/16 records flagged, conditioning flagged 0
+conv_strip_vm 64 pumavos sweater_demo 1 25 cold 6.71 median 3.58 ms peak 81 MB area 0.18001 ref 0.18001416568972256 
+conv_strip_vm 65 pumavos sweater_demo 1 50 cold 7.71 median 3.62 ms peak 81 MB area 0.31043 ref 0.3104337631887456 
+conv_strip_vm 66 pumavos sweater_demo 1 75 cold 6.48 median 3.68 ms peak 81 MB area 0.27212 ref 0.2721155724892536 
+conv_strip_vm 67 pumavos tattoo 1 25 cold 6.96 median 3.59 ms peak 81 MB area 0.01558 ref 0.015578703703703704 
+conv_strip_vm 68 pumavos tattoo 1 50 cold 7.52 median 3.67 ms peak 81 MB area 0.01448 ref 0.014479166666666666 
+conv_strip_vm 69 pumavos tattoo 1 75 cold 6.60 median 3.70 ms peak 81 MB area 0.01613 ref 0.016125578703703704 
+conv_strip_vm 70 pumavos vlog 1 25 cold 4.59 median 3.59 ms peak 81 MB area 0.05935 ref 0.05934572599531616 
+conv_strip_vm 71 pumavos vlog 1 50 cold 8.23 median 3.63 ms peak 81 MB area 0.04857 ref 0.0485655737704918 
+strip call 1800: 0/16 records flagged, conditioning flagged 0
+conv_strip_vm 72 pumavos vlog 1 75 cold 6.74 median 3.69 ms peak 81 MB area 0.12711 ref 0.12711016783762685 
+conv_strip_vm 73 pumavos vlog 2 25 cold 6.58 median 3.57 ms peak 81 MB area 0.04372 ref 0.04371584699453552 
+conv_strip_vm 74 pumavos vlog 2 50 cold 6.46 median 3.63 ms peak 81 MB area 0.02249 ref 0.022494633099141296 
+conv_strip_vm 75 pumavos vlog 2 75 cold 7.57 median 3.67 ms peak 81 MB area 0.03861 ref 0.03860997267759563 
+conv_strip_vm 76 pumavos vlog 3 25 cold 6.84 median 3.58 ms peak 81 MB area 0.01641 ref 0.01641051912568306 
+conv_strip_vm 77 pumavos vlog 3 50 cold 7.91 median 3.63 ms peak 81 MB area 0.04332 ref 0.04332308743169399 
+conv_strip_vm 78 pumavos vlog 3 75 cold 8.45 median 3.66 ms peak 81 MB area 0.00000 ref 0.0 
+conv_strip_vm 79 m3vos 0001_open_cup_1 1 50 cold 7.32 median 3.58 ms peak 81 MB area 0.07471 ref 0.07471245659722223 
+strip call 2000: 0/16 records flagged, conditioning flagged 0
+conv_strip_vm 80 m3vos 0002_open_cup_2 1 50 cold 6.93 median 3.66 ms peak 81 MB area 0.16243 ref 0.1624310661764706 
+conv_strip_vm 81 m3vos 0003_open_cup_3 1 50 cold 7.18 median 3.64 ms peak 81 MB area 0.05603 ref 0.056031901041666665 
+conv_strip_vm 82 m3vos 0004_open_cup_6 1 50 cold 7.58 median 3.56 ms peak 81 MB area 0.11922 ref 0.11921657986111112 
+conv_strip_vm 83 m3vos 0005_open_cup_7 1 50 cold 7.29 median 3.63 ms peak 81 MB area 0.10365 ref 0.10364908854166667 
+conv_strip_vm 84 m3vos 0006_open_redpen_1 1 50 cold 7.21 median 3.74 ms peak 81 MB area 0.01032 ref 0.010320095486111111 
+conv_strip_vm 85 m3vos 0007_use_measure_1 1 50 cold 7.62 median 3.65 ms peak 81 MB area 0.02846 ref 0.02846462673611111 
+conv_strip_vm 86 m3vos 0008_use_measure_3 1 50 cold 7.77 median 3.54 ms peak 81 MB area 0.01258 ref 0.012578125 
+conv_strip_vm 87 m3vos 0009_open_mark_2 1 50 cold 7.89 median 3.65 ms peak 81 MB area 0.00144 ref 0.0014366319444444444 
+strip call 2200: 0/16 records flagged, conditioning flagged 0
+conv_strip_vm 88 m3vos 0010_cut_blueberry_1 1 50 cold 7.80 median 3.57 ms peak 81 MB area 0.00072 ref 0.00072265625 
+conv_strip_vm 89 m3vos 0010_cut_blueberry_1 2 50 cold 7.13 median 3.58 ms peak 81 MB area 0.00106 ref 0.0010557725694444445 
+conv_strip_vm 90 m3vos 0011_cut_brocolli_2 1 50 cold 7.27 median 3.60 ms peak 81 MB area 0.01660 ref 0.016596137152777777 
+conv_strip_vm 91 m3vos 0011_cut_brocolli_2 2 50 cold 7.81 median 3.61 ms peak 81 MB area 0.00575 ref 0.005754123263888889 
+conv_strip_vm 92 m3vos 0012_break_brocolli_3 1 50 cold 7.76 median 3.56 ms peak 81 MB area 0.07187 ref 0.07187391493055556 
+conv_strip_vm 93 m3vos 0013_break_brocolli_4 1 50 cold 6.59 median 3.59 ms peak 81 MB area 0.08813 ref 0.08812608506944444 
+conv_strip_vm 94 m3vos 0014_cut_brocolli_6 1 50 cold 6.40 median 3.60 ms peak 81 MB area 0.01192 ref 0.011922743055555556 
+conv_strip_vm 95 m3vos 0015_cut_brocolli_7 1 50 cold 7.41 median 3.62 ms peak 81 MB area 0.01458 ref 0.01457790798611111 
+strip call 2400: 0/16 records flagged, conditioning flagged 0
+conv_strip_vm 96 m3vos 0015_cut_brocolli_7 2 50 cold 8.26 median 3.58 ms peak 81 MB area 0.01078 ref 0.01078125 
+conv_strip_vm 97 m3vos 0016_tear_pepper_1 1 50 cold 8.07 median 3.61 ms peak 81 MB area 0.00196 ref 0.001958550347222222 
+conv_strip_vm 98 m3vos 0016_tear_pepper_1 2 50 cold 7.78 median 3.61 ms peak 81 MB area 0.00231 ref 0.0023068576388888887 
+conv_strip_vm 99 m3vos 0017_tear_pepper_4 1 50 cold 7.36 median 3.65 ms peak 81 MB area 0.00680 ref 0.006802300347222222 
+conv_strip_vm 100 m3vos 0017_tear_pepper_4 2 50 cold 6.76 median 3.61 ms peak 81 MB area 0.00662 ref 0.00662109375 
+conv_strip_vm 101 m3vos 0018_cut_pepper_5 1 50 cold 4.86 median 3.60 ms peak 81 MB area 0.00223 ref 0.002231987847222222 
+conv_strip_vm 102 m3vos 0018_cut_pepper_5 2 50 cold 7.34 median 3.61 ms peak 81 MB area 0.00168 ref 0.0016807725694444444 
+conv_strip_vm 103 m3vos 0019_cut_pepper_6 1 50 cold 6.61 median 3.58 ms peak 81 MB area 0.00315 ref 0.0031488715277777778 
+strip call 2600: 0/16 records flagged, conditioning flagged 0
+conv_strip_vm 104 m3vos 0019_cut_pepper_6 2 50 cold 7.81 median 3.57 ms peak 81 MB area 0.00150 ref 0.001501736111111111 
+conv_strip_vm 105 m3vos 0019_cut_pepper_6 3 50 cold 7.88 median 3.59 ms peak 81 MB area 0.00150 ref 0.0015006510416666666 
+conv_strip_vm 106 m3vos 0020_cut_green_pepper_2 1 50 cold 7.89 median 3.58 ms peak 81 MB area 0.00729 ref 0.007287326388888889 
+conv_strip_vm 107 m3vos 0020_cut_green_pepper_2 2 50 cold 8.15 median 3.64 ms peak 81 MB area 0.01345 ref 0.013449435763888889 
+conv_strip_vm 108 m3vos 0021_cut_green_pepper_3 1 50 cold 7.48 median 3.51 ms peak 81 MB area 0.01298 ref 0.012978515625 
+conv_strip_vm 109 m3vos 0021_cut_green_pepper_3 2 50 cold 8.17 median 3.60 ms peak 81 MB area 0.01355 ref 0.013550347222222222 
+conv_strip_vm 110 m3vos 0022_clipoff_wood_1 1 50 cold 7.26 median 3.68 ms peak 81 MB area 0.04230 ref 0.042297453703703705 
+conv_strip_vm 111 m3vos 0023_clipoff_wood_2 1 50 cold 7.88 median 3.65 ms peak 81 MB area 0.04903 ref 0.049032600308641976 
+strip call 2800: 0/16 records flagged, conditioning flagged 0
+conv_strip_vm 112 m3vos 0024_disassemble_firework_1 1 50 cold 7.31 median 3.64 ms peak 81 MB area 0.03300 ref 0.03299720293209876 
+conv_strip_vm 113 m3vos 0025_assemble_firework_2 1 50 cold 7.62 median 3.62 ms peak 81 MB area 0.02516 ref 0.02515625 
+conv_strip_vm 114 m3vos 0025_assemble_firework_2 2 50 cold 7.02 median 3.60 ms peak 81 MB area 0.09787 ref 0.09786554783950617 
+conv_strip_vm 115 m3vos 0026_assemble_firework_3 1 50 cold 6.55 median 3.54 ms peak 81 MB area 0.07407 ref 0.07406539351851851 
+conv_strip_vm 116 m3vos 0026_assemble_firework_3 2 50 cold 6.61 median 3.60 ms peak 81 MB area 0.00000 ref 0.0 
+conv_strip_vm 117 m3vos 0027_cut_carrot_1 1 50 cold 6.46 median 3.57 ms peak 81 MB area 0.00182 ref 0.001823559670781893 
+conv_strip_vm 118 m3vos 0028_cut_carrot_2 1 50 cold 7.78 median 3.60 ms peak 82 MB area 0.00923 ref 0.009231824417009602 
+conv_strip_vm 119 m3vos 0029_cut_celery_1 1 50 cold 8.64 median 3.51 ms peak 81 MB area 0.00325 ref 0.0032493141289437586 
+strip call 3000: 0/16 records flagged, conditioning flagged 0
+conv_strip_vm 120 m3vos 0030_cut_celery_2 1 50 cold 6.68 median 3.50 ms peak 81 MB area 0.00415 ref 0.004150377229080932 
+conv_strip_vm 121 m3vos 0031_cut_chili_pepper_1 1 50 cold 7.25 median 3.65 ms peak 81 MB area 0.00557 ref 0.00556755829903978 
+conv_strip_vm 122 m3vos 0032_cut_cucumber_1 1 50 cold 8.01 median 3.59 ms peak 81 MB area 0.00266 ref 0.00265860768175583 
+conv_strip_vm 123 m3vos 0033_cut_spinach_1 1 50 cold 6.76 median 3.58 ms peak 81 MB area 0.00206 ref 0.0020558984910836763 
+conv_strip_vm 124 m3vos 0034_cut_spinach_2 1 50 cold 8.46 median 3.49 ms peak 81 MB area 0.00204 ref 0.002041323731138546 
+conv_strip_vm 125 m3vos 0035_peel_garlic_1 1 50 cold 7.60 median 3.68 ms peak 81 MB area 0.00050 ref 0.0005032578875171468 
+conv_strip_vm 126 m3vos 0035_peel_garlic_1 2 50 cold 6.53 median 3.56 ms peak 81 MB area 0.00044 ref 0.0004441015089163237 
+conv_strip_vm 127 m3vos 0036_pull_noodles_1 1 50 cold 7.97 median 3.61 ms peak 82 MB area 0.03793 ref 0.037929526748971196 
+strip call 3200: 0/16 records flagged, conditioning flagged 0
+conv_strip_vm 128 m3vos 0037_knitting_sweater_1 1 50 cold 7.79 median 3.71 ms peak 81 MB area 0.00408 ref 0.004076485339506173 
+conv_strip_vm 129 m3vos 0037_knitting_sweater_1 2 50 cold 7.87 median 3.65 ms peak 81 MB area 0.01146 ref 0.011455922067901235 
+conv_strip_vm 130 m3vos 0038_knitting_sweater_2 1 50 cold 7.36 median 3.61 ms peak 81 MB area 0.01296 ref 0.012956693672839506 
+conv_strip_vm 131 m3vos 0038_knitting_sweater_2 2 50 cold 8.32 median 3.60 ms peak 81 MB area 0.00791 ref 0.00791136188271605 
+conv_strip_vm 132 m3vos 0039_knitting_sweater_3 1 50 cold 7.69 median 3.68 ms peak 82 MB area 0.01549 ref 0.015493827160493827 
+conv_strip_vm 133 m3vos 0039_knitting_sweater_3 2 50 cold 6.50 median 3.61 ms peak 81 MB area 0.01360 ref 0.013603877314814815 
+conv_strip_vm 134 m3vos 0040_knitting_sweater_4 1 50 cold 6.75 median 3.63 ms peak 81 MB area 0.01521 ref 0.015209780092592592 
+conv_strip_vm 135 m3vos 0041_knitting_sweater_5 1 50 cold 6.57 median 3.54 ms peak 81 MB area 0.03603 ref 0.03603395061728395 
+strip call 3400: 0/16 records flagged, conditioning flagged 0
+conv_strip_vm 136 m3vos 0042_shake_chemical_liquid_1 1 50 cold 7.70 median 3.62 ms peak 81 MB area 0.08455 ref 0.08455439814814815 
+conv_strip_vm 137 m3vos 0043_shake_chemical_liquid_2 1 50 cold 7.72 median 3.52 ms peak 81 MB area 0.07675 ref 0.07675347222222222 
+conv_strip_vm 138 m3vos 0044_shake_chemical_liquid_3 1 50 cold 7.62 median 3.71 ms peak 82 MB area 0.04762 ref 0.04762008101851852 
+conv_strip_vm 139 m3vos 0045_peel_electricwire_1 1 50 cold 7.60 median 3.65 ms peak 81 MB area 0.00883 ref 0.00883101851851852 
+conv_strip_vm 140 m3vos 0046_peel_electricwire_2 1 50 cold 6.54 median 3.63 ms peak 81 MB area 0.00341 ref 0.0034148341049382715 
+conv_strip_vm 141 m3vos 0047_peel_electricwire_3 1 50 cold 7.94 median 3.63 ms peak 81 MB area 0.00369 ref 0.0036902006172839508 
+conv_strip_vm 142 m3vos 0048_melt_cheese_1 1 50 cold 7.57 median 3.57 ms peak 81 MB area 0.00119 ref 0.0011892361111111112 
+conv_strip_vm 143 m3vos 0048_melt_cheese_1 2 50 cold 6.30 median 3.67 ms peak 81 MB area 0.00108 ref 0.001084104938271605 
+strip call 3600: 0/16 records flagged, conditioning flagged 0
+conv_strip_vm 144 m3vos 0049_melt_oil_1 1 50 cold 10.47 median 3.55 ms peak 81 MB area 0.00000 ref 0.0 
+conv_strip_vm 145 m3vos 0050_twist_mop_1 1 50 cold 8.08 median 3.67 ms peak 81 MB area 0.06226 ref 0.06226466049382716 
+conv_strip_vm 146 m3vos 0051_shake_wine_1 1 50 cold 8.02 median 3.63 ms peak 81 MB area 0.12597 ref 0.12596585244267197 
+conv_strip_vm 147 m3vos 0052_shake_wine_2 1 50 cold 7.08 median 3.61 ms peak 81 MB area 0.10834 ref 0.10834099264705882 
+conv_strip_vm 148 m3vos 0053_pour_milk_1 1 50 cold 8.27 median 3.67 ms peak 81 MB area 0.08537 ref 0.08536795910493827 
+conv_strip_vm 149 m3vos 0054_cut_garlic_1 1 50 cold 7.81 median 3.57 ms peak 81 MB area 0.00785 ref 0.007849633487654321 
+conv_strip_vm 150 m3vos 0055_cut_green_olives_1 1 50 cold 7.84 median 3.68 ms peak 81 MB area 0.00949 ref 0.009486400462962962 
+conv_strip_vm 151 m3vos 0055_cut_green_olives_1 2 50 cold 7.12 median 3.56 ms peak 81 MB area 0.00381 ref 0.0038107638888888887 
+strip call 3800: 0/16 records flagged, conditioning flagged 0
+conv_strip_vm 152 m3vos 0055_cut_green_olives_1 3 50 cold 7.68 median 3.64 ms peak 81 MB area 0.00852 ref 0.008515625 
+conv_strip_vm 153 m3vos 0055_cut_green_olives_1 4 50 cold 6.45 median 3.65 ms peak 81 MB area 0.00389 ref 0.003894193672839506 
+conv_strip_vm 154 m3vos 0056_cut_tomato_1 1 50 cold 7.97 median 3.62 ms peak 81 MB area 0.00576 ref 0.00576195987654321 
+conv_strip_vm 155 m3vos 0056_cut_tomato_1 2 50 cold 7.55 median 3.70 ms peak 81 MB area 0.00585 ref 0.005851176697530864 
+conv_strip_vm 156 m3vos 0057_disassemble_gun_1 1 50 cold 7.92 median 3.60 ms peak 81 MB area 0.07672 ref 0.07672019675925926 
+conv_strip_vm 157 m3vos 0058_disassemble_gun_2 1 50 cold 9.73 median 3.64 ms peak 81 MB area 0.07622 ref 0.07622347608024692 
+conv_strip_vm 158 m3vos 0059_disassemble_gun_3 1 50 cold 7.74 median 3.57 ms peak 81 MB area 0.08703 ref 0.08702690972222223 
+conv_strip_vm 159 m3vos 0060_pour_water_1 1 50 cold 7.78 median 3.57 ms peak 81 MB area 0.00633 ref 0.006331983024691358 
+strip call 4000: 0/16 records flagged, conditioning flagged 0
+conv_strip_vm 160 m3vos 0061_pour_beer_1 1 50 cold 7.16 median 3.71 ms peak 81 MB area 0.28967 ref 0.28967351466049385 
+conv_strip_vm 161 m3vos 0062_tie_shoelaces_1 1 50 cold 8.30 median 3.50 ms peak 81 MB area 0.02983 ref 0.029830246913580247 
+conv_strip_vm 162 m3vos 0063_cut_cigar_wrapper_1 1 50 cold 8.20 median 3.68 ms peak 81 MB area 0.19122 ref 0.19121576003086418 
+conv_strip_vm 163 m3vos 0064_warp_cigar_1 1 50 cold 8.33 median 3.60 ms peak 81 MB area 0.20873 ref 0.2087307098765432 
+conv_strip_vm 164 m3vos 0065_warp_cigar_2 1 50 cold 6.79 median 3.57 ms peak 81 MB area 0.12340 ref 0.12340036651234568 
+conv_strip_vm 165 m3vos 0066_warp_cigar_3 1 50 cold 7.70 median 3.65 ms peak 81 MB area 0.10889 ref 0.10889322916666666 
+conv_strip_vm 166 m3vos 0067_make_chocolate_noddle_1 1 50 cold 7.70 median 3.61 ms peak 81 MB area 0.00000 ref 0.0 
+conv_strip_vm 167 m3vos 0068_ground_herbal_1 1 50 cold 7.85 median 3.61 ms peak 81 MB area 0.03486 ref 0.03485532407407407 
+strip call 4200: 0/16 records flagged, conditioning flagged 0
+conv_strip_vm 168 m3vos 0069_pour_ground_herbal_2 1 50 cold 7.28 median 3.62 ms peak 81 MB area 0.05459 ref 0.05458767361111111 
+conv_strip_vm 169 m3vos 0070_serve_dishes_1 1 50 cold 7.59 median 3.60 ms peak 82 MB area 0.00000 ref 0.0 
+conv_strip_vm 170 m3vos 0071_pour_soup_1 1 50 cold 7.70 median 3.57 ms peak 81 MB area 0.07119 ref 0.07119020061728396 
+conv_strip_vm 171 m3vos 0072_pour_soup_2 1 50 cold 7.68 median 3.68 ms peak 81 MB area 0.01236 ref 0.012361557147562582 
+conv_strip_vm 172 m3vos 0073_chop_onion_1 1 50 cold 8.22 median 3.60 ms peak 81 MB area 0.01672 ref 0.01671537422839506 
+conv_strip_vm 173 m3vos 0074_heat_water_1 1 50 cold 7.84 median 3.58 ms peak 81 MB area 0.00256 ref 0.002560763888888889 
+conv_strip_vm 174 m3vos 0075_assemble_puzzle_1 1 50 cold 7.34 median 3.61 ms peak 81 MB area 0.07120 ref 0.07119839891975309 
+conv_strip_vm 175 m3vos 0075_assemble_puzzle_1 2 50 cold 6.96 median 3.63 ms peak 81 MB area 0.03087 ref 0.030869984567901236 
+strip call 4400: 0/16 records flagged, conditioning flagged 0
+conv_strip_vm 176 m3vos 0075_assemble_puzzle_1 3 50 cold 7.27 median 3.57 ms peak 81 MB area 0.02863 ref 0.02862895447530864 
+conv_strip_vm 177 m3vos 0075_assemble_puzzle_1 4 50 cold 7.93 median 3.55 ms peak 81 MB area 0.03199 ref 0.03199266975308642 
+conv_strip_vm 178 m3vos 0076_assemble_puzzle_2 1 50 cold 6.77 median 3.62 ms peak 81 MB area 0.00101 ref 0.0010050154320987654 
+conv_strip_vm 179 m3vos 0076_assemble_puzzle_2 2 50 cold 7.09 median 3.68 ms peak 81 MB area 0.00000 ref 0.0 
+conv_strip_vm 180 m3vos 0077_break_puzzle_1 1 50 cold 7.76 median 3.64 ms peak 81 MB area 0.13639 ref 0.13638744212962964 
+conv_strip_vm 181 m3vos 0078_assemble_puzzle_3 1 50 cold 7.28 median 3.67 ms peak 81 MB area 0.00718 ref 0.007175443672839506 
+conv_strip_vm 182 m3vos 0078_assemble_puzzle_3 2 50 cold 7.88 median 3.64 ms peak 81 MB area 0.00815 ref 0.008150559413580246 
+conv_strip_vm 183 m3vos 0078_assemble_puzzle_3 3 50 cold 6.79 median 3.70 ms peak 81 MB area 0.00901 ref 0.009007523148148148 
+strip call 4600: 0/16 records flagged, conditioning flagged 0
+conv_strip_vm 184 m3vos 0078_assemble_puzzle_3 4 50 cold 6.68 median 3.69 ms peak 81 MB area 0.00802 ref 0.008016493055555556 
+conv_strip_vm 185 m3vos 0079_assemble_puzzle_4 1 50 cold 7.41 median 3.81 ms peak 81 MB area 0.00761 ref 0.0076094714506172835 
+conv_strip_vm 186 m3vos 0079_assemble_puzzle_4 2 50 cold 7.71 median 3.66 ms peak 81 MB area 0.00933 ref 0.009328221450617284 
+conv_strip_vm 187 m3vos 0080_pour_water_4 1 50 cold 7.26 median 3.85 ms peak 81 MB area 0.00521 ref 0.005207368827160494 
+conv_strip_vm 188 m3vos 0081_drip_liquid_1 1 50 cold 7.77 median 3.70 ms peak 81 MB area 0.00555 ref 0.005551215277777778 
+conv_strip_vm 189 m3vos 0082_drip_liquid_2 1 50 cold 8.18 median 3.55 ms peak 81 MB area 0.00118 ref None 
+conv_strip_vm 190 m3vos 0083_carving_radish_1 1 50 cold 8.31 median 3.62 ms peak 81 MB area 0.08265 ref None 
+conv_strip_vm 191 m3vos 0084_curly_pile_1 1 50 cold 7.00 median 3.65 ms peak 81 MB area 0.06656 ref None 
+strip call 4800: 0/16 records flagged, conditioning flagged 0
+conv_strip_vm 192 m3vos 0085_sharpen_pencil_1 1 50 cold 6.49 median 3.66 ms peak 81 MB area 0.02480 ref None 
+conv_strip_vm 193 m3vos 0086_sheare_sheep_1 1 50 cold 6.68 median 3.62 ms peak 81 MB area 0.42960 ref None 
+conv_strip_vm 194 m3vos 0087_sheare_sheep_2 1 50 cold 6.55 median 3.69 ms peak 81 MB area 0.09383 ref None 
+conv_strip_vm 195 m3vos 0088_sheare_sheep_3 1 50 cold 7.01 median 3.57 ms peak 81 MB area 0.17015 ref None 
+conv_strip_vm 196 m3vos 0089_grind_powder_1 1 50 cold 7.96 median 3.68 ms peak 81 MB area 0.07119 ref None 
+conv_strip_vm 197 m3vos 0090_scoop_seeds_1 1 50 cold 6.55 median 3.58 ms peak 81 MB area 0.04389 ref None 
+conv_strip_vm 198 m3vos 0091_smash_cucumber_1 1 50 cold 6.60 median 3.62 ms peak 81 MB area 0.04576 ref None 
+conv_strip_vm 199 m3vos 0092_smash_fruit_1 1 50 cold 7.96 median 3.64 ms peak 81 MB area 0.04805 ref None 
+strip call 5000: 0/16 records flagged, conditioning flagged 0
+conv_strip_vm 200 m3vos 0093_smash_fruit_2 1 50 cold 4.48 median 3.61 ms peak 81 MB area 0.09393 ref None 
+conv_strip_vm 201 m3vos 0094_smash_garlic_1 1 50 cold 8.06 median 3.77 ms peak 81 MB area 0.00000 ref None 
+conv_strip_vm 202 m3vos 0095_smash_herbs_1 1 50 cold 6.69 median 3.64 ms peak 81 MB area 0.06955 ref None 
+conv_strip_vm 203 m3vos 0096_smash_seeds_1 1 50 cold 6.52 median 3.62 ms peak 81 MB area 0.04909 ref None 
+conv_strip_vm 204 m3vos 0097_water_change_color_1 1 50 cold 6.53 median 3.64 ms peak 81 MB area 0.04409 ref None 
+conv_strip_vm 205 m3vos 0098_water_change_color_2 1 50 cold 6.70 median 3.66 ms peak 81 MB area 0.10745 ref None 
+conv_strip_vm 206 m3vos 0099_make_pancakes_1 1 50 cold 6.82 median 3.65 ms peak 81 MB area 0.25015 ref None 
+conv_strip_vm 207 m3vos 0100_make_omelet_1 1 50 cold 6.66 median 3.67 ms peak 81 MB area 0.00692 ref None 
+strip call 5200: 0/16 records flagged, conditioning flagged 0
+conv_strip_vm 208 m3vos 0101_Brush_sauce_1 1 50 cold 7.76 median 3.59 ms peak 81 MB area 0.00742 ref None 
+conv_strip_vm 209 m3vos 0102_shave_beard_1 1 50 cold 6.66 median 3.65 ms peak 81 MB area 0.05071 ref None 
+conv_strip_vm 210 m3vos 0103_shave_beard_2 1 50 cold 6.53 median 3.63 ms peak 81 MB area 0.10993 ref None 
+conv_strip_vm 211 m3vos 0104_shave_fish_1 1 50 cold 7.93 median 4.82 ms peak 81 MB area 0.17747 ref None 
+conv_strip_vm 212 m3vos 0105_shave_fish_2 1 50 cold 6.59 median 3.80 ms peak 81 MB area 0.10546 ref None 
+conv_strip_vm 213 m3vos 0106_turn_screw_1 1 50 cold 7.62 median 3.70 ms peak 81 MB area 0.00060 ref None 
+conv_strip_vm 214 m3vos 0106_turn_screw_1 2 50 cold 7.85 median 3.65 ms peak 81 MB area 0.00013 ref None 
+conv_strip_vm 215 m3vos 0107_turn_screw_2 1 50 cold 7.75 median 3.69 ms peak 81 MB area 0.00019 ref None 
+strip call 5400: 15/16 records flagged, conditioning flagged 0
+conv_strip_vm 216 m3vos 0108_turn_screw_3 1 50 cold 7.85 median 3.69 ms peak 81 MB area 0.00000 ref None 
+conv_strip_vm 217 m3vos 0108_turn_screw_3 2 50 cold 7.69 median 3.67 ms peak 81 MB area 0.00011 ref None 
+conv_strip_vm 218 m3vos 0109_break_glass_1 1 50 cold 6.66 median 3.61 ms peak 81 MB area 0.02028 ref None 
+conv_strip_vm 219 m3vos 0110_grow_plant_1 1 50 cold 7.73 median 3.70 ms peak 81 MB area 0.03112 ref None 
+conv_strip_vm 220 m3vos 0111_pull_noodles_2 1 50 cold 7.90 median 3.63 ms peak 81 MB area 0.12512 ref None 
+conv_strip_vm 221 m3vos 0112_suture_wound_2 1 50 cold 8.00 median 3.63 ms peak 81 MB area 0.00760 ref None 
+conv_strip_vm 222 m3vos 0113_tearing_cabbage_1 1 50 cold 6.46 median 3.66 ms peak 81 MB area 0.02375 ref None 
+conv_strip_vm 223 m3vos 0114_tie_knot_1 1 50 cold 7.91 median 3.69 ms peak 81 MB area 0.01964 ref None 
+strip call 5600: 0/16 records flagged, conditioning flagged 0
+conv_strip_vm 224 m3vos 0114_tie_knot_1 2 50 cold 6.66 median 3.70 ms peak 81 MB area 0.01851 ref None 
+conv_strip_vm 225 m3vos 0115_tie_knot_2 1 50 cold 7.39 median 3.68 ms peak 81 MB area 0.00744 ref None 
+conv_strip_vm 226 m3vos 0115_tie_knot_2 2 50 cold 8.48 median 3.67 ms peak 81 MB area 0.01027 ref None 
+conv_strip_vm 227 m3vos 0116_apply_glue_1 1 50 cold 7.97 median 3.70 ms peak 81 MB area 0.00008 ref None 
+conv_strip_vm 228 m3vos 0117_apply_glue_2 1 50 cold 6.67 median 3.64 ms peak 81 MB area 0.00127 ref None 
+conv_strip_vm 229 m3vos 0118_break_bubble_1 1 50 cold 6.44 median 3.59 ms peak 81 MB area 0.21014 ref None 
+conv_strip_vm 230 m3vos 0119_break_bubble_2 1 50 cold 6.62 median 3.61 ms peak 81 MB area 0.24134 ref None 
+conv_strip_vm 231 m3vos 0120_break_bubble_3 1 50 cold 6.71 median 3.59 ms peak 81 MB area 0.17956 ref None 
+strip call 5800: 0/16 records flagged, conditioning flagged 0
+conv_strip_vm 232 m3vos 0121_break_bubble_4 1 50 cold 6.94 median 3.59 ms peak 81 MB area 0.48773 ref None 
+conv_strip_vm 233 m3vos 0122_cut_glue_stickt_1 1 50 cold 7.69 median 3.67 ms peak 81 MB area 0.00754 ref None 
+conv_strip_vm 234 m3vos 0123_erupting_liquid_1 1 50 cold 6.48 median 3.55 ms peak 81 MB area 0.14368 ref None 
+conv_strip_vm 235 m3vos 0124_erupting_liquid_2 1 50 cold 6.91 median 3.67 ms peak 81 MB area 0.00000 ref None 
+conv_strip_vm 236 m3vos 0125_flow_water_1 1 50 cold 6.69 median 3.57 ms peak 81 MB area 0.00849 ref None 
+conv_strip_vm 237 m3vos 0126_hit_balloon_1 1 50 cold 7.60 median 3.62 ms peak 81 MB area 0.04030 ref None 
+conv_strip_vm 238 m3vos 0127_hit_balloon_2 1 50 cold 7.51 median 3.60 ms peak 82 MB area 0.00990 ref None 
+conv_strip_vm 239 m3vos 0128_knead_cheese_1 1 50 cold 8.01 median 3.73 ms peak 81 MB area 0.03549 ref None 
+strip call 6000: 0/16 records flagged, conditioning flagged 0
+conv_strip_vm 240 m3vos 0129_knead_cheese_2 1 50 cold 6.94 median 3.61 ms peak 81 MB area 0.08171 ref None 
+conv_strip_vm 241 m3vos 0130_knead_cheese_3 1 50 cold 6.90 median 3.62 ms peak 81 MB area 0.02801 ref None 
+conv_strip_vm 242 m3vos 0131_Making_fibers_1 1 50 cold 6.71 median 3.68 ms peak 81 MB area 0.02860 ref None 
+conv_strip_vm 243 m3vos 0132_Melting_cans_1 1 50 cold 7.69 median 3.70 ms peak 81 MB area 0.08186 ref None 
+conv_strip_vm 244 m3vos 0133_pour_tea_1 1 50 cold 6.68 median 3.70 ms peak 81 MB area 0.01348 ref None 
+conv_strip_vm 245 m3vos 0134_pour_tea_2 1 50 cold 6.62 median 3.70 ms peak 81 MB area 0.01391 ref None 
+conv_strip_vm 246 m3vos 0135_pour_tea_3 1 50 cold 6.55 median 3.67 ms peak 82 MB area 0.01415 ref None 
+conv_strip_vm 247 m3vos 0136_pour_tea_4 1 50 cold 8.68 median 3.61 ms peak 81 MB area 0.00656 ref None 
+strip call 6200: 0/16 records flagged, conditioning flagged 0
+conv_strip_vm 248 m3vos 0137_pour_tea_5 1 50 cold 7.95 median 3.65 ms peak 81 MB area 0.00948 ref None 
+conv_strip_vm 249 m3vos 0138_pour_tea_6 1 50 cold 7.64 median 3.63 ms peak 81 MB area 0.01329 ref None 
+conv_strip_vm 250 m3vos 0139_pour_tea_7 1 50 cold 7.93 median 3.68 ms peak 81 MB area 0.01253 ref None 
+conv_strip_vm 251 m3vos 0140_solidify_gold_1 1 50 cold 6.47 median 3.62 ms peak 81 MB area 0.03060 ref None 
+conv_strip_vm 252 m3vos 0141_puncture_balloon_1 1 50 cold 8.09 median 3.57 ms peak 81 MB area 0.04610 ref None 
+conv_strip_vm 253 m3vos 0142_puncture_balloon_2 1 50 cold 6.81 median 3.64 ms peak 81 MB area 0.13173 ref None 
+conv_strip_vm 254 m3vos 0143_puncture_balloon_3 1 50 cold 6.05 median 3.59 ms peak 81 MB area 0.10930 ref None 
+conv_strip_vm 255 m3vos 0144_puncture_balloon_4 1 50 cold 7.79 median 3.65 ms peak 81 MB area 0.00932 ref None 
+strip call 6400: 0/16 records flagged, conditioning flagged 0
+conv_strip_vm 256 m3vos 0145_Rubbing_sponge_1 1 50 cold 6.88 median 3.63 ms peak 81 MB area 0.04557 ref None 
+conv_strip_vm 257 m3vos 0146_solder_wire_1 1 50 cold 8.11 median 3.64 ms peak 81 MB area 0.00064 ref None 
+conv_strip_vm 258 m3vos 0147_solidify_aluminum_1 1 50 cold 6.60 median 3.67 ms peak 81 MB area 0.03154 ref None 
+conv_strip_vm 259 m3vos 0148_solidify_iron_1 1 50 cold 6.75 median 3.54 ms peak 81 MB area 0.04359 ref None 
+conv_strip_vm 260 m3vos 0149_solidify_water_1 1 50 cold 6.50 median 3.66 ms peak 81 MB area 0.15931 ref None 
+conv_strip_vm 261 m3vos 0150_solidify_water_2 1 50 cold 6.89 median 3.57 ms peak 81 MB area 0.04578 ref None 
+conv_strip_vm 262 m3vos 0151_solidify_water_3 1 50 cold 7.99 median 3.71 ms peak 81 MB area 0.00110 ref None 
+conv_strip_vm 263 m3vos 0152_solidify_water_4 1 50 cold 7.54 median 3.56 ms peak 81 MB area 0.12701 ref None 
+strip call 6600: 0/16 records flagged, conditioning flagged 0
+conv_strip_vm 264 m3vos 0153_solidify_water_5 1 50 cold 7.85 median 3.70 ms peak 81 MB area 0.16457 ref None 
+conv_strip_vm 265 m3vos 0154_solidify_water_6 1 50 cold 7.97 median 3.59 ms peak 82 MB area 0.04551 ref None 
+conv_strip_vm 266 m3vos 0155_solidify_water_7 1 50 cold 8.09 median 3.68 ms peak 81 MB area 0.20027 ref None 
+conv_strip_vm 267 m3vos 0156_splash_water_1 1 50 cold 6.43 median 3.54 ms peak 81 MB area 0.29777 ref None 
+conv_strip_vm 268 m3vos 0157_splash_water_2 1 50 cold 6.52 median 3.54 ms peak 81 MB area 0.26867 ref None 
+conv_strip_vm 269 m3vos 0158_melt_glue_block_1 1 50 cold 8.09 median 3.57 ms peak 81 MB area 0.00702 ref None 
+conv_strip_vm 270 m3vos 0159_melt_glue_stick_2 1 50 cold 6.79 median 3.65 ms peak 81 MB area 0.00317 ref None 
+conv_strip_vm 271 m3vos 0160_melt_glue_stick_3 1 50 cold 6.50 median 3.58 ms peak 81 MB area 0.01703 ref None 
+strip call 6800: 0/16 records flagged, conditioning flagged 0
+conv_strip_vm 272 m3vos 0161_melt_glue_stick_4 1 50 cold 4.87 median 3.67 ms peak 82 MB area 0.00959 ref None 
+conv_strip_vm 273 m3vos 0162_splash_water_3 1 50 cold 7.74 median 3.69 ms peak 81 MB area 0.01292 ref None 
+conv_strip_vm 274 m3vos 0163_splash_water_5 1 50 cold 6.65 median 3.60 ms peak 81 MB area 0.22623 ref None 
+conv_strip_vm 275 m3vos 0164_splash_water_6 1 50 cold 6.45 median 3.69 ms peak 81 MB area 0.08105 ref None 
+conv_strip_vm 276 m3vos 0165_crystallize_metal_1 1 50 cold 6.75 median 3.68 ms peak 81 MB area 0.02950 ref None 
+conv_strip_vm 277 m3vos 0166_crystallize_liquid_3 1 50 cold 7.89 median 3.68 ms peak 81 MB area 0.14861 ref None 
+conv_strip_vm 278 m3vos 0167_crystallize_liquid_4 1 50 cold 7.88 median 3.64 ms peak 82 MB area 0.13940 ref None 
+conv_strip_vm 279 m3vos 0168_crystallize_liquid_5 1 50 cold 7.93 median 3.65 ms peak 81 MB area 0.01957 ref None 
+strip call 7000: 0/16 records flagged, conditioning flagged 0
+conv_strip_vm 280 m3vos 0169_break_glass_4 1 50 cold 7.69 median 3.70 ms peak 81 MB area 0.16871 ref None 
+conv_strip_vm 281 m3vos 0170_grow_rime_1 1 50 cold 6.86 median 3.68 ms peak 81 MB area 0.03686 ref None 
+conv_strip_vm 282 m3vos 0171_vaporized_liquid_nitrogen_1 1 50 cold 6.66 median 3.57 ms peak 81 MB area 0.17758 ref None 
+conv_strip_vm 283 m3vos 0172_solify_liquid_2 1 50 cold 7.61 median 3.67 ms peak 81 MB area 0.16608 ref None 
+conv_strip_vm 284 m3vos 0173_crystallize_liquid_9 1 50 cold 7.74 median 3.63 ms peak 81 MB area 0.13324 ref None 
+conv_strip_vm 285 m3vos 0174_crystallize_liquid_6 1 50 cold 6.90 median 3.67 ms peak 81 MB area 0.06679 ref None 
+conv_strip_vm 286 m3vos 0175_solify_liquid_1 1 50 cold 6.71 median 3.57 ms peak 81 MB area 0.07586 ref None 
+conv_strip_vm 287 m3vos 0176_sublime_dryice_2 1 50 cold 7.13 median 3.67 ms peak 81 MB area 0.01778 ref None 
+strip call 7200: 0/16 records flagged, conditioning flagged 0
+conv_strip_vm 288 m3vos 0177_soften_metal_1 1 50 cold 6.56 median 3.65 ms peak 81 MB area 0.06807 ref None 
+conv_strip_vm 289 m3vos 0178_crystallize_liquid_7 1 50 cold 7.62 median 3.67 ms peak 81 MB area 0.02878 ref None 
+conv_strip_vm 290 m3vos 0179_sublime_dryice_3 1 50 cold 7.96 median 3.57 ms peak 81 MB area 0.12461 ref None 
+conv_strip_vm 291 m3vos 0180_sublime_dryice_4 1 50 cold 7.54 median 3.64 ms peak 81 MB area 0.08721 ref None 
+conv_strip_vm 292 m3vos 0181_generate_iodine_1 1 50 cold 7.20 median 3.88 ms peak 81 MB area 0.27694 ref None 
+conv_strip_vm 293 m3vos 0182_generate_iodine_2 1 50 cold 7.57 median 3.70 ms peak 81 MB area 0.24667 ref None 
+conv_strip_vm 294 m3vos 0183_condensation_water_5 1 50 cold 6.71 median 3.63 ms peak 81 MB area 0.03974 ref None 
+conv_strip_vm 295 m3vos 0184_dissolve_salt_1 1 50 cold 6.50 median 3.63 ms peak 81 MB area 0.00452 ref None 
+strip call 7400: 0/16 records flagged, conditioning flagged 0
+conv_strip_vm 296 m3vos 0185_melt_chocolate_1 1 50 cold 6.86 median 3.70 ms peak 81 MB area 0.03754 ref None 
+conv_strip_vm 297 m3vos 0186_burn_plastic_3 1 50 cold 8.01 median 3.64 ms peak 81 MB area 0.00792 ref None 
+conv_strip_vm 298 m3vos 0187_break_glass_2 1 50 cold 8.51 median 3.67 ms peak 81 MB area 0.31355 ref None 
+conv_strip_vm 299 m3vos 0188_break_glass_3 1 50 cold 7.56 median 3.64 ms peak 81 MB area 0.47308 ref None 
+conv_strip_vm 300 m3vos 0189_coagulate_water_1 1 50 cold 6.93 median 3.68 ms peak 81 MB area 0.79662 ref None 
+conv_strip_vm 301 m3vos 0190_condensation_iodine_1 1 50 cold 5.90 median 3.65 ms peak 81 MB area 0.03001 ref None 
+conv_strip_vm 302 m3vos 0191_condensation_water_1 1 50 cold 6.50 median 3.63 ms peak 81 MB area 0.16223 ref None 
+conv_strip_vm 303 m3vos 0192_crystallize_liquid_1 1 50 cold 6.68 median 3.66 ms peak 81 MB area 0.02024 ref None 
+strip call 7600: 0/16 records flagged, conditioning flagged 0
+conv_strip_vm 304 m3vos 0193_crystallize_liquid_2 1 50 cold 8.23 median 3.68 ms peak 81 MB area 0.06508 ref None 
+conv_strip_vm 305 m3vos 0194_dissolve_drug_1 1 50 cold 6.39 median 3.72 ms peak 81 MB area 0.33214 ref None 
+conv_strip_vm 306 m3vos 0195_forge_steel_1 1 50 cold 8.12 median 3.66 ms peak 82 MB area 0.03300 ref None 
+conv_strip_vm 307 m3vos 0196_liquefied_bromine_1 1 50 cold 8.31 median 3.63 ms peak 81 MB area 0.02545 ref None 
+conv_strip_vm 308 m3vos 0197_melt_crystals_1 1 50 cold 6.24 median 3.64 ms peak 81 MB area 0.00878 ref None 
+conv_strip_vm 309 m3vos 0198_soften_hair_1 1 50 cold 7.54 median 3.58 ms peak 81 MB area 0.05117 ref None 
+conv_strip_vm 310 m3vos 0199_sublime_dryice_1 1 50 cold 6.70 median 3.63 ms peak 81 MB area 0.02593 ref None 
+conv_strip_vm 311 m3vos 0200_sublime_iodine_1 1 50 cold 7.69 median 3.53 ms peak 81 MB area 0.04163 ref None 
+strip call 7800: 0/16 records flagged, conditioning flagged 0
+conv_strip_vm 312 m3vos 0201_pour_ointment_1 1 50 cold 6.76 median 3.62 ms peak 81 MB area 0.00951 ref None 
+conv_strip_vm 313 m3vos 0202_knead_plasticine_1 1 50 cold 7.21 median 3.60 ms peak 81 MB area 0.08998 ref None 
+conv_strip_vm 314 m3vos 0203_knead_plasticine_2 1 50 cold 7.61 median 3.62 ms peak 81 MB area 0.27585 ref None 
+conv_strip_vm 315 m3vos 0204_knead_plasticine_3 1 50 cold 6.95 median 3.68 ms peak 81 MB area 0.10680 ref None 
+conv_strip_vm 316 m3vos 0205_twist_rubber_1 1 50 cold 7.42 median 3.64 ms peak 82 MB area 0.05260 ref None 
+conv_strip_vm 317 m3vos 0206_melt_cheese_5 1 50 cold 6.54 median 3.56 ms peak 81 MB area 0.05969 ref None 
+conv_strip_vm 318 m3vos 0207_scrape_cheese_6 1 50 cold 7.93 median 3.69 ms peak 81 MB area 0.03693 ref None 
+conv_strip_vm 319 m3vos 0208_cut_chocolate_1 1 50 cold 7.79 median 3.59 ms peak 81 MB area 0.09518 ref None 
+strip call 8000: 0/16 records flagged, conditioning flagged 0
+conv_strip_vm 320 m3vos 0209_cut_cheese_2 1 50 cold 7.75 median 3.64 ms peak 82 MB area 0.09925 ref None 
+conv_strip_vm 321 m3vos 0210_cut_onion_1 1 50 cold 7.75 median 3.54 ms peak 81 MB area 0.00988 ref None 
+conv_strip_vm 322 m3vos 0211_melt_chocolate_2 1 50 cold 7.67 median 3.69 ms peak 81 MB area 0.08016 ref None 
+conv_strip_vm 323 m3vos 0212_cut_candy_1 1 50 cold 7.96 median 3.60 ms peak 81 MB area 0.00000 ref None 
+conv_strip_vm 324 m3vos 0213_knead_candy_2 1 50 cold 8.01 median 3.63 ms peak 81 MB area 0.18053 ref None 
+conv_strip_vm 325 m3vos 0214_knead_candy_3 1 50 cold 6.38 median 3.69 ms peak 81 MB area 0.02387 ref None 
+conv_strip_vm 326 m3vos 0215_make_glass_1 1 50 cold 6.71 median 3.61 ms peak 81 MB area 0.01751 ref None 
+conv_strip_vm 327 m3vos 0216_pour_cream_1 1 50 cold 7.13 median 3.70 ms peak 81 MB area 0.28453 ref None 
+strip call 8200: 0/16 records flagged, conditioning flagged 0
+conv_strip_vm 328 m3vos 0217_boil_dry_tea_1 1 50 cold 7.16 median 3.71 ms peak 81 MB area 0.00366 ref None 
+conv_strip_vm 329 m3vos 0218_boil_dry_watermelon_juice_1 1 50 cold 7.86 median 3.70 ms peak 81 MB area 0.01448 ref None 
+conv_strip_vm 330 m3vos 0219_twist_rubber_2 1 50 cold 7.57 median 3.68 ms peak 81 MB area 0.07844 ref None 
+conv_strip_vm 331 m3vos 0220_scrape_cheese_7 1 50 cold 7.76 median 3.64 ms peak 81 MB area 0.02111 ref None 
+conv_strip_vm 332 m3vos 0221_knead_plasticine_4 1 50 cold 7.31 median 3.69 ms peak 81 MB area 0.13264 ref None 
+conv_strip_vm 333 m3vos 0222_knead_plasticine_5 1 50 cold 6.80 median 3.58 ms peak 81 MB area 0.04683 ref None 
+conv_strip_vm 334 m3vos 0223_make_glass_2 1 50 cold 8.63 median 3.69 ms peak 81 MB area 0.06671 ref None 
+conv_strip_vm 335 m3vos 0224_make_glass_3 1 50 cold 7.69 median 3.62 ms peak 81 MB area 0.00000 ref None 
+strip call 8400: 0/16 records flagged, conditioning flagged 0
+conv_strip_vm 336 m3vos 0225_make_glass_4 1 50 cold 8.23 median 3.63 ms peak 81 MB area 0.01668 ref None 
+conv_strip_vm 337 m3vos 0226_make_glass_5 1 50 cold 7.82 median 3.65 ms peak 81 MB area 0.13615 ref None 
+conv_strip_vm 338 m3vos 0227_make_glass_6 1 50 cold 7.68 median 3.64 ms peak 81 MB area 0.00000 ref None 
+conv_strip_vm 339 m3vos 0228_make_glass_7 1 50 cold 7.93 median 3.62 ms peak 81 MB area 0.14090 ref None 
+conv_strip_vm 340 m3vos 0229_make_glass_8 1 50 cold 6.74 median 3.63 ms peak 81 MB area 0.00000 ref None 
+conv_strip_vm 341 m3vos 0230_make_glass_9 1 50 cold 6.44 median 3.66 ms peak 81 MB area 0.09669 ref None 
+conv_strip_vm 342 m3vos 0231_make_glass_10 1 50 cold 7.85 median 3.69 ms peak 81 MB area 0.09189 ref None 
+conv_strip_vm 343 m3vos 0232_make_glass_11 1 50 cold 8.06 median 3.60 ms peak 81 MB area 0.06800 ref None 
+strip call 8600: 0/16 records flagged, conditioning flagged 0
+conv_strip_vm 344 m3vos 0233_make_glass_12 1 50 cold 6.60 median 3.62 ms peak 81 MB area 0.06586 ref None 
+conv_strip_vm 345 m3vos 0234_knead_plasticine_6 1 50 cold 7.80 median 3.53 ms peak 81 MB area 0.16704 ref None 
+conv_strip_vm 346 m3vos 0235_crush_stress_ball_1 1 50 cold 7.75 median 3.62 ms peak 81 MB area 0.33254 ref None 
+conv_strip_vm 347 m3vos 0236_crush_stress_ball_2 1 50 cold 8.01 median 3.65 ms peak 82 MB area 0.16965 ref None 
+conv_strip_vm 348 m3vos 0237_crush_stress_ball_4 1 50 cold 7.68 median 3.63 ms peak 81 MB area 0.25919 ref None 
+conv_strip_vm 349 m3vos 0238_crush_stress_ball_5 1 50 cold 7.18 median 3.64 ms peak 81 MB area 0.27303 ref None 
+conv_strip_vm 350 m3vos 0239_exhaust_smoke_1 1 50 cold 6.52 median 3.61 ms peak 81 MB area 0.15151 ref None 
+conv_strip_vm 351 m3vos 0240_exhaust_smoke_2 1 50 cold 6.50 median 3.63 ms peak 81 MB area 0.01820 ref None 
+strip call 8800: 0/16 records flagged, conditioning flagged 0
+conv_strip_vm 352 m3vos 0241_exhaust_smoke_3 1 50 cold 7.25 median 3.63 ms peak 81 MB area 0.05655 ref None 
+conv_strip_vm 353 m3vos 0242_smoke_dry_ice_1 1 50 cold 7.63 median 3.55 ms peak 81 MB area 0.20605 ref None 
+conv_strip_vm 354 m3vos 0243_tie_shoelaces_2 1 50 cold 6.85 median 3.67 ms peak 81 MB area 0.00000 ref None 
+conv_strip_vm 355 m3vos 0244_tie_shoelaces_3 1 50 cold 6.82 median 3.78 ms peak 81 MB area 0.01123 ref None 
+conv_strip_vm 356 m3vos 0245_tie_shoelaces_4 1 50 cold 7.72 median 3.62 ms peak 81 MB area 0.01016 ref None 
+conv_strip_vm 357 m3vos 0246_break_bubble_5 1 50 cold 6.61 median 3.78 ms peak 81 MB area 0.05298 ref None 
+conv_strip_vm 358 m3vos 0247_break_candy_jar_1 1 50 cold 8.01 median 3.61 ms peak 81 MB area 0.20580 ref None 
+conv_strip_vm 359 m3vos 0248_break_candy_jar_2 1 50 cold 7.86 median 3.65 ms peak 81 MB area 0.02415 ref None 
+strip call 9000: 0/16 records flagged, conditioning flagged 0
+conv_strip_vm 360 m3vos 0249_splash_liquid_1 1 50 cold 7.26 median 3.62 ms peak 81 MB area 0.28167 ref None 
+conv_strip_vm 361 m3vos 0250_splash_liquid_2 1 50 cold 7.86 median 3.63 ms peak 81 MB area 0.01178 ref None 
+conv_strip_vm 362 m3vos 0251_puncture_balloon_5 1 50 cold 7.05 median 3.62 ms peak 81 MB area 0.19976 ref None 
+conv_strip_vm 363 m3vos 0252_break_glass_5 1 50 cold 7.78 median 3.71 ms peak 81 MB area 0.17276 ref None 
+conv_strip_vm 364 m3vos 0253_splash_liquid_3 1 50 cold 7.62 median 3.70 ms peak 81 MB area 0.10298 ref None 
+conv_strip_vm 365 m3vos 0254_heat_corns_1 1 50 cold 7.85 median 3.58 ms peak 81 MB area 0.02800 ref None 
+conv_strip_vm 366 m3vos 0255_heat_corns_2 1 50 cold 6.73 median 3.63 ms peak 81 MB area 0.02999 ref None 
+conv_strip_vm 367 m3vos 0256_sharpen_pencil_2 1 50 cold 7.61 median 3.59 ms peak 81 MB area 0.13932 ref None 
+strip call 9200: 0/16 records flagged, conditioning flagged 0
+conv_strip_vm 368 m3vos 0257_burn_snacks_1 1 50 cold 6.61 median 3.62 ms peak 81 MB area 0.19116 ref None 
+conv_strip_vm 369 m3vos 0258_burn_candle_1 1 50 cold 7.99 median 3.68 ms peak 81 MB area 0.08574 ref None 
+conv_strip_vm 370 m3vos 0259_strike_match_1 1 50 cold 8.13 median 3.69 ms peak 81 MB area 0.06162 ref None 
+conv_strip_vm 371 m3vos 0260_slide_pen_1 1 50 cold 7.73 median 3.64 ms peak 81 MB area 0.00772 ref None 
+conv_strip_vm 372 m3vos 0261_slide_pencil_1 1 50 cold 7.68 median 3.64 ms peak 81 MB area 0.03919 ref None 
+conv_strip_vm 373 m3vos 0262_slide_pen_2 1 50 cold 6.53 median 3.62 ms peak 81 MB area 0.06811 ref None 
+conv_strip_vm 374 m3vos 0263_burn_paperclip_1 1 50 cold 6.78 median 3.67 ms peak 81 MB area 0.08938 ref None 
+conv_strip_vm 375 m3vos 0264_burn_metal_1 1 50 cold 7.69 median 3.70 ms peak 81 MB area 0.18936 ref None 
+strip call 9400: 0/16 records flagged, conditioning flagged 0
+conv_strip_vm 376 m3vos 0265_cut_pencil_1 1 50 cold 6.32 median 3.64 ms peak 81 MB area 0.09158 ref None 
+conv_strip_vm 377 m3vos 0266_burn_candy_1 1 50 cold 6.48 median 3.69 ms peak 81 MB area 0.19447 ref None 
+conv_strip_vm 378 m3vos 0267_burn_candy_2 1 50 cold 6.94 median 3.55 ms peak 81 MB area 0.16523 ref None 
+conv_strip_vm 379 m3vos 0268_burn_candy_3 1 50 cold 6.83 median 3.62 ms peak 81 MB area 0.10095 ref None 
+conv_strip_vm 380 m3vos 0269_press_pencil_1 1 50 cold 6.94 median 3.62 ms peak 81 MB area 0.01325 ref None 
+conv_strip_vm 381 m3vos 0270_burn_metal_2 1 50 cold 7.66 median 3.62 ms peak 81 MB area 0.12740 ref None 
+conv_strip_vm 382 m3vos 0271_puncture_balloon_6 1 50 cold 7.77 median 3.68 ms peak 81 MB area 0.17051 ref None 
+conv_strip_vm 383 m3vos 0272_splash_liquid_4 1 50 cold 10.64 median 3.71 ms peak 81 MB area 0.11374 ref None 
+strip call 9600: 0/16 records flagged, conditioning flagged 0
+conv_strip_vm 384 m3vos 0273_splash_liquid_5 1 50 cold 8.09 median 3.56 ms peak 81 MB area 0.09228 ref None 
+conv_strip_vm 385 m3vos 0274_splash_liquid_6 1 50 cold 7.75 median 3.64 ms peak 81 MB area 0.12930 ref None 
+conv_strip_vm 386 m3vos 0275_dissolve_drug_2 1 50 cold 8.33 median 4.67 ms peak 81 MB area 0.12518 ref None 
+conv_strip_vm 387 m3vos 0276_dissolve_drug_4 1 50 cold 6.35 median 3.65 ms peak 81 MB area 0.09744 ref None 
+conv_strip_vm 388 m3vos 0277_dissolve_drug_5 1 50 cold 7.96 median 3.64 ms peak 81 MB area 0.25287 ref None 
+conv_strip_vm 389 m3vos 0278_dissolve_drug_6 1 50 cold 6.47 median 3.62 ms peak 81 MB area 0.05700 ref None 
+conv_strip_vm 390 m3vos 0279_dissolve_drug_7 1 50 cold 6.72 median 3.54 ms peak 81 MB area 0.08149 ref None 
+conv_strip_vm 391 m3vos 0280_burn_candy_4 1 50 cold 8.61 median 3.79 ms peak 81 MB area 0.03906 ref None 
+strip call 9800: 0/16 records flagged, conditioning flagged 0
+conv_strip_vm 392 m3vos 0281_burn_candy_5 1 50 cold 8.07 median 5.32 ms peak 81 MB area 0.03668 ref None 
+conv_strip_vm 393 m3vos 0282_burn_candy_6 1 50 cold 7.63 median 3.70 ms peak 81 MB area 0.04944 ref None 
+conv_strip_vm 394 m3vos 0283_pour_beer_2 1 50 cold 8.06 median 3.70 ms peak 81 MB area 0.11183 ref None 
+conv_strip_vm 395 m3vos 0284_wrap_wire_1 1 50 cold 7.51 median 3.68 ms peak 81 MB area 0.00785 ref None 
+conv_strip_vm 396 m3vos 0285_make_pottery_1 1 50 cold 6.67 median 3.86 ms peak 81 MB area 0.00000 ref None 
+conv_strip_vm 397 m3vos 0286_top_cake_1 1 50 cold 6.75 median 3.66 ms peak 81 MB area 0.10576 ref None 
+conv_strip_vm 398 m3vos 0287_top_cake_2 1 50 cold 5.36 median 3.65 ms peak 81 MB area 0.16619 ref None 
+conv_strip_vm 399 m3vos 0288_top_cake_3 1 50 cold 6.55 median 3.63 ms peak 81 MB area 0.26468 ref None 
+strip call 10000: 0/16 records flagged, conditioning flagged 0
+conv_strip_vm 400 m3vos 0289_top_cake_4 1 50 cold 6.59 median 3.61 ms peak 81 MB area 0.26817 ref None 
+conv_strip_vm 401 m3vos 0290_peel_fruit_1 1 50 cold 8.23 median 3.66 ms peak 81 MB area 0.03473 ref None 
+conv_strip_vm 402 m3vos 0291_peel_fruit_2 1 50 cold 8.06 median 3.67 ms peak 81 MB area 0.12657 ref None 
+conv_strip_vm 403 m3vos 0292_peel_fruit_3 1 50 cold 6.41 median 3.60 ms peak 81 MB area 0.03004 ref None 
+conv_strip_vm 404 m3vos 0293_peel_fruit_4 1 50 cold 8.36 median 3.63 ms peak 81 MB area 0.02558 ref None 
+conv_strip_vm 405 m3vos 0294_cut_steel_1 1 50 cold 7.65 median 3.63 ms peak 81 MB area 0.02694 ref None 
+conv_strip_vm 406 m3vos 0295_paint_cream_1 1 50 cold 7.72 median 3.71 ms peak 81 MB area 0.02215 ref None 
+conv_strip_vm 407 m3vos 0296_make_cake_1 1 50 cold 7.13 median 3.68 ms peak 81 MB area 0.02133 ref None 
+strip call 10200: 15/16 records flagged, conditioning flagged 0
+conv_strip_vm 408 m3vos 0297_make_glass_13 1 50 cold 8.10 median 3.69 ms peak 81 MB area 0.00000 ref None 
+conv_strip_vm 409 m3vos 0298_whish_egg_1 1 50 cold 8.42 median 3.57 ms peak 81 MB area 0.02859 ref None 
+conv_strip_vm 410 m3vos 0299_peel_fruit_7 1 50 cold 6.83 median 3.69 ms peak 81 MB area 0.01949 ref None 
+conv_strip_vm 411 m3vos 0300_whish_egg_2 1 50 cold 8.08 median 3.65 ms peak 81 MB area 0.04201 ref None 
+conv_strip_vm 412 m3vos 0301_whish_egg_3 1 50 cold 8.44 median 3.65 ms peak 81 MB area 0.01806 ref None 
+conv_strip_vm 413 m3vos 0302_melt_gold_1 1 50 cold 6.52 median 3.56 ms peak 81 MB area 0.00208 ref None 
+conv_strip_vm 414 m3vos 0303_make_glass_14 1 50 cold 8.23 median 3.70 ms peak 81 MB area 0.00000 ref None 
+conv_strip_vm 415 m3vos 0304_make_glass_15 1 50 cold 7.80 median 3.69 ms peak 81 MB area 0.09467 ref None 
+strip call 10400: 0/16 records flagged, conditioning flagged 0
+conv_strip_vm 416 m3vos 0305_make_glass_16 1 50 cold 7.93 median 3.62 ms peak 81 MB area 0.00416 ref None 
+conv_strip_vm 417 m3vos 0306_make_glass_17 1 50 cold 6.64 median 3.56 ms peak 81 MB area 0.02306 ref None 
+conv_strip_vm 418 m3vos 0307_make_glass_18 1 50 cold 7.72 median 3.51 ms peak 81 MB area 0.04498 ref None 
+conv_strip_vm 419 m3vos 0308_make_pottery_5 1 50 cold 7.96 median 3.68 ms peak 81 MB area 0.13800 ref None 
+conv_strip_vm 420 m3vos 0309_make_pottery_6 1 50 cold 8.45 median 3.55 ms peak 81 MB area 0.10246 ref None 
+conv_strip_vm 421 m3vos 0310_make_pottery_7 1 50 cold 8.14 median 3.62 ms peak 81 MB area 0.18445 ref None 
+conv_strip_vm 422 m3vos 0311_make_pottery_8 1 50 cold 8.10 median 3.60 ms peak 81 MB area 0.15882 ref None 
+conv_strip_vm 423 m3vos 0312_make_pottery_9 1 50 cold 7.85 median 3.70 ms peak 81 MB area 0.16606 ref None 
+strip call 10600: 0/16 records flagged, conditioning flagged 0
+conv_strip_vm 424 m3vos 0313_paint_chocolate_1 1 50 cold 7.83 median 3.61 ms peak 81 MB area 0.14742 ref None 
+conv_strip_vm 425 m3vos 0314_paint_cream_10 1 50 cold 7.03 median 3.69 ms peak 81 MB area 0.12131 ref None 
+conv_strip_vm 426 m3vos 0315_paint_cream_4 1 50 cold 6.51 median 3.63 ms peak 81 MB area 0.00716 ref None 
+conv_strip_vm 427 m3vos 0316_paint_cream_5 1 50 cold 7.75 median 3.63 ms peak 81 MB area 0.02235 ref None 
+conv_strip_vm 428 m3vos 0317_paint_cream_6 1 50 cold 7.77 median 3.64 ms peak 81 MB area 0.07590 ref None 
+conv_strip_vm 429 m3vos 0318_paint_cream_7 1 50 cold 7.32 median 3.64 ms peak 81 MB area 0.05364 ref None 
+conv_strip_vm 430 m3vos 0319_paint_cream_8 1 50 cold 6.74 median 3.68 ms peak 81 MB area 0.00372 ref None 
+conv_strip_vm 431 m3vos 0320_paint_cream_9 1 50 cold 7.82 median 3.62 ms peak 81 MB area 0.02735 ref None 
+strip call 10800: 0/16 records flagged, conditioning flagged 0
+conv_strip_vm 432 m3vos 0321_paint_cream_2 1 50 cold 7.53 median 3.63 ms peak 81 MB area 0.02619 ref None 
+conv_strip_vm 433 m3vos 0322_paint_cream_3 1 50 cold 7.82 median 3.61 ms peak 81 MB area 0.01234 ref None 
+conv_strip_vm 434 m3vos 0323_paint_cream_11 1 50 cold 8.09 median 3.68 ms peak 81 MB area 0.06364 ref None 
+conv_strip_vm 435 m3vos 0324_peel_fruit_5 1 50 cold 7.80 median 3.72 ms peak 81 MB area 0.13667 ref None 
+conv_strip_vm 436 m3vos 0325_peel_fruit_6 1 50 cold 7.88 median 3.67 ms peak 81 MB area 0.07352 ref None 
+conv_strip_vm 437 m3vos 0326_stretch_noodle_1 1 50 cold 6.47 median 3.68 ms peak 81 MB area 0.02989 ref None 
+conv_strip_vm 438 m3vos 0327_stretch_noodle_4 1 50 cold 8.27 median 3.65 ms peak 81 MB area 0.13618 ref None 
+conv_strip_vm 439 m3vos 0328_stretch_noodle_5 1 50 cold 6.68 median 3.67 ms peak 81 MB area 0.12877 ref None 
+strip call 11000: 0/16 records flagged, conditioning flagged 0
+conv_strip_vm 440 m3vos 0329_cut_dough_1 1 50 cold 7.97 median 3.61 ms peak 81 MB area 0.01315 ref None 
+conv_strip_vm 441 m3vos 0330_make_ball_1 1 50 cold 7.79 median 3.70 ms peak 81 MB area 0.00000 ref None 
+conv_strip_vm 442 m3vos 0331_apply_cream_1 1 50 cold 7.76 median 3.59 ms peak 82 MB area 0.04055 ref None 
+conv_strip_vm 443 m3vos 0332_apply_cream_2 1 50 cold 6.77 median 3.66 ms peak 81 MB area 0.03194 ref None 
+conv_strip_vm 444 m3vos 0333_apply_cream_3 1 50 cold 7.92 median 3.69 ms peak 81 MB area 0.09550 ref None 
+conv_strip_vm 445 m3vos 0334_cut_fruit_1 1 50 cold 6.81 median 3.82 ms peak 81 MB area 0.07706 ref None 
+conv_strip_vm 446 m3vos 0335_cut_fruit_2 1 50 cold 7.87 median 3.70 ms peak 81 MB area 0.09004 ref None 
+conv_strip_vm 447 m3vos 0336_flip_roti_1 1 50 cold 8.76 median 3.71 ms peak 81 MB area 0.02461 ref None 
+strip call 11200: 15/16 records flagged, conditioning flagged 0
+conv_strip_vm 448 m3vos 0337_fry_egg_1 1 50 cold 8.09 median 3.62 ms peak 81 MB area 0.00000 ref None 
+conv_strip_vm 449 m3vos 0338_squeeze_dough_1 1 50 cold 5.83 median 3.58 ms peak 81 MB area 0.03697 ref None 
+conv_strip_vm 450 m3vos 0339_squeeze_dough_2 1 50 cold 7.02 median 3.68 ms peak 81 MB area 0.02858 ref None 
+conv_strip_vm 451 m3vos 0340_fry_omelet_1 1 50 cold 7.56 median 3.70 ms peak 81 MB area 0.01835 ref None 
+conv_strip_vm 452 m3vos 0341_fry_omelet_2 1 50 cold 7.70 median 3.63 ms peak 81 MB area 0.00169 ref None 
+conv_strip_vm 453 m3vos 0342_roll_omelet_1 1 50 cold 6.66 median 3.55 ms peak 81 MB area 0.00173 ref None 
+conv_strip_vm 454 m3vos 0342_roll_omelet_1 2 50 cold 7.11 median 3.89 ms peak 81 MB area 0.01914 ref None 
+conv_strip_vm 455 m3vos 0342_roll_omelet_1 3 50 cold 6.46 median 3.75 ms peak 81 MB area 0.02162 ref None 
+strip call 11400: 0/16 records flagged, conditioning flagged 0
+conv_strip_vm 456 m3vos 0343_tear_cake_1 1 50 cold 8.78 median 3.66 ms peak 81 MB area 0.41368 ref None 
+conv_strip_vm 457 m3vos 0344_tear_cake_2 1 50 cold 6.56 median 3.76 ms peak 81 MB area 0.38524 ref None 
+conv_strip_vm 458 m3vos 0345_burn_sauce_1 1 50 cold 6.60 median 3.66 ms peak 81 MB area 0.01118 ref None 
+conv_strip_vm 459 m3vos 0346_fry_omelet_3 1 50 cold 8.07 median 3.66 ms peak 81 MB area 0.02400 ref None 
+conv_strip_vm 460 m3vos 0347_pour_egg_1 1 50 cold 7.74 median 3.67 ms peak 81 MB area 0.00000 ref None 
+conv_strip_vm 461 m3vos 0348_whish_egg_4 1 50 cold 8.42 median 3.65 ms peak 81 MB area 0.06089 ref None 
+conv_strip_vm 462 m3vos 0349_fry_dough_1 1 50 cold 6.53 median 3.63 ms peak 81 MB area 0.02707 ref None 
+conv_strip_vm 463 m3vos 0350_fry_dough_3 1 50 cold 7.82 median 3.79 ms peak 81 MB area 0.00000 ref None 
+strip call 11600: 15/16 records flagged, conditioning flagged 0
+conv_strip_vm 464 m3vos 0351_fry_dough_2 1 50 cold 7.30 median 3.69 ms peak 81 MB area 0.00000 ref None 
+conv_strip_vm 465 m3vos 0352_knead_dough_2 1 50 cold 6.74 median 3.67 ms peak 82 MB area 0.21537 ref None 
+conv_strip_vm 466 m3vos 0353_pile_dough_1 1 50 cold 8.56 median 3.64 ms peak 81 MB area 0.05574 ref None 
+conv_strip_vm 467 m3vos 0354_pile_dough_2 1 50 cold 7.73 median 3.84 ms peak 81 MB area 0.32406 ref None 
+conv_strip_vm 468 m3vos 0355_pour_syrup_1 1 50 cold 7.70 median 3.66 ms peak 81 MB area 0.00000 ref None 
+conv_strip_vm 469 m3vos 0356_make_pancakes_2 1 50 cold 6.75 median 3.63 ms peak 81 MB area 0.01026 ref None 
+conv_strip_vm 470 m3vos 0357_make_pancakes_3 1 50 cold 7.54 median 3.68 ms peak 81 MB area 0.15105 ref None 
+conv_strip_vm 471 m3vos 0358_squeeze_dough_3 1 50 cold 8.30 median 3.89 ms peak 81 MB area 0.04724 ref None 
+strip call 11800: 0/16 records flagged, conditioning flagged 0
+conv_strip_vm 472 m3vos 0359_break_aloe_1 1 50 cold 8.13 median 3.71 ms peak 81 MB area 0.29807 ref None 
+conv_strip_vm 473 m3vos 0360_cut_aloe_1 1 50 cold 7.59 median 3.70 ms peak 81 MB area 0.29745 ref None 
+conv_strip_vm 474 m3vos 0361_cut_honeycomb_1 1 50 cold 8.01 median 3.65 ms peak 82 MB area 0.53718 ref None 
+conv_strip_vm 475 m3vos 0362_cut_honeycomb_2 1 50 cold 6.77 median 3.57 ms peak 81 MB area 0.15332 ref None 
+conv_strip_vm 476 m3vos 0363_cut_honeycomb_3 1 50 cold 6.75 median 3.73 ms peak 81 MB area 0.19631 ref None 
+conv_strip_vm 477 m3vos 0364_squeeze_honey_1 1 50 cold 7.88 median 3.57 ms peak 81 MB area 0.13853 ref None 
+conv_strip_vm 478 m3vos 0365_squeeze_honey_2 1 50 cold 8.06 median 3.86 ms peak 81 MB area 0.05939 ref None 
+conv_strip_vm 479 m3vos 0366_squeeze_bread_1 1 50 cold 7.81 median 3.66 ms peak 81 MB area 0.00370 ref None 
+strip call 12000: 0/16 records flagged, conditioning flagged 0
+conv_strip_vm 480 m3vos 0367_melt_chocolate_3 1 50 cold 8.13 median 3.71 ms peak 81 MB area 0.04097 ref None 
+conv_strip_vm 481 m3vos 0368_paint_chocolate_2 1 50 cold 7.90 median 3.67 ms peak 81 MB area 0.01244 ref None 
+conv_strip_vm 482 m3vos 0369_cut_cheese_3 1 50 cold 7.68 median 3.90 ms peak 81 MB area 0.31802 ref None 
+conv_strip_vm 483 m3vos 0370_dissemble_machinery_1 1 50 cold 8.26 median 3.63 ms peak 81 MB area 0.20869 ref None 
+conv_strip_vm 484 m3vos 0371_assemble_machinery_1 1 50 cold 8.10 median 3.67 ms peak 81 MB area 0.00000 ref None 
+conv_strip_vm 485 m3vos 0371_assemble_machinery_1 2 50 cold 7.71 median 3.70 ms peak 81 MB area 0.00000 ref None 
+conv_strip_vm 486 m3vos 0371_assemble_machinery_1 3 50 cold 8.64 median 3.70 ms peak 81 MB area 0.00328 ref None 
+conv_strip_vm 487 m3vos 0372_assemble_machinery_2 1 50 cold 6.91 median 3.67 ms peak 81 MB area 0.00085 ref None 
+strip call 12200: 0/16 records flagged, conditioning flagged 0
+conv_strip_vm 488 m3vos 0372_assemble_machinery_2 2 50 cold 7.99 median 3.89 ms peak 81 MB area 0.00320 ref None 
+conv_strip_vm 489 m3vos 0372_assemble_machinery_2 3 50 cold 6.85 median 3.84 ms peak 81 MB area 0.01259 ref None 
+conv_strip_vm 490 m3vos 0373_assemble_machinery_3 1 50 cold 7.69 median 3.65 ms peak 82 MB area 0.00471 ref None 
+conv_strip_vm 491 m3vos 0373_assemble_machinery_3 2 50 cold 8.31 median 3.82 ms peak 81 MB area 0.00135 ref None 
+conv_strip_vm 492 m3vos 0374_assemble_machinery_4 1 50 cold 7.92 median 3.71 ms peak 81 MB area 0.00000 ref None 
+conv_strip_vm 493 m3vos 0374_assemble_machinery_4 2 50 cold 7.72 median 3.82 ms peak 81 MB area 0.01184 ref None 
+conv_strip_vm 494 m3vos 0374_assemble_machinery_4 3 50 cold 8.02 median 3.82 ms peak 81 MB area 0.00261 ref None 
+conv_strip_vm 495 m3vos 0375_assemble_machinery_5 1 50 cold 7.98 median 3.67 ms peak 81 MB area 0.00000 ref None 
+strip call 12400: 15/16 records flagged, conditioning flagged 0
+conv_strip_vm 496 m3vos 0375_assemble_machinery_5 2 50 cold 7.84 median 3.69 ms peak 81 MB area 0.00000 ref None 
+conv_strip_vm 497 m3vos 0375_assemble_machinery_5 3 50 cold 8.57 median 3.70 ms peak 81 MB area 0.00000 ref None 
+conv_strip_vm 498 m3vos 0376_spread_sauce_1 1 50 cold 8.24 median 3.81 ms peak 81 MB area 0.03836 ref None 
+conv_strip_vm 499 m3vos 0377_melt_chocolate_5 1 50 cold 8.09 median 3.76 ms peak 81 MB area 0.06751 ref None 
+conv_strip_vm 500 m3vos 0378_melt_chocolate_4 1 50 cold 6.56 median 3.67 ms peak 81 MB area 0.02739 ref None 
+conv_strip_vm 501 m3vos 0379_exhaust_smoke_4 1 50 cold 7.52 median 3.70 ms peak 81 MB area 0.21246 ref None 
+conv_strip_vm 502 m3vos 0380_crystallize_liquid_8 1 50 cold 7.76 median 3.63 ms peak 81 MB area 0.03483 ref None 
+conv_strip_vm 503 m3vos 0381_assemble_machinery_7 1 50 cold 6.61 median 3.88 ms peak 81 MB area 0.00000 ref None 
+strip call 12600: 15/16 records flagged, conditioning flagged 0
+conv_strip_vm 504 m3vos 0381_assemble_machinery_7 2 50 cold 8.13 median 3.63 ms peak 81 MB area 0.00000 ref None 
+conv_strip_vm 505 m3vos 0382_assemble_machinery_8 1 50 cold 6.57 median 3.82 ms peak 81 MB area 0.00000 ref None 
+conv_strip_vm 506 m3vos 0383_assemble_machinery_9 1 50 cold 6.71 median 3.64 ms peak 81 MB area 0.00315 ref None 
+conv_strip_vm 507 m3vos 0383_assemble_machinery_9 2 50 cold 6.70 median 3.62 ms peak 81 MB area 0.00813 ref None 
+conv_strip_vm 508 m3vos 0383_assemble_machinery_9 3 50 cold 8.26 median 3.70 ms peak 81 MB area 0.01102 ref None 
+conv_strip_vm 509 m3vos 0384_assemble_machinery_10 1 50 cold 6.46 median 3.63 ms peak 81 MB area 0.00000 ref None 
+conv_strip_vm 510 m3vos 0385_generate_crystals_1 1 50 cold 6.50 median 3.64 ms peak 81 MB area 0.51711 ref None 
+conv_strip_vm 511 m3vos 0386_generate_crystals_2 1 50 cold 6.51 median 3.66 ms peak 81 MB area 0.27658 ref None 
+strip call 12800: 0/16 records flagged, conditioning flagged 0
+conv_strip_vm 512 m3vos 0387_generate_crystals_3 1 50 cold 8.77 median 3.63 ms peak 81 MB area 0.52124 ref None 
+conv_strip_vm 513 m3vos 0388_generate_crystals_4 1 50 cold 6.76 median 3.82 ms peak 81 MB area 0.34593 ref None 
+conv_strip_vm 514 m3vos 0389_generate_crystals_5 1 50 cold 8.33 median 3.76 ms peak 81 MB area 0.49517 ref None 
+conv_strip_vm 515 m3vos 0390_generate_crystals_6 1 50 cold 6.71 median 3.62 ms peak 81 MB area 0.47652 ref None 
+conv_strip_vm 516 m3vos 0391_generate_precipitate_1 1 50 cold 7.91 median 3.63 ms peak 81 MB area 0.70653 ref None 
+conv_strip_vm 517 m3vos 0392_generate_crystals_7 1 50 cold 7.68 median 3.62 ms peak 81 MB area 0.05185 ref None 
+conv_strip_vm 518 m3vos 0393_generate_crystals_8 1 50 cold 6.93 median 3.63 ms peak 81 MB area 0.53448 ref None 
+conv_strip_vm 519 m3vos 0394_merge_droplets_1 1 50 cold 7.54 median 3.64 ms peak 81 MB area 0.27407 ref None 
+strip call 13000: 0/16 records flagged, conditioning flagged 0
+conv_strip_vm 520 m3vos 0395_dissolve_metal_1 1 50 cold 8.30 median 3.64 ms peak 81 MB area 0.12808 ref None 
+conv_strip_vm 521 m3vos 0396_dissolve_metal_2 1 50 cold 7.69 median 3.69 ms peak 81 MB area 0.08548 ref None 
+conv_strip_vm 522 m3vos 0397_dissolve_metal_3 1 50 cold 6.55 median 3.76 ms peak 81 MB area 0.00313 ref None 
+conv_strip_vm 523 m3vos 0398_generate_gas_1 1 50 cold 7.67 median 3.91 ms peak 81 MB area 0.17048 ref None 
+conv_strip_vm 524 m3vos 0399_merge_droplets_2 1 50 cold 8.54 median 3.68 ms peak 81 MB area 0.26202 ref None 
+conv_strip_vm 525 m3vos 0400_burn_metal_3 1 50 cold 6.76 median 3.90 ms peak 82 MB area 0.09325 ref None 
+conv_strip_vm 526 m3vos 0401_burn_metal_4 1 50 cold 7.83 median 3.67 ms peak 82 MB area 0.02483 ref None 
+conv_strip_vm 527 m3vos 0402_spread_sauce_2 1 50 cold 6.55 median 3.64 ms peak 81 MB area 0.08392 ref None 
+strip call 13200: 0/16 records flagged, conditioning flagged 0
+conv_strip_vm 528 m3vos 0403_spread_cheese_1 1 50 cold 7.08 median 3.89 ms peak 81 MB area 0.04697 ref None 
+conv_strip_vm 529 m3vos 0404_assemble_machinery_11 1 50 cold 6.53 median 3.80 ms peak 81 MB area 0.00167 ref None 
+conv_strip_vm 530 m3vos 0404_assemble_machinery_11 2 50 cold 7.76 median 3.72 ms peak 81 MB area 0.00159 ref None 
+conv_strip_vm 531 m3vos 0404_assemble_machinery_11 3 50 cold 7.74 median 3.60 ms peak 81 MB area 0.00164 ref None 
+conv_strip_vm 532 m3vos 0405_assemble_machinery_12 1 50 cold 8.33 median 3.69 ms peak 81 MB area 0.00177 ref None 
+conv_strip_vm 533 m3vos 0406_assemble_machinery_13 1 50 cold 8.36 median 3.66 ms peak 81 MB area 0.00279 ref None 
+conv_strip_vm 534 m3vos 0406_assemble_machinery_13 2 50 cold 9.39 median 3.67 ms peak 81 MB area 0.00000 ref None 
+conv_strip_vm 535 m3vos 0407_exhaust_smoke_5 1 50 cold 8.56 median 3.68 ms peak 81 MB area 0.06697 ref None 
+strip call 13400: 0/16 records flagged, conditioning flagged 0
+conv_strip_vm 536 m3vos 0408_break_glass_7 1 50 cold 7.01 median 3.77 ms peak 81 MB area 0.00500 ref None 
+conv_strip_vm 537 m3vos 0409_break_glass_8 1 50 cold 8.27 median 3.63 ms peak 81 MB area 0.03591 ref None 
+conv_strip_vm 538 m3vos 0410_falldown_smoke_1 1 50 cold 6.89 median 3.62 ms peak 81 MB area 0.14997 ref None 
+conv_strip_vm 539 m3vos 0411_cut_ice_cream_1 1 50 cold 7.86 median 3.88 ms peak 81 MB area 0.03326 ref None 
+conv_strip_vm 540 m3vos 0411_cut_ice_cream_1 2 50 cold 8.12 median 3.67 ms peak 81 MB area 0.05376 ref None 
+conv_strip_vm 541 m3vos 0411_cut_ice_cream_1 3 50 cold 6.66 median 3.82 ms peak 81 MB area 0.02749 ref None 
+conv_strip_vm 542 m3vos 0412_controller_magnetic_fluid_1 1 50 cold 6.30 median 3.66 ms peak 81 MB area 0.06783 ref None 
+conv_strip_vm 543 m3vos 0413_controller_magnetic_fluid_2 1 50 cold 8.33 median 3.84 ms peak 81 MB area 0.00000 ref None 
+strip call 13600: 0/16 records flagged, conditioning flagged 0
+conv_strip_vm 544 m3vos 0413_controller_magnetic_fluid_2 2 50 cold 6.72 median 3.67 ms peak 81 MB area 0.00095 ref None 
+conv_strip_vm 545 m3vos 0413_controller_magnetic_fluid_2 3 50 cold 7.67 median 3.84 ms peak 81 MB area 0.00441 ref None 
+conv_strip_vm 546 m3vos 0414_controller_magnetic_fluid_4 1 50 cold 6.46 median 3.70 ms peak 81 MB area 0.10618 ref None 
+conv_strip_vm 547 m3vos 0415_pull_mucus_1 1 50 cold 8.62 median 3.62 ms peak 81 MB area 0.01029 ref None 
+conv_strip_vm 548 m3vos 0416_syphon_liquid_1 1 50 cold 6.71 median 3.87 ms peak 81 MB area 0.14871 ref None 
+conv_strip_vm 549 m3vos 0417_create_waves_1 1 50 cold 8.13 median 3.67 ms peak 81 MB area 0.04678 ref None 
+conv_strip_vm 550 m3vos 0418_diffuse_pigment_1 1 50 cold 6.96 median 3.69 ms peak 81 MB area 0.06221 ref None 
+conv_strip_vm 551 m3vos 0419_diffuse_pigment_2 1 50 cold 8.81 median 3.87 ms peak 81 MB area 0.04401 ref None 
+strip call 13800: 15/16 records flagged, conditioning flagged 0
+conv_strip_vm 552 m3vos 0420_diffuse_smoke_1 1 50 cold 7.75 median 3.68 ms peak 81 MB area 0.00000 ref None 
+conv_strip_vm 553 m3vos 0421_diffuse_pigment_3 1 50 cold 5.86 median 3.59 ms peak 81 MB area 0.20344 ref None 
+conv_strip_vm 554 m3vos 0422_stir_milk_2 1 50 cold 6.95 median 3.62 ms peak 81 MB area 0.21998 ref None 
+conv_strip_vm 555 m3vos 0423_pour_pigment_1 1 50 cold 7.70 median 3.71 ms peak 81 MB area 0.00000 ref None 
+conv_strip_vm 556 m3vos 0424_pour_pigment_2 1 50 cold 8.60 median 3.82 ms peak 81 MB area 0.24240 ref None 
+conv_strip_vm 557 m3vos 0425_pour_magnetic_particle_1 1 50 cold 8.96 median 3.69 ms peak 81 MB area 0.19536 ref None 
+conv_strip_vm 558 m3vos 0426_drip_liquid_3 1 50 cold 7.84 median 3.69 ms peak 81 MB area 0.11439 ref None 
+conv_strip_vm 559 m3vos 0427_pour_pigment_3 1 50 cold 7.89 median 3.89 ms peak 81 MB area 0.01665 ref None 
+strip call 14000: 0/16 records flagged, conditioning flagged 0
+conv_strip_vm 560 m3vos 0428_pour_tea_8 1 50 cold 7.89 median 3.64 ms peak 81 MB area 0.11901 ref None 
+conv_strip_vm 561 m3vos 0429_pour_tea_9 1 50 cold 6.15 median 3.92 ms peak 81 MB area 0.03445 ref None 
+conv_strip_vm 562 m3vos 0430_pour_tea_10 1 50 cold 6.55 median 3.75 ms peak 81 MB area 0.06818 ref None 
+conv_strip_vm 563 m3vos 0431_pour_tea_11 1 50 cold 8.16 median 3.71 ms peak 81 MB area 0.08574 ref None 
+conv_strip_vm 564 m3vos 0432_pour_tea_12 1 50 cold 8.52 median 3.65 ms peak 81 MB area 0.03316 ref None 
+conv_strip_vm 565 m3vos 0433_pour_tea_13 1 50 cold 6.97 median 3.68 ms peak 81 MB area 0.01718 ref None 
+conv_strip_vm 566 m3vos 0434_pour_tea_14 1 50 cold 7.70 median 3.69 ms peak 81 MB area 0.08270 ref None 
+conv_strip_vm 567 m3vos 0435_pour_tea_16 1 50 cold 8.49 median 3.69 ms peak 81 MB area 0.09850 ref None 
+strip call 14200: 0/16 records flagged, conditioning flagged 0
+conv_strip_vm 568 m3vos 0436_pour_tea_17 1 50 cold 6.78 median 3.70 ms peak 81 MB area 0.14568 ref None 
+conv_strip_vm 569 m3vos 0437_wrap_wire_2 1 50 cold 6.27 median 3.70 ms peak 81 MB area 0.03820 ref None 
+conv_strip_vm 570 m3vos 0438_wrap_wire_4 1 50 cold 6.81 median 3.62 ms peak 81 MB area 0.05232 ref None 
+conv_strip_vm 571 m3vos 0439_make_glass_19 1 50 cold 7.98 median 3.65 ms peak 81 MB area 0.08354 ref None 
+conv_strip_vm 572 m3vos 0440_wrap_wire_5 1 50 cold 6.37 median 3.69 ms peak 81 MB area 0.00840 ref None 
+conv_strip_vm 573 m3vos 0441_wrap_wire_6 1 50 cold 7.55 median 3.67 ms peak 82 MB area 0.00343 ref None 
+conv_strip_vm 574 m3vos 0442_wrap_wire_7 1 50 cold 7.68 median 3.62 ms peak 81 MB area 0.00117 ref None 
+conv_strip_vm 575 m3vos 0442_wrap_wire_7 2 50 cold 7.83 median 3.63 ms peak 81 MB area 0.00939 ref None 
+strip call 14400: 0/16 records flagged, conditioning flagged 0
+conv_strip_vm 576 m3vos 0443_wrap_wire_9 1 50 cold 7.90 median 3.70 ms peak 81 MB area 0.01006 ref None 
+conv_strip_vm 577 m3vos 0444_wrap_wire_10 1 50 cold 7.80 median 3.69 ms peak 81 MB area 0.00438 ref None 
+conv_strip_vm 578 m3vos 0445_wrap_wire_11 1 50 cold 8.22 median 3.81 ms peak 81 MB area 0.00266 ref None 
+conv_strip_vm 579 m3vos 0446_wrap_wire_12 1 50 cold 6.60 median 3.68 ms peak 81 MB area 0.02699 ref None 
+conv_strip_vm 580 m3vos 0447_splash_liquid_7 1 50 cold 8.13 median 3.87 ms peak 81 MB area 0.03666 ref None 
+conv_strip_vm 581 m3vos 0448_splash_liquid_8 1 50 cold 7.91 median 3.85 ms peak 81 MB area 0.36469 ref None 
+conv_strip_vm 582 m3vos 0449_splash_liquid_9 1 50 cold 6.71 median 3.64 ms peak 81 MB area 0.00879 ref None 
+conv_strip_vm 583 m3vos 0450_splash_liquid_10 1 50 cold 8.61 median 3.84 ms peak 81 MB area 0.42569 ref None 
+strip call 14600: 0/16 records flagged, conditioning flagged 0
+conv_strip_vm 584 m3vos 0450_splash_liquid_10 2 50 cold 8.01 median 3.65 ms peak 81 MB area 0.27492 ref None 
+conv_strip_vm 585 m3vos 0451_splash_liquid_11 1 50 cold 6.42 median 3.63 ms peak 81 MB area 0.31783 ref None 
+conv_strip_vm 586 m3vos 0452_erupt_foam_1 1 50 cold 8.97 median 3.91 ms peak 81 MB area 0.02107 ref None 
+conv_strip_vm 587 m3vos 0453_erupt_foam_2 1 50 cold 6.64 median 3.82 ms peak 81 MB area 0.17915 ref None 
+conv_strip_vm 588 m3vos 0454_erupt_foam_3 1 50 cold 8.51 median 3.66 ms peak 81 MB area 0.00376 ref None 
+conv_strip_vm 589 m3vos 0454_erupt_foam_3 2 50 cold 6.84 median 3.83 ms peak 81 MB area 0.08228 ref None 
+conv_strip_vm 590 m3vos 0455_pour_pigment_5 1 50 cold 8.31 median 3.68 ms peak 81 MB area 0.00700 ref None 
+conv_strip_vm 591 m3vos 0456_pour_pigment_6 1 50 cold 6.33 median 3.94 ms peak 81 MB area 0.01023 ref None 
+strip call 14800: 0/16 records flagged, conditioning flagged 0
+conv_strip_vm 592 m3vos 0456_pour_pigment_6 2 50 cold 7.75 median 3.63 ms peak 81 MB area 0.00967 ref None 
+conv_strip_vm 593 m3vos 0456_pour_pigment_6 3 50 cold 7.81 median 3.64 ms peak 81 MB area 0.04897 ref None 
+conv_strip_vm 594 m3vos 0457_pour_pigment_7 1 50 cold 7.75 median 3.66 ms peak 81 MB area 0.06530 ref None 
+conv_strip_vm 595 m3vos 0458_scrap_wax_1 1 50 cold 7.66 median 3.62 ms peak 81 MB area 0.60961 ref None 
+conv_strip_vm 596 m3vos 0459_tear_wallpaper_1 1 50 cold 6.37 median 3.67 ms peak 81 MB area 0.48197 ref None 
+conv_strip_vm 597 m3vos 0460_tear_wallpaper_2 1 50 cold 8.42 median 3.94 ms peak 81 MB area 0.01674 ref None 
+conv_strip_vm 598 m3vos 0461_tear_wallpaper_3 1 50 cold 7.77 median 3.69 ms peak 81 MB area 0.38668 ref None 
+conv_strip_vm 599 m3vos 0462_tear_wallpaper_4 1 50 cold 7.38 median 3.84 ms peak 81 MB area 0.23298 ref None 
+strip call 15000: 0/16 records flagged, conditioning flagged 0
+conv_strip_vm 600 m3vos 0463_tear_wallpaper_5 1 50 cold 6.60 median 3.64 ms peak 81 MB area 0.51390 ref None 
+conv_strip_vm 601 m3vos 0464_tear_wallpaper_6 1 50 cold 7.75 median 3.63 ms peak 81 MB area 0.63668 ref None 
+conv_strip_vm 602 m3vos 0465_tear_wallpaper_7 1 50 cold 7.91 median 3.66 ms peak 81 MB area 0.41629 ref None 
+conv_strip_vm 603 m3vos 0466_tear_wallpaper_8 1 50 cold 7.98 median 3.69 ms peak 82 MB area 0.57169 ref None 
+conv_strip_vm 604 m3vos 0467_break_cookies_1 1 50 cold 7.84 median 3.84 ms peak 81 MB area 0.05269 ref None 
+conv_strip_vm 605 m3vos 0468_stir_cola_1 1 50 cold 8.28 median 3.70 ms peak 81 MB area 0.24888 ref None 
+conv_strip_vm 606 m3vos 0469_squeeze_ice_cream_1 1 50 cold 6.75 median 3.81 ms peak 81 MB area 0.05444 ref None 
+conv_strip_vm 607 m3vos 0470_cut_ice_cream_2 1 50 cold 7.84 median 3.69 ms peak 81 MB area 0.10663 ref None 
+strip call 15200: 0/16 records flagged, conditioning flagged 0
+conv_strip_vm 608 m3vos 0471_stir_cola_2 1 50 cold 7.65 median 3.68 ms peak 81 MB area 0.25283 ref None 
+COMPLETE conv_strip_vm 608
