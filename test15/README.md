@@ -101,10 +101,12 @@ J&F 합친 값을 기준으로 내림차순 정렬했다.
 | `code/checks.py`, `code/summarize.py` | 정확도 점검과 요약 |
 | `code/cost_v2.py`, `code/summarize_cost_v2.py` | 비용 측정 v2와 요약(G1–G6 판정) |
 | `code/cost.py`, `code/cost_single.py` | 이전 비용 측정. 기록용이며 폐기했다 |
+| `code/bench_translators.py` | 번역기 단계별 시간 점검(전환 크기의 임의 상태, CUDA 동기화). 측정 방식 확인용 |
 | `scripts/` | `run.sh`(정확도), `cost_v2.sh`(비용, 이어서 돌리기 지원), `cost_single.sh`, `env.sh` |
 | `results/summary.md`, `results/summary.json` | 정확도 요약 |
 | `results/cost_v2_summary.md`, `results/cost_v2_summary.json` | 비용 요약 |
 | `results/checks/v2/` | 비용 원자료. 전환마다 20회 원시값, 단계별 시간, GPU 상태, s+1 픽셀 수 |
+| `results/checks/v2_smoke/` | 본 실행 전 스모크(4 영상, 8 전환, 8개 방법)의 원자료와 G1–G6 요약 |
 | `results/checks/` | 정확도 점검(`full.json`, `smoke.json`)과 이전 비용 측정 |
 | `results/cases.tar.gz` | 정확도 실험의 case 파일 전체(프레임별 J, F, 보임 여부, 면적) |
 | `logs/` | 비용 측정 v2와 스모크 로그 |
